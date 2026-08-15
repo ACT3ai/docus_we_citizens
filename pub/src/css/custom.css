@@ -1,0 +1,443 @@
+/**
+ * We The Citizens — Global Styles
+ * Institutional / Founding-Document system
+ * Display & UI/Body: Public Sans
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+/* Display face for the homepage hero lockup ("WE THE CITIZENS") */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+:root {
+  /* Paper & ink */
+  --ua-paper:      #F3EDDF;
+  --ua-paper-2:    #EBE2CE;
+  --ua-card:       #FBF7EC;
+  --ua-ink:        #1A1712;
+  --ua-ink-soft:   #4B4438;
+  --ua-ink-faint:  #837A68;
+
+  /* Brand accents */
+  --ua-red:        #8A2433;
+  --ua-red-deep:   #6E1A28;
+  --ua-navy:       #182742;
+  --ua-navy-deep:  #101D33;
+  --ua-gold:       #9A7B43;
+
+  /* Lines */
+  --ua-rule:       rgba(26,23,18,.16);
+  --ua-rule-soft:  rgba(26,23,18,.09);
+
+  --ua-serif:      'Public Sans', system-ui, -apple-system, sans-serif;
+  --ua-serif-text: 'Public Sans', system-ui, -apple-system, sans-serif;
+  --ua-sans:       'Public Sans', system-ui, -apple-system, sans-serif;
+
+  /* Infima overrides */
+  --ifm-color-primary: #8A2433;
+  --ifm-color-primary-dark: #7c2030;
+  --ifm-color-primary-darker: #761e2d;
+  --ifm-color-primary-darkest: #611925;
+  --ifm-color-primary-light: #982837;
+  --ifm-color-primary-lighter: #9e2939;
+  --ifm-color-primary-lightest: #b22f41;
+
+  --ifm-background-color: var(--ua-paper);
+  --ifm-background-surface-color: var(--ua-card);
+  --ifm-font-color-base: var(--ua-ink-soft);
+  --ifm-heading-color: var(--ua-ink);
+  --ifm-link-color: var(--ua-red);
+  --ifm-link-hover-color: var(--ua-red-deep);
+
+  --ifm-font-family-base: 'Public Sans', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-family: 'Public Sans', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-weight: 400;
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #C98A93;
+  --ifm-color-primary-dark: #c07882;
+  --ifm-color-primary-darker: #bb6f7a;
+  --ifm-color-primary-darkest: #a85765;
+  --ifm-color-primary-light: #d29ca4;
+  --ifm-color-primary-lighter: #d6a4ab;
+  --ifm-color-primary-lightest: #e0b7bc;
+
+  --ifm-background-color: #14110b;
+  --ifm-background-surface-color: #1f1a13;
+  --ifm-font-color-base: rgba(243,237,223,.86);
+  --ifm-heading-color: #F3EDDF;
+  --ifm-link-color: #E7B7BE;
+  --ifm-link-hover-color: #F3EDDF;
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--ua-sans);
+  background: var(--ua-paper);
+  color: var(--ua-ink-soft);
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+[data-theme='dark'] body {
+  background: #14110b;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ua-serif);
+  font-weight: 400;
+  letter-spacing: -.01em;
+  line-height: 1.1;
+}
+
+/* ============================================================
+   NAVBAR — shared header (parchment / sans brand / red accent)
+   ============================================================ */
+.navbar {
+  background: rgba(243, 237, 223, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--ua-rule);
+  box-shadow: none;
+  height: auto;
+  min-height: 64px;
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(20, 17, 11, 0.92);
+  border-bottom: 1px solid rgba(243,237,223,.12);
+}
+
+.navbar__inner {
+  max-width: 1180px;
+  margin-inline: auto;
+}
+
+.navbar__brand {
+  margin-right: 1.5rem;
+  gap: 0.7rem;
+}
+
+.navbar__logo {
+  height: 38px;
+  width: 38px;
+  margin-right: 0.7rem;
+}
+
+.navbar__logo img {
+  height: 38px;
+  width: 38px;
+}
+
+.navbar__title {
+  font-family: var(--ua-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--ua-ink);
+  letter-spacing: .01em;
+  position: relative;
+  line-height: 1.1;
+}
+
+[data-theme='dark'] .navbar__title {
+  color: var(--ua-paper);
+}
+
+.navbar__title::after {
+  content: "Ethics · Citizens · Truth";
+  display: block;
+  font-family: var(--ua-sans);
+  font-size: .56rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--ua-red);
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+[data-theme='dark'] .navbar__title::after {
+  color: #E7B7BE;
+}
+
+.navbar__item {
+  padding: 0.3rem 0;
+}
+
+.navbar__link {
+  font-family: var(--ua-sans);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: var(--ua-ink-soft);
+  position: relative;
+  padding: .3rem .9rem;
+  transition: color .15s ease;
+}
+
+[data-theme='dark'] .navbar__link {
+  color: rgba(243,237,223,.78);
+}
+
+.navbar__link::after {
+  content: "";
+  position: absolute;
+  left: .9rem;
+  right: .9rem;
+  bottom: -2px;
+  height: 1.5px;
+  width: 0;
+  background: var(--ua-red);
+  transition: width .2s ease;
+}
+
+.navbar__link:hover {
+  color: var(--ua-ink);
+}
+
+[data-theme='dark'] .navbar__link:hover {
+  color: var(--ua-paper);
+}
+
+.navbar__link:hover::after {
+  width: calc(100% - 1.8rem);
+}
+
+.navbar__link--active {
+  color: var(--ua-ink);
+}
+
+[data-theme='dark'] .navbar__link--active {
+  color: var(--ua-paper);
+}
+
+.navbar__link--active::after {
+  width: calc(100% - 1.8rem);
+}
+
+/* Primary CTA in navbar (uses className "navbar__cta") */
+.navbar__items--right .navbar__link.navbar__cta {
+  background: var(--ua-red);
+  color: #FBF3E6;
+  padding: .55rem 1.1rem;
+  font-size: .78rem;
+  letter-spacing: .04em;
+  margin-left: .5rem;
+  border: 1px solid var(--ua-red);
+  transition: background .18s ease, border-color .18s ease;
+}
+
+.navbar__items--right .navbar__link.navbar__cta:hover {
+  background: var(--ua-red-deep);
+  border-color: var(--ua-red-deep);
+  color: #FBF3E6;
+}
+
+.navbar__items--right .navbar__link.navbar__cta::after {
+  display: none;
+}
+
+/* Dropdown menu styling */
+.dropdown__menu {
+  background: var(--ua-card);
+  border: 1px solid var(--ua-rule);
+  border-radius: 0;
+  box-shadow: 6px 6px 0 rgba(24,39,66,.08);
+  padding: .5rem 0;
+}
+
+[data-theme='dark'] .dropdown__menu {
+  background: #1f1a13;
+  border-color: rgba(243,237,223,.12);
+}
+
+.dropdown__link {
+  font-family: var(--ua-sans);
+  font-size: .85rem;
+  color: var(--ua-ink-soft);
+  border-radius: 0;
+}
+
+[data-theme='dark'] .dropdown__link {
+  color: rgba(243,237,223,.78);
+}
+
+.dropdown__link:hover,
+.dropdown__link--active {
+  background: var(--ua-paper-2);
+  color: var(--ua-ink);
+}
+
+[data-theme='dark'] .dropdown__link:hover,
+[data-theme='dark'] .dropdown__link--active {
+  background: rgba(243,237,223,.06);
+  color: var(--ua-paper);
+}
+
+/* Mobile hamburger */
+.navbar__toggle {
+  color: var(--ua-ink);
+}
+
+[data-theme='dark'] .navbar__toggle {
+  color: var(--ua-paper);
+}
+
+/* ============================================================
+   FOOTER — shared (ink dark, parchment text, oxblood accents)
+   ============================================================ */
+.footer {
+  background: var(--ua-ink);
+  color: rgba(243,237,223,.72);
+  padding-top: clamp(3rem, 5vw, 4.5rem);
+  padding-bottom: 0;
+  border-top: none;
+}
+
+.footer--dark {
+  background: var(--ua-ink);
+}
+
+.footer__links {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 4rem);
+  padding-bottom: clamp(2rem, 3vw, 3rem);
+}
+
+.footer__title {
+  font-family: var(--ua-sans);
+  font-size: .72rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(243,237,223,.5);
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.footer__link-item {
+  font-family: var(--ua-sans);
+  font-size: .92rem;
+  color: rgba(243,237,223,.78);
+  transition: color .15s ease;
+  line-height: 1.9;
+}
+
+.footer__link-item:hover {
+  color: #F3EDDF;
+  text-decoration: none;
+}
+
+.footer__copyright {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding: 1.5rem clamp(1.25rem, 5vw, 4rem);
+  border-top: 1px solid rgba(243,237,223,.14);
+  font-family: var(--ua-sans);
+  font-size: .82rem;
+  color: rgba(243,237,223,.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer__copyright::after {
+  content: "Ethics First   ·   Citizens First   ·   Truth First";
+  font-family: var(--ua-sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .72rem;
+  color: rgba(243,237,223,.5);
+}
+
+/* ============================================================
+   Generic page typography (docs pages)
+   ============================================================ */
+.markdown h1 {
+  font-family: var(--ua-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--ua-ink);
+  letter-spacing: -.012em;
+}
+
+.markdown h2 {
+  font-family: var(--ua-serif);
+  color: var(--ua-ink);
+  border-bottom: 1px solid var(--ua-rule);
+  padding-bottom: .4rem;
+}
+
+.markdown h3 {
+  font-family: var(--ua-serif);
+  color: var(--ua-ink);
+}
+
+[data-theme='dark'] .markdown h1,
+[data-theme='dark'] .markdown h2,
+[data-theme='dark'] .markdown h3 {
+  color: var(--ua-paper);
+}
+
+.markdown blockquote {
+  border-left: 3px solid var(--ua-red);
+  font-family: var(--ua-serif);
+  font-style: normal;
+  color: var(--ua-ink);
+  font-size: 1.15rem;
+}
+
+[data-theme='dark'] .markdown blockquote {
+  color: var(--ua-paper);
+}
+
+/* ============================================================
+   Buttons (used on both home and docs pages)
+   ============================================================ */
+.button {
+  font-family: var(--ua-sans);
+  font-weight: 600;
+  letter-spacing: .04em;
+  border-radius: 0;
+}
+
+.button--primary {
+  background: var(--ua-red);
+  border-color: var(--ua-red);
+  color: #FBF3E6;
+}
+
+.button--primary:hover {
+  background: var(--ua-red-deep);
+  border-color: var(--ua-red-deep);
+  color: #FBF3E6;
+}
+
+.button--secondary {
+  background: transparent;
+  border: 1px solid var(--ua-ink);
+  color: var(--ua-ink);
+}
+
+.button--secondary:hover {
+  background: var(--ua-ink);
+  color: var(--ua-paper);
+}
+
+/* Responsive nav: hide sub-tagline on small screens */
+@media (max-width: 720px) {
+  .navbar__title::after {
+    display: none;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@docusaurus/core": "^3.10.1"
+  },
+  "overrides": {
+    "uuid": "^11.1.1",
+    "serialize-javascript": "^7.0.5"
+  }
+}

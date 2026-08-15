@@ -1,0 +1,31 @@
+# robots.txt for wethecitizens.io
+# https://www.robotstxt.org/
+
+# Allow all well-behaved crawlers full access to the site.
+User-agent: *
+Allow: /
+Crawl-delay: 0
+
+# Explicit allow for Google and Bing — some validators flag missing UA-specific
+# blocks. Listing them confirms there is no per-bot restriction.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block common AI training crawlers (optional — comment out to allow).
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# Sitemap location — Google Search Console reads this.
+Sitemap: https://wethecitizens.io/sitemap.xml

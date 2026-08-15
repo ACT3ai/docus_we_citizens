@@ -1,0 +1,9 @@
+charter:
+  label: Charter
+  permalink: /charter
+  description: Posts about the We The Citizens charter
+
+announcement:
+  label: Announcement
+  permalink: /announcement
+  description: Official announcements from We The Citizens

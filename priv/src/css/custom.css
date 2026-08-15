@@ -1,0 +1,46 @@
+/**
+ * We The Citizens (Priv) — Global Styles
+ */
+
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #3cad6e;
+  --ifm-color-primary-dark: #35a063;
+  --ifm-color-primary-darker: #32975e;
+  --ifm-color-primary-darkest: #297c4d;
+  --ifm-color-primary-light: #45b879;
+  --ifm-color-primary-lighter: #4ebc80;
+  --ifm-color-primary-lightest: #66c894;
+  --ifm-background-color: #0f172a;
+  --ifm-background-surface-color: #1e293b;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .navbar {
+  background: #0f172a;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.footer--dark {
+  background: #0c1222;
+}

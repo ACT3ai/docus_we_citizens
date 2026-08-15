@@ -1,0 +1,3 @@
+# Private internal site — do not index.
+User-agent: *
+Disallow: /

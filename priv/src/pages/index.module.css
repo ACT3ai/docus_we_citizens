@@ -1,0 +1,206 @@
+/**
+ * We The Citizens (Priv) — Internal Home Page Styles
+ */
+
+.heroBanner {
+  padding: 5rem 0 4rem;
+  text-align: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #ffffff;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #e2e8f0;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.heroTagline {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 0;
+}
+
+.sectionAlt {
+  padding: 4rem 0;
+  background: #f8fafc;
+}
+
+[data-theme='dark'] .sectionAlt {
+  background: #1e293b;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: var(--ifm-color-primary);
+}
+
+/* Charter Grid */
+.charterGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media screen and (max-width: 996px) {
+  .charterGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .charterGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.charterCard {
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.charterCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .charterCard {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.charterIcon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.charterCard h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.charterCard p {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+[data-theme='dark'] .charterCard p {
+  color: #94a3b8;
+}
+
+/* Governance */
+.govGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.govCard {
+  flex: 1;
+  min-width: 220px;
+  max-width: 300px;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid var(--ifm-color-primary);
+  text-align: center;
+}
+
+.govCard h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.govCard p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+[data-theme='dark'] .govCard p {
+  color: #94a3b8;
+}
+
+.govArrow {
+  font-size: 2rem;
+  color: var(--ifm-color-primary);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .govArrow {
+    transform: rotate(90deg);
+  }
+}
+
+/* Why Section */
+.whyContent {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #334155;
+}
+
+[data-theme='dark'] .whyContent {
+  color: #cbd5e1;
+}
+
+.whyContent p {
+  margin-bottom: 1.25rem;
+}
+
+/* Board */
+.boardList {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.boardItem {
+  padding: 1rem 1.5rem;
+  border-left: 4px solid var(--ifm-color-primary);
+  background: #ffffff;
+  border-radius: 0 8px 8px 0;
+  font-size: 1rem;
+  color: #334155;
+}
+
+[data-theme='dark'] .boardItem {
+  background: #0f172a;
+  color: #e2e8f0;
+}
