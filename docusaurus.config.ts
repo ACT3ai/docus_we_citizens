@@ -73,6 +73,8 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'warn',
+
+  staticDirectories: ['site/static'],
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
@@ -148,13 +150,15 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          path: 'site/docs',
+          sidebarPath: './internal/sidebars.ts',
           // Enables "Last updated" metadata, which the sitemap plugin uses
           // for <lastmod> entries.
           showLastUpdateTime: true,
           showLastUpdateAuthor: false,
         },
         blog: {
+          path: 'site/blog',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -172,8 +176,11 @@ const config: Config = {
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
         },
+        pages: {
+          path: 'site/pages',
+        },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: './internal/css/custom.css',
         },
         sitemap: {
           changefreq: 'weekly',

@@ -1,41 +1,22 @@
-# Website
+# Private / Internal Team Content (formerly the priv/ Docusaurus site)
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This directory holds the surviving content from the old `priv/` Docusaurus
+site, which was removed on 2026-08-15 when the repo was realigned to the
+standard single-site layout (root `docusaurus.config.ts` + content under
+`site/`).
 
-## Installation
+The old `priv/` install was almost entirely the untouched Docusaurus starter
+scaffold (sample blog posts, default images, and pages byte-identical to the
+public site's). The files here are the only pieces with real content:
 
-```bash
-yarn
-```
+* `intro.md` — the Internal Overview doc (team coordination, governance,
+  planning). This was the only real doc the priv site had.
+* `markdown-page.md` — standalone internal markdown page stub.
+* `docusaurus.config.ts.bak` — the priv site's config, kept for reference
+  because it carries the "private site" hardening (noindex/nofollow meta,
+  sitemap disabled). If a private site is ever stood up again, start from this.
+* `robots.txt.bak` — the priv site's Disallow-all robots file, same reason.
 
-## Local Development
-
-```bash
-yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
-
-```bash
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Everything in this directory is confidential, for internal team use only, and
+is NOT part of the public Docusaurus build (the site builds only from
+`site/`).

@@ -2,9 +2,13 @@
 
 * Website: wethecitizens.io
 * Political movement / grassroots advocacy site
-* Two Docusaurus sites in one repo:
-  - pub/ = public-facing website at wethecitizens.io
-  - priv/ = internal team docs (not published publicly)
+* ONE Docusaurus site in this repo, using the standard layout:
+  - docusaurus.config.ts, package.json, tsconfig.json at the repo root
+  - site/ = all site content (docs/, blog/, pages/, static/)
+  - internal/ = site wiring (sidebars.ts, css/custom.css)
+  - The old pub/ + priv/ two-site split was removed on 2026-08-15. The public
+    site content moved to site/; the priv site's real content moved to
+    docs/priv/ (see docs/priv/README.md) and is NOT part of the build.
 
 
 This repo is the docusaurus markdown site before they enter the web app for We The Citizens. 
@@ -22,7 +26,7 @@ subdomains reach the EC2 web app.
 
 | Domain | Code directory | Hosted by | Route 53 record |
 |---|---|---|---|
-| `wethecitizens.io` (apex) | `{PUB_DIR}` (**this repo**) | GitHub Pages, repo `BryanStarbuck/uplift`, workflow `.github/workflows/deploy.yml` | 4 × `A` → `185.199.108–111.153`, plus `AAAA` → `2606:50c0:800{0..3}::153` |
+| `wethecitizens.io` (apex) | `{SITE_DIR}` (**this repo**) | GitHub Pages, repo `BryanStarbuck/uplift`, workflow `.github/workflows/deploy.yml` | 4 × `A` → `185.199.108–111.153`, plus `AAAA` → `2606:50c0:800{0..3}::153` |
 | `www.wethecitizens.io` | same as apex | GitHub Pages (301 → apex) | `CNAME` → `bryanstarbuck.github.io` |
 | `app.wethecitizens.io` | `~/BGit/Bryan_git/we_citizens/` | EC2 / Docker Swarm behind an ALB | `A` ALIAS → `dualstack.heroe9-appec2lb-prod-30037372.us-east-2.elb.amazonaws.com` |
 | `api.wethecitizens.io` | `~/BGit/Bryan_git/we_citizens/code/backend/` | same ALB | `A` ALIAS → same ALB |
@@ -33,11 +37,11 @@ are We The Citizens. `upliftamerica.net` no longer serves this site.
 
 ### Publishing the public site
 
-Every push to `main` triggers `.github/workflows/deploy.yml`, which builds `pub/` and deploys
-the artifact to GitHub Pages. `priv/` is never published. Two things pin the custom domain and
-both must stay in sync:
+Every push to `main` triggers `.github/workflows/deploy.yml`, which builds the site from the
+repo root (content under `site/`) and deploys the artifact to GitHub Pages. `docs/priv/` is
+never published. Two things pin the custom domain and both must stay in sync:
 
-* `{PUB_DIR}/static/CNAME` — must contain exactly `wethecitizens.io` (it ships inside the build artifact)
+* `{SITE_DIR}/static/CNAME` — must contain exactly `wethecitizens.io` (it ships inside the build artifact)
 * The repo's Pages setting — `gh api repos/BryanStarbuck/uplift/pages` must report
   `"cname": "wethecitizens.io"` with an approved cert covering `wethecitizens.io` + `www.wethecitizens.io`
 
@@ -48,38 +52,50 @@ Rules when touching DNS:
 
 ## Project Structure
 
-ROOT_DIR dir is ~/BGit/Bryan_git/docu_we_citizens
+ROOT_DIR dir is ~/BGit/act3/docus_we_citizens
 
-PUB_DIR dir is {ROOT_DIR}/pub
-PRIV_DIR dir is {ROOT_DIR}/priv
+SITE_DIR dir is {ROOT_DIR}/site
 
 ```
 {ROOT_DIR}/
-├── pub/                # Public Docusaurus site (wethecitizens.io)
-├── priv/               # Private/internal Docusaurus site (team only)
+├── docusaurus.config.ts   # Single Docusaurus site config (at repo root)
+├── package.json           # Docusaurus deps + scripts (npm start / npm run build)
+├── tsconfig.json
+├── site/                  # ALL site content
+│   ├── docs/              # Docs pages (Bonhoeffers, challengers, legal, ...)
+│   ├── blog/              # Blog posts
+│   ├── pages/             # React pages (index.tsx, 404.tsx)
+│   └── static/            # CNAME, robots.txt, img/
+├── internal/              # Site wiring (not content)
+│   ├── sidebars.ts
+│   └── css/custom.css
 ├── knowledge/          # Shared research, source material
 ├── prompts/            # Prompt files
 ├── Product/            # TO_DO.md, Goal.md, Use_Cases.md, Decisions.yaml
 ├── Engineering/        # Architecture, deployment, infra docs
 ├── Research/           # Policy research, talking points, opposition research
 ├── tests/              # Test_Results/, Test_cases.csv
-├── docs/               # Wiki markdown + subdirs
+├── docs/               # Wiki markdown + subdirs (docs/priv/ = old priv-site content, unpublished)
 ├── UI/ascii/           # ASCII UI mockups
 ├── UI/screenshots/     # images/ + markdown/
-├── README.md, claude.md
+├── README.md, CLAUDE.md
 ```
 
-## Docusaurus Sites
+## Docusaurus Site
 
-* pub/ and priv/ are independent Docusaurus installations with their own package.json, docusaurus.config.ts, and sidebars
-* pub/ is the production public site deployed to wethecitizens.io
-* priv/ is internal-only, run locally or on a private URL for team coordination
-* Each site follows standard Docusaurus structure: docs/, blog/, src/, static/
+* One Docusaurus installation at the repo root; content lives under site/
+  (docs, blog, pages, static) and wiring under internal/ (sidebars, css) —
+  same pattern as ~/BGit/act3/docu_social_media/
+* docusaurus.config.ts points at them: docs.path = site/docs,
+  blog.path = site/blog, pages.path = site/pages,
+  staticDirectories = [site/static], sidebarPath = ./internal/sidebars.ts,
+  customCss = ./internal/css/custom.css
+* Production public site deployed to wethecitizens.io
+* Internal-only team content lives in docs/priv/ (plain markdown, never built)
 
-## Dev Servers
+## Dev Server
 
-* pub/ dev server: `cd {PUB_DIR} && npm start` → http://localhost:3849/
-* priv/ dev server: `cd {PRIV_DIR} && npm start -- --port 3848`
+* `cd {ROOT_DIR} && npm start` → http://localhost:3849/
 
 ## Docusaurus Cache Bug (RECURRING)
 
@@ -100,13 +116,12 @@ PREVENTION:
 
 STARTUP SEQUENCE (use this every time):
 ```
-cd {PUB_DIR} && npx docusaurus clear && npm start
-cd {PRIV_DIR} && npx docusaurus clear && npm start -- --port 3848
+cd {ROOT_DIR} && npx docusaurus clear && npm start
 ```
 
-Also check for stale processes on ports 3849/3848 before starting:
+Also check for a stale process on port 3849 before starting:
 ```
-lsof -ti :3849 | xargs kill 2>/dev/null; lsof -ti :3848 | xargs kill 2>/dev/null
+lsof -ti :3849 | xargs kill 2>/dev/null
 ```
 
 ## Content Rules
@@ -120,8 +135,8 @@ When the user says "add people" (or "add this person", "add them to the list", o
 
 **1. Append to both list files.**
 
-* {PUB_DIR}/docs/Dietrich_Bonhoeffer.mdx — the broad Bonhoeffer roster (journalists, researchers, citizens, politicians, anyone who meets the criteria)
-* {PUB_DIR}/docs/Politican_Challengers.mdx — the politician-specific subset
+* {SITE_DIR}/docs/Dietrich_Bonhoeffer.mdx — the broad Bonhoeffer roster (journalists, researchers, citizens, politicians, anyone who meets the criteria)
+* {SITE_DIR}/docs/Politican_Challengers.mdx — the politician-specific subset
 
 Both files have a `## The List` section with a numbered list. Append new entries to the end of that numbered list, preserving numbering order. Entry format:
 
@@ -135,7 +150,7 @@ N. [Full Name](/docs/bonhoeffers/<slug>) — [@handle](https://x.com/handle)
 
 **2. Create an individual person page.**
 
-Create `{PUB_DIR}/docs/Bonhoeffers/<First_Last>.mdx` (one file per person). Frontmatter:
+Create `{SITE_DIR}/docs/Bonhoeffers/<First_Last>.mdx` (one file per person). Frontmatter:
 
 ```
 ---
@@ -148,13 +163,13 @@ slug: /bonhoeffers/<first-last>
 Page contents:
 
 * Header bullets: X handle link, `**Status:** Alive`, one-line role description
-* `## Bonhoeffer Criteria Scores (1–10)` — a 15-row markdown table of all criteria from {PUB_DIR}/docs/Dietrich_Bonhoeffer_Criteria.mdx, scored 1–10
+* `## Bonhoeffer Criteria Scores (1–10)` — a 15-row markdown table of all criteria from {SITE_DIR}/docs/Dietrich_Bonhoeffer_Criteria.mdx, scored 1–10
 * For criteria where public-record knowledge is unclear, use `—` (em-dash) rather than guessing a score
 * `## Notes` — short paragraph; include any cost-bearing public actions, executive history, or government background
 
 **3. Verify the build.**
 
-Run `cd {PUB_DIR} && npx docusaurus clear && npm run build` after the edits to confirm no broken links.
+Run `cd {ROOT_DIR} && npx docusaurus clear && npm run build` after the edits to confirm no broken links.
 
 ## Movement Concept: 1,000 Bonhoeffers
 
@@ -188,8 +203,8 @@ How to apply this when writing for We The Citizens:
 * Treat "1,000 Bonhoeffers" as the movement's recruiting and character
   standard — ethics first, distributed, resilient to the removal of any
   single leader.
-* When framing for the public site (pub/), follow defamation rules — describe
+* When framing for the public site (site/), follow defamation rules — describe
   the system as captured/controlled in attributed terms, not as proven
   criminal acts by named living individuals.
-* The internal site (priv/) can carry the unvarnished version of the charter
+* The internal content (docs/priv/) can carry the unvarnished version of the charter
   for organizers.
