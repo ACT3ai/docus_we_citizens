@@ -6,6 +6,13 @@
   - pub/ = public-facing website at wethecitizens.io
   - priv/ = internal team docs (not published publicly)
 
+
+This repo is the docusaurus markdown site before they enter the web app for We The Citizens. 
+
+NEW REPO for this Docusaurus for WeTheCitizens.io:   https://github.com/ACT3ai/docus_we_citizens.git
+
+It used to have an old repo. Note that the above is the newest as of August 15th, 2026. 
+
 ## Domains → Code → Hosting (authoritative)
 
 DNS for `wethecitizens.io` lives in **AWS Route 53**, hosted zone `Z00802751HL8B4GZPUCJH`
