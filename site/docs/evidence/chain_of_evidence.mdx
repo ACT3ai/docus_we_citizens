@@ -1,0 +1,61 @@
+---
+id: chain_of_evidence
+title: Chain of evidence
+sidebar_label: Chain of evidence
+sidebar_position: 2
+description: "Links, strength, sources, and the case that holds them together."
+---
+
+
+# Chain of evidence
+
+## The case
+
+Every chain begins with a **claim** stated precisely enough to be wrong, and a **threshold** — the
+confidence at which you would act on it.
+
+Stating the threshold first is the discipline. Deciding what would convince you *after* you have looked
+at the evidence is how everybody rationalises, including people who are right.
+
+## The links
+
+Each link is one step in the argument, and carries:
+
+**`statement`** — what this link asserts. One claim, not a paragraph.
+
+**`status`** — `have` or `missing`.
+
+**`source`** — for links you have. Something a stranger can check.
+
+**`strength`** — 0 to 1: how much this link actually contributes to the chain.
+
+**`reason`** — for links you are missing: `classified`, `suppressed`, `blocked`, or `unknown`.
+
+**`note`** — anything a reader needs to interpret it.
+
+## Strength is not enthusiasm
+
+The field people get wrong. Strength is *how much work this link does in the argument*, not how much
+you like it or how well sourced it is.
+
+A perfectly sourced link that everybody already agrees on has low strength — it is not what the
+conclusion turns on. A weaker link that is the **only** thing distinguishing your hypothesis from the
+alternative has high strength, and if it is the one that is missing, that is the most important fact
+about your chain.
+
+## The conclusion
+
+Computed from the strength of what you have, weighed against the explained weight of what is missing.
+It reports whether a conclusion is **reached**, at what confidence, and a summary in the form the
+charter asks for: *here is what we know, here is what is missing, here is the conclusion.*
+
+## A half-built chain is valid
+
+Everything except the case id defaults. You can write the claim and two links today and come back. A
+tool that demands a finished argument only ever receives arguments people had already finished having.
+
+## Two homes, one shape
+
+The same structure is used as a standalone case and as the evidence block **inside a decision**. Same
+fields, same arithmetic, same rendering. A chain you built standalone can be the chain a decision rests
+on without being rewritten.

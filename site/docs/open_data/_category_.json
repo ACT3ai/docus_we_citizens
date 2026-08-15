@@ -1,0 +1,8 @@
+{
+  "label": "Open Data",
+  "position": 28,
+  "link": {
+    "type": "generated-index",
+    "description": "The movement's public record is a git repository. Clone it, check it, send back a correction."
+  }
+}

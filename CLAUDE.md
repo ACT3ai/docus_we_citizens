@@ -28,8 +28,8 @@ subdomains reach the EC2 web app.
 |---|---|---|---|
 | `wethecitizens.io` (apex) | `{SITE_DIR}` (**this repo**) | GitHub Pages, repo `BryanStarbuck/uplift`, workflow `.github/workflows/deploy.yml` | 4 × `A` → `185.199.108–111.153`, plus `AAAA` → `2606:50c0:800{0..3}::153` |
 | `www.wethecitizens.io` | same as apex | GitHub Pages (301 → apex) | `CNAME` → `bryanstarbuck.github.io` |
-| `app.wethecitizens.io` | `~/BGit/Bryan_git/we_citizens/` | EC2 / Docker Swarm behind an ALB | `A` ALIAS → `dualstack.heroe9-appec2lb-prod-30037372.us-east-2.elb.amazonaws.com` |
-| `api.wethecitizens.io` | `~/BGit/Bryan_git/we_citizens/code/backend/` | same ALB | `A` ALIAS → same ALB |
+| `app.wethecitizens.io` | `~/BGit/act3/we_citizens/` | EC2 / Docker Swarm behind an ALB | `A` ALIAS → `dualstack.heroe9-appec2lb-prod-30037372.us-east-2.elb.amazonaws.com` |
+| `api.wethecitizens.io` | `~/BGit/act3/we_citizens/code/` (backend) | same ALB | `A` ALIAS → same ALB |
 
 Note: the GitHub remote for this repo is still named `BryanStarbuck/uplift` — a leftover from
 when the site was "Uplift America". The repo *name* is stale; the content and the custom domain
@@ -208,3 +208,112 @@ How to apply this when writing for We The Citizens:
   criminal acts by named living individuals.
 * The internal content (docs/priv/) can carry the unvarnished version of the charter
   for organizers.
+
+====================================================================
+LEVEL 2 AREAS — THE CONTENT REGISTRY
+====================================================================
+
+The list of directories which we call the Level 2 directories is under
+(LEVEL_2_DIRECTORIES):
+{SITE_DIR}/docs/
+
+* {SITE_DIR}/docs/{one specific level 2 dir}/
+* {SITE_DIR}/docs/{one specific level 2 dir}/overview.mdx <== The UI page for that "Level 2 area"
+* {SITE_DIR}/docs/{one specific level 2 dir}/{level 3 page}.mdx <== A UI page
+  for a Level 3. The name won't be overview.mdx; it'll be a few words,
+  underscores, always lowercase. The Level 2 overview.mdx should link to it.
+
+This file is where we keep the list of the level twos, with descriptions to
+understand the meaning and scope of each one:
+{ROOT_DIR}/level_2.csv
+
+Related repos for this topic:
+
+* ~/BGit/act3/we_citizens/ — the main product (web app). code/ is the app;
+  pm/ holds the product management specification files (also ai/, cli/, mcp/).
+* ~/BGit/act3/data_we_citizens/ — the movement's open data repo. Look in here
+  to learn things when writing pages. This site's job is introduction:
+  ramping people up from knowing nothing to understanding it; lower Level 3s
+  can get more specific.
+
+We pair up with our social network, which is secondary, but sometimes we'll
+make references to it:
+
+* Social network name = WeCitizens Social
+* Social network domain: WeCitizens.social
+* Social network marketing site docusaurus: m.WeCitizens.social
+  (repo: ~/BGit/act3/docu_social_media/)
+
+====================================================================
+THE TWO PARTY FRONT DOORS
+====================================================================
+
+We The Citizens has two partisan front doors. They are Level 2 areas on this
+site and they are also pinned items in the top bar.
+
+* "We The Citizens R"  -> Republicans -> WeCitizensR.com
+  level_2_key = we_the_citizens_r
+* "We The Citizens D"  -> Democrats   -> WeCitizensD.com
+  level_2_key = we_the_citizens_d
+
+They are ONE web app rendered two ways, selected by the domain the request
+arrived on. Not two products, not two deployments, not two data sets.
+
+THE MIRROR-SYMMETRY RULE binds everything we write about them. Everything true
+of R is true of D with the party label swapped: one award pipeline, symmetric
+harshness, no copy that compares or characterizes a party, the cross-party
+column always present. The unit of judgement is a person and a vote, never a
+party. Review test for any change: "would I ship the exact mirror of this to
+the other edition tomorrow?" If no, it does not ship.
+
+The authoritative product spec is ~/BGit/act3/we_citizens/pm/r_vs_d.mdx.
+Read it before writing anything new about the two editions.
+
+====================================================================
+SITE NAVIGATION — ONE SOURCE, EVERY PAGE
+====================================================================
+
+The top bar and the footer are defined ONCE and appear on every page. Do not
+add a second navbar or footer anywhere.
+
+* internal/nav.ts is THE single source of truth.
+  It reads level_2.csv at build time and generates the party front-door navbar
+  items, the "More" mega-menu, the footer columns, and the footer column-title
+  links. Node-side only — it touches the filesystem, so never import it from a
+  client component.
+
+* docusaurus.config.ts consumes it: partyNavbarItems(), moreNavbarItem(),
+  footerColumns(), clientNavData().
+
+* Docusaurus renders themeConfig.navbar / themeConfig.footer through
+  @theme/Layout, and every surface on this site — MDX docs, blog posts, and
+  the hand-written React pages under site/pages/ — is wrapped in that Layout.
+  That is why one edit in internal/nav.ts changes the whole site.
+
+* Anything the BROWSER needs from internal/nav.ts crosses over through
+  siteConfig.customFields (clientNavData()), never by importing the module.
+
+Two swizzled theme components support this:
+
+* src/theme/NavbarItem/NavbarNavLink — adds a `subLabel` prop, which renders a
+  navbar or dropdown label on two lines ("We The Citizens R" over
+  "Republicans"). Every navbar link funnels through this one component, so the
+  two-line label works in the top bar, in dropdowns, and in the mobile drawer.
+* src/theme/Footer/Links/MultiColumn — makes footer column titles clickable,
+  using the title -> route map from customFields.footerColumnLinks.
+
+TO ADD A LEVEL 2 AREA:
+1. Add the row to level_2.csv.
+2. Create site/docs/{level_2_key}/overview.mdx and _category_.json
+   (_category_.json position = the nav_order column).
+3. Put the key in one MENU_GROUPS group and one FOOTER_GROUPS group in
+   internal/nav.ts, and give it a short subLabel.
+Step 3 is enforced: the build FAILS with a named error if a CSV key is in no
+group, in two groups, or in a group but not in the CSV. That guard is what
+keeps "the More menu shows all the Level 2s" true over time.
+
+WIDTH BUDGET FOR THE TOP BAR (internal/css/custom.css, "Fitting the bar"):
+the navbar rides a 1320px rail. Below 1380px the four site links
+(.wcNavFoldable) fold out of the bar and their duplicates in the More menu
+(.wcMoreFolded) appear instead. If you add another top-bar item, re-check
+that budget.

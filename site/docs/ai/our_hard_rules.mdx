@@ -1,0 +1,55 @@
+---
+title: Our hard rules
+sidebar_position: 4
+description: Rules the codebase enforces on itself, including one that fails the build.
+---
+
+
+# Our hard rules
+
+Some commitments are too important to leave to intention. These are enforced by the code, and at least
+one of them fails the build if it is violated.
+
+## The web app never downloads media
+
+**The app and the CLI never download a video or an audio file.** Not by any tool, not by any library,
+not by any workaround, and there is no flag, no admin switch, and no environment where it is relaxed.
+
+Media arrives on disk by some other means, entirely outside this codebase. The app reads what is
+already there: hand it an absolute path to a file on your machine and it will work with it; hand it a
+URL and it refuses at the edge with an error that names the file and the remedy, rather than creating a
+job that can only fail later.
+
+### It is enforced by the build, not by memory
+
+A check runs in the test suite and **fails the build** on any executable reference to a fetching tool,
+or any stream-to-disk outside one explicit, admin-triggered, checksum-pinned model installer —
+**including inside string literals**, because an earlier version of the check walked straight past a
+tool name passed as a string.
+
+The cost of that strictness is that our own error messages have to describe the rule rather than name
+the tool. That is better copy anyway.
+
+### The consequences are stated, not hidden
+
+Channel import reads a public feed and therefore sees roughly the most recent fifteen videos rather
+than a full history; the full history comes from an official API the app already speaks and meters. The
+capability probe reports the fetching tool as permanently unavailable, and the admin console shows the
+feature as off **with this rule as the reason**.
+
+## Say what you saw, not just that you failed
+
+Any screen reporting that something is absent must say what it actually observed. *"There is a folder
+there and it is missing its marker file"* is a different instruction from *"clone this"*, and only one
+of them matches what the user is looking at.
+
+## Cache a yes forever if you like; never cache a no
+
+The thing that was missing is precisely the thing somebody is fixing right now. Any UI reporting the
+absence of something the user is actively creating must re-ask on its own.
+
+## A false remedy is worse than no remedy
+
+An error message that confidently suggests the wrong fix costs more than one that admits it does not
+know. This rule exists because we broke it once: a failure caused by a dead URL reported a completely
+unrelated cause, and it sent people chasing the wrong problem for days.

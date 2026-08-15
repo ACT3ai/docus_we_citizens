@@ -1,0 +1,64 @@
+---
+id: overview
+title: Values
+sidebar_label: Values
+sidebar_position: 1
+description: "Pillar 3: turn your ethics into something an AI can apply consistently, at scale, on your behalf."
+---
+
+
+# Values
+
+:::tip[The question this area answers]
+**How can software possibly represent what I believe?**
+:::
+
+Pillar 3. A citizen captures their **this-versus-that rules** — what matters more, what is ethical, how
+a situation should be handled — as a structured value system. An AI can then apply *those rules* to
+real situations and produce recommendations consistent with the citizen's own ethics.
+
+This is the pillar that turns subjective values into **executable logic**.
+
+## What a value system contains
+
+**Rules**, read top-down. Each has a `when` (the conflict it governs), a `prefer` (which side wins), an
+optional `unless` (the exception that flips it), a `weight`, and a `rationale`.
+
+```yaml
+- id: r1
+  when: "individual liberty conflicts with collective safety"
+  prefer: "liberty"
+  unless: "imminent, specific, proven harm"
+  weight: 0.8
+  rationale: "Rights are the default; the bar to override them is high and evidentiary."
+```
+
+**Principles** — unconditional statements that are not this-versus-that.
+
+**Priorities** — a ranked fallback for a conflict no explicit rule covers.
+
+## A partial value system is a valid value system
+
+Everything except a name and an id has a sane default. **A citizen who has written one rule has a
+working value system.** You are not asked to axiomatise your ethics before the software will talk to
+you.
+
+## Policy packets
+
+A value system travels. You can publish yours as a **policy packet** to the movement's social network,
+or import somebody else's whose judgment you trust — cached locally, attributed to its author, and
+yours to edit.
+
+Publishing requires a real identity. Reading, writing, and applying your own never does.
+
+## Pages in this area
+
+- **[Write down your values](./write_down_your_values.mdx)** — how to start, and what makes a good rule.
+- **[Policy packets](./policy_packets.mdx)** — publishing and importing.
+- **[Where this stops](./where_this_stops.mdx)** — the honest limits.
+
+## Where to go next
+
+- **[Decisions](../decisions/overview.mdx)** — the area before this one.
+- **[Evidence](../evidence/overview.mdx)** — the area after this one.
+- **[Open the app](https://app.WeTheCitizens.io)** — do this for real, on your own seats.

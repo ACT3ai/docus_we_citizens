@@ -1,0 +1,54 @@
+---
+title: Do the math yourself
+sidebar_position: 4
+description: The whole equation is a weighted average, and every award has a page that shows the derivation term by term.
+---
+
+
+# Do the math yourself
+
+The point of publishing the arithmetic is that you do not have to trust us. Every award has a page
+that lists each act, its category, its score, and its weight — and the whole equation is one line.
+
+## The equation
+
+```
+Monkey Award  =  ( SUM over all acts of  score(category) x weight(category) )
+                 -------------------------------------------------------
+                 (        SUM over all acts of  weight(category)        )
+```
+
+A weighted average. That is all of it.
+
+## What is deliberately not in it
+
+Several plausible-sounding adjustments were tried and **retired**, and it is worth knowing why, because
+each one sounds reasonable until you use it:
+
+* **A headwind multiplier** — credit for voting the hard way against your own party. Retired: it
+  requires the movement to decide what was politically hard for each person, which is a judgment about
+  their circumstances rather than a record of their acts.
+* **An outcome multiplier** — weighting by whether the vote actually changed the result. Retired: it
+  makes a person's award depend on how everybody else voted.
+* **A persistence multiplier**, **floors**, **a shared curve**, **a peer cohort** — all retired, all
+  for the same underlying reason: each one made the number about something other than what this person
+  did.
+
+What survives is the plainest possible instrument, and plain is a feature. A number a citizen can
+recompute with a calculator is a number they can argue with.
+
+## Reproducing one
+
+1. Open a politician's award page and take the table of acts.
+2. For each act, look up its category's score and weight in the published math table.
+3. Multiply, sum, divide by the sum of weights.
+4. Round as the table says.
+
+If your number differs from ours, that is a finding, and there is a channel for it. The equations are
+normative in the math table file; where the prose and the table disagree, the table wins on arithmetic.
+
+## The identifiers do not lie about the language
+
+Routes like `/politicians/:key/score` stay routable forever, and internal field names still say
+"score", because breaking a link somebody shared is worse than an old word in a URL. What binds is
+every **rendered** string a citizen reads.

@@ -1,0 +1,64 @@
+---
+id: areas
+title: Areas
+sidebar_label: Areas
+sidebar_position: 3
+description: "The middle layer, why aggregation happens here, and the cursor that keeps switching cheap."
+---
+
+
+# Areas
+
+## What an area is
+
+A named subdivision of a community that holds a set of decisions. Nothing more complicated than that —
+and its simplicity is the point.
+
+```
+communities/<community>/areas/<area>/
+  area.yaml
+  decisions/
+    decision_1.yaml   decision_1.md
+    decision_2.yaml   decision_2.md
+```
+
+## Why the middle layer exists
+
+Because a community is too coarse to aggregate over and a decision is too fine.
+
+Two citizens in the same community may be working on entirely unrelated questions; pooling across all
+of it would produce an average of nothing. Two citizens working in the same **area** are looking at the
+same body of material — so their disagreement is meaningful, and so is their agreement.
+
+**Aggregation therefore happens at the area.**
+
+## The cursor
+
+Which community you are currently in is a **cursor** — per-user state, rendered as a dropdown at the
+top of the areas list.
+
+It is deliberately not a navigation event and deliberately not part of the left bar. Switching
+communities should cost one click and no reorientation; making it a route would turn a lightweight
+context change into what feels like leaving the application.
+
+## Numbering
+
+Decisions are numbered within their area. The number is stable — decision 4 stays decision 4 even if
+decision 3 is withdrawn — because a citation into an area's decision has to keep resolving.
+
+## Scope, and the layered libraries
+
+The area is also a **layer** in the context assembly. When a decision is calculated, the engine walks:
+
+```
+Earth -> country -> state/province -> community -> AREA -> decision
+```
+
+An area can carry its own facts and its own metaphysics, applying to everything inside it and nothing
+outside. That is how a working group can establish shared background once instead of restating it in
+every chain.
+
+## Keys
+
+Lowercase, underscored slugs, frozen at creation. Same rule as everywhere else in the product, for the
+same reason: identity must survive renaming.

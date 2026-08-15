@@ -1,0 +1,61 @@
+---
+id: community_consensus
+title: Community consensus
+sidebar_label: Community consensus
+sidebar_position: 4
+description: "How individual decisions pool into a community position, and why the delta is shown."
+---
+
+
+# Community consensus
+
+## The hierarchy
+
+```
+COMMUNITY   a named workspace many citizens share, with an access model
+  AREA      a named subdivision holding a set of decisions
+    DECISION  one question, one position, one chain
+```
+
+Aggregation happens **within an area**, because that is the scope at which people are actually working
+on the same thing.
+
+## Pooling
+
+When several citizens have recorded positions on the same question, the community position is computed
+from them. Inside the trusted layer, votes are weighted by earned merit — bounded at 2×, never more, so
+no individual can own an outcome.
+
+Where merit does not yet exist, weighting is **flat** and the record notes that it was. The arithmetic
+is well defined on day one and becomes meritocratic as the ladder fills.
+
+→ [Meritocracy](../meritocracy/overview.mdx)
+
+## The delta is the point
+
+The product shows **the difference between your position and the community's**, and it does not
+encourage you to resolve it.
+
+Most consensus tools are built to make disagreement disappear. This one treats it as the most
+informative output available: if you and a group that shares your standard reached different
+conclusions from the same public record, exactly one of three things is true, and all three are worth
+knowing.
+
+* Your chain has a link theirs does not, and you should show them.
+* Theirs has one yours does not, and you should look.
+* You are weighing the same links differently — which is a **values** difference, not a factual one,
+  and it belongs in [Values](../values/overview.mdx) rather than in an argument about evidence.
+
+That third case is the one most political argument is actually about, and it is unresolvable by
+evidence. Naming it as a values difference ends a great many pointless fights.
+
+## Access
+
+Communities carry an access model — owners, writers, readers, and an optional world-read flag — so a
+community can be a private working group or a public record.
+
+## Minimum samples, and honesty about them
+
+A layer with too few votes is **published and flagged**, with its weight scaled down as the sample
+shrinks. It is never silently discarded: one careful citizen who read the record is information, and
+throwing it away to protect a false precision is its own distortion.

@@ -1,0 +1,59 @@
+---
+id: run_it_on_your_computer
+title: Run it on your computer
+sidebar_label: Run it on your computer
+sidebar_position: 3
+description: "The local-first path, the CLI, the MCP server, and why local is the default."
+---
+
+
+# Run it on your computer
+
+## The shape of it
+
+Clone the app, clone the record, start it, open a browser. The app serves a local web UI and a local
+API on your own machine, and reads the movement's record from your disk.
+
+```bash
+git clone https://github.com/ACT3ai/we_the_citizens.git
+git clone https://github.com/ACT3ai/data_we_citizens.git
+```
+
+Then follow the repository's own run instructions — it is driven by a task file, and the app prints the
+local URL when it is up.
+
+## Why local is the default rather than a power-user option
+
+**Your reasoning is yours.** Positions, value systems and evidence chains are flat files on your disk.
+Readable in a text editor, greppable, backed up however you back things up.
+
+**No permission required.** Nothing about a movement for challenging power should depend on a server
+somebody can switch off.
+
+**Login is optional.** The default user can do everything. Identity matters only for Community Mode and
+publishing.
+
+**It is complete.** Local is not a preview of the hosted product. The hosted one is the compromise.
+
+## `wtcx` — the command line
+
+A CLI over the same state, for the work that arrives in batches rather than one item at a time. It has
+a verb catalog, a strict argument contract, and circuit breakers you can read and reset.
+
+It obeys the same hard rules as the app. Most visibly: hand it a path to a file on your disk and it
+works; hand it a URL and it **refuses at the edge**, with an error naming the file and the remedy,
+rather than creating a job that could only fail later.
+
+## The MCP server
+
+An MCP server ships with the app so an AI assistant can query the movement's record through a typed
+tool catalog — with a security model, a SQL guard on anything that reads the database directly, and a
+defined response contract.
+
+This is the supported way to point an assistant at the record. Scraping the web app is not.
+
+## Keeping the record current
+
+The public record is a git repository. `git pull` updates it. Because it is version-controlled, you can
+also see exactly **what the movement changed and when** — the edit history of our claims is part of the
+public record too.

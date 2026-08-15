@@ -1,0 +1,38 @@
+---
+title: The coverage matrix
+sidebar_position: 3
+description: The grid that shows exactly which root causes a draft closes, and which it does not.
+---
+
+
+# The coverage matrix
+
+The coverage matrix is one grid: **root causes down the side, bills across the top, a mark in each
+cell.** It is the single most useful object in this part of the movement, because it is the only one
+that shows what is *missing*.
+
+|  | Bill 1 | Bill 2 | Bill 3 | Bill 4 |
+|---|---|---|---|---|
+| rc1 — no duty to produce | Y | — | — | — |
+| rc2 — exemption too broad | — | Y | — | — |
+| rc3 — conclusions classified | — | Y | Y | — |
+| rc4 — no penalty for silence | Y | Y | Y | Y |
+| rc5 — agency checks itself | — | — | — | Y |
+| rc6 — no independent publication | — | — | — | Y |
+| rc7 — no clock | Y | — | Y | — |
+
+## Why it is stored as a join, not as a list on either side
+
+Coverage is a relationship between a problem and a bill, so it is recorded as its own row that names
+both. It is deliberately **not** an array hanging off the problem, and deliberately not an array
+hanging off the bill.
+
+The reason is auditability. If each side kept its own list, the two lists would drift, and the day
+they disagreed there would be no way to tell which one was lying. One row, named on both ends, cannot
+disagree with itself.
+
+## Reading a gap
+
+A row with no marks across it is not a failure of the movement. It is an open piece of work with a
+name, and it is the most honest thing on the page. It tells a citizen exactly where a contribution
+would matter.

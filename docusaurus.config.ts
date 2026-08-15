@@ -2,6 +2,20 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+// Single source of truth for the Level 2 areas and everything built from them.
+// internal/nav.ts reads level_2.csv at build time and generates the party
+// front-door navbar items, the "More" mega-menu, the footer columns, and the
+// clickable footer column titles. The navbar and footer defined below are
+// rendered by @theme/Layout, which wraps every docs page, blog post and React
+// page under site/pages/, so editing internal/nav.ts changes the top bar and
+// the footer on every page of the site at once.
+import {
+  clientNavData,
+  footerColumns,
+  moreNavbarItem,
+  partyNavbarItems,
+} from './internal/nav';
+
 const SITE_URL = 'https://wethecitizens.io';
 // The paired We The Citizens web app — every Join / Create account CTA lands here.
 const WEBAPP_URL = 'https://app.WeTheCitizens.io/';
@@ -75,6 +89,13 @@ const config: Config = {
   onBrokenAnchors: 'warn',
 
   staticDirectories: ['site/static'],
+
+  // Node-side nav data the browser needs (the footer's clickable column titles).
+  // Read with useDocusaurusContext().siteConfig.customFields.
+  customFields: {
+    ...clientNavData(),
+  },
+
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
@@ -230,29 +251,41 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        {to: '/docs/about', label: 'About Us', position: 'left'},
-        {to: '/docs/intro', label: 'Charter', position: 'left'},
-        {to: '/#principles', label: 'Principles', position: 'left'},
-        {to: '/#programs', label: 'Programs', position: 'left'},
-        {to: '/docs/board', label: 'Board', position: 'left'},
-        {to: '/#governance', label: 'Governance', position: 'left'},
-        {to: '/blog', label: 'Blog', position: 'right'},
+        // The four site links. `wcNavFoldable` lets CSS fold them into the
+        // "More" menu below 1380px, where the whole row no longer fits — the
+        // matching `wcMoreFolded` duplicates live in internal/nav.ts.
         {
-          type: 'dropdown',
-          label: 'More',
-          position: 'right',
-          items: [
-            {label: 'Dietrich Bonhoeffer', to: '/docs/dietrich-bonhoeffers'},
-            {
-              label: 'Dietrich Bonhoeffer Criteria',
-              to: '/docs/bonhoeffer-criteria',
-            },
-            {
-              label: 'Politician Challengers',
-              to: '/docs/politician-challengers',
-            },
-          ],
+          to: '/docs/about',
+          label: 'About Us',
+          position: 'left',
+          className: 'wcNavFoldable',
         },
+        {
+          to: '/docs/intro',
+          label: 'Charter',
+          position: 'left',
+          className: 'wcNavFoldable',
+        },
+        {
+          to: '/#principles',
+          label: 'Principles',
+          position: 'left',
+          className: 'wcNavFoldable',
+        },
+        {
+          to: '/docs/board',
+          label: 'Board',
+          position: 'left',
+          className: 'wcNavFoldable',
+        },
+        // The two partisan front doors — "We The Citizens R" over "Republicans",
+        // "We The Citizens D" over "Democrats". Each is a dropdown whose own
+        // label links to that area's overview.mdx.
+        ...partyNavbarItems(),
+        // "More ⌄" — every Level 2 area, each going to its overview.mdx, plus
+        // the movement pages (Programs, Governance, the Bonhoeffer pages).
+        moreNavbarItem(),
+        {to: '/blog', label: 'Blog', position: 'right'},
         {
           href: WEBAPP_URL,
           label: 'Enter App →',
@@ -263,72 +296,9 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'The Charter',
-          items: [
-            {
-              label: 'About We The Citizens',
-              to: '/#charter',
-            },
-            {
-              label: 'The Seven Principles',
-              to: '/#principles',
-            },
-            {
-              label: 'Founding Board',
-              to: '/docs/board',
-            },
-          ],
-        },
-        {
-          title: 'Programs',
-          items: [
-            {
-              label: 'Annual Conference',
-              to: '/#programs',
-            },
-            {
-              label: 'Campus Debates',
-              to: '/#programs',
-            },
-            {
-              label: 'Blog & Updates',
-              to: '/blog',
-            },
-          ],
-        },
-        {
-          title: 'Transparency',
-          items: [
-            {
-              label: 'Governance',
-              to: '/#governance',
-            },
-            {
-              label: 'Public Financials',
-              to: '/#governance',
-            },
-            {
-              label: 'Board Decisions',
-              to: '/#governance',
-            },
-          ],
-        },
-        {
-          title: 'Legal',
-          items: [
-            {
-              label: 'Terms of Service',
-              to: '/docs/legal/terms',
-            },
-            {
-              label: 'Privacy Policy',
-              to: '/docs/legal/privacy',
-            },
-          ],
-        },
-      ],
+      // Built from internal/nav.ts, the same data the navbar uses, so the two
+      // can never drift. Rendered by @theme/Layout on every page of the site.
+      links: footerColumns(),
       copyright: `Copyright © ${new Date().getFullYear()} ${SITE_NAME}.`,
     },
     prism: {

@@ -1,0 +1,48 @@
+---
+title: Inside a legacy record
+sidebar_position: 2
+description: What is in a record for somebody who has held office, and where each piece came from.
+---
+
+
+# Inside a legacy record
+
+Open any record and you are looking at four layers, stacked from most checkable to least.
+
+## Layer 1 — identity
+
+Name, seat, party, term. Boring, and the layer most likely to be wrong for people who changed
+districts, changed parties, or share a name with somebody else. The frozen `key` — a slug like
+`barbara_lee_ca` — is the identity the rest of the system uses, precisely so that a display-name fix
+never orphans anything pointing at the record.
+
+## Layer 2 — the acts
+
+Every recorded act, classified into exactly one bucket. There are twelve, and they are the crossing of
+three questions:
+
+* Was it a **vote**, an **authorship**, or a **block**?
+* Was it on a **problem** instrument or a **good** one?
+* Did it **advance** that instrument or **resist** it?
+* And did it happen **on the floor**, or in the small room where there is no roll call?
+
+Each act carries its citation. This layer is the one a hostile reader should be able to audit line by
+line, and it is built to survive that.
+
+## Layer 3 — the awards
+
+Two numbers derived from layer 2 by published arithmetic, each with a page that shows the derivation
+term by term so a citizen can reproduce it with a calculator.
+
+## Layer 4 — what we do not have
+
+Coverage gaps, stated. A record with a thin decade says so rather than presenting a confident number
+computed over a fifth of a career. Confidence is **reported, never scored** — it is disclosure, and it
+never silently adjusts the award.
+
+## The wall
+
+Nothing outside the voting record touches layers 2 and 3. Interviews, background, education,
+statements, and qualification assessments feed the [Flamingo Award](../flamingo/overview.mdx) instead,
+and they never bubble up into Monkey or Llama. That separation is absolute and it is checked in the
+build.

@@ -1,0 +1,51 @@
+---
+title: The repo map
+sidebar_position: 2
+description: "What lives where: packages, specs, rubrics, and the data record."
+---
+
+
+# The repo map
+
+## The app repository
+
+```
+code/packages/
+  backend/     the API, the calc engines, the stores, the enforcement
+  frontend/    the web UI
+  shared/      types and schemas both sides agree on
+  wtcx/        the command-line interface
+
+pm/            the product specifications - one .mdx per surface, ~110 of them
+ai/            the assessment rubrics the AI runs against
+cli/  mcp/     the CLI and the MCP server
+```
+
+**`pm/` is the unusual one and the most useful one to read.** It is the movement's product
+specification, in the open: what each surface is for, what rule governs it, what was tried and retired
+and why. Arguments the movement had with itself are written down there, including the ones it lost.
+
+If you want to understand why something works the way it does, that directory answers it more directly
+than the code does.
+
+## The data repository
+
+```
+problems/         what is wrong, with root causes
+laws/             problem_laws/  good_bills/  good_laws/
+politicians/      legacy/  new/  both/  worrisom_challengers/  appearances/
+qualifications/   the sixteen rubric definitions
+scores/           the action catalog, scoring policy, award lists
+communities/  geo/  positions/  activism/
+provenance/       where every downloaded thing came from
+transcriptions/   and the list of what is still missing
+schema/           the shapes everything above has to satisfy
+```
+
+Flat files, mostly YAML, readable without our software.
+
+## How the two fit together
+
+The app has **no hidden copy of the data**. It reads the data repository from your disk. That is why a
+fresh install asks you to clone it first, and why you can inspect and correct anything the app shows
+you by opening a file.

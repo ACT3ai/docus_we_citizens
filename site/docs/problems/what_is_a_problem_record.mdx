@@ -1,0 +1,62 @@
+---
+id: what_is_a_problem_record
+title: What is a problem record
+sidebar_label: What is a problem record
+sidebar_position: 2
+description: "The anatomy of a problem: statement, harm, root causes, violation, and what fixed looks like."
+---
+
+
+# What is a problem record
+
+## The parts
+
+**A statement.** One named thing wrong with society, in plain language.
+
+**Severity, category, and scope.** How bad, what kind, and how far it reaches.
+
+**Who is harmed.** Named specifically. A problem that harms "everyone" usually turns out to be a mood
+rather than a problem, and being forced to answer this question is a useful filter.
+
+**A root-cause chain.** The separable harms underneath the statement, each with its own id. This is the
+most consequential field in the record.
+
+**The social-contract violation.** Which structural commitment is breached — the link to the
+[yardstick](../social_contract/overview.mdx) without which the record is only an opinion.
+
+**The desired outcome.** What "fixed" looks like, concretely enough to tell whether it happened.
+
+**Priority and status.** Where it sits, and where it is in its lifecycle.
+
+## The frozen key
+
+Every problem gets a `problem_key` at creation — a lowercase, underscored slug — and it **never
+changes**. Titles improve, severity moves, sources accumulate. The key is the identity, because a link
+somebody shared two years ago must still resolve to the same problem.
+
+## Two files, on purpose
+
+Each problem is stored as a structured file a machine can parse, plus a generated human-readable
+companion. The structured one drives the product; the companion is what somebody reads in a text editor
+without our software.
+
+Neither is a degraded copy of the other. That is the same pattern decisions use, for the same reason.
+
+## Why root causes matter more than anything else
+
+Because everything downstream is measured against them.
+
+A [fix bill](../good_bills/overview.mdx) claims to close specific numbered causes, and the coverage
+matrix shows which ones it leaves open. Without separable causes, "does this bill fix the problem" is
+an argument. With them, it is a grid.
+
+Splitting a grievance into causes is also the step where vagueness dies. *"They will not release it"*
+is one feeling. *"No statutory duty to produce by a date; an exemption broad enough to cover anything;
+classification applied to conclusions rather than sources; no penalty for silence; nobody outside the
+agency able to check"* is five drafting targets.
+
+## Who may write one
+
+Creating and modifying a problem is admin-gated, because a problem record is a claim the whole movement
+makes. **Anyone may propose one**, and the proposal is a request that never touches the record until an
+admin approves it — with a stated reason if they do not.

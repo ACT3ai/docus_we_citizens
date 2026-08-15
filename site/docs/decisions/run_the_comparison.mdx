@@ -1,0 +1,66 @@
+---
+id: run_the_comparison
+title: Run the comparison
+sidebar_label: Run the comparison
+sidebar_position: 3
+description: "Layered context assembly, the first-principles constraint, and what the output actually says."
+---
+
+
+# Run the comparison
+
+## Step 1 — assemble the context
+
+Before any reasoning happens, the engine builds the background it is entitled to use. It assembles
+parallel **dimensions** — facts (what we know), metaphysics (what is real), and the relevant law — each
+built identically:
+
+```
+start with an EMPTY file
+then concatenate the applicable layers, top-down:
+  Earth -> country -> state/province -> community -> area -> decision
+each block preceded by a header naming the source file it came from
+```
+
+**Starting empty is the load-bearing part.** Nothing enters the reasoning unless a layer explicitly put
+it there, and every line traces back to a file you can open.
+
+All dimensions share one jurisdictional scope, so they cannot end up describing different places.
+
+## Step 2 — the first-principles constraint
+
+The assembled text goes to the model with one hard rule:
+
+> **Reason strictly from the provided text, from first principles. No outside knowledge. No appeal to
+> authority.**
+
+This is the core rule of the engine and the reason its output is worth anything.
+
+A model answering from its training is an opinion with a large vocabulary and no audit trail. A model
+reasoning only over text you can read, whose assembly you can inspect, is doing something you can
+actually check — and disagree with, specifically.
+
+## Step 3 — the output
+
+A structured record with a fixed shape: a summary, what is decided, on what basis, and what would
+change the answer.
+
+That last field matters most. A conclusion that cannot say what would falsify it is not a conclusion.
+
+## Step 4 — the run directory
+
+Every run writes its inputs, its assembled dimension files, and its output to a dated directory.
+
+You can open it and see exactly what the model was given. A conclusion nobody can trace back to its
+inputs is not evidence, and the movement does not get an exemption from the standard it applies to
+everybody else.
+
+## What the check is good at, and what it is not
+
+**Good at:** noticing that your conclusion is broader than your links support. This is the most common
+failure in political reasoning and the one people are worst at catching in themselves.
+
+**Not for:** telling you whether the world is a certain way. It has no access to anything except the
+text it was handed, on purpose.
+
+Runs are asynchronous — you start one and come back.

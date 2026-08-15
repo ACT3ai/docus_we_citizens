@@ -1,0 +1,57 @@
+---
+id: what_is_a_community
+title: What is a community
+sidebar_label: What is a community
+sidebar_position: 2
+description: "The model, the access rules, and what a community is deliberately not."
+---
+
+
+# What is a community
+
+## The model
+
+A named workspace that many citizens can share, holding areas, which hold decisions. It has a frozen
+key, a name, a description, and an access model.
+
+## The access model
+
+**Owners** — administer the community, manage access, and steward its areas.
+
+**Writers** — record decisions and contribute.
+
+**Readers** — read.
+
+**World-read** — a flag. With it on, anybody can read the community without being a member at all.
+
+Access is stated per community rather than inherited from a global setting, because the same citizen
+reasonably wants different postures in different places: a public record for the work meant to be
+challenged, a private group for work that is not ready.
+
+## What a community is not
+
+**Not a forum.** There is no thread. The artifacts are decisions, chains, and positions — things that
+persist and can be cited.
+
+**Not a jurisdiction.** A community is a workspace, not a geography. It may be organised around a
+place, and it may equally be organised around a problem or an investigation.
+
+**Not a source of authority.** A community position is the aggregate of its members' recorded
+decisions. It does not approve anything in the movement's public record — that stays with admins, at
+every scale.
+
+## Weighting inside a community
+
+Within the trusted layer, votes are weighted by earned merit, bounded at 2×. Where no merit exists yet,
+weighting is flat and the edition records that it was.
+
+Nothing about being in a community grants approval authority. **Merit buys attention, never authority**
+holds at every level.
+
+→ [Meritocracy](../meritocracy/overview.mdx)
+
+## Storage
+
+One directory per community in the state root, with a description file at its root and its areas
+beneath it. Flat files. Keys are lowercase, underscored slugs, frozen at creation — so a link into a
+community's area survives every later rename.

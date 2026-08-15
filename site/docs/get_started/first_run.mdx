@@ -1,0 +1,61 @@
+---
+id: first_run
+title: First run
+sidebar_label: First run
+sidebar_position: 4
+description: "Mode selection, the data repo gate, and the rule that came out of getting the gate wrong."
+---
+
+
+# First run
+
+## Screen 1 — mode selection
+
+Shown exactly once, before anything else, when the config has no deployment values yet. It is
+unauthenticated by necessity — there is nobody to authenticate yet.
+
+One question, two cards:
+
+**Localhost** — a personal machine. A default user is allowed and login is optional. This is the
+default.
+
+**Central server** — a shared host. Login is required and there is no default user.
+
+Pick one, continue, and the answer is written to config with a `configured` flag. The screen never
+appears again. An admin can change it later from the deployment editor.
+
+## Screen 2 — the movement data
+
+The app tells you the record is not on this computer and gives you the exact clone command for your
+machine.
+
+Paste it into a terminal. Switch back to the browser. **The app has already let you in** — no refresh,
+no button, no restarting anything.
+
+## The rule that came out of getting this wrong
+
+This screen once made the whole product look broken while nothing was wrong. On a machine where the
+repository was present and resolving correctly, the gate stayed up — because the screen never re-asked,
+and a missing repo was remembered for the life of the backend process.
+
+A citizen who can see the folder on disk while the app insists it is absent has just been handed our
+own Pillar 4 deadlock — *you cannot prove it, so you cannot proceed* — by the app that exists to argue
+against it.
+
+Four rules came out of that, and they generalise well past this screen:
+
+1. **Any UI that reports the absence of something the user is actively creating must re-ask on its
+   own.** A one-shot check plus a permanent cache is how a setup screen becomes a wall.
+2. **Cache a "yes" forever if you like; never cache a "no".** The thing that was missing is precisely
+   the thing somebody is fixing right now.
+3. **Look generously, accept strictly.** The resolver probes about fifty plausible locations — beside
+   the repo, inside it, ancestors, the working directory, common checkout parents, alternate spellings
+   — and still only accepts a directory carrying the marker file.
+4. **Say what you saw, not just that you failed.** *"There is a folder there and it has no marker
+   file"* is a different instruction from *"clone this"*, and only one of them matches what the citizen
+   is looking at.
+
+## Screen 3 — sign in, or do not
+
+On your own machine, skip it. You are the default user and everything works. Sign in when you want to
+join a community or publish something.

@@ -1,0 +1,49 @@
+---
+title: Clone the record
+sidebar_position: 2
+description: Getting the whole public record onto your machine, and how the app uses it.
+---
+
+
+# Clone the record
+
+```bash
+git clone https://github.com/ACT3ai/data_we_citizens.git
+```
+
+That is the entire public record of the movement, on your disk, readable without our software.
+
+## Reading it without the app
+
+Every record is a flat file. Open `problems/` in a text editor and you are reading the movement's list
+of what is wrong, each file carrying its root causes and its sources. Open `laws/problem_laws/` and you
+are reading the laws we hold responsible. Open `politicians/legacy/` and you are reading the records of
+1,300 people who held office.
+
+No tooling required. `grep` works. `git log` works, which means **you can see what we changed and
+when** — the edit history of the movement's claims is part of the public record too.
+
+## The app reads what is already there
+
+The We The Citizens app does not have a hidden copy of the data. It reads this repository from your
+disk. That is why a fresh install asks you to clone it before it will do anything: the app without the
+record is an empty shell, and it says so plainly rather than looking broken.
+
+The setup screen re-checks on its own. You paste the clone command into a terminal, switch back to the
+browser, and the app has already let you in — no refresh, no button, no restart.
+
+## The rule that came out of getting this wrong
+
+**Cache a yes forever if you like; never cache a no.**
+
+An earlier version remembered that the repo was missing for the life of the process, so a citizen who
+had just cloned it sat looking at a screen insisting it was absent. That is our own deadlock — *you
+cannot prove it, so you cannot proceed* — served by the app that exists to argue against it. Any screen
+reporting the absence of something the user is actively creating must re-ask on its own.
+
+## Look generously, accept strictly
+
+The app probes a wide range of plausible locations for the repository, and still only accepts a
+directory that carries the marker file. And when it does not find one it tells you **what it saw** —
+*"there is a folder there and it is missing its marker"* is a different instruction from *"clone
+this"*, and only one of them matches what you are looking at.

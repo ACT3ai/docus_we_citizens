@@ -1,0 +1,60 @@
+---
+id: charter
+title: Charter
+sidebar_label: Charter
+sidebar_position: 2
+description: "The governing document: what the movement is for, and the commitments that bind everything built under it."
+---
+
+
+# Charter
+
+The charter is the governing layer. It is not a technical specification and it does not describe how
+anything is built — it states what the movement is for, and what it has committed to. Where the charter
+and an implementation decision disagree, the charter wins and the implementation changes.
+
+## What it commits to
+
+**A citizen-powered decision-making platform that fixes society's problems through collective
+intelligence and AI-applied ethics.**
+
+Unpacking each phrase, because each is load-bearing:
+
+* **Citizen-powered** — the unit of action is a person, not an institution, a party, or an editorial
+  board.
+* **Collective intelligence** — the bet that many people reasoning transparently beat both the raw
+  crowd and the credentialed few. That bet only pays if influence is **earned and visible**, which is
+  why [meritocracy](../meritocracy/overview.mdx) is specified rather than assumed.
+* **AI-applied ethics** — not AI deciding ethics. A citizen writes down their own rules; the AI applies
+  **those**, consistently, at a scale a person cannot.
+
+## The reference standard
+
+Positions are compared against **the social contract** — for a US citizen, the Constitution and
+representative democracy actually working as promised. Citizens record specific instances where what
+government is doing appears to be out of alignment with it.
+
+The machinery is universal even though the standard is not: *record, reason from first principles,
+decide, optionally publish* works for a citizen of any country, with that country's own contract
+plugged in.
+
+## Local-first is a charter commitment, not an optimisation
+
+Individual Mode runs fully local, with everything on the citizen's own disk and nothing shared unless
+they choose. This is not a performance decision. A platform for challenging power that requires
+permission from a central server to function has a single point at which it can be turned off.
+
+## The hard rules
+
+Some commitments are enforced by the build rather than by intention — most visibly, the rule that the
+app never downloads media, which a test enforces and which fails the build if violated. They are
+described in [AI](../ai/overview.mdx).
+
+The pattern generalises: **a commitment that lives only in a document is a commitment somebody will
+optimise away under deadline.**
+
+## Standing tests
+
+The charter carries checks applied to any proposed change. The sharpest one governs the two party
+front doors: *would I ship the exact mirror of this to the other side tomorrow?* If no, it does not
+ship.

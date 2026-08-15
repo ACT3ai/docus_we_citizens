@@ -1,0 +1,58 @@
+---
+id: where_the_data_comes_from
+title: Where the data comes from
+sidebar_label: Where the data comes from
+sidebar_position: 2
+description: "Sources, provenance, and why the boring parts of the record are the most reliable."
+---
+
+
+# Where the data comes from
+
+## The sources
+
+Roll calls, the filed text of instruments, committee calendars and rules, floor transcripts, and
+official publication of enacted law. All public, all citable, all indexed by somebody other than us.
+
+## Why this is the firmest ground in the product
+
+Because procedural history is **boring and heavily duplicated**.
+
+A committee calendar is not a matter of interpretation. It is a document produced by the institution
+itself, for its own purposes, and mirrored by half a dozen third parties. Nobody has to trust our
+reading of it, and if we get one wrong, somebody can prove it in a minute.
+
+Everything else the movement publishes about a person is more arguable than this. That is why
+[the wall](../politicians/the_wall.mdx) exists: the strongest evidence gets its own awards and is not
+diluted by weaker material.
+
+## Provenance
+
+Every download carries a provenance record: what was fetched, from where, and when. Those records live
+in the public repository alongside the data.
+
+So a disagreement about our numbers is resolved by looking at what we actually pulled — not by arguing
+about whose recollection is right.
+
+## Storage
+
+The record lives in the public data repository, per problem: the enacted-law record identifying the
+instrument, and a roll-call table beside it. Flat files. You can open them without our software, and
+`git log` will show you what changed and when.
+
+## Gaps, and why they are published
+
+Coverage is never total. Some periods are thin, some stages are poorly recorded, some sources conflict.
+
+Every run emits a **gaps** list. Those gaps render on the page rather than being quietly smoothed into
+an average, and confidence in a record is **reported, never scored** — it is disclosure to the reader,
+and it does not silently adjust any award.
+
+A named gap is also the most actionable thing on the page. It tells somebody with access to an archive
+exactly what would close it.
+
+## What the engine is never allowed to do
+
+Fill a gap with an inference. If the record does not establish it, the output says so. A plausible
+interpolation is worse than a hole, because a hole is honest and an interpolation is indistinguishable
+from evidence.

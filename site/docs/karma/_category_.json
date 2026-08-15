@@ -1,0 +1,8 @@
+{
+  "label": "Karma",
+  "position": 27,
+  "link": {
+    "type": "generated-index",
+    "description": "The citizen side of the ledger: raw points are noise, the monthly karma score is the record."
+  }
+}

@@ -1,0 +1,67 @@
+---
+id: the_core_loop
+title: The core loop
+sidebar_label: The core loop
+sidebar_position: 2
+description: "The six steps in detail, and what the app is doing underneath each one."
+---
+
+
+# The core loop
+
+## 1. Record the position
+
+A **decision** is the unit of work. It is stored as two files: a structured record a machine can parse,
+and a human-readable companion. The structured one carries the question, your position, your
+confidence, the evidence chain, the AI's first-principles check, and the fix you cast.
+
+Two files rather than one is deliberate: the machine needs structure and you need something readable in
+a text editor five years from now, and neither should be a degraded version of the other.
+
+## 2. Assemble the context
+
+Before anything is compared, the engine builds the background the reasoning is entitled to use. It
+assembles parallel **layered dimensions** — facts (what we know), metaphysics (what is real), and the
+relevant law — each built the same way:
+
+```
+start EMPTY, then concatenate the applicable layers top-down:
+Earth -> country -> state -> community -> area -> decision
+each block preceded by a header naming the file it came from
+```
+
+Starting empty is the load-bearing part. Nothing enters the reasoning unless a layer explicitly put it
+there, and every line can be traced to the file it came from.
+
+## 3. Record misalignment
+
+Where what government is doing appears to violate the contract, that is recorded as a specific,
+sourced instance — not a general complaint. Instances are what the problem catalog and the law
+libraries are built from.
+
+## 4. The first-principles check
+
+The assembled text is handed to the model with one hard constraint: **reason strictly from the provided
+text, from first principles. No outside knowledge, no appeal to authority.**
+
+That constraint is the whole reason the check is worth anything. A model answering from its own
+training is an opinion with a large vocabulary. A model reasoning only over text you can read, and
+whose assembly you can inspect, is doing something you can actually audit.
+
+Output is a structured record: what is decided, on what basis, and what would change the answer.
+
+## 5. Decide, and cast the fix
+
+You decide. The AI's read is an input, and where you disagree with it, your position is what is
+recorded — with the disagreement visible.
+
+## 6. Publish, optionally
+
+A fix can be published into the movement's social network as a structured post. Optional, always, and
+the only step that requires an identity.
+
+## Every run leaves a trail
+
+Each calculation writes a run directory with its inputs, its assembled context, and its output. A
+conclusion nobody can trace back to what was fed in is not evidence — and the movement does not get an
+exemption from its own standard.
