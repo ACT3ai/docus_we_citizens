@@ -251,15 +251,11 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        // The four site links. `wcNavFoldable` lets CSS fold them into the
+        // The two site links. `wcNavFoldable` lets CSS fold them into the
         // "More" menu below 1380px, where the whole row no longer fits — the
         // matching `wcMoreFolded` duplicates live in internal/nav.ts.
-        {
-          to: '/docs/about',
-          label: 'About Us',
-          position: 'left',
-          className: 'wcNavFoldable',
-        },
+        // Charter sits left of About Us. Board lives in the footer and on the
+        // party front doors, not in the top bar.
         {
           to: '/docs/intro',
           label: 'Charter',
@@ -267,20 +263,13 @@ const config: Config = {
           className: 'wcNavFoldable',
         },
         {
-          to: '/#principles',
-          label: 'Principles',
+          to: '/docs/about',
+          label: 'About Us',
           position: 'left',
           className: 'wcNavFoldable',
         },
-        {
-          to: '/docs/board',
-          label: 'Board',
-          position: 'left',
-          className: 'wcNavFoldable',
-        },
-        // The two partisan front doors — "We The Citizens R" over "Republicans",
-        // "We The Citizens D" over "Democrats". Each is a dropdown whose own
-        // label links to that area's overview.mdx.
+        // The two partisan front doors — plain "Republicans" / "Democrats"
+        // buttons that open WeCitizensR.com / WeCitizensD.com in a new tab.
         ...partyNavbarItems(),
         // "More ⌄" — every Level 2 area, each going to its overview.mdx, plus
         // the movement pages (Programs, Governance, the Bonhoeffer pages).

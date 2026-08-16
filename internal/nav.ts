@@ -350,35 +350,23 @@ function menuHeading(text: string, className = "wcMenuHeading") {
 }
 
 /**
- * The four site links that live in the top bar on a wide screen, repeated here
+ * The two site links that live in the top bar on a wide screen, repeated here
  * so they stay reachable once CSS folds them out of the bar below 1380px.
  * `wcMoreFolded` is the switch: hidden in the menu on wide screens, shown in the
  * menu on narrow ones. See internal/css/custom.css → "Fitting the bar".
+ *
+ * Order matches the top bar: Charter, then About Us.
  */
 const FOLDED_SITE_LINKS = [
   menuHeading("This site", "wcMenuHeading wcMoreFolded"),
   {
-    to: "/docs/about",
-    label: "About Us",
-    subLabel: "Who We The Citizens is",
-    className: "wcMenuLink wcMoreFolded",
-  },
-  {
     to: "/docs/intro",
     label: "Charter",
-    subLabel: "The movement's founding document",
     className: "wcMenuLink wcMoreFolded",
   },
   {
-    to: "/#principles",
-    label: "Principles",
-    subLabel: "The seven principles",
-    className: "wcMenuLink wcMoreFolded",
-  },
-  {
-    to: "/docs/board",
-    label: "Board",
-    subLabel: "The founding board",
+    to: "/docs/about",
+    label: "About Us",
     className: "wcMenuLink wcMoreFolded",
   },
 ];
@@ -389,91 +377,70 @@ const FOLDED_SITE_LINKS = [
  */
 const MOVEMENT_PAGE_LINKS = [
   menuHeading("This movement"),
-  {
-    to: "/#programs",
-    label: "Programs",
-    subLabel: "Conference, debates, and more",
-    className: "wcMenuLink",
-  },
-  {
-    to: "/#governance",
-    label: "Governance",
-    subLabel: "Transparency and public financials",
-    className: "wcMenuLink",
-  },
+  { to: "/#programs", label: "Programs", className: "wcMenuLink" },
+  { to: "/#governance", label: "Governance", className: "wcMenuLink" },
+  { to: "/docs/board", label: "Founding Board", className: "wcMenuLink" },
   menuHeading("1,000 Bonhoeffers"),
   {
     to: "/docs/dietrich-bonhoeffers",
     label: "Dietrich Bonhoeffer",
-    subLabel: "The roster, and why the name",
     className: "wcMenuLink",
   },
   {
     to: "/docs/bonhoeffer-criteria",
     label: "Bonhoeffer Criteria",
-    subLabel: "The character standard, scored",
     className: "wcMenuLink",
   },
   {
     to: "/docs/politician-challengers",
     label: "Politician Challengers",
-    subLabel: "The politician subset of the list",
     className: "wcMenuLink",
   },
 ];
 
+/**
+ * One row in the "More" menu: the Level 2 title alone, linking to that area's
+ * `overview.mdx`.
+ *
+ * Deliberately no `subLabel` — the menu is a flat list of destinations, not a
+ * place to explain them. The one-liner for an area belongs on the area's own
+ * overview page, and the descriptive text under every row made a thirty-item
+ * menu hard to scan. Its copy still lives in SUB_LABELS above for reuse.
+ */
 function menuLink(key: string) {
   const area = byKey(key);
   return {
     to: overviewPath(area.key),
     label: area.title,
-    subLabel: area.subLabel,
     className: "wcMenuLink",
   };
 }
 
 /**
- * One top-level navbar item per party front door.
+ * One top-level navbar item per party front door — a plain "Republicans" /
+ * "Democrats" button that opens that edition's public domain in a new tab.
  *
- * Each is a dropdown whose own label is a link straight to that area's
- * `overview.mdx`, and whose label renders on two lines — "We The Citizens R"
- * over "Republicans" — via the `subLabel` prop understood by the swizzled
- * `src/theme/NavbarItem/NavbarNavLink`.
+ * Not a dropdown, and no "We The Citizens" line above the party name: the top
+ * bar hands the visitor straight to WeCitizensR.com / WeCitizensD.com. The
+ * internal overview pages for the two editions stay reachable from the "More"
+ * menu and the footer.
  */
 export function partyNavbarItems() {
   return PARTIES.map((party) => ({
-    type: "dropdown" as const,
-    label: party.title,
-    subLabel: party.subLabel,
-    to: overviewPath(party.key),
+    href: party.domain,
+    label: party.subLabel,
+    target: "_blank",
+    rel: "noopener noreferrer",
     position: "left" as const,
     className: `wcPartyNav wcPartyNav--${party.edition.toLowerCase()}`,
-    items: [
-      {
-        to: overviewPath(party.key),
-        label: "Overview",
-        subLabel: `What the ${party.edition} front door is`,
-        className: "wcMenuLink",
-      },
-      menuLink("legacy_politicians"),
-      menuLink("new_politicians"),
-      menuLink("voting_records"),
-      menuLink("monkey"),
-      menuLink("llama"),
-      menuHeading("Go to the front door"),
-      {
-        href: party.domain,
-        label: party.domain.replace("https://", ""),
-        subLabel: "Your seats, and who could replace them",
-        className: "wcMenuLink wcMenuLink--external",
-      },
-    ],
   }));
 }
 
 /**
- * The "More ⌄" mega-menu: every Level 2 area on the site, grouped, each linking
- * to that area's `overview.mdx`. Docusaurus draws the chevron on any dropdown.
+ * The "More ⌄" mega-menu: the list of Level 2 areas on the site, grouped, each
+ * linking to that area's `overview.mdx`. Titles only — no per-area description
+ * lines and no Level 3 pages; those live on the area's own overview page.
+ * Docusaurus draws the chevron on any dropdown.
  */
 export function moreNavbarItem() {
   return {
@@ -487,7 +454,6 @@ export function moreNavbarItem() {
       ...PARTIES.map((p) => ({
         to: overviewPath(p.key),
         label: p.title,
-        subLabel: p.subLabel,
         className: "wcMenuLink",
       })),
       ...MENU_GROUPS.flatMap((group) => [
