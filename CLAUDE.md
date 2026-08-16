@@ -26,14 +26,17 @@ subdomains reach the EC2 web app.
 
 | Domain | Code directory | Hosted by | Route 53 record |
 |---|---|---|---|
-| `wethecitizens.io` (apex) | `{SITE_DIR}` (**this repo**) | GitHub Pages, repo `BryanStarbuck/uplift`, workflow `.github/workflows/deploy.yml` | 4 × `A` → `185.199.108–111.153`, plus `AAAA` → `2606:50c0:800{0..3}::153` |
+| `wethecitizens.io` (apex) | `{SITE_DIR}` (**this repo**) | GitHub Pages, repo `ACT3ai/docus_we_citizens`, workflow `.github/workflows/deploy.yml` | 4 × `A` → `185.199.108–111.153`, plus `AAAA` → `2606:50c0:800{0..3}::153` |
 | `www.wethecitizens.io` | same as apex | GitHub Pages (301 → apex) | `CNAME` → `bryanstarbuck.github.io` |
 | `app.wethecitizens.io` | `~/BGit/act3/we_citizens/` | EC2 / Docker Swarm behind an ALB | `A` ALIAS → `dualstack.heroe9-appec2lb-prod-30037372.us-east-2.elb.amazonaws.com` |
 | `api.wethecitizens.io` | `~/BGit/act3/we_citizens/code/` (backend) | same ALB | `A` ALIAS → same ALB |
 
-Note: the GitHub remote for this repo is still named `BryanStarbuck/uplift` — a leftover from
-when the site was "Uplift America". The repo *name* is stale; the content and the custom domain
-are We The Citizens. `upliftamerica.net` no longer serves this site.
+Note: the publishing repo moved on 2026-08-15. It used to be `BryanStarbuck/uplift` — a leftover
+from when the site was "Uplift America". That repo has been renamed `BryanStarbuck/DEAD_uplift`,
+its Pages custom domain has been cleared (`cname: null`), and it no longer serves anything at
+wethecitizens.io. The live repo is `ACT3ai/docus_we_citizens`, which now holds the
+`wethecitizens.io` custom domain and the approved cert. `upliftamerica.net` no longer serves this
+site either.
 
 ### Publishing the public site
 
@@ -42,7 +45,7 @@ repo root (content under `site/`) and deploys the artifact to GitHub Pages. `doc
 never published. Two things pin the custom domain and both must stay in sync:
 
 * `{SITE_DIR}/static/CNAME` — must contain exactly `wethecitizens.io` (it ships inside the build artifact)
-* The repo's Pages setting — `gh api repos/BryanStarbuck/uplift/pages` must report
+* The repo's Pages setting — `gh api repos/ACT3ai/docus_we_citizens/pages` must report
   `"cname": "wethecitizens.io"` with an approved cert covering `wethecitizens.io` + `www.wethecitizens.io`
 
 Rules when touching DNS:
