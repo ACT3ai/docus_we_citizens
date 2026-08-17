@@ -298,8 +298,10 @@ const config: Config = {
       },
       items: [
         // The two site links. `wcNavFoldable` lets CSS fold them into the
-        // "More" menu below 1380px, where the whole row no longer fits — the
-        // matching `wcMoreFolded` duplicates live in internal/nav.ts.
+        // "More" menu below 1610px, where the whole row no longer fits — the
+        // matching `wcMoreFolded` duplicates live in internal/nav.ts. The fold
+        // point moved up from 1380px when the bar went from two party front
+        // doors to four; see "Fitting the bar" in internal/css/custom.css.
         // Charter sits left of About Us. Board lives in the footer and on the
         // party front doors, not in the top bar.
         {
@@ -314,8 +316,11 @@ const config: Config = {
           position: 'left',
           className: 'wcNavFoldable',
         },
-        // The two partisan front doors — plain "Republicans" / "Democrats"
-        // buttons that open WeCitizensR.com / WeCitizensD.com in a new tab.
+        // The four party front doors — plain "Republicans" / "Democrats" /
+        // "Libertarians" / "Socialists" buttons that open WeCitizensR.com,
+        // WeCitizensD.com, WeCitizensL.com and WeCitizensSocialism.com in a new
+        // tab. Two pairs, not four skins: R↔D on the partisan axis, L↔S on the
+        // economic one (pm/r_vs_d.mdx §1.3a).
         ...partyNavbarItems(),
         // "More ⌄" — every Level 2 area, each going to its overview.mdx, plus
         // the movement pages (Programs, Governance, the Bonhoeffer pages).

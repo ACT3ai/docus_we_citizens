@@ -1,6 +1,6 @@
 {
-  "label": "internal",
-  "position": 99,
+  "label": "Internal Research",
+  "position": 97,
   "link": {
     "type": "doc",
     "id": "internal-overview"

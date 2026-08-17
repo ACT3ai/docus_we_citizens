@@ -248,29 +248,85 @@ make references to it:
   (repo: ~/BGit/act3/docu_social_media/)
 
 ====================================================================
-THE TWO PARTY FRONT DOORS
+THE FOUR PARTY FRONT DOORS
 ====================================================================
 
-We The Citizens has two partisan front doors. They are Level 2 areas on this
+We The Citizens has four party front doors. They are Level 2 areas on this
 site and they are also pinned items in the top bar.
 
-* "We The Citizens R"  -> Republicans -> WeCitizensR.com
-  level_2_key = we_the_citizens_r
-* "We The Citizens D"  -> Democrats   -> WeCitizensD.com
-  level_2_key = we_the_citizens_d
+* "We The Citizens R"  -> Republicans  -> WeCitizensR.com
+  level_2_key = r    (site/docs/r/)   nav_order 31   sidebar republicanSidebar
+* "We The Citizens D"  -> Democrats    -> WeCitizensD.com
+  level_2_key = d    (site/docs/d/)   nav_order 32   sidebar democratSidebar
+* "We The Citizens L"  -> Libertarians -> WeCitizensL.com
+  level_2_key = l    (site/docs/l/)   nav_order 33   sidebar libertarianSidebar
+* "We The Citizens S"  -> Socialists   -> WeCitizensSocialism.com
+  level_2_key = s    (site/docs/s/)   nav_order 34   sidebar socialistSidebar
 
-They are ONE web app rendered two ways, selected by the domain the request
-arrived on. Not two products, not two deployments, not two data sets.
+All four are registered on Bryan Starbuck's CLOUDFLARE account, along with
+citizensstudio.io, wecitizens.social and wethecitizens.tv. DNS, nameservers,
+renewals and registrar transfers are all done in Cloudflare. They are NOT on
+Namecheap; do not reach for the Namecheap dashboard or the Namecheap MCP tools
+for any of them. (wethecitizens.io itself is the exception — its DNS is in AWS
+Route 53, per DOMAINS -> CODE -> HOSTING above.)
 
-THE MIRROR-SYMMETRY RULE binds everything we write about them. Everything true
-of R is true of D with the party label swapped: one award pipeline, symmetric
+The public Docusaurus path for each door is a path under WeTheCitizens.io, not
+a domain of its own: https://WeTheCitizens.io/r/ , /d/ , /l/ , /s/ . There is no
+such host as WeTheCitizensR.io or WeTheCitizensD.io; a reference to either is a
+typo for the path form.
+
+The keys were renamed from we_the_citizens_r / we_the_citizens_d to r / d on
+2026-08-17, and the L and S doors were added on the same day already using the
+short form, so all four keys are the one-letter codes r / d / l / s. Any
+surviving long-form key is stale and resolves to nothing. THREE PLACES have to
+agree for each key or the build breaks:
+
+  1. the directory name under site/docs/
+  2. the level_2_key column in level_2.csv
+  3. PARTY_KEYS / PARTIES / PARTY_SIDEBAR_IDS in internal/nav.ts
+
+Each edition has its own left bar — see THE FIVE LEFT BARS below.
+
+They are ONE web app rendered four ways, selected by the domain the request
+arrived on. Not four products, not four deployments, not four data sets. The
+edition is a request attribute.
+
+FOUR DOORS, TWO PAIRS. They are not four unrelated skins. R and D are each
+other's reflection on the PARTISAN axis; L and S are each other's reflection on
+the ECONOMIC axis. Every door names exactly one other party — its partner on the
+same axis — which is what fills the cross-party honesty column and what gives
+the mirror check a counterpart to run against. A door is only ever added
+together with its partner; an unpaired door has nothing to check it against.
+
+THE MIRROR-SYMMETRY RULE binds everything we write about them, and it runs ONCE
+PER PAIR. Everything true of R is true of D with the party label swapped, and
+everything true of L is true of S the same way: one award pipeline, symmetric
 harshness, no copy that compares or characterizes a party, the cross-party
 column always present. The unit of judgement is a person and a vote, never a
 party. Review test for any change: "would I ship the exact mirror of this to
-the other edition tomorrow?" If no, it does not ship.
+the paired edition tomorrow?" If no, it does not ship.
+
+HOW A FRONT-DOOR DIRECTORY IS LAID OUT. All four are identical, four files each,
+and that sameness is the mirror rule made structural:
+
+  _category_.json      label, position, link -> doc id "overview"
+  _overview_page.tsx   thin per-edition entry point; renders the shared
+                       src/components/PartyFrontDoor with edition="R|D|L|S"
+  overview.mdx         id "overview" — THE Level 2 page. Every link in the
+                       product points here: nav.ts overviewPath(), the
+                       _category_.json link, and the web app's
+                       docsOverviewPath (/docs/r/overview, /docs/d/overview,
+                       /docs/l/overview, /docs/s/overview).
+  reference_text.mdx   id "reference_text", unlisted — the long-form prose
+                       version of the same argument, for reference and reuse.
+
+The page itself is written ONCE, in src/components/PartyFrontDoor, and
+parameterized by edition. Four hand-copied page files would promise mirror
+symmetry and then lose it the first time somebody improved a paragraph on one
+door and not on its partner. Do not fork that component per edition.
 
 The authoritative product spec is ~/BGit/act3/we_citizens/pm/r_vs_d.mdx.
-Read it before writing anything new about the two editions.
+Read it before writing anything new about the four editions.
 
 ====================================================================
 SITE NAVIGATION — ONE SOURCE, EVERY PAGE
@@ -296,7 +352,11 @@ add a second navbar or footer anywhere.
 * Anything the BROWSER needs from internal/nav.ts crosses over through
   siteConfig.customFields (clientNavData()), never by importing the module.
 
-Two swizzled theme components support this:
+NO BLOG IN THE TOP BAR. Permanent. The blog still builds, its posts still
+resolve, and it is linked from the footer, but it is not a top-bar destination.
+Do not add it back to themeConfig.navbar.
+
+Swizzled theme components support this:
 
 * src/theme/NavbarItem/NavbarNavLink — adds a `subLabel` prop, which renders a
   navbar or dropdown label on two lines ("We The Citizens R" over
@@ -305,18 +365,112 @@ Two swizzled theme components support this:
 * src/theme/Footer/Links/MultiColumn — makes footer column titles clickable,
   using the title -> route map from customFields.footerColumnLinks.
 
+The footer carries the legal pages, and they are the only copies:
+  Terms of Service -> /docs/legal/terms   (site/docs/legal/terms/index.md)
+  Privacy Policy   -> /docs/legal/privacy (site/docs/legal/privacy/index.md)
+Both name ACT3ai, Inc., a Delaware corporation, DBA wethecitizens.io, as the
+operating entity. Contacts: legal@, privacy@, dmca@wethecitizens.io.
+
 TO ADD A LEVEL 2 AREA:
 1. Add the row to level_2.csv.
-2. Create site/docs/{level_2_key}/overview.mdx and _category_.json
-   (_category_.json position = the nav_order column).
+2. Create site/docs/{level_2_key}/overview.mdx and _category_.json. The
+   _category_.json position = the nav_order column, AND it must carry the link
+   to the area's own page, or the left bar has nowhere to send the reader:
+     { "label": "...", "position": N,
+       "link": { "type": "doc", "id": "overview" } }
 3. Put the key in one MENU_GROUPS group and one FOOTER_GROUPS group in
    internal/nav.ts, and give it a short subLabel.
 Step 3 is enforced: the build FAILS with a named error if a CSV key is in no
 group, in two groups, or in a group but not in the CSV. That guard is what
 keeps "the More menu shows all the Level 2s" true over time.
 
+====================================================================
+THE FIVE LEFT BARS
+====================================================================
+
+There are exactly five left bars on this site, declared in
+internal/sidebars.ts from data in internal/nav.ts. No page defines its own.
+
+  mainSidebar         the whole site — every Level 2 area, flat
+  republicanSidebar   every page under site/docs/r/
+  democratSidebar     every page under site/docs/d/
+  libertarianSidebar  every page under site/docs/l/
+  socialistSidebar    every page under site/docs/s/
+
+The party bars exist because those areas are front doors onto their own
+hierarchies: a visitor who arrived at WeCitizensR.com sees the R edition's own
+Level 2s, not the thirty areas of the parent site. All four are generated by the
+same function from the same shape — sidebars.ts maps over PARTIES rather than
+writing them out one at a time — so the mirror-symmetry rule holds for
+navigation too and no door can be given a bar its pair partner does not get.
+internal/nav.ts's docsSidebarItemsGenerator lifts the party areas out of the
+root autogenerated slice; without it those pages would belong to two sidebars at
+once and would have no single left bar to render.
+
+THREE RULES, ENFORCED IN THE TEMPLATE, NOT PER PAGE
+src/theme/DocSidebarItem/Category draws a directory as ONE LINK to that
+directory's own page:
+
+* NO EXPAND CHEVRON. Nothing in the left bar opens.
+* NO LEVEL 3 ROWS. The bar never nests and never indents. The pages inside an
+  area are listed on that area's own overview page.
+* CLICKING A LEVEL 2 NAVIGATES TO ITS LEVEL 2 PAGE, from the `link` in that
+  area's _category_.json.
+
+Children keep their sidebar membership — membership is decided from the sidebar
+data at build time, not from what the component draws — so a Level 3 page still
+renders with the same left bar as everything else.
+
+Escape hatch: a directory that should not appear in the left bar at all sets
+  "customProps": { "hideInSidebar": true }
+in its _category_.json. site/docs/Bonhoeffers/ uses it, because its roster is
+reached from the "Dietrich Bonhoeffers" page.
+
+Ordering note: standalone docs at the root of site/docs/ share one position
+space with the Level 2 categories. The site pages sit at 0.1-0.3 (Charter,
+About Us, Board), the Level 2 areas at 1-30 in reading order, the Bonhoeffer
+roster pages at 85-88, Legal at 90, Internal Research at 97.
+
+====================================================================
+NO RIGHT BAR, NO BREADCRUMB BAR
+====================================================================
+
+Both are gone site-wide, permanently, at the template level. Nothing in
+frontmatter can bring them back — `hide_table_of_contents` is now a no-op.
+
+* src/theme/DocItem/Layout — ejected. No table of contents (desktop or mobile),
+  no breadcrumbs, and the article takes the full content width because there is
+  no TOC column to leave room for.
+* src/theme/TOC — returns null. The template-level guarantee that no page type
+  or future theme component can put a TOC back on the right.
+* src/theme/DocBreadcrumbs — returns null. Covers the docs pages and the
+  category generated-index pages.
+* src/theme/BlogLayout — drops the `toc` prop before the stock layout sees it,
+  so blog posts get no right column either.
+* internal/css/custom.css — "The left bar" and "No right bar" sections are the
+  styling half of the same decisions.
+
+====================================================================
+FAVICON
+====================================================================
+
+The mark is the black box with the white W (site/static/img/logo.svg).
+
+* site/static/img/favicon.ico — multi-resolution ICO (16/32/48/64), the one
+  docusaurus.config.ts `favicon:` points at
+* site/static/favicon.ico — same file at the site root, because bookmark and
+  favorites managers request /favicon.ico directly and ignore the <head>
+* site/static/img/favicon-16|32|48|192|512.png and apple-touch-icon.png (180),
+  wired up as <link> tags in the config's headTags
+
+Keep them in sync. If the logo changes, regenerate all of them, not just one.
+
 WIDTH BUDGET FOR THE TOP BAR (internal/css/custom.css, "Fitting the bar"):
-the navbar rides a 1320px rail. Below 1380px the four site links
-(.wcNavFoldable) fold out of the bar and their duplicates in the More menu
-(.wcMoreFolded) appear instead. If you add another top-bar item, re-check
-that budget.
+the navbar rides a 1320px rail. Below 1610px the site links (.wcNavFoldable)
+fold out of the bar and their duplicates in the More menu (.wcMoreFolded)
+appear instead. The fold point was 1380px until the bar went from two party
+front doors to four on 2026-08-17; the two extra buttons cost roughly 230px, so
+the fold point moved up by the same amount rather than letting the row wrap.
+The party links are the ones that must survive the squeeze — they are the whole
+point of the bar — so the site links fold first. If you add another top-bar
+item, re-check that budget again.

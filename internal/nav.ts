@@ -174,11 +174,17 @@ const SUB_LABELS: Record<string, string> = {
 };
 
 /**
- * `level_2_key`s of the two party front doors. Their rows live in level_2.csv
+ * `level_2_key`s of the four party front doors. Their rows live in level_2.csv
  * like every other area, but they are pinned top-level navbar items rather than
  * stops on the ordered reading path, so they are held apart here — see PARTIES.
+ *
+ * These are the one-letter codes, and they must match three other places or the
+ * build breaks: the directory name under `site/docs/`, the `level_2_key` column
+ * in `level_2.csv`, and PARTY_SIDEBAR_IDS further down this file. They were
+ * `we_the_citizens_r` / `we_the_citizens_d` until the 2026-08-17 rename; any
+ * surviving long-form key is stale and resolves to nothing.
  */
-export const PARTY_KEYS = ["we_the_citizens_r", "we_the_citizens_d"] as const;
+export const PARTY_KEYS = ["r", "d", "l", "s"] as const;
 
 const CSV_AREAS = readCsvAreas();
 
@@ -197,31 +203,42 @@ export const LEVEL_2: Level2[] = CSV_AREAS.filter(
 ).map((a) => ({ ...a, subLabel: SUB_LABELS[a.key] ?? "" }));
 
 /* ------------------------------------------------------------------ *
- * The two partisan front doors
+ * The four party front doors
  * ------------------------------------------------------------------ */
 
 export type Party = Level2 & {
-  /** Single-letter edition code, per we_citizens/pm/r_vs_d.mdx. */
-  edition: "R" | "D";
+  /** Single-letter edition code, per we_citizens/pm/r_vs_d.mdx §3.1. */
+  edition: "R" | "D" | "L" | "S";
   /** The public front-door domain for this edition. */
   domain: string;
 };
 
 /**
- * The two party editions.
+ * The four party editions.
  *
- * Mirror-symmetry rule (pm/r_vs_d.mdx §5): everything true of R is true of D
- * with the party label swapped. That rule binds this file too — the two entries
- * below, and every menu and footer block generated from them, differ only in the
- * party label. Change one, change the other identically.
+ * FOUR DOORS, TWO PAIRS (pm/r_vs_d.mdx §1.3a). They are not four unrelated
+ * skins. R and D are each other's reflection on the partisan axis; L and S are
+ * each other's reflection on the economic axis. Every door names exactly one
+ * *other* party — its partner on the same axis — which is what fills the
+ * cross-party honesty column and what gives the mirror check a counterpart to
+ * run against. A door proposed without a partner on its axis is not a door; it
+ * is an unpaired skin, and §5 has nothing to check it against.
+ *
+ * Mirror-symmetry rule (pm/r_vs_d.mdx §5): everything true of one member of a
+ * pair is true of the other with the party label swapped, and the rule now runs
+ * once per pair rather than once overall. That rule binds this file too — the
+ * four entries below, and every menu and footer block generated from them,
+ * differ only in the party label. Change one member of a pair, change the other
+ * identically, in the same commit.
  *
  * They live here rather than being read out of level_2.csv's ordering because
  * they are pinned top-level navbar items, not part of the ordered reading path.
- * Their rows are still in level_2.csv so the registry stays complete.
+ * Their rows are still in level_2.csv so the registry stays complete, and the
+ * loop above fails the build if any of the four is missing from it.
  */
 export const PARTIES: Party[] = [
   {
-    key: "we_the_citizens_r",
+    key: "r",
     title: "We The Citizens R",
     subLabel: "Republicans",
     order: 31,
@@ -229,12 +246,28 @@ export const PARTIES: Party[] = [
     domain: "https://wecitizensr.com",
   },
   {
-    key: "we_the_citizens_d",
+    key: "d",
     title: "We The Citizens D",
     subLabel: "Democrats",
     order: 32,
     edition: "D",
     domain: "https://wecitizensd.com",
+  },
+  {
+    key: "l",
+    title: "We The Citizens L",
+    subLabel: "Libertarians",
+    order: 33,
+    edition: "L",
+    domain: "https://wecitizensl.com",
+  },
+  {
+    key: "s",
+    title: "We The Citizens S",
+    subLabel: "Socialists",
+    order: 34,
+    edition: "S",
+    domain: "https://wecitizenssocialism.com",
   },
 ];
 
@@ -420,12 +453,19 @@ function menuLink(key: string) {
 
 /**
  * One top-level navbar item per party front door — a plain "Republicans" /
- * "Democrats" button that opens that edition's public domain in a new tab.
+ * "Democrats" / "Libertarians" / "Socialists" button that opens that edition's
+ * public domain in a new tab.
  *
  * Not a dropdown, and no "We The Citizens" line above the party name: the top
- * bar hands the visitor straight to WeCitizensR.com / WeCitizensD.com. The
- * internal overview pages for the two editions stay reachable from the "More"
- * menu and the footer.
+ * bar hands the visitor straight to WeCitizensR.com, WeCitizensD.com,
+ * WeCitizensL.com or WeCitizensSocialism.com. The internal overview pages for
+ * the four editions stay reachable from the "More" menu and the footer.
+ *
+ * WIDTH BUDGET. Four party buttons is two more than the bar carried when the
+ * 1380px fold point was chosen, so that fold point moved to 1610px in
+ * internal/css/custom.css ("Fitting the bar"). If a fifth pair is ever added,
+ * re-check it again — the alternative is collapsing these into one dropdown,
+ * which costs the visitor a click on the single most important link in the bar.
  */
 export function partyNavbarItems() {
   return PARTIES.map((party) => ({
@@ -529,27 +569,42 @@ function footerColumnLinks(): Record<string, string> {
  * ------------------------------------------------------------------ */
 
 /**
- * This site has exactly three left bars, and they are declared here so the two
+ * This site has exactly five left bars, and they are declared here so the four
  * party editions can never drift apart:
  *
- *   mainSidebar        — the whole site. A flat list of Level 2 areas.
- *   republicanSidebar  — everything under site/docs/we_the_citizens_r/
- *   democratSidebar    — everything under site/docs/we_the_citizens_d/
+ *   mainSidebar         — the whole site. A flat list of Level 2 areas.
+ *   republicanSidebar   — everything under site/docs/r/
+ *   democratSidebar     — everything under site/docs/d/
+ *   libertarianSidebar  — everything under site/docs/l/
+ *   socialistSidebar    — everything under site/docs/s/
  *
- * The party bars exist because those two areas are front doors onto their own
+ * The party bars exist because those four areas are front doors onto their own
  * hierarchies, not stops on the main reading path. A visitor who arrived at
  * WeCitizensR.com should see the R edition's own Level 2s in the left bar, not
- * the thirty areas of the parent site.
+ * the thirty areas of the parent site — and the same is true of a visitor who
+ * arrived at WeCitizensD.com, WeCitizensL.com or WeCitizensSocialism.com.
+ *
+ * All four party bars are generated by one function from one shape in
+ * internal/sidebars.ts, which is how the mirror-symmetry rule (pm/r_vs_d.mdx §5)
+ * gets enforced for navigation rather than merely promised: there is no way to
+ * give one door a bar the other member of its pair does not get.
  *
  * Every bar is drawn by src/theme/DocSidebarItem/Category, which renders a
  * category as a single link to its own page: no chevrons, no nesting, no indents.
  */
 export const MAIN_SIDEBAR_ID = "mainSidebar";
 
-/** Sidebar id for a party edition. Mirror-symmetric by construction. */
+/**
+ * Sidebar id for a party edition. Mirror-symmetric by construction, and one of
+ * the THREE PLACES that must agree for a front door to build at all — the other
+ * two being the directory name under site/docs/ and the `level_2_key` column in
+ * level_2.csv.
+ */
 export const PARTY_SIDEBAR_IDS: Record<string, string> = {
-  we_the_citizens_r: "republicanSidebar",
-  we_the_citizens_d: "democratSidebar",
+  r: "republicanSidebar",
+  d: "democratSidebar",
+  l: "libertarianSidebar",
+  s: "socialistSidebar",
 };
 
 /** True when a generated sidebar item lives entirely inside a party area. */

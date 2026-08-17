@@ -1,7 +1,7 @@
 ---
 id: intro
 title: We The Citizens Charter
-sidebar_position: 1
+sidebar_position: 0.1
 sidebar_label: Charter
 slug: /intro
 description: The We The Citizens charter — a citizen-first, ethics-first political movement built on the seven principles Charlie Kirk wanted TPUSA to embody.

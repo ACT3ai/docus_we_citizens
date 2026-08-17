@@ -1,7 +1,7 @@
 ---
 id: about
 title: About We The Citizens
-sidebar_position: 3
+sidebar_position: 0.2
 sidebar_label: About Us
 slug: /about
 description: About We The Citizens — a lightweight, ethics-first political movement carrying forward Charlie Kirk's values in a structure built so it cannot be captured.

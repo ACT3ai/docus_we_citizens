@@ -27,7 +27,7 @@ which we call the Services:
 * the website at **wethecitizens.io**
 * the hosted app at **app.WeTheCitizens.io**
 * the API at **api.WeTheCitizens.io**
-* the two party front doors at **WeCitizensR.com** and **WeCitizensD.com**
+* the four party front doors at **WeCitizensR.com**, **WeCitizensD.com**, **WeCitizensL.com** and **WeCitizensSocialism.com**
 * the paired social network at **WeCitizens.social**
 
 The open-source copy of the app that a citizen runs locally on their own computer is covered

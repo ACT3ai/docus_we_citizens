@@ -24,6 +24,37 @@
   --ua-navy-deep:  #101D33;
   --ua-gold:       #9A7B43;
 
+  /* ---- Party-edition chrome accents ----
+
+     The four front doors each carry a chrome accent in the web app's edition
+     profiles (we_citizens/code/we_citizens_{r,d,l,s}/src/index.ts, specified in
+     pm/r_vs_d.mdx §9.4). Mirrored here as tokens so this site never re-derives
+     an edition colour by eye, and so all four are defined in one place where a
+     missing pair member is obvious at a glance.
+
+     TWO RULES CARRIED OVER FROM §9.4, AND THEY MATTER:
+
+     1. CHROME ONLY. An accent may tint a border, a rule or a chip. It is NEVER
+        applied to a score bar — red and green on a bar mean bad and good, and
+        an edition whose accent is red or rose must not blur that.
+     2. NOTHING ON THIS SITE TINTS ITSELF BY EDITION TODAY, deliberately. The
+        party links in the top bar and the four party overview pages are styled
+        identically, which is the mirror-symmetry rule (pm/r_vs_d.mdx §5) at its
+        simplest: no door can read as louder than its pair partner. Use these
+        tokens only where an edition-specific surface genuinely needs one, and
+        when you use one, use its pair partner's in the same commit.
+
+     Paired on their axis: R↔D partisan, L↔S economic. S's rose is deliberately
+     NOT R's red, so the two never read as the same door. */
+  --wc-accent-r:        #B3202B;   /* Republicans  — red   */
+  --wc-accent-r-dark:   #E0555F;
+  --wc-accent-d:        #1D4E9C;   /* Democrats    — blue  */
+  --wc-accent-d-dark:   #5B92E5;
+  --wc-accent-l:        #B8860B;   /* Libertarians — gold  */
+  --wc-accent-l-dark:   #E0B23A;
+  --wc-accent-s:        #A61B4B;   /* Socialists   — rose  */
+  --wc-accent-s-dark:   #E0578C;
+
   /* Lines */
   --ua-rule:       rgba(26,23,18,.16);
   --ua-rule-soft:  rgba(26,23,18,.09);
@@ -430,9 +461,15 @@ h1, h2, h3, h4, h5, h6 {
    ===================================================================== */
 
 /* The navbar rides on a wider rail than the article column: the bar carries
-   the brand, four site links, both party front doors, More, and the app CTA.
-   Below 1380px the four site links fold into the "More" menu instead — see
-   .wcNavFoldable / .wcMoreFolded further down. */
+   the brand, the site links, all four party front doors, More, and the app CTA.
+   Below 1610px the site links fold into the "More" menu instead — see
+   .wcNavFoldable / .wcMoreFolded further down.
+
+   The fold point was 1380px when the bar carried two party front doors. Adding
+   the L and S doors (pm/r_vs_d.mdx §1.3a — a door ships with its axis partner)
+   put two more buttons on the bar, roughly 230px, so the fold point moved up by
+   the same amount rather than letting the row wrap. Add another item and this
+   budget has to be re-checked again. */
 .navbar__inner {
   max-width: 1320px;
   margin-inline: auto;
@@ -481,12 +518,20 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--ua-red);
 }
 
-/* ---- The two party front doors ----
+/* ---- The four party front doors ----
 
-   Plain "Republicans" / "Democrats" links that open WeCitizensR.com and
-   WeCitizensD.com in a new tab. No box, no underline rule, no party colour and
-   no dropdown affordance — the two are styled identically, which is the
-   mirror-symmetry rule (pm/r_vs_d.mdx §5) at its simplest. */
+   Plain "Republicans" / "Democrats" / "Libertarians" / "Socialists" links that
+   open WeCitizensR.com, WeCitizensD.com, WeCitizensL.com and
+   WeCitizensSocialism.com in a new tab. No box, no underline rule, no party
+   colour and no dropdown affordance — all four are styled identically, which is
+   the mirror-symmetry rule (pm/r_vs_d.mdx §5) at its simplest.
+
+   The per-edition accent tokens exist (--wc-accent-* at the top of this file)
+   and are deliberately NOT used here. internal/nav.ts still emits a
+   .wcPartyNav--r / --d / --l / --s modifier on each link, so an edition-specific
+   rule is one selector away if it is ever wanted — but it would have to be
+   written for all four at once, or one door starts shouting louder than its
+   pair partner. */
 
 .wcPartyNav .navbar__link,
 .navbar__link.wcPartyNav {
@@ -573,11 +618,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* The menu is right-anchored to the "More" item, so its left edge depends on
-   how far along the bar that item sits. Once the four site links fold away
-   (below 1380px) "More" moves left, and a four-column menu would hang off the
+   how far along the bar that item sits. Once the site links fold away
+   (below 1610px) "More" moves left, and a four-column menu would hang off the
    left edge of the window — so drop a column at exactly the fold point, and
    another one on the narrowest desktops. */
-@media (max-width: 1379px) {
+@media (max-width: 1609px) {
   .wcMoreNav ~ .dropdown__menu {
     grid-template-columns: repeat(3, minmax(156px, 1fr));
     max-width: min(530px, calc(100vw - 32px));
@@ -594,18 +639,23 @@ h1, h2, h3, h4, h5, h6 {
 /* ---------------------------------------------------------------------
    Fitting the bar
 
-   Below 1380px the four site links fold into the "More" menu, where duplicate
-   entries carrying .wcMoreFolded are waiting. Above 1380px those duplicates
+   Below 1610px the site links fold into the "More" menu, where duplicate
+   entries carrying .wcMoreFolded are waiting. Above 1610px those duplicates
    are hidden instead, so the same link is never offered twice.
+
+   The threshold used to be 1380px, when the bar carried two party front doors
+   rather than four. The party links are the ones that must survive the squeeze
+   — they are the whole point of the bar — so the site links fold earlier
+   instead. See "Fitting the bar" note in internal/nav.ts → partyNavbarItems().
    --------------------------------------------------------------------- */
 
-@media (max-width: 1379px) {
+@media (max-width: 1609px) {
   .navbar__items .wcNavFoldable {
     display: none;
   }
 }
 
-@media (min-width: 1380px) {
+@media (min-width: 1610px) {
   .dropdown__menu .wcMoreFolded {
     display: none;
   }

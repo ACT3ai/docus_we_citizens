@@ -3,6 +3,13 @@ title: Public Homepage — Copy
 draft: true
 ---
 
+> Moved here on 2026-08-17 from `site/docs/d/public_mockup.md`, where it had been
+> misfiled. Nothing in it is about the Democrat edition — it is a prose copy of the
+> MAIN wethecitizens.io homepage — and leaving it inside a party front-door
+> directory made the four editions look asymmetric when they are not.
+> `docs/priv/` is the repo's unpublished area (see `docs/priv/README.md`), which
+> is where an internal working copy of a live page belongs.
+
 # Public Homepage — Copy of wethecitizens.io
 
 A copy of what the public sees on the main website homepage. Source of truth for

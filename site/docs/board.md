@@ -1,7 +1,7 @@
 ---
 id: board
 title: We The Citizens Founding Board
-sidebar_position: 2
+sidebar_position: 0.3
 sidebar_label: Board
 slug: /board
 description: The proposed founding board of We The Citizens — 16 thought leaders, journalists, and elected officials Charlie Kirk trusted. Term-limited and charter-bound.
