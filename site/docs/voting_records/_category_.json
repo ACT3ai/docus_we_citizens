@@ -1,4 +1,8 @@
 {
   "label": "Voting Records",
-  "position": 19
+  "position": 19,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
 }

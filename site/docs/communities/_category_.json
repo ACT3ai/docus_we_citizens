@@ -1,4 +1,8 @@
 {
   "label": "Communities",
-  "position": 25
+  "position": 25,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
 }

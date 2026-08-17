@@ -1,4 +1,8 @@
 {
   "label": "Problem Laws",
-  "position": 9
+  "position": 9,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
 }

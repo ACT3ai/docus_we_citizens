@@ -1,4 +1,8 @@
 {
   "label": "Values",
-  "position": 23
+  "position": 23,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
 }

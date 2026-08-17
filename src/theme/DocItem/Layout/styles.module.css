@@ -1,0 +1,12 @@
+/**
+ * Kept from the stock theme: collapse the top margin of the first element in
+ * the article so the page title sits where the container's padding puts it.
+ *
+ * The stock `.docItemCol { max-width: 75% }` rule is deliberately NOT here —
+ * there is no table-of-contents column to leave room for.
+ */
+
+.docItemContainer header + *,
+.docItemContainer article > *:first-child {
+  margin-top: 0;
+}

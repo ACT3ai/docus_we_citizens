@@ -1,4 +1,8 @@
 {
   "label": "Evidence",
-  "position": 24
+  "position": 24,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
 }

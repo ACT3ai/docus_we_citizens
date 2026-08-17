@@ -1,4 +1,8 @@
 {
   "label": "Decisions",
-  "position": 22
+  "position": 22,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
 }

@@ -1,4 +1,8 @@
 {
   "label": "Politicians",
-  "position": 13
+  "position": 13,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
 }

@@ -631,3 +631,54 @@ h1, h2, h3, h4, h5, h6 {
   flex: 1 1 168px;
   max-width: none;
 }
+
+/* ---------------------------------------------------------------------
+   The left bar — flat, no chevrons, no indents
+
+   Enforced first in the template (src/theme/DocSidebarItem/Category draws a
+   Level 2 area as a single link to its own page, dropping its children and its
+   collapse button). These rules are the styling half of the same decision, and
+   the safety net if a future theme component ever renders a caret again.
+   --------------------------------------------------------------------- */
+
+/* No expand/collapse affordance anywhere in the left bar. */
+.theme-doc-sidebar-container .menu__caret,
+.theme-doc-sidebar-container .menu__link--sublist-caret::after,
+.theme-doc-sidebar-container .menu__link--sublist::after {
+  display: none !important;
+}
+
+/* Every row sits at the same depth: the bar is a list of destinations, not a
+   tree. Infima indents nested lists; there is nothing left to nest. */
+.theme-doc-sidebar-menu.menu__list .menu__list {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.theme-doc-sidebar-container .menu__list-item-collapsible {
+  background: none;
+}
+
+/* "← We The Citizens" at the top of the two party left bars: it leaves the
+   edition, so it reads quieter than the pages inside it. */
+.wcSidebarParent > .menu__link {
+  color: var(--ua-ink-faint);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+/* ---------------------------------------------------------------------
+   No right bar
+
+   The table of contents column is gone site-wide (src/theme/TOC returns null,
+   and neither src/theme/DocItem/Layout nor src/theme/BlogLayout emits its
+   column). Docs pages already take the full content width as a result; the blog
+   keeps Infima's col--7 from a branch that assumed a TOC, so widen it back.
+   --------------------------------------------------------------------- */
+
+@media (min-width: 997px) {
+  .blog-wrapper main.col--7 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+}

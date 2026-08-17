@@ -1,4 +1,8 @@
 {
   "label": "Take Action",
-  "position": 26
+  "position": 26,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
 }

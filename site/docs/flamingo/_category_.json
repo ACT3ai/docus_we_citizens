@@ -1,4 +1,8 @@
 {
   "label": "The Flamingo Award",
-  "position": 18
+  "position": 18,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
 }
