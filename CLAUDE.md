@@ -13,7 +13,7 @@
 
 This repo is the docusaurus markdown site before they enter the web app for We The Citizens. 
 
-NEW REPO for this Docusaurus for WeTheCitizens.io:   https://github.com/ACT3ai/docus_we_citizens.git
+NEW REPO for this Docusaurus for WeTheCitizens.io:   https://github.com/ACT3ai/docus_we_citizents.git
 
 It used to have an old repo. Note that the above is the newest as of August 15th, 2026. 
 
