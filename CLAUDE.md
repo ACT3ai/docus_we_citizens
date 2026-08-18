@@ -251,8 +251,9 @@ make references to it:
 THE FOUR PARTY FRONT DOORS
 ====================================================================
 
-We The Citizens has four party front doors. They are Level 2 areas on this
-site and they are also pinned items in the top bar.
+We The Citizens has four party front doors. All four are Level 2 areas on this
+site. Only R and D are pinned items in the top bar; L and S are reached from the
+"More" menu and the footer (see WIDTH BUDGET below).
 
 * "We The Citizens R"  -> Republicans  -> WeCitizensR.com
   level_2_key = r    (site/docs/r/)   nav_order 31   sidebar republicanSidebar
@@ -466,11 +467,13 @@ The mark is the black box with the white W (site/static/img/logo.svg).
 Keep them in sync. If the logo changes, regenerate all of them, not just one.
 
 WIDTH BUDGET FOR THE TOP BAR (internal/css/custom.css, "Fitting the bar"):
-the navbar rides a 1320px rail. Below 1610px the site links (.wcNavFoldable)
+the navbar rides a 1320px rail. Below 1380px the site links (.wcNavFoldable)
 fold out of the bar and their duplicates in the More menu (.wcMoreFolded)
-appear instead. The fold point was 1380px until the bar went from two party
-front doors to four on 2026-08-17; the two extra buttons cost roughly 230px, so
-the fold point moved up by the same amount rather than letting the row wrap.
-The party links are the ones that must survive the squeeze — they are the whole
-point of the bar — so the site links fold first. If you add another top-bar
-item, re-check that budget again.
+appear instead. The fold point went to 1610px on 2026-08-17 when the bar briefly
+carried all four party front doors — two extra buttons, roughly 230px — and came
+back to 1380px the same day when L and S were taken back off the bar, because
+folding the site links away on an ordinary laptop cost more than the two extra
+buttons were worth. The party links are the ones that must survive the squeeze
+— they are the whole point of the bar — so the site links fold first. Which
+doors are on the bar is TOP_BAR_PARTY_KEYS in internal/nav.ts, and it only ever
+holds whole pairs. If you add another top-bar item, re-check that budget again.

@@ -271,6 +271,28 @@ export const PARTIES: Party[] = [
   },
 ];
 
+/**
+ * The party front doors that get their own button in the top bar.
+ *
+ * The bar carries the R and D pair only. L and S were taken off it on
+ * 2026-08-17: four party buttons plus the site links plus the app CTA left the
+ * row with nothing to give, and the two smaller doors were the ones paying for
+ * it. They are not demoted — both are still full Level 2 areas, both are listed
+ * under "Party front doors" in the "More" menu and in the footer, and their
+ * overview pages hand the visitor WeCitizensL.com / WeCitizensSocialism.com the
+ * same way the bar button did.
+ *
+ * Mirror symmetry runs once per pair (pm/r_vs_d.mdx §5), so this list is only
+ * ever a whole pair: R and D on the bar, L and S off it. Never one member of a
+ * pair without the other.
+ */
+export const TOP_BAR_PARTY_KEYS = ["r", "d"] as const;
+
+/** The party front doors pinned to the top bar, in order. */
+const TOP_BAR_PARTIES = PARTIES.filter((p) =>
+  TOP_BAR_PARTY_KEYS.includes(p.key as (typeof TOP_BAR_PARTY_KEYS)[number]),
+);
+
 /** Every Level 2 area on the site, party front doors first. */
 export const ALL_LEVEL_2: Level2[] = [...PARTIES, ...LEVEL_2];
 
@@ -452,23 +474,24 @@ function menuLink(key: string) {
 }
 
 /**
- * One top-level navbar item per party front door — a plain "Republicans" /
- * "Democrats" / "Libertarians" / "Socialists" button that opens that edition's
- * public domain in a new tab.
+ * One top-level navbar item per TOP-BAR party front door — a plain
+ * "Republicans" / "Democrats" button that opens that edition's public domain in
+ * a new tab.
  *
  * Not a dropdown, and no "We The Citizens" line above the party name: the top
- * bar hands the visitor straight to WeCitizensR.com, WeCitizensD.com,
- * WeCitizensL.com or WeCitizensSocialism.com. The internal overview pages for
- * the four editions stay reachable from the "More" menu and the footer.
+ * bar hands the visitor straight to WeCitizensR.com or WeCitizensD.com. The
+ * internal overview pages for all four editions stay reachable from the "More"
+ * menu and the footer.
  *
- * WIDTH BUDGET. Four party buttons is two more than the bar carried when the
- * 1380px fold point was chosen, so that fold point moved to 1610px in
- * internal/css/custom.css ("Fitting the bar"). If a fifth pair is ever added,
- * re-check it again — the alternative is collapsing these into one dropdown,
- * which costs the visitor a click on the single most important link in the bar.
+ * WIDTH BUDGET. The bar carries two party buttons, which is what the 1380px
+ * fold point in internal/css/custom.css ("Fitting the bar") was sized for. It
+ * briefly carried four; L and S came back off on 2026-08-17 because two more
+ * buttons cost roughly 230px and pushed the fold point to 1610px, folding the
+ * site links out of the bar on ordinary laptop screens. Adding a pair back
+ * means re-doing that budget — see TOP_BAR_PARTY_KEYS.
  */
 export function partyNavbarItems() {
-  return PARTIES.map((party) => ({
+  return TOP_BAR_PARTIES.map((party) => ({
     href: party.domain,
     label: party.subLabel,
     target: "_blank",

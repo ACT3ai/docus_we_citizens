@@ -461,15 +461,16 @@ h1, h2, h3, h4, h5, h6 {
    ===================================================================== */
 
 /* The navbar rides on a wider rail than the article column: the bar carries
-   the brand, the site links, all four party front doors, More, and the app CTA.
-   Below 1610px the site links fold into the "More" menu instead — see
+   the brand, the site links, the R and D party front doors, More, and the app
+   CTA. Below 1380px the site links fold into the "More" menu instead — see
    .wcNavFoldable / .wcMoreFolded further down.
 
-   The fold point was 1380px when the bar carried two party front doors. Adding
-   the L and S doors (pm/r_vs_d.mdx §1.3a — a door ships with its axis partner)
-   put two more buttons on the bar, roughly 230px, so the fold point moved up by
-   the same amount rather than letting the row wrap. Add another item and this
-   budget has to be re-checked again. */
+   The fold point went to 1610px on 2026-08-17 when the L and S doors were added
+   to the bar — two more buttons, roughly 230px — and came back to 1380px the
+   same day when they were taken off it again, because folding the site links
+   away on an ordinary laptop cost more than the two extra buttons were worth.
+   L and S are still reachable from the "More" menu and the footer. Add another
+   item and this budget has to be re-checked again. */
 .navbar__inner {
   max-width: 1320px;
   margin-inline: auto;
@@ -619,10 +620,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* The menu is right-anchored to the "More" item, so its left edge depends on
    how far along the bar that item sits. Once the site links fold away
-   (below 1610px) "More" moves left, and a four-column menu would hang off the
+   (below 1380px) "More" moves left, and a four-column menu would hang off the
    left edge of the window — so drop a column at exactly the fold point, and
    another one on the narrowest desktops. */
-@media (max-width: 1609px) {
+@media (max-width: 1379px) {
   .wcMoreNav ~ .dropdown__menu {
     grid-template-columns: repeat(3, minmax(156px, 1fr));
     max-width: min(530px, calc(100vw - 32px));
@@ -639,23 +640,24 @@ h1, h2, h3, h4, h5, h6 {
 /* ---------------------------------------------------------------------
    Fitting the bar
 
-   Below 1610px the site links fold into the "More" menu, where duplicate
-   entries carrying .wcMoreFolded are waiting. Above 1610px those duplicates
+   Below 1380px the site links fold into the "More" menu, where duplicate
+   entries carrying .wcMoreFolded are waiting. Above 1380px those duplicates
    are hidden instead, so the same link is never offered twice.
 
-   The threshold used to be 1380px, when the bar carried two party front doors
-   rather than four. The party links are the ones that must survive the squeeze
-   — they are the whole point of the bar — so the site links fold earlier
-   instead. See "Fitting the bar" note in internal/nav.ts → partyNavbarItems().
+   The threshold was briefly 1610px, while the bar carried four party front
+   doors rather than two. The party links are the ones that must survive the
+   squeeze — they are the whole point of the bar — so the site links fold
+   first, but with only R and D on the bar there is room again at 1380px. See
+   "Fitting the bar" note in internal/nav.ts → partyNavbarItems().
    --------------------------------------------------------------------- */
 
-@media (max-width: 1609px) {
+@media (max-width: 1379px) {
   .navbar__items .wcNavFoldable {
     display: none;
   }
 }
 
-@media (min-width: 1610px) {
+@media (min-width: 1380px) {
   .dropdown__menu .wcMoreFolded {
     display: none;
   }
