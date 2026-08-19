@@ -31,7 +31,11 @@ const SITE_KEYWORDS =
   'citizen movement, political ethics, radical transparency, conservative, ' +
   'TPUSA alternative, grassroots advocacy, anti-corruption, free speech, ' +
   'deep state, voter integrity, US politics, citizen first, Christian values';
-const SOCIAL_CARD = 'img/cover.jpeg';
+// Social preview card served to Google, X/Twitter, Facebook, Reddit, Slack, iMessage.
+// 1920x1072 JPEG generated from marketing/images/overview/best.png.
+const SOCIAL_CARD = 'img/social-card.jpg';
+const SOCIAL_CARD_WIDTH = '1920';
+const SOCIAL_CARD_HEIGHT = '1072';
 const SOCIAL_CARD_ABS = `${SITE_URL}/${SOCIAL_CARD}`;
 
 // Structured data (schema.org) — helps Google Knowledge Graph and rich results.
@@ -283,8 +287,9 @@ const config: Config = {
       {property: 'og:site_name', content: SITE_NAME},
       {property: 'og:image', content: SOCIAL_CARD_ABS},
       {property: 'og:image:alt', content: `${SITE_NAME} — ${SITE_TAGLINE}`},
-      {property: 'og:image:width', content: '586'},
-      {property: 'og:image:height', content: '305'},
+      {property: 'og:image:type', content: 'image/jpeg'},
+      {property: 'og:image:width', content: SOCIAL_CARD_WIDTH},
+      {property: 'og:image:height', content: SOCIAL_CARD_HEIGHT},
       {property: 'og:locale', content: 'en_US'},
     ],
     colorMode: {
