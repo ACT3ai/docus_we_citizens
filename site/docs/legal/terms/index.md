@@ -9,30 +9,47 @@ format: md
 ---
 
 
-# We The Citizens — Terms of Service
+# We the Citizens™ — Terms of Service
 
-**Effective date:** 2026-08-19 · **Version:** 0.4 (DRAFT — not yet in force)
-**Change log:** see §28.4 · **Previous version:** 0.3 (2026-08-19) · 0.2 (2026-08-19) · 0.1 (2026-08-18)
+**Effective date:** 2026-08-19 · **Version:** 0.6 (DRAFT — not yet in force)
+**Change log:** see §28.4 · **Previous versions:** 0.5 · 0.4 · 0.3 · 0.2 (all 2026-08-19) · 0.1 (2026-08-18)
 
-> **WHAT CHANGED IN 0.4 — THE AI-TRAINING REVERSAL (2026-08-19).** Bryan confirmed that **we do
-> train our own AI models on citizen data, and that data is also used to train AI outside our
-> company.** Version 0.3's licence did not authorise any of that. **New §7.2A** grants a second,
-> separate, **perpetual and irrevocable** AI-training licence including a **sublicence to third
-> parties**; **§7.2B** binds those sublicensees; **§7.2C** states that the licence is *not* the
-> Article 9 consent and that the Privacy Policy controls; **§7.4** now expressly excludes §7.2A
-> from its duration rule; **§7.11's** no-sell promise now states plainly what it does *not* cover;
-> and **§18.6, §18.6A and §18.18** carry the training statement, its irreversibility, and the
-> warning that a provider's promise is not ours. **Four new open items — A.17–A.20 — and two of
-> them are counsel questions that can break the clause.**
+> **WHAT CHANGED IN 0.6 — TWO ANSWERS BRYAN HAD ALREADY GIVEN FINALLY REACH THE CONTRACT
+> (2026-08-19).** This version carries no new policy. It closes the gap between what Bryan has
+> decided and what the document actually says.
+>
+> * **THE STATE OF INCORPORATION IS ANSWERED: WASHINGTON.** `{GOVERNING_STATE}` is **gone** —
+>   substituted at **§1.1** (the parties clause) and **§26.1** (governing law). This settles the
+>   three-way contradiction the sibling documents carried for one company (a Delaware
+>   corporation / a Bastrop, Texas office / our own King County venue) **in favour of the one
+>   that agrees with our own venue clause.** §26.1 now *elects* Washington law, which is a
+>   formally separate choice from the state of incorporation — so it is recorded as a **decision
+>   for Bryan to confirm** (Appendix A.2) rather than an inference the drafting performed
+>   quietly.
+> * **WE HAVE A REAL MAILBOX: ContactUs@ACT3ai.com.** It is in the §30 table as our general
+>   address. **It does not close the seven specialised channels**, and §30 now says which of
+>   them still block publication and why.
+> * **NEW §3.7 — WE SAY WHICH SURFACES ACTUALLY EXIST TODAY.** Payments (§15),
+>   WeTheCitizens.tv (§16), federated publishing (§19) and the host-based front doors (§3.2) are
+>   **not built yet**. The Privacy Policy states that as fact; a contract that described a
+>   storefront nobody can reach while the disclosure next to it said otherwise would have the two
+>   documents disagreeing about what the product is. Now they agree.
+> * **§18.13 narrowed** so that it is true whether or not we are on the AI provider's commercial
+>   surface — which is a fact about our own vendor arrangement that **nobody in this directory
+>   has verified**, and which the Privacy Policy carries in its UNVERIFIED FACTS appendix.
+> * **Appendix A's numbering is repaired.** Version 0.5 reused A.16 through A.22 across three
+>   different sub-tables, so five open items shared a number with an unrelated one. The sequence
+>   is now single and continuous, and the cross-references were updated with it.
 
 > **⚠️ THIS IS A DRAFT AND IT IS NOT LEGAL ADVICE.**
-> It was generated from `../needs.txt` and `../important_terms.md` and has not been
-> reviewed by a lawyer. It contains unfilled placeholders in curly braces that must be
-> answered before publication — see **Appendix A**. **Seven provisions require outside
-> counsel** before this document goes live: **§10.6** (liquidated damages), **§23.2** (the
-> covenant not to sue), **§23.6–§23.7** (its extension to public figures, and whether it can
-> reach an official acting officially at all), **§25.10–§25.12** (the conditions precedent),
-> **§25.18** (public injunctive relief), and **§25.2** (dispute resolution). Do not publish
+> It was generated from `../needs.txt`, `../important_terms.md` and `../../information.yaml`, and
+> **has not been reviewed by a lawyer.** It still contains unfilled placeholders in curly braces
+> that must be answered before publication — see **Appendix A**. **Seven provisions require
+> outside counsel** before this document goes live: **§10.6** (liquidated damages), **§23.2** (the
+> covenant not to sue), **§23.6–§23.7** (its extension to public figures, and whether it can reach
+> an official acting officially at all), **§25.10–§25.12** (the conditions precedent), **§25.18**
+> (public injunctive relief), and **§25.2** (dispute resolution). **Four further questions opened
+> by the AI-training decision are also counsel questions** (Appendix A.17–A.20). Do not publish
 > this file.
 
 ---
@@ -80,6 +97,9 @@ section below also opens with its own one-line summary, on the same footing (§1
   machines we do not run, deleting our copy does not delete theirs — and neither you nor we
   can call it back. (§5.4, §5.7, §19.3)
 * **We are not a nonprofit, and nothing you pay us is tax-deductible.** (§17.12)
+* **Some of what these Terms describe is not built yet.** Payments, WeTheCitizens.tv, and
+  publishing to a federated network are written here in advance so the rules exist before the
+  feature does. **We are not promising to build any of them.** (§3.7)
 
 **Free speech, and moderation**
 
@@ -121,6 +141,14 @@ regulator (§25.13, §25.17).
 Export your data any time (§20.4), delete your account any time (§27.2, §27.9), and take
 your local files with you — they were always yours (§5.1).
 
+**Where this contract lives**
+
+You are contracting with **ACT 3 AI, Inc.**, a **Washington** corporation, doing business as We
+the Citizens (§1.1). **Washington law governs and King County, Washington is the venue** (§26.1,
+§26.2) — **except that if you are a consumer in the EU, the EEA, the UK, Switzerland, Norway, or
+Iceland, your own country's law and your own country's courts apply instead** (§26.11). We do not
+try to drag you to Washington.
+
 ---
 
 ## Table of Contents
@@ -152,10 +180,17 @@ your local files with you — they were always yours (§5.1).
 > parts of the Service. Running the app purely on your own machine does not require it.
 
 **1.1 The parties.** These Terms of Service (the "**Terms**") are a binding contract between
-**\{LEGAL_ENTITY\}** ("**We The Citizens**", "we", "us", "our") and you, the individual using
-the Service ("**you**", and where the context is about a person using the movement, a
-"**Citizen**"). "We The Citizens" is used throughout to refer to both the company and the
-product.
+**ACT 3 AI, Inc.**, a corporation organized under the laws of the **State of Washington**, **doing
+business as We the Citizens** ("**We the Citizens**", "we", "us", "our"), and you, the
+individual using the Service ("**you**", and where the context is about a person using the
+movement, a "**Citizen**"). "We the Citizens" is used throughout to refer to both the company
+and the product.
+
+**ACT 3 AI, Inc. also operates other products under other brands, including our sibling social
+network.** "We the Citizens" is a brand and assumed name of that one company, not a second or
+separate corporation, and **you are contracting with ACT 3 AI, Inc. whichever of our properties in
+§3.1 or §3.2 you arrived through.** Our Privacy Policy identifies the other brands by name, because
+a person is entitled to know which legal person holds their data (Privacy Policy §2.1a).
 
 **1.2 Acceptance.** You accept these Terms by doing any of the following: creating an
 account; running the Local App in a way that connects to the Hosted Service; purchasing any
@@ -285,8 +320,8 @@ Proposed Laws.
 of our materials refers to a "**board of directors**", a "board", or a "board member", that
 phrase means an **advisory group** — a group of guides and advisors who give us their view.
 **It does not mean a corporate board of directors.** Its members hold no corporate office at
-\{LEGAL_ENTITY\}, are not directors of it in any legal sense, owe you no fiduciary duty, and
-have no authority to bind, represent, or speak for \{LEGAL_ENTITY\} (§29.12). Where we ever do
+ACT 3 AI, Inc., are not directors of it in any legal sense, owe you no fiduciary duty, and
+have no authority to bind, represent, or speak for ACT 3 AI, Inc. (§29.12). Where we ever do
 have a statutory board of directors, we will call it that and say so plainly.
 
 ---
@@ -342,6 +377,31 @@ for what you publish there, is people we have no relationship with and no author
 over people who never agreed to anything. **Nothing in these Terms gives a person who is not
 a User any right to enforce them** (§29.5), and nothing in them purports to govern that
 person's conduct.
+
+**3.7 Not all of this exists yet, and we would rather tell you which parts.**
+
+> These Terms describe the Service as it is designed, including parts of it **we have not built
+> yet.** As of the effective date at the top of this document:
+>
+> * **Payments and Subscriptions (§15) are not live.** No payment processor is integrated and we
+>   hold no billing data.
+> * **WeTheCitizens.tv (§16) does not exist.** There is no video service and no viewing data.
+> * **Publishing to a federated network (§19), including WeCitizens.social, is not live.**
+> * **The four front doors in §3.2 do not yet operate as separate hostnames.**
+>
+> **Why the terms for them are here anyway.** Rules that arrive after a feature does are rules
+> nobody agreed to. Writing them in advance means that on the day payments launch, the
+> auto-renewal disclosure, the cancellation right, and the refund position already exist and were
+> already visible to you — which is the whole point of §15.7. **Our Privacy Policy takes the same
+> approach and says the same thing about the same features**, in its own sections 2.3, 12 and 16.
+>
+> **What that does and does not mean.** A section describing a feature that does not exist
+> **imposes no obligation on you and confers no right on you until that feature is available to
+> you** — you cannot breach §16 before there is anything to watch. **Nothing in these Terms is a
+> promise, commitment, or representation that we will build any feature, on any timetable, or at
+> all** (§21.5, §21.6). **We will update these Terms and give notice under §28.2 before any of
+> those surfaces launches**, and if what we build differs from what is described here, the
+> description changes — not your rights.
 
 ---
 
@@ -475,7 +535,9 @@ Citizen using someone else's instance is contracting with that operator, not wit
 ## 6. License to Use the Service
 
 > **In short:** You get a limited licence to use the hosted Service. The open-source licence
-> on our code is a completely separate document covering a completely different thing.
+> on our code is a completely separate document covering a completely different thing — **and
+> it does not give you our name.** You may fork our code; you may not run it under our brand.
+> You may always use our name to talk about us, including to criticize us.
 
 **6.1 Your license.** Subject to these Terms, we grant you a limited, revocable,
 non-exclusive, non-transferable, non-sublicensable license to access and use the Hosted
@@ -491,9 +553,10 @@ open-source license. **That license governs the code and nothing else** — it g
 right to the Hosted Service, to our brand, to other Citizens' content, or to the data on our
 servers. Equally, these Terms grant you no rights in the code and take none away.
 
-**6.4 Our brand.** "We The Citizens", our logos, and the four front-door brands
-(WeCitizensR.com, WeCitizensD.com, WeCitizensL.com, WeCitizensSocialism.com) are ours. Nothing
-in these Terms or in the open-source license grants you any trademark right.
+**6.4 Our marks.** **WE THE CITIZENS™** is our trademark. Our logos, our trade dress, and the
+four front-door brands — **WeCitizensR.com**, **WeCitizensD.com**, **WeCitizensL.com**, and
+**WeCitizensSocialism.com** — are also ours, together with the goodwill in all of them (the
+"**Marks**").
 
 **6.5 Beta and experimental features.** Features labeled beta, preview, or experimental are
 provided with no promises of any kind and may be changed or withdrawn at any time.
@@ -508,6 +571,66 @@ harmfully conflated:
 * **(c) Purely local use** of the Local App — running it on your own machine with no
   connection to the Hosted Service — **requires no acceptance of these Terms at all** and is
   governed only by (a).
+
+**6.7 No implied trademark license — and this sentence sits here, next to the open-source
+license, on purpose.** **Nothing in these Terms, nothing in the open-source license on our
+code, and nothing in your use of the Service grants you any right, license, or permission to
+use the Marks.** We say it here rather than in a distant intellectual-property section because
+the thing sitting immediately beside it — a permissive open-source license — is exactly what
+leads a reader to assume the brand came with the code. **It did not.** Conveying copyright
+while withholding trademark is the settled convention of open-source licensing; the Apache
+License 2.0 says so in terms at its §6, and the MIT and BSD licenses reach the same result by
+saying nothing at all, which is the more surprising route to it.
+
+**6.8 What you may not do with the Marks.** Without our prior written permission, you may not
+use the Marks, or any confusingly similar variant, misspelling, translation, or
+transliteration of them, in any of the following:
+
+* a **domain name** or subdomain;
+* an **account handle**, username, or display name;
+* an **application, product, or service name**;
+* a **business name, trade name, or assumed name (DBA)**;
+* a **metatag, keyword advertisement, or search advertisement**; or
+* **any other use** that suggests we sponsor, endorse, operate, are affiliated with, or have
+  approved you, your instance, your organization, or your content.
+
+**6.9 Why this clause carries more weight here than on an ordinary platform.** Our code is
+open source and **anyone may lawfully run a fork of it** — we want that. But a fork running
+under **our name** is, to a citizen or a voter, indistinguishable from us, and everything this
+movement is worth depends on a person knowing **whose** position, whose ballot information,
+and whose proposed legislation they are reading. **The Marks are the only legal instrument
+that separates us from a fork, because the code license deliberately does not.** That is why
+§6.8 enumerates rather than gestures, and it is why a convincing look-alike operated to shape
+what citizens believe is treated here with the same seriousness as the coordinated
+narrative-control conduct described in §9 and §14.
+
+**6.10 Referring to us, including to criticize us, is expressly permitted.** **Nothing in §6.7
+or §6.8 prevents you from using our name to identify, discuss, review, report on, compare
+with, or criticize us**, our product, or our positions. That is nominative fair use, it is
+lawful, and we are not pretending otherwise. Two independent reasons, either sufficient on its
+own: a clause purporting to forbid it would be unenforceable and could take the enforceable
+parts of §6.8 down with it; and **we are a free-speech platform**, so a trademark clause that
+functioned as a gag on our critics would refute the entire premise of this Service.
+
+**6.11 Other people's marks.** Trademarks, logos, and brands belonging to third parties are
+their owners' property. Their appearance anywhere in the Service implies no affiliation,
+sponsorship, or endorsement in either direction. Your own obligations toward other people's
+marks are in §12.2 and §12.4.
+
+**6.12 Reservation of rights.** All rights not expressly granted in these Terms are reserved.
+
+**6.13 A note on the "™" symbol, because we would rather be accurate than impressive.** We use
+"**™**" and not "**®**". "™" asserts that we claim the mark; "®" asserts that a trademark
+office has **registered** it. **We use the symbol that is true**, and we will not upgrade it
+until a trademark office has actually registered the mark (§12.14).
+
+> **`{TM_STATUS}` — DRAFTING NOTE, NOT PART OF THE CONTRACT.** Whether **WE THE CITIZENS** is
+> registered, pending, or common-law only is **unrecorded** — the filing worksheet in this repo
+> carries no serial number, no filing date and no registration number (Appendix A.22). **§6.4
+> through §6.13 are drafted to be true in all three cases**, because they assert *ownership* and
+> never *registration*, so this does **not** block publication. **What it does block is the "®"
+> symbol**, anywhere: marking an unregistered mark as registered is false marking under
+> 15 U.S.C. §§1111 and 1120. Fill this in when the number exists, and only then revisit §6.13.
 
 ---
 
@@ -993,8 +1116,13 @@ courtesy.
 misrepresents that material is infringing, or that it was removed by mistake, may be liable for
 damages. We take abusive notices seriously in both directions.
 
-**12.12 Trademark complaints.** Trademark complaints go through the channel in §30 and are
-handled separately from the DMCA process.
+**12.12 Trademark complaints, and why they go somewhere else.** Trademark complaints go
+through the trademark row of the §30 table, **not** to the DMCA agent, and are handled
+separately from the DMCA process. **The reason is that the DMCA is a copyright statute and its
+safe harbor does not cover trademark at all** — a trademark grievance sent to a copyright agent
+is a notice nobody is obliged to act on, and a complainant who is told the right address is
+better served than one left waiting. Tell us the mark, the registration if there is one, where
+it appears on the Service, and why the use confuses. Our own marks are in §6.4.
 
 **12.13 Scraping and AI training.** You may not access the Service by automated means, or use
 User Content obtained from it, for any commercial purpose — and **"commercial purpose"
@@ -1004,6 +1132,13 @@ terms permit, (b) as our robots.txt permits, or (c) with our prior written conse
 in this section restricts a Citizen from exporting their own data** (§20.4), and nothing here
 overrides rights granted by the open-source license on our code (§6.6). This prohibition binds
 **other people**; it is not a licence to us to do the same thing, which §7.11 forecloses.
+
+**12.14 We hold ourselves to §12.2 as well.** §12.2 forbids *you* to infringe a trademark;
+this section states what we owe *you* in return on the same subject. **We will not describe any
+mark of ours as registered unless a trademark office has actually registered it**, which is why
+§6.13 uses "™" and not "®", and we will not assert a right in a mark we do not hold. A platform
+that polices other people's trademark conduct while overstating its own is not one you should
+take at its word.
 
 ---
 
@@ -1440,7 +1575,7 @@ through the Service is not.** The two are separate questions and we answer them 
 
 **17.12 WE ARE NOT A NONPROFIT AND NOTHING YOU PAY US IS TAX-DEDUCTIBLE.**
 
-> **We make no claim of nonprofit, charitable, or tax-exempt status.** \{LEGAL_ENTITY\} is not
+> **We make no claim of nonprofit, charitable, or tax-exempt status.** ACT 3 AI, Inc. is not
 > represented to be a 501(c)(3), a 501(c)(4), or any other tax-exempt organization, and we do not
 > hold ourselves out as one.
 >
@@ -1467,7 +1602,7 @@ position, or a statement that we agree with a word of it (§3.3, §17.9, §14.6)
 structure (§17.3, Appendix A.5). **If one ever does**, we will name that entity, name the property
 it operates, and say plainly which entity you are dealing with on which hostname — rather than
 letting one contract quietly cover two entities with different legal characters. Until that
-statement appears here, **you are contracting with \{LEGAL_ENTITY\} alone**, and no payment you
+statement appears here, **you are contracting with ACT 3 AI, Inc. alone**, and no payment you
 make to us is a political contribution (§17.5).
 
 ---
@@ -1568,15 +1703,23 @@ it — including responsibility for verifying it before you publish (§18.3).
 > responsibility**: reporting a mistake to us, and our reviewing it, creates no obligation to
 > correct, no timeline, and no liability (§13.12).
 
-**18.13 Why §18.3 is written the way it is — we are required to tell you.** The warning in §18.3
-is not a stylistic choice and it is not us being cautious. **The commercial terms on which we
-obtain AI capability require us to notify you that factual assertions in AI Output should not be
-relied upon without independently checking them, because they may be false, incomplete,
-misleading, or not reflective of recent events or information.** We pass that through to you in
-those words because that is the obligation, because the enumeration is a better description of
-how these models fail than one we would have written, and because you are entitled to know that
-the warning comes from the people who build the model and not only from us. **It is also our own
-position** (§18.12, §21.9).
+**18.13 Why §18.3 is written the way it is — and why it does not depend on us.** The warning in
+§18.3 is not a stylistic choice and it is not us being cautious.
+
+> **The commercial terms on which AI capability of this kind is supplied require the customer to
+> notify its users that factual assertions in model output should not be relied upon without
+> independently checking their accuracy, because they may be false, incomplete, misleading, or
+> not reflective of recent events or information.** Where we operate on those terms, that
+> notification is an obligation we owe our provider, not a courtesy we extend to you.
+>
+> **We are stating it that way on purpose.** Which provider we use, and on which commercial
+> surface, is a fact about our own arrangements that is recorded as an open item (Appendix A.15)
+> and carried in the Privacy Policy's own list of things not yet verified. **We are not going to
+> assert a vendor contract we have not confirmed in order to make a disclaimer sound more
+> official.** So read §18.3 as standing on three independent legs, any one of which is enough:
+> it is required of us where those terms apply; the enumeration is a better description of how
+> these models actually fail than anything we would have written; and **it is our own position
+> regardless** (§18.12, §21.9). **You are entitled to the warning either way.**
 
 **18.14 The AI Provider's rules apply to you too.**
 
@@ -1846,7 +1989,7 @@ THAT EXTENT, THE LIMITS ABOVE DO NOT APPLY TO YOU** (§26.6), and to that extent
 unlimited (§22.13).
 
 **22.9 What §22.3 means for a Citizen who paid us nothing — stated plainly.** Most Citizens use
-We The Citizens for free, locally, and never pay us anything. For those Citizens **the cap in
+We the Citizens for free, locally, and never pay us anything. For those Citizens **the cap in
 §22.3 computes to zero**, which means that, to the fullest extent the law allows, **we accept no
 monetary liability to them at all.** We are stating that in the open rather than leaving it to be
 discovered: it is the deal, and a free service is the consideration for it. **What it does not
@@ -2016,7 +2159,7 @@ rule we impose on you at §12.4 and §12.5, and it is the counterpart of §17.13
 > **In short:** If what you post or do gets us sued, you cover it — including our legal fees —
 > and that obligation outlives your account.
 
-**24.1 Your indemnity.** You will **defend, indemnify, and hold harmless** \{LEGAL_ENTITY\} and its
+**24.1 Your indemnity.** You will **defend, indemnify, and hold harmless** ACT 3 AI, Inc. and its
 officers, directors, employees, contractors, and agents.
 
 **24.2 What it covers.** Every claim, demand, action, loss, damage, judgment, fine, penalty,
@@ -2056,7 +2199,7 @@ Account is closed.
 > SPECIFIC STEPS BEFORE STARTING ANY PROCEEDING. READ IT CAREFULLY — AND READ §25.13 FIRST,
 > BECAUSE SEVERAL THINGS ARE CARVED OUT OF IT ENTIRELY.**
 >
-> **`{ARBITRATION_DECISION}` — DRAFTING NOTE, NOT PART OF THE CONTRACT.** Whether We The
+> **`{ARBITRATION_DECISION}` — DRAFTING NOTE, NOT PART OF THE CONTRACT.** Whether We the
 > Citizens adopts binding arbitration with a class-action waiver is an **unresolved business
 > decision** (Appendix A.7), and it is flagged for outside counsel. §25.2 is therefore drafted
 > with **Alternative A (courts) IN FORCE as the default** and **Alternative B (arbitration) set
@@ -2284,7 +2427,7 @@ requirements bind us** when we send you a Notice.
 >
 > **If you are represented by a lawyer, your lawyer may take part — but you agree to participate
 > personally as well. Likewise, if we are represented by a lawyer, our lawyer may take part, but
-> we will have a representative of \{LEGAL_ENTITY\} with authority to resolve the dispute
+> we will have a representative of ACT 3 AI, Inc. with authority to resolve the dispute
 > participate personally.**
 >
 > This is symmetrical on purpose. A pre-suit process that requires a consumer to show up while
@@ -2345,9 +2488,20 @@ which are not fee-shifting provisions.
 > Switzerland, Norway or Iceland, your own country's law and courts apply instead — we do not
 > try to drag you to Washington.
 
-**26.1 Governing law.** These Terms are governed by the laws of **\{GOVERNING_STATE\}**, and by
-applicable United States federal law, **excluding conflict-of-laws rules** and excluding the UN
-Convention on Contracts for the International Sale of Goods.
+**26.1 Governing law.** These Terms are governed by the laws of the **State of Washington,
+United States of America**, and by applicable United States federal law, **excluding
+conflict-of-laws rules** and excluding the UN Convention on Contracts for the International Sale
+of Goods. **§26.11 is a real exception to this for consumers in the EU, EEA, UK, Switzerland,
+Norway and Iceland**, and §26.6 is a further one wherever mandatory consumer law says so.
+
+> **A note on why this says Washington, since it used to say nothing.** ACT 3 AI, Inc. is a
+> **Washington** corporation (§1.1), and the venue for both mediation and court proceedings is
+> **King County, Washington** (§25.10(b), §26.2). Electing Washington law is the only combination
+> of those three that is internally coherent — a Washington company, sued in Washington, under
+> some third state's law, is a document that makes work for lawyers and sense to nobody.
+> **Choosing the governing law is nonetheless a formally separate decision from where a company
+> is incorporated**, and we record it here as a decision that was made rather than one the
+> drafting performed quietly (Appendix A.2).
 
 **26.2 Venue.** Subject to §25 and to §26.11, **the state and federal courts located in King
 County, Washington, United States of America have exclusive jurisdiction** over any proceeding
@@ -2398,8 +2552,8 @@ governs (§26.1) and that US courts hear disputes (§26.2) is a practical necess
 **26.10 Venue, stated once more because it is easy to miss.** **Mediation is seated in King
 County, Washington (§25.10(b)) and court proceedings are heard in King County, Washington
 (§26.2).** You may attend mediation remotely (§25.10(b)) and you may use your local small-claims
-court (§25.4). Note that the **governing law** in §26.1 is a separate question from the venue, and
-is still open — see Appendix A.2. **§26.11 is a real exception to all of this and you should read
+court (§25.4). **The governing law in §26.1 is Washington** — a separate question from venue, now
+answered the same way; see §26.1's note and Appendix A.2. **§26.11 is a real exception to all of this and you should read
 it if you are outside the United States.**
 
 **26.11 If you are a consumer in the EU, EEA, UK, Switzerland, Norway, or Iceland — your own law
@@ -2571,8 +2725,8 @@ users. **See §29.14, which is broader and governs official government use of th
 
 **29.12 The advisory group binds nobody.** Members of the advisory group defined in §2.8 — however
 the Service labels them, including as a "board of directors" — **hold no corporate office at
-\{LEGAL_ENTITY\}, owe you no fiduciary duty or duty of care, and have no actual, apparent, or
-ostensible authority to bind, represent, contract for, or speak on behalf of \{LEGAL_ENTITY\}.**
+ACT 3 AI, Inc., owe you no fiduciary duty or duty of care, and have no actual, apparent, or
+ostensible authority to bind, represent, contract for, or speak on behalf of ACT 3 AI, Inc.**
 Their views are their own. **Nothing an advisory group member says or writes is a representation,
 warranty, or commitment by us**, and nothing in §2.8 or this §29.12 creates a partnership, joint
 venture, agency, or employment relationship (§29.7).
@@ -2619,23 +2773,44 @@ risk, so we state the carve-out rather than rely on it being implied (§22.6, §
 
 | Purpose | Contact |
 | --- | --- |
-| **Legal entity and notice address** | \{LEGAL_ENTITY\}, \{NOTICE_ADDRESS\} |
+| **General contact — the address to use if none of the rows below fits** | **ContactUs@ACT3ai.com** |
+| **Legal entity and notice address** | **ACT 3 AI, Inc.**, a Washington corporation, doing business as We the Citizens — \{NOTICE_ADDRESS\} |
 | **Legal notices, Notice of Dispute (§25.1), mediation notice (§25.10), arbitration opt-out (§25.8)** | \{LEGAL_EMAIL\} |
 | **Complaints about us — the internal complaint process (§13.13, §25.11)** | \{COMPLAINTS_EMAIL\} |
 | **Report a mistake — corrections in content or AI Output (§13.12, §18.12, §21.9)** | \{CORRECTIONS_EMAIL\} |
 | **Abuse, harassment, and safety reports (§13.3)** | \{ABUSE_EMAIL\} |
 | **Reports of false statements about you (§11.6) — no Account required** | \{ABUSE_EMAIL\} |
 | **DMCA designated agent (§12.7–§12.9)** | \{DMCA_AGENT\} |
-| **Trademark complaints (§12.12)** | \{LEGAL_EMAIL\} |
+| **Trademark complaints (§12.12) — NOT the DMCA agent; the DMCA does not cover trademark** | \{LEGAL_EMAIL\} |
 | **Law-enforcement requests (§13.6)** | \{LAW_ENFORCEMENT_CHANNEL\} |
 | **Government entities and officials (§29.14)** | \{LEGAL_EMAIL\} |
 | **Privacy and data-subject requests** | See the Privacy Policy |
 | **EU/UK representative, where required (§26.4–§26.5)** | \{EU_REPRESENTATIVE\} |
 
----
----
+> **Two of these rows are not ordinary blanks, and this document cannot be published while they
+> are empty.** **§25.11 makes writing to the complaints address a condition precedent to bringing
+> a proceeding against us**, and **§13.12, §18.12(e) and §21.9 tell you to report mistakes to the
+> corrections address.** A condition precedent pointed at a mailbox that does not exist is
+> unenforceable and reads as bad faith; an accuracy promise pointed at a dead address is the
+> evidence against us rather than for us. **Those two addresses must be live before this document
+> goes into force, not after** (Appendix A.11, A.12).
+>
+> **And a general address does not close a specialised one.** ContactUs@ACT3ai.com is a real
+> mailbox and it is the right place for anything the rows above do not cover. It is **not** by
+> itself the DMCA designated agent — that requires an actual registration with the United States
+> Copyright Office, which we do not claim to hold until we do (§12.8, Appendix A.3) — and it is
+> not a substitute for naming the legal, abuse, complaints, corrections, law-enforcement, or
+> privacy channels. **Each of those may route to that same mailbox, provided the routing is
+> real.** Which of them do is a decision that has not been made (Appendix A.8).
 
+---
+---
 # Appendices
 
 > **The four appendices below are NOT part of the contract.** They are working notes for the
-> drafters and for counsel, and must be **removed before publication**.
+> drafters and for counsel, and must be **removed before publication.**
+>
+> **Numbering repaired in 0.6.** Version 0.5 reused the numbers **A.16 through A.22** across three
+> different sub-tables, so several open items shared an identifier with something unrelated. The
+> sequence below is single and continuous, and every cross-reference in the contract body was
+> updated to match. Where a number moved, the old one is shown.
