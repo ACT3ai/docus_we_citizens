@@ -14,44 +14,6 @@ format: md
 **Effective date:** 2026-08-19 · **Version:** 0.6 (DRAFT — not yet in force)
 **Change log:** see §28.4 · **Previous versions:** 0.5 · 0.4 · 0.3 · 0.2 (all 2026-08-19) · 0.1 (2026-08-18)
 
-> **WHAT CHANGED IN 0.6 — TWO ANSWERS BRYAN HAD ALREADY GIVEN FINALLY REACH THE CONTRACT
-> (2026-08-19).** This version carries no new policy. It closes the gap between what Bryan has
-> decided and what the document actually says.
->
-> * **THE STATE OF INCORPORATION IS ANSWERED: WASHINGTON.** The state-of-incorporation placeholder is **gone** —
->   substituted at **§1.1** (the parties clause) and **§26.1** (governing law). This settles the
->   three-way contradiction the sibling documents carried for one company (a Delaware
->   corporation / a Bastrop, Texas office / our own King County venue) **in favour of the one
->   that agrees with our own venue clause.** §26.1 now *elects* Washington law, which is a
->   formally separate choice from the state of incorporation — so it is recorded as a **decision
->   for Bryan to confirm** (Appendix A.2) rather than an inference the drafting performed
->   quietly.
-> * **WE HAVE A REAL MAILBOX: ContactUs@ACT3ai.com.** It is in the §30 table as our general
->   address. **It does not close the seven specialised channels**, and §30 now says which of
->   them still block publication and why.
-> * **NEW §3.7 — WE SAY WHICH SURFACES ACTUALLY EXIST TODAY.** Payments (§15),
->   WeTheCitizens.tv (§16), federated publishing (§19) and the host-based front doors (§3.2) are
->   **not built yet**. The Privacy Policy states that as fact; a contract that described a
->   storefront nobody can reach while the disclosure next to it said otherwise would have the two
->   documents disagreeing about what the product is. Now they agree.
-> * **§18.13 narrowed** so that it is true whether or not we are on the AI provider's commercial
->   surface — which is a fact about our own vendor arrangement that **nobody in this directory
->   has verified**, and which the Privacy Policy carries in its UNVERIFIED FACTS appendix.
-> * **Appendix A's numbering is repaired.** Version 0.5 reused A.16 through A.22 across three
->   different sub-tables, so five open items shared a number with an unrelated one. The sequence
->   is now single and continuous, and the cross-references were updated with it.
-
-> **⚠️ THIS IS A DRAFT AND IT IS NOT LEGAL ADVICE.**
-> It was generated from `../needs.txt`, `../important_terms.md` and `../../information.yaml`, and
-> **has not been reviewed by a lawyer.** It still contains unfilled placeholders in curly braces
-> that must be answered before publication — see **Appendix A**. **Seven provisions require
-> outside counsel** before this document goes live: **§10.6** (liquidated damages), **§23.2** (the
-> covenant not to sue), **§23.6–§23.7** (its extension to public figures, and whether it can reach
-> an official acting officially at all), **§25.10–§25.12** (the conditions precedent), **§25.18**
-> (public injunctive relief), and **§25.2** (dispute resolution). **Four further questions opened
-> by the AI-training decision are also counsel questions** (Appendix A.17–A.20). Do not publish
-> this file.
-
 ---
 
 ## The Short Version
@@ -169,7 +131,7 @@ try to drag you to Washington.
 | 12 | Intellectual Property, Infringement, DMCA | 28 | Changes to These Terms |
 | 13 | Moderation, Enforcement, and Appeals | 29 | General Provisions |
 | 14 | Our Legal Role — Safe Harbors | 30 | Contact and Legal Notices |
-| 15 | Payment, Credit Cards, and Subscriptions | | *(Appendices — not part of the contract)* |
+| 15 | Payment, Credit Cards, and Subscriptions | | |
 | 16 | Streaming, Pay-Per-View, and Rentals | | |
 
 ---
@@ -199,7 +161,7 @@ Local App, with no connection to the Hosted Service, requires no acceptance of t
 — that use is governed only by the open-source license on the code (§6.6).
 
 **1.3 Capacity and authority.** You represent that you are a natural person of legal
-capacity, at least **18** years old (§4.1). If you accept these Terms on behalf of a
+capacity, at least 18 years old (§4.1). If you accept these Terms on behalf of a
 community, organization, campaign, or employer, you represent that you have authority to
 bind it, and "you" includes that entity. **If you are a government entity, or an official
 acting in an official capacity, read §29.14 first** — parts of these Terms may not lawfully
@@ -284,7 +246,7 @@ support a claim.
 
 **2.4 Money.**
 "**Subscription**" means a recurring paid entitlement.
-"**Plan**" means a level of Subscription. **There are no named tiers, and no tier buys a different product.** Supporter membership is a single monthly Subscription whose **level is the amount you choose**: **$40, $100, $200, $400 or $1,000 per month**, or **any other amount you enter**. Every Supporter receives the **same** benefits at **$40 per month or more**; a larger amount buys no additional feature, and — as §17 says at greater length — **it buys no standing, no authority, no weight in any vote, and no exemption from any rule.**
+"**Plan**" means a level of Subscription. There are no named tiers, and no tier buys a different product. Supporter membership is a single monthly Subscription whose level is the amount you choose: $40, $100, $200, $400 or $1,000 per month, or any other amount you enter. Every Supporter receives the same benefits at $40 per month or more.
 "**Billing Period**" means the interval between charges.
 "**Renewal Date**" means the date a Subscription automatically renews.
 "**One-Time Purchase**" means a non-recurring paid item, including a purchased title on
@@ -388,6 +350,14 @@ person's conduct.
 > * **WeTheCitizens.tv (§16) does not exist.** There is no video service and no viewing data.
 > * **Publishing to a federated network (§19), including WeCitizens.social, is not live.**
 > * **The four front doors in §3.2 do not yet operate as separate hostnames.**
+> * **Self-service export (§20.4) is not built.** The right is real and stated; the button is not
+>   there yet. Our Privacy Policy §18.8 says the same thing.
+> * **The transparency report and the enforcement counters (§13.6, §13.11) are not published yet.**
+> * **The public change log (§28.4) does not exist yet.** Until it does, the effective date at the
+>   top of this document is the only version marker.
+> * **The DMCA designated agent (§12.8) is not yet registered with the Copyright Office**, so the
+>   safe-harbor description at §14.4 states what we are putting in place rather than what is already
+>   in place. **We will not assert §512 protection we have not established.**
 >
 > **Why the terms for them are here anyway.** Rules that arrive after a feature does are rules
 > nobody agreed to. Writing them in advance means that on the day payments launch, the
@@ -410,7 +380,7 @@ person's conduct.
 > **In short:** One human per account, you are responsible for what happens under yours, and
 > you can use the Local App without an account at all.
 
-**4.1 Minimum age.** You must be at least **18** years old to create an Account. This is the same number as the Privacy Policy §14.1, and it is 18 rather than lower because this is a political-speech platform with paid memberships.
+**4.1 Minimum age.** You must be at least **18** years old to create an Account.
 **Under no circumstances may anyone under 13 create an Account or use the Hosted Service.**
 If we learn that an Account belongs to someone below the minimum age, we will close it.
 
@@ -624,18 +594,6 @@ marks are in §12.2 and §12.4.
 office has **registered** it. **We use the symbol that is true**, and we will not upgrade it
 until a trademark office has actually registered the mark (§12.14).
 
-> **DRAFTING NOTE, NOT PART OF THE CONTRACT — resolved 2026-08-20.** We assert **WE THE CITIZENS**
-> as a mark we own and use, and we assert **no registration**. The filing worksheet in this repo
-> carries no serial number, no filing date and no registration number (Appendix A.22), so the mark
-> is treated as **common-law and unregistered** everywhere in this document. **That choice is safe
-> whichever way the record turns out**, and the reason is worth stating: if the mark is in fact
-> pending or registered, claiming the weaker status costs us nothing and forfeits no rights — but
-> claiming the stronger status while unregistered is **false marking under 15 U.S.C. §§1111 and
-> 1120**, a defence raised against us, a potential bar on recovery, and an independent claim. The
-> asymmetry is the whole argument. **So: "™" everywhere, "®" nowhere, and never the words
-> "registered trademark"** — until a registration number is written into the worksheet. Only then
-> is §6.13 revisited.
-
 ---
 
 ## 7. User Content and the License You Grant Us
@@ -684,7 +642,7 @@ own machine is never trained on by anyone, because we never receive it** (§5.1)
 reaches only what you publish or submit to us.
 
 **(e) Scope.** The categories of User Content covered are those named in the Privacy Policy's
-training section, and **no others**. *(Open item — see Appendix A.)*
+training section, and **no others**.
 
 **7.2B Sublicensees are bound.** Any third party we sublicense under §7.2A(a)(ii) is contractually
 limited to AI training, **may not re-share your User Content**, and may not use it to identify or
@@ -797,9 +755,7 @@ National Center for Missing & Exploited Children as required by 18 U.S.C. § 225
 subject's consent, so-called revenge pornography, and sexual Synthetic Media depicting a real
 person.
 
-**8.4 Adult content.** `{ADULT_CONTENT_DECISION — drafted here as PROHIBITED; confirm before
-publication (Appendix A.10)}` Pornographic and obscene material is **not permitted** on the
-Service.
+**8.4 Adult content.** Pornographic and obscene material is **not permitted** on the Service.
 
 **8.5 Gore and graphic violence.** Prohibited: real-world injury, death, or mutilation posted
 for shock value. Documentary and newsworthy material about real events is permitted, and may
@@ -1280,9 +1236,12 @@ law, to intellectual property claims, to the FOSTA sex-trafficking exceptions, o
 state-law claims. These Terms do not rely on Section 230 alone, and the obligations you accept
 under §10, §11, §12 and §24 stand independently of it.
 
-**14.4 DMCA safe harbor.** We operate under 17 U.S.C. § 512, maintain a designated agent
-(§12.8), respond to valid notices (§12.7), honor counter-notifications (§12.9), and terminate
-repeat infringers (§12.10).
+**14.4 DMCA safe harbor.** **We do not currently assert the §512 safe harbor**, because two of its
+conditions are not yet met: the designated agent at §12.8 is **not registered** with the Copyright
+Office, and the repeat-infringer process at §12.10 is **not yet in operation** (§3.7). When both are in
+place we will operate under 17 U.S.C. §512 — maintaining a designated agent (§12.8), responding to
+valid notices (§12.7), honoring counter-notifications (§12.9), and terminating repeat infringers
+(§12.10). **We would rather claim nothing than claim a protection we have not established.**
 
 **14.5 Mandatory reporting overrides expectations of privacy.** Where we are required to report
 apparent child sexual abuse material under 18 U.S.C. § 2258A, we will preserve and report it,
@@ -1530,9 +1489,7 @@ documented among political fundraising platforms, and the subject of regulator a
 attention — to be indefensible, and we do not engage in it.
 
 **17.3 Refunds and tax treatment.** See §17.11 (a Donation is not refundable on demand) and
-§17.12 (nothing is tax-deductible). \{NONPROFIT_STATUS — narrowed: the only part of this question
-still open is whether a PAC or political committee exists anywhere in our structure. The
-nonprofit and deductibility half is answered at §17.12. See also §17.14.\}
+§17.12 (nothing is tax-deductible). There is no political action committee and no political committee of any kind anywhere in our structure (§17.14).
 
 **17.4 We do not endorse candidates.** We do not endorse or oppose any candidate, party, or
 campaign. Content on the Service is the Citizen's, not ours (§14.6).
@@ -1602,8 +1559,7 @@ store is easy and answers the easy case. The case that actually arises is conten
 position, or a statement that we agree with a word of it (§3.3, §17.9, §14.6).
 
 **17.14 If a political committee ever exists in our structure, we will say so and say where.**
-\{NONPROFIT_STATUS\} is open only as to whether a PAC or political committee exists anywhere in our
-structure (§17.3, Appendix A.5). **If one ever does**, we will name that entity, name the property
+There is no political action committee and no political committee of any kind anywhere in our structure (§17.3). **If one ever does**, we will name that entity, name the property
 it operates, and say plainly which entity you are dealing with on which hostname — rather than
 letting one contract quietly cover two entities with different legal characters. Until that
 statement appears here, **you are contracting with ACT 3 AI, Inc. alone**, and no payment you
@@ -1717,8 +1673,8 @@ it — including responsibility for verifying it before you publish (§18.3).
 > notification is an obligation we owe our provider, not a courtesy we extend to you.
 >
 > **We are stating it that way on purpose.** Which provider we use, and on which commercial
-> surface, is a fact about our own arrangements that is recorded as an open item (Appendix A.15)
-> and carried in the Privacy Policy's own list of things not yet verified. **We are not going to
+> surface, is a fact about our own arrangements that we have not yet confirmed, and the Privacy
+> Policy says the same. **We are not going to
 > assert a vendor contract we have not confirmed in order to make a disclaimer sound more
 > official.** So read §18.3 as standing on three independent legs, any one of which is enough:
 > it is required of us where those terms apply; the enumeration is a better description of how
@@ -1868,8 +1824,11 @@ your machine, cannot disclose them, and cannot produce them under legal process 
 Read that together with §5.3: it is a statement about **your content**, not a claim that the
 Local App never communicates with us at all.
 
-**20.4 Export.** You may export your Account data and your published User Content at any time,
-in a portable format.
+**20.4 Export.** You will be able to export your Account data and your published User Content at
+any time, in a portable format. **The self-service export endpoint is not built yet** (§3.7); until
+it is, ask at the privacy address in §30 and we will produce the export by hand. The Privacy Policy
+states the same thing at its §18.8, and where the two ever differ on what exists today, **the
+Privacy Policy is the accurate one.**
 
 **20.5 Deletion.** Deleting your Account removes it and your published User Content from the
 Hosted Service, **except** for: content already propagated to the Federated Network (§19.3,
@@ -2015,8 +1974,8 @@ for a user who paid nothing — is the drafting used by at least one long-establ
 non-commercial political advocacy organization, whose terms cap liability at *"the amount paid,
 **if any**"*. It is not an outlier confined to platforms nobody wishes to be compared with. **It
 is also not evidence that any such cap has survived a consumer challenge**, and §22.10 exists
-precisely because it may not. Bryan should read this alongside §22.9 and Appendix A.15: the
-question of whether to restore a fixed floor is a business decision, not a drafting one.
+precisely because it may not. Whether to restore a fixed floor is a
+business decision rather than a drafting one; see §22.9.
 
 **22.12 WHAT IS NOT CAPPED AT ALL — read this before you read the cap.**
 
@@ -2203,18 +2162,6 @@ Account is closed.
 > SPECIFIC STEPS BEFORE STARTING ANY PROCEEDING. READ IT CAREFULLY — AND READ §25.13 FIRST,
 > BECAUSE SEVERAL THINGS ARE CARVED OUT OF IT ENTIRELY.**
 >
-> **`{ARBITRATION_DECISION}` — DRAFTING NOTE, NOT PART OF THE CONTRACT.** Whether We the
-> Citizens adopts binding arbitration with a class-action waiver is an **unresolved business
-> decision** (Appendix A.7), and it is flagged for outside counsel. §25.2 is therefore drafted
-> with **Alternative A (courts) IN FORCE as the default** and **Alternative B (arbitration) set
-> out in full but NOT IN FORCE**. Exactly one must be selected, and the other deleted, before
-> publication. Nothing here guesses the answer. **§25.10–§25.18 and §25.20 apply either way.**
->
-> **NUMBERING NOTE.** This section was renumbered in version 0.3 so that **every subsection
-> number matches the same number in `../important_terms.md`**. Version 0.2's §25.9 is now
-> §25.12, its §25.12 is now §25.13, its §25.13 is now §25.14, and its §25.14 is now §25.7. That
-> one-to-one map is how anyone verifies our coverage, and version 0.2 had it tangled.
-
 ### 25.1 Step two — the Notice of Dispute
 
 Before starting any proceeding, and **after** completing §25.11, you must send us a written
@@ -2224,27 +2171,25 @@ the dispute for 30 days from the date the Notice is sent**, and each of us will 
 personally as §25.16 requires. This is a **condition precedent**, subject to §25.12, §25.13 and
 §25.14.
 
-### 25.2 Arbitration or courts — the unresolved decision
+### 25.2 Courts, not arbitration
 
-* **ALTERNATIVE A — IN FORCE. Courts.** Unless and until we publish a version of these Terms that
-  expressly adopts Alternative B, a dispute that survives §25.12's ladder is heard in the courts
-  identified in §26.2. **There is no arbitration agreement and no class-action waiver in force**,
-  and §25.3, §25.8, §25.9 and §25.19 are inoperative.
-* **ALTERNATIVE B — NOT IN FORCE. Binding individual arbitration.** *(Text retained for the
-  decision at Appendix A.7. If adopted, this becomes operative and Alternative A is deleted.)*
-  Disputes would be resolved by binding individual arbitration administered by **National
-  Arbitration and Mediation (NAM)** under its Comprehensive Dispute Resolution Rules, before a
-  single arbitrator, seated in King County, Washington or, at your election, in your home
-  jurisdiction or by videoconference. **We would pay all filing and arbitrator fees beyond the
-  amount you would have paid to file in court.** §25.3, §25.8, §25.9, §25.18, §25.19 and §25.20
-  would then apply. **§25.18 is not optional if Alternative B is adopted** — without it the whole
-  arbitration agreement is unenforceable in at least one major jurisdiction.
+A dispute that survives §25.12's ladder is heard in the courts identified in §26.2.
+
+**There is no arbitration agreement in these Terms, and no class-action waiver.** We are saying
+that plainly rather than leaving you to infer it from silence, because most services you use do
+require arbitration and do waive class actions. **You keep your right to a court, your right to a
+jury where one is available, and your right to participate in a class or representative
+proceeding.** We do not ask you to give any of those up as a condition of using the Service.
+
+If we ever decide otherwise, it takes a published amendment under §28.2 with its notice period —
+never a silent change — and §25.3, §25.8, §25.9 and §25.19 are reserved against that possibility
+and are **not in force** today.
 
 ### 25.3 Class-action waiver
 
-*(Applies only if Alternative B is selected.)* Claims would be brought **only in an individual
-capacity**, and not as a plaintiff or class member in any class, collective, consolidated, or
-representative proceeding. See §25.19 for what happens if this waiver fails.
+*(Reserved — not in force.)* These Terms contain no arbitration agreement (§25.2). This
+number is held so that section numbering continues to match `important_terms.md`, which is how
+coverage is verified.
 
 ### 25.4 Small claims
 
@@ -2273,17 +2218,15 @@ limitation period, in which case the shortest permitted period applies.
 
 ### 25.8 Opt-out, and it is mutual
 
-*(Applies only if Alternative B is selected.)* Either party could reject the arbitration agreement
-by sending written notice to the address in §30 **within 30 days** of first accepting these Terms.
-Opting out affects nothing else in these Terms, and we would not retaliate for it. **The opt-out
-is mutual** — it binds us on the same terms it binds you.
+*(Reserved — not in force.)* These Terms contain no arbitration agreement (§25.2). This
+number is held so that section numbering continues to match `important_terms.md`, which is how
+coverage is verified.
 
 ### 25.9 Mass-filing protocol
 
-*(Applies only if Alternative B is selected.)* Where 50 or more similar demands are filed by or
-with the assistance of the same counsel, they would be batched in groups of no more than 50 for
-administrative and fee purposes, with bellwether proceedings to inform resolution of the rest, and
-limitation periods tolled for the unbatched demands.
+*(Reserved — not in force.)* These Terms contain no arbitration agreement (§25.2). This
+number is held so that section numbering continues to match `important_terms.md`, which is how
+coverage is verified.
 
 ### 25.10 Step three — mandatory mediation in King County, Washington
 
@@ -2463,16 +2406,9 @@ with it is worth less than no clause at all.
 
 ### 25.19 If the class-action waiver fails, the arbitration agreement fails with it
 
-*(Applies only if Alternative B is selected.)* **If any part of §25.3 is found unenforceable, then
-§25.2 Alternative B is void in its entirety**, and the dispute proceeds in the courts identified
-in §26.2. Nothing in §25.3 prevents an arbitration administrator from consolidating the
-administration of multiple claims under its own rules.
-
-> **This is a deliberate exception to §29.2**, which everywhere else in these Terms prefers
-> reducing a clause to deleting it. We make the opposite choice here, and we say so rather than
-> leaving it to look like an inconsistency: a **class arbitration** — an unreviewable proceeding
-> binding absent parties — is a worse outcome for both of us than a class action in a court of
-> record. If the waiver goes, we would rather be in court.
+*(Reserved — not in force.)* These Terms contain no arbitration agreement (§25.2). This
+number is held so that section numbering continues to match `important_terms.md`, which is how
+coverage is verified.
 
 ### 25.20 We do not recover our fees from you unless the claim was frivolous
 
@@ -2505,7 +2441,7 @@ Norway and Iceland**, and §26.6 is a further one wherever mandatory consumer la
 > some third state's law, is a document that makes work for lawyers and sense to nobody.
 > **Choosing the governing law is nonetheless a formally separate decision from where a company
 > is incorporated**, and we record it here as a decision that was made rather than one the
-> drafting performed quietly (Appendix A.2).
+> drafting performed quietly.
 
 **26.2 Venue.** Subject to §25 and to §26.11, **the state and federal courts located in King
 County, Washington, United States of America have exclusive jurisdiction** over any proceeding
@@ -2557,7 +2493,7 @@ governs (§26.1) and that US courts hear disputes (§26.2) is a practical necess
 County, Washington (§25.10(b)) and court proceedings are heard in King County, Washington
 (§26.2).** You may attend mediation remotely (§25.10(b)) and you may use your local small-claims
 court (§25.4). **The governing law in §26.1 is Washington** — a separate question from venue, now
-answered the same way; see §26.1's note and Appendix A.2. **§26.11 is a real exception to all of this and you should read
+answered the same way; see §26.1's note. **§26.11 is a real exception to all of this and you should read
 it if you are outside the United States.**
 
 **26.11 If you are a consumer in the EU, EEA, UK, Switzerland, Norway, or Iceland — your own law
@@ -2778,50 +2714,15 @@ risk, so we state the carve-out rather than rely on it being implied (§22.6, §
 | Purpose | Contact |
 | --- | --- |
 | **General contact — the address to use if none of the rows below fits** | **ContactUs@ACT3ai.com** |
-| **Legal entity and notice address** | **ACT 3 AI, Inc.**, a Washington corporation, doing business as We the Citizens — \{NOTICE_ADDRESS\} |
-| **Legal notices, Notice of Dispute (§25.1), mediation notice (§25.10), arbitration opt-out (§25.8)** | **ContactUs@ACT3ai.com** — subject line **"Legal notice"** |
-| **Complaints about us — the internal complaint process (§13.13, §25.11)** | **ContactUs@ACT3ai.com** — subject line **"Complaint"** |
-| **Report a mistake — corrections in content or AI Output (§13.12, §18.12, §21.9)** | **ContactUs@ACT3ai.com** — subject line **"Correction"** |
-| **Abuse, harassment, and safety reports (§13.3)** | **ContactUs@ACT3ai.com** — subject line **"Abuse"** |
-| **Reports of false statements about you (§11.6) — no Account required** | **ContactUs@ACT3ai.com** — subject line **"Abuse"** |
+| **Legal entity and notice address** | **ACT 3 AI, Inc.**, a Washington corporation, doing business as We the Citizens — 16430 NE 50th Street, Redmond, WA 98052, United States of America |
+| **Legal notices, Notice of Dispute (§25.1), mediation notice (§25.10), arbitration opt-out (§25.8)** | ContactUs@ACT3ai.com (subject line: "Legal notice") |
+| **Complaints about us — the internal complaint process (§13.13, §25.11)** | ContactUs@ACT3ai.com (subject line: "Complaint") |
+| **Report a mistake — corrections in content or AI Output (§13.12, §18.12, §21.9)** | ContactUs@ACT3ai.com (subject line: "Correction") |
+| **Abuse, harassment, and safety reports (§13.3)** | ContactUs@ACT3ai.com (subject line: "Abuse") |
+| **Reports of false statements about you (§11.6) — no Account required** | ContactUs@ACT3ai.com (subject line: "Abuse") |
 | **DMCA designated agent (§12.7–§12.9)** | \{DMCA_AGENT\} |
-| **Trademark complaints (§12.12) — NOT the DMCA agent; the DMCA does not cover trademark** | **ContactUs@ACT3ai.com** — subject line **"Trademark"** |
-| **Law-enforcement requests (§13.6)** | **ContactUs@ACT3ai.com** — subject line **"Law enforcement"** |
-| **Government entities and officials (§29.14)** | **ContactUs@ACT3ai.com** — subject line **"Government"** |
+| **Trademark complaints (§12.12) — NOT the DMCA agent; the DMCA does not cover trademark** | ContactUs@ACT3ai.com (subject line: "Legal notice") |
+| **Law-enforcement requests (§13.6)** | ContactUs@ACT3ai.com (subject line: "Law enforcement") |
+| **Government entities and officials (§29.14)** | ContactUs@ACT3ai.com (subject line: "Legal notice") |
 | **Privacy and data-subject requests** | See the Privacy Policy |
-| **EU/UK representative** | **None appointed — we do not offer the Service in the EEA or the UK**, so Article 27 does not require one. If that changes we will appoint and name both before the change takes effect. |
-
-> **ONE ADDRESS, ROUTED BY SUBJECT LINE — and that is a deliberate choice rather than a
-> shortcut.** Every row above resolves to **ContactUs@ACT3ai.com**, a mailbox that **actually
-> exists and is read**, because an address that exists and is routed is worth more to you than
-> six specialised addresses that do not. **Use the subject line given in the row**; it is what
-> routes your message and what starts any clock this document attaches to it. **Getting the
-> subject line wrong does not forfeit anything** — a message that reaches us has reached us.
->
-> **Why this mattered enough to say out loud.** **§25.11 makes writing to the complaints address a
-> condition precedent to bringing a proceeding against us**, and **§13.12, §18.12(e) and §21.9
-> tell you to report mistakes to the corrections address.** A condition precedent pointed at a
-> mailbox that does not exist is
-> unenforceable and reads as bad faith; an accuracy promise pointed at a dead address is the
-> evidence against us rather than for us. **Those two addresses must be live before this document
-> goes into force, not after** (Appendix A.11, A.12).
->
-> **And a general address does not close a specialised one.** ContactUs@ACT3ai.com is a real
-> mailbox and it is the right place for anything the rows above do not cover. It is **not** by
-> itself the DMCA designated agent — that requires an actual registration with the United States
-> Copyright Office, which we do not claim to hold until we do (§12.8, Appendix A.3) — and it is
-> not a substitute for naming the legal, abuse, complaints, corrections, law-enforcement, or
-> privacy channels. **Each of those may route to that same mailbox, provided the routing is
-> real.** Which of them do is a decision that has not been made (Appendix A.8).
-
----
----
-# Appendices
-
-> **The four appendices below are NOT part of the contract.** They are working notes for the
-> drafters and for counsel, and must be **removed before publication.**
->
-> **Numbering repaired in 0.6.** Version 0.5 reused the numbers **A.16 through A.22** across three
-> different sub-tables, so several open items shared an identifier with something unrelated. The
-> sequence below is single and continuous, and every cross-reference in the contract body was
-> updated to match. Where a number moved, the old one is shown.
+| **EU/UK representative, where required (§26.4–§26.5)** | Not applicable - we do not offer the Service to people in the European Economic Area or the United Kingdom, and we do not monitor their behaviour, so Article 27 does not require us to appoint a representative |
