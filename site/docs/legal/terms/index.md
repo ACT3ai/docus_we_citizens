@@ -18,7 +18,7 @@ format: md
 > (2026-08-19).** This version carries no new policy. It closes the gap between what Bryan has
 > decided and what the document actually says.
 >
-> * **THE STATE OF INCORPORATION IS ANSWERED: WASHINGTON.** `{GOVERNING_STATE}` is **gone** —
+> * **THE STATE OF INCORPORATION IS ANSWERED: WASHINGTON.** The state-of-incorporation placeholder is **gone** —
 >   substituted at **§1.1** (the parties clause) and **§26.1** (governing law). This settles the
 >   three-way contradiction the sibling documents carried for one company (a Delaware
 >   corporation / a Bastrop, Texas office / our own King County venue) **in favour of the one
@@ -199,7 +199,7 @@ Local App, with no connection to the Hosted Service, requires no acceptance of t
 — that use is governed only by the open-source license on the code (§6.6).
 
 **1.3 Capacity and authority.** You represent that you are a natural person of legal
-capacity, at least \{MINIMUM_AGE\} years old (§4.1). If you accept these Terms on behalf of a
+capacity, at least **18** years old (§4.1). If you accept these Terms on behalf of a
 community, organization, campaign, or employer, you represent that you have authority to
 bind it, and "you" includes that entity. **If you are a government entity, or an official
 acting in an official capacity, read §29.14 first** — parts of these Terms may not lawfully
@@ -284,7 +284,7 @@ support a claim.
 
 **2.4 Money.**
 "**Subscription**" means a recurring paid entitlement.
-"**Plan**" means a named tier of Subscription. \{PLAN_NAMES_AND_PRICES\}
+"**Plan**" means a level of Subscription. **There are no named tiers, and no tier buys a different product.** Supporter membership is a single monthly Subscription whose **level is the amount you choose**: **$40, $100, $200, $400 or $1,000 per month**, or **any other amount you enter**. Every Supporter receives the **same** benefits at **$40 per month or more**; a larger amount buys no additional feature, and — as §17 says at greater length — **it buys no standing, no authority, no weight in any vote, and no exemption from any rule.**
 "**Billing Period**" means the interval between charges.
 "**Renewal Date**" means the date a Subscription automatically renews.
 "**One-Time Purchase**" means a non-recurring paid item, including a purchased title on
@@ -410,7 +410,7 @@ person's conduct.
 > **In short:** One human per account, you are responsible for what happens under yours, and
 > you can use the Local App without an account at all.
 
-**4.1 Minimum age.** You must be at least **\{MINIMUM_AGE\}** years old to create an Account.
+**4.1 Minimum age.** You must be at least **18** years old to create an Account. This is the same number as the Privacy Policy §14.1, and it is 18 rather than lower because this is a political-speech platform with paid memberships.
 **Under no circumstances may anyone under 13 create an Account or use the Hosted Service.**
 If we learn that an Account belongs to someone below the minimum age, we will close it.
 
@@ -624,13 +624,17 @@ marks are in §12.2 and §12.4.
 office has **registered** it. **We use the symbol that is true**, and we will not upgrade it
 until a trademark office has actually registered the mark (§12.14).
 
-> **`{TM_STATUS}` — DRAFTING NOTE, NOT PART OF THE CONTRACT.** Whether **WE THE CITIZENS** is
-> registered, pending, or common-law only is **unrecorded** — the filing worksheet in this repo
-> carries no serial number, no filing date and no registration number (Appendix A.22). **§6.4
-> through §6.13 are drafted to be true in all three cases**, because they assert *ownership* and
-> never *registration*, so this does **not** block publication. **What it does block is the "®"
-> symbol**, anywhere: marking an unregistered mark as registered is false marking under
-> 15 U.S.C. §§1111 and 1120. Fill this in when the number exists, and only then revisit §6.13.
+> **DRAFTING NOTE, NOT PART OF THE CONTRACT — resolved 2026-08-20.** We assert **WE THE CITIZENS**
+> as a mark we own and use, and we assert **no registration**. The filing worksheet in this repo
+> carries no serial number, no filing date and no registration number (Appendix A.22), so the mark
+> is treated as **common-law and unregistered** everywhere in this document. **That choice is safe
+> whichever way the record turns out**, and the reason is worth stating: if the mark is in fact
+> pending or registered, claiming the weaker status costs us nothing and forfeits no rights — but
+> claiming the stronger status while unregistered is **false marking under 15 U.S.C. §§1111 and
+> 1120**, a defence raised against us, a potential bar on recovery, and an independent claim. The
+> asymmetry is the whole argument. **So: "™" everywhere, "®" nowhere, and never the words
+> "registered trademark"** — until a registration number is written into the worksheet. Only then
+> is §6.13 revisited.
 
 ---
 
@@ -2775,22 +2779,29 @@ risk, so we state the carve-out rather than rely on it being implied (§22.6, §
 | --- | --- |
 | **General contact — the address to use if none of the rows below fits** | **ContactUs@ACT3ai.com** |
 | **Legal entity and notice address** | **ACT 3 AI, Inc.**, a Washington corporation, doing business as We the Citizens — \{NOTICE_ADDRESS\} |
-| **Legal notices, Notice of Dispute (§25.1), mediation notice (§25.10), arbitration opt-out (§25.8)** | \{LEGAL_EMAIL\} |
-| **Complaints about us — the internal complaint process (§13.13, §25.11)** | \{COMPLAINTS_EMAIL\} |
-| **Report a mistake — corrections in content or AI Output (§13.12, §18.12, §21.9)** | \{CORRECTIONS_EMAIL\} |
-| **Abuse, harassment, and safety reports (§13.3)** | \{ABUSE_EMAIL\} |
-| **Reports of false statements about you (§11.6) — no Account required** | \{ABUSE_EMAIL\} |
+| **Legal notices, Notice of Dispute (§25.1), mediation notice (§25.10), arbitration opt-out (§25.8)** | **ContactUs@ACT3ai.com** — subject line **"Legal notice"** |
+| **Complaints about us — the internal complaint process (§13.13, §25.11)** | **ContactUs@ACT3ai.com** — subject line **"Complaint"** |
+| **Report a mistake — corrections in content or AI Output (§13.12, §18.12, §21.9)** | **ContactUs@ACT3ai.com** — subject line **"Correction"** |
+| **Abuse, harassment, and safety reports (§13.3)** | **ContactUs@ACT3ai.com** — subject line **"Abuse"** |
+| **Reports of false statements about you (§11.6) — no Account required** | **ContactUs@ACT3ai.com** — subject line **"Abuse"** |
 | **DMCA designated agent (§12.7–§12.9)** | \{DMCA_AGENT\} |
-| **Trademark complaints (§12.12) — NOT the DMCA agent; the DMCA does not cover trademark** | \{LEGAL_EMAIL\} |
-| **Law-enforcement requests (§13.6)** | \{LAW_ENFORCEMENT_CHANNEL\} |
-| **Government entities and officials (§29.14)** | \{LEGAL_EMAIL\} |
+| **Trademark complaints (§12.12) — NOT the DMCA agent; the DMCA does not cover trademark** | **ContactUs@ACT3ai.com** — subject line **"Trademark"** |
+| **Law-enforcement requests (§13.6)** | **ContactUs@ACT3ai.com** — subject line **"Law enforcement"** |
+| **Government entities and officials (§29.14)** | **ContactUs@ACT3ai.com** — subject line **"Government"** |
 | **Privacy and data-subject requests** | See the Privacy Policy |
-| **EU/UK representative, where required (§26.4–§26.5)** | \{EU_REPRESENTATIVE\} |
+| **EU/UK representative** | **None appointed — we do not offer the Service in the EEA or the UK**, so Article 27 does not require one. If that changes we will appoint and name both before the change takes effect. |
 
-> **Two of these rows are not ordinary blanks, and this document cannot be published while they
-> are empty.** **§25.11 makes writing to the complaints address a condition precedent to bringing
-> a proceeding against us**, and **§13.12, §18.12(e) and §21.9 tell you to report mistakes to the
-> corrections address.** A condition precedent pointed at a mailbox that does not exist is
+> **ONE ADDRESS, ROUTED BY SUBJECT LINE — and that is a deliberate choice rather than a
+> shortcut.** Every row above resolves to **ContactUs@ACT3ai.com**, a mailbox that **actually
+> exists and is read**, because an address that exists and is routed is worth more to you than
+> six specialised addresses that do not. **Use the subject line given in the row**; it is what
+> routes your message and what starts any clock this document attaches to it. **Getting the
+> subject line wrong does not forfeit anything** — a message that reaches us has reached us.
+>
+> **Why this mattered enough to say out loud.** **§25.11 makes writing to the complaints address a
+> condition precedent to bringing a proceeding against us**, and **§13.12, §18.12(e) and §21.9
+> tell you to report mistakes to the corrections address.** A condition precedent pointed at a
+> mailbox that does not exist is
 > unenforceable and reads as bad faith; an accuracy promise pointed at a dead address is the
 > evidence against us rather than for us. **Those two addresses must be live before this document
 > goes into force, not after** (Appendix A.11, A.12).
