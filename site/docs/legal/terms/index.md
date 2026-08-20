@@ -11,11 +11,6 @@ format: md
 
 # We the Citizens™ — Terms of Service
 
-**Effective date:** 2026-08-19 · **Version:** 0.6 (DRAFT — not yet in force)
-**Change log:** see §28.4 · **Previous versions:** 0.5 · 0.4 · 0.3 · 0.2 (all 2026-08-19) · 0.1 (2026-08-18)
-
----
-
 ## The Short Version
 
 *This summary is not part of the contract and does not change anything below it. Where the
@@ -192,8 +187,8 @@ Policy, the Accuracy and Corrections Policy, and Community Guidelines. The open-
 license is not ranked in this list because it governs a different subject matter entirely
 (§6.6).
 
-**1.7 Effective date and versions.** These Terms take effect on the effective date shown at
-the top. We keep a public version history and change log (§28.4).
+**1.7 Last modified and versions.** These Terms take effect on the last-modified date shown at
+the bottom. We keep a public version history and change log (§28.4).
 
 **1.8 Every section has a summary, and none of them is binding.** Each section of these
 Terms opens with a short **"In short"** line. We do that because a contract nobody reads is
@@ -343,7 +338,7 @@ person's conduct.
 **3.7 Not all of this exists yet, and we would rather tell you which parts.**
 
 > These Terms describe the Service as it is designed, including parts of it **we have not built
-> yet.** As of the effective date at the top of this document:
+> yet.** As of the last-modified date at the bottom of this document:
 >
 > * **Payments and Subscriptions (§15) are not live.** No payment processor is integrated and we
 >   hold no billing data.
@@ -353,8 +348,8 @@ person's conduct.
 > * **Self-service export (§20.4) is not built.** The right is real and stated; the button is not
 >   there yet. Our Privacy Policy §18.8 says the same thing.
 > * **The transparency report and the enforcement counters (§13.6, §13.11) are not published yet.**
-> * **The public change log (§28.4) does not exist yet.** Until it does, the effective date at the
->   top of this document is the only version marker.
+> * **The public change log (§28.4) does not exist yet.** Until it does, the last-modified date at
+>   the bottom of this document is the only version marker.
 > * **The DMCA designated agent (§12.8) is not yet registered with the Copyright Office**, so the
 >   safe-harbor description at §14.4 states what we are putting in place rather than what is already
 >   in place. **We will not assert §512 protection we have not established.**
@@ -2726,3 +2721,7 @@ risk, so we state the carve-out rather than rely on it being implied (§22.6, §
 | **Government entities and officials (§29.14)** | ContactUs@ACT3ai.com (subject line: "Legal notice") |
 | **Privacy and data-subject requests** | See the Privacy Policy |
 | **EU/UK representative, where required (§26.4–§26.5)** | Not applicable - we do not offer the Service to people in the European Economic Area or the United Kingdom, and we do not monitor their behaviour, so Article 27 does not require us to appoint a representative |
+
+---
+
+**Last modified:** 2026-08-19 · **Version:** 0.6 · **Change log:** see §28.4 · **Previous versions:** 0.5 · 0.4 · 0.3 · 0.2 (all 2026-08-19) · 0.1 (2026-08-18)

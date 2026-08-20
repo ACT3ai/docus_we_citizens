@@ -10,16 +10,8 @@ format: md
 
 # We the Citizens — Privacy Policy
 
-**Version 0.4 — UNPUBLISHED DRAFT.**
-**Draft date: 2026-08-19.** The effective date becomes the date of publication.
-
 **Controller: ACT 3 AI, Inc., a Washington corporation, doing business as We the Citizens.**
 General contact: **ContactUs@ACT3ai.com**. Privacy and data-rights contact: **ContactUs@ACT3ai.com (subject line: "privacy request")**.
-Change log: [Version history](#23-changes-to-this-policy).
-
-> **THIS IS A DRAFT.** It has not yet been reviewed by a lawyer, and it describes a product that is
-> still being built — §2.3 lists exactly which parts do not exist yet. We are publishing it in this
-> state on purpose, so that you can read what we intend to do **before** we do it rather than after.
 
 ---
 
@@ -121,7 +113,7 @@ did not say it here.
 computer, and — **when they exist** — WeCitizens.social and WeTheCitizens.tv.
 
 **2.3 WHAT EXISTS TODAY, STATED PLAINLY.** This policy describes a product that is still being
-built, and we would rather say so than describe surfaces we do not operate. As of the draft date of
+built, and we would rather say so than describe surfaces we do not operate. As of the last-modified date of
 this document, **the following are not built and we operate none of them:**
 
 * **Surfaces** — payments and subscriptions (§12), WeTheCitizens.tv and any video service (§16),
@@ -328,7 +320,7 @@ account to read it.
 That is deliberate — a revoked session must not be re-creatable by a browser that still holds an old
 cookie — but it means the honest word is **retained**, not deleted. We have found no routine that
 removes expired or revoked session files, so they may accumulate. **In the local application they are
-files on your own disk and you can delete them yourself** (§17.6, §17.7). *(An earlier draft of this
+files on your own disk and you can delete them yourself** (§17.6, §17.7). *(An earlier version of this
 policy said session records were kept "until the session ends." That was wrong, and this is the
 correction.)*
 
@@ -552,7 +544,7 @@ media/CDN, and the AI provider. **We list no vendor we do not use**, which is wh
 — most of those categories are empty today because the surfaces that would need them are not built
 (§2.3).
 
-**8.3 Who we actually share with today.** As of the draft date: **your identity provider** (Google,
+**8.3 Who we actually share with today.** As of the last-modified date: **your identity provider** (Google,
 if you sign in — §3.5a, §4.3) and **the AI provider** (only where the AI feature has been switched
 on — §11). That is the complete list.
 
@@ -656,7 +648,7 @@ yet.**
 
 ## 10. Federation and Irreversibility
 
-**10.0 Not yet built.** Publishing to a federated network is not implemented as of the draft date.
+**10.0 Not yet built.** Publishing to a federated network is not implemented as of the last-modified date.
 Today, "publishing" inside the application sets a flag on your own record and sends nothing anywhere.
 **This section is written before the feature ships**, because the one thing a citizen must understand
 about federated publishing is something they need to know *before* they use it.
@@ -838,7 +830,7 @@ is ever introduced, **this section changes before it launches.**
 
 ## 12. Payments
 
-**12.0 Not yet built.** There is no payment processing in the product as of the draft date — no
+**12.0 Not yet built.** There is no payment processing in the product as of the last-modified date — no
 processor is integrated and no billing data exists. This section is written in advance and takes
 effect when payments launch.
 
@@ -984,7 +976,7 @@ further processing** until the backup rotates. It is not used for anything in th
 ## 16. WeTheCitizens.tv and the Video Privacy Protection Act
 
 **16.0 Not yet built.** There is no video service, no viewing data, and no `.tv` surface in the product
-as of the draft date — verified against the source on 2026-08-19. This section states the rules that will
+as of the last-modified date — verified against the source on 2026-08-19. This section states the rules that will
 govern it before it is built, deliberately, because the statute below makes retrofitting expensive.
 
 **16.1 What we intend to keep: nothing that leaves your machine.** Designed local-first, **your viewing
@@ -1113,7 +1105,7 @@ sold or shared today, because nothing reaches us; §3.2.)* As §8.1 explains, wh
 training is a "sale" or a "share" in the statute's technical sense is an open question we have referred to
 counsel. **Rather than assume the favourable answer, we behave as though the answer were yes** — the
 opt-out will be available, it will be honoured, a Global Privacy Control signal will trigger it (§13.5),
-and it will cost you nothing. *(An earlier draft of this policy said there was "nothing to opt out of." That was written before
+and it will cost you nothing. *(An earlier version of this policy said there was "nothing to opt out of." That was written before
 the training decision and it is no longer accurate.)*
 
 **18.3 THE US POSITION IS NOT WHAT YOU MIGHT ASSUME, AND WE ARE NOT GOING TO OVERSTATE IT.** **Under GDPR
@@ -1320,7 +1312,7 @@ also the answer to §3.5b's honest limit, that a dependency scan matches names r
 
 ## 23. Changes to This Policy
 
-**23.1 How we notify.** We post the updated policy with a new version number and effective date, and notify
+**23.1 How we notify.** We post the updated policy with a new version number and last-modified date, and notify
 account holders by email or in-product notice.
 
 **23.2 Material changes get advance notice**, before they take effect — not after.
@@ -1339,7 +1331,7 @@ such.
 effect. Data collected under a narrower basis stays under that basis.
 
 **23.6 Dated with equal care to the Terms.** This policy and the Terms of Service both carry a visible
-effective date and version, maintained together.
+last-modified date and version, maintained together.
 
 **23.7 The summary and the body are the same document.** The Short Version at the top is checked against the
 body, and the body is checked against the product, before each release. **A truthful summary sitting over
@@ -1363,3 +1355,7 @@ your state Attorney General. **You may do this at any time and you never have to
 **Related documents:** the **Terms of Service** (the contract; this policy controls on any question of what we
 do with personal data) · the **Cookie Policy** · the **DMCA policy** · the **sub-processor list** (§8.5) · the
 **transparency report** (§9.9, when it exists).
+
+---
+
+**Last modified:** 2026-08-19 · **Version:** 0.4 · **Change log and previous versions:** [Version history](#23-changes-to-this-policy)
