@@ -13,49 +13,13 @@ format: md
 **Version 0.4 — UNPUBLISHED DRAFT.**
 **Draft date: 2026-08-19.** The effective date becomes the date of publication.
 
-> **WHAT CHANGED IN 0.4 — A SECOND PRODUCT AUDIT, AND IT QUALIFIED OUR STRONGEST SENTENCE
-> (2026-08-19).** The application was re-read and had not moved. But this pass read three things the
-> last one did not — **the linked authentication library, the whole dependency graph, and the Terms
-> of Service as actually redrafted** — and the first of those matters. **§3.5 previously said the
-> only network address the software contacts is your own machine.** True of the application; **not
-> true of signing in**, which goes to Google through a library that sits outside the files that were
-> audited. **§3.5 is now scoped explicitly and the three Google endpoints are named** (§3.5a). Four
-> further findings: **there is no access log at all** (§9.2a — a stronger and more checkable claim
-> than any list of fields we promise not to keep); **signing out does not delete your session
-> record, it marks it revoked and keeps the file** (§4.4, §17.6 — the earlier wording was wrong and
-> is corrected); the **dependency graph was scanned, 559 packages, no analytics or telemetry vendor
-> in any of them** (§3.5b); and **the AI provider's SDK is not even installed**, so the live AI path
-> is off behind two switches, not one (§11.1).
->
-> **The state of incorporation is answered: Washington.** §2.1 now recites it instead of carrying a
-> placeholder. **The company's general contact address is named** — ContactUs@ACT3ai.com — with the
-> point stated plainly that it is **not** the data-subject-request channel (§2.9, §24.1). And the
-> **blocking contract conflict is resolved**: the Terms now grant the AI-training licence this
-> policy discloses (Appendix E.4).
-
-> **WHAT CHANGED IN 0.3 (2026-08-19).** The controller was named — **ACT 3 AI, Inc., doing business
-> as We the Citizens**, the same legal person that operates JFK Social — closing the one placeholder
-> that had no lawful shipping state under **GDPR Article 13(1)(a)**. **§2.1a** states the
-> shared-company fact plainly. No trademark clause was added, deliberately: marks are a contract
-> matter and live in the Terms.
-
-> **WHAT CHANGED IN 0.2 — THE AI-TRAINING REVERSAL (2026-08-19).** **We do train our own AI models on
-> citizen data, and that data is also used to train AI outside our company.** Version 0.1 said the
-> opposite. **§11.6** is the training disclosure and it is also in the summary on the first screen;
-> **§6.1** requires **three separate Article 9 consents**; **§11.7** makes training the third one-way
-> door; **§8.1's** flat "we do not sell" claim is **suspended pending counsel**; **§13.5** turns
-> Global Privacy Control into a live opt-out; **§17.3** adds trained models to what deletion cannot
-> reach.
-
 **Controller: ACT 3 AI, Inc., a Washington corporation, doing business as We the Citizens.**
-General contact: **ContactUs@ACT3ai.com**. Privacy and data-rights contact: **ContactUs@ACT3ai.com** —
-mark your message **"privacy request"** so it is routed and the clock at §18.5 starts.
+General contact: **ContactUs@ACT3ai.com**. Privacy and data-rights contact: **ContactUs@ACT3ai.com (subject line: "privacy request")**.
 Change log: [Version history](#23-changes-to-this-policy).
 
-> **THIS IS A DRAFT AND IT IS NOT LEGAL ADVICE.** It has not been reviewed by a lawyer, and several
-> statements in it have not yet been verified against a deployed product. The items that must be
-> closed before this may be published are listed in **Appendix C — Unverified Facts**. Do not
-> publish this document until that appendix is empty.
+> **THIS IS A DRAFT.** It has not yet been reviewed by a lawyer, and it describes a product that is
+> still being built — §2.3 lists exactly which parts do not exist yet. We are publishing it in this
+> state on purpose, so that you can read what we intend to do **before** we do it rather than after.
 
 ---
 
@@ -142,8 +106,7 @@ disk, in a readable format, and you can delete them yourself without asking us. 
 Washington, United States of America**, **doing business as We the Citizens**, is the controller of
 the personal data described in this policy. In this document, "we", "us" and "We the Citizens" mean
 that company. Our general contact address is **ContactUs@ACT3ai.com**; our registered postal
-address is \{NOTICE_ADDRESS\}. *(The name and the state are settled; the postal address is still open
-— see Appendix A.)*
+address is 16430 NE 50th Street, Redmond, WA 98052, United States of America.
 
 **2.1a THE SAME COMPANY OPERATES JFK SOCIAL, AND WE WOULD RATHER TELL YOU THAN LET YOU ASSUME
 OTHERWISE.** ACT 3 AI, Inc. is the same legal entity behind **JFK Social**. "We the Citizens" is a
@@ -159,12 +122,24 @@ computer, and — **when they exist** — WeCitizens.social and WeTheCitizens.tv
 
 **2.3 WHAT EXISTS TODAY, STATED PLAINLY.** This policy describes a product that is still being
 built, and we would rather say so than describe surfaces we do not operate. As of the draft date of
-this document, **the following are not built and we operate none of them: payments and
-subscriptions, WeTheCitizens.tv and any video service, publishing to a federated network, and
-host-based party front doors.** Sections 12, 16, 10 and 7.4 describe how each will work and are
-written now so that the disclosure exists *before* the feature does. **We will update this policy
-and give notice before any of them launches.** Where a section describes something not yet built, it
-says so in its first line.
+this document, **the following are not built and we operate none of them:**
+
+* **Surfaces** — payments and subscriptions (§12), WeTheCitizens.tv and any video service (§16),
+  publishing to a federated network (§10), and host-based party front doors (§7.4).
+* **AI training** — no training of any kind has taken place, ours or anyone else's (§11.6).
+* **Your controls** — the three Article 9 consents (§6.1), the switch that stops future training
+  (§11.7), "Do Not Sell or Share" (§18.2), Global Privacy Control handling (§13.5), in-product
+  rights-request buttons (§18.6), account deletion and retraction (§10.4), the publish-time
+  irreversibility warning (§10.5), and self-service export (§18.8).
+* **Things we owe you that need a person, not code** — the queue behind the response deadlines at
+  §18.5, the appeal reviewer at §18.7, the incident process behind §15.7, the sub-processor list at
+  §8.5, and the transparency report at §9.9.
+
+Each of those sections describes how the thing will work, written now so that the disclosure exists
+*before* the feature does. **We will update this policy and give notice before any of them launches.**
+Where a section describes something not yet built, **it says so in its first line** — and if you find
+one that does not, that is a mistake in this document and we want to hear about it at
+ContactUs@ACT3ai.com (subject line: "privacy request").
 
 **2.4 What this policy does NOT cover — other people's instances.** We the Citizens is open source.
 **Anyone can run their own copy, and many people do.** If you are using an instance someone else
@@ -188,13 +163,11 @@ read first if you never create an account.
 purposes we are the controller and this policy governs. Where we process data **on behalf of** a
 community steward, they are the controller and their notice governs, not this one. §21.
 
-**2.9 Contacting us about privacy — and which address to use.** **ContactUs@ACT3ai.com** is the
-company's general mailbox and it reaches us. **It is not yet the data-rights channel**, and we would
-rather tell you that than let you send a formal erasure request to an address nobody has been made
-responsible for answering inside a statutory deadline. The privacy and data-rights channel
-is **ContactUs@ACT3ai.com** — the same mailbox as our general address, **routed by subject rather than by
-having its own domain name.** Write to it and **say clearly that your message is a privacy request**, so
-it is routed to the person who answers those and the statutory clock at §18.5 starts on arrival.
+**2.9 Contacting us about privacy — and which address to use.** The privacy and data-rights channel is
+**ContactUs@ACT3ai.com (subject line: "privacy request")** — see §24. It is the same mailbox as our general address, routed by subject line,
+and **getting the subject line wrong forfeits nothing**: a message that reaches us has reached us.
+**What we cannot yet tell you is who reads it.** No person has been named as responsible for answering
+inside the statutory deadlines at §18.5, and we would rather say that than let you assume otherwise.
 
 ---
 
@@ -265,7 +238,7 @@ software packages the application depends on** and found **no analytics, telemet
 or session-replay product among them**, and none among the components either half of the application
 declares directly. **That scan matched package names, not behaviour** — a component could in
 principle contact a server without a name that says so — and **the audit was a reading of the code,
-not a recording of a running system.** Both of those are on our own list to close (Appendix C), and
+not a recording of a running system.** Both of those are on our own list to close, and
 we would rather tell you the shape of the evidence than let a strong sentence stand on more than it
 holds. **This claim is dated and scoped to a version.** We re-verify it at each release and we will
 say so if it ever changes — in advance, under §23.2, not in a quietly revised policy.
@@ -299,8 +272,8 @@ data, we will ask for fresh consent rather than relying on notice (§23.3).
 ## 4. The Data Map
 
 **4.1 The table.** *Verified against the application source on 2026-08-19. Rows marked
-**UNVERIFIED** describe a surface that is not yet built or a fact we have not yet confirmed; those
-are listed in Appendix C.*
+**UNVERIFIED** describe a surface that is not yet built or a fact we have not yet confirmed, and
+the row says which.*
 
 | Category | Example fields | Where it lives | Purpose | Legal basis | Retention | Recipients |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -314,8 +287,8 @@ are listed in Appendix C.*
 | **Hostname / front door** | the `Host` header | **transient — never written down** *(and no front-door feature exists yet — §7.4)* | to check a request is local | legitimate interests, Art. 6(1)(f) | **not stored at all** | nobody |
 | **Access log** | *nothing* | **DOES NOT EXIST — §9.2a** | — | — | **no record is created** | **nobody** |
 | **AI request and response** | the position or reasoning text you asked to be checked, and the model's answer | **PROCESSOR — the AI provider**, and only where the AI feature has been switched on | to check your reasoning when you ask it to | **explicit consent, Art. 9(2)(a)** — consent 1 | we retain only the model name in your own record; the provider's own periods are in §11.5 | the AI provider |
-| **AI TRAINING DATA — our own models** | \{TRAINING_CATEGORIES\} — see §11.6(c) | **HOSTED**, then inside a trained model | to develop, train, fine-tune and improve **our own** AI models | **explicit consent, Art. 9(2)(a)** — **consent 2**, separate | **irreversible once trained — §11.7.** Withdrawal stops future training only | us |
-| **AI TRAINING DATA — outside our company** | \{TRAINING_CATEGORIES\} — see §11.6(c) | **HOSTED → THIRD PARTIES** | so parties **outside our company** can train **their** AI | **explicit consent, Art. 9(2)(a)** — **consent 3**, separate again | **irreversible once trained, and beyond our reach — §11.7** | **\{TRAINING_RECIPIENTS\}** — Appendix A |
+| **AI TRAINING DATA — our own models** | published content only — see §11.6(c) | **HOSTED**, then inside a trained model | to develop, train, fine-tune and improve **our own** AI models | **explicit consent, Art. 9(2)(a)** — **consent 2**, separate | **irreversible once trained — §11.7.** Withdrawal stops future training only | us |
+| **AI TRAINING DATA — outside our company** | published content only — see §11.6(c) | **HOSTED → THIRD PARTIES** | so parties **outside our company** can train **their** AI | **explicit consent, Art. 9(2)(a)** — **consent 3**, separate again | **irreversible once trained, and beyond our reach — §11.7** | **No one yet - no party outside our company has received any of it, and none is named** |
 | **Community membership and contributions** | which communities you joined, what you contributed | LOCAL / **HOSTED** | to run community mode | contract, Art. 6(1)(b), and Art. 9(2)(a) for the opinion content | for the life of the membership | the community steward, other members per §21 |
 | **Support correspondence** | your email and what you wrote | **HOSTED** | to answer you | legitimate interests, Art. 6(1)(f) | **UNVERIFIED** | nobody |
 | **Published content** *(not yet built)* | whatever you publish | **HOSTED → FEDERATED** | to publish it as you asked | Art. 9(2)(e), manifestly made public | **irreversible once propagated — §10** | the network, permanently |
@@ -419,21 +392,28 @@ used will be named in §13.2.
 
 ## 6. Legal Bases for Processing
 
-**6.1 EXPLICIT CONSENT FOR YOUR POLITICAL OPINIONS — Article 9(2)(a).** Where we process your
-political opinions — which is what happens the moment any of it reaches a hosted service or an AI
-feature — we rely on **your explicit consent**.
+**6.1 EXPLICIT CONSENT FOR YOUR POLITICAL OPINIONS — Article 9(2)(a).** *(**The consent mechanism
+described in this section is not built yet** — see §2.3. Nothing you write reaches a hosted service
+or an outside AI provider today: your positions are files on your own computer (§3.1–§3.2), and the
+live AI engine is off unless someone supplies an API key **and** installs a component we do not ship
+(§11.1). This section states the basis we will rely on, and the controls you will have, **before**
+either of those changes — not after.)*
 
-**That consent is separate from accepting the Terms of Service. It is not bundled with signup, it is
-not a pre-ticked box, and accepting the Terms does not give it.** It is asked for on its own, in its
-own words, at the moment it is needed, and it names what it covers. **You can withdraw it at any
-time, and withdrawing it is as easy as giving it** — one control, in the same place. If you withdraw
-it we stop the processing it covered; §6.7 says honestly what withdrawal cannot undo. The Terms say
+Where we process your political opinions — which is what happens the moment any of it reaches a
+hosted service or an AI feature — we will rely on **your explicit consent**.
+
+**That consent will be separate from accepting the Terms of Service. It will not be bundled with
+signup, it will not be a pre-ticked box, and accepting the Terms will not give it.** It will be asked
+for on its own, in its own words, at the moment it is needed, and it will name what it covers. **You
+will be able to withdraw it at any time, and withdrawing it will be as easy as giving it** — one
+control, in the same place. If you withdraw it we stop the processing it covered; §6.7 says honestly
+what withdrawal cannot undo. The Terms say
 the same thing from their side, at their §7.2C: the licence you grant is *not* the consent, and
 **this policy controls on that question.**
 
-**AND THERE ARE THREE OF THESE CONSENTS, NOT ONE.** Recording your political opinions, **training AI
-on them**, and **sending them outside our company so other parties can train on them** are three
-genuinely different things, so we ask you three separate times:
+**AND THERE WILL BE THREE OF THESE CONSENTS, NOT ONE.** Recording your political opinions, **training
+AI on them**, and **sending them outside our company so other parties can train on them** are three
+genuinely different things, so we will ask you three separate times:
 
 | Consent | Covers |
 | --- | --- |
@@ -442,8 +422,9 @@ genuinely different things, so we ask you three separate times:
 | **3. To train outside** | providing them to parties **outside our company** for **their** AI training (§11.6) |
 
 **Consent to record is not consent to train, and consent to train is not consent to train outside
-our company.** Each is asked separately, each is refusable on its own, and each is withdrawable on
-its own without affecting the others. *(Flagged for counsel — Appendix E.)*
+our company.** Each will be asked separately, each will be refusable on its own, and each will be
+withdrawable on its own without affecting the others. **None of the three exists today, and no
+political opinion of yours reaches us until they do.**
 
 **6.2 Manifestly made public — Article 9(2)(e).** For content you **deliberately publish**, we also
 rely on the condition for data a person has manifestly made public. **This covers only what you chose
@@ -510,7 +491,6 @@ because that is the moment we would begin processing inferred special-category d
 And §3.8 already applies regardless: **our host and any CDN see the hostname you connected to even
 where our application never records it**, and no policy of ours changes that.
 
-*Flagged for counsel — Appendix E.*
 
 **7.5 Extra safeguards for this category.** Access is restricted to the people who need it for a
 named purpose (§15.6). It is **never used for advertising** (we have none), **never enriched from a
@@ -539,7 +519,7 @@ explicit consent (§6.1) to data you have manifestly made public (§6.2), **and 
 irreversible** (§10). We surface that **at the moment you publish**, in the product — not afterwards,
 and not only in this document.
 
-**7.11 The DPIA.** **No Data Protection Impact Assessment has been carried out yet.** One is required for processing of this kind and it is being prepared — §22.6.
+**7.11 The DPIA.** None has been carried out yet, and one is in preparation — §22.6.
 
 ---
 
@@ -583,8 +563,10 @@ business, we do not buy from it, we do not sell into it, and we do not enrich an
 it.** For this product that promise is worth more than any feature, and it is written as an absolute
 rather than as a default with exceptions.
 
-**8.5 The sub-processor list.** We publish the sub-processors we use, with **purpose, processing
-location, and transfer safeguard** for each, and we keep it current. **Where our AI provider is
+**8.5 The sub-processor list.** *(Not published yet — see §2.3.)* We will publish the sub-processors
+we use, with **purpose, processing location, and transfer safeguard** for each, and keep it current.
+**No list exists today**, and until one does the only processor we rely on is the AI provider named
+at §11.2. **Where our AI provider is
 listed, note that it has sub-processors of its own** — the chain runs two levels deep, and we say so
 rather than stopping at a vendor name (§11.9).
 
@@ -668,7 +650,7 @@ we are permitted to publish only a range rather than a number, we publish the ra
 
 **9.9 Transparency report.** We intend to publish, on a stated cadence, the number of requests
 received, the number complied with in whole or in part, and the number refused. **It does not exist
-yet** — see Appendix D.
+yet.**
 
 ---
 
@@ -697,9 +679,9 @@ rather tell you that plainly than let the word "delete" imply more.
 different things and one does not accomplish the other. Deleting your account does not retract what
 you published.
 
-**10.5 The warning comes at posting time.** The fact that a published position becomes part of a
-permanent public record is shown to you **at the moment you publish** — not discovered later in a
-deactivation screen.
+**10.5 The warning will come at posting time.** *(Not built yet — see §2.3; publishing does not exist
+either.)* The fact that a published position becomes part of a permanent public record will be shown
+to you **at the moment you publish** — not left to be discovered later in a deactivation screen.
 
 **10.6 Public keys, relay lists, and media URLs are data, and they are public.** They can be used to
 link your activity across services. Publishing under a key associates everything published under that
@@ -751,8 +733,8 @@ say about the provider is bounded by the provider's own contract, and here is wh
   without the other.
 * **This depends on being on the commercial surface.** The same provider's **consumer** service trains
   on inputs **unless the user opts out**. An opt-out default is not valid consent for special-category
-  data. **This is the single most important fact for you to be able to rely on and the one we must
-  verify per deployment** — see Appendix C.
+  data. **This is the single most important fact for you to be able to rely on, and the one we must
+  verify per deployment.**
 * **Retention: 30 days by default.** Inputs and outputs are deleted from the provider's systems within
   **30 days**.
 * **THE LONGER TAIL, WHICH YOU SHOULD KNOW ABOUT.** If the provider's automated safety systems flag a
@@ -768,18 +750,24 @@ say about the provider is bounded by the provider's own contract, and here is wh
 This is the most consequential disclosure in this policy, and it is also in the summary at the top
 (§The Short Version) because it is too important to be found only here.
 
-**(a) We train our own models.** Data that reaches us is used to develop, train, fine-tune, and
-improve **our own** AI and machine-learning models.
+*(**Not yet in operation** — see §2.3. No training has taken place, because nothing you write reaches
+us today (§3.2, §11.1). We are publishing this **before** the practice starts rather than after, so
+that you can decide with it in front of you. Everything below is what we will do.)*
 
-**(b) It is also used to train AI OUTSIDE our company.** We provide data to parties outside our
-company **for their own AI training**. This is a separate fact from (a), it carries more weight than
-(a), and **we are stating it on its own line so it cannot be missed inside the first one.**
+**(a) We will train our own models.** Data that reaches us will be used to develop, train, fine-tune,
+and improve **our own** AI and machine-learning models.
 
-**(c) WHAT IS AND IS NOT INCLUDED — \{TRAINING_CATEGORIES\}.** *(Open item — the exact category list is
-being settled and will be named here before this policy is published. The candidates are: published
-content; the text you submit to an AI feature; positions held on a hosted service; community
-contributions; and support correspondence. We will not describe this as "your data" and leave you to
-guess — Appendix A.)*
+**(b) It will also be used to train AI OUTSIDE our company.** We intend to provide data to parties
+outside our company **for their own AI training**. This is a separate fact from (a), it carries more
+weight than (a), and **we are stating it on its own line so it cannot be missed inside the first one.**
+**None of it has happened: no data has left our company for this purpose, no such party is named, and
+no such agreement exists.** Before any of that changes we will name the recipients here, give the
+notice at §23.2, and ask you for consent 3 (§6.1).
+
+**(c) WHAT IS AND IS NOT INCLUDED — published content only.** **Nothing else.** Not the text you type into
+an AI feature, not positions held privately on a hosted service, not community contributions, and not
+support correspondence. If we ever widen this list we will name the new category here and give the notice
+at §23.2 first — we will not describe it as "your data" and leave you to guess.
 
 **(d) WHAT IS NEVER TRAINED ON, BY ANYONE — and this is the part to hold on to.** **Data that never
 leaves your computer cannot be trained on by us or by anybody else, because we never receive it.**
@@ -789,9 +777,10 @@ want certainty that something is never used to train an AI, do not publish it an
 an AI feature — and then nothing else you do matters.** The local-first split was always this
 product's best privacy feature. It is now its most important one.
 
-**(e) It is consented, separately, and you can refuse.** Training requires **consent 2** under §6.1,
-and training outside our company requires **consent 3**. Each is asked on its own, each is refusable
-without losing the other, and each is withdrawable on its own. The Terms of Service grant us the
+**(e) It will be consented, separately, and you can refuse.** Training will require **consent 2**
+under §6.1, and training outside our company will require **consent 3**. Each will be asked on its
+own, each refusable without losing the other, and each withdrawable on its own. **Until those
+consents exist and are given, no training happens at all.** The Terms of Service grant us the
 licence to do this at their §7.2A, and say expressly at their §7.2C that **the licence is not the
 consent** and that where the consent is absent or withdrawn the licence is not exercised.
 
@@ -806,8 +795,8 @@ diligence; it is a property of the technology, and AI providers say so themselve
 reasonable-effort obligation that *"may not always be possible,"* and rights over training data
 *"have technical limitations."*
 
-**So be clear about what withdrawing consent does.** Withdrawing consent 2 or consent 3 **stops future
-training.** It **does not** remove anything from a model already trained, and it does not reach a model
+**So be clear about what withdrawing consent will do.** Withdrawing consent 2 or consent 3 **will stop
+future training.** It **does not** remove anything from a model already trained, and it does not reach a model
 an outside party has already trained. **We will never describe a training-data deletion request as a
 deletion**, exactly as we will never describe a federated deletion request as one (§10.2–§10.3). The
 Terms of Service say the same at their §18.6A.
@@ -868,9 +857,10 @@ billing record. **Cancelling one does not cancel the others, and deleting your a
 any of them** — each is cancelled separately. That means a billing record can outlive an
 account-deletion request; the Terms of Service says the same thing at its §15.
 
-**12.4 TAX RECORDS OVERRIDE YOUR DELETION REQUEST, AND YOU SHOULD KNOW THAT UP FRONT.** We are required
-to retain invoices and accounting records for a statutory period **\{TAX_RETENTION\}** even after you
-delete your account. This is a genuine conflict between your erasure right and a legal obligation, and
+**12.4 TAX RECORDS OVERRIDE YOUR DELETION REQUEST, AND YOU SHOULD KNOW THAT UP FRONT.** We are required to retain
+invoices and accounting records after you delete your account, and **we set our retention period at seven
+years** — long enough to cover every ordinary statutory window that can apply to us, rather than the
+shortest one. This is a genuine conflict between your erasure right and a legal obligation, and
 the obligation wins. **What it means in practice: those records are locked away and are not accessed or
 used by anyone during that period**, except to meet the legal obligation itself or in a dispute — and
 when the period expires they are permanently deleted.
@@ -907,12 +897,13 @@ beacon, no third-party script that reports on you.
 the machinery a privacy policy usually needs — ad identifiers, targeting opt-outs, interest categories,
 cross-context behavioural advertising disclosures — has nothing to describe.
 
-**13.5 Global Privacy Control and Do Not Track.** **We honour the Global Privacy Control signal** as an
-opt-out. We run no advertising and no analytics, so there is nothing there for it to switch off — **but
-it is not a decorative commitment any more.** Because we treat providing data to outside parties for AI
-training as a "share" pending counsel (§8.1), **a GPC signal is honoured as an opt-out of consent 3**
-(§6.1, §11.6). We also state our Do Not Track position rather than dismissing it: we honour it the same
-way.
+**13.5 Global Privacy Control and Do Not Track.** *(Not built yet — see §2.3. No handler for either
+signal exists in the application today.)* **We will honour the Global Privacy Control signal** as an
+opt-out. We run no advertising and no analytics, so there is nothing there for it to switch off today —
+**but it will not be a decorative commitment.** Because we treat providing data to outside parties for
+AI training as a "share" pending counsel (§8.1), **a GPC signal will be honoured as an opt-out of
+consent 3** (§6.1, §11.6) from the moment consent 3 exists. We state our Do Not Track position rather
+than dismissing it: we will honour it the same way.
 
 **13.6 No pixel anywhere near video.** When WeTheCitizens.tv exists, **no advertising or analytics pixel
 goes on any page where video plays.** This is a legal landmine, not a preference — §16.
@@ -927,22 +918,20 @@ removes it.
 
 ## 14. Children
 
-**14.1 Minimum age.** You must be at least **18** years old to create an account. This is the same number
-as the Terms of Service, stated identically in both documents. We set it at 18 rather than lower because
-this is a political-speech platform with paid memberships, and because the thing we record about you is
-your political opinion.
+**14.1 Minimum age.** You must be at least **18** years old to create an account. This is the
+same number as the Terms of Service §4.1, and it is stated identically in both documents.
 
 **14.2 The absolute floor.** **No accounts for anyone under 13, and we do not knowingly collect personal
-information from anyone under 13**, regardless of anything else in this policy.
+information from anyone under 13**, regardless of the minimum age stated above.
 
 **14.3 If we learn of one.** We delete the account and the associated data. A parent or guardian can
-contact us at **ContactUs@ACT3ai.com** to ask about, correct, or delete a child's data.
+contact us at ContactUs@ACT3ai.com (subject line: "privacy request") to ask about, correct, or delete a child's data.
 
 **14.4 COPPA and the children's codes.** We comply with the Children's Online Privacy Protection Act.
 Where we serve minors at all, the UK Age Appropriate Design Code and equivalent EU requirements apply.
 
 **14.5 What age assurance we actually do.** **We currently do no age verification beyond asking.** We say
-what we do rather than what we wish we did. *(Appendix C.)*
+what we do rather than what we wish we did.
 
 ---
 
@@ -975,15 +964,16 @@ permissions on your own files. We cannot protect files we never receive.
 to named people for a named purpose, and reviewed. Where a third party can ever see such content — the AI
 provider's safety review is the only case today — §11.10 says under what controls.
 
-**15.7 Breach notification, with real deadlines.** If a breach affects your personal data we notify the
-relevant supervisory authority **within 72 hours** of becoming aware of it, where GDPR requires, and
+**15.7 Breach notification, with real deadlines.** If a breach affects your personal data we will notify
+the relevant supervisory authority **within 72 hours** of becoming aware of it, where GDPR requires, and
 notify you **without undue delay** where the breach is likely to result in a high risk to your rights.
+*(These deadlines bind us now. The written incident process behind them is still being put in place, and
+we would rather say so than imply a drill has been run.)*
 State-law deadlines apply where they are shorter — including Washington State's, since that is where the
 controller is incorporated (§2.1). **We will not promise "immediate" notice**, because that is a word
 nobody can keep and it tells you nothing.
 
-**15.8 Reporting a vulnerability.** Report security issues to **ContactUs@ACT3ai.com**, or to
-ContactUs@ACT3ai.com until that channel is published. We will not pursue legal action against good-faith
+**15.8 Reporting a vulnerability.** Report security issues to ContactUs@ACT3ai.com (subject line: "privacy request"). We will not pursue legal action against good-faith
 security research conducted within a reasonable disclosure process.
 
 **15.9 Data pending deletion.** Where data is awaiting deletion in a backup, it is **isolated from any
@@ -1006,7 +996,7 @@ video-viewing history. It carries **statutory damages of $2,500 per violation** 
 action**, and it is one of the most actively litigated privacy statutes in the United States. The typical
 defendant is a site that placed a third-party pixel on a page where video plays. **The operational rule
 that follows is absolute: no advertising or analytics pixel, tag, or beacon goes anywhere near viewing
-data.** *(Flagged for counsel — Appendix E.)*
+data.**
 
 **16.3 For us it is doubled.** A viewing history on a **political** video service is **both**
 VPPA-protected **and** a revealed political opinion. **Two statutes over one data set**, which is why this
@@ -1036,16 +1026,16 @@ matters most.
 | **Your machine / hosted** | **session records** | **Retained after sign-out, marked revoked — not deleted.** No automatic cleanup exists. §4.4, §17.6. |
 | **Hosted** | account identity | life of the account, then §17.3 |
 | **Hosted** | *access log* | **none is created** — §9.2a |
-| **Hosted** | support correspondence | **UNVERIFIED** — Appendix C |
-| **Hosted** | moderation and abuse records *(not built)* | **UNVERIFIED** — Appendix C |
-| **Hosted** | billing and tax records *(not built)* | **\{TAX_RETENTION\}** — statutory, overrides deletion (§12.4) |
+| **Hosted** | support correspondence | **not yet established** |
+| **Hosted** | moderation and abuse records *(not built)* | **not yet established** |
+| **Hosted** | billing and tax records *(not built)* | **7 years** — overrides deletion (§12.4) |
 | **Processor** | AI request and response | **30 days**; **2 years** if flagged; **7 years** for a safety classification score (§11.5) |
 | **Federated** | published content *(not built)* | **permanent and beyond our reach** (§10.2) |
 | **Inside a trained model** | whatever was trained on | **permanent — cannot be untrained** (§11.7) |
 
 **We would rather show you an UNVERIFIED row than invent a number.** A retention period we made up
 because it sounded reasonable would be a false statement about our own practices, and those rows are
-exactly what Appendix C exists to close.
+exactly the rows we are working to close.
 
 **17.2 The outer bound.** No purpose described in this policy requires us to keep personal information
 about you for longer than you have an account, **except** the specific survivals listed at §17.3.
@@ -1073,7 +1063,7 @@ backups when they next rotate. We name the stores rather than leaving "deleted" 
 **Where something is kept rather than deleted, we say "retained", and §4.4 is the case where that
 distinction actually bites.**
 
-**17.5 Post-closure deletion timing.** *(Appendix C — not yet established.)* Where a number is published
+**17.5 Post-closure deletion timing.** *(Not yet established.)* Where a number is published
 it will be in days, not "promptly."
 
 **17.6 Your local files, and the three of them that are ours to explain.**
@@ -1094,7 +1084,7 @@ time without affecting anything but your own sign-in state.
 have them, and **we cannot delete them for you** — you delete them yourself, with your own file manager,
 without asking us and without us knowing.
 
-**17.8 Inactive accounts.** *(Appendix C — no policy set. Where one is set it will be a stated period
+**17.8 Inactive accounts.** *(No policy set. Where one is set it will be a stated period
 after which an unused account is deleted automatically.)*
 
 **17.9 Another citizen's speech is not yours to erase.** Your erasure right cannot be used to delete a
@@ -1117,12 +1107,13 @@ supervisory authority**, which we name at §24.4.
 right to know, delete, and correct**; the right to limit the use of sensitive personal information; and
 **non-discrimination** — using a right never costs you service, price, or quality.
 
-**On "Do Not Sell or Share My Personal Information": we offer the control, and we are not resting on an
-argument that we do not need to.** As §8.1 explains, whether providing data to an outside party for AI
+**On "Do Not Sell or Share My Personal Information": we will offer the control, and we are not resting
+on an argument that we do not need to.** *(The control is not built yet — see §2.3. Nothing is being
+sold or shared today, because nothing reaches us; §3.2.)* As §8.1 explains, whether providing data to an outside party for AI
 training is a "sale" or a "share" in the statute's technical sense is an open question we have referred to
 counsel. **Rather than assume the favourable answer, we behave as though the answer were yes** — the
-opt-out is available, it is honoured, a Global Privacy Control signal triggers it (§13.5), and it costs you
-nothing. *(An earlier draft of this policy said there was "nothing to opt out of." That was written before
+opt-out will be available, it will be honoured, a Global Privacy Control signal will trigger it (§13.5),
+and it will cost you nothing. *(An earlier draft of this policy said there was "nothing to opt out of." That was written before
 the training decision and it is no longer accurate.)*
 
 **18.3 THE US POSITION IS NOT WHAT YOU MIGHT ASSUME, AND WE ARE NOT GOING TO OVERSTATE IT.** **Under GDPR
@@ -1131,7 +1122,7 @@ confidently. **US state privacy statutes are not uniform, and most of their sens
 name political opinions.** California's CPRA lists "religious or philosophical beliefs," which may or may
 not be read to reach political belief. **We are not going to tell you US law settles this, because it does
 not.** What we do instead is §7.6: treat political opinion as sensitive everywhere as a matter of our own
-policy. *(Flagged for counsel — Appendix E.)*
+policy.
 
 **18.4 Other US states.** Virginia, Colorado, Connecticut, Utah, Texas, Oregon, Montana, Tennessee,
 Minnesota and the rest of the state wave: consent for sensitive data where required, opt-outs for targeted
@@ -1139,29 +1130,34 @@ advertising, sale, and profiling, and data protection assessments. **We run no t
 profiling at all**; the sale-and-share opt-out is at §18.2. We maintain the list of states whose laws we
 honour rather than arguing later about which regime applies.
 
-**18.5 Our response times, as real numbers.** **30 days** under GDPR and UK GDPR, extendable by two further
-months for complex requests, and we will tell you if we extend. **45 days** under US state laws, extendable
-once by a further 45 days.
+**18.5 Our response times, as real numbers.** **30 days** under GDPR and UK GDPR, extendable by two
+further months for complex requests, and we will tell you if we extend. **45 days** under US state laws,
+extendable once by a further 45 days. **These are the statutory deadlines and we are bound by them from
+the day the Service accepts a request.** We would rather tell you plainly that the queue and the named
+owner behind them are still being put in place than let you assume a rota exists that does not.
 
-**18.6 How to make a request — with buttons, in the product.** Rights requests are made **in the
-application**, not by postal mail and not only by email. **ContactUs@ACT3ai.com** works too. We verify that a
+**18.6 How to make a request.** *(In-product request buttons are not built yet — see §2.3.)* Today a
+rights request is made by writing to ContactUs@ACT3ai.com (subject line: "privacy request"), and that route works now and will keep working.
+Request buttons will be added **in the application**, so that no right ever depends on knowing an email
+address. We verify that a
 request is really yours proportionately to its sensitivity, and we accept **authorised agent** requests with
 proof of authority.
 
-**18.7 Appeals.** If we refuse a request you may appeal, and **the appeal is reviewed by someone who was not
-involved in the original decision.** Virginia, Colorado, Connecticut, Minnesota, Montana, Oregon, Tennessee
-and Texas require this route; **to use it, send us your full name and a copy of the denial.** If we deny the
+**18.7 Appeals.** If we refuse a request you may appeal, and **the appeal will be reviewed by someone
+who was not involved in the original decision.** *(We are a very small company. Where no second reviewer
+is available in-house we will obtain one — an adviser or outside counsel — rather than have the original
+decision-maker review their own refusal.)* Virginia, Colorado, Connecticut, Minnesota, Montana, Oregon,
+Tennessee and Texas require this route; **to use it, send us your full name and a copy of the denial.** If we deny the
 appeal, **you may contact your state Attorney General**, and we will tell you how.
 
 **18.8 Export, and what it contains.** Most of your data is already an export: **your positions and evidence
 are readable files on your own disk, in an open format, right now.** For hosted data we provide a
-self-service export of your account information and your published content. *(Appendix D — the endpoint is
-an operational commitment and is not built yet. The Terms of Service state the export right at their §20.4
-without that qualification; where the two differ on what exists today, this document is the accurate one.)*
+self-service export of your account information and your published content. *(The self-service endpoint is not
+built yet — see §2.3. Until it is, ask at ContactUs@ACT3ai.com (subject line: "privacy request") and we will produce the export by hand.)*
 
 **18.9 If you are not a user but you appear in someone's evidence.** Public figures, officials, and anyone
 named in a citizen's reasoning **have the same rights as everyone else**, including rectification of an
-inference the AI drew (§11.4, §11.11). Contact us at **ContactUs@ACT3ai.com**. **A public figure who holds an
+inference the AI drew (§11.4, §11.11). Contact us at ContactUs@ACT3ai.com (subject line: "privacy request"). **A public figure who holds an
 account is a data subject like any other**, and nothing in the Terms of Service — including its covenant not
 to sue at §23.2 — waives a statutory privacy right.
 
@@ -1187,9 +1183,7 @@ talk to us first"* — and we state it affirmatively here so the two documents c
 ## 19. International Transfers and Regional Terms
 
 **19.1 Where data is hosted.** For the local application, **on your own computer, in your own country.** For
-hosted services, **in the United States** — Amazon Web Services, region `us-east-2`, located in Ohio. Every
-hosted resource runs in that one region. **If you are in the EEA or the UK, this means your hosted data is
-transferred to the United States**, and §19.2 is the mechanism we rely on to do that lawfully.
+hosted services, Amazon Web Services, region `us-east-2`, located in Ohio, United States.
 
 **19.2 Transfer mechanism.** Where personal data is transferred out of the EEA or the UK, we rely on the
 European Commission's **Standard Contractual Clauses**, as amended by the UK Addendum for UK data, or on an
@@ -1202,14 +1196,11 @@ policy, and it operates internationally.
 **19.4 Our AI provider transfers data internationally.** Where the AI feature is enabled, the provider
 processes data on servers that may be outside the EEA and the UK. **The provider's deployment configuration —
 not merely its identity — determines where processing happens**, and we state the configuration we actually
-use rather than the one that is theoretically available. *(Appendix C.)*
+use rather than the one that is theoretically available.
 
-**19.5 EU and UK representatives.** **Not applicable — we do not offer the Service to people in the
-European Economic Area or the United Kingdom**, and we do not monitor their behaviour, so Article 27 does
-not require us to appoint a representative. **If that ever changes we will appoint both an EU and a UK
-Article 27 representative, name them here with a postal address and a request route, and say so before the
-change takes effect.** Being reachable from a country is not the same as offering a service to it; if you
-are in the EEA or the UK, this Service is not directed at you.
+**19.5 EU and UK representatives.** Not applicable - we do not offer the Service to people in the European Economic Area or the United Kingdom, and we do not monitor their behaviour, so Article 27 does not require us to appoint a representative. **If we ever do offer the Service there, we will
+appoint both an EU and a UK Article 27 representative**, each with a postal address and a request route,
+name them here, and say so before the offering begins.
 
 **19.6 Regional supplements.** Where a jurisdiction requires its own notice, we publish a supplement that
 **expressly supersedes the main body on any conflict** for readers in that jurisdiction, rather than
@@ -1299,16 +1290,13 @@ stronger one than any process document. The second-best proof is that the parts 
 data — an access log, an analytics package, a crash-reporting service — **are simply not there** (§9.2a,
 §13.2).
 
-**22.5 Data Protection Officer.** **We have not appointed one, because we do not offer the Service in the
-EEA or the UK (§19.5) and so are not subject to Article 37.** We record the reasoning rather than the
-conclusion alone, because the reasoning is what would change: our core activity **is** large-scale
-processing of special-category data, and that is exactly the trigger in **Article 37(1)(c)**. **If we ever
-offer the Service in the EEA or the UK, a DPO becomes a real obligation and not a formality**, and we will
-appoint one before that offering begins.
+**22.5 Data Protection Officer.** Not applicable - we have not appointed a Data Protection Officer, because we do not offer the Service in the EEA or the UK and Article 37 therefore does not require one. **We record the reasoning and not only the conclusion, because the
+reasoning is the part that changes:** our core activity **is** large-scale processing of special-category
+data, which is exactly the trigger in **Article 37(1)(c)**. The moment we offer the Service in the EEA or
+the UK, a DPO becomes a real obligation and not a formality.
 
-**22.6 Data Protection Impact Assessment.** **None has been carried out yet, and one is in preparation.** A DPIA is required for large-scale processing of
-special-category data, **which is exactly what this product is.** We state this plainly rather than omit the section, because a
-reader is entitled to know which of our safeguards are in place today and which are still being built.
+**22.6 Data Protection Impact Assessment.** None has been carried out yet, and one is in preparation. A DPIA is required for large-scale processing of
+special-category data, **which is exactly what this product is.**
 
 **22.7 Vendor due diligence.** Especially for the AI provider, where — as §11.5 shows — **the privacy-relevant
 facts are configuration settings, not the vendor's name.** We record which configuration we run, dated, and
@@ -1361,28 +1349,17 @@ inaccurate detail is worse than no summary** — a regulator reads the body.
 
 ## 24. Contact
 
-**24.1 How to reach us.** The company's general address is **ContactUs@ACT3ai.com**, and it is also the
-privacy and data-rights channel — **mark your message "privacy request"** so it is routed correctly and the
-deadlines at §18.5 start on arrival. Our registered postal address is \{NOTICE_ADDRESS\}.
-**24.2 Data Protection Officer.** None appointed — see §22.5 for why, and for what would change it.
-**24.3 EU and UK representatives.** None appointed — see §19.5. We do not offer the Service in the EEA or the UK.
-**24.4 Your supervisory authority.** You may complain to a regulator instead of, or as well as, coming to
-us. **In the United States that is your state Attorney General**, and where a state privacy law applies it
-may name its own regulator. **We name no EU lead supervisory authority because we have no EU establishment
-and do not offer the Service in the EEA (§19.5)**; if you are nonetheless in the EEA or the UK, you may
-still complain to your own national authority — the **Information Commissioner's Office (ICO)** in the UK —
-and we will not argue that you may not. **You may do this at any time and you never have to come to us first (§18.12).**
-**24.5 Rights requests.** In the application, or at **ContactUs@ACT3ai.com**, marked "privacy request" (§18.6).
+**24.1 How to reach us.** The company's general address is **ContactUs@ACT3ai.com**. The dedicated privacy and
+data-rights channel is **ContactUs@ACT3ai.com (subject line: "privacy request")** — the same mailbox, routed by subject line (§2.9). Our registered postal address is 16430 NE 50th Street, Redmond, WA 98052, United States of America.
+**24.2 Data Protection Officer.** Not applicable - we have not appointed a Data Protection Officer, because we do not offer the Service in the EEA or the UK and Article 37 therefore does not require one.
+**24.3 EU and UK representatives.** Not applicable - we do not offer the Service to people in the European Economic Area or the United Kingdom, and we do not monitor their behaviour, so Article 27 does not require us to appoint a representative.
+**24.4 Your supervisory authority.** You may complain to your national data protection authority —
+your own national supervisory authority for EEA users, the **Information Commissioner's Office (ICO)** for UK users — or to
+your state Attorney General. **You may do this at any time and you never have to come to us first (§18.12).**
+**24.5 Rights requests.** In the application, or at ContactUs@ACT3ai.com (subject line: "privacy request") (§18.6).
 **24.6 Reporting a mistake.** The same channel named in the Terms of Service for reporting inaccurate content
 **is also the rectification channel** under this policy — for you, and for anyone the AI wrote about (§11.11).
 
 **Related documents:** the **Terms of Service** (the contract; this policy controls on any question of what we
 do with personal data) · the **Cookie Policy** · the **DMCA policy** · the **sub-processor list** (§8.5) · the
 **transparency report** (§9.9, when it exists).
-
----
----
-
-# APPENDICES — NOT PART OF THE POLICY
-
-*Everything below is working material for Bryan, engineering, and counsel. It is removed before publication.*
