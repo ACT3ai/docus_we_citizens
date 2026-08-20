@@ -528,3 +528,127 @@ holds whole pairs. If you add another top-bar item, re-check that budget again.
 The directory below will be the marketing guidelines for this directory or this docusaurus. 
 ~/BGit/all/politics/citizens_we/marketing/messaging
 
+
+====================================================================
+MARKETING MESSAGING -> CSV -> DOCS DIRECTORY (the three-way pairing)
+====================================================================
+
+MESSAGING_DIR dir is ~/BGit/all/politics/citizens_we/marketing/messaging
+
+That directory is the MARKETING GUIDELINES for this Docusaurus site, and for
+the four party editions it is PRIMARY. Its TABLE OF CONTENTS section is the
+source the Level 2 registry CSVs in this repo are generated from. When the two
+disagree, the messaging file wins and the CSV gets updated — never the reverse.
+We READ from MESSAGING_DIR; nothing in this repo writes to it.
+
+Five messaging files, five CSVs, five docs roots. Each row of this table is one
+audience, end to end:
+
+| Messaging file (primary)        | Registry CSV in this repo | Docs root      | Customer domain              | Public docs URL              | edition |
+|---|---|---|---|---|---|
+| republicans.md                  | level_2_r.csv             | site/docs/r/   | https://WeCitizensR.com      | https://WeTheCitizens.io/r/  | R    |
+| democrats.md                    | level_2_d.csv             | site/docs/d/   | https://WeCitizensD.com      | https://WeTheCitizens.io/d/  | D    |
+| libertarians.md                 | level_2_l.csv             | site/docs/l/   | https://WeCitizensL.com      | https://WeTheCitizens.io/l/  | L    |
+| socialism.md                    | level_2_s.csv             | site/docs/s/   | https://WeCitizensSocialism.com | https://WeTheCitizens.io/s/ | S |
+| non_partisan_io_messaging.md    | level_2.csv               | site/docs/     | https://WeTheCitizens.io/    | https://WeTheCitizens.io/    | main |
+
+The single letter is the whole mapping. The docs subdirectory letter, the CSV
+suffix, the level_2_key of the door in level_2.csv, and the edition code are all
+the SAME letter. socialism.md is the one filename that is not a letter — it is
+edition S, and the community is always called DEMOCRATIC SOCIALISTS, never
+"socialists".
+
+WHO EACH FILE IS FOR (short form; the file itself is the long form):
+
+* republicans.md — the political right / Republican voters. Positions us as a
+  replacement for TPUSA (that claim exists ONLY on this door), aimed at getting
+  political challengers into power to replace incumbents controlled by global
+  elites, plus the Republican voter's own package for removing the rigged
+  economy through community-based voting and collaboration. The only door that
+  carries Christian values.
+* democrats.md — Democrat voters. That community building its own package for
+  removing the rigged-economy layer through community-based voting and
+  collaboration, and getting back to an ethical, clean economy that is ideal for
+  workers. Money-in-politics and Citizens United are its named fights.
+* libertarians.md — libertarians. Finding political challengers on MERITOCRACY,
+  mapped to the will of the people, to replace incumbents controlled by
+  globalist elites — explicitly against foreign or intelligence-service
+  narrative control deciding who gets elected — plus the libertarian community's
+  own rigged-economy package. Its ethics language is the non-aggression
+  principle, consent and self-ownership.
+* socialism.md — DEMOCRATIC SOCIALISTS. Finding the best challengers who are not
+  controlled by special interests, on a meritocracy basis chosen by that
+  community, plus their own package for removing the rigged economy and getting
+  to an economy that is ethical and ideal for workers.
+* non_partisan_io_messaging.md — the MAIN .io domain, the front door that is
+  nobody's party edition. The shared cross-party voice used when a visitor
+  arrives without a party door. Its docs root is site/docs/ itself — intro,
+  the_movement/, how_it_works/, start_here/ and the rest of the non-party areas.
+
+HOW A CSV IS DERIVED FROM ITS MESSAGING FILE
+
+The BIG NUMBERS in the messaging file's TABLE OF CONTENTS (1.0, 2.0, 3.0 ...)
+each become ONE Level 2 area of that edition. The DOT NUMBERS under them (2.1,
+2.2 ...) become that area's Level 3 pages and are listed in level_3_pages. The
+big number itself is recorded in the source_section column, so any row can be
+traced back to the paragraph it came from.
+
+Columns, all lowercase with underscores and no spaces or special characters:
+
+  level_2_key    primary key. Three words or less, underscores, lowercase, no
+                 special characters. Must equal the directory name under the
+                 docs root. Unique within its own CSV; the SAME key may repeat
+                 across editions (every door has about_us, meritocracy,
+                 trust_scores) — that repetition is the mirror rule showing up
+                 in the data, not a collision.
+  title          the long, friendly human display name for the page itself
+  left_bar_title the SHORT title, the one that has to fit the left bar
+  nav_order      position within its own edition; matches the _category_.json
+                 "position" for that directory
+  dir_path       repo-relative path to the area's directory, e.g. site/docs/r/meritocracy/
+  one_liner      one sentence: what this area is
+  scope_in       what belongs on these pages
+  scope_out      what deliberately does NOT, and where it lives instead
+  newcomer_question_it_answers   the question a first-time visitor is asking
+  source_file    the messaging file this row was derived from, e.g.
+                 marketing/messaging/republicans.md (relative to
+                 ~/BGit/all/politics/citizens_we/)
+  source_section the big number in that file, e.g. "9.0". Empty when the row did
+                 not come from a numbered TOC section.
+  primary_sources  supporting specs and data to write the page from
+  level_3_pages  semicolon-separated .mdx filenames, overview.mdx first
+  status         planned | created
+
+All five CSVs share this one header. The four party CSVs are ordered: the
+generated Level 2 rows first, then TEN BLANK ROWS as working space, then any
+pre-existing content below that. level_2.csv keeps its thirty original areas and
+carries the ten blank rows above them.
+
+The CSV is a REGISTRY, not the site. A row with status "planned" means the
+directory does not exist yet. Creating it means the full Level 2 ritual for an
+INSIDE-A-FRONT-DOOR area: the directory, _category_.json with position =
+nav_order and a link to doc id "overview", and overview.mdx that links its own
+Level 3 pages. Inner areas are NOT added to level_2.csv and NOT added to
+MENU_GROUPS / FOOTER_GROUPS — see INSIDE A FRONT DOOR above.
+
+TWO THINGS TO KNOW BEFORE TRUSTING THESE FILES
+
+1. non_partisan_io_messaging.md has an EMPTY table of contents, and its OTHER
+   section is still byte-for-byte Republican copy ("replacement for TPUSA",
+   "voters who vote Republican"). That is party messaging sitting in the
+   non-partisan file. So level_2.csv gained NO new rows from it — its thirty
+   Level 2 areas still come from the product itself, not from the messaging
+   file. Do not render the .io front door from that file, and do not generate
+   .io Level 2 rows from it, until Bryan writes the real non-partisan voice.
+   (Known issue, first recorded 2026-Aug-19.)
+
+2. The four party files do not currently pair up the way the mirror rule says
+   they should. The mirror pairs are R<->D on the partisan axis and L<->S on the
+   economic axis, but STRUCTURALLY the files pair R<->L (both 20 sections, both
+   carrying expose_deep_state, us_intelligence, foreign_intelligence,
+   voter_fraud, no_forever_wars, no_social_credit, open_everything) and D<->S
+   (both 16 sections, both carrying economics_for_workers, ai_era_economy,
+   new_colonialism, abortion_rights, non_partisan_site). The CSVs report that
+   asymmetry faithfully rather than inventing sections to paper over it. Closing
+   it is a messaging-file decision and it has to be made in MESSAGING_DIR, which
+   is primary — do not "fix" it by adding rows to a CSV.
