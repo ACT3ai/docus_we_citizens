@@ -48,7 +48,8 @@ format: md
 > reach.
 
 **Controller: ACT 3 AI, Inc., a Washington corporation, doing business as We the Citizens.**
-General contact: **ContactUs@ACT3ai.com**. Privacy and data-rights contact: **\{PRIVACY_CONTACT\}**.
+General contact: **ContactUs@ACT3ai.com**. Privacy and data-rights contact: **ContactUs@ACT3ai.com** —
+mark your message **"privacy request"** so it is routed and the clock at §18.5 starts.
 Change log: [Version history](#23-changes-to-this-policy).
 
 > **THIS IS A DRAFT AND IT IS NOT LEGAL ADVICE.** It has not been reviewed by a lawyer, and several
@@ -190,9 +191,10 @@ community steward, they are the controller and their notice governs, not this on
 **2.9 Contacting us about privacy — and which address to use.** **ContactUs@ACT3ai.com** is the
 company's general mailbox and it reaches us. **It is not yet the data-rights channel**, and we would
 rather tell you that than let you send a formal erasure request to an address nobody has been made
-responsible for answering inside a statutory deadline. The dedicated privacy and data-rights channel
-is **\{PRIVACY_CONTACT\}** — see §24 and Appendix A. Until that is published, write to the general
-address and say clearly that your message is a privacy request.
+responsible for answering inside a statutory deadline. The privacy and data-rights channel
+is **ContactUs@ACT3ai.com** — the same mailbox as our general address, **routed by subject rather than by
+having its own domain name.** Write to it and **say clearly that your message is a privacy request**, so
+it is routed to the person who answers those and the statutory clock at §18.5 starts on arrival.
 
 ---
 
@@ -537,7 +539,7 @@ explicit consent (§6.1) to data you have manifestly made public (§6.2), **and 
 irreversible** (§10). We surface that **at the moment you publish**, in the product — not afterwards,
 and not only in this document.
 
-**7.11 The DPIA.** \{DPIA_STATUS\} — §22.6.
+**7.11 The DPIA.** **No Data Protection Impact Assessment has been carried out yet.** One is required for processing of this kind and it is being prepared — §22.6.
 
 ---
 
@@ -925,15 +927,16 @@ removes it.
 
 ## 14. Children
 
-**14.1 Minimum age.** You must be at least **\{MINIMUM_AGE\}** years old to create an account. This is the
-same number as the Terms of Service, and it must be stated identically in both documents. *(Open item —
-Appendix A. Both documents currently carry it as a placeholder, so they "match" only vacuously.)*
+**14.1 Minimum age.** You must be at least **18** years old to create an account. This is the same number
+as the Terms of Service, stated identically in both documents. We set it at 18 rather than lower because
+this is a political-speech platform with paid memberships, and because the thing we record about you is
+your political opinion.
 
 **14.2 The absolute floor.** **No accounts for anyone under 13, and we do not knowingly collect personal
-information from anyone under 13**, regardless of what \{MINIMUM_AGE\} is set to.
+information from anyone under 13**, regardless of anything else in this policy.
 
 **14.3 If we learn of one.** We delete the account and the associated data. A parent or guardian can
-contact us at \{PRIVACY_CONTACT\} to ask about, correct, or delete a child's data.
+contact us at **ContactUs@ACT3ai.com** to ask about, correct, or delete a child's data.
 
 **14.4 COPPA and the children's codes.** We comply with the Children's Online Privacy Protection Act.
 Where we serve minors at all, the UK Age Appropriate Design Code and equivalent EU requirements apply.
@@ -979,7 +982,7 @@ State-law deadlines apply where they are shorter — including Washington State'
 controller is incorporated (§2.1). **We will not promise "immediate" notice**, because that is a word
 nobody can keep and it tells you nothing.
 
-**15.8 Reporting a vulnerability.** Report security issues to \{PRIVACY_CONTACT\}, or to
+**15.8 Reporting a vulnerability.** Report security issues to **ContactUs@ACT3ai.com**, or to
 ContactUs@ACT3ai.com until that channel is published. We will not pursue legal action against good-faith
 security research conducted within a reasonable disclosure process.
 
@@ -1141,7 +1144,7 @@ months for complex requests, and we will tell you if we extend. **45 days** unde
 once by a further 45 days.
 
 **18.6 How to make a request — with buttons, in the product.** Rights requests are made **in the
-application**, not by postal mail and not only by email. \{PRIVACY_CONTACT\} works too. We verify that a
+application**, not by postal mail and not only by email. **ContactUs@ACT3ai.com** works too. We verify that a
 request is really yours proportionately to its sensitivity, and we accept **authorised agent** requests with
 proof of authority.
 
@@ -1158,7 +1161,7 @@ without that qualification; where the two differ on what exists today, this docu
 
 **18.9 If you are not a user but you appear in someone's evidence.** Public figures, officials, and anyone
 named in a citizen's reasoning **have the same rights as everyone else**, including rectification of an
-inference the AI drew (§11.4, §11.11). Contact us at \{PRIVACY_CONTACT\}. **A public figure who holds an
+inference the AI drew (§11.4, §11.11). Contact us at **ContactUs@ACT3ai.com**. **A public figure who holds an
 account is a data subject like any other**, and nothing in the Terms of Service — including its covenant not
 to sue at §23.2 — waives a statutory privacy right.
 
@@ -1184,8 +1187,9 @@ talk to us first"* — and we state it affirmatively here so the two documents c
 ## 19. International Transfers and Regional Terms
 
 **19.1 Where data is hosted.** For the local application, **on your own computer, in your own country.** For
-hosted services, \{HOSTING_LOCATION\} — *(Appendix C: no deployment exists to describe, so this cannot yet be
-stated as fact.)*
+hosted services, **in the United States** — Amazon Web Services, region `us-east-2`, located in Ohio. Every
+hosted resource runs in that one region. **If you are in the EEA or the UK, this means your hosted data is
+transferred to the United States**, and §19.2 is the mechanism we rely on to do that lawfully.
 
 **19.2 Transfer mechanism.** Where personal data is transferred out of the EEA or the UK, we rely on the
 European Commission's **Standard Contractual Clauses**, as amended by the UK Addendum for UK data, or on an
@@ -1200,8 +1204,12 @@ processes data on servers that may be outside the EEA and the UK. **The provider
 not merely its identity — determines where processing happens**, and we state the configuration we actually
 use rather than the one that is theoretically available. *(Appendix C.)*
 
-**19.5 EU and UK representatives.** \{EU_REPRESENTATIVE\} — we will appoint **both an EU and a UK Article 27
-representative**, each with a postal address and a request route, and name them here. *(Appendix A.)*
+**19.5 EU and UK representatives.** **Not applicable — we do not offer the Service to people in the
+European Economic Area or the United Kingdom**, and we do not monitor their behaviour, so Article 27 does
+not require us to appoint a representative. **If that ever changes we will appoint both an EU and a UK
+Article 27 representative, name them here with a postal address and a request route, and say so before the
+change takes effect.** Being reachable from a country is not the same as offering a service to it; if you
+are in the EEA or the UK, this Service is not directed at you.
 
 **19.6 Regional supplements.** Where a jurisdiction requires its own notice, we publish a supplement that
 **expressly supersedes the main body on any conflict** for readers in that jurisdiction, rather than
@@ -1291,12 +1299,16 @@ stronger one than any process document. The second-best proof is that the parts 
 data — an access log, an analytics package, a crash-reporting service — **are simply not there** (§9.2a,
 §13.2).
 
-**22.5 Data Protection Officer.** \{DPO\}. Our core activity is large-scale processing of special-category data,
-which **Article 37(1)(c) points squarely at requiring a DPO.** This is a real obligation, not a formality.
-*(Flagged for counsel — Appendix E.)*
+**22.5 Data Protection Officer.** **We have not appointed one, because we do not offer the Service in the
+EEA or the UK (§19.5) and so are not subject to Article 37.** We record the reasoning rather than the
+conclusion alone, because the reasoning is what would change: our core activity **is** large-scale
+processing of special-category data, and that is exactly the trigger in **Article 37(1)(c)**. **If we ever
+offer the Service in the EEA or the UK, a DPO becomes a real obligation and not a formality**, and we will
+appoint one before that offering begins.
 
-**22.6 Data Protection Impact Assessment.** \{DPIA_STATUS\}. A DPIA is required for large-scale processing of
-special-category data, **which is exactly what this product is.**
+**22.6 Data Protection Impact Assessment.** **None has been carried out yet, and one is in preparation.** A DPIA is required for large-scale processing of
+special-category data, **which is exactly what this product is.** We state this plainly rather than omit the section, because a
+reader is entitled to know which of our safeguards are in place today and which are still being built.
 
 **22.7 Vendor due diligence.** Especially for the AI provider, where — as §11.5 shows — **the privacy-relevant
 facts are configuration settings, not the vendor's name.** We record which configuration we run, dated, and
@@ -1349,15 +1361,18 @@ inaccurate detail is worse than no summary** — a regulator reads the body.
 
 ## 24. Contact
 
-**24.1 How to reach us.** The company's general address is **ContactUs@ACT3ai.com**. The dedicated privacy and
-data-rights channel is **\{PRIVACY_CONTACT\}** *(Appendix A)*; until it is published, use the general address and
-say that your message is a privacy request. Our registered postal address is \{NOTICE_ADDRESS\}.
-**24.2 Data Protection Officer.** \{DPO\}.
-**24.3 EU and UK representatives.** \{EU_REPRESENTATIVE\}.
-**24.4 Your supervisory authority.** You may complain to your national data protection authority —
-\{SUPERVISORY_AUTHORITY\} for EEA users, the **Information Commissioner's Office (ICO)** for UK users — or to
-your state Attorney General. **You may do this at any time and you never have to come to us first (§18.12).**
-**24.5 Rights requests.** In the application, or at \{PRIVACY_CONTACT\} (§18.6).
+**24.1 How to reach us.** The company's general address is **ContactUs@ACT3ai.com**, and it is also the
+privacy and data-rights channel — **mark your message "privacy request"** so it is routed correctly and the
+deadlines at §18.5 start on arrival. Our registered postal address is \{NOTICE_ADDRESS\}.
+**24.2 Data Protection Officer.** None appointed — see §22.5 for why, and for what would change it.
+**24.3 EU and UK representatives.** None appointed — see §19.5. We do not offer the Service in the EEA or the UK.
+**24.4 Your supervisory authority.** You may complain to a regulator instead of, or as well as, coming to
+us. **In the United States that is your state Attorney General**, and where a state privacy law applies it
+may name its own regulator. **We name no EU lead supervisory authority because we have no EU establishment
+and do not offer the Service in the EEA (§19.5)**; if you are nonetheless in the EEA or the UK, you may
+still complain to your own national authority — the **Information Commissioner's Office (ICO)** in the UK —
+and we will not argue that you may not. **You may do this at any time and you never have to come to us first (§18.12).**
+**24.5 Rights requests.** In the application, or at **ContactUs@ACT3ai.com**, marked "privacy request" (§18.6).
 **24.6 Reporting a mistake.** The same channel named in the Terms of Service for reporting inaccurate content
 **is also the rectification channel** under this policy — for you, and for anyone the AI wrote about (§11.11).
 
