@@ -207,7 +207,7 @@ export const LEVEL_2: Level2[] = CSV_AREAS.filter(
  * ------------------------------------------------------------------ */
 
 export type Party = Level2 & {
-  /** Single-letter edition code, per we_citizens/pm/r_vs_d.mdx §3.1. */
+  /** Single-letter edition code, per we_citizens/pm/party_front_doors.mdx §3.1. */
   edition: "R" | "D" | "L" | "S";
   /** The public front-door domain for this edition. */
   domain: string;

@@ -459,7 +459,7 @@ big-numbered sections, democrats.md and socialism.md have 16. That is a fact
 about the source files, not a rule and not a pairing. Each door's counts and
 areas track its own messaging file and are free to change independently.
 
-The authoritative product spec is ~/BGit/act3/we_citizens/pm/r_vs_d.mdx.
+The authoritative product spec is ~/BGit/act3/we_citizens/pm/party_front_doors.mdx.
 Read it before writing anything new about the four editions.
 
 ====================================================================
