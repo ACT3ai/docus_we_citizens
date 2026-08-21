@@ -745,3 +745,28 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 75%;
   }
 }
+
+/* ---------------------------------------------------------------------
+   White content area
+
+   The reading column is white on every page — docs, blog, the home page and
+   404. The three pieces of chrome keep the parchment/ink palette they already
+   had, because each paints its own background and is therefore unaffected by
+   the white sheet underneath: the top bar (.navbar), the footer (.footer) and
+   the left bar — which had been inheriting the body colour, so it is pinned to
+   --ua-paper here rather than left to follow the body to white.
+
+   Light mode only. Dark mode keeps --ifm-background-color (#14110b); a white
+   sheet there would defeat the theme.
+   --------------------------------------------------------------------- */
+
+html:not([data-theme='dark']),
+html:not([data-theme='dark']) body,
+html:not([data-theme='dark']) .main-wrapper {
+  background: #fff;
+}
+
+html:not([data-theme='dark']) .theme-doc-sidebar-container,
+html:not([data-theme='dark']) .theme-doc-sidebar-container .menu {
+  background: var(--ua-paper);
+}
