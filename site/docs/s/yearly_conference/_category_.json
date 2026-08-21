@@ -1,0 +1,9 @@
+{
+  "label": "Yearly Conference",
+  "position": 6,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  },
+  "description": "A yearly strategic conference for this community, where its direction gets set together."
+}

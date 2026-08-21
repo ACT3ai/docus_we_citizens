@@ -1,0 +1,9 @@
+{
+  "label": "What Stays on .io",
+  "position": 11,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  },
+  "description": "Some things deliberately do not move down to this door, and this page points at the .io instead of quietly duplicating them."
+}

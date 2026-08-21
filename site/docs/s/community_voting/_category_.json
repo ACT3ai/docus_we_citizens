@@ -1,0 +1,9 @@
+{
+  "label": "Community Voting",
+  "position": 5,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  },
+  "description": "The mechanism the whole platform runs on: positions, plans and candidate judgments come from citizens voting and working together."
+}

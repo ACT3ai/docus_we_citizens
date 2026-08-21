@@ -1,0 +1,9 @@
+{
+  "label": "About Us",
+  "position": 1,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  },
+  "description": "Who this door is for: libertarians and the broader liberty movement, building their own package in their own language."
+}

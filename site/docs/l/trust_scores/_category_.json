@@ -1,0 +1,9 @@
+{
+  "label": "Trust Scores",
+  "position": 15,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  },
+  "description": "Trust scores are how a citizen judges whether a candidate really works for citizens — built and voted here, at the party level."
+}

@@ -1,0 +1,9 @@
+{
+  "label": "Open Source & Data",
+  "position": 18,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  },
+  "description": "Nobody has to trust us, because nobody can check a black box — every layer that decides something about a candidate or a vote is open to inspection."
+}

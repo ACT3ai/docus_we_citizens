@@ -1,0 +1,9 @@
+{
+  "label": "Voter Fraud",
+  "position": 12,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  },
+  "description": "A citizen has to be able to believe the count, and the goal is structurally impossible fraud rather than fraud merely investigated."
+}

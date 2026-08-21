@@ -341,9 +341,39 @@ way the parent site does:
   site/docs/r/{area}/                 ONE Level 2 area OF THE R EDITION
   site/docs/r/{area}/_category_.json  label, position, link -> doc id "overview"
   site/docs/r/{area}/overview.mdx     id "overview" — THE Level 2 page for that
-                                      area (/docs/r/{area}/overview)
+                                      area, served at /docs/r/{area}/ (see
+                                      THE DIRECTORY IS THE URL below)
   site/docs/r/{area}/{level_3}.mdx    a Level 3 page — a few words, underscores,
                                       always lowercase, never named "overview"
+
+THE DIRECTORY IS THE URL. Inside a front door the file is still overview.mdx,
+but the word "overview" never appears in the address. Every one of these pages
+carries an explicit frontmatter slug:
+
+  overview.mdx        slug: /r/{area}            -> /docs/r/{area}/
+  {level_3}.mdx       slug: /r/{area}/{level_3}  -> /docs/r/{area}/{level_3}/
+
+That is the whole mechanism — Docusaurus resolves a doc's `link` target, its
+sidebar row and every ./file.mdx cross-link through the slug, so setting it is
+enough and nothing else has to know. Two reasons it is not optional:
+
+  * The reader gets the clean address. /docs/r/meritocracy/ loads the area's own
+    page; a directory path that 404s is the thing this avoids.
+  * A Level 3 file whose basename equals its folder name (words_we_use/
+    words_we_use.mdx, abortion_rights/abortion_rights.mdx) is treated by
+    Docusaurus as the FOLDER INDEX and silently claims /docs/r/words_we_use/ —
+    the same route overview.mdx wants. The build reports "Duplicate routes
+    found!" and routing goes non-deterministic. The explicit slug on every
+    Level 3 page is what keeps that from happening again.
+
+The PARENT site's thirty Level 2 areas still use the older /docs/{area}/overview
+form, and internal/nav.ts overviewPath() plus the web app's docsOverviewPath
+depend on it. Do not slug those without changing both.
+
+SIDEBAR ORDER INSIDE A DOOR. The door's own overview.mdx sits at
+sidebar_position 0 and reference_text.mdx at 0.5, because the inner areas take
+positions 1..N from their nav_order. Without that the door page would tie with
+whichever area is nav_order 1.
 
 site/docs/d/, site/docs/l/ and site/docs/s/ are laid out identically, for the
 Democrat, Libertarian and Socialist editions.
@@ -357,10 +387,10 @@ site's thirty areas — that is the whole reason republicanSidebar exists.
 WHAT AN INNER LEVEL 2 DOES AND DOES NOT NEED:
 * It needs its own _category_.json WITH the `link` to doc id "overview", or the
   left bar row has nowhere to send the reader.
-* It needs overview.mdx, and that page is what links to its Level 3 pages. The
-  left bar never lists Level 3s and never indents — src/theme/DocSidebarItem/
-  Category draws a directory as one link, so the area's own page is the only
-  place its children are listed.
+* It needs overview.mdx WITH its slug, and that page is what links to its Level 3
+  pages. The left bar never lists Level 3s and never indents —
+  src/theme/DocSidebarItem/Category draws a directory as one link, so the area's
+  own page is the only place its children are listed.
 * It does NOT go in level_2.csv, and it does NOT go in MENU_GROUPS /
   FOOTER_GROUPS in internal/nav.ts. That registry, and the build guard that
   enforces it, cover the PARENT site's Level 2 areas only — the four doors
@@ -372,6 +402,21 @@ THE MIRROR RULE APPLIES TO THIS TOO, per pair. An inner Level 2 added under r/
 gets its mirror under d/ in the same commit, and one added under l/ gets its
 mirror under s/ — same area, same position, same shape, party label swapped.
 A door whose partner is missing an area has broken the symmetry check.
+
+WHERE THE INNER AREAS CAME FROM. All 72 of them (R 20, D 16, L 20, S 16) were
+generated on 2026-08-20 from the four registry CSVs — level_2_r.csv,
+level_2_d.csv, level_2_l.csv, level_2_s.csv — with the prose taken from the
+matching file in MESSAGING_DIR, which is primary. Each area's overview.mdx opens
+with the CSV's newcomer_question_it_answers, then the one_liner, then the
+messaging file's own bullets for that big-numbered section; each Level 3 page is
+one dot-numbered subsection. Every page footer names its source section, so any
+page can be traced back to the paragraph it came from. The status column in all
+four CSVs is now "created".
+
+Because R and L share a structure (20 sections) and D and S share theirs (16),
+the copy is written once per structural family and tokenized per edition —
+audience name, elite phrasing, domain, docs path, mirror partner. That is what
+keeps the mirror rule true in the prose and not only in the directory listing.
 
 The authoritative product spec is ~/BGit/act3/we_citizens/pm/r_vs_d.mdx.
 Read it before writing anything new about the four editions.
