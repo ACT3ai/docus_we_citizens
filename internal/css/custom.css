@@ -27,24 +27,23 @@
   /* ---- Party-edition chrome accents ----
 
      The four front doors each carry a chrome accent in the web app's edition
-     profiles (we_citizens/code/we_citizens_{r,d,l,s}/src/index.ts, specified in
-     pm/r_vs_d.mdx §9.4). Mirrored here as tokens so this site never re-derives
-     an edition colour by eye, and so all four are defined in one place where a
-     missing pair member is obvious at a glance.
+     profiles (we_citizens/code/we_citizens_{r,d,l,s}/src/index.ts). Copied here
+     as tokens so this site never re-derives an edition colour by eye, and so all
+     four are defined in one place.
 
-     TWO RULES CARRIED OVER FROM §9.4, AND THEY MATTER:
+     TWO RULES, AND THEY MATTER:
 
      1. CHROME ONLY. An accent may tint a border, a rule or a chip. It is NEVER
         applied to a score bar — red and green on a bar mean bad and good, and
         an edition whose accent is red or rose must not blur that.
-     2. NOTHING ON THIS SITE TINTS ITSELF BY EDITION TODAY, deliberately. The
-        party links in the top bar and the four party overview pages are styled
-        identically, which is the mirror-symmetry rule (pm/r_vs_d.mdx §5) at its
-        simplest: no door can read as louder than its pair partner. Use these
-        tokens only where an edition-specific surface genuinely needs one, and
-        when you use one, use its pair partner's in the same commit.
+     2. NOTHING ON THIS SITE TINTS ITSELF BY EDITION TODAY. The party links in
+        the top bar and the four party overview pages are styled identically —
+        a plain visual-consistency choice, not a symmetry obligation. Use these
+        tokens where an edition-specific surface genuinely needs one. You may
+        give one door an accent without giving the others anything; there is no
+        pairing and no same-commit obligation to any other door.
 
-     Paired on their axis: R↔D partisan, L↔S economic. S's rose is deliberately
+     Four separate colours for four separate audiences. S's rose is deliberately
      NOT R's red, so the two never read as the same door. */
   --wc-accent-r:        #B3202B;   /* Republicans  — red   */
   --wc-accent-r-dark:   #E0555F;
@@ -52,7 +51,7 @@
   --wc-accent-d-dark:   #5B92E5;
   --wc-accent-l:        #B8860B;   /* Libertarians — gold  */
   --wc-accent-l-dark:   #E0B23A;
-  --wc-accent-s:        #A61B4B;   /* Socialists   — rose  */
+  --wc-accent-s:        #A61B4B;   /* Dem Socialists — rose */
   --wc-accent-s-dark:   #E0578C;
 
   /* Lines */
@@ -525,18 +524,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ---- The four party front doors ----
 
-   Plain "Republicans" / "Democrats" / "Libertarians" / "Socialists" links that
-   open WeCitizensR.com, WeCitizensD.com, WeCitizensL.com and
+   Plain "Republicans" / "Democrats" / "Libertarians" / "Democratic Socialists"
+   links that open WeCitizensR.com, WeCitizensD.com, WeCitizensL.com and
    WeCitizensSocialism.com in a new tab. No box, no underline rule, no party
-   colour and no dropdown affordance — all four are styled identically, which is
-   the mirror-symmetry rule (pm/r_vs_d.mdx §5) at its simplest.
+   colour and no dropdown affordance — all four are styled identically because
+   uniform chrome reads better in a navbar, not because any rule requires it.
 
    The per-edition accent tokens exist (--wc-accent-* at the top of this file)
-   and are deliberately NOT used here. internal/nav.ts still emits a
-   .wcPartyNav--r / --d / --l / --s modifier on each link, so an edition-specific
-   rule is one selector away if it is ever wanted — but it would have to be
-   written for all four at once, or one door starts shouting louder than its
-   pair partner. */
+   and are not used here today. internal/nav.ts emits a .wcPartyNav--r / --d /
+   --l / --s modifier on each link, so an edition-specific rule is one selector
+   away if it is ever wanted, for one door or for all four. */
 
 .wcPartyNav .navbar__link,
 .navbar__link.wcPartyNav {

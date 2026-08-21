@@ -322,10 +322,10 @@ const config: Config = {
           className: 'wcNavFoldable',
         },
         // The four party front doors — plain "Republicans" / "Democrats" /
-        // "Libertarians" / "Socialists" buttons that open WeCitizensR.com,
+        // "Libertarians" / "Democratic Socialists" buttons that open WeCitizensR.com,
         // WeCitizensD.com, WeCitizensL.com and WeCitizensSocialism.com in a new
-        // tab. Two pairs, not four skins: R↔D on the partisan axis, L↔S on the
-        // economic one (pm/r_vs_d.mdx §1.3a).
+        // tab. Four independent editions: R Republicans, D Democrats,
+        // L Libertarians, S Democratic Socialists. No pairing between them.
         ...partyNavbarItems(),
         // "More ⌄" — every Level 2 area, each going to its overview.mdx, plus
         // the movement pages (Programs, Governance, the Bonhoeffer pages).

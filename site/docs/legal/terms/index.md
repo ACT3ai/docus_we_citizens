@@ -300,7 +300,7 @@ the **Local App**; and any related application, API, or mobile app we publish.
 | **WeCitizensR.com** | Republicans |
 | **WeCitizensD.com** | Democrats |
 | **WeCitizensL.com** | Libertarians |
-| **WeCitizensSocialism.com** | Socialists |
+| **WeCitizensSocialism.com** | Democratic Socialists |
 
 These are **one web application serving a different front page depending on the hostname you
 arrived on**. They are not four products, four companies, or four contracts.

@@ -5,8 +5,8 @@ draft: true
 
 > Moved here on 2026-08-17 from `site/docs/d/public_mockup.md`, where it had been
 > misfiled. Nothing in it is about the Democrat edition — it is a prose copy of the
-> MAIN wethecitizens.io homepage — and leaving it inside a party front-door
-> directory made the four editions look asymmetric when they are not.
+> MAIN wethecitizens.io homepage — and a copy of a site-wide page does not belong
+> inside any one party front-door directory.
 > `docs/priv/` is the repo's unpublished area (see `docs/priv/README.md`), which
 > is where an internal working copy of a live page belongs.
 

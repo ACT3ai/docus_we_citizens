@@ -257,8 +257,9 @@ THE FOUR PARTY FRONT DOORS
 ====================================================================
 
 We The Citizens has four party front doors. All four are Level 2 areas on this
-site. Only R and D are pinned items in the top bar; L and S are reached from the
-"More" menu and the footer (see WIDTH BUDGET below).
+site. All four are independent editions with no pairing between them. Only R and
+D are pinned items in the top bar; L and S are reached from the "More" menu and
+the footer — a width decision, see WIDTH BUDGET below.
 
 * "We The Citizens R"  -> Republicans  -> WeCitizensR.com
   level_2_key = r    (site/docs/r/)   nav_order 31   sidebar republicanSidebar
@@ -266,7 +267,7 @@ site. Only R and D are pinned items in the top bar; L and S are reached from the
   level_2_key = d    (site/docs/d/)   nav_order 32   sidebar democratSidebar
 * "We The Citizens L"  -> Libertarians -> WeCitizensL.com
   level_2_key = l    (site/docs/l/)   nav_order 33   sidebar libertarianSidebar
-* "We The Citizens S"  -> Socialists   -> WeCitizensSocialism.com
+* "We The Citizens S"  -> Democratic Socialists -> WeCitizensSocialism.com
   level_2_key = s    (site/docs/s/)   nav_order 34   sidebar socialistSidebar
 
 All four are registered on Bryan Starbuck's CLOUDFLARE account, along with
@@ -297,24 +298,56 @@ They are ONE web app rendered four ways, selected by the domain the request
 arrived on. Not four products, not four deployments, not four data sets. The
 edition is a request attribute.
 
-FOUR DOORS, TWO PAIRS. They are not four unrelated skins. R and D are each
-other's reflection on the PARTISAN axis; L and S are each other's reflection on
-the ECONOMIC axis. Every door names exactly one other party — its partner on the
-same axis — which is what fills the cross-party honesty column and what gives
-the mirror check a counterpart to run against. A door is only ever added
-together with its partner; an unpaired door has nothing to check it against.
+FOUR DOORS, NO PAIRS. THERE IS NO MIRROR RULE. This is the doctrine, and it
+replaced the opposite doctrine on 2026-08-21.
 
-THE MIRROR-SYMMETRY RULE binds everything we write about them, and it runs ONCE
-PER PAIR. Everything true of R is true of D with the party label swapped, and
-everything true of L is true of S the same way: one award pipeline, symmetric
-harshness, no copy that compares or characterizes a party, the cross-party
-column always present. The unit of judgement is a person and a vote, never a
-party. Review test for any change: "would I ship the exact mirror of this to
-the paired edition tomorrow?" If no, it does not ship.
+The four doors used to be locked together in two pairs — R with D on a "partisan
+axis", L with S on an "economic axis" — and a MIRROR-SYMMETRY RULE required that
+everything true of one member of a pair be true of the other with the party label
+swapped: same areas, same positions, same shape, same sentences, shipped in the
+same commit. THAT RULE IS GONE. Do not re-derive it, do not reintroduce it under
+another name, and do not write a helper that "keeps the doors in sync."
 
-HOW A FRONT-DOOR DIRECTORY IS LAID OUT. All four are identical, and the four
-files at the top of each are the door itself. That sameness is the mirror rule
-made structural:
+What replaced it:
+
+* R is Republicans. D is Democrats. L is Libertarians. S is DEMOCRATIC
+  SOCIALISTS. That mapping is the only thing the four doors have in common, and
+  it is never to be scrambled.
+* Each door answers to ITS OWN messaging file and to nothing else:
+  r -> republicans.md, d -> democrats.md, l -> libertarians.md,
+  s -> socialism.md. If a sentence is not supported by that door's file, it does
+  not go on that door — no matter what another door says.
+* A door does NOT need a partner to exist. One may be added, changed or improved
+  alone. A door may have areas the others do not, in any number and any order.
+* Editing one door creates ZERO obligation to any other. Improve a paragraph on
+  D without owing the same paragraph to R.
+* Never say a door "mirrors", "is paired with", "is the reflection of" or "is the
+  same as" another door. Never call the four doors "two pairs". Never speak of a
+  "partisan axis" or an "economic axis" as a pairing between editions.
+* A ONE-TIME COPY IS FINE. The four front-door pages were forked from one
+  template on 2026-08-21 precisely so they could then drift apart. Copy once to
+  start a door; never wire two doors together afterwards.
+
+WHAT STILL BINDS ALL FOUR, and it is arithmetic rather than prose:
+
+1. ONE AWARD PIPELINE. Monkey, Llama and Flamingo are computed once, party-blind.
+   No edition re-weights, re-rounds or re-thresholds anything.
+2. THE UNIT OF JUDGEMENT IS A PERSON AND A VOTE, never a party. No door
+   characterizes another party, compares parties, or attributes motive to one.
+   This is the one editorial rule that survived the mirror rule's removal, and it
+   survived on its own merits.
+3. CROSS-PARTY CHALLENGERS ARE ALWAYS SHOWN. The third seat column is "the
+   strongest challenger for this seat who is not from your side, whatever party
+   that turns out to be" — NOT "the pair partner's challenger". A page that only
+   ever showed your own team would be a campaign tool.
+
+The review test is no longer "would I ship the exact mirror of this to the paired
+edition tomorrow?" It is: DOES THIS DOOR'S OWN MESSAGING FILE SUPPORT IT, AND
+DOES IT JUDGE A PERSON AND A VOTE RATHER THAN A PARTY?
+
+HOW A FRONT-DOOR DIRECTORY IS LAID OUT. All four currently carry the same four
+files at the top, and those four files are the door itself. That is a starting
+shape, not a rule — a door may grow files the others do not have:
 
   _category_.json      label, position, link -> doc id "overview"
   _overview_page.tsx   thin per-edition entry point; renders the shared
@@ -327,10 +360,16 @@ made structural:
   reference_text.mdx   id "reference_text", unlisted — the long-form prose
                        version of the same argument, for reference and reuse.
 
-The page itself is written ONCE, in src/components/PartyFrontDoor, and
-parameterized by edition. Four hand-copied page files would promise mirror
-symmetry and then lose it the first time somebody improved a paragraph on one
-door and not on its partner. Do not fork that component per edition.
+THE FOUR FRONT-DOOR PAGES ARE FOUR SEPARATE FILES. Each edition's
+_overview_page.tsx is a complete, standalone page that imports nothing from the
+other three. There is no shared PartyFrontDoor component; it was deleted on
+2026-08-21 when the mirror rule was removed, because a single parameterized
+component IS the mirror rule expressed as code — it makes divergence impossible,
+which is now the thing we want to be possible. The four files were forked from
+one template that day and are expected to drift.
+
+If you find yourself reaching for a shared party component, a per-edition props
+table, or a "sync the doors" script, stop: that is the removed rule growing back.
 
 INSIDE A FRONT DOOR — THE EDITION'S OWN LEVEL 2s AND LEVEL 3s.
 Those four files are only the door. A front-door directory is also the ROOT of
@@ -398,10 +437,11 @@ WHAT AN INNER LEVEL 2 DOES AND DOES NOT NEED:
   filesystem (internal/sidebars.ts), so an inner area appears in its edition's
   left bar as soon as the directory exists.
 
-THE MIRROR RULE APPLIES TO THIS TOO, per pair. An inner Level 2 added under r/
-gets its mirror under d/ in the same commit, and one added under l/ gets its
-mirror under s/ — same area, same position, same shape, party label swapped.
-A door whose partner is missing an area has broken the symmetry check.
+INNER AREAS ARE PER-DOOR. An inner Level 2 added under r/ belongs to r/ and to
+nothing else. It does NOT have to be added under d/, l/ or s/, in that commit or
+ever. A door may carry twenty areas while another carries sixteen — that is not a
+defect and it is not "broken symmetry", it is four audiences with four different
+sets of priorities. Add the area where its messaging file asks for it.
 
 WHERE THE INNER AREAS CAME FROM. All 72 of them (R 20, D 16, L 20, S 16) were
 generated on 2026-08-20 from the four registry CSVs — level_2_r.csv,
@@ -413,10 +453,11 @@ one dot-numbered subsection. Every page footer names its source section, so any
 page can be traced back to the paragraph it came from. The status column in all
 four CSVs is now "created".
 
-Because R and L share a structure (20 sections) and D and S share theirs (16),
-the copy is written once per structural family and tokenized per edition —
-audience name, elite phrasing, domain, docs path, mirror partner. That is what
-keeps the mirror rule true in the prose and not only in the directory listing.
+R and L happen to carry 20 areas and D and S 16, because that is how their
+messaging files are structured — republicans.md and libertarians.md have 20
+big-numbered sections, democrats.md and socialism.md have 16. That is a fact
+about the source files, not a rule and not a pairing. Each door's counts and
+areas track its own messaging file and are free to change independently.
 
 The authoritative product spec is ~/BGit/act3/we_citizens/pm/r_vs_d.mdx.
 Read it before writing anything new about the four editions.
@@ -493,9 +534,9 @@ internal/sidebars.ts from data in internal/nav.ts. No page defines its own.
 The party bars exist because those areas are front doors onto their own
 hierarchies: a visitor who arrived at WeCitizensR.com sees the R edition's own
 Level 2s, not the thirty areas of the parent site. All four are generated by the
-same function from the same shape — sidebars.ts maps over PARTIES rather than
-writing them out one at a time — so the mirror-symmetry rule holds for
-navigation too and no door can be given a bar its pair partner does not get.
+same function so that adding a door cannot forget to add its bar — wiring, not
+symmetry. Each bar is autogenerated from its own directory tree, so the four
+doors carry whatever areas they carry and are expected to differ.
 internal/nav.ts's docsSidebarItemsGenerator lifts the party areas out of the
 root autogenerated slice; without it those pages would belong to two sidebars at
 once and would have no single left bar to render.
@@ -567,8 +608,10 @@ back to 1380px the same day when L and S were taken back off the bar, because
 folding the site links away on an ordinary laptop cost more than the two extra
 buttons were worth. The party links are the ones that must survive the squeeze
 — they are the whole point of the bar — so the site links fold first. Which
-doors are on the bar is TOP_BAR_PARTY_KEYS in internal/nav.ts, and it only ever
-holds whole pairs. If you add another top-bar item, re-check that budget again.
+doors are on the bar is TOP_BAR_PARTY_KEYS in internal/nav.ts. That list is a
+WIDTH decision and nothing else — any subset of the four may sit on the bar, and
+there is no pairing constraint on it. If you add another top-bar item, re-check
+that budget again.
 
 The directory below will be the marketing guidelines for this directory or this docusaurus. 
 ~/BGit/all/politics/citizens_we/marketing/messaging
@@ -644,8 +687,8 @@ Columns, all lowercase with underscores and no spaces or special characters:
                  special characters. Must equal the directory name under the
                  docs root. Unique within its own CSV; the SAME key may repeat
                  across editions (every door has about_us, meritocracy,
-                 trust_scores) — that repetition is the mirror rule showing up
-                 in the data, not a collision.
+                 trust_scores) — a shared key across doors is just two doors
+                 that both wanted that area, not a collision and not a pairing.
   title          the long, friendly human display name for the page itself
   left_bar_title the SHORT title, the one that has to fit the left bar
   nav_order      position within its own edition; matches the _category_.json
@@ -687,13 +730,10 @@ TWO THINGS TO KNOW BEFORE TRUSTING THESE FILES
    .io Level 2 rows from it, until Bryan writes the real non-partisan voice.
    (Known issue, first recorded 2026-Aug-19.)
 
-2. The four party files do not currently pair up the way the mirror rule says
-   they should. The mirror pairs are R<->D on the partisan axis and L<->S on the
-   economic axis, but STRUCTURALLY the files pair R<->L (both 20 sections, both
-   carrying expose_deep_state, us_intelligence, foreign_intelligence,
-   voter_fraud, no_forever_wars, no_social_credit, open_everything) and D<->S
-   (both 16 sections, both carrying economics_for_workers, ai_era_economy,
-   new_colonialism, abortion_rights, non_partisan_site). The CSVs report that
-   asymmetry faithfully rather than inventing sections to paper over it. Closing
-   it is a messaging-file decision and it has to be made in MESSAGING_DIR, which
-   is primary — do not "fix" it by adding rows to a CSV.
+2. The four party files carry different section counts: republicans.md and
+   libertarians.md have 20 big-numbered sections, democrats.md and socialism.md
+   have 16. Under the old mirror rule this was a defect to be reconciled. It is
+   not one any more — four audiences, four sets of priorities, four different
+   shapes. The CSVs report each file exactly as it stands. Do not add rows to a
+   CSV to make two doors match; if a door should gain an area, say so in
+   MESSAGING_DIR, which is primary, and let the CSV follow.
