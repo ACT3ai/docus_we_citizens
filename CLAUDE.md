@@ -562,8 +562,15 @@ reached from the "Dietrich Bonhoeffers" page.
 
 Ordering note: standalone docs at the root of site/docs/ share one position
 space with the Level 2 categories. The site pages sit at 0.1-0.3 (Charter,
-About Us, Board), the Level 2 areas at 1-30 in reading order, the Bonhoeffer
+About Us, Board), the Level 2 areas at 1-47 in reading order, the Bonhoeffer
 roster pages at 85-88, Legal at 90, Internal Research at 97.
+
+Every _category_.json position IS the nav_order column of level_2.csv, with no
+exceptions and no drift - the two were resynchronised on 2026-08-27 when the
+thirteen remaining "planned" rows were created, which renumbered the whole
+range. The four party doors take 44-47 from the CSV; their old 31-34 was stale
+and now belongs to qualifications, meritocracy, trust_scores and decisions.
+Reordering the CSV means renumbering the _category_.json files with it.
 
 ====================================================================
 NO RIGHT BAR, NO BREADCRUMB BAR
@@ -737,3 +744,193 @@ TWO THINGS TO KNOW BEFORE TRUSTING THESE FILES
    shapes. The CSVs report each file exactly as it stands. Do not add rows to a
    CSV to make two doors match; if a door should gain an area, say so in
    MESSAGING_DIR, which is primary, and let the CSV follow.
+
+====================================================================
+THE PRODUCT KNOWLEDGE FILE — READ IT BEFORE DOING ANYTHING
+====================================================================
+
+KNOWLEDGE_FILE is file ~/BGit/act3/we_the_citizens/KNOWLEDGE_we_citizens.md
+
+Read KNOWLEDGE_FILE into the context window BEFORE doing anything in this
+repo — writing a page, editing a page, rewording a headline, adding a Level 2
+area, renaming a thing, answering a question about what the product does. It is
+the single-file orientation to the whole product: 52 sections, assembled from
+the 149 product specifications in ~/BGit/act3/we_the_citizens/pm/, the data
+contracts, and the source code. It is the fact base. This Docusaurus site is
+the EXPLANATION of that fact base; it cannot be written correctly without it.
+
+Path note: the product repo is ~/BGit/act3/we_the_citizens/ — with "the" in the
+name. Earlier sections of this file write it as ~/BGit/act3/we_citizens/, which
+does not exist on disk. Where the two disagree, we_the_citizens is the real one.
+So: the web app is ~/BGit/act3/we_the_citizens/code/, the product management
+specs are ~/BGit/act3/we_the_citizens/pm/, and ai/, cli/, mcp/ sit beside them.
+
+WHAT THIS DOCUSAURUS IS FOR
+
+This site's whole job is to take a person who knows NOTHING about We The
+Citizens and bring them up to speed, in this order:
+
+  1. WHAT the "We The Citizens" app does.
+  2. WHAT PROBLEM it fixes.
+  3. HOW it fixes that problem.
+  4. WHAT ACTION they take to get started.
+  5. HOW they progress from started to actually helping get the problem fixed.
+
+Every page should be placeable somewhere on that ramp. A page that assumes the
+reader already knows the vocabulary — awards, THE WALL, the Monkey/Llama/
+Flamingo, trust, karma, problem laws, the four doors — has skipped a rung. The
+deeper Level 3 pages may get specific; the Level 2 overviews carry the ramp.
+
+WHAT THE KNOWLEDGE FILE SETTLES (do not contradict any of these)
+
+* We The Citizens is a company AND a movement AND the software, under one name.
+  The product is local-first: a citizen runs it on their own machine at
+  http://localhost:4444/ or uses the hosted copy at https://app.WeTheCitizens.io/.
+  Same software. It is a tool, not a service.
+* The core assertion: politicians are too often captured — by money, by elites,
+  or by foreign interests — and the way to establish that is to take what they
+  DID (votes) and what they SAID (their own recorded words), compute a number,
+  and publish the derivation so anyone can check it. Measurement, not argument.
+* Two modes: Individual (default, fully local, flat files, no account) and
+  Community (optional aggregation). Anonymity is a first-class safety feature —
+  a pseudonymous citizen can reach the top of the trust ladder.
+* Four pillars: (1) voting and policy decisions, (2) problems and generated law,
+  (3) ethics and value systems, (4) deciding under incomplete information.
+* AWARDS, NOT SCORES. Everything published about a politician is an award, or
+  the absence of one — never a score, rating, grade, or points. "A 72% Llama
+  Award," never "scored 72." The percentage is OF THE AWARD, never of the
+  person. "Not given" is not an accusation. A vocabulary lint FAILS THE BUILD if
+  a banned word reaches rendered copy. Citizen-side scoring — karma, citizen
+  trust scores, the leaderboard — deliberately keeps the word "score", because
+  that is a citizen earning recognition for their own logged work.
+* THE WALL. Exactly three awards, and a wall runs between their inputs. The
+  VOTING RECORD feeds Monkey and Llama and nothing else. EVERYTHING ELSE —
+  transcripts, interviews, background, resume, education, public commitments,
+  qualifications — feeds Flamingo only. A person can hold both kinds at once and
+  the UI shows both side by side, neither contaminating the other. A build test
+  fails if a Monkey or Llama term reaches a Flamingo result.
+* Monkey = democracy damage, 0-100, higher is worse; a 0 means "we assessed and
+  found nothing", not "good". The Monkey List is deliberately tiny and every
+  entry names an instrument and section, cites the official record, and is
+  approved in a public commit.
+* Llama = democracy repair, 0-100, higher is better, over the Good Law List.
+* Flamingo has THREE STATES and the last two are a difference in fact, not a
+  display choice: earned (full-colour), NOT EARNED (solid dark red — we assessed
+  and no part was earned), UNKNOWN (solid gray-brown — we do not know enough
+  yet, which is not a claim about the person at all). The red and the gray-brown
+  must never collapse into one another. Neither blank state ever renders as 0%.
+* "N% known" is the knowledge score — how much we know about a person. Never
+  "% vetted". It exists to stop the other numbers being over-read.
+* Sourcing is the official record or nothing. Arithmetic over the public record
+  is not defamation; the restraint in the CONTENT RULES section above still
+  stands beside it.
+
+====================================================================
+THE MESSAGING FILES ARE PRIMARY — HARD RULE
+====================================================================
+
+MESSAGING_DIR dir is ~/BGit/all/politics/citizens_we/marketing/messaging
+
+Those files are the marketing branding and marketing messaging framework, and
+they are written by the messaging owner. On HOW WE WRITE and WHAT WE
+COMMUNICATE, they OBEY ABOVE EVERYTHING ELSE — above this CLAUDE.md, above the
+CSVs, above the KNOWLEDGE file, above what is already on the page, above what an
+LLM thinks reads better.
+
+THE PRECEDENCE ORDER, top wins:
+
+  1. What the user typed into Claude Code for this run.
+  2. The messaging file governing the page being written.
+  3. all_messaging.md — the shared rule layer under every door.
+  4. KNOWLEDGE_FILE — the fact base: what is TRUE about the product.
+  5. Everything else in this repo — this file, the level_2 CSVs, existing copy.
+
+Read that as a split: the MESSAGING files decide the VOICE, the CLAIMS, the
+FRAMING and WHAT GETS SAID. The KNOWLEDGE file decides the FACTS. When messaging
+asks for a claim the product does not support, the claim is wrong and gets
+raised with Bryan — messaging does not get to invent a feature. When messaging
+and this CLAUDE.md disagree about wording, scope, or which audience hears what,
+messaging wins and this file gets updated.
+
+Each file maps to exactly one domain — one non-partisan .io, four partisan
+.coms — per the table in MARKETING MESSAGING -> CSV -> DOCS DIRECTORY above.
+
+all_messaging.md — READ IT FIRST, EVERY TIME
+
+* ~/BGit/all/politics/citizens_we/marketing/messaging/all_messaging.md is the
+  shared rule layer that every edition follows, non-partisan and partisan alike.
+  Every one of the five files opens by requiring it. Reading one door's file
+  does NOT satisfy it — read all_messaging.md itself, by that full path.
+* What it holds is not website copy. It is THE CITIZEN MINDSET — how US citizens
+  actually think right now — and we assess our wording against it.
+* Its warning, which applies directly to us: an LLM's DEFAULT ASSUMPTION is that
+  Washington DC and its politicians are ethical, and that long-serving
+  incumbents work for the American people. That was arguably true 50 or 100
+  years ago. Citizens today believe the opposite, and the record backs them.
+  That default has to be hunted out of every draft.
+* What citizens are saying, in their own vocabulary: "the DC swamp", "Citizens
+  United is the problem", "money in politics is the problem", "interest groups
+  can control US politicians". What they crave is politicians who work for the
+  American people and are not controlled, directly or softly, by influence
+  groups foreign or domestic. When the citizen vote agrees a set of laws is
+  wrong, they want to seriously look for replacement politicians — especially
+  where their own officials have a track record of voting for those laws.
+  Citizens seek the truth. The era of DC treating citizens as children in the
+  back seat is over.
+* The phrases above are not necessarily the phrases we ship. They are the
+  mindset our phrases get tested against.
+
+UPDATE — non_partisan_io_messaging.md NOW HAS A TABLE OF CONTENTS (2026-Aug-27)
+
+This supersedes item 1 of "TWO THINGS TO KNOW BEFORE TRUSTING THESE FILES"
+above, which recorded an EMPTY table of contents on 2026-Aug-19. That is no
+longer the state of the file. It now carries 20 big-numbered sections, so
+level_2.csv rows CAN now be derived from it the same way the four party CSVs
+were derived from theirs.
+
+What the .io messaging now says about itself:
+
+* Non-partisan means we do not carry the partisan issues. The .io platform is
+  MERITOCRACY: find the best candidates — the ones most dedicated to always
+  working for citizens, and strongest at refusing to be co-opted or controlled
+  by any non-citizen power, domestic or foreign.
+* The .io ENCOURAGES a visitor onward to the .com for the party they care about;
+  the partisan factors live there.
+* Lives on the .com doors, NOT on the .io: the board of directors, partisan
+  plans, partisan laws and fix-it bills, the political-spectrum vote that
+  matches a citizen to candidates, the yearly strategic conference, TPUSA-
+  replacement talk (Republican door only), and Christian values (Republican door
+  only — no religion is named on the .io or on the other three doors).
+* Trust scores are BUILT AND VOTED at the per-party .com level. The .io carries
+  a READ-ONLY roll-up stitched together from them; voting happens on the .com.
+* The .io's top-level plan is the high-level one: making sure we find the best
+  candidates who are able to stay working for citizens.
+
+STILL TRUE, STILL A TRAP: the OTHER section at the bottom of
+non_partisan_io_messaging.md is STILL byte-for-byte Republican copy —
+"replacement for TPUSA", "For the political right", "voters who vote
+Republican". That is party messaging sitting in the non-partisan file, and its
+own TOP GOALS section explicitly says to move TPUSA talk into the Republican
+door. DO NOT render any .io page from that OTHER section. Use the TOP GOALS and
+TABLE OF CONTENTS sections; ignore OTHER until Bryan rewrites it.
+
+THE HARD-REMOVE / "OFF" LIST
+
+non_partisan_io_messaging.md carries a HARD REMOVE OR "OFF" section that applies
+to the ENTIRE website, not just the .io. Files that are turned off move to:
+
+  ~/BGit/act3/docus_we_citizens/disabled/
+
+They are moved, not deleted, so they can be brought back later — and a return is
+also decided from that section. Currently listed as OFF:
+
+  * Dietrich_Bonhoeffer.mdx
+  * Dietrich_Bonhoeffer_Criteria.mdx
+
+Note the collision with the "ADD PEOPLE" CONVENTION above, which appends to
+site/docs/Dietrich_Bonhoeffer.mdx. While those files are off, an "add people"
+instruction still writes the individual person pages under
+site/docs/Bonhoeffers/ and still updates Politican_Challengers.mdx, but the
+Bonhoeffer roster file it would append to may be sitting in disabled/. Check
+where the file actually is before editing it, and say so rather than recreating
+it in site/docs/.

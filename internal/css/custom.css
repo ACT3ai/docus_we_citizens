@@ -685,7 +685,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--ua-ink-faint);
 }
 
-/* Seven footer columns, generated from the Level 2 registry. Let them wrap
+/* Eight footer columns, generated from the Level 2 registry. Let them wrap
    instead of crushing to unreadable widths on narrower viewports. */
 .footer__links .col {
   flex: 1 1 168px;
