@@ -398,76 +398,156 @@
 }
 
 /* ============================================================
-   EDITORIAL — WHY WE EXIST
+   THE AGENDA — one row per top-level numbered item
+   Reads like the table of contents of a founding document: a ruled
+   list, the number in the left gutter, nothing boxed.
    ============================================================ */
-.editorialGrid {
+.toc {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--ua-ink);
+}
+
+[data-theme='dark'] .toc {
+  border-top-color: var(--ua-paper);
+}
+
+.tocRow {
   display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  gap: clamp(2.5rem, 6vw, 6rem);
+  grid-template-columns: minmax(96px, .28fr) 1fr;
+  gap: clamp(1.2rem, 4vw, 3.5rem);
+  padding: clamp(1.8rem, 3.2vw, 2.9rem) 0;
+  border-bottom: 1px solid var(--ua-rule);
+  align-items: start;
 }
 
-.editorialAside {
-  position: relative;
+[data-theme='dark'] .tocRow {
+  border-bottom-color: rgba(243,237,223,.14);
 }
 
-.editorialStick {
-  position: sticky;
-  top: 6.5rem;
-}
-
-.editorialBody p {
-  margin-bottom: 1.4rem;
-  font-size: 1.12rem;
-  color: var(--ua-ink-soft);
-}
-
-[data-theme='dark'] .editorialBody p {
-  color: rgba(243,237,223,.86);
-}
-
-.editorialBody p:last-child {
-  margin-bottom: 0;
-}
-
-.dropcap::first-letter {
-  font-family: var(--ua-serif);
-  font-size: 3.6em;
-  line-height: .72;
-  float: left;
-  padding: .08em .12em 0 0;
+.tocRow:hover .tocNum {
   color: var(--ua-red);
 }
 
-.pullquote {
+.tocNum {
+  display: block;
   font-family: var(--ua-serif);
-  font-size: clamp(1.4rem, 2.4vw, 2rem);
-  line-height: 1.2;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  line-height: .85;
+  letter-spacing: -.02em;
   color: var(--ua-ink);
-  border-left: 3px solid var(--ua-red);
-  padding-left: 1.4rem;
-  margin: 2.2rem 0;
-  font-style: normal;
+  transition: color .2s ease;
 }
 
-[data-theme='dark'] .pullquote {
+[data-theme='dark'] .tocNum {
   color: var(--ua-paper);
 }
 
-.dateStamp {
-  font-size: .78rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--ua-ink-faint);
-  font-weight: 600;
-  margin-top: 1.6rem;
+.tocTitle {
+  font-family: var(--ua-serif);
+  font-weight: 400;
+  font-size: clamp(1.35rem, 2.1vw, 1.9rem);
+  line-height: 1.14;
+  color: var(--ua-ink);
+  margin: 0 0 .5rem;
 }
 
-[data-theme='dark'] .dateStamp {
-  color: rgba(243,237,223,.55);
+[data-theme='dark'] .tocTitle {
+  color: var(--ua-paper);
+}
+
+.tocQ {
+  font-family: var(--ua-serif-text);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ua-red);
+  margin: 0 0 .9rem;
+  max-width: 62ch;
+}
+
+[data-theme='dark'] .tocQ {
+  color: #E7B7BE;
+}
+
+.tocBody {
+  font-size: 1.04rem;
+  line-height: 1.56;
+  color: var(--ua-ink-soft);
+  max-width: 68ch;
+  margin: 0;
+}
+
+[data-theme='dark'] .tocBody {
+  color: rgba(243,237,223,.86);
+}
+
+.tocPoints {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 1.15rem 0 0;
+  padding: 0;
+}
+
+.tocPoints li {
+  font-family: var(--ua-sans);
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ua-ink-faint);
+  border: 1px solid var(--ua-rule);
+  padding: .42rem .7rem;
+}
+
+[data-theme='dark'] .tocPoints li {
+  color: rgba(243,237,223,.62);
+  border-color: rgba(243,237,223,.18);
+}
+
+.tocLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin-top: 1.25rem;
+}
+
+.tocLink {
+  font-family: var(--ua-sans);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ua-red);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+
+.tocLink:hover {
+  color: var(--ua-red-deep);
+  border-bottom-color: currentColor;
+  text-decoration: none;
+}
+
+[data-theme='dark'] .tocLink,
+[data-theme='dark'] .tocLink:hover {
+  color: #E7B7BE;
+}
+
+.tocLink :global(.arw) {
+  display: inline-block;
+  transition: transform .2s ease;
+}
+
+.tocLink:hover :global(.arw) {
+  transform: translateX(3px);
 }
 
 /* ============================================================
-   STATS BAND (dark navy)
+   NAVY BAND — THE FOUR PARTY FRONT DOORS
    ============================================================ */
 .bandNavy {
   background: var(--ua-navy);
@@ -484,119 +564,111 @@
   pointer-events: none;
 }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 1180px;
-  margin-inline: auto;
+.doorsHead {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 68ch;
+  margin-bottom: clamp(2.2rem, 4vw, 3.2rem);
 }
 
-.stat {
-  padding: clamp(2.8rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 4rem);
-  text-align: center;
+.eyebrowLight {
+  color: #E7B7BE;
 }
 
-.stat + .stat {
-  border-left: 1px solid rgba(243,237,223,.16);
+.eyebrowLight::before {
+  background: #E7B7BE;
 }
 
-.statNum {
+.doorsTitle {
   font-family: var(--ua-serif);
-  font-size: clamp(3.2rem, 7vw, 5.5rem);
-  line-height: 1;
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+  line-height: 1.08;
+  letter-spacing: -.012em;
+  color: #F3EDDF;
+  margin: 0;
+  max-width: 22ch;
+}
+
+.doorsLead {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: rgba(243,237,223,.78);
+  margin: 0;
+  max-width: 66ch;
+}
+
+.doorsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2vw, 1.6rem);
+}
+
+.door {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  padding: clamp(1.4rem, 2.4vw, 2rem);
+  border: 1px solid rgba(243,237,223,.22);
+  background: rgba(243,237,223,.03);
+  text-decoration: none;
+  transition: background .18s ease, border-color .18s ease;
+}
+
+.door:hover {
+  background: rgba(243,237,223,.09);
+  border-color: #F3EDDF;
+  text-decoration: none;
+}
+
+.doorLetter {
+  font-family: var(--ua-serif);
+  font-size: clamp(2.6rem, 4.6vw, 3.6rem);
+  line-height: .9;
   color: #F3EDDF;
 }
 
-.statNum em {
-  color: #C98A93;
-  font-style: normal;
+.doorName {
+  font-family: var(--ua-serif);
+  font-size: 1.05rem;
+  color: #F3EDDF;
+  margin-top: .5rem;
 }
 
-.statLab {
-  font-size: .82rem;
-  letter-spacing: .2em;
+.doorWho {
+  margin-bottom: .9rem;
+  font-family: var(--ua-sans);
+  font-size: .74rem;
+  letter-spacing: .14em;
   text-transform: uppercase;
   font-weight: 600;
-  color: rgba(243,237,223,.7);
-  margin-top: 1rem;
+  color: rgba(243,237,223,.62);
+}
+
+.doorDomain {
+  /* margin-top:auto keeps the rule above the domain aligned across all four
+     cards, even when a party name wraps to two lines. */
+  margin-top: auto;
+  padding-top: .9rem;
+  border-top: 1px solid rgba(243,237,223,.16);
+  font-family: var(--ua-sans);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: #E7B7BE;
+}
+
+.doorDomain :global(.arw) {
+  display: inline-block;
+  transition: transform .2s ease;
+}
+
+.door:hover .doorDomain :global(.arw) {
+  transform: translateX(3px);
 }
 
 /* ============================================================
-   ARTICLES — Seven Charter Principles
-   ============================================================ */
-.articles {
-  border-top: 1px solid var(--ua-ink);
-}
-
-[data-theme='dark'] .articles {
-  border-top-color: var(--ua-paper);
-}
-
-.article {
-  display: grid;
-  grid-template-columns: minmax(120px, .55fr) 2fr;
-  gap: clamp(1.5rem, 5vw, 4rem);
-  padding: clamp(2rem, 4vw, 3rem) 0;
-  border-bottom: 1px solid var(--ua-rule);
-  align-items: start;
-}
-
-.article:hover .artNum {
-  color: var(--ua-red);
-}
-
-.artNumwrap {
-  display: flex;
-  align-items: baseline;
-  gap: .6rem;
-}
-
-.artNum {
-  font-family: var(--ua-serif);
-  font-size: clamp(3rem, 6vw, 5rem);
-  line-height: .85;
-  color: var(--ua-ink);
-  transition: color .2s ease;
-  letter-spacing: -.02em;
-}
-
-[data-theme='dark'] .artNum {
-  color: var(--ua-paper);
-}
-
-.artKicker {
-  font-size: .66rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ua-ink-faint);
-  writing-mode: vertical-rl;
-}
-
-.artBody h3 {
-  font-family: var(--ua-serif);
-  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
-  margin-bottom: .7rem;
-  color: var(--ua-ink);
-  font-weight: 400;
-}
-
-[data-theme='dark'] .artBody h3 {
-  color: var(--ua-paper);
-}
-
-.artBody p {
-  font-size: 1.06rem;
-  color: var(--ua-ink-soft);
-  max-width: 60ch;
-}
-
-[data-theme='dark'] .artBody p {
-  color: rgba(243,237,223,.86);
-}
-
-/* ============================================================
-   PROGRAMS
+   SHARED PANEL + CARD BITS
    ============================================================ */
 .bgPanel {
   background: #F6F6F7;
@@ -604,38 +676,6 @@
 
 [data-theme='dark'] .bgPanel {
   background: #1a160f;
-}
-
-.programs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-}
-
-.program {
-  background: #fff;
-  border: 1px solid var(--ua-rule);
-  padding: clamp(2rem, 3.5vw, 3rem);
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  position: relative;
-  overflow: hidden;
-}
-
-[data-theme='dark'] .program {
-  background: #221c14;
-  border-color: rgba(243,237,223,.12);
-}
-
-.program::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--ua-red);
 }
 
 .pIndex {
@@ -647,28 +687,6 @@
 
 [data-theme='dark'] .pIndex {
   color: rgba(243,237,223,.55);
-}
-
-.program h3 {
-  font-family: var(--ua-serif);
-  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
-  color: var(--ua-ink);
-  font-weight: 400;
-  margin: 0;
-}
-
-[data-theme='dark'] .program h3 {
-  color: var(--ua-paper);
-}
-
-.program p {
-  font-size: 1.06rem;
-  color: var(--ua-ink-soft);
-  margin: 0;
-}
-
-[data-theme='dark'] .program p {
-  color: rgba(243,237,223,.86);
 }
 
 .pTag {
@@ -852,196 +870,6 @@
 }
 
 /* ============================================================
-   BOARD
-   ============================================================ */
-.boardGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(.8rem, 1.6vw, 1.4rem);
-}
-
-.member {
-  text-align: center;
-}
-
-.portrait {
-  aspect-ratio: 3 / 4;
-  width: 100%;
-  background: linear-gradient(160deg, #F4F4F5, #E2E2E4);
-  border: 1px solid var(--ua-rule);
-  display: grid;
-  place-items: center;
-  position: relative;
-  overflow: hidden;
-  transition: background .2s ease;
-}
-
-[data-theme='dark'] .portrait {
-  background: linear-gradient(160deg, #1f1a13, #2a221a);
-  border-color: rgba(243,237,223,.12);
-}
-
-.portrait::after {
-  content: "";
-  position: absolute;
-  inset: 7px;
-  border: 1px solid rgba(26,23,18,.12);
-}
-
-[data-theme='dark'] .portrait::after {
-  border-color: rgba(243,237,223,.12);
-}
-
-.portraitMono {
-  font-family: var(--ua-serif);
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  color: var(--ua-navy);
-  opacity: .55;
-  transition: color .2s ease, opacity .2s ease;
-}
-
-[data-theme='dark'] .portraitMono {
-  color: #C98A93;
-  opacity: .65;
-}
-
-.member:hover .portrait {
-  background: linear-gradient(160deg, var(--ua-navy), var(--ua-navy-deep));
-}
-
-.member:hover .portraitMono {
-  color: #C98A93;
-  opacity: .9;
-}
-
-.memberName {
-  margin-top: .85rem;
-  font-family: var(--ua-serif);
-  font-size: 1.18rem;
-  color: var(--ua-ink);
-  line-height: 1.15;
-}
-
-[data-theme='dark'] .memberName {
-  color: var(--ua-paper);
-}
-
-.commit {
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-  background: var(--ua-navy);
-  color: var(--ua-paper);
-  padding: clamp(2rem, 4vw, 3.2rem);
-  position: relative;
-}
-
-.commit::before {
-  content: "";
-  position: absolute;
-  inset: 13px;
-  border: 1px solid rgba(243,237,223,.16);
-  pointer-events: none;
-}
-
-.commit h3 {
-  font-family: var(--ua-serif);
-  color: #F3EDDF;
-  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
-  margin-bottom: 1.6rem;
-  font-weight: 400;
-}
-
-.commitGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.1rem 2.2rem;
-}
-
-.commitItem {
-  display: flex;
-  gap: .9rem;
-  align-items: flex-start;
-}
-
-.commitCheck {
-  flex: none;
-  width: 24px;
-  height: 24px;
-  border: 1px solid var(--ua-red);
-  color: #C98A93;
-  display: grid;
-  place-items: center;
-  font-size: .8rem;
-  margin-top: 2px;
-}
-
-.commitText {
-  font-size: 1rem;
-  color: rgba(243,237,223,.9);
-  line-height: 1.4;
-}
-
-/* ============================================================
-   GOVERNANCE
-   ============================================================ */
-.govGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--ua-rule);
-  border: 1px solid var(--ua-rule);
-}
-
-[data-theme='dark'] .govGrid {
-  background: rgba(243,237,223,.12);
-  border-color: rgba(243,237,223,.12);
-}
-
-.govItem {
-  background: #fff;
-  padding: clamp(1.8rem, 3vw, 2.8rem);
-  display: flex;
-  flex-direction: column;
-  gap: .8rem;
-}
-
-[data-theme='dark'] .govItem {
-  background: #1a160f;
-}
-
-.gRom {
-  font-family: var(--ua-serif);
-  font-size: 1.1rem;
-  color: var(--ua-red);
-  letter-spacing: .1em;
-}
-
-[data-theme='dark'] .gRom {
-  color: #E7B7BE;
-}
-
-.govItem h3 {
-  font-family: var(--ua-serif);
-  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
-  color: var(--ua-ink);
-  font-weight: 400;
-  margin: 0;
-}
-
-[data-theme='dark'] .govItem h3 {
-  color: var(--ua-paper);
-}
-
-.govItem p {
-  font-size: 1.02rem;
-  color: var(--ua-ink-soft);
-  margin: 0;
-}
-
-[data-theme='dark'] .govItem p {
-  color: rgba(243,237,223,.86);
-}
-
-/* ============================================================
    FINAL CTA (oxblood)
    ============================================================ */
 .bandRed {
@@ -1118,17 +946,7 @@
   .heroLedger {
     max-width: 460px;
   }
-  .editorialGrid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .editorialStick {
-    position: static;
-  }
   .sectionHeadSplit {
-    grid-template-columns: 1fr;
-  }
-  .programs {
     grid-template-columns: 1fr;
   }
   .planGrid {
@@ -1138,34 +956,18 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  .boardGrid {
-    grid-template-columns: repeat(3, 1fr);
+  .doorsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 720px) {
-  .article {
+  .tocRow {
     grid-template-columns: 1fr;
-    gap: .6rem;
+    gap: .5rem;
   }
-  .artKicker {
-    display: none;
-  }
-  .stats {
-    grid-template-columns: 1fr;
-  }
-  .stat + .stat {
-    border-left: 0;
-    border-top: 1px solid rgba(243,237,223,.16);
-  }
-  .commitGrid {
-    grid-template-columns: 1fr;
-  }
-  .govGrid {
-    grid-template-columns: 1fr;
-  }
-  .boardGrid {
-    grid-template-columns: repeat(2, 1fr);
+  .tocNum {
+    font-size: 2.4rem;
   }
   .heroFirsts span {
     min-width: 50%;

@@ -506,8 +506,8 @@ const FOLDED_SITE_LINKS = [
  */
 const MOVEMENT_PAGE_LINKS = [
   menuHeading("This movement"),
-  { to: "/#programs", label: "Programs", className: "wcMenuLink" },
-  { to: "/#governance", label: "Governance", className: "wcMenuLink" },
+  { to: "/#agenda", label: "The Agenda", className: "wcMenuLink" },
+  { to: "/#doors", label: "The Four Doors", className: "wcMenuLink" },
   { to: "/docs/board", label: "Founding Board", className: "wcMenuLink" },
   menuHeading("1,000 Bonhoeffers"),
   {
