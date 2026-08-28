@@ -81,13 +81,13 @@ When this site says a member of Congress voted a particular way on a particular 
 
 **Every byte fetched lands unmodified in an archive before anything is distilled from it.** No reformatting, no filtering, no partial fetch. Beside it runs an append-only, committed **manifest** — one entry per file carrying the path, the source URL, the retrieval time, the byte count, a sha256 checksum, the licence and the publisher. That checksum is what makes "this row came from that file" checkable rather than asserted. A distillation that threw away its original cannot be re-checked when somebody disputes a row about themselves, and cannot prove the row was not invented.
 
-**The parsers check their own arithmetic against the source document.** After reading the member rows out of a chamber's file, the parser recounts them and compares its own tally to the totals the chamber itself published. On any mismatch it refuses to write. That is the mechanism that makes a silent partial read impossible — a file that parses cleanly but quietly dropped a third of the members is the kind of error nobody would notice downstream.
+**The parsers check their own arithmetic against the source document.** After reading the member rows out of a chamber's file, the parser recounts them and compares its own tally to the totals the chamber itself published. On any mismatch it refuses to write. That is what makes a silent partial read impossible — a file that parses cleanly while quietly dropping a third of the members is the error nobody notices downstream.
 
 Beside the sourcing bar runs a published editorial restraint: **state what a person did, never what they are.** "Voted yea on final passage" is a fact the movement publishes. A character judgement is not something this product says about anybody, and it never states as fact that a living person committed a crime absent a conviction.
 
 ## The goal it serves
 
-Arithmetic over the public record is not defamation. That single sentence is the reason this feature exists, and it is what makes the rest of the site possible. An accusation that traces back to a byte-checkable government file is a measurement. One that does not is an opinion about a named living person — and an opinion is the thing a movement gets sued over, buried under, and eventually shut up by.
+Arithmetic over the public record is not defamation. That single sentence is the reason this feature exists, and it is what makes the rest of the site possible. An accusation that traces back to a byte-checkable government file is a measurement. One that does not is an opinion about a named living person — and an opinion is what a movement gets sued over and eventually shut up by.
 
 The people whose records get published here can afford lawyers. Citizens cannot. So the sourcing rule is the load-bearing wall, not a nicety bolted on at review time — it is what lets a small, self-funded effort publish hard findings about powerful officeholders and keep publishing them. Every argument this site makes about [what Congress is actually working for](/docs/congress_for_citizens/overview) rests on files anyone can pull up alone, which is why the answer to "you are just calling people names with extra steps" is a [link to the roll call](/docs/politicians/award_not_a_score) rather than a rebuttal.
 
@@ -97,20 +97,20 @@ It cuts the other way too. The movement cannot quietly improve a finding it like
 
 * **An unsourced row is dropped, and the drop is reported.** Never warned about and kept. An empty file is a correct result; a guessed vote is not.
 * **A missing record is published as a gap, not smoothed over.** Where a chamber acted with no member-level record at all — a voice vote, unanimous consent, a committee action taken without objection — no rows are written and one explicit gap is recorded instead. The gap is itself the finding: direct evidence that no member is on record on that provision.
-* **A negative finding carries the same bar as a positive one.** Before the movement publishes "no such vote was ever held", the index it searched has to be verified complete for every year in scope. "We looked and did not find it" does not meet the bar on its own.
+* **A negative finding carries the same bar as a positive one.** Before the movement publishes "no such vote was ever held", the index it searched must be verified complete for every year in scope. "We looked and did not find it" does not meet that bar.
 * **A fetch run may never add a person to a roster.** It surfaces candidates; a human decides.
 * **What the source link does not prove.** It establishes where a row came from and that it was not invented. It does not make the movement's reading of that row correct — the reading is a separate, later act, always labelled as ours rather than as the record's.
 
 ## Works with
 
-* **[The Whole Voting Record](./the_voting_record.mdx)** — every row it publishes is produced under this sourcing rule, including the procedural stages a summary would leave out.
-* **[The Vote That Was Never Allowed](./the_blocked_fix_record.mdx)** — the hardest thing to source is an absence, and this is the rule that decides when an absence has been proven rather than assumed.
-* **[The Law Page](./the_law_page.mdx)** — the sources sit at the door of the law's own page, so a reader checks the citation before reading the argument built on it.
+* **[The Whole Voting Record](./the_voting_record.mdx)** — every row it publishes, procedural stages included, is produced under this sourcing rule.
+* **[The Vote That Was Never Allowed](./the_blocked_fix_record.mdx)** — an absence is the hardest thing to source, and this rule decides when one has been proven rather than assumed.
+* **[The Law Page](./the_law_page.mdx)** — the sources sit at the door of the law's own page, so the citation is checkable before the argument built on it.
 
 ## Where to go next
 
-* **[Voting Records](/docs/voting_records/overview)** — how a public record of how somebody voted becomes something you can check yourself.
-* **[Where the data comes from](/docs/voting_records/where_the_data_comes_from)** — the specific official sources, chamber by chamber.
-* **[The sourcing rule](/docs/open_data/the_sourcing_rule)** — the same rule stated as it applies to the movement's whole open record.
-* **[Politicians](/docs/politicians/overview)** — what the movement is and is not willing to say about a named living person.
-* **[Propose a correction](/docs/open_data/propose_a_correction)** — follow any claim down to its source, and send the fix back if it is wrong.
+* **[Voting Records](/docs/voting_records/overview)** — how a record of how somebody voted becomes something you can check yourself.
+* **[Where the data comes from](/docs/voting_records/where_the_data_comes_from)** — the official sources, chamber by chamber.
+* **[The sourcing rule](/docs/open_data/the_sourcing_rule)** — the same rule over the movement's whole open record.
+* **[Politicians](/docs/politicians/overview)** — what the movement will and will not say about a named living person.
+* **[Propose a correction](/docs/open_data/propose_a_correction)** — follow a claim to its source, and send the fix back if it is wrong.

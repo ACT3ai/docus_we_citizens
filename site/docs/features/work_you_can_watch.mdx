@@ -75,11 +75,11 @@ Every number this movement publishes is produced by a program run over files tha
 
 ## What it does
 
-A **calc engine** is the pattern behind every published figure: files already on disk go in, the work runs in named stages, and out comes an artifact that is regenerable and never hand-authored. There are eighteen of them registered today and the count only goes up, because the authority on how many there are is a machine-readable registry rather than a sentence in a document. Each entry states the question it answers, how often it runs, which specification defines it, and which directory of code does the work.
+A **calc engine** is the pattern behind every published figure: files already on disk go in, the work runs in named stages, and out comes an artifact that is regenerable and never hand-authored. Eighteen are registered today and the count only goes up, because the authority on how many there are is a machine-readable registry rather than a sentence in a document. Each entry states the question it answers, how often it runs, which specification defines it, and which directory of code does the work.
 
-They all run on **one queue**. There is one place that knows what this install is doing right now, and one console that lists every engine at once — its question, what it needs before it can do useful work, whether it is running, how long the current run has been going, and how the last run ended. "Never run" is one of the outcomes it will tell you, because an engine nobody runs is an engine nobody notices is broken. A count of failed runs is a button, and it opens the failing run's own log rather than a summary of it.
+They all run on **one queue**, so one place knows what this install is doing right now. One console lists every engine at once — its question, what it needs before it can do useful work, whether it is running, how long for, and how the last run ended. "Never run" is one of the outcomes it reports, because an engine nobody runs is an engine nobody notices is broken. The count of failed runs is a button, and it opens the failing run's own log rather than a summary of it.
 
-While a run is in flight it writes a **journal** — timestamped plain-text lines on disk, one per stage, streamed to the browser as they are written. The first thing a page receives is a snapshot of everything already in flight, not an empty stream, so a tab opened during three runs shows three runs. If the stream cannot be held open the app falls back to polling, and it says which of the two it is doing, because the data is right either way but its freshness is not.
+While a run is in flight it writes a **journal**: timestamped plain-text lines on disk, streamed to the browser as they are written. The first thing a page receives is a snapshot of everything already going, so a tab opened during three runs shows three runs. If the stream cannot be held open the app falls back to polling and says which of the two it is doing, because the data is right either way but its freshness is not.
 
 A job's state is a small, deliberately un-collapsed vocabulary:
 
@@ -89,7 +89,7 @@ A job's state is a small, deliberately un-collapsed vocabulary:
 
 Because the work runs in the backend and not in your browser, closing the tab, navigating away, or shutting the laptop changes nothing about whether it finishes. Come back and the state is still there.
 
-Runs also happen without anybody pressing anything. Most engines fire nightly on an in-app clock, a few weekly or quarterly, and at every start-up the app checks whether an engine's last run has gone stale or its source data has moved since — and re-fires it if so. A run that **failed** is named rather than quietly fired again. What each pass publishes is frozen and dated: the published result carries the list it was computed against, the policy tables in force, and the exact commit of the public data it read. That is what lets a number published months ago still be re-derived today rather than argued about.
+Runs also happen without anybody pressing anything. Most engines fire nightly on a clock inside the app, a few weekly or quarterly, and at every start-up the app checks whether an engine's last run has gone stale or its source data has moved since, and re-fires it if so. A run that **failed** is named rather than quietly fired again. What each pass publishes is then frozen and dated — it carries the curated list it was computed against, the tables in force at the time, and the exact commit of the public data it read. That is what lets a figure published months ago still be re-derived today rather than argued about.
 
 ## The goal it serves
 
@@ -102,9 +102,9 @@ It settles a practical question too. Numbers go stale, source records move, and 
 ## What keeps it honest
 
 * **Progress is derived, never invented.** A percentage exists only when the work reports stage *n* of *N*. Otherwise there is an indeterminate bar and no number. A fabricated percentage is exactly the confident-and-wrong this product exists to argue against.
-* **Every engine has to state its coverage.** It computes who it was eligible to reach and carries a stated cause for every blank result. If a run narrows and stops reaching somebody who had an award, the last dated publication stands, labelled as superseded, rather than the award silently vanishing — and where there is nothing to show, "no award has been given yet" is the honest answer, which is a statement about our knowledge and not a verdict on the person.
-* **Run journals are install bookkeeping, not evidence.** They stay on the local machine and are never committed into the public data record. What is published about a person is the result and the derivation behind it, not the machine's diary of an afternoon.
-* **The fleet console is not a public page.** It is an administrator's surface on a given install; a citizen sees their own runs and nobody else's, because a queue that showed one citizen another citizen's activity would be a leak dressed up as a feature. The thing offered to the public for checking is the record and its arithmetic, not the operators' control room. Run the software yourself and the control room is yours.
+* **Every engine has to state its coverage.** It computes who it was eligible to reach and carries a stated cause for every blank result. If a run narrows and stops reaching somebody who had an award, the last dated publication stands, marked as superseded, rather than the award silently vanishing — and where there is nothing to show, "no award has been given yet" is the honest answer. That is a statement about our knowledge, not a verdict on the person.
+* **Run journals are install bookkeeping, not evidence.** They stay on the local machine and never go into the public data record. What is published about a person is the result and the derivation behind it, not the machine's diary of an afternoon.
+* **The console is not a public page.** It is an administrator's surface on a given install, and a citizen sees their own runs and nobody else's — a queue showing one citizen another citizen's activity would be a leak dressed up as a feature. What is offered to the public for checking is the record and its arithmetic. Run the software yourself and the control room is yours too.
 
 ## Works with
 
