@@ -1,0 +1,80 @@
+/* The Level 2 call-to-action row. Sits immediately under the page H1, so it is
+   above the fold on a laptop without pushing the first paragraph off screen. */
+.cta {
+  margin: 1.4rem 0 2.2rem;
+  padding: 1.15rem 1.25rem 1rem;
+  border: 1px solid var(--ua-rule, rgba(26, 23, 18, 0.16));
+  border-left: 3px solid var(--ua-red, #8a2433);
+  border-radius: 6px;
+  background: var(--ifm-background-surface-color);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.95rem;
+  border: 1px solid var(--ua-rule, rgba(26, 23, 18, 0.16));
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ifm-heading-color);
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover {
+  border-color: var(--ua-red, #8a2433);
+  color: var(--ua-red, #8a2433);
+  text-decoration: none;
+}
+
+.btnPrimary {
+  background: var(--ua-red, #8a2433);
+  border-color: var(--ua-red, #8a2433);
+  color: #fbf7ec;
+}
+
+.btnPrimary:hover {
+  background: var(--ua-red-deep, #6e1a28);
+  border-color: var(--ua-red-deep, #6e1a28);
+  color: #fbf7ec;
+}
+
+[data-theme='dark'] .btnPrimary {
+  background: #a82c3c;
+  border-color: #a82c3c;
+  color: #f6efe2;
+}
+
+[data-theme='dark'] .btnPrimary:hover {
+  background: #c04252;
+  border-color: #c04252;
+  color: #fff;
+}
+
+.arw {
+  font-weight: 400;
+}
+
+.note {
+  margin: 0.85rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ifm-font-color-base);
+  opacity: 0.82;
+}
+
+@media (max-width: 560px) {
+  .btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}

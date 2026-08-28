@@ -934,3 +934,9 @@ site/docs/Bonhoeffers/ and still updates Politican_Challengers.mdx, but the
 Bonhoeffer roster file it would append to may be sitting in disabled/. Check
 where the file actually is before editing it, and say so rather than recreating
 it in site/docs/.
+
+The features directory is a level 2. It is for the purpose of the features that product to help accomplish a goal. The features will often have a name of a different page, featured MDX feature name, and then they'll be MDX file file name for each feature.
+
+We'll have the features page be the table of contents to two columns, and those will be links off to each of the features. Read contents with each of the things with the features, and then those will often be linking between the business goal or the political goal to accomplish and the page author describes that, versus off to a page that goes deeper into that feature. 
+~/BGit/act3/docus_we_citizens/site/docs/features/
+

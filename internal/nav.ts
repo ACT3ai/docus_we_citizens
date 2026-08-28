@@ -106,6 +106,14 @@ export type Level2 = {
   title: string;
   /** Position from the `nav_order` column. */
   order: number;
+  /**
+   * The `primary` column. TRUE means this area is one of the movement's own
+   * headline arguments, and it is what the FOOTER is built from — the footer
+   * carries the primary areas and nothing else, so that the bottom of every
+   * page is a short list of what we actually stand for rather than a second
+   * copy of the whole site map. The "More" menu still carries every area.
+   */
+  primary: boolean;
   /** Second line under the title in menus. Four to six words, no full stop. */
   subLabel: string;
 };
@@ -122,7 +130,12 @@ function readCsvAreas(): Omit<Level2, "subLabel">[] {
     }
     return i;
   };
-  const [k, t, o] = [col("level_2_key"), col("title"), col("nav_order")];
+  const [k, t, o, p] = [
+    col("level_2_key"),
+    col("title"),
+    col("nav_order"),
+    col("primary"),
+  ];
 
   return rows
     .slice(1)
@@ -130,6 +143,7 @@ function readCsvAreas(): Omit<Level2, "subLabel">[] {
       key: r[k].trim(),
       title: r[t].trim(),
       order: Number(r[o].trim()),
+      primary: r[p].trim().toLowerCase() === "true",
     }))
     .filter((a) => a.key.length > 0)
     .sort((a, b) => a.order - b.order);
@@ -254,6 +268,10 @@ export const PARTIES: Party[] = [
     title: "We The Citizens R",
     subLabel: "Republicans",
     order: 31,
+    // The four doors are `primary: false` in level_2.csv — they are not one of
+    // the movement's arguments, they are four ways in. The footer carries them
+    // in their own dedicated column (see footerColumns), never in the primary list.
+    primary: false,
     edition: "R",
     domain: "https://wecitizensr.com",
   },
@@ -262,6 +280,10 @@ export const PARTIES: Party[] = [
     title: "We The Citizens D",
     subLabel: "Democrats",
     order: 32,
+    // The four doors are `primary: false` in level_2.csv — they are not one of
+    // the movement's arguments, they are four ways in. The footer carries them
+    // in their own dedicated column (see footerColumns), never in the primary list.
+    primary: false,
     edition: "D",
     domain: "https://wecitizensd.com",
   },
@@ -270,6 +292,10 @@ export const PARTIES: Party[] = [
     title: "We The Citizens L",
     subLabel: "Libertarians",
     order: 33,
+    // The four doors are `primary: false` in level_2.csv — they are not one of
+    // the movement's arguments, they are four ways in. The footer carries them
+    // in their own dedicated column (see footerColumns), never in the primary list.
+    primary: false,
     edition: "L",
     domain: "https://wecitizensl.com",
   },
@@ -278,6 +304,10 @@ export const PARTIES: Party[] = [
     title: "We The Citizens S",
     subLabel: "Democratic Socialists",
     order: 34,
+    // The four doors are `primary: false` in level_2.csv — they are not one of
+    // the movement's arguments, they are four ways in. The footer carries them
+    // in their own dedicated column (see footerColumns), never in the primary list.
+    primary: false,
     edition: "S",
     domain: "https://wecitizenssocialism.com",
   },
@@ -386,25 +416,33 @@ export const MENU_GROUPS: { title: string; keys: string[] }[] = [
   { title: "In the open", keys: ["open_data", "ai", "repos"] },
 ];
 
-/** Wider groups for the footer, which has fewer, taller columns than the menu. */
+/**
+ * The footer columns — THE PRIMARY AREAS ONLY.
+ *
+ * The footer used to be a second copy of the "More" menu: every one of the
+ * forty-odd Level 2 areas, in six tall columns. That is a site map, not a
+ * footer. The bottom of a page is the last thing a visitor reads, and what
+ * belongs there is the short list of things the movement actually stands for —
+ * which is exactly what the `primary` column of level_2.csv already records.
+ *
+ * So every key below is `primary: true` in the CSV, and the guard underneath
+ * fails the build if that ever stops being true in either direction: a primary
+ * area missing from the footer, or a non-primary area sneaking into it. The
+ * non-primary areas are not demoted — every one of them is still in the "More"
+ * menu, still in the left bar, and still linked from the primary overview pages
+ * that lead to them.
+ *
+ * The four party front doors and the legal / account links are NOT in this list.
+ * They are not areas, and they get their own columns in `footerColumns()`.
+ */
 const FOOTER_GROUPS: { title: string; keys: string[] }[] = [
   {
     title: "The Movement",
-    keys: [
-      "start_here",
-      "the_problem",
-      "congress_for_citizens",
-      "non_partisan_site",
-      "the_movement",
-      "how_it_works",
-      "get_started",
-      "social_contract",
-      "four_doors",
-    ],
+    keys: ["congress_for_citizens", "non_partisan_site", "four_doors"],
   },
   {
     title: "The Law",
-    keys: ["american_ethics", "problems", "laws", "problem_laws", "fix_laws", "good_bills", "good_laws"],
+    keys: ["american_ethics", "problem_laws", "good_bills"],
   },
   {
     title: "The Capture",
@@ -420,11 +458,11 @@ const FOOTER_GROUPS: { title: string; keys: string[] }[] = [
   },
   {
     title: "The People",
-    keys: ["replace_incumbents", "politicians", "legacy_politicians", "new_politicians", "voting_records", "qualifications", "monkey", "llama", "flamingo"],
+    keys: ["replace_incumbents", "qualifications"],
   },
   {
     title: "Citizens",
-    keys: ["decisions", "values", "evidence", "communities", "take_action", "karma", "meritocracy", "trust_scores"],
+    keys: ["decisions", "communities", "take_action", "karma", "trust_scores"],
   },
   { title: "In The Open", keys: ["open_data", "ai", "repos"] },
 ];
@@ -435,21 +473,40 @@ const FOOTER_GROUPS: { title: string; keys: string[] }[] = [
  * This is the guard that keeps "the top bar shows all the Level 2s" honest. A
  * new CSV row that nobody filed into a group would otherwise vanish silently
  * from the More menu and the footer.
+ *
+ * `universe` is the set of CSV keys the group list is supposed to cover exactly:
+ * every area for the menu, and only the `primary: true` areas for the footer.
+ * Checking the footer against the primary set rather than against all of them is
+ * the whole point — it makes "the footer carries the primary areas and nothing
+ * else" a build error instead of a convention, in BOTH directions. Flip
+ * `primary` in level_2.csv and the build tells you which footer group to edit.
  */
 function assertGroupsCoverCsv(
   label: string,
   groups: { title: string; keys: string[] }[],
+  universe: Level2[],
 ): void {
   const grouped = groups.flatMap((g) => g.keys);
   const seen = new Set<string>();
   const dupes = grouped.filter((k) => (seen.has(k) ? true : (seen.add(k), false)));
-  const csvKeys = LEVEL_2.map((a) => a.key);
+  const csvKeys = universe.map((a) => a.key);
   const missing = csvKeys.filter((k) => !seen.has(k));
   const unknown = grouped.filter((k) => !csvKeys.includes(k));
+  // Named apart from `unknown` because it is a different mistake with a
+  // different fix: the key IS a real area, it just does not belong in this
+  // footer. Saying so beats "not in level_2.csv", which sends the reader to the
+  // wrong file.
+  const known = LEVEL_2.map((a) => a.key);
+  const notInUniverse = unknown.filter((k) => known.includes(k));
 
   const problems = [
     missing.length && `not in any ${label} group: ${missing.join(", ")}`,
-    unknown.length && `in a ${label} group but not in level_2.csv: ${unknown.join(", ")}`,
+    notInUniverse.length &&
+      `in a ${label} group but not marked primary in level_2.csv: ${notInUniverse.join(", ")}`,
+    unknown.filter((k) => !known.includes(k)).length &&
+      `in a ${label} group but not in level_2.csv: ${unknown
+        .filter((k) => !known.includes(k))
+        .join(", ")}`,
     dupes.length && `in more than one ${label} group: ${dupes.join(", ")}`,
   ].filter(Boolean);
 
@@ -462,8 +519,11 @@ function assertGroupsCoverCsv(
   }
 }
 
-assertGroupsCoverCsv("menu", MENU_GROUPS);
-assertGroupsCoverCsv("footer", FOOTER_GROUPS);
+/** The areas the footer is built from — `primary: true` in level_2.csv. */
+const PRIMARY_LEVEL_2: Level2[] = LEVEL_2.filter((a) => a.primary);
+
+assertGroupsCoverCsv("menu", MENU_GROUPS, LEVEL_2);
+assertGroupsCoverCsv("footer", FOOTER_GROUPS, PRIMARY_LEVEL_2);
 
 /* ------------------------------------------------------------------ *
  * Navbar builders
@@ -611,7 +671,30 @@ function footerLink(key: string) {
   return { label: area.title, to: overviewPath(area.key) };
 }
 
-/** Footer columns, built from the same registry the navbar uses. */
+/**
+ * The paired We The Citizens web app. THE FOOTER'S ONLY CROSS-HOST LINKS besides
+ * the four party `.com` doors, and the reason this constant is here rather than
+ * only in docusaurus.config.ts: "Create account" and "Sign in" are two routes of
+ * the app, not two pages of this website, and a visitor who reaches the bottom
+ * of wethecitizens.io with nowhere to sign up has read the whole argument and
+ * been handed no way to act on it.
+ */
+const WEBAPP_URL = "https://app.WeTheCitizens.io";
+
+/**
+ * Footer columns, built from the same registry the navbar uses.
+ *
+ * WHAT THE FOOTER CARRIES, and nothing else:
+ *   1. the four party front doors — the `.com` domain AND that door's page here;
+ *   2. the PRIMARY Level 2 areas, grouped (FOOTER_GROUPS, guarded above);
+ *   3. Terms of Service and Privacy Policy;
+ *   4. Create account and Sign in, on app.WeTheCitizens.io.
+ *
+ * Everything else that used to be down here — the non-primary areas, About Us,
+ * the Founding Board, the blog — is reachable from the top bar, the "More" menu
+ * and the pages themselves. The footer is the movement's short list, not a
+ * second site map.
+ */
 export function footerColumns() {
   return [
     {
@@ -629,9 +712,12 @@ export function footerColumns() {
     {
       title: "We The Citizens",
       items: [
-        { label: "About Us", to: "/docs/about" },
-        { label: "Founding Board", to: "/docs/board" },
-        { label: "Blog & Updates", to: "/blog" },
+        // The two account routes of the app — signup.mdx §1: `/signup` is the
+        // front door and `/signin` is one of its aliases, so both are real
+        // addresses and neither needs a `?next=` from here (a visitor arriving
+        // from the website has no in-app page to be returned to yet).
+        { label: "Create account", href: `${WEBAPP_URL}/signup` },
+        { label: "Sign in", href: `${WEBAPP_URL}/signin` },
         { label: "Terms of Service", to: "/docs/legal/terms" },
         { label: "Privacy Policy", to: "/docs/legal/privacy" },
       ],
@@ -646,14 +732,18 @@ export function footerColumns() {
  * swizzled `src/theme/Footer/Links/MultiColumn` needs this map. It is a Node-side
  * value that a browser component has to read, so it crosses over through
  * `siteConfig.customFields` — see `clientNavData()`.
+ *
+ * Every target is a PRIMARY area, for the same reason the columns are: a column
+ * header is a link like any other, and one pointing at a non-primary overview
+ * page would put back through the title exactly what the columns just took out.
  */
 function footerColumnLinks(): Record<string, string> {
   return {
     "Party Front Doors": overviewPath(PARTIES[0].key),
-    "The Movement": overviewPath("start_here"),
-    "The Law": overviewPath("laws"),
+    "The Movement": overviewPath("congress_for_citizens"),
+    "The Law": overviewPath("problem_laws"),
     "The Capture": overviewPath("rigged_economy"),
-    "The People": overviewPath("politicians"),
+    "The People": overviewPath("replace_incumbents"),
     Citizens: overviewPath("communities"),
     "In The Open": overviewPath("open_data"),
     "We The Citizens": "/",
