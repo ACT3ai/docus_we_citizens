@@ -1,0 +1,129 @@
+---
+id: citizen_mining_network
+title: The Citizen Mining Network
+sidebar_label: Citizen Mining Network
+sidebar_position: 44
+description: "The movement publishes the videos it has no transcript for, and volunteers transcribe them on their own computers into public repositories."
+---
+
+
+# The Citizen Mining Network
+
+There are thousands of hours of political video where a person explains, in their own words, what they actually intend to do. Turning that into text somebody can quote is slow, expensive work, and the movement's own server is forbidden from doing it. So the missing work is published as a public list, and citizens who want to help take items off that list on their own machines. The word mining describes the shape of the work and nothing else: there is no coin, no wallet, and nobody is paid.
+
+<Figure caption="A run publishes the videos that still have no transcript as a public queue, volunteers pull rows from it and do the work on their own computers into public repositories they own, and the copies that come back are compared against each other before any of them is quoted.">
+  <svg viewBox="0 0 720 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the public work queue */}
+    <rect x="20" y="56" width="176" height="126" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="108" y="80" fontSize="15" fill="currentColor" textAnchor="middle">Public queue</text>
+    <text x="108" y="104" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">videos we hold with</text>
+    <text x="108" y="119" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">no transcript yet</text>
+    <text x="108" y="143" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">priority, typed cause,</text>
+    <text x="108" y="158" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">copies wanted: 3</text>
+
+    {/* fan out to the nodes */}
+    <line x1="196" y1="119" x2="226" y2="119" stroke="var(--wc-fig-accent)" />
+    <line x1="226" y1="72" x2="226" y2="166" stroke="var(--wc-fig-accent)" />
+    <line x1="226" y1="72" x2="252" y2="72" stroke="var(--wc-fig-accent)" />
+    <path d="M 260,72 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <line x1="226" y1="119" x2="252" y2="119" stroke="var(--wc-fig-accent)" />
+    <path d="M 260,119 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <line x1="226" y1="166" x2="252" y2="166" stroke="var(--wc-fig-accent)" />
+    <path d="M 260,166 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the volunteer nodes */}
+    <text x="335" y="44" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">opt in, off by default</text>
+    <rect x="260" y="55" width="150" height="34" fill="none" stroke="currentColor" />
+    <text x="335" y="77" fontSize="12" fill="currentColor" textAnchor="middle">Citizen node</text>
+    <rect x="260" y="102" width="150" height="34" fill="none" stroke="currentColor" />
+    <text x="335" y="124" fontSize="12" fill="currentColor" textAnchor="middle">Citizen node</text>
+    <rect x="260" y="149" width="150" height="34" fill="none" stroke="currentColor" />
+    <text x="335" y="171" fontSize="12" fill="currentColor" textAnchor="middle">Citizen node</text>
+
+    {/* the copies come back */}
+    <line x1="410" y1="72" x2="440" y2="72" stroke="var(--wc-fig-accent)" />
+    <line x1="410" y1="119" x2="440" y2="119" stroke="var(--wc-fig-accent)" />
+    <line x1="410" y1="166" x2="440" y2="166" stroke="var(--wc-fig-accent)" />
+    <line x1="440" y1="72" x2="440" y2="166" stroke="var(--wc-fig-accent)" />
+    <line x1="440" y1="119" x2="462" y2="119" stroke="var(--wc-fig-accent)" />
+    <path d="M 470,119 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the comparison */}
+    <rect x="470" y="56" width="230" height="126" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="585" y="80" fontSize="15" fill="currentColor" textAnchor="middle">Compare the copies</text>
+    <text x="585" y="104" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">normalize, then match</text>
+    <text x="585" y="119" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">word against word</text>
+    <text x="585" y="145" fontSize="12" fill="currentColor" textAnchor="middle">Largest agreeing</text>
+    <text x="585" y="163" fontSize="12" fill="currentColor" textAnchor="middle">set is canonical</text>
+
+    {/* down into the three outcomes */}
+    <line x1="585" y1="182" x2="585" y2="200" stroke="currentColor" />
+    <line x1="127" y1="200" x2="593" y2="200" stroke="currentColor" />
+    <line x1="127" y1="200" x2="127" y2="210" stroke="currentColor" />
+    <path d="M 127,216 l -3.5,-8 l 7,0 z" fill="currentColor" />
+    <line x1="360" y1="200" x2="360" y2="210" stroke="currentColor" />
+    <path d="M 360,216 l -3.5,-8 l 7,0 z" fill="currentColor" />
+    <line x1="593" y1="200" x2="593" y2="210" stroke="currentColor" />
+    <path d="M 593,216 l -3.5,-8 l 7,0 z" fill="currentColor" />
+
+    {/* the three outcomes */}
+    <rect x="20" y="216" width="214" height="62" fill="none" stroke="var(--wc-fig-accent)" />
+    <text x="127" y="240" fontSize="12" fill="currentColor" textAnchor="middle">Two or more agree</text>
+    <text x="127" y="262" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">corroborated, quotable</text>
+
+    <rect x="253" y="216" width="214" height="62" fill="none" stroke="currentColor" />
+    <text x="360" y="240" fontSize="12" fill="currentColor" textAnchor="middle">One copy only</text>
+    <text x="360" y="262" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">usable, marked alone</text>
+
+    <rect x="486" y="216" width="214" height="62" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="593" y="240" fontSize="12" fill="currentColor" textAnchor="middle">No majority agrees</text>
+    <text x="593" y="262" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">nothing is quoted</text>
+  </svg>
+</Figure>
+
+## What it does
+
+A scheduled run subtracts the transcripts the movement holds from the videos it knows about and writes the difference into the open data repository as a **public work queue**. That file is not a wish list. It states its **eligible universe** — every video attached to a person on an in-scope roster that has a media address anyone can reach — and gives a typed cause for anything left out: no media address, previously attempted and permanently failed, host not supported, duplicate of another record, person out of scope. If the eligible universe comes back as zero while the video library is not empty, the run fails loudly rather than publishing an empty list.
+
+Each row carries a **priority**, and the arithmetic is published with it. A row gains weight when almost nothing is known about the person, when the video is long-form over forty minutes, and when the person has no transcripts at all; it loses weight for every copy already received. Long-form is favoured on purpose. A two-hour interview is where somebody's reasoning becomes checkable. A ninety-second clip cannot move the record either way.
+
+A citizen turns on a **mining node** from Settings. It is off by default, and most installs will never switch it on. You point it at a public repository you own, choose a name — a pseudonym is fine — and set your own limits: minutes of audio per day, rows per run, whether to skip rows that already have enough copies. You pick a cadence, and the app hands you the scheduler command as copyable text. It does not install anything on your machine. One button runs a dry harvest and tells you exactly what the movement can see: manifest read or not, transcripts found, sidecars valid, checksums matching.
+
+The node then runs the loop on its own hardware. It pulls the queue, which is read-only to it. It picks rows. It runs the same transcription ladder the movement runs — existing captions first, local speech recognition otherwise. It commits the words plus a **provenance sidecar** into its own repository: which tool, which model, which rung of the ladder, and the checksum of the transcript's exact bytes. It never commits audio or video, never edits what the person said, and never pushes to the movement's repository.
+
+This is structural, not a cost saving. A hosted install is forbidden from fetching media at all, by a rule the build itself enforces, so the central server cannot do this work even if it wanted to.
+
+Copies then get **corroborated**. Three independent copies are requested by default, because two can disagree with no way to break the tie and three can. The copies are normalized — case, spacing, punctuation — and compared pairwise on how closely they align and how much of the longest copy each one accounts for. Copies that agree form a set, and the largest set elects the canonical copy. Two or more agreeing in a majority means the transcript is trusted and quotable. A lone copy is usable, and every award derived from it is marked as resting on an uncorroborated transcript. No majority means nothing is trusted, the row stays open, and the sentence the product prints in public is that several citizens transcribed this video and do not agree, so we are not quoting it until they do.
+
+Nodes build a **standing** from agreement over time. It buys preference — a node's copy is preferred as the canonical one inside a set — and it never buys authority. No level of standing lets a copy skip corroboration, and a fully pseudonymous node can reach the top.
+
+## The goal it serves
+
+Hundreds of missing transcripts is an impossible bill for one server and a pleasant afternoon for thirty citizens. That is the plain arithmetic of it. A movement that has to buy its own evidence supply will eventually be limited by who is willing to fund it, and the whole point of [Open Data](/docs/open_data/overview) is that nobody has to take our word for where a record came from.
+
+The second reason matters more. A single central transcript is an unchecked claim, however good the tooling. Several independent parties transcribing the same public video, and then comparing the results, is what turns that claim into evidence somebody else can stand on. It is the same discipline the movement applies everywhere else: [publish the derivation](/docs/evidence/chain_of_evidence), and where the record does not support a conclusion, say so instead of rounding up.
+
+It also keeps the supply out of any one company's hands. The queue is a public file, the repositories belong to the citizens who filled them, and the movement holds a pointer and a checksum rather than a monopoly on the words. If we disappeared tomorrow, the transcripts would still be there, in repositories nobody here controls.
+
+## What keeps it honest
+
+* **A node never pushes to the movement's repository.** The public record is read-only to every miner. Work arrives by being published somewhere else and harvested.
+* **The text is never edited.** A transcript is a record. Corrections and doubts go in the sidecar notes, never into the words, because an edited copy poisons every comparison it enters.
+* **No media is ever committed**, and nothing behind a paywall or a login is transcribed. The source address plus a checksum is a better citation than a copy.
+* **Disagreement is published, not resolved quietly.** A divergent row becomes a named gap on the public queue rather than a quiet decision about which citizen to believe.
+* **The checksum is re-checked over time.** A sweep re-fetches canonical copies and compares hashes. A transcript that vanished, and a transcript that changed under us, are both stated on the pages that cite it.
+* **The wall holds.** Nothing produced here reaches the Monkey Award or the Llama Award, whose only input is the voting record. Transcripts feed the Flamingo Award and nothing else — see [the wall](/docs/politicians/the_wall).
+
+## Works with
+
+* **[Run It On Your Own Computer](./run_on_your_own_computer.mdx)** — a mining node is that same local install with one switch turned on, doing work on hardware the citizen owns.
+* **[The Public Data Repository](./public_data_repository.mdx)** — the work queue and the register of nodes live there, and it is the read-only backbone every miner pulls from.
+* **[Nothing Fails Quietly](./nothing_fails_quietly.mdx)** — the empty universe, the divergent verdict and the changed checksum are all loud by design rather than skipped.
+
+## Where to go next
+
+* **[Open Data](/docs/open_data/overview)** — how the movement's public record works, and why it is a repository you can clone rather than a database you are asked to trust.
+* **[Clone the record](/docs/open_data/clone_the_record)** — get the whole thing onto your own machine, including the queue this network drains.
+* **[Naming the gaps](/docs/evidence/naming_the_gaps)** — why an admitted hole in the evidence is worth more than a confident guess.
+* **[Trust Scores](/docs/trust_scores/overview)** — how a pseudonymous citizen becomes believable through checkable work rather than through an identity document.
+* **[Take Action](/docs/take_action/overview)** — everything a citizen can do this week, including running a node and closing rows on the queue.

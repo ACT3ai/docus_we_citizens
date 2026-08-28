@@ -1,0 +1,113 @@
+---
+id: four_party_front_doors
+title: The Four Party Front Doors
+sidebar_label: Four Party Front Doors
+sidebar_position: 47
+description: "Four party websites run on one program and one data store, so the wording changes at the door and the arithmetic never does."
+---
+
+
+# The Four Party Front Doors
+
+Besides this site, We The Citizens runs four more: WeCitizensR.com for Republicans, WeCitizensD.com for Democrats, WeCitizensL.com for Libertarians, and WeCitizensSocialism.com for Democratic Socialists. They are not four organizations and not four data sets. They are one running program with one public record behind it, rendered four ways, because a voter is far more willing to look hard at their own side's officeholders than at a site that arrived without a label they recognize.
+
+<Figure caption="One running program resolves the address a visitor typed into one of four party editions, sends any address it does not recognize to the neutral main site, and lets each door set its own colour and wording while the awards, rosters, evidence and sources stay identical across all four.">
+  <svg viewBox="0 0 720 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the one program */}
+    <rect x="16" y="58" width="180" height="92" rx="6" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="106" y="88" fontSize="15" fill="currentColor" textAnchor="middle">One web app</text>
+    <text x="106" y="110" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">One data store</text>
+    <text x="106" y="130" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">One award pipeline</text>
+
+    <line x1="196" y1="104" x2="238" y2="104" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M246,104 l-8,-4 l0,8 z" fill="currentColor" />
+
+    {/* the resolver */}
+    <rect x="250" y="76" width="142" height="56" rx="6" fill="none" stroke="currentColor" />
+    <text x="321" y="100" fontSize="12" fill="currentColor" textAnchor="middle">Host name decides</text>
+    <text x="321" y="118" fontSize="12" fill="currentColor" textAnchor="middle">which door you get</text>
+
+    {/* the four doors */}
+    <path d="M392,104 H414 V33 H432" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M440,33 l-8,-4 l0,8 z" fill="currentColor" />
+    <rect x="440" y="16" width="264" height="34" rx="5" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="452" y="38" fontSize="12" fill="currentColor">WeCitizensR.com</text>
+    <text x="692" y="38" fontSize="10.5" fill="currentColor" textAnchor="end" opacity="0.72">Republicans</text>
+
+    <path d="M392,104 H414 V75 H432" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M440,75 l-8,-4 l0,8 z" fill="currentColor" />
+    <rect x="440" y="58" width="264" height="34" rx="5" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="452" y="80" fontSize="12" fill="currentColor">WeCitizensD.com</text>
+    <text x="692" y="80" fontSize="10.5" fill="currentColor" textAnchor="end" opacity="0.72">Democrats</text>
+
+    <path d="M392,104 H414 V117 H432" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M440,117 l-8,-4 l0,8 z" fill="currentColor" />
+    <rect x="440" y="100" width="264" height="34" rx="5" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="452" y="122" fontSize="12" fill="currentColor">WeCitizensL.com</text>
+    <text x="692" y="122" fontSize="10.5" fill="currentColor" textAnchor="end" opacity="0.72">Libertarians</text>
+
+    <path d="M392,104 H414 V159 H432" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M440,159 l-8,-4 l0,8 z" fill="currentColor" />
+    <rect x="440" y="142" width="264" height="34" rx="5" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="452" y="164" fontSize="12" fill="currentColor">WeCitizensSocialism</text>
+    <text x="692" y="164" fontSize="10.5" fill="currentColor" textAnchor="end" opacity="0.72">Democratic Socialists</text>
+
+    {/* the fallback */}
+    <path d="M392,104 H414 V207 H432" stroke="var(--wc-fig-muted)" strokeWidth="1.5" strokeDasharray="4 4" />
+    <path d="M440,207 l-8,-4 l0,8 z" fill="currentColor" />
+    <rect x="440" y="190" width="264" height="34" rx="5" fill="none" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+    <text x="452" y="212" fontSize="12" fill="currentColor" opacity="0.72">Any other address</text>
+    <text x="692" y="212" fontSize="10.5" fill="currentColor" textAnchor="end" opacity="0.72">Neutral main site</text>
+
+    {/* what may differ, and what may not */}
+    <rect x="16" y="240" width="328" height="48" rx="6" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="32" y="260" fontSize="10.5" fill="currentColor" opacity="0.72">EACH DOOR SETS</text>
+    <text x="32" y="278" fontSize="12" fill="currentColor">Colour, wording, its own areas</text>
+
+    <rect x="360" y="240" width="344" height="48" rx="6" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="376" y="260" fontSize="10.5" fill="currentColor" opacity="0.72">IDENTICAL ON ALL FOUR</text>
+    <text x="376" y="278" fontSize="12" fill="currentColor">Awards, rosters, evidence, sources</text>
+  </svg>
+</Figure>
+
+## What it does
+
+Four party domains are served by one running web app with one data store behind it. The **edition** — R, D, L or S — is worked out from the address the request arrived on, and nothing further down reads the raw hostname; every page asks for the resolved edition instead. An address the app does not recognize falls back to the neutral main edition rather than dropping a stranger onto somebody else's party page.
+
+Each door opens on its own front page, carries its own accent colour, its own wording, and its own set of content areas, written from that audience's own messaging. The four are **independent, not mirrors**. One door may carry areas another does not, and improving one creates no obligation to change the rest. What every door does carry is a link to the other three, in the header and in the footer, so no door pretends the others are not there.
+
+What a door is allowed to change is chrome and wording, and that is the whole list. The award arithmetic, the thresholds, the weights, who is on a roster, the evidence and the sources are computed once and party-blind. The same number means the same thing on every door, and an incumbent renders exactly as harshly on their own party's door as on anyone else's.
+
+That is held in place structurally rather than by good intentions. The edition configuration file has nowhere in its shape to put a threshold, and a build check fails on any committed difference between the doors outside the small permitted set — domain, display name, party words, accent, analytics tag. A party colour may tint a chip, a link and one button. It may never tint an award bar, where red means bad and green means good on all four doors.
+
+The main surface on each door is the **seat panel**: for each seat you actually vote on, the officeholder, the strongest challenger from your own side, and the strongest challenger who is not from your side, whoever that turns out to be. Third column, same photograph size, same arithmetic. When there is no such person yet, the honest empty state renders in the full width of the column instead of the column being quietly dropped.
+
+## The goal it serves
+
+A committed partisan who lands on a site with no label reads it as *this is for the other team*, and stops reading. That reaction is not stupidity. It is a reasonable defence against being argued at, and it is the reason the neutral front door alone was never going to be enough.
+
+Cross-party persuasion is expensive and slow. In-party accountability is cheap and fast, because the visitor already agrees with the label on the door and only needs to be shown what this particular incumbent did with the seat. So the four doors lower the first ask to one sentence: here are your own elected officials, and here is what they voted for. From there the reader can go looking for somebody better to run in the primary, which is the cheapest way a captured incumbent actually loses a seat. That argument is laid out in [Replacing Captured Incumbents](/docs/replace_incumbents/overview).
+
+The third column is what keeps a party door from turning into a campaign tool. Showing the strongest challenger who is not from your side, at the same photograph size and under the same arithmetic, is the movement paying for its own honesty on the surface where it would be cheapest to cheat. It is also why the neutral site still exists and still matters, which [Why A Non-Partisan Site](/docs/non_partisan_site/overview) covers directly.
+
+## What keeps it honest
+
+* **One pipeline, and it cannot be reached from a door.** The awards are computed once, party-blind, and the edition configuration has no field a threshold or a weight could be written into. A build check fails on any difference outside the permitted list.
+* **The cross-party column is always on.** It is never suppressed to make a door's own side look better, and an empty seat gets a stated empty result rather than a missing column.
+* **No comparative copy anywhere.** No door characterizes another party, compares parties, or attributes motive to one. The unit of judgement is a person and a vote.
+* **The accent never touches a measurement.** Colour is chrome. An award bar means the same thing on all four doors.
+* **No party endorsement, no fundraising, no campaign coordination.** The doors are a reading surface pointed at the official record. Every claim on one is a click from its source.
+
+## Works with
+
+* **[The Public Data Repository](./public_data_repository.mdx)** — all four doors read the same public record, so there is one thing to check rather than four.
+* **[Run It On Your Own Computer](./run_on_your_own_computer.mdx)** — the doors are hosted reading surfaces; the full product is the program you can run yourself, with the same data behind it.
+* **[The Citizen Mining Network](./citizen_mining_network.mdx)** — the transcripts volunteers produce land in the shared record and reach every door at once, never one door's version of a quote.
+
+## Where to go next
+
+* **[One App, Four Doors](/docs/four_doors/overview)** — the full account of how the five sites relate and what is shared between them.
+* **[Why A Non-Partisan Site](/docs/non_partisan_site/overview)** — what belongs on neutral ground and what only makes sense behind a party label.
+* **[Award, not a score](/docs/politicians/award_not_a_score)** — why every published number about a politician is an award and never a verdict on the person.
+* **[The seat view](/docs/replace_incumbents/the_seat_view)** — the three-column seat panel, read column by column.
+* **[Find your door](/docs/four_doors/find_your_door)** — pick the one written for how you vote, and start with your own officeholders.
