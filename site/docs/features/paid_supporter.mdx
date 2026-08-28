@@ -71,17 +71,17 @@ separate, optional step. The citizen picks how much to give from a ladder of mon
 $100, $200, $400, $1,000 — or types a custom amount of their own. There are no named plans with
 different feature sets. The **level is simply the number** the citizen chose.
 
-Payment runs on the payment provider's own hosted page. There is no card field anywhere in the app,
-no card library loaded in the browser, and no card number ever reaches the movement's servers. The
-app stores identifiers and a card's brand and last four digits for display, and nothing else.
+Payment runs on the payment provider's own hosted page. There is no card field anywhere in the app
+and no card number ever reaches the movement's servers, which store only identifiers plus a card's
+brand and last four digits for display.
 
 Membership is granted by the provider's **webhook**, not by the browser coming back. The return trip
 from the payment page is a URL anybody could type, so it only refreshes the screen; the membership
-itself turns on when the provider reports that the charge succeeded. Nothing here is believed
-because a browser said it.
+turns on when the provider reports the charge succeeded. Nothing here is believed because a browser
+said it.
 
 A card that fails once is treated as a **retry window**, not as somebody leaving. Benefits stay on
-while the provider retries, with a fix-payment line at the top of the page. They end when the
+while the provider retries, with a fix-payment line at the top of the page, and end only when the
 subscription actually ends.
 
 Stopping is reachable from every surface that touches money — the dashboard, the statements page,
