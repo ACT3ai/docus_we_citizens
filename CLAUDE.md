@@ -935,8 +935,65 @@ Bonhoeffer roster file it would append to may be sitting in disabled/. Check
 where the file actually is before editing it, and say so rather than recreating
 it in site/docs/.
 
-The features directory is a level 2. It is for the purpose of the features that product to help accomplish a goal. The features will often have a name of a different page, featured MDX feature name, and then they'll be MDX file file name for each feature.
+====================================================================
+HOW A LEVEL 2 PAGE IS WRITTEN — THE SHAPE OF overview.mdx
+====================================================================
 
-We'll have the features page be the table of contents to two columns, and those will be links off to each of the features. Read contents with each of the things with the features, and then those will often be linking between the business goal or the political goal to accomplish and the page author describes that, versus off to a page that goes deeper into that feature. 
-~/BGit/act3/docus_we_citizens/site/docs/features/
+A Level 2 directory is one part of the product or of the service we provide in
+the political world. Everything we do is divided into those categories, each one
+named by a short phrase, and the registry CSVs record them: level_2.csv for the
+parent .io site, and level_2_r.csv / level_2_d.csv / level_2_l.csv /
+level_2_s.csv for the four party doors, which repeat the same pattern inside
+their own single-letter directory. A LEVEL 3 file is an .mdx page that lives
+inside one specific Level 2 directory.
 
+Every Level 2 overview.mdx is written top to bottom in this order:
+
+1. THE EXPLANATION. Open with a short paragraph — three sentences or less —
+   saying what this area is. Not a preamble, not a mission statement; the answer
+   to "what is this part of the product for".
+2. THE TABLE OF CONTENTS. A two-column or three-column table of bullet points,
+   each bullet a link to a Level 3 page in this directory. This is how a reader
+   reaches the Level 3 pages — the left bar never lists them (see THE FIVE LEFT
+   BARS), so the area's own page is the only place its children appear.
+3. THE DEEPER DESCRIPTION. Below the table, the fuller explanation — as much as
+   the area needs, written to the ramp in WHAT THIS DOCUSAURUS IS FOR.
+
+====================================================================
+HYPERLINK THE PHRASES — PAGES POINT AT PAGES
+====================================================================
+
+Pages should link to each other. When a sentence is explaining something that
+another page already covers, turn the PHRASE INSIDE THAT SENTENCE into a link to
+that page — not a bare URL, not a "see also" list bolted on the end. The target
+may be a Level 3 page in the same Level 2 directory, or a Level 3 page in a
+different Level 2 directory entirely; both are good, and cross-area links are
+what keep the site from reading as thirty unrelated pamphlets.
+
+Do it where it genuinely helps the reader of THAT page. A link that interrupts a
+sentence the audience needs to read straight through is worse than no link.
+
+====================================================================
+THE FEATURES LEVEL 2
+====================================================================
+
+FEATURES_DIR dir is {SITE_DIR}/docs/features/
+
+features/ is a Level 2 area, and its subject is the FEATURES of the product —
+each one written as the thing that accomplishes a goal. A feature usually has a
+name that reads as its own page title, and each feature gets its own .mdx file
+named for that feature.
+
+* features/overview.mdx is a TWO-COLUMN table of contents. Each entry is the
+  feature name linking off to that feature's own page, with a short line of
+  contents describing it.
+* Each feature page connects the two halves: the business goal or the political
+  goal being accomplished — which the page author describes — and the deeper
+  explanation of how the feature itself works.
+
+CROSS-LINKING INTO features/ FROM EVERYWHERE ELSE. The other Level 2 areas are
+mostly explaining political problems we are working to solve. When such a
+discussion is wrapping up, it is often right to name the feature that
+accomplishes the fix, and to make that feature name or phrase a hyperlink to its
+Level 3 page under features/. Add that link when it is appropriate AND it is
+good writing for the audience of that page — and only then.
