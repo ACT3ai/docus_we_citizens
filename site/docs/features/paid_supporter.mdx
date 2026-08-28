@@ -34,7 +34,7 @@ louder vote and it does not buy standing.
 
     <rect x="476" y="24" width="228" height="46" rx="4" stroke="var(--wc-fig-accent)" strokeWidth="1.5" fill="none" />
     <text x="590" y="45" fontSize="12" fill="currentColor" textAnchor="middle">The webhook grants it</text>
-    <text x="590" y="60" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">not the browser coming back</text>
+    <text x="590" y="60" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">not the returning browser</text>
 
     {/* stop annotation */}
     <text x="16" y="92" fontSize="10.5" fill="currentColor" opacity="0.72">Stop is reachable from</text>
@@ -70,10 +70,10 @@ louder vote and it does not buy standing.
 
 ## What it does
 
-Anyone can create an account for nothing and use the whole product. Becoming a **Supporter** is a
-separate, optional step. The citizen picks how much to give from a ladder of monthly amounts — $40,
-$100, $200, $400, $1,000 — or types a custom amount instead. There are no named plans. The **level
-is simply the number** the citizen chose, and every supporter gets the same benefits.
+An account costs nothing and opens the whole product. Becoming a **Supporter** is a separate,
+optional step, and the citizen picks how much to give from a ladder of monthly amounts — $40, $100,
+$200, $400, $1,000 — or types a custom amount instead. There are no named plans: the **level is
+simply the number** the citizen chose, and every supporter gets the same benefits.
 
 Payment runs on the payment provider's own hosted page. There is no card field anywhere in the app,
 and no card number ever reaches the movement's servers, which hold only the provider's identifiers
@@ -81,22 +81,21 @@ plus the card brand and last four digits for display.
 
 Membership is granted by the provider's **webhook**, not by the browser coming back. The return trip
 is a URL anybody could have typed, so it only refreshes the screen; the membership turns on when the
-provider itself reports the charge succeeded. Nothing here is believed because a browser said so.
+provider itself reports the charge succeeded.
 
 A card that fails once is treated as a **retry window**, not as somebody leaving. Benefits stay on
 while the provider retries, a fix-payment line appears at the top of the page, and the membership
 ends only when the subscription actually ends.
 
-Stopping is reachable from every surface that touches money — the dashboard, the statements, the
-payment-method page, and a plain sentence at the bottom of the invoices. The stop page is a
+Stopping is reachable from every surface that touches money: the dashboard, the statements, the
+payment-method page, and the bottom of every invoice. The stop page is a
 statement of consequences and nothing else: no further charges, benefits kept until the period
 already paid for runs out, account and data untouched, resume any time. No guilt copy, no retention
 offer, no survey wall.
 
 Behind the door is **one members-only room**: where the money went, what it bought, what is being
 built next, and the citizen's own membership block with links to manage or stop it, so the room that
-takes the money is never more than two clicks from the way out. Its first version is small and
-labelled as unfinished rather than padded with placeholder widgets.
+takes the money is never more than two clicks from the way out.
 
 One line governs what may ever go into it: **if withholding something from a free citizen would make
 the product less honest, less usable, or less able to hold a politician to account, it does not
@@ -116,9 +115,9 @@ running the calculations, casting a vote, filing a proposal — because holding 
 cannot be something a citizen has to be able to afford. What the money buys instead is transparency
 about the money.
 
-There is also a plain reason the room exists at all. A movement that takes monthly money and then
-shows its funders exactly the same page as everybody else is a movement that stops receiving monthly
-money. Publishing that reasoning is the same instinct that runs through the rest of
+There is also a plain reason the room exists. A movement that takes monthly money and shows its
+funders the same page as everybody else stops receiving monthly money. Publishing that reasoning is
+the same instinct that runs through the rest of
 [the movement](/docs/the_movement/overview): show the mechanism, including the parts that are not
 flattering.
 
@@ -128,13 +127,12 @@ flattering.
   [trust ladder](/docs/trust_scores/overview), does not weight a vote, and does not skip an approval
   step. That is not left to good intentions: a test shipped with the code asserts that toggling
   supporter status changes no citizen's trust score.
-* **An admin who is not a Supporter does not get in either.** No staff back door, because a back
-  door would make the room's own claim — this is what your money bought — impossible for a member to
-  verify.
+* **An admin who is not a Supporter does not get in either.** No staff back door: it would make the
+  room's own claim — this is what your money bought — impossible for a member to verify.
 * **The entrance is an invitation, never a wall.** The Supporters Area appears in the navigation for
   every citizen, free or paying, never hidden and never greyed out with a padlock. A non-member's
-  click lands on a page explaining what the room is and stating, in the same panel, that everything
-  civic stays free for everyone.
+  click lands on a page explaining what the room is and repeating that everything civic stays free
+  for everyone.
 * **Stated limits, in this version.** Refunds are not self-serve and go through support by email. The
   payment is not tax-deductible; this is not a charity. The room's contents are still being built,
   and the page says so rather than implying otherwise.

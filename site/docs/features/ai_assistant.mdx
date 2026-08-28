@@ -11,8 +11,8 @@ description: "A chat box beside the record that answers from what it read, cites
 
 A chat box sits at the top of the right-hand column on the record pages. Ask about what is on the screen and it answers from that record and the movement's published data, naming what it read. Ask what it thinks of a contested policy question and it says it does not make political decisions, then hands you the place where yours gets written down.
 
-<Figure caption="The assistant reads three fixed inputs, answers under rules it cannot talk its way out of, and hands back a citation and a button whose address the product resolves; the next-step suggestion beside it is computed in ordinary code with no model call at all.">
-  <svg viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<Figure caption="The assistant reads three fixed inputs, answers under rules it cannot talk its way out of, and hands back a citation and a button whose address the product resolves, while the next-step suggestion beside it is computed in ordinary code with no model call at all.">
+  <svg viewBox="0 0 720 340" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* what it is allowed to read */}
     <rect x="20" y="28" width="190" height="112" fill="var(--wc-fig-wash)" stroke="currentColor" />
     <text x="115" y="50" fontSize="15" fill="currentColor" textAnchor="middle">It may read</text>
@@ -20,7 +20,7 @@ A chat box sits at the top of the right-hand column on the record pages. Ask abo
     <text x="115" y="94" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">The committed public data</text>
     <text x="115" y="114" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">The published arithmetic</text>
 
-    <line x1="212" y1="84" x2="243" y2="84" stroke="currentColor" />
+    <line x1="212" y1="84" x2="243" y2="84" fill="none" stroke="currentColor" />
     <path d="M 250,84 l -7,-3.5 l 0,7 z" fill="currentColor" />
 
     {/* the turn */}
@@ -30,7 +30,7 @@ A chat box sits at the top of the right-hand column on the record pages. Ask abo
     <text x="360" y="94" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Never crosses the Wall</text>
     <text x="360" y="114" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Holds no political opinion</text>
 
-    <line x1="468" y1="84" x2="499" y2="84" stroke="currentColor" />
+    <line x1="468" y1="84" x2="499" y2="84" fill="none" stroke="currentColor" />
     <path d="M 506,84 l -7,-3.5 l 0,7 z" fill="currentColor" />
 
     {/* what comes back */}
@@ -40,27 +40,30 @@ A chat box sits at the top of the right-hand column on the record pages. Ask abo
     <text x="605" y="94" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Or a named gap, stated</text>
     <text x="605" y="114" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">A button the app routes</text>
 
-    <text x="360" y="164" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">It does not browse, call out, download, or write anything.</text>
+    <text x="360" y="164" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Nothing outside is read.</text>
+    <text x="360" y="179" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Nothing at all is written.</text>
 
     {/* the second lane — no model call */}
-    <text x="360" y="198" fontSize="12" fill="currentColor" textAnchor="middle">Beside it: the next step, computed in plain code</text>
-    <rect x="21" y="212" width="90" height="34" fill="none" stroke="var(--wc-fig-muted)" />
-    <text x="66" y="233" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Location</text>
-    <rect x="119" y="212" width="90" height="34" fill="none" stroke="var(--wc-fig-muted)" />
-    <text x="164" y="233" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Position</text>
-    <rect x="217" y="212" width="90" height="34" fill="var(--wc-fig-wash)" stroke="var(--wc-fig-accent)" strokeWidth="2" />
-    <text x="262" y="233" fontSize="10.5" fill="currentColor" textAnchor="middle">Verify</text>
-    <rect x="315" y="212" width="90" height="34" fill="none" stroke="var(--wc-fig-muted)" />
-    <text x="360" y="233" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Vote</text>
-    <rect x="413" y="212" width="90" height="34" fill="none" stroke="var(--wc-fig-muted)" />
-    <text x="458" y="233" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Stars</text>
-    <rect x="511" y="212" width="90" height="34" fill="none" stroke="var(--wc-fig-muted)" />
-    <text x="556" y="233" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Log action</text>
-    <rect x="609" y="212" width="90" height="34" fill="none" stroke="var(--wc-fig-muted)" />
-    <text x="654" y="233" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Challenger</text>
-    <text x="262" y="266" fontSize="10.5" fill="currentColor" textAnchor="middle">your cursor sits here</text>
+    <text x="360" y="207" fontSize="12" fill="currentColor" textAnchor="middle">Beside it: the next step,</text>
+    <text x="360" y="222" fontSize="12" fill="currentColor" textAnchor="middle">computed in plain code</text>
+    <rect x="21" y="236" width="90" height="34" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="66" y="257" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Location</text>
+    <rect x="119" y="236" width="90" height="34" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="164" y="257" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Position</text>
+    <rect x="217" y="236" width="90" height="34" fill="var(--wc-fig-wash)" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="262" y="257" fontSize="10.5" fill="currentColor" textAnchor="middle">Verify</text>
+    <rect x="315" y="236" width="90" height="34" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="360" y="257" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Vote</text>
+    <rect x="413" y="236" width="90" height="34" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="458" y="257" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Stars</text>
+    <rect x="511" y="236" width="90" height="34" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="556" y="257" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Log action</text>
+    <rect x="609" y="236" width="90" height="34" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="654" y="257" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Challenger</text>
+    <text x="262" y="290" fontSize="10.5" fill="currentColor" textAnchor="middle">your cursor sits here</text>
 
-    <text x="360" y="300" fontSize="12" fill="currentColor" textAnchor="middle">The whole assistant ships behind a switch that is off by default.</text>
+    <text x="360" y="308" fontSize="12" fill="currentColor" textAnchor="middle">It ships off by default,</text>
+    <text x="360" y="323" fontSize="12" fill="currentColor" textAnchor="middle">behind an install switch.</text>
   </svg>
 </Figure>
 

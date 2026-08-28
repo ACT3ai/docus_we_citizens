@@ -3,19 +3,19 @@ id: karma_and_leaderboard
 title: Karma And The History Book
 sidebar_label: Karma And History Book
 sidebar_position: 32
-description: "Recognition a citizen earns for verified real-world work, normalized monthly, published on public boards, and itemised line by line."
+description: "Recognition a citizen earns for verified real-world work, normalized monthly, published on public boards, and itemized line by line."
 ---
 
 
 # Karma And The History Book
 
 You do something real — knock doors, file a sourced record, get a challenger to agree to run — and
-the movement records it, has another citizen confirm it, and keeps it. **Karma** is the name for the
-recognition that work earns. It is a citizen's own score for their own logged work, deliberately kept
-in different words from an award the movement publishes about a public official.
+the movement records it, has another citizen confirm it, and keeps it. **Karma** is the
+recognition that work earns: a citizen's own score for their own logged work, kept in different
+words from an award the movement publishes about a public official.
 
-<Figure caption="An action is recorded first and scored later: once another citizen verifies it, its raw points enter that month, where a single pass damps repetition, normalizes against the month's active cohort, weights the tracks, applies an integrity factor and a decisive-act floor, and produces one monthly karma score that feeds the public boards, the lifetime total, and an itemised statement — while work that did not count is still shown with its reason.">
-  <svg viewBox="0 0 720 336" fill="none" xmlns="http://www.w3.org/2000/svg">
+<Figure caption="An action is recorded as soon as a citizen logs it and scored only after another citizen verifies it; at month close a single pass turns the raw points into one monthly karma score, which feeds the public boards, the lifetime total, and an itemized statement, while work that did not count is still shown with its reason.">
+  <svg viewBox="0 0 720 340" fill="none" xmlns="http://www.w3.org/2000/svg">
 
     {/* top row — the lifecycle of one action */}
     <rect x="20" y="20" width="190" height="40" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
@@ -73,7 +73,7 @@ in different words from an award the movement publishes about a public official.
     <path d="M 630,300 l -3.5,-7 l 7,0 z" fill="currentColor" />
     <text x="90" y="318" textAnchor="middle" fontSize="12" fill="currentColor">the boards</text>
     <text x="360" y="318" textAnchor="middle" fontSize="12" fill="currentColor">lifetime total</text>
-    <text x="630" y="318" textAnchor="middle" fontSize="12" fill="currentColor">itemised statement</text>
+    <text x="630" y="318" textAnchor="middle" fontSize="12" fill="currentColor">itemized statement</text>
 
   </svg>
 </Figure>
@@ -81,97 +81,90 @@ in different words from an award the movement publishes about a public official.
 ## What it does
 
 An action is **recorded** the moment a citizen logs it, and **scored** later, once somebody else has
-confirmed it. The citizen sees "recorded" immediately and "worth N karma" after verification. The gap
-between the two is the verification lifecycle, and it is left visible rather than hidden.
+confirmed it. The citizen sees "recorded" at once and "worth N karma" after verification. The gap
+between the two is left visible rather than hidden.
 
 Every kind of action lives in a published catalog. Each entry carries raw points, a **track** — the
 lane of work it belongs to, such as Challengers, Communications, Organizing or Lawmaking — a
-**verification tier** from automatic through a peer to a community steward to an admin, a monthly
-cap, and a flag marking the few outcomes that actually changed something. A challenger filing to run
-is not the same size as a post, and the catalog says so in advance.
+**verification tier** running from automatic to peer to steward to admin, a monthly cap, and a flag
+for the few outcomes that changed something. A challenger filing to run is not the same size as a
+post, and the catalog says so in advance.
 
-Raw points are treated as noise on purpose: they land unevenly, and they reward whoever has the most
-peers nearby to report on them, which measures social density rather than contribution. So at month
-close one pass sums raw points per track, damps repetition of the same action, normalizes each track
-against that month's active cohort, weights the tracks so the loudest lane is not the only one worth
-being in, applies an integrity factor, and floors any month containing a decisive act. Out comes one
-**monthly karma score**, and monthly scores accumulate into a **lifetime total**.
+Raw points are noise on purpose: they land unevenly and reward whoever has the most peers nearby to
+report on them, which measures social density, not contribution. So at month close one pass sums raw
+points per track, damps repetition of the same action, normalizes each track against that month's
+active cohort, weights the tracks so the loudest lane is not the only one that counts, applies an
+integrity factor, and floors any month containing a decisive act. Out comes one **monthly karma
+score**, and monthly scores accumulate into a **lifetime total**.
 
 The public boards are headed *History Book of Citizens Fixing Democracy*. Several time windows run
-side by side, because recent work and lifetime work are different stories: today the last three
-months, the last two weeks, and lifetime, with a 24-hour board designed but not yet built because the
-server does not compute that window. A rail follows whatever row the reader points at and says who
-that person is, and a citizen outside the visible rows is told their true rank over the whole window
-rather than faked into a position on it.
+side by side, because recent work and lifetime work are different stories: the last three months,
+the last two weeks, and lifetime. A 24-hour board is designed but not built: the server does not
+compute that window. A citizen outside the visible rows is told their true rank over the whole
+window rather than being faked into a position.
 
-Every month is itemised in a statement the citizen can check: every verified act with its base points
-and what it was awarded; a plain-words line under every cap and multiplier, so no adjustment is a
-silent difference between two totals; a section for the acts that did **not** count — pending,
-rejected, or disputed — each with its reason; the arithmetic track by track; the policy exactly as it
-ran that month rather than today's; and a *Dispute this item* action on a single line.
+Every month is itemized in a statement the citizen can check: each verified act with its base points
+and what it was awarded; a plain-words line under every cap and multiplier, so no adjustment is
+silent; a section for the acts that did **not** count — pending, rejected, or disputed — each with
+its reason; the arithmetic track by track; the policy as it ran that month rather than today's; and
+a *Dispute this item* action on a single line.
 
 ## The goal it serves
 
-Positions are cheap and easy to collect. A doorknock, a sourced record, an hour of recorded
-testimony, a challenger who agreed to run — those are scarce, and nothing in our politics asked
-ordinary citizens for them or kept a receipt when they were given. This exists to make the movement's
-scarce resource countable.
+Opinions are cheap. A doorknock, a sourced record, an hour of recorded testimony, a challenger who
+agreed to run — those are scarce, and nothing in our politics asked citizens for them or kept a
+receipt. This exists to make that scarce resource countable.
 
-Credit here is something other people give you. A citizen cannot verify their own completion, and the
-actions worth the most cannot be self-logged at all — they arrive as a report filed by somebody else.
-Every line traces back to a URL and a description a stranger can open. That is what separates a record
-of work from a follower count.
+Credit here is something other people give you: the actions worth the most cannot be self-logged at
+all, and arrive as a report filed by somebody else. Every line traces back to a URL a stranger can
+open. That is what separates a record of work from a follower count.
 
 It is also the lever. A captured incumbent is not removed by argument; the seat changes hands on the
-volume of unglamorous, checkable work done before a primary, by people who mostly do not know each
-other, and a movement that cannot see who is doing that work cannot ask the right person for the
-right thing. The [action catalog](/docs/take_action/the_action_catalog) is the menu,
-[replacing captured incumbents](/docs/replace_incumbents/overview) is what the menu is for, and karma
-is the ledger connecting the two.
+volume of unglamorous, checkable work done before a primary, and a movement that cannot see who is
+doing that work cannot ask the right person for the right thing.
+The [action catalog](/docs/take_action/the_action_catalog) is the menu,
+[replacing captured incumbents](/docs/replace_incumbents/overview) is what the menu is for, and
+karma is the ledger connecting the two.
 
-Underneath the daily boards sits the **Leader History Book**: a permanent, hash-chained record of the
-contributions that changed something and the citizens who made them happen. An entry is about a
+Underneath the daily boards sits the **Leader History Book**: a permanent, hash-chained record of
+the contributions that changed something and the citizens behind them. An entry is about a
 contribution, not a personality. Nobody arrives automatically — a steward nominates, an admin
 confirms — and an anchored entry cannot be quietly rewritten.
 
 ## What keeps it honest
 
-* **No negative karma, no downvotes, no public shaming.** Citizens report each other's work
-  positively. The only downward force is rejecting a claim nobody can support, and a rejection records
-  its reason instead of deleting the record.
+* **No negative karma, no downvotes, no public shaming.** The only downward force is rejecting a
+  claim nobody can support, and a rejection records its reason instead of deleting the record.
 * **The anti-gaming rules are stated, not implied.** You cannot verify your own work. One URL backs
   one record. Work above a monthly cap is still kept in the history, worth zero and marked capped. Two
-  citizens verifying each other repeatedly in one month are flagged for review, informationally rather
-  than as an automatic penalty.
-* **A sealed month is final.** After the seal a correction is appended beside the original as an
-  amendment with its own anchored block, showing the before and after. The original is never
-  overwritten.
+  citizens verifying each other repeatedly in one month are flagged for review rather than
+  automatically penalized.
+* **A sealed month is final.** A later correction is appended beside the original as an amendment
+  with its own anchored block, showing before and after. The original is never overwritten.
 * **The board publishes nothing a citizen did not publish.** The privacy contract is enforced on the
   server, not in the browser: the board renders the display name the citizen chose, and no photograph
-  is delivered unless they turned one on. A fully pseudonymous citizen can hold the top of every
-  board, and nothing nudges them to identify themselves to be there.
+  unless they turned one on. A fully pseudonymous citizen can hold the top of every board.
 * **It says what it is not.** Karma measures logged work for this movement and nothing else. It is not
   a measure of a person's worth, and it is never a finding about a politician.
 
 ## Works with
 
 * **[Decisions, Areas And Communities](./decisions_and_communities.mdx)** — a community is where an
-  action is attributed and where the stewards who verify the higher tiers actually sit.
+  action is attributed and where the stewards who verify the higher tiers sit.
 * **[The First-Principles AI Check](./first_principles_ai_check.mdx)** — the AI summarizes a month,
-  flags integrity problems and drafts history-book nominations, and is never allowed to award karma
-  or publish an entry itself.
+  flags integrity problems and drafts history-book nominations, but never awards karma or publishes
+  an entry itself.
 * **[Value Systems And Policy Packets](./value_systems_and_policy_packets.mdx)** — your written-down
-  values decide which work is worth doing; karma is the record that you went and did it.
+  values decide which work is worth doing; karma records that you did it.
 
 ## Where to go next
 
-* **[Karma](/docs/karma/overview)** — the full citizen side of the ledger, and why this is the one
-  place the word score is used on purpose.
+* **[Karma](/docs/karma/overview)** — the full citizen side of the ledger, and why score is the
+  right word here.
 * **[The Leader History Book](/docs/karma/the_leader_history_book)** — how a contribution earns its
   way into the permanent record, and who has to sign off.
-* **[Communities](/docs/communities/overview)** — the shared workspace an action is filed into, and
-  how a community pools what its citizens have done.
-* **[Trust Scores](/docs/trust_scores/overview)** — the separate question of whether a participant is
-  a real, believable citizen at all, which karma never answers.
-* **[Take Action](/docs/take_action/overview)** — the things you can do this week, each one worth
-  karma and each one logged with a link somebody else can check.
+* **[Communities](/docs/communities/overview)** — the shared workspace an action is filed into.
+* **[Trust Scores](/docs/trust_scores/overview)** — whether a participant is a real, believable
+  citizen at all, which karma never answers.
+* **[Take Action](/docs/take_action/overview)** — the things you can do this week, each worth karma
+  and logged with a link somebody else can check.

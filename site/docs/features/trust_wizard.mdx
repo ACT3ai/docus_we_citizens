@@ -9,7 +9,7 @@ description: "A walk that shows you real people two at a time and one at a time,
 
 # Where You Stand
 
-The first time you open Trust, the product does not hand you a personality quiz. It shows you real people and asks which of two you trust more, or how much you trust one. Where you stand falls out of those answers, the way a ship's position falls out of bearings taken on landmarks already marked on the chart.
+The first time you open Trust, the product does not hand you a personality quiz. It shows you real people and asks which of two you trust more, or how much you trust one. Where you stand falls out of those answers, the way a ship's position falls out of bearings on known landmarks.
 
 <Figure caption="Your answers about people whose positions are already sourced produce a position of your own on a named axis, with a confidence band, and nothing that comes out of it reaches a trust level, karma, or an award.">
   <svg viewBox="0 0 720 330" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +48,7 @@ The first time you open Trust, the product does not hand you a personality quiz.
 
     {/* arrow into the placement */}
     <line x1="474" y1="120" x2="494" y2="120" fill="none" stroke="var(--wc-fig-accent)" />
-    <path d="M 498,120 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <path d="M 498,120 l -7,-3.5 l 0,7 z" fill="var(--wc-fig-accent)" />
 
     {/* column 3 — where you land */}
     <text x="508" y="30" fontSize="10.5" fill="currentColor" opacity="0.72">WHERE YOU LAND</text>
@@ -65,45 +65,46 @@ The first time you open Trust, the product does not hand you a personality quiz.
     <text x="604" y="170" fontSize="12" fill="currentColor" textAnchor="middle">fewer answers so far.</text>
 
     {/* the one-way rule */}
-    <rect x="24" y="252" width="680" height="56" fill="none" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
-    <text x="364" y="278" fontSize="12" fill="currentColor" textAnchor="middle">None of this reaches a trust level, karma, or an award.</text>
-    <text x="364" y="296" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">It is a measurement, not a permission.</text>
+    <rect x="24" y="244" width="680" height="68" fill="none" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+    <text x="364" y="268" fontSize="12" fill="currentColor" textAnchor="middle">No trust level, no karma,</text>
+    <text x="364" y="286" fontSize="12" fill="currentColor" textAnchor="middle">no award comes from this.</text>
+    <text x="364" y="304" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">A measurement, not a gate.</text>
   </svg>
 </Figure>
 
 ## What it does
 
-Clicking Trust for the first time opens a walk with two tabs: **Where you stand**, and **Verify yourself**. Each keeps its own progress and its own place, so neither waits on the other. This page is the first tab.
+Clicking Trust for the first time opens a walk with two tabs: **Where you stand**, and **Verify yourself**. Each keeps its own progress, so neither waits on the other. This page is the first tab.
 
-The setup is short. Where you live and which country's social contract binds you are asked as **separate questions**, because a great many people live somewhere they are not citizens of. Then: which party do you most often vote with. That answer has one job — it picks the deck of people you will be shown, since asking somebody to compare two politicians they have never heard of produces a shrug. It is not a gate, and it is never published unless you publish it. A party front door **highlights** that party and still makes you click: writing the answer from the domain you walked in on would make the measurement circular.
+The setup is short. Where you live and which country's social contract binds you are asked as **separate questions**, because many people live somewhere they are not citizens of. Then: which party do you most often vote with. That answer has one job — it picks the deck of people you will be shown, since comparing two politicians you have never heard of produces nothing. It is not a gate, and it is never published unless you publish it. A party front door **highlights** that party and still makes you click: taking the answer from the domain you walked in on would make the measurement circular.
 
 Then the part that does the work:
 
 * **One at a time.** A person, their office, and a sourced one-line description. You say how much you trust them, one star to five. The control states on its face that more stars mean more trust, because this product's other five-star scale runs the other way.
-* **Two at a time.** Two people side by side: which do you trust more. The one you pick stays, the other side reloads with somebody new. The person shown next is the one whose outcome we can least predict, because an answer we could guess is not worth asking for.
+* **Two at a time.** Two people side by side: which do you trust more. The one you pick stays, the other side reloads with somebody new. The person shown next is the one whose outcome we can least predict; an answer we could guess is not worth asking for.
 * **"Don't know this person" and "Skip" are two different records.** Never heard of them says nothing about you. Knowing them and declining to pick says they sit close together for you, which is real information.
 
-Every person shown carries **sourced coordinates on named axes** — war and intervention, the state and the market, speech and information, sovereignty and capture, surveillance and liberty. Trust the people at one end of an axis over those at the other, consistently, and your own position on it falls out of the arithmetic. The walk covers one to three axes, and stops on confidence, on a budget of comparisons, when you say that is enough, or when nothing is left worth asking. All four are real endings, each producing a placement that carries the confidence it earned.
+Every person shown carries **sourced coordinates on named axes** — war and intervention, the state and the market, speech and information, sovereignty and capture, surveillance and liberty. Trust the people at one end of an axis over those at the other, consistently, and your own position on it falls out of the arithmetic. The walk covers one to three axes, and stops on confidence, on a budget of comparisons, when you say that is enough, or when nothing is left worth asking. All four are real endings; each placement carries the confidence it earned.
 
 Out comes a position on those axes with a confidence band, a descriptive name for where it falls, one plain sentence, and **show me the math**: every comparison, what was predicted, what you answered, and how far each moved the estimate. One line never goes away — this is what your answers say, not who you are.
 
-Leaving is free. Where you stopped is stored as a page rather than a position in a list, and it never expires, so two weeks later you land on the question you left.
+Leaving is free. Where you stopped is stored and never expires, so two weeks later you land on the question you left.
 
 ## The goal it serves
 
-People answer a form about how they wish to describe themselves. Asked which of two specific people they trust more, they answer about what they actually think. This walk asks the second kind of question on purpose.
+People answer a form about how they wish to describe themselves. Asked which of two specific people they trust more, they answer about what they actually think. This walk asks the second kind of question.
 
-The movement's central claim is that the splits that matter do not run along party lines — that a Republican and a Democrat who both want the [forever wars ended](/docs/no_forever_wars/overview) or [money out of politics](/docs/congress_for_citizens/money_in_politics) have more in common on that question than either has with the leadership that keeps voting the other way. That is either true or it is a slogan, and there is one way to find out: place citizens by measurement rather than by registration and see where the lines fall. A label can only reproduce itself.
+The movement's central claim is that the splits that matter do not run along party lines — that a Republican and a Democrat who both want the [forever wars ended](/docs/no_forever_wars/overview) or [money out of politics](/docs/congress_for_citizens/money_in_politics) have more in common on that question than either has with the leadership that keeps voting the other way. That is either true or it is a slogan. Place citizens by measurement rather than by registration and the lines fall where they fall. A label can only reproduce itself.
 
-It matters downstream. A [community](/docs/communities/overview) pooling its members' positions is worth something only if those members were placed by their own answers, and so is every argument this site makes about the [rigged economy](/docs/rigged_economy/overview) crossing party lines.
+A [community](/docs/communities/overview) pooling its members' positions is worth something only if those members were placed by their own answers. So is every argument this site makes about the [rigged economy](/docs/rigged_economy/overview) crossing party lines.
 
 ## What keeps it honest
 
 * **The one-way rule.** Nothing this walk produces reaches a trust level, your karma, or any award given to a politician. Where you stand is a picture you are shown about yourself, never a permission.
 * **It is not a personality test.** It compares stated positions against a written instrument, and the caveat saying so is permanent, not a one-time notice.
-* **Unmeasured is unmeasured, never "moderate".** An axis with too few answers renders as "not enough answers yet", showing an interval rather than a fixed position. Calling somebody a centrist because we ran out of questions is the failure this site refuses everywhere.
+* **Unmeasured is unmeasured, never "moderate".** An axis with too few answers renders as "not enough answers yet", showing an interval rather than a fixed position. Calling somebody a centrist because we ran out of questions is the failure this site refuses.
 * **You can overrule your own inputs, not your own result.** Answer more, change answers, reset an axis, delete the lot. You cannot type your coordinate in, because a typed-in number is not a measurement.
-* **A thin deck says it is thin.** With too few sourced people in your pool, the walk ends early and says so, instead of dressing a short session up as a complete one.
+* **A thin deck says it is thin.** With too few sourced people in your pool, the walk ends early and says so instead of dressing a short session up as a complete one.
 
 ## Works with
 

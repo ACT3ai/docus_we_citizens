@@ -9,7 +9,7 @@ description: "Write your own this-versus-that rules as a structured value system
 
 # Value Systems And Policy Packets
 
-Everyone carries rules about what matters more than what: liberty over safety until the harm is proven, equal treatment over efficiency. Most people never write those rules down, so nobody can apply them but the person holding them, one situation at a time. A value system is those rules written down in a form software can act on, and a policy packet is that same file handed to another citizen who wants to reason the way you do.
+Everyone carries rules about what matters more than what: liberty over safety until the harm is proven, equal treatment over efficiency. Most people never write those rules down, so nobody can apply them but the person holding them. A value system is those rules written down in a form software can act on, and a policy packet is that same file handed to another citizen who wants to reason the way you do.
 
 <Figure caption="Your rules, principles and priorities sit in one file you own, the Apply surface reasons a situation against them and shows which rules fired, and publishing sends a self-contained copy out under your verified name for another citizen to import.">
   <svg viewBox="0 0 720 336" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,21 +84,21 @@ A **value system** is a named, versioned record with three blocks in it, and the
 * **Standing principles** are unconditional. They are not comparisons but statements a recommendation is not allowed to violate.
 * **Ranked priorities** are a plain list, most important first. They settle a conflict no explicit rule covers.
 
-Everything except the name has a default, so a value system holding a single rule is valid from the moment you save it. You can keep several, one for civic questions and one for economics, and choose which one judges what.
+Everything except the name has a default, so a value system holding one rule is valid from the moment you save it. You can keep several, one for civic questions and one for economics, and choose which one judges what.
 
-The **Apply** surface is what the structure is for. You type in a situation and get back a recommendation reasoned from your own rules, with the firing chain shown: which rules matched, which exceptions applied, which priority broke the tie. The answer never arrives on its own, so you can say the software read your rules wrong, or that the rule itself was wrong.
+The **Apply** surface is what the structure is for. You type in a situation and get back a recommendation reasoned from your own rules, with the firing chain shown: which rules matched, which exceptions applied, which priority broke the tie. It never arrives on its own, so you can say the software read your rules wrong, or that the rule was wrong.
 
 None of that is gated. In Individual Mode there is no account and no server. Authoring, editing, importing and applying all happen in a flat file on your own disk, and this is one of the four pillars a citizen can complete end to end without ever signing in.
 
-Publishing is the one act that crosses out of your own tree. A finished value system becomes a **policy packet**: a self-contained file another citizen's copy of the software can read, stamped with who published it and when. That stamp is why publishing, and only publishing, requires a verified identity, and why the local default user is refused there. The packet caches under the author's name inside the importer's own files, so it can be weighted by how far that person trusts the author. An imported packet is read-only reference: viewable, applicable, or cloneable into an editable copy of your own, and re-importing refreshes only that one cached file.
+Publishing is the one act that crosses out of your own tree. A finished value system becomes a **policy packet**: a self-contained file another citizen's copy of the software can read, stamped with who published it and when. That stamp is why publishing, and only publishing, requires a verified identity; the local default user is refused there. The packet caches under the author's name inside the importer's own files, so it can be weighted by how far that person trusts the author. An imported packet is read-only reference: viewable, applicable, or cloneable into an editable copy of your own, and re-importing refreshes only that one cached file.
 
 ## The goal it serves
 
-This is the movement's answer to being told what to think. The normal arrangement is that somebody in Washington, a media outlet, or an interest group with a budget decides what a reasonable position is, and citizens are handed the conclusion. This inverts it. You state the rules, and the software works out what follows. Nothing here supplies a position you did not put in.
+This is the movement's answer to being told what to think. The normal arrangement is that somebody in Washington, a media outlet, or an interest group with a budget decides what a reasonable position is, and citizens are handed the conclusion. Here you state the rules, and the software works out what follows.
 
 It also answers a scale problem, and that scale problem is what makes capture cheap. There is far more legislation, spending, and procedure than any working person can read, so the reading gets done by paid staff who do not work for you. Rules written down once can be applied across more material than you could review by hand, the same way every time. That is the discipline that makes a recorded [decision](/docs/decisions/overview) worth anything.
 
-Then it makes ethics shareable the way software is. Somebody who has thought hard about a domain publishes their reasoning as a packet, and a citizen who trusts that person starts from considered rules instead of a blank page, then edits them, because the clone is theirs. That builds shared standards from the bottom instead of having them issued from the top, and it is why the author's [trust score](/docs/trust_scores/overview) travels with the packet. You decide whose reasoning you borrow, and you read the rules before you take them.
+Then it makes ethics shareable the way software is. Somebody who has thought hard about a domain publishes their reasoning as a packet, and a citizen who trusts that person starts from considered rules instead of a blank page, then edits them, because the clone is theirs. That builds shared standards from the bottom instead of having them issued from the top, and it is why the author's [trust score](/docs/trust_scores/overview) travels with the packet.
 
 ## What keeps it honest
 

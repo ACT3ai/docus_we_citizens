@@ -12,7 +12,7 @@ description: "Four party websites run on one program and one data store, so the 
 Besides this site, We The Citizens runs four more: WeCitizensR.com for Republicans, WeCitizensD.com for Democrats, WeCitizensL.com for Libertarians, and WeCitizensSocialism.com for Democratic Socialists. They are not four organizations, four data sets, or four sets of numbers. They are one running program with one public record behind it, answering to four addresses, because a voter will look much harder at their own side's officeholders than at a site carrying no label they recognize.
 
 <Figure caption="One program with one data store resolves the address a visitor typed into one of four party editions, sends any address it does not recognize to the neutral main site, and lets each door choose its own colour and wording while the award arithmetic stays identical across all four.">
-  <svg viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 720 292" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* the one program behind all four addresses */}
     <rect x="16" y="82" width="170" height="72" rx="6" fill="var(--wc-fig-wash)" stroke="currentColor" />
     <text x="101" y="107" fontSize="15" fill="currentColor" textAnchor="middle">One program</text>
@@ -63,9 +63,9 @@ Besides this site, We The Citizens runs four more: WeCitizensR.com for Republica
     {/* anything unrecognized lands on neutral ground */}
     <line x1="292" y1="144" x2="292" y2="222" stroke="var(--wc-fig-muted)" strokeWidth="1.5" strokeDasharray="4 4" />
     <path d="M292,230 l-3.5,-7 l7,0 z" fill="currentColor" />
-    <rect x="214" y="230" width="200" height="44" rx="6" fill="none" stroke="var(--wc-fig-muted)" />
-    <text x="314" y="252" fontSize="12" fill="currentColor" textAnchor="middle">Any other address</text>
-    <text x="314" y="268" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">goes to the neutral site</text>
+    <rect x="192" y="230" width="200" height="44" rx="6" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="292" y="252" fontSize="12" fill="currentColor" textAnchor="middle">Any other address</text>
+    <text x="292" y="268" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">goes to the neutral site</text>
   </svg>
 </Figure>
 
@@ -82,7 +82,7 @@ What a door may change is chrome and wording. What it may never change is anythi
 * The evidence, the sources, and the roll-call rows behind them.
 * The meaning of a red or green bar.
 
-That is enforced by structure, not by a promise. An edition's committed configuration file has a fixed shape with nowhere to put a threshold, and a build check compares every door against a reference door and fails on any committed difference outside a short permitted list: the edition letter, the domain, the display name, the party label, the accent colour, the analytics tag, and the path to that door's section of this site. An incumbent at 71% of the Monkey Award renders exactly the same way on their own party's door as on anyone else's.
+That is enforced by structure, not by a promise. An edition's committed configuration file has a fixed shape with nowhere to put a threshold, and a build check compares every edition's configuration against a reference edition and fails on any committed difference outside a short permitted list: the edition letter, the domain, the display name, the party label, the accent colour, the analytics tag, and the path to that door's section of this site. That check covers configuration only. It has nothing to say about how many content areas a door carries or what they argue. An incumbent at 71% of the Monkey Award renders exactly the same way on their own party's door as on anyone else's.
 
 The party colour is confined to chrome. It tints a chip, a link and one button. **It never tints an award bar**, where red means adverse and green means good on every door regardless of which party that door serves. Party is shown as a letter after a person's name, never by colouring the name, the photograph, or a bar.
 

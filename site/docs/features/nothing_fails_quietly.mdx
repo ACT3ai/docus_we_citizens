@@ -9,9 +9,9 @@ description: "Loading, empty and broken are never confused for one another, and 
 
 # Nothing Fails Quietly
 
-Software has three ways of showing you nothing and they look nearly alike: a page that has not finished drawing, a list with no rows, and something that broke. A reader takes all three the same way — nothing there — and on a page about an elected official that is a false statement about the record. These are the rules that keep the three apart, and the checks that stop a release when a written rule quietly stops holding.
+Software has three ways of showing you nothing and they look alike: a page still drawing, a list with no rows, and something that broke. A reader takes all three the same way — nothing there — and on a page about an elected official that is a false statement about the record. These are the rules that keep the three apart, and the checks that stop a release when a written rule quietly stops holding.
 
-<Figure caption="On the left, a page holds its own shape while each region resolves on its own clock, a region that comes back empty first asks whether the server is still starting, and every fault lands in one readable file on the citizen's own machine. On the right, a short list of named checks reads the whole source tree and the committed record, and stops the release rather than let a written promise quietly stop being true.">
+<Figure caption="On the left, a page holds its shape while each region resolves on its own clock, an empty region first asks whether the server is still starting, and every fault lands in one readable file on the citizen's own machine. On the right, named checks read the source tree and the committed record, and stop the release rather than let a written promise quietly stop being true.">
   <svg viewBox="0 0 720 340" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* ── left half: the page ── */}
     <text x="187" y="28" fontSize="12" textAnchor="middle" fill="currentColor">On the page, as you read</text>
@@ -44,7 +44,7 @@ Software has three ways of showing you nothing and they look nearly alike: a pag
     <text x="40" y="318" fontSize="10.5" fill="currentColor" opacity="0.72">reading the record, x16</text>
 
     {/* ── right half: the build ── */}
-    <text x="533" y="28" fontSize="12" textAnchor="middle" fill="currentColor">In the build, before release</text>
+    <text x="533" y="28" fontSize="12" textAnchor="middle" fill="currentColor">In the build, pre-release</text>
     <rect x="370" y="38" width="326" height="172" rx="4" stroke="var(--wc-fig-muted)" fill="none" />
 
     <rect x="386" y="54" width="294" height="26" rx="3" stroke="currentColor" fill="none" />
@@ -57,10 +57,10 @@ Software has three ways of showing you nothing and they look nearly alike: a pag
     <text x="400" y="140" fontSize="12" fill="currentColor">no act that charges nobody</text>
 
     <rect x="386" y="156" width="294" height="26" rx="3" stroke="currentColor" fill="none" />
-    <text x="400" y="174" fontSize="12" fill="currentColor">no vote term in a Flamingo</text>
+    <text x="400" y="174" fontSize="12" fill="currentColor">the wall is never crossed</text>
 
-    <text x="533" y="242" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">each names the rule it holds</text>
-    <text x="533" y="258" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">and the failure it came from</text>
+    <text x="533" y="242" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">it names the rule it holds</text>
+    <text x="533" y="258" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">and the failure behind it</text>
 
     <line x1="533" y1="210" x2="533" y2="222" stroke="var(--wc-fig-muted)" strokeWidth="1" />
     <path d="M 533,228 l -3.5,-7 l 7,0 z" fill="currentColor" />
@@ -76,42 +76,43 @@ Software has three ways of showing you nothing and they look nearly alike: a pag
 
 ## What it does
 
-Every page draws itself in the first frame. Everything knowable from the address alone — heading, way back out, actions, sections — is on screen before a byte comes back, and each region that needs the server fills into a hole already the right shape. Four queries means four regions on four clocks, so one slow read never blanks the screen. The waiting state is a **skeleton** rather than a spinner: a spinner says wait, a shape says here is what you are getting.
+Every page draws itself in the first frame. Everything knowable from the address alone — heading, way back out, actions, sections — is on screen before a byte comes back, and each server-fed region fills into a hole already the right shape. Four queries means four regions on four clocks, so one slow read never blanks the screen. The waiting state is a **skeleton**, not a spinner: a spinner says wait, a shape says what is coming.
 
 Each region then resolves in a strict order: **loading, then error, then empty, then data**. A region that could not load reports **inside its own footprint** — what failed, in plain language, with a retry that refetches that region and nothing else.
 
-The rule underneath it is hard. **"This failed to load" may never share a branch with "there is nothing here."** On a page about a living public figure, or about a chain of evidence, reporting a network failure as "no record" is a false statement about the world rather than a cosmetic bug. The trap has a second form: the app opens its door before it finishes reading in the movement's data, deliberately, so a large drop of new records cannot look like a failed launch. For those seconds a roster honestly answers with an empty list. So a region that comes back empty asks whether the server is still starting before it decides nobody is there.
+The rule underneath is hard: **"this failed to load" may never share a branch with "there is nothing here."** On a page about a living public figure, reporting a network failure as "no record" is a false statement about the world, not a cosmetic bug. The trap has a second form: the app deliberately opens its door before it finishes reading in the movement's data, so a large drop of records cannot look like a failed launch. For those seconds a roster honestly answers empty, so an empty region asks whether the server is still starting before deciding nobody is there.
 
-Every caught fault is written to **one readable file on the citizen's own machine**, and the message names what the app was trying to do rather than only what broke — "reading the citizen record", then the cause. There is no silent catch anywhere: a failure safe to continue past is logged as deliberately non-fatal, so it reads as a decision rather than an oversight. No secret or token is ever written there. Repeated identical failures **fold into one line carrying a count**, because thirty copies of one fault delete the history somebody opened the file to read.
+Every caught fault is written to **one readable file on the citizen's own machine**, and the message names what the app was trying to do, not only what broke — "reading the citizen record", then the cause. There is no silent catch: a failure safe to continue past is logged as deliberately non-fatal, so it reads as a decision. No secret or token is written there. Repeated identical failures **fold into one line carrying a count**, because thirty copies of one fault delete the history somebody opened the file to read.
 
-Alongside that run the **canaries**, a name reserved for checks that earn it three ways: the violation is silent, so the app keeps working while quietly saying something false; the damage is large; and nothing else can see it, because the check has to read the whole source tree, walk the committed record, or hold two subsystems against each other. They fail the build if the app gains a way to download media it promised never to fetch, if a roll call is excluded with no stated reason, if an enacted instrument on the list charges nobody, if a word this movement refuses to use about a politician reaches rendered copy, if a voting-record term reaches a Flamingo result, or if one award mark is drawn smaller than the one beside it. Each has to cite the rule it holds and state the real failure it was born from.
+Alongside that run the **canaries**, a name reserved for checks that earn it three ways: the violation is silent, so the app keeps working while saying something false; the damage is large; and nothing else catches it, because the check has to read the whole source tree or hold two subsystems against each other. They fail the build if the app gains a way to download media it promised never to fetch, if a roll call is excluded with no stated reason, if an enacted instrument on the list charges nobody, if a word this movement refuses to use about a politician reaches rendered copy, or if the wall between the two evidence streams is crossed. Each cites the rule it holds and the failure it was born from.
 
 ## The goal it serves
 
-We ask citizens to check arithmetic over the public record instead of taking anyone's word for it, ours included. Software making that argument has to survive the test it applies to everyone else. A screen that looks stuck reads as broken, the citizen closes the tab, and the argument is lost before it is made.
+We ask citizens to check arithmetic over the public record instead of taking anyone's word for it, ours included. Software making that argument has to survive the test it applies to everyone else. A screen that looks stuck reads as broken, and the argument is lost before it is made.
 
-The worse failure is the one that looks like success. An app reporting a failed fetch as "nobody found" publishes a claim it has no basis for, in the one place a reader takes it at face value, about the record this movement exists to publish. That is the harm the [Evidence](/docs/evidence/overview) pillar exists to prevent when a document is withheld on purpose, and why the [Flamingo Award](/docs/flamingo/overview) keeps "not earned" and "we have not looked yet" as two different facts rather than two styles of blank.
+The worse failure is the one that looks like success. An app reporting a failed fetch as "nobody found" publishes a claim it has no basis for, in the one place a reader takes it at face value. That is the harm the [Evidence](/docs/evidence/overview) pillar exists to prevent when a document is withheld on purpose, and why the [Flamingo Award](/docs/flamingo/overview) keeps "not earned" and "we have not looked yet" as two different facts rather than two styles of blank.
 
-The canaries exist for a plainer reason: doctrine that depends on everyone remembering it will quietly stop being true. A promise not to scrape video, a promise that the voting record and everything else never mix, a promise about the words used about a named living person — none announces itself when it breaks. Turning them into checks that stop a release is how a movement whose standard is that a named gap beats a quiet one avoids running software that hides its own. It is the same reason [the record is public](/docs/open_data/overview), [the code is open](/docs/repos/overview), and the [core loop](/docs/how_it_works/the_core_loop) is something you run rather than something we run for you.
+The canaries exist for a plainer reason: doctrine that depends on everyone remembering it will quietly stop being true. A promise not to scrape video, a promise that the two evidence streams never mix, a promise about the words used about a named living person — none announces itself when it breaks. Turning them into checks that stop a release is how a movement whose standard is that a named gap beats a quiet one avoids hiding its own. It is the same reason [the record is public](/docs/open_data/overview), [the code is open](/docs/repos/overview), and the [core loop](/docs/how_it_works/the_core_loop) is yours to run.
 
 ## What keeps it honest
 
-* **The audit of these checks was published rather than quietly fixed.** They were once chained so that the first failure hid every later one; on the day it was measured, thirteen had not run at all and nothing said so. That finding sits in the specification.
-* **One check is deliberately left failing.** It disagrees with a written rule, and which of the two is wrong is a product question rather than a test question. A check silenced to turn a suite green is worth less than no check.
+* **The audit of these checks was published rather than quietly fixed.** They were once chained so the first failure hid every later one; when it was measured, thirteen had not run at all and nothing said so. That finding sits in the specification.
+* **One check is deliberately left failing.** It disagrees with a written rule, and which of the two is wrong is a product question, not a test question. A check silenced to turn a suite green is worth less than no check.
 * **A canary can only hold a rule somebody wrote down.** It cannot find a promise nobody stated. This is a ratchet, not a proof of correctness.
-* **The step-by-step trail records route decisions, never keystrokes** — where a citizen went and what the app attempted, never what they wrote.
-* **None of this makes the underlying data right.** It makes failure visible and a false statement harder to ship. Accuracy is a separate discipline: sourcing every row to the official record and letting anyone re-derive it.
+* **The trail records route decisions, never keystrokes** — where a citizen went and what the app attempted, never what they wrote.
+* **None of this makes the underlying data right.** It makes failure visible. Accuracy is a separate discipline: sourcing every row to the official record.
 
 ## Works with
 
-* **[Run It On Your Own Computer](./run_on_your_own_computer.mdx)** — the fault trail is one plain file on your own disk, which only means anything because the software runs there rather than on our server.
-* **[The Public Data Repository](./public_data_repository.mdx)** — several of the checks read the committed record itself, and fail on a roll call excluded with no stated reason.
-* **[The Citizen Mining Network](./citizen_mining_network.mdx)** — long background work reports its progress and its failures into the same trail instead of finishing quietly.
+* **[Run It On Your Own Computer](./run_on_your_own_computer.mdx)** — the fault trail is a plain file on your own disk, which only means anything because the software runs there.
+* **[The Public Data Repository](./public_data_repository.mdx)** — several checks read the committed record itself and fail on a roll call excluded with no stated reason.
+* **[The Citizen Mining Network](./citizen_mining_network.mdx)** — long background work reports progress and failures into the same trail instead of finishing quietly.
+* **[The Wall](./the_wall.mdx)** — the separation between the two evidence streams is one of the rules a canary holds at build time.
 
 ## Where to go next
 
-* **[Evidence](/docs/evidence/overview)** — the pillar this is built out of: how to reach a defensible conclusion when some of the record is missing.
-* **[Naming the gaps](/docs/evidence/naming_the_gaps)** — the same rule as doctrine rather than as code: say what is missing, and why.
-* **[Not assessed is not a verdict](/docs/flamingo/not_assessed_is_not_a_verdict)** — why "we have not looked yet" must never be rendered as a finding about a person.
-* **[Open Data](/docs/open_data/overview)** — clone the public record, follow any claim to its source, and send back a correction.
-* **[Run it on your computer](/docs/get_started/run_it_on_your_computer)** — get the app going locally and read the fault trail for yourself.
+* **[Evidence](/docs/evidence/overview)** — the pillar this is built out of: reaching a defensible conclusion when part of the record is missing.
+* **[Naming the gaps](/docs/evidence/naming_the_gaps)** — the same rule as doctrine rather than code: say what is missing, and why.
+* **[Not assessed is not a verdict](/docs/flamingo/not_assessed_is_not_a_verdict)** — why "we have not looked yet" is never rendered as a finding about a person.
+* **[Open Data](/docs/open_data/overview)** — clone the public record and follow any claim to its source.
+* **[Run it on your computer](/docs/get_started/run_it_on_your_computer)** — get the app going locally and read the fault trail yourself.

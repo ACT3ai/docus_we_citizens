@@ -78,7 +78,7 @@ Most civic software asks for your opinion and hands you a number back. This hand
 
 The hierarchy is three tiers. A **community** is a named workspace stored as a directory on disk. An **area** is a named topic inside it. A **decision** is one resolved question inside that topic.
 
-A community carries an explicit access list: owners, writers, readers. Owners change the list and can delete the workspace, writers create and edit content, readers look. New communities are private. World-readability — anyone can read it, including a visitor who never signed in — is a flag an owner turns on deliberately. At least one owner must always remain, and all of it is enforced on the server. An **area** has no access list of its own; it inherits its community's.
+A community carries an explicit access list: owners, writers, readers. Owners change the list and can delete the workspace, writers create and edit content, readers look. New communities are private. World-readability, which reaches a visitor who never signed in, is a flag an owner turns on deliberately. At least one owner must always remain, and all of it is enforced on the server. An **area** has no access list of its own; it inherits its community's.
 
 The decision is the atom. Each one is stored twice: a structured record the software reads, and a human-readable companion regenerated from it on every save, so the readable version can never quietly disagree with the record the software computed from. Decision numbers are never reused, even after a delete, so a link to decision 4 in an area means the same thing forever.
 

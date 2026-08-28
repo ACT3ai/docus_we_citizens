@@ -24,7 +24,7 @@ Your profile is what another citizen sees attached to your work — a decision y
     <text x="44" y="104" fontSize="12" fill="currentColor">real name</text>
     <text x="44" y="124" fontSize="12" fill="currentColor">email</text>
     <text x="44" y="144" fontSize="12" fill="currentColor">which name to show</text>
-    <text x="44" y="170" fontSize="10.5" fill="currentColor" opacity="0.72">stored once, read many ways</text>
+    <text x="44" y="170" fontSize="10.5" fill="currentColor" opacity="0.72">one record, read many ways</text>
 
     {/* into the projection */}
     <line x1="222" y1="115" x2="255" y2="115" stroke="currentColor" />
@@ -60,32 +60,32 @@ Your profile is what another citizen sees attached to your work — a decision y
     <text x="430" y="214" fontSize="10.5" fill="currentColor" opacity="0.72">Email is never published.</text>
 
     {/* the ladder */}
-    <text x="30" y="246" fontSize="10.5" fill="currentColor" opacity="0.72">WHO CAN SEE YOU</text>
+    <text x="30" y="238" fontSize="10.5" fill="currentColor" opacity="0.72">WHO CAN SEE YOU</text>
 
-    <rect x="30" y="256" width="155" height="42" fill="none" stroke="var(--wc-fig-muted)" />
-    <text x="107" y="276" fontSize="12" fill="currentColor" textAnchor="middle">Listed</text>
-    <text x="107" y="291" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">in the roster</text>
+    <rect x="30" y="248" width="155" height="42" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="107" y="268" fontSize="12" fill="currentColor" textAnchor="middle">Listed</text>
+    <text x="107" y="283" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">in the roster</text>
 
-    <rect x="200" y="256" width="155" height="42" fill="none" stroke="var(--wc-fig-muted)" />
-    <text x="277" y="276" fontSize="12" fill="currentColor" textAnchor="middle">Unlisted</text>
-    <text x="277" y="291" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">by link only</text>
+    <rect x="200" y="248" width="155" height="42" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="277" y="268" fontSize="12" fill="currentColor" textAnchor="middle">Unlisted</text>
+    <text x="277" y="283" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">by link only</text>
 
-    <rect x="370" y="256" width="155" height="42" fill="var(--wc-fig-wash)" stroke="var(--wc-fig-accent)" strokeWidth="2" />
-    <text x="447" y="276" fontSize="12" fill="currentColor" textAnchor="middle">Private</text>
-    <text x="447" y="291" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">a number, not a name</text>
+    <rect x="370" y="248" width="155" height="42" fill="var(--wc-fig-wash)" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="447" y="268" fontSize="12" fill="currentColor" textAnchor="middle">Private</text>
+    <text x="447" y="283" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">a number, not a name</text>
 
-    <rect x="540" y="256" width="155" height="42" fill="none" stroke="var(--wc-fig-muted)" />
-    <text x="617" y="276" fontSize="12" fill="currentColor" textAnchor="middle">Hidden</text>
-    <text x="617" y="291" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">no row at all</text>
+    <rect x="540" y="248" width="155" height="42" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="617" y="268" fontSize="12" fill="currentColor" textAnchor="middle">Hidden</text>
+    <text x="617" y="283" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">no row at all</text>
 
-    <text x="360" y="311" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Takes effect immediately.</text>
-    <text x="360" y="326" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Trust and weight unchanged.</text>
+    <text x="360" y="303" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Takes effect immediately.</text>
+    <text x="360" y="318" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Trust and weight unchanged.</text>
   </svg>
 </Figure>
 
 ## What it does
 
-Your account carries three separate name-shaped fields, and one setting decides which of them the app renders. There is a **handle**, the public address other people link to. There is a **pseudonym**, issued automatically at sign-up — three ordinary nouns drawn from a screened, politically neutral word list and checked for uniqueness, so a new account has a working pseudonym before it has anything else. And there is your **real name**, stored but not shown unless you say to show it. Anonymous is the default; publishing your real name takes a deliberate act.
+Your account carries three separate name-shaped fields, and one setting decides which of them the app renders. There is a **handle**, the public address other people link to. There is a **pseudonym**, issued automatically at sign-up — three ordinary nouns drawn from a screened, politically neutral word list and checked for uniqueness. And there is your **real name**, stored but not shown unless you say to show it. Anonymous is the default; publishing your real name takes a deliberate act.
 
 Every read of a profile is assembled on the server into one of three shapes: what any other citizen gets, what you get on your own profile, and what an admin on that install gets. Each is **built out of what the reader is allowed to see**, rather than a full record with the private fields deleted afterwards. That difference is the whole safety margin: a forgotten deletion is a leak nobody notices, while a forgotten addition is a missing field somebody reports. An email address is admin-only unconditionally — no setting, opt-in, or request publishes one.
 
@@ -95,33 +95,31 @@ A separate control governs whether you appear publicly at all, in four steps: **
 
 ## The goal it serves
 
-A citizen who publishes a sourced account of how an official voted is doing something a powerful person may want punished. Fear of an employer, an agency, or a mob is not paranoia, and a product that treats it as an edge case ends up used only by people with nothing to lose. Pseudonymity here is a safety feature, not a convenience toggle. A system that quietly penalized people for using it would push the citizens most at risk into either danger or irrelevance, which is why nothing on the [trust ladder](/docs/trust_scores/overview) asks for a legal name.
+A citizen who publishes a sourced account of how an official voted is doing something a powerful person may want punished. Fear of an employer, an agency, or a mob is not paranoia, and a product that treats it as an edge case ends up used only by people with nothing to lose. Pseudonymity here is a safety feature, not a convenience. Penalizing it would push the citizens most at risk into either danger or irrelevance, which is why nothing on the [trust ladder](/docs/trust_scores/overview) asks for a legal name.
 
-The rest of this site argues that [the record itself](/docs/open_data/overview) is the evidence. If that holds, the identity of whoever did the arithmetic is not load-bearing. Anyone can check the work; nobody needs to know who checked it first. A real-name requirement would add nothing to the proof and would subtract the contributors with the most to lose.
+The rest of this site argues that [the record itself](/docs/open_data/overview) is the evidence. If that holds, the identity of whoever did the arithmetic is not load-bearing. A real-name requirement would add nothing to the proof and would subtract the contributors with the most to lose.
 
-The second reason is about the exit. Someone frightened enough to choose between deleting years of work and staying exposed will usually delete. So going private costs nothing: not your standing, not your karma, not your place in a [community's](/docs/communities/overview) count. The exit is cheap on purpose, because a cheap exit is what makes it survivable to have been visible at all.
+The second reason is about the exit. Someone frightened enough to choose between deleting years of work and staying exposed will usually delete. So going private costs nothing: not your standing, not your karma, not your place in a [community's](/docs/communities/overview) count. The exit is cheap on purpose, because that is what makes it survivable to have been visible at all.
 
 ## What keeps it honest
 
-The product states what this cannot promise, in the app itself and not only here.
+What this cannot promise is stated in the app, not only here.
 
-* **An admin on your install can see your identity.** That is unavoidable if anyone is to moderate impersonation or doxxing. The check on it is that every such lookup is written to an audit trail and shown back to you in your own account history, so unmasking is never silent.
+* **An admin on your install can see your identity.** That is unavoidable if anyone is to moderate impersonation or doxxing. Every such lookup is written to an audit trail and shown back in your own account history, so unmasking is never silent.
 * **A determined observer watching the roster may still correlate a disappearance with a new anonymized entry.** Anonymized cards carry no join month, no record counts, and no activity signal, but full unlinkability against someone snapshotting the roster daily is not achievable, and the copy will not claim it.
 * **Going private is forward-looking.** Anything you already published keeps the attribution it was published with, and the toggle says so at the moment you use it.
 * **Parts of this are specified and not yet built.** The anonymized roster card, the citizen-number map behind it, and the `hidden` step are written down but not implemented; today a private citizen is simply absent from the roster rather than present as a number.
 
-Switching to a pseudonym or going private is free and needs no approval. Going anonymous is safety, and safety is not sold.
-
 ## Works with
 
 * **[The Trust Ladder](./trust_ladder.mdx)** — the rungs a citizen climbs by doing checkable work, none of which ever ask for a legal name.
-* **[Where You Stand](./trust_wizard.mdx)** — the walk that works out where you actually stand; what it learns about you lands in the account whose visibility this page governs.
+* **[Where You Stand](./trust_wizard.mdx)** — what that walk learns about you lands in the account whose visibility this page governs.
 * **[Groups And Values Blocks](./groups_and_values_blocks.mdx)** — a claim to belong to a group is checked against your answers and, only if you volunteer it, against your own public record.
 
 ## Where to go next
 
 * **[Trust Scores](/docs/trust_scores/overview)** — what a trust score is for, and the single question it answers about a citizen.
 * **[Communities](/docs/communities/overview)** — how individual positions pool into a community position without pooling identities.
-* **[The Leader History Book](/docs/karma/the_leader_history_book)** — the board of citizens doing the work, where a pseudonym stands exactly as tall as a legal name.
+* **[The Leader History Book](/docs/karma/the_leader_history_book)** — the standing record of citizens doing the work, where a pseudonym stands exactly as tall as a legal name.
 * **[Policy Packets](/docs/values/policy_packets)** — publishing your reasoning for other citizens to import, under whichever name you chose.
 * **[Run it on your computer](/docs/get_started/run_it_on_your_computer)** — the local mode, where there is no account, no roster and nothing to be listed in.
