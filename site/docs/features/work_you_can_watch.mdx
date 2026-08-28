@@ -12,7 +12,7 @@ description: "The machinery behind every published number is on screen: start a 
 Every number this movement publishes is produced by a program run over files already on disk. Nobody types a result in by hand. This page is about watching that happen: the work is listed while it is in flight, a run can be started and followed line by line, and it finishes whether or not you stay on the page.
 
 <Figure caption="A run starts either because somebody pressed Run or because the nightly clock fired; it goes onto one queue, writes a timestamped journal while it works, and ends in a dated publication that carries the inputs it was computed from. The browser only watches.">
-  <svg viewBox="0 0 720 310" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* sources */}
     <rect x="24" y="52" width="150" height="54" rx="6" fill="none" stroke="currentColor" strokeWidth="1.2" />
     <text x="99" y="78" fontSize="12" fill="currentColor" textAnchor="middle">You press Run</text>
@@ -43,7 +43,7 @@ Every number this movement publishes is produced by a program run over files alr
     <rect x="246" y="169" width="8" height="8" fill="currentColor" />
     <text x="262" y="177" fontSize="12" fill="currentColor">done · 0.5s</text>
 
-    <text x="238" y="210" fontSize="10.5" fill="currentColor" opacity="0.72">lanes cap what runs at once</text>
+    <text x="238" y="210" fontSize="10.5" fill="currentColor" opacity="0.72">lanes cap how many run</text>
     <text x="238" y="226" fontSize="10.5" fill="currentColor" opacity="0.72">a run can be cancelled</text>
 
     <line x1="432" y1="84" x2="473" y2="84" stroke="var(--wc-fig-accent)" strokeWidth="1.4" />
@@ -61,21 +61,22 @@ Every number this movement publishes is produced by a program run over files alr
     <rect x="480" y="154" width="216" height="88" rx="8" fill="var(--wc-fig-wash)" stroke="var(--wc-fig-accent)" strokeWidth="1.4" />
     <text x="588" y="182" fontSize="12" fill="currentColor" textAnchor="middle">A dated publication</text>
     <text x="588" y="202" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">inputs frozen with it</text>
-    <text x="588" y="218" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">so an old number still checks</text>
+    <text x="588" y="218" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">an old number still checks</text>
 
     {/* the browser is only a viewer */}
-    <path d="M 588,242 L 588,272 L 181,272" stroke="var(--wc-fig-muted)" strokeWidth="1.2" strokeDasharray="4 5" />
+    <path d="M 588,242 L 588,272 L 181,272" fill="none" stroke="var(--wc-fig-muted)" strokeWidth="1.2" strokeDasharray="4 5" />
     <path d="M 174,272 l 7,-3.5 l 0,7 z" fill="currentColor" />
     <rect x="24" y="250" width="150" height="44" rx="6" fill="none" stroke="var(--wc-fig-muted)" strokeWidth="1.2" />
     <text x="99" y="270" fontSize="12" fill="currentColor" textAnchor="middle">Your browser</text>
     <text x="99" y="286" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">a viewer only</text>
-    <text x="196" y="290" fontSize="10.5" fill="currentColor" opacity="0.72">Closing the tab does not stop the work.</text>
+    <text x="196" y="282" fontSize="10.5" fill="currentColor" opacity="0.72">Closing the tab does not</text>
+    <text x="196" y="297" fontSize="10.5" fill="currentColor" opacity="0.72">stop the work.</text>
   </svg>
 </Figure>
 
 ## What it does
 
-A **calc engine** is the pattern behind every published figure: files already on disk go in, the work runs in named stages, and out comes an artifact that is regenerable and never hand-authored. Eighteen are registered today and the count only goes up — the authority on how many is a machine-readable registry, not a sentence in a document. Each entry names the question it answers, how often it runs, and where its specification and its code live.
+A **calc engine** is the pattern behind every published figure: files already on disk go in, the work runs in named stages, and out comes an artifact that is regenerable and never hand-authored. Eighteen are registered today, and the authority on how many is a machine-readable registry, not a sentence in a document. Each entry names the question it answers, how often it runs, and where its specification and its code live.
 
 They all run on **one queue**, so one place knows what this install is doing. One console lists every engine at once: its question, what it needs before it can do useful work, whether it is running, how long for, and how the last run ended. "Never run" is one of the outcomes, because an engine nobody runs is an engine nobody notices is broken. The failed count is a button that opens the failing run's own log.
 
@@ -87,7 +88,7 @@ A job's state is a small vocabulary, deliberately un-collapsed:
 * **interrupted** is not **error**. If the process hosting a run goes away, the run ends as interrupted and keeps the stage it reached. Reporting a restart as a fault teaches you to ignore the one status that means look at this.
 * **cancelled** means a human asked it to stop. A running job is asked, never killed — killing work mid-write is how a half-written file is produced.
 
-The work runs in the backend, not in your browser: closing the tab or shutting the laptop changes nothing, and the state is still there when you come back.
+The work runs in the backend, not in your browser: close the tab or shut the laptop and the run keeps going.
 
 Runs also happen without anybody pressing anything. Most engines fire nightly on a clock inside the app, a few weekly or quarterly, and at start-up the app re-fires any engine whose last run has gone stale or whose source data has moved. A **failed** run is named rather than quietly fired again. Each pass publishes a frozen, dated result carrying the curated list, the tables in force and the exact commit of public data it read, so a figure published months ago can still be re-derived.
 
@@ -104,7 +105,7 @@ It settles a practical question too: numbers go stale and source records move, a
 * **Progress is derived, never invented.** A percentage exists only when the work reports stage *n* of *N*. Otherwise there is an indeterminate bar and no number: a made-up percentage is the confident-and-wrong this product argues against.
 * **Every engine has to state its coverage.** It computes who it was eligible to reach and states a cause for every blank. If a run narrows and stops reaching somebody who had an award, the last dated publication stands, marked superseded, rather than the award vanishing in silence. Where there is nothing to show, "no award has been given yet" is the answer — a statement about our knowledge, not a verdict.
 * **Run journals are install bookkeeping, not evidence.** They stay on the local machine and never enter the public data record. What is published about a person is the result and its derivation, not the machine's diary of an afternoon.
-* **The console is not a public page.** It is an administrator's surface on one install, and a citizen sees their own runs and nobody else's — a queue showing one citizen another's activity would be a leak dressed up as a feature. What the public is handed for checking is the record and its arithmetic. Run the software yourself and the control room is yours.
+* **The console is not a public page.** It is an administrator's surface on one install, and a citizen sees their own runs and nobody else's — a queue showing one citizen another's activity would be a leak dressed up as a feature. Run the software yourself and the control room is yours.
 
 ## Works with
 

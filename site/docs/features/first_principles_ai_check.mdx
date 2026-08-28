@@ -1,0 +1,126 @@
+---
+id: first_principles_ai_check
+title: The First-Principles AI Check
+sidebar_label: First-Principles AI Check
+sidebar_position: 26
+description: "Ask the app to re-check a decision's reasoning using only the material you gave it, and read back a chain of steps that each name their source."
+---
+
+
+# The First-Principles AI Check
+
+You can ask the app to check the reasoning behind a question you have written down. Before it asks a model anything, it builds the background material the model is allowed to read out of plain text files you can open, then requires the answer to be built out of that material and nothing else. What comes back is not a verdict handed down. It is an ordered chain of steps, each naming the file it drew on, with every hole in the argument written out rather than smoothed over.
+
+<Figure caption="Only the layers in scope are assembled, general to specific, into three separate context files; those become one prompt that forbids outside knowledge, and the answer comes back in a fixed shape with its reasoning and its gaps attached.">
+  <svg viewBox="0 0 720 338" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* what the model may read */}
+    <text x="24" y="18" fontSize="10.5" fill="currentColor" opacity="0.72">LAYERS IN SCOPE</text>
+
+    <rect x="24" y="28" width="176" height="132" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="112" y="48" fontSize="12" fill="currentColor" textAnchor="middle">Earth</text>
+    <text x="112" y="66" fontSize="12" fill="currentColor" textAnchor="middle">Country</text>
+    <text x="112" y="84" fontSize="12" fill="currentColor" textAnchor="middle">State</text>
+    <text x="112" y="102" fontSize="12" fill="currentColor" textAnchor="middle">Community</text>
+    <text x="112" y="120" fontSize="12" fill="currentColor" textAnchor="middle">Area</text>
+    <text x="112" y="138" fontSize="12" fill="currentColor" textAnchor="middle">This decision</text>
+    <text x="24" y="178" fontSize="10.5" fill="currentColor" opacity="0.72">Starts empty. Earth first.</text>
+
+    <line x1="200" y1="94" x2="232" y2="94" stroke="currentColor" />
+    <path d="M 240,94 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the three dimensions */}
+    <rect x="244" y="28" width="186" height="42" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="337" y="48" fontSize="12" fill="currentColor" textAnchor="middle">Facts</text>
+    <text x="337" y="63" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">what we know</text>
+
+    <rect x="244" y="76" width="186" height="42" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="337" y="96" fontSize="12" fill="currentColor" textAnchor="middle">Metaphysics</text>
+    <text x="337" y="111" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">what is real</text>
+
+    <rect x="244" y="124" width="186" height="42" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="337" y="144" fontSize="12" fill="currentColor" textAnchor="middle">Laws</text>
+    <text x="337" y="159" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">what rules apply</text>
+
+    <line x1="430" y1="49" x2="452" y2="49" stroke="currentColor" />
+    <line x1="430" y1="97" x2="452" y2="97" stroke="currentColor" />
+    <line x1="430" y1="145" x2="452" y2="145" stroke="currentColor" />
+    <line x1="452" y1="49" x2="452" y2="145" stroke="currentColor" />
+    <line x1="452" y1="97" x2="484" y2="97" stroke="currentColor" />
+    <path d="M 492,97 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="496" y="64" width="200" height="66" fill="none" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="596" y="88" fontSize="15" fill="currentColor" textAnchor="middle">One prompt</text>
+    <text x="596" y="106" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">only this text, nothing</text>
+    <text x="596" y="121" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">the model already knew</text>
+
+    <line x1="24" y1="192" x2="696" y2="192" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+
+    {/* what comes back */}
+    <text x="24" y="214" fontSize="10.5" fill="currentColor" opacity="0.72">WHAT COMES BACK, IN A FIXED SHAPE</text>
+
+    <rect x="24" y="224" width="210" height="76" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="129" y="250" fontSize="12" fill="currentColor" textAnchor="middle">Summary and answer</text>
+    <text x="129" y="270" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">or: unsupported on</text>
+    <text x="129" y="285" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">the current record</text>
+
+    <rect x="255" y="224" width="210" height="76" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="360" y="250" fontSize="12" fill="currentColor" textAnchor="middle">Chain of reasoning</text>
+    <text x="360" y="270" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">each step names the</text>
+    <text x="360" y="285" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">layer it drew on</text>
+
+    <rect x="486" y="224" width="210" height="76" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="591" y="250" fontSize="12" fill="currentColor" textAnchor="middle">Every gap, listed</text>
+    <text x="591" y="270" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">missing links named</text>
+    <text x="591" y="285" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">with the reason why</text>
+
+    <text x="24" y="320" fontSize="10.5" fill="currentColor" opacity="0.72">Every file above is written to disk where you can open it.</text>
+  </svg>
+</Figure>
+
+## What it does
+
+A **decision** is one question you have written down, together with where you stand on it and the evidence you are working from. Running the check does not forward that question to a model. It first assembles the whole body of background material the model will be permitted to use, out of three parallel libraries kept apart deliberately.
+
+* **Facts** — what we know: the record, the evidence, the reported specifics.
+* **Metaphysics** — what is real: the ground rules the reasoning may assume, such as whether a question has one determinate answer at all.
+* **Laws** — what rules apply.
+
+Keeping them apart is the point: a claim about what reality permits must never quietly become a claim about what the record shows.
+
+Each library is stored in up to six **layers**, general to specific: Earth, country, state, community, topic area, then the single decision. A run starts from an empty file and concatenates only the layers in scope, each under a header naming the file it came from. All three share **one jurisdiction, resolved once**, so a decision about one state pulls that state's layer of every library and never a mix of two places.
+
+That assembled text, plus the decision's own question, position and evidence chain, becomes the prompt. It instructs the model to reason strictly from the supplied material and from first principles — not from its training knowledge, and never from the fact that some authority says so. Every step has to be a real inference from a stated premise.
+
+What comes back has a fixed shape rather than free prose: a summary, the answer, and an ordered chain of reasoning in which each step cites the layer it drew on. Gaps are recorded instead of papered over, and *unsupported on the current record* is a permitted answer. So is deciding anyway, at a confidence threshold you set, with the missing links named beside the conclusion.
+
+Every artifact is written where you can open it — each context file, the exact prompt, the result — and re-running unchanged inputs reproduces them byte for byte. With no API credentials configured, the engine falls back to a deterministic local reasoner that weighs the evidence you have against the explained gaps, so it still works with no vendor account and no network.
+
+## The goal it serves
+
+An AI that answered out of its own training would be a new unaccountable authority, and replacing unaccountable authority is the entire reason this movement exists. Being handed the right answer by a system you cannot inspect is the experience citizens already get from Washington, delivered faster. That is not an improvement.
+
+Forcing the reasoning to come only from stated, inspectable material changes what the answer is for. You are not asked to trust the model. You get a chain you can walk against files you can read, and you can disagree with any single step by editing the layer it drew on and running it again — the difference between an answer you must accept and an answer you can argue with. The same instinct governs the rest of [what the AI is allowed to do here](/docs/ai/overview), and the boundary it never crosses is set out in [what the AI never decides](/docs/ai/what_the_ai_never_decides).
+
+It also makes an honest answer possible when the proof is incomplete, which is the ordinary condition of anything worth deciding. Records get withheld. Files stay sealed. A system that must produce certainty will manufacture it; this one writes the hole down and says what still stands without it. That is [a conclusion you can defend with links missing](/docs/evidence/overview) wired into the machinery, at the step in [the core loop](/docs/how_it_works/the_core_loop) where your own reasoning gets tested rather than confirmed.
+
+## What keeps it honest
+
+* **The model is cut off from its own knowledge.** If the layers do not support a conclusion, the required answer is that the conclusion is unsupported — never a guess dressed up as a finding.
+* **Gaps are recorded, not resolved.** Each missing link is listed with the reason it is missing. An explained gap can leave a decision reasonable at your threshold; it never becomes a fabricated certainty.
+* **Nothing is hidden behind the answer.** The context files and the exact prompt are ordinary text on disk, so a run that looks wrong can be read back. The panel that surfaces them inside the decision page is still being built; the files are already written on every run.
+* **A missing input stays visible.** When a layer is linked to a file on your machine that has since been moved or renamed, the context carries a marked block saying so rather than a silent blank.
+* **It decides nothing on your behalf.** The result attaches to your own decision record as a check on your reasoning. It touches no politician's record and no award anywhere on this site.
+
+## Works with
+
+* **[Decisions, Areas And Communities](./decisions_and_communities.mdx)** — supplies the community, area and decision layers, and holds the record this check writes back into.
+* **[Value Systems And Policy Packets](./value_systems_and_policy_packets.mdx)** — your written-down values are rules applied at scale; this check is the separate step asking whether one chain of reasoning holds.
+* **[Citizen Votes](./citizen_votes.mdx)** — a position you have tested against its own reasoning is what you carry into a vote, alone or pooled with a community.
+
+## Where to go next
+
+* **[AI](/docs/ai/overview)** — everything the AI is allowed to touch here, and the hard rules the build itself enforces.
+* **[What the AI never decides](/docs/ai/what_the_ai_never_decides)** — the list of judgements that stay with citizens, permanently.
+* **[Naming the gaps](/docs/evidence/naming_the_gaps)** — how a missing link gets written down instead of guessed at.
+* **[Decisions](/docs/decisions/overview)** — how you record where you actually stand, in a form this check can run against.
+* **[Get Started](/docs/get_started/overview)** — run it hosted, or on your own computer where the context files sit in a folder you own.

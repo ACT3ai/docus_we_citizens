@@ -27,9 +27,9 @@ A fix bill is finished legislative language — a preamble and numbered sections
     <text x="30" y="186" fontSize="10.5" fill="currentColor" opacity="0.72">assembled, checksummed</text>
 
     {/* inputs into the run */}
-    <path d="M196,51 L238,105" stroke="currentColor" strokeWidth="1.25" />
-    <path d="M196,111 L238,111" stroke="currentColor" strokeWidth="1.25" />
-    <path d="M196,171 L238,117" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M196,51 L238,105" stroke="currentColor" strokeWidth="1.25" fill="none" />
+    <path d="M196,111 L238,111" stroke="currentColor" strokeWidth="1.25" fill="none" />
+    <path d="M196,171 L238,117" stroke="currentColor" strokeWidth="1.25" fill="none" />
     <path d="M246,111 l -7,-3.5 l 0,7 z" fill="currentColor" />
 
     {/* the drafting run */}
@@ -39,7 +39,7 @@ A fix bill is finished legislative language — a preamble and numbered sections
     <text x="331" y="128" fontSize="10.5" fill="currentColor" textAnchor="middle">no outside facts</text>
     <text x="331" y="148" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">provenance recorded</text>
 
-    <path d="M416,111 L448,111" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M416,111 L448,111" stroke="var(--wc-fig-accent)" strokeWidth="1.5" fill="none" />
     <path d="M456,111 l -7,-3.5 l 0,7 z" fill="currentColor" />
 
     {/* the bill */}
@@ -49,9 +49,9 @@ A fix bill is finished legislative language — a preamble and numbered sections
     <text x="472" y="100" fontSize="12" fill="currentColor">Sec. 3 — closes rc1</text>
     <text x="472" y="122" fontSize="12" fill="currentColor">Sec. 5 — closes rc2</text>
     <text x="472" y="144" fontSize="12" fill="currentColor">Sec. 9 — closes rc4</text>
-    <text x="472" y="168" fontSize="10.5" fill="currentColor" opacity="0.72">Nobody has filed this bill.</text>
+    <text x="472" y="168" fontSize="10.5" fill="currentColor" opacity="0.72">Nobody has filed this.</text>
 
-    <path d="M580,194 L580,206" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M580,194 L580,206" stroke="currentColor" strokeWidth="1.25" fill="none" />
     <path d="M580,214 l -3.5,-7 l 7,0 z" fill="currentColor" />
 
     {/* the coverage matrix */}
@@ -61,19 +61,19 @@ A fix bill is finished legislative language — a preamble and numbered sections
     <text x="32" y="288" fontSize="12" fill="currentColor">rc2 — closed by Sec. 5</text>
     <text x="380" y="266" fontSize="12" fill="currentColor">rc4 — closed by Sec. 9</text>
     <text x="380" y="288" fontSize="12" fill="var(--wc-fig-accent)">rc3 — NOT ADDRESSED</text>
-    <path d="M380,294 L536,294" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M380,294 L536,294" stroke="var(--wc-fig-accent)" strokeWidth="1.5" fill="none" />
   </svg>
 </Figure>
 
 ## What it does
 
-A **fix bill** is a keyed record with a preamble and numbered sections. Each section carries four things: a one-sentence plain-language summary, the operative bullets — the deadline, the penalty, the remedy — the statutory text behind a disclosure you open to check the summary against the words, and the **root-cause ids** on the joined problem that this section closes. Real bills run to thirty and forty sections, and forty paragraphs of "shall" in a row publishes a bill without communicating it, so the summary leads and the legal text stays one click away, never summarized out of existence.
+A **fix bill** is a keyed record with a preamble and numbered sections. Each section carries four things: a one-sentence plain-language summary, the operative bullets — the deadline, the penalty, the remedy — the statutory text behind a disclosure you open to check the summary against the words, and the **root-cause ids** on the joined problem that this section closes. Real bills run to thirty and forty sections, and that much statutory language in a row publishes a bill without communicating it, so the summary leads and the legal text stays one click away.
 
 Around the text sit the blocks that make a long bill readable and checkable:
 
 * The **legal notice**, rendered verbatim above every claim the bill makes and never in a footer. It states what the bill does and does not assert about any person or agency.
 * The **package**, when a fix is several bills that only work together. A reader who lands on one of four and cannot see the other three has been shown a quarter of the argument.
-* **Precedents**, marked *model* or *cautionary*, with what happened to each and what this bill does differently. A statute that passed and still produced almost nothing tells a reader more than a promise.
+* **Precedents**, marked *model* or *cautionary*, with what happened to each and what this bill does differently.
 * **Enforcement**, itemized, each mechanism naming the section that creates it — a teeth card that cannot point at its own section is marketing copy.
 * A **timeline** written against triggers rather than dates, because a bill nobody has filed has no dates.
 

@@ -1,0 +1,174 @@
+---
+id: activism_catalog
+title: Actions You Can Actually Take
+sidebar_label: Actions You Can Take
+sidebar_position: 31
+description: "The movement's menu of things to go and do, each with a walkthrough, a place to log what you did, and a legality gate that stores nothing."
+---
+
+
+# Actions You Can Actually Take
+
+This is the part of the app that answers "and then what". You have read the records, you agree, and
+it is Saturday morning: here is a wall of things worth doing, each one with instructions, and a place
+to write down what you did with a link somebody else can check. It exists because a movement that can
+explain the problem in nine sections and cannot tell you what to do this week is a reading group.
+
+<Figure caption="Each action is one file in the public data repository, which draws a card on the menu and a walkthrough page behind it; the walkthrough ends in a hand-off to a log form asking who did it, when, what changed and which links prove it, and the form's last question is whether the action was legal and ethical — answering yes files the record with an attestation attached, and answering no or unsure sends nothing at all.">
+  <svg viewBox="0 0 720 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    {/* top row — file becomes card becomes walkthrough */}
+    <rect x="20" y="20" width="196" height="46" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="118" y="40" textAnchor="middle" fontSize="12" fill="currentColor">One file per action</text>
+    <text x="118" y="55" textAnchor="middle" fontSize="10.5" fill="currentColor" opacity="0.72">in the public data repo</text>
+
+    <line x1="216" y1="43" x2="244" y2="43" stroke="currentColor" />
+    <path d="M 246,43 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="252" y="20" width="176" height="46" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="340" y="40" textAnchor="middle" fontSize="12" fill="currentColor">A card on the menu</text>
+    <text x="340" y="55" textAnchor="middle" fontSize="10.5" fill="currentColor" opacity="0.72">one of four tracks</text>
+
+    <line x1="428" y1="43" x2="456" y2="43" stroke="currentColor" />
+    <path d="M 458,43 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="464" y="20" width="236" height="46" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="582" y="40" textAnchor="middle" fontSize="12" fill="currentColor">Walk the steps</text>
+    <text x="582" y="55" textAnchor="middle" fontSize="10.5" fill="currentColor" opacity="0.72">cautions above the fold</text>
+
+    {/* hand-off down into the log form */}
+    <line x1="582" y1="66" x2="582" y2="78" stroke="currentColor" />
+    <line x1="582" y1="78" x2="360" y2="78" stroke="currentColor" />
+    <line x1="360" y1="78" x2="360" y2="90" stroke="currentColor" />
+    <path d="M 360,92 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    <rect x="140" y="94" width="440" height="96" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="156" y="118" fontSize="15" fill="currentColor">What you log</text>
+    <text x="564" y="118" textAnchor="end" fontSize="10.5" fill="currentColor" opacity="0.72">links stored verbatim</text>
+    <text x="162" y="141" fontSize="10.5" fill="currentColor">who did it, and the date it happened</text>
+    <text x="162" y="158" fontSize="10.5" fill="currentColor">what changed, not what you did</text>
+    <text x="162" y="175" fontSize="10.5" fill="currentColor">links a stranger can check in a year</text>
+
+    <line x1="360" y1="190" x2="360" y2="204" stroke="currentColor" />
+    <path d="M 360,206 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    <rect x="200" y="208" width="320" height="36" fill="var(--wc-fig-wash-2)" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <text x="360" y="231" textAnchor="middle" fontSize="12" fill="currentColor">Was it legal and ethical?</text>
+
+    {/* the fork */}
+    <line x1="360" y1="244" x2="360" y2="252" stroke="currentColor" />
+    <line x1="360" y1="252" x2="190" y2="252" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <line x1="190" y1="252" x2="190" y2="266" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M 190,268 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    <line x1="360" y1="252" x2="546" y2="252" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+    <line x1="546" y1="252" x2="546" y2="266" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+
+    <rect x="60" y="270" width="260" height="46" fill="var(--wc-fig-wash)" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <text x="190" y="291" textAnchor="middle" fontSize="12" fill="currentColor">Yes: attested, then filed</text>
+    <text x="190" y="306" textAnchor="middle" fontSize="10.5" fill="currentColor" opacity="0.72">never pre-ticked for you</text>
+
+    <rect x="420" y="270" width="252" height="46" fill="none" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+    <text x="546" y="291" textAnchor="middle" fontSize="12" fill="currentColor" opacity="0.72">No, or not sure</text>
+    <text x="546" y="306" textAnchor="middle" fontSize="10.5" fill="currentColor" opacity="0.72">nothing is transmitted</text>
+
+  </svg>
+</Figure>
+
+## What it does
+
+The menu is **data, not software**. One file in the public data repository describes one action: a
+label, a summary, which track it belongs to, a time estimate, a difficulty, what it is, why it
+matters, an ordered how-to list, what evidence to bring back, the cautions that bite hardest for that
+action, and what it is worth in karma. Adding a file adds a card, with no software release.
+
+Actions run across four **tracks** — challengers, communications, organizing and lawmaking — and the
+menu is a wall of cards rather than a table on purpose. A table asks you to compare five things. This
+page's job is to make one of them look worth doing tonight.
+
+Each card leads to a walkthrough written in the imperative, for somebody who has already decided. The
+**cautions come first**, above the fold, because the rules that matter are the ones you need before
+you post, not after. The steps render as a checklist you tick as you work in another tab; it lives in
+your own browser and is never sent anywhere. At the bottom sits a button that follows you down the
+page and hands off to the log form.
+
+**Logging** records one thing one person did in the world, at a date: who did it, what kind of action
+it was, when it happened, a one-line title, a description of what *changed* rather than what you did,
+and one or more links. Links are stored exactly as you typed them, and no crawler is sent out to read
+them. A link that does not answer earns a warning and an offer to archive it, never a block — the
+link that is down today is the one that most needs to be on the record. The preferred path is a
+**peer report**, filing on somebody else's behalf: credit here is something other people give you,
+and nobody verifies their own work.
+
+Above the submit row sits the **legality gate**, and it is two separate things. First a required
+question with nothing preselected, because a pre-checked "yes" is an answer the app gave on your
+behalf. Then, beside the button, an attestation in your own voice that the action was legal and
+ethical — never sticky, never restored from a draft, never settable by a link. Every action gets its
+own, made fresh.
+
+## The goal it serves
+
+Positions are cheap and this app was already good at collecting them. What the movement is short of
+is action — doorknocks, filings, recorded testimony, a video two hundred thousand people watched, a
+challenger who agreed to run. The failure this closes is the citizen who reads three problem laws,
+agrees with all of them, closes the tab and never comes back. So the answer to "and then what" sits
+one row from the problems it follows, and it works signed out, without a community and without an
+account.
+
+The second reason matters more. This movement's whole argument is that the people in power are the
+ones breaking the rules, and that argument only holds if we do not. So the boundary is not a
+moderation policy bolted on afterwards — it is built into the form. The app records that a citizen
+acted; it never assigns, schedules or dispatches a named person to a named place. And it refuses to
+keep the one file that would be most useful to its opponents: a movement that stores its members'
+self-incrimination has built the evidence locker for the people it is opposing. That is why answering
+"it was not legal, or I am not sure" sends nothing at all.
+
+Why any of this is necessary is argued elsewhere on the site —
+[The Movement](/docs/the_movement/overview) for what joining actually means,
+[Great American Ethics](/docs/american_ethics/overview) for the standard being restored, and
+[Take Action](/docs/take_action/overview) for the catalog as a citizen meets it.
+
+## What keeps it honest
+
+* **The prohibited list is specific and published**, not a vague appeal to good conduct: violence or
+  threats, property damage, intimidation or harassment of an individual, doxxing, election
+  interference of any kind with no "they did it first" exception, impersonation, fabricated media,
+  unlawful access to records, and anything unlawful where you are. Public criticism of a public
+  official's public conduct is not harassment. Showing up at their house is.
+* **What is accepted is stated just as plainly**, so the list above is not read as timidity: speaking,
+  writing, filming, publishing, canvassing, petitioning, calling and visiting offices, testifying,
+  records requests, lawful poll watching, recruiting candidates, boycotting and lawful assembly.
+  Sharp, loud, adversarial and inconvenient to powerful people are not disqualifiers. Unlawful is.
+* **Answering the gate the wrong way transmits nothing.** No request, no draft, no telemetry, no log
+  line, and the selection is never stored anywhere at all.
+* **The attestation records the policy you actually saw**, by version and by hash, so what a citizen
+  agreed to stays what they agreed to rather than whatever the policy says today. No IP address, no
+  browser fingerprint and no location is stored with it.
+* **A claim about a named living person carrying no link goes to review**, whatever the action's
+  normal path. State what somebody did, with a source. Never what they are.
+* **What is running, and what is not.** The menu, the cards, the walkthrough pages and the stored
+  record are built. The standing campaigns band, the public action feed and the dedicated log page
+  with this gate wired into it are specified and not yet shipped; an action is logged today through
+  the karma form.
+
+## Works with
+
+* **[Decisions, Areas And Communities](./decisions_and_communities.mdx)** — an action is attributed to
+  a community and an area, and the stewards who verify the higher tiers sit there.
+* **[Value Systems And Policy Packets](./value_systems_and_policy_packets.mdx)** — your written-down
+  values decide which of these actions is worth your Saturday; this is the record that you went.
+* **[The First-Principles AI Check](./first_principles_ai_check.mdx)** — the AI summarizes and flags
+  what you filed, and is never permitted to decide whether an action counts.
+
+## Where to go next
+
+* **[Take Action](/docs/take_action/overview)** — the same catalog from the citizen's side, with what
+  each item is worth and how it gets checked.
+* **[The action catalog](/docs/take_action/the_action_catalog)** — the current list of action types,
+  track by track.
+* **[Log what you did](/docs/take_action/log_what_you_did)** — the record itself, and what makes a
+  link good enough for somebody else to verify.
+* **[Karma](/docs/karma/overview)** — what a verified action is worth, and why the citizen side keeps
+  the word score on purpose.
+* **[Get Started](/docs/get_started/overview)** — run it hosted or on your own computer, and open the
+  menu for yourself.

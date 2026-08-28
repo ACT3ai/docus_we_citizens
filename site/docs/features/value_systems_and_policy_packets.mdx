@@ -9,10 +9,10 @@ description: "Write your own this-versus-that rules as a structured value system
 
 # Value Systems And Policy Packets
 
-Everyone carries rules about what matters more than what. Liberty over safety, until the harm is real and proven. Equal treatment over efficiency. Most people never write those rules down, so nobody can apply them but the person holding them, one situation at a time. A value system is those rules written down in a form software can act on. A policy packet is that same file handed to another citizen who wants to reason the way you do.
+Everyone carries rules about what matters more than what: liberty over safety until the harm is proven, equal treatment over efficiency. Most people never write those rules down, so nobody can apply them but the person holding them, one situation at a time. A value system is those rules written down in a form software can act on, and a policy packet is that same file handed to another citizen who wants to reason the way you do.
 
-<Figure caption="Your rules, principles and priorities sit in one file you own; the Apply surface reasons a situation against them and shows which rules fired, while publishing sends a self-contained copy out under your verified name for another citizen to import.">
-  <svg viewBox="0 0 720 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+<Figure caption="Your rules, principles and priorities sit in one file you own, the Apply surface reasons a situation against them and shows which rules fired, and publishing sends a self-contained copy out under your verified name for another citizen to import.">
+  <svg viewBox="0 0 720 336" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* the citizen's own file */}
     <text x="129" y="26" fontSize="15" fill="currentColor" textAnchor="middle">Your value system</text>
     <rect x="24" y="36" width="210" height="170" fill="var(--wc-fig-wash)" stroke="currentColor" />
@@ -29,19 +29,19 @@ Everyone carries rules about what matters more than what. Liberty over safety, u
     <text x="129" y="178" fontSize="12" fill="currentColor" textAnchor="middle">Ranked priorities</text>
     <text x="129" y="193" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">breaks any tie</text>
 
-    {/* into apply */}
-    <line x1="234" y1="121" x2="292" y2="121" stroke="var(--wc-fig-accent)" strokeWidth="2" />
-    <path d="M 300,121 l -8,-3.5 l 0,7 z" fill="currentColor" />
+    {/* apply path */}
+    <line x1="234" y1="121" x2="293" y2="121" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <path d="M 300,121 l -7,-3.5 l 0,7 z" fill="currentColor" />
 
     <text x="385" y="48" fontSize="12" fill="currentColor" textAnchor="middle">A situation you type in</text>
-    <line x1="385" y1="58" x2="385" y2="82" stroke="currentColor" />
-    <path d="M 385,90 l -3.5,-8 l 7,0 z" fill="currentColor" />
+    <line x1="385" y1="58" x2="385" y2="83" stroke="currentColor" />
+    <path d="M 385,90 l -3.5,-7 l 7,0 z" fill="currentColor" />
 
     <rect x="300" y="90" width="170" height="62" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
     <text x="385" y="126" fontSize="12" fill="currentColor" textAnchor="middle">Apply to a situation</text>
 
-    <line x1="470" y1="121" x2="522" y2="121" stroke="var(--wc-fig-accent)" strokeWidth="2" />
-    <path d="M 530,121 l -8,-3.5 l 0,7 z" fill="currentColor" />
+    <line x1="470" y1="121" x2="523" y2="121" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <path d="M 530,121 l -7,-3.5 l 0,7 z" fill="currentColor" />
 
     <rect x="530" y="76" width="166" height="90" fill="none" stroke="currentColor" />
     <text x="613" y="100" fontSize="12" fill="currentColor" textAnchor="middle">Recommendation</text>
@@ -49,29 +49,30 @@ Everyone carries rules about what matters more than what. Liberty over safety, u
     <text x="613" y="136" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Exceptions that applied</text>
     <text x="613" y="152" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">The priority that decided</text>
 
-    {/* publishing path */}
-    <line x1="129" y1="206" x2="129" y2="228" stroke="currentColor" />
-    <path d="M 129,236 l -3.5,-8 l 7,0 z" fill="currentColor" />
+    {/* the publish line — everything above it stays local */}
+    <line x1="24" y1="222" x2="696" y2="222" stroke="var(--wc-fig-muted)" strokeDasharray="5 5" />
+    <text x="696" y="216" fontSize="10.5" fill="currentColor" textAnchor="end" opacity="0.72">Local until you publish</text>
 
-    <rect x="24" y="236" width="210" height="54" fill="none" stroke="var(--wc-fig-accent)" strokeWidth="2" />
-    <text x="129" y="258" fontSize="12" fill="currentColor" textAnchor="middle">Publish as a policy packet</text>
-    <text x="129" y="274" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">verified identity required</text>
+    <line x1="129" y1="206" x2="129" y2="241" stroke="currentColor" />
+    <path d="M 129,248 l -3.5,-7 l 7,0 z" fill="currentColor" />
 
-    <line x1="234" y1="263" x2="292" y2="263" stroke="currentColor" />
-    <path d="M 300,263 l -8,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="24" y="248" width="210" height="54" fill="none" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="129" y="270" fontSize="12" fill="currentColor" textAnchor="middle">Publish as a policy packet</text>
+    <text x="129" y="286" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">verified identity required</text>
 
-    <rect x="300" y="236" width="170" height="54" fill="var(--wc-fig-wash)" stroke="currentColor" />
-    <text x="385" y="258" fontSize="12" fill="currentColor" textAnchor="middle">The shared record</text>
-    <text x="385" y="274" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">stamped: who, and when</text>
+    <line x1="234" y1="275" x2="293" y2="275" stroke="currentColor" />
+    <path d="M 300,275 l -7,-3.5 l 0,7 z" fill="currentColor" />
 
-    <line x1="470" y1="263" x2="522" y2="263" stroke="currentColor" />
-    <path d="M 530,263 l -8,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="300" y="248" width="170" height="54" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="385" y="270" fontSize="12" fill="currentColor" textAnchor="middle">The shared record</text>
+    <text x="385" y="286" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">stamped: who, and when</text>
 
-    <rect x="530" y="236" width="166" height="54" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
-    <text x="613" y="258" fontSize="12" fill="currentColor" textAnchor="middle">Another citizen imports</text>
-    <text x="613" y="274" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">read-only, or cloned</text>
+    <line x1="470" y1="275" x2="523" y2="275" stroke="currentColor" />
+    <path d="M 530,275 l -7,-3.5 l 0,7 z" fill="currentColor" />
 
-    <text x="360" y="314" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Everything above the publish line stays on your own machine.</text>
+    <rect x="530" y="248" width="166" height="54" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="613" y="270" fontSize="12" fill="currentColor" textAnchor="middle">Another citizen imports</text>
+    <text x="613" y="286" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">read-only, or cloned</text>
   </svg>
 </Figure>
 
@@ -80,45 +81,45 @@ Everyone carries rules about what matters more than what. Liberty over safety, u
 A **value system** is a named, versioned record with three blocks in it, and the three map onto how a person actually reasons.
 
 * **Ordered rules** are the this-versus-that logic. Each one reads *when* a named conflict arises, *prefer* this side, *unless* a named exception holds. Each carries a weight from 0 to 1 for how strongly you hold it, and a rationale in your own words. They are read top down, and the first rule that matches without its exception firing is the one that decides.
-* **Standing principles** are unconditional. They are not comparisons, they are statements a recommendation is not allowed to violate.
-* **Ranked priorities** are a plain list, most important first. They break a conflict no explicit rule covers.
+* **Standing principles** are unconditional. They are not comparisons but statements a recommendation is not allowed to violate.
+* **Ranked priorities** are a plain list, most important first. They settle a conflict no explicit rule covers.
 
-Everything except the name defaults, so a value system holding one rule is valid and usable from the moment you save it. You can keep several — one for civic questions, one for economics — and choose which one judges what.
+Everything except the name has a default, so a value system holding a single rule is valid from the moment you save it. You can keep several, one for civic questions and one for economics, and choose which one judges what.
 
-The **Apply** surface is what the structure is for. You type in a situation and get back a recommendation reasoned from your own rules, with the firing chain visible: which rules matched, which exceptions applied, which priority broke the tie when nothing else did. The answer never arrives on its own. It arrives with the derivation that produced it, so you can say the machine read your rules wrong, or that the rule itself was wrong.
+The **Apply** surface is what the structure is for. You type in a situation and get back a recommendation reasoned from your own rules, with the firing chain shown: which rules matched, which exceptions applied, which priority broke the tie. The answer never arrives on its own, so you can say the software read your rules wrong, or that the rule itself was wrong.
 
-None of that is gated. Authoring, editing, importing and applying are a citizen's own reasoning sitting in a file on their own disk. In Individual Mode there is no account and no server involved, and this is one of the four pillars a person can complete end to end without ever signing in.
+None of that is gated. In Individual Mode there is no account and no server. Authoring, editing, importing and applying all happen in a flat file on your own disk, and this is one of the four pillars a citizen can complete end to end without ever signing in.
 
-Publishing is the one act that crosses out of your own tree. A finished value system becomes a **policy packet** — a self-contained file another citizen's copy of the software can read — stamped with who published it and when. That stamp is why publishing, and only publishing, requires a verified identity; the local default user is refused. On the other side, the packet caches under your name in the importer's tree, so they can weight it by how far they trust you. An imported packet is read-only reference: it can be read, applied, or cloned into an editable copy of their own, and re-importing refreshes only that one cached file.
+Publishing is the one act that crosses out of your own tree. A finished value system becomes a **policy packet**: a self-contained file another citizen's copy of the software can read, stamped with who published it and when. That stamp is why publishing, and only publishing, requires a verified identity, and why the local default user is refused there. The packet caches under the author's name inside the importer's own files, so it can be weighted by how far that person trusts the author. An imported packet is read-only reference: viewable, applicable, or cloneable into an editable copy of your own, and re-importing refreshes only that one cached file.
 
 ## The goal it serves
 
-This is the movement's answer to being told what to think. The ordinary arrangement is that somebody in Washington, or a media outlet, or an interest group with a budget, decides what a reasonable position is and citizens are handed the conclusion. This inverts it. You state the rules; the software works out what follows from them. Nothing here supplies a position you did not put in.
+This is the movement's answer to being told what to think. The normal arrangement is that somebody in Washington, a media outlet, or an interest group with a budget decides what a reasonable position is, and citizens are handed the conclusion. This inverts it. You state the rules, and the software works out what follows. Nothing here supplies a position you did not put in.
 
-It also answers a scale problem that is doing real damage. There is far more legislation, spending and procedure than any working person can read, and that gap is what makes capture cheap — most of it goes by unexamined. Rules written down once can be applied across more material than you could review by hand, the same way every time, which is more than most institutions manage. That is the same reason a [decision](/docs/decisions/overview) is measured against a fixed yardstick rather than against a mood.
+It also answers a scale problem, and that scale problem is what makes capture cheap. There is far more legislation, spending, and procedure than any working person can read, so the reading gets done by paid staff who do not work for you. Rules written down once can be applied across more material than you could review by hand, the same way every time. That is the discipline that makes a recorded [decision](/docs/decisions/overview) worth anything.
 
-Then it makes ethics shareable the way software is. Somebody who has thought carefully about a domain publishes their reasoning as a packet, and a citizen who trusts that person starts from considered rules instead of a blank page — then edits them, because the clone is theirs. That is a movement building shared standards from the bottom rather than a platform issuing them, and it is why the [trust score](/docs/trust_scores/overview) on an author matters: you decide whose reasoning you are willing to borrow.
+Then it makes ethics shareable the way software is. Somebody who has thought hard about a domain publishes their reasoning as a packet, and a citizen who trusts that person starts from considered rules instead of a blank page, then edits them, because the clone is theirs. That builds shared standards from the bottom instead of having them issued from the top, and it is why the author's [trust score](/docs/trust_scores/overview) travels with the packet. You decide whose reasoning you borrow, and you read the rules before you take them.
 
 ## What keeps it honest
 
-The feature applies your rules. It does not supply them. An empty value system produces nothing, and there is no house position hidden underneath the one you wrote. If a recommendation is wrong, the fired rules are on the screen and the fault is locatable — in the rule, in the weight, or in the match.
+The feature applies your rules. It does not supply them. An empty value system produces nothing, and there is no house position underneath the one you wrote. When a recommendation is wrong, the fired rules are on the screen and the fault is locatable: in the rule, in its weight, or in the match.
 
-Three other limits are deliberate:
+Three limits are deliberate:
 
-* **A value system judges a situation, never a person's record.** It is not an award, and nothing it produces reaches the Monkey, Llama or Flamingo Awards. Those are computed from evidence about a politician; this is your own reasoning about a question.
-* **The author's name stays on an imported packet.** The original is never silently changed, editing means cloning, and a re-import refreshes only the cached copy.
-* **The build state is stated plainly.** The Apply step today runs a deterministic rule matcher inside the app rather than a language model, and reports itself as such; attaching an applied result into a decision's record is specified but not yet wired.
+* **A value system judges a situation, never a person's record.** It is not an award, and nothing it produces feeds any award published about a politician. Those come from evidence about a named officeholder; this is your own reasoning about a question.
+* **The author's name stays on an imported packet.** The original is never silently changed, and editing means cloning first.
+* **The build state is stated plainly.** The Apply step today runs a deterministic rule matcher inside the app rather than a language model, and it reports that. Carrying an applied result into a decision's record is specified and not yet built.
 
 ## Works with
 
-* **[Decisions, Areas And Communities](./decisions_and_communities.mdx)** — a value system is one of the inputs a decision records, and the decision is where its recommendation lands.
-* **[The First-Principles AI Check](./first_principles_ai_check.mdx)** — the check re-reasons a conclusion from the ground up; your value system is what says which way to lean when the ground runs out.
-* **[Citizen Votes](./citizen_votes.mdx)** — values are how you decide a position; the vote is how you register it where other citizens can see it.
+* **[Decisions, Areas And Communities](./decisions_and_communities.mdx)** — a decision names the value systems that judged it, so the rules and the answer stay attached to each other.
+* **[The First-Principles AI Check](./first_principles_ai_check.mdx)** — that check tests whether a chain of reasoning holds on its own terms; your value system supplies which way you lean when it comes down to a preference.
+* **[Citizen Votes](./citizen_votes.mdx)** — a position you reasoned out counts for more once it is cast, rather than kept in a file.
 
 ## Where to go next
 
-* **[Values](/docs/values/overview)** — Pillar 3 in full: writing your rules down, and what the platform will and will not do with them.
-* **[Policy packets](/docs/values/policy_packets)** — the publish and import path, and what travels inside a packet.
-* **[Decisions](/docs/decisions/overview)** — where a recorded position and its reasoning are kept together.
-* **[Great American Ethics](/docs/american_ethics/overview)** — the standard this feature is one citizen-sized instrument for restoring.
-* **[Get Started](/docs/get_started/overview)** — run it on your own machine and write your first rule; no account required.
+* **[Values](/docs/values/overview)** — Pillar 3 in full: writing your rules down, and what the platform will not do with them.
+* **[Policy packets](/docs/values/policy_packets)** — the publish and import path, and exactly what travels inside a packet.
+* **[Communities](/docs/communities/overview)** — where individual positions get pooled into a community position, and where a shared packet does the most work.
+* **[Great American Ethics](/docs/american_ethics/overview)** — the standard this feature is one small instrument for restoring.
+* **[Get Started](/docs/get_started/overview)** — run it on your own machine and write your first rule. No account required.

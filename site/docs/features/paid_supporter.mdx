@@ -3,64 +3,68 @@ id: paid_supporter
 title: Paid Supporter
 sidebar_label: Paid Supporter
 sidebar_position: 46
-description: "A voluntary monthly membership at an amount you choose, buying one members-only room that shows where the money went, and never a louder vote."
+description: "A voluntary monthly membership at an amount you pick, buying one members-only room that shows where the money went, and never a louder vote."
 ---
 
 
 # Paid Supporter
 
-Everything on We The Citizens is free, and stays free. A Paid Supporter is a citizen who decides to
-pay a monthly amount anyway, at a number they pick themselves. It buys exactly one thing: a
-members-only room showing where the money went, what it bought, and what is being built next. It
-does not buy a louder vote, and it does not buy standing.
+Everything on We The Citizens is free, and stays free. A Paid Supporter is a citizen who pays a
+monthly amount anyway, at a number they choose themselves. It buys exactly one thing: a members-only
+room showing where the money went, what it bought, and what is being built next. It does not buy a
+louder vote and it does not buy standing.
 
-<Figure caption="The money path runs left to right and ends in one members-only room, while everything civic stays on the free side of the line.">
-  <svg viewBox="0 0 720 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+<Figure caption="The money path runs left to right and ends at one members-only room, while everything civic stays on the free side of the line.">
+  <svg viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+
     {/* top row — the money path */}
-    <rect x="16" y="28" width="180" height="46" rx="4" stroke="currentColor" fill="none" />
-    <text x="106" y="49" fontSize="12" fill="currentColor" textAnchor="middle">You choose an amount</text>
-    <text x="106" y="64" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">a ladder, or your own</text>
+    <rect x="16" y="24" width="180" height="46" rx="4" stroke="currentColor" fill="none" />
+    <text x="106" y="45" fontSize="12" fill="currentColor" textAnchor="middle">You choose an amount</text>
+    <text x="106" y="60" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">a ladder, or your own</text>
 
-    <line x1="196" y1="51" x2="228" y2="51" stroke="currentColor" strokeWidth="1.5" />
-    <path d="M 236,51 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <line x1="196" y1="47" x2="228" y2="47" stroke="currentColor" />
+    <path d="M 234,47 l -7,-3.5 l 0,7 z" fill="currentColor" />
 
-    <rect x="236" y="28" width="200" height="46" rx="4" stroke="currentColor" fill="none" />
-    <text x="336" y="49" fontSize="12" fill="currentColor" textAnchor="middle">Provider hosted page</text>
-    <text x="336" y="64" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">no card field in the app</text>
+    <rect x="236" y="24" width="200" height="46" rx="4" stroke="currentColor" fill="none" />
+    <text x="336" y="45" fontSize="12" fill="currentColor" textAnchor="middle">Provider hosted page</text>
+    <text x="336" y="60" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">no card field in the app</text>
 
-    <line x1="436" y1="51" x2="468" y2="51" stroke="currentColor" strokeWidth="1.5" />
-    <path d="M 476,51 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <line x1="436" y1="47" x2="468" y2="47" stroke="currentColor" />
+    <path d="M 474,47 l -7,-3.5 l 0,7 z" fill="currentColor" />
 
-    <rect x="476" y="28" width="228" height="46" rx="4" stroke="var(--wc-fig-accent)" strokeWidth="1.5" fill="none" />
-    <text x="590" y="49" fontSize="12" fill="currentColor" textAnchor="middle">The webhook grants</text>
-    <text x="590" y="64" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">the membership</text>
+    <rect x="476" y="24" width="228" height="46" rx="4" stroke="var(--wc-fig-accent)" strokeWidth="1.5" fill="none" />
+    <text x="590" y="45" fontSize="12" fill="currentColor" textAnchor="middle">The webhook grants it</text>
+    <text x="590" y="60" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">not the browser coming back</text>
 
-    <text x="16" y="101" fontSize="10.5" fill="currentColor" opacity="0.72">Stop is reachable from every money page.</text>
+    {/* stop annotation */}
+    <text x="16" y="92" fontSize="10.5" fill="currentColor" opacity="0.72">Stop is reachable from</text>
+    <text x="16" y="106" fontSize="10.5" fill="currentColor" opacity="0.72">every money page.</text>
 
-    <line x1="590" y1="74" x2="590" y2="117" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
-    <path d="M 590,126 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    {/* drop into the members-only room */}
+    <line x1="590" y1="70" x2="590" y2="112" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M 590,120 l -3.5,-7 l 7,0 z" fill="currentColor" />
 
     {/* the line between free and paid */}
-    <line x1="368" y1="118" x2="368" y2="304" stroke="var(--wc-fig-muted)" strokeDasharray="4 5" />
+    <line x1="368" y1="114" x2="368" y2="300" stroke="var(--wc-fig-muted)" strokeDasharray="4 5" />
 
     {/* free panel */}
-    <rect x="16" y="126" width="336" height="174" rx="4" fill="var(--wc-fig-wash-2)" stroke="currentColor" strokeOpacity="0.35" />
-    <text x="32" y="153" fontSize="15" fill="currentColor">Free forever</text>
-    <text x="32" y="180" fontSize="12" fill="currentColor">Read any record</text>
-    <text x="32" y="198" fontSize="12" fill="currentColor">Run the engines yourself</text>
-    <text x="32" y="216" fontSize="12" fill="currentColor">Cast a vote</text>
-    <text x="32" y="234" fontSize="12" fill="currentColor">File a proposal</text>
-    <text x="32" y="266" fontSize="10.5" fill="currentColor" opacity="0.72">No amount buys a louder vote.</text>
-    <text x="32" y="282" fontSize="10.5" fill="currentColor" opacity="0.72">Money is not a trust input.</text>
+    <rect x="16" y="122" width="336" height="174" rx="4" fill="var(--wc-fig-wash-2)" stroke="currentColor" strokeOpacity="0.35" />
+    <text x="32" y="149" fontSize="15" fill="currentColor">Free forever</text>
+    <text x="32" y="176" fontSize="12" fill="currentColor">Read any record</text>
+    <text x="32" y="194" fontSize="12" fill="currentColor">Run the engines yourself</text>
+    <text x="32" y="212" fontSize="12" fill="currentColor">Cast a vote</text>
+    <text x="32" y="230" fontSize="12" fill="currentColor">File a proposal</text>
+    <text x="32" y="262" fontSize="10.5" fill="currentColor" opacity="0.72">No amount buys influence.</text>
+    <text x="32" y="278" fontSize="10.5" fill="currentColor" opacity="0.72">Money never moves trust.</text>
 
     {/* members-only panel */}
-    <rect x="384" y="126" width="320" height="174" rx="4" fill="var(--wc-fig-wash)" stroke="var(--wc-fig-accent)" strokeOpacity="0.6" />
-    <text x="400" y="153" fontSize="15" fill="currentColor">The one members room</text>
-    <text x="400" y="180" fontSize="12" fill="currentColor">Where the money went</text>
-    <text x="400" y="198" fontSize="12" fill="currentColor">What it bought</text>
-    <text x="400" y="216" fontSize="12" fill="currentColor">What is being built next</text>
-    <text x="400" y="266" fontSize="10.5" fill="currentColor" opacity="0.72">Nothing civic lives in here.</text>
-    <text x="400" y="282" fontSize="10.5" fill="currentColor" opacity="0.72">Not even an admin gets a key.</text>
+    <rect x="384" y="122" width="320" height="174" rx="4" fill="var(--wc-fig-wash)" stroke="var(--wc-fig-accent)" strokeOpacity="0.6" />
+    <text x="400" y="149" fontSize="15" fill="currentColor">The members-only room</text>
+    <text x="400" y="176" fontSize="12" fill="currentColor">Where the money went</text>
+    <text x="400" y="194" fontSize="12" fill="currentColor">What it bought</text>
+    <text x="400" y="212" fontSize="12" fill="currentColor">What is being built next</text>
+    <text x="400" y="262" fontSize="10.5" fill="currentColor" opacity="0.72">Nothing civic is in here.</text>
+    <text x="400" y="278" fontSize="10.5" fill="currentColor" opacity="0.72">No admin back door.</text>
   </svg>
 </Figure>
 
@@ -68,100 +72,95 @@ does not buy a louder vote, and it does not buy standing.
 
 Anyone can create an account for nothing and use the whole product. Becoming a **Supporter** is a
 separate, optional step. The citizen picks how much to give from a ladder of monthly amounts — $40,
-$100, $200, $400, $1,000 — or types a custom amount of their own. There are no named plans with
-different feature sets. The **level is simply the number** the citizen chose.
+$100, $200, $400, $1,000 — or types a custom amount instead. There are no named plans. The **level
+is simply the number** the citizen chose, and every supporter gets the same benefits.
 
-Payment runs on the payment provider's own hosted page. There is no card field anywhere in the app
-and no card number ever reaches the movement's servers, which store only identifiers plus a card's
-brand and last four digits for display.
+Payment runs on the payment provider's own hosted page. There is no card field anywhere in the app,
+and no card number ever reaches the movement's servers, which hold only the provider's identifiers
+plus the card brand and last four digits for display.
 
 Membership is granted by the provider's **webhook**, not by the browser coming back. The return trip
-from the payment page is a URL anybody could type, so it only refreshes the screen; the membership
-turns on when the provider reports the charge succeeded. Nothing here is believed because a browser
-said it.
+is a URL anybody could have typed, so it only refreshes the screen; the membership turns on when the
+provider itself reports the charge succeeded. Nothing here is believed because a browser said so.
 
 A card that fails once is treated as a **retry window**, not as somebody leaving. Benefits stay on
-while the provider retries, with a fix-payment line at the top of the page, and end only when the
-subscription actually ends.
+while the provider retries, a fix-payment line appears at the top of the page, and the membership
+ends only when the subscription actually ends.
 
-Stopping is reachable from every surface that touches money — the dashboard, the statements page,
-the payment method page, and a plain line at the bottom of the invoices page whose first sentence is
-the link. The stop page is a statement of consequences and nothing else: no further charges, you
-stay a Supporter until the period you already paid for runs out, your account and data are
-untouched, you can resume any time. No guilt copy, no retention offer, no survey wall.
+Stopping is reachable from every surface that touches money — the dashboard, the statements, the
+payment-method page, and a plain sentence at the bottom of the invoices. The stop page is a
+statement of consequences and nothing else: no further charges, benefits kept until the period
+already paid for runs out, account and data untouched, resume any time. No guilt copy, no retention
+offer, no survey wall.
 
-Behind the door is **one members-only room**. It shows where the money went, what it bought, and
-what is being built next, and it carries the citizen's own membership block with links to manage or
-stop it — so the room that takes the money is never more than two clicks from the way out. The room
-is small in its first version and says so on the page rather than filling itself with placeholder
-widgets.
+Behind the door is **one members-only room**: where the money went, what it bought, what is being
+built next, and the citizen's own membership block with links to manage or stop it, so the room that
+takes the money is never more than two clicks from the way out. Its first version is small and
+labelled as unfinished rather than padded with placeholder widgets.
 
-The rule governing what may ever go in there is one line: **if withholding something from a free
-citizen would make the product less honest, less usable, or less able to hold a politician to
-account, it does not belong in that room.** It goes on the free surface instead.
+One line governs what may ever go into it: **if withholding something from a free citizen would make
+the product less honest, less usable, or less able to hold a politician to account, it does not
+belong in that room.**
 
 ## The goal it serves
 
-Hosting, data pipelines and AI runs cost real money, and there are only a few ways to pay for them.
+Hosting, data pipelines and AI runs cost money, and there are only so many ways to pay for them.
 Advertising sells the reader's attention. A paywall sells access to the evidence. Selling citizens'
-data sells the citizen. Each of those makes somebody other than the citizen the customer, which is
-the exact failure this project exists to document in
-[Congress](/docs/congress_for_citizens/money_in_politics).
+data sells the citizen. Each one makes somebody other than the citizen the customer, which is the
+exact failure this project exists to document in
+[money in politics](/docs/congress_for_citizens/money_in_politics).
 
 A movement whose central charge is that money buys influence in politics cannot turn around and sell
-influence inside itself. That is why the free line is drawn at the civic work and not one inch
-closer: reading a record, running the calculations, casting a vote and filing a proposal are free
-forever, because the ability to hold an official to account cannot be something a citizen has to
-afford. What money buys instead is transparency about the money. That is the only product on the
-paid side of the line.
+influence inside itself. So the free line is drawn around all of the civic work — reading a record,
+running the calculations, casting a vote, filing a proposal — because holding an official to account
+cannot be something a citizen has to be able to afford. What the money buys instead is transparency
+about the money.
 
-There is a plain reason the room exists at all. A movement that takes monthly money and then shows
-its funders exactly the same page as everybody else stops receiving monthly money. Saying that out
-loud is better than pretending the payment is a donation into a void, and it is the same instinct
-that runs through the rest of [the movement](/docs/the_movement/overview): publish the mechanism,
-including the unflattering parts.
+There is also a plain reason the room exists at all. A movement that takes monthly money and then
+shows its funders exactly the same page as everybody else is a movement that stops receiving monthly
+money. Publishing that reasoning is the same instinct that runs through the rest of
+[the movement](/docs/the_movement/overview): show the mechanism, including the parts that are not
+flattering.
 
 ## What keeps it honest
 
 * **Money is not an input to trust.** Supporter status does not move the
-  [trust ladder](/docs/trust_scores/overview), does not weight a vote, and does not skip an
-  approval step. This is not left to good intentions: a test shipped with the code reads the trust
-  engine's own source and fails the build if that engine so much as mentions supporter status.
-* **An admin who is not a Supporter does not get in either.** There is no staff back door, because a
-  back door would make the room's own claim — this is what your money bought — impossible for a
-  member to verify.
+  [trust ladder](/docs/trust_scores/overview), does not weight a vote, and does not skip an approval
+  step. That is not left to good intentions: a test shipped with the code asserts that toggling
+  supporter status changes no citizen's trust score.
+* **An admin who is not a Supporter does not get in either.** No staff back door, because a back
+  door would make the room's own claim — this is what your money bought — impossible for a member to
+  verify.
 * **The entrance is an invitation, never a wall.** The Supporters Area appears in the navigation for
-  every citizen, free or paying, never hidden and never greyed out. A click by a non-member goes to
-  a page explaining what the room is and that everything civic stays free, which is a sentence that
-  only works when both halves are true.
-* **What it does not do yet, stated plainly.** Refunds are not self-serve in this version; they go
-  through support by email. The room's first version is mostly a statement of intent. And the
-  payment is not tax-deductible — this is not a charity, and no page will imply otherwise.
+  every citizen, free or paying, never hidden and never greyed out with a padlock. A non-member's
+  click lands on a page explaining what the room is and stating, in the same panel, that everything
+  civic stays free for everyone.
+* **Stated limits, in this version.** Refunds are not self-serve and go through support by email. The
+  payment is not tax-deductible; this is not a charity. The room's contents are still being built,
+  and the page says so rather than implying otherwise.
 * **On your own machine it can be absent entirely.** An install with no payment keys configured
-  renders every supporter page with a plain note that payments are not configured, and nothing else
-  in the product notices or cares.
+  renders the supporter pages with a plain note that payments are not configured here, and nothing
+  else in the product notices.
 
 ## Works with
 
 * **[Run It On Your Own Computer](./run_on_your_own_computer.mdx)** — the local install is the proof
-  that the civic product owes nothing to a payment: it runs with no account, no server, and no
-  payment provider wired in at all.
-* **[The Public Data Repository](./public_data_repository.mdx)** — the evidence the movement
-  publishes sits in a repository anyone can clone for free, so no membership stands between a
-  skeptic and the record.
+  that the civic product owes nothing to a payment: no account, no server, no provider wired in.
+* **[The Public Data Repository](./public_data_repository.mdx)** — the evidence lives in a repository
+  anyone can clone for free, so a membership never stands between a skeptic and the record.
 * **[The Citizen Mining Network](./citizen_mining_network.mdx)** — supporter money pays for the
-  pipelines and the AI runs that volunteer work feeds, which is one of the concrete answers the
-  members-only room exists to give.
+  pipelines and AI runs that volunteer work feeds, and that spending is one of the concrete answers
+  the members-only room exists to give.
 
 ## Where to go next
 
 * **[The Movement](/docs/the_movement/overview)** — the charter, the four pillars, and an honest
   answer about what joining costs.
-* **[Trust Scores](/docs/trust_scores/overview)** — what a trust score is actually answering, and
-  why a payment can never move it.
-* **[How It Works](/docs/how_it_works/overview)** — the core loop every citizen walks, all of it on
-  the free side of the line.
-* **[Individual vs community mode](/docs/how_it_works/individual_vs_community_mode)** — the two ways
-  to run this, one of which never sends anything anywhere.
+* **[Trust Scores](/docs/trust_scores/overview)** — what a trust score answers, and why a payment
+  never moves it.
+* **[The core loop](/docs/how_it_works/the_core_loop)** — the work a citizen does, all of it on the
+  free side of the line.
+* **[Open Data](/docs/open_data/overview)** — clone the record and check any claim yourself, with no
+  account and no payment.
 * **[Get Started](/docs/get_started/overview)** — install it or open the hosted copy, and decide
-  about supporting later or never.
+  about supporting later, or never.

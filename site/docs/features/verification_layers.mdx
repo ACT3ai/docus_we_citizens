@@ -1,0 +1,166 @@
+---
+id: verification_layers
+title: Verification Layers
+sidebar_label: Verification Layers
+sidebar_position: 41
+description: "Independent layers a citizen may choose to prove, each one proving control of a specific thing and nothing more, and none of them a gate on taking part."
+---
+
+
+# Verification Layers
+
+You never have to prove anything here to read the record, write down where you stand, or be counted.
+Verification is a set of separate layers you may complete in any order, and each one proves you
+control a specific thing and nothing beyond that. It is a dashboard, not a door.
+
+<Figure caption="Each layer is a separate thing a citizen may choose to prove, and the right-hand column is the whole of what that proof says; the document layer is checked by an outside provider and the document itself is never stored here, and no layer is ever a condition of reading, voting, or being counted.">
+  <svg viewBox="0 0 720 352" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    {/* column headings */}
+    <text x="40" y="26" fontSize="10.5" fill="currentColor" opacity="0.72">WHAT YOU MAY PROVE</text>
+    <text x="330" y="26" fontSize="10.5" fill="currentColor" opacity="0.72">WHAT THAT PROVES, AND NOTHING MORE</text>
+
+    {/* layer 1 — the sign-in email */}
+    <rect x="40" y="40" width="270" height="38" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="56" y="64" fontSize="12" fill="currentColor">The email you sign in with</text>
+    <line x1="312" y1="59" x2="324" y2="59" stroke="var(--wc-fig-muted)" />
+    <path d="M 328,59 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="330" y="40" width="350" height="38" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="346" y="64" fontSize="12" fill="currentColor" opacity="0.72">Control of that address</text>
+
+    {/* layer 2 — a public account */}
+    <rect x="40" y="86" width="270" height="38" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="56" y="110" fontSize="12" fill="currentColor">An X or YouTube account</text>
+    <line x1="312" y1="105" x2="324" y2="105" stroke="var(--wc-fig-muted)" />
+    <path d="M 328,105 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="330" y="86" width="350" height="38" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="346" y="110" fontSize="12" fill="currentColor" opacity="0.72">Control of that account</text>
+
+    {/* layer 3 — a domain */}
+    <rect x="40" y="132" width="270" height="38" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="56" y="156" fontSize="12" fill="currentColor">A domain you name</text>
+    <line x1="312" y1="151" x2="324" y2="151" stroke="var(--wc-fig-muted)" />
+    <path d="M 328,151 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="330" y="132" width="350" height="38" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="346" y="156" fontSize="12" fill="currentColor" opacity="0.72">Control of that domain</text>
+
+    {/* layer 4 — a published corpus */}
+    <rect x="40" y="178" width="270" height="38" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="56" y="202" fontSize="12" fill="currentColor">A published body of work</text>
+    <line x1="312" y1="197" x2="324" y2="197" stroke="var(--wc-fig-muted)" />
+    <path d="M 328,197 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="330" y="178" width="350" height="38" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="346" y="202" fontSize="12" fill="currentColor" opacity="0.72">The work names that handle</text>
+
+    {/* layer 5 — the document check, done outside */}
+    <rect x="40" y="224" width="270" height="46" fill="var(--wc-fig-wash-2)" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="56" y="244" fontSize="12" fill="currentColor">A government photo ID,</text>
+    <text x="56" y="259" fontSize="12" fill="currentColor">checked by an outside firm</text>
+    <line x1="312" y1="247" x2="324" y2="247" stroke="var(--wc-fig-accent)" />
+    <path d="M 328,247 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="330" y="224" width="350" height="46" fill="none" stroke="var(--wc-fig-accent)" />
+    <text x="346" y="244" fontSize="12" fill="currentColor">A document matched a face</text>
+    <text x="346" y="259" fontSize="10.5" fill="currentColor" opacity="0.72">The document is never stored here</text>
+
+    {/* the standing rule under all of it */}
+    <rect x="40" y="280" width="640" height="56" fill="none" stroke="var(--wc-fig-muted)" strokeDasharray="5 4" />
+    <text x="360" y="300" textAnchor="middle" fontSize="10.5" fill="currentColor" opacity="0.72">Each layer stands alone. Complete any of them, in any order, or none.</text>
+    <text x="360" y="315" textAnchor="middle" fontSize="10.5" fill="currentColor" opacity="0.72">No layer is ever a gate: a citizen who proves nothing still reads everything,</text>
+    <text x="360" y="330" textAnchor="middle" fontSize="10.5" fill="currentColor" opacity="0.72">still takes part, and their vote is counted and shown.</text>
+
+  </svg>
+</Figure>
+
+## What it does
+
+Verification is a **dashboard of layers**, not a single yes-or-no. Each row names one claim, says
+whether it is confirmed, and says plainly why it is not when it is not: never attempted, provider
+failed, expired, not applicable in your region, not built yet. A blank is a typed answer, not an
+empty box.
+
+The self-serve layers all prove the same kind of thing, which is **control**:
+
+* **The email you sign in with**, confirmed from the sign-in itself.
+* **A public account** — an X account or a YouTube channel — proven by an authorization round-trip
+  with the provider, or by putting your handle in the account's bio where anyone can read it.
+* **A domain**, proven by a one-time `TXT` record on its DNS or a file at a fixed path on the site.
+* **A published body of work**, where the corpus itself names the handle.
+
+Two proofs count as two only when they are **different kinds**: proving one X handle twice by two
+methods is one proof, because both come out of the same system. Proofs are re-checked on a schedule,
+and a proof that lapses gets a fourteen-day grace and the remedy written out.
+
+The last layer is the only one that reaches outside the software. A citizen who wants it hands a
+government photo document and a live selfie to a third-party verification firm. **We never receive
+the document.** What is kept is the outcome — the firm, the reference, the result, an expiry a year
+out — and the facts derived from it: a document verified with a matching selfie, its type, its
+issuing country, the state that issued a licence, whether a US taxpayer identity matched. No image,
+no Social Security number, no document number in the clear, no date of birth, no address.
+
+**The claim always matches the proof.** No vendor on the market verifies citizenship, so no pass is
+ever labelled citizenship. A licence proves identity and says so; a US passport is real citizenship
+evidence and is labelled as evidence. Verifying with a licence is never rendered as a negative,
+because that is how most people verify.
+
+Your facts are yours and the movement's admins'. A peer sees **only an opt-in badge**, off by
+default, naming the layer and never your name. A **seeded trusted list** handles bootstrapping: the
+movement can name people it already trusts by public handle, and that entry confers nothing at all
+until the person signs in, proves the handle, and is told plainly that they were listed and why.
+
+## The goal it serves
+
+A movement that demands a real name before you may speak has assembled a list of its own members for
+anyone who wants one, and the people most worth protecting are the ones most likely to be punished
+for signing it. That is not hypothetical here. This site exists to document
+[who Congress is actually working for](/docs/congress_for_citizens/overview), and a citizen doing
+that work in public may be a federal employee, a contractor, a serving officer, or somebody whose
+employer would rather they stopped.
+
+The other pressure is just as real. A count anyone can join is a count a bot farm can flood, and
+[paid influence operations](/docs/foreign_intelligence/paid_influence_operations) do it cheaply and
+on every side at once. Answer that with a real-name requirement and the movement has solved the bot
+problem by handing over the dissidents.
+
+Proving control of something, without proving who you are, is the way out of that trade. It raises
+the cost of manufacturing a thousand believable citizens far faster than it raises the cost of being
+one — the arithmetic behind
+[the mesh of verified citizens](/docs/trust_scores/the_mesh_and_what_it_defends_against). And because
+every layer is capped as an input, verification can never become the thing that decides who matters
+here. [The rules that keep it honest](/docs/meritocracy/the_rules_that_keep_it_honest) sets that
+ceiling low on purpose.
+
+## What keeps it honest
+
+* **Opt-in forever.** No capability requires verification — not voting, not publishing, not
+  community aggregation. There is no admin switch that makes it required, and building one is
+  written down as a violation of the specification.
+* **Segment, never silence.** A verified layer can change how a result is labelled and broken out.
+  It never changes who takes part. Unverified votes are always counted and always shown.
+* **Pseudonymity survives verification.** The pseudonym stays; the real name is never displayed and
+  never stored by us unless the citizen publishes it themselves.
+* **Failure is private.** Who attempted a layer and did not pass is visible to that citizen and, as a
+  count only, to admins. Never on a profile, never in an export, never worded as a judgement.
+* **Control is not personhood, and the product says so.** Two people sharing one account both prove
+  it. These layers raise the cost of minting fake accounts; they do not certify one human per
+  account.
+
+## Works with
+
+* **[The Trust Ladder](./trust_ladder.mdx)** — the layers feed one capped input into standing, and
+  every rung of that ladder is reachable with no real name at all.
+* **[Where You Stand](./trust_wizard.mdx)** — the separate walk that records what you think; the two
+  run side by side and neither one blocks the other.
+* **[Groups And Values Blocks](./groups_and_values_blocks.mdx)** — a claim to belong to a group is
+  checked against your own answers, a different question from whether the account is real.
+
+## Where to go next
+
+* **[Trust Scores](/docs/trust_scores/overview)** — the one question a trust score answers, and the
+  many it refuses to answer.
+* **[Meritocracy](/docs/meritocracy/overview)** — how influence here is earned in public, and why it
+  has a ceiling.
+* **[Communities](/docs/communities/overview)** — the shared space where a verified count matters.
+* **[Foreign Intelligence](/docs/foreign_intelligence/overview)** — the operations this defence is
+  built against.
+* **[Get Started](/docs/get_started/overview)** — run it on your own machine or use the hosted copy,
+  and prove nothing at all until you decide to.

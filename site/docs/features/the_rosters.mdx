@@ -59,17 +59,17 @@ The rosters are the movement's lists of named people who hold power or are tryin
     {/* the frozen key */}
     <rect x="430" y="212" width="274" height="66" fill="var(--wc-fig-wash-2)" stroke="var(--wc-fig-accent)" strokeDasharray="5 4" />
     <text x="444" y="234" fontSize="12" fill="currentColor">One frozen key per person</text>
-    <text x="444" y="250" fontSize="12" fill="currentColor" opacity="0.72">The roster is a field on it,</text>
+    <text x="444" y="250" fontSize="12" fill="currentColor" opacity="0.72">The roster is a field,</text>
     <text x="444" y="266" fontSize="12" fill="currentColor" opacity="0.72">not a new record</text>
 
-    <text x="16" y="252" fontSize="10.5" fill="currentColor" opacity="0.72">Identity is shared across a link.</text>
-    <text x="16" y="268" fontSize="10.5" fill="currentColor" opacity="0.72">Judgement never is.</text>
+    <text x="16" y="252" fontSize="10.5" fill="currentColor" opacity="0.72">Identity crosses the link.</text>
+    <text x="16" y="268" fontSize="10.5" fill="currentColor" opacity="0.72">Judgement never does.</text>
   </svg>
 </Figure>
 
 ## What it does
 
-There are **four rosters** and one kind of record behind all of them. **Elected politicians** are the people who hold or have held office, so there is a roll-call record to read. **Good new leaders** are people worth electing who have not held office. **Worrisome challengers** are people seeking office about whom a citizen has filed a sourced worry — the only roster with an evidence floor, since a record there cannot be created without at least one video. **Fix bill authors** are the citizens who wrote one of the movement's model bills; they need a page and a key, and the thing worth browsing is the bill.
+There are **four rosters** and one kind of record behind all of them. **Elected politicians** are the people who hold or have held office, so there is a roll-call record to read. **Good new leaders** are people worth electing who have not held office. **Worrisome challengers** are people seeking office about whom a citizen has filed a sourced worry — the only roster with an evidence floor, since a record there cannot be created without at least one video. **Fix bill authors** are the citizens who wrote one of the movement's model bills; they need a page and a key, though the bill is the thing worth browsing.
 
 Which roster a person is on is a **single field** on their record, not a separate kind of thing. That matters because people move. An admin can move somebody between rosters, and the move keeps the same record: the **frozen key**, the history, and every link anyone has ever shared.
 
@@ -77,20 +77,20 @@ Each roster is a table that leads with the **award column**, then the name with 
 
 **My Politicians** answers the question most people arrive with: who represents me. It resolves your President, both US Senators, your US House seat, your Governor and your state legislative seats. When a seat cannot be resolved, that seat is **named above the table with the reason**, instead of quietly handing you a shorter list you would read as complete.
 
-One human can legitimately hold more than one record — a challenger who is also a sitting state senator, a former officeholder seeking a different seat. Those records stay separate and linked. **Identity crosses the link and judgement does not**: the photograph with its credit, the party, the state, the videos and appearances carry across, while the awards, the approval state and the qualification assessments stay with the record that earned them.
+One human can legitimately hold more than one record — a challenger who is also a sitting state senator, a former officeholder seeking a different seat. Those records stay separate and linked. **Identity crosses the link and judgement does not**: the photograph, the party, the state and the videos carry across, while the awards, the approval state and the qualification assessments stay with the record that earned them.
 
 ## The goal it serves
 
 A citizen who has concluded that their representative is not working for them needs somewhere to put that conclusion, and somewhere to look up who else is running. Comment sections and endorsement lists have the same defect: you cannot tell who put a name on the list, or why, or what happened to the names left off.
 
-So the roster is open on one side and closed on the other. Anyone signed in can propose a person, at no cost and with no standing in the movement required. Nobody — including a citizen with the highest trust score in the system — can publish a name. An admin resolves every proposal one way or the other, the decision names the admin and the reason, and the sequence is anchored, so a roster that had been quietly rewritten would be visible as a rewrite. That is what lets [the doctrine on how the movement talks about politicians](/docs/politicians/overview) hold: an entry is a recorded decision about a public act, not an opinion somebody typed.
+So the roster is open on one side and closed on the other. Anyone signed in can propose a person, with no standing in the movement required. Nobody — including a citizen with the highest trust score in the system — can publish a name. An admin resolves every proposal one way or the other, the decision names the admin and the reason, and the sequence is anchored, so a roster that had been quietly rewritten would be visible as a rewrite. That is what lets [the doctrine on how the movement talks about politicians](/docs/politicians/overview) hold: an entry is a recorded decision about a public act, not an opinion somebody typed.
 
 The rosters are also where the strategy becomes concrete. [Replacing a captured incumbent](/docs/replace_incumbents/overview) is an election problem, and an election needs two lists at once: who is in the seat now, and the [people worth running instead](/docs/new_politicians/overview). Keeping both on one record type, with one key space and one instrument, is what makes those lists comparable rather than two arguments.
 
 ## What keeps it honest
 
 * **A link between two records is never inferred from a name match.** Two people share a name, and attaching one person's voting record to another person's face is the worst error available here. An admin makes the link, with a source, and every link and unlink writes an audit row naming both records and the reason.
-* **The key is frozen and duplicates fail the build.** Twice, the same person was committed under two keys and half their data was silently dropped — both times for someone the movement wanted to publish well. An automated check now fails the build on a duplicated key, naming both files.
+* **The key is frozen and duplicates fail the build.** Twice, the same person was committed under two keys and half their data was silently dropped. An automated check now fails the build on a duplicated key, naming both files.
 * **Turning somebody down is recorded, and so is removing them.** Rejected proposals are kept with their reason, so "why is this person not on the list?" has an answer. A published record that admins later remove is retained and marked, never made to disappear.
 * **A roster entry is not an accusation of a crime.** The position on an elected politician rests on the official voting record, cited row by row, and the pages say what is not known rather than filling the gap.
 

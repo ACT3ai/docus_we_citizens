@@ -9,7 +9,7 @@ description: "How a list of recommended people becomes a plan: one named challen
 
 # Who Should Run, And Where
 
-Citizens recommend people they think belong in office. Over a year that produces a long list of names with nothing next to any of them, and a list of names is not a plan. This is the run that turns it into one — a named challenger per seat, published with the arithmetic that put them there and with a stated reason beside every name that did not get a seat.
+Citizens recommend people they think belong in office. Over a year that produces a long list of names with nothing next to any of them, and that is not a plan. This is the run that turns it into one — a named challenger per seat, published with the arithmetic that put them there and a reason beside every name that did not get one.
 
 <Figure caption="The run reads the approved roster, keeps three separate numbers about each person, walks the seats from the most senior downward, and publishes a reason for every name it did not place.">
   <svg viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +34,7 @@ Citizens recommend people they think belong in office. Over a year that produces
     <circle cx="91" cy="182" r="3.5" fill="currentColor" />
 
     {/* pool to numbers */}
-    <line x1="166" y1="129" x2="200" y2="129" stroke="currentColor" />
+    <line x1="166" y1="129" x2="200" y2="129" stroke="currentColor" fill="none" />
     <path d="M 206,129 l -7,-3.5 l 0,7 z" fill="currentColor" />
 
     {/* the three numbers, kept apart */}
@@ -50,15 +50,15 @@ Citizens recommend people they think belong in office. Over a year that produces
     <text x="291" y="224" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">never collapsed into one</text>
 
     {/* numbers to ladder */}
-    <line x1="376" y1="129" x2="410" y2="129" stroke="currentColor" />
+    <line x1="376" y1="129" x2="410" y2="129" stroke="currentColor" fill="none" />
     <path d="M 416,129 l -7,-3.5 l 0,7 z" fill="currentColor" />
 
     {/* the seat ladder, walked downward */}
-    <line x1="426" y1="50" x2="426" y2="206" stroke="var(--wc-fig-accent)" />
+    <line x1="426" y1="50" x2="426" y2="206" stroke="var(--wc-fig-accent)" fill="none" />
     <path d="M 426,212 l -3.5,-7 l 7,0 z" fill="var(--wc-fig-accent)" />
     <rect x="440" y="49" width="264" height="26" fill="none" stroke="currentColor" />
     <text x="452" y="66" fontSize="12" fill="currentColor">President</text>
-    <text x="692" y="66" fontSize="10.5" textAnchor="end" fill="currentColor" opacity="0.72">one R slot, one D slot</text>
+    <text x="692" y="66" fontSize="10.5" textAnchor="end" fill="currentColor" opacity="0.72">one slot per party</text>
     <rect x="440" y="83" width="264" height="26" fill="none" stroke="currentColor" />
     <text x="452" y="100" fontSize="12" fill="currentColor">Governor</text>
     <rect x="440" y="117" width="264" height="26" fill="none" stroke="currentColor" />
@@ -71,54 +71,55 @@ Citizens recommend people they think belong in office. Over a year that produces
 
     {/* what happens to everyone else */}
     <rect x="16" y="248" width="688" height="56" fill="var(--wc-fig-wash)" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
-    <text x="34" y="272" fontSize="12" fill="currentColor">Not placed = a stated reason</text>
-    <text x="34" y="290" fontSize="10.5" fill="currentColor" opacity="0.72">runner-up · held back · no open slot</text>
-    <text x="686" y="272" fontSize="12" textAnchor="end" fill="currentColor">Empty slot = recruiting</text>
-    <text x="686" y="290" fontSize="10.5" textAnchor="end" fill="currentColor" opacity="0.72">published, never hidden</text>
+    <text x="34" y="270" fontSize="12" fill="currentColor">Not placed = stated reason</text>
+    <text x="34" y="286" fontSize="10.5" fill="currentColor" opacity="0.72">runner-up, held back,</text>
+    <text x="34" y="300" fontSize="10.5" fill="currentColor" opacity="0.72">or no open slot</text>
+    <text x="686" y="270" fontSize="12" textAnchor="end" fill="currentColor">Empty slot = recruiting</text>
+    <text x="686" y="286" fontSize="10.5" textAnchor="end" fill="currentColor" opacity="0.72">published, never hidden</text>
   </svg>
 </Figure>
 
 ## What it does
 
-It reads **the approved roster and nothing else**. A citizen's recommendation is a request, not an entry — it is invisible to this run until an admin approves it. Otherwise anyone could put a name on the movement's slate by filling in a form.
+It reads **the approved roster and nothing else**. A citizen's recommendation is a request, not an entry: it is invisible to this run until an admin approves it. Otherwise anyone could put a name on the movement's slate with a form.
 
-For each person on that roster it keeps **three numbers that are never collapsed into one**. How they came out against the published qualification areas. **How much the movement actually knows about them**, published as "64% known" rather than buried. And **office readiness** — how senior an office their record shows they are prepared to hold, which is a statement about level, not about virtue. Someone can be well known and thinly qualified, or strongly qualified with no executive record at all.
+For each person on that roster it keeps **three numbers that are never collapsed into one**. How they came out against the published qualification areas. **How much the movement actually knows about them**, published as "64% known". And **office readiness** — how senior an office their record shows they are prepared to hold, a statement about level, not about virtue. Someone can be well known and thinly qualified, or strongly qualified with no executive record.
 
-Citizens separately cast one to five stars against **eight named offices**, from state assembly and mayor up to president. An **office fit** combines those stars with how far the person's readiness sits from what that office demands. Being a strong fit for a state assembly seat and a weak fit for a governorship is a normal, respectable result, and the page says it that way.
+Citizens separately cast one to five stars against **eight named offices**, from state assembly and mayor up to president. An **office fit** combines those stars with how far the person's readiness sits from what that office demands. A strong fit for a state assembly seat and a weak fit for a governorship is a normal result, and the page says it that way.
 
-What puts people in order for a slot is **the combined qualification result at the movement's declared weights, and nothing else**. Home state, party, seat kind and constitutional eligibility act only as filters — they decide whether a person is in the contest, never how high they come out of it.
+What puts people in order for a slot is **the combined qualification result at the movement's declared weights, and nothing else**. Home state, party, seat kind and constitutional eligibility act only as filters: they decide whether a person is in the contest, never how high they come out of it.
 
-Then the seats are walked from the most senior downward, and **every position carries both major-party slots**. At each open slot the highest-placed eligible person takes it, and one person takes one seat. A seat's demanded readiness is a **soft floor**: someone placed under it is recorded as a **stretch** with the shortfall named. Naming the stretch is the point.
+Then the seats are walked from the most senior downward, and **every position carries one slot per party**. At each open slot the highest-placed eligible person takes it, and one person takes one seat. A seat's demanded readiness is a **soft floor**: someone placed under it is recorded as a **stretch** with the shortfall named. Naming the stretch is the point.
 
-Every name that did not get a slot comes out with a reason attached — runner-up by a stated margin, held back for an unsourced claim or a constitutional bar, or genuinely out of open slots. Nobody is deleted. **An unfilled slot is published as a recruiting signal**, not an error: "no Democrat contender for this position" is exactly what the movement needs to see.
+Every name that did not get a slot comes out with a reason attached — runner-up by a stated margin, held back for an unsourced claim or a constitutional bar, or out of open slots. Nobody is deleted. **An unfilled slot is published as a recruiting signal**, not an error: "no contender for this seat yet" is what the movement needs to see.
 
 ## The goal it serves
 
-The movement's hardest question is not *who is bad?* The voting record already answers that one. It is **who should we run, and where?** — and that question is normally settled in a room the public never sees, by people whose reasoning is never written down. A slate arrived at that way cannot be argued with, only accepted or ignored.
+The movement's hardest question is not *who is bad?* The voting record already answers that one. It is **who should we run, and where?** — and that question is normally settled in a room the public never sees, by people whose reasoning is never written down. A slate arrived at that way can only be accepted or ignored.
 
-A captured incumbent is replaced at an election and nowhere else, and the way that fails is familiar: three plausible challengers split the same voters, the incumbent takes the primary with a third of the vote, and everyone agrees afterwards that somebody should have stood aside. Deciding *before* the primary which one name a seat gets behind is the whole lever. This run makes that decision in the open, on weights published in advance, so a visitor to their own district page can interrogate it instead of trusting it. See [Replacing Captured Incumbents](/docs/replace_incumbents/overview) and [Good New Leaders](/docs/new_politicians/overview).
+A captured incumbent is replaced at an election and nowhere else, and the way that fails is familiar: three plausible challengers split the same voters and the incumbent takes the primary with a third of the vote. Deciding *before* the primary which one name a seat gets behind is the whole lever. This run makes that decision in the open, on weights published in advance, so a visitor can interrogate it instead of trusting it. See [Replacing Captured Incumbents](/docs/replace_incumbents/overview) and [Good New Leaders](/docs/new_politicians/overview).
 
-It also keeps the decision honest about level. A good organizer with no executive record is not improved by being pointed at a governorship. The ladder is how *"this person is better suited to a state assembly seat"* becomes arithmetic instead of an editor's instinct — the same reason influence inside this movement is [earned in public and capped](/docs/meritocracy/overview) rather than handed out.
+It also keeps the decision honest about level. A good organizer with no executive record is not improved by being pointed at a governorship. The ladder turns *"better suited to a state assembly seat"* into arithmetic instead of an editor's instinct — the same reason influence inside this movement is [earned in public and capped](/docs/meritocracy/overview).
 
 ## What keeps it honest
 
 * **The wall holds.** Nothing this run computes can ever move a Monkey Award or a Llama Award — those two are fed by the in-office voting record only. What comes out of here is published as the Flamingo Award, and a person who holds both kinds carries them side by side.
-* **A number with no traceable evidence is rejected**, not published with a caveat. A person the movement cannot yet trace falls to the Flamingo's **unknown** state with a stated cause — never to the "assessed and nothing earned" state, and never to 0%.
-* **Every placement is published with its known percentage.** A placement is a stronger claim than an assessment, so the anti-overclaim pairing matters more here, not less.
-* **An unfilled seat is a finding.** The run prints the threshold and the best result that failed it, because a threshold nobody can see is a threshold nobody can argue with.
-* **The run does not publish itself.** It seals a dated edition and a difference against last quarter; a human reads that difference and commits it, and the commit is what "approved" means. Anyone may run a throwaway simulation at any time, and no simulation can move what visitors see.
-* **A change between quarters carries its reason.** Moving a person from governor to a House seat is stated as what it usually is — a fact about who else entered the pool — never as a judgment about them.
+* **A number with no traceable evidence is rejected**, not published with a caveat. A person the movement cannot yet trace falls to the Flamingo's **unknown** state with a stated cause — never to the "assessed and nothing earned" state, and never to 0%. Every placement is published beside its known percentage, because a placement is a stronger claim than an assessment.
+* **An unfilled seat prints its threshold** and the best result that failed it. A threshold nobody can see is a threshold nobody can argue with.
+* **The run does not publish itself.** It seals a dated edition and a difference against the last one; a human reads that difference and commits it, and the commit is what "approved" means. A throwaway simulation can be run at any time and never moves what visitors see.
+* **A change between editions carries its reason.** Moving a person from a governor slot to a House slot is usually a fact about who else entered the pool, and it is stated that way, not as a judgment about them.
 
 ## Works with
 
-* **[The Rosters](./the_rosters.mdx)** — the approved roster of recommended people is the pool this run reads, and it is the only pool it reads.
-* **[Your Seats And The Seat Map](./your_seats.mdx)** — the seats this run fills are the ones a visitor sees on their own district page, one slot per major party.
-* **[The Politician Record Page](./politician_record_pages.mdx)** — where a placement lands: the assigned seat, the reasoning, and every other seat the person was weighed against.
+* **[The Rosters](./the_rosters.mdx)** — the approved roster is the pool this run reads, and the only pool it reads.
+* **[Your Seats And The Seat Map](./your_seats.mdx)** — the seats this run fills are the ones a visitor sees on their own district page.
+* **[The Politician Record Page](./politician_record_pages.mdx)** — where a placement lands: the assigned seat, the reasoning, and the other seats the person was weighed against.
+* **[The Qualification Catalog](./qualification_catalog.mdx)** — the areas and weights the ordering is computed from.
 
 ## Where to go next
 
-* **[Good New Leaders](/docs/new_politicians/overview)** — who gets on the roster in the first place, and how anyone can put a name forward.
+* **[Good New Leaders](/docs/new_politicians/overview)** — who gets on the roster, and how anyone can put a name forward.
 * **[Replacing Captured Incumbents](/docs/replace_incumbents/overview)** — the strategy this run serves: one challenger per seat, agreed before the primary.
-* **[The qualification areas](/docs/qualifications/the_qualification_areas)** — the eighteen named areas, and the weights that decide who comes out on top.
+* **[The qualification areas](/docs/qualifications/the_qualification_areas)** — the eighteen named areas, and the weights that decide the order.
 * **[The wall](/docs/politicians/the_wall)** — why what somebody said can never move the award built from how they voted.
-* **[Take Action](/docs/take_action/overview)** — recommend somebody, vet a challenger, or cast your stars on which office they are ready for.
+* **[Take Action](/docs/take_action/overview)** — recommend somebody, vet a challenger, or cast your stars.

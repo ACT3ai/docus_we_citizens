@@ -1,0 +1,111 @@
+---
+id: publishing_to_the_social_network
+title: Publishing To The Social Network
+sidebar_label: Publishing Your Reasoning
+sidebar_position: 48
+description: "Send a finished piece of reasoning to WeCitizens Social as a structured record — the position, the evidence chain and the named gaps — instead of a verdict."
+---
+
+
+# Publishing To The Social Network
+
+When you have worked a question all the way through, what you are holding is more than an opinion. It is a position, the evidence you leaned on, the pieces you could not get and why, and the conclusion that follows from all of it. Publishing sends that whole object to WeCitizens Social, the movement's paired social network at WeCitizens.social, instead of only the last line of it. It is a step you take on purpose, at the end, and never one the app takes for you.
+
+<Figure caption="A decision worked out on your own machine can optionally be published as a structured post carrying the position, each evidence link, each named gap and the threshold you set, so another citizen can disagree at one specific link rather than with the conclusion as a whole.">
+  <svg viewBox="0 0 720 312" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* column labels */}
+    <text x="122" y="32" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">on your machine</text>
+    <text x="495" y="32" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">WeCitizens Social</text>
+
+    {/* left panel — the local record */}
+    <rect x="24" y="44" width="196" height="176" rx="4" stroke="currentColor" fill="var(--wc-fig-wash-2)" />
+    <text x="40" y="68" fontSize="12" fill="currentColor">Decision record</text>
+    <text x="40" y="92" fontSize="12" fill="currentColor" opacity="0.72">Position</text>
+    <text x="40" y="112" fontSize="12" fill="currentColor" opacity="0.72">Evidence chain</text>
+    <text x="40" y="132" fontSize="12" fill="currentColor" opacity="0.72">Named gaps</text>
+    <text x="40" y="152" fontSize="12" fill="currentColor" opacity="0.72">Threshold 85%</text>
+    <text x="40" y="172" fontSize="12" fill="currentColor" opacity="0.72">AI re-check</text>
+    <text x="40" y="200" fontSize="10.5" fill="currentColor" opacity="0.72">complete on its own</text>
+
+    {/* the optional publish step */}
+    <text x="257" y="112" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">publish</text>
+    <text x="257" y="126" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">optional</text>
+    <line x1="222" y1="140" x2="286" y2="140" stroke="var(--wc-fig-accent)" strokeWidth="1" />
+    <path d="M 292,140 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <text x="257" y="162" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">an account</text>
+
+    {/* right panel — the published post */}
+    <rect x="294" y="44" width="402" height="176" rx="4" stroke="var(--wc-fig-accent)" fill="var(--wc-fig-wash)" />
+    <text x="312" y="68" fontSize="12" fill="currentColor">Structured post</text>
+    <text x="680" y="68" fontSize="10.5" textAnchor="end" fill="currentColor" opacity="0.72">readers weight by trust</text>
+
+    <rect x="312" y="84" width="9" height="9" fill="currentColor" />
+    <text x="330" y="93" fontSize="12" fill="currentColor">Position</text>
+    <rect x="312" y="106" width="9" height="9" fill="currentColor" />
+    <text x="330" y="115" fontSize="12" fill="currentColor">Link — official record</text>
+    <rect x="312" y="128" width="9" height="9" fill="currentColor" />
+    <text x="330" y="137" fontSize="12" fill="currentColor">Link — official record</text>
+    <rect x="312" y="150" width="9" height="9" rx="1" stroke="var(--wc-fig-muted)" strokeDasharray="2 2" fill="none" />
+    <text x="330" y="159" fontSize="12" fill="currentColor" opacity="0.72">Gap — classified</text>
+    <rect x="312" y="172" width="9" height="9" fill="currentColor" />
+    <text x="330" y="181" fontSize="12" fill="currentColor">Conclusion at 85%</text>
+
+    {/* a reader answering one link */}
+    <rect x="430" y="252" width="200" height="44" rx="4" stroke="currentColor" fill="none" />
+    <text x="530" y="272" fontSize="12" textAnchor="middle" fill="currentColor">Another citizen</text>
+    <text x="530" y="288" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">answers one link</text>
+    <line x1="530" y1="252" x2="530" y2="134" stroke="var(--wc-fig-accent)" strokeWidth="1" />
+    <path d="M 530,128 l -3.5,7 l 7,0 z" fill="currentColor" />
+  </svg>
+</Figure>
+
+## What it does
+
+The record starts on your own machine. In Individual Mode the app keeps everything as readable files under one directory, and a **decision** is stored as two files side by side: structured YAML that software can parse, and a Markdown companion regenerated from it so the two can never disagree. That record carries the question, your position and your confidence in it, the chain of evidence, the AI's re-check of whether the conclusion follows from first principles, and the fix you cast at the end.
+
+Casting a fix and publishing it are two separate acts inside one control. Casting writes to your own disk. Publishing is the only part that leaves the machine, and what travels is the structured object you authored rather than a summary of it:
+
+* **The position** — where you actually landed on the question, and how sure you are.
+* **The chain of evidence** — every link you hold, each one carrying its own source.
+* **The named gaps** — every link you do not hold, tagged with why it is missing: classified, suppressed, blocked, or unknown.
+* **Your threshold** — the confidence level you said in advance you would act at.
+* **The conclusion**, and the AI's first-principles re-check of it.
+
+The post format is YAML, so another citizen's software can parse and evaluate the reasoning rather than only react to it. A **value system** publishes the same way, as a policy packet somebody else can import and apply to their own questions.
+
+If any part of your reasoning pointed at a file on your own computer, that path means nothing to anyone else, so the app never sends it. On publish the file's contents are **snapshotted** into the published artifact instead, stamped with where it came from, when it was last modified, and a hash. Until that happens the app marks the link local-only, so you are never surprised that a reader cannot see the file on your laptop.
+
+On the receiving side, a citizen weights incoming posts by how much they trust the author. That trust graph is what lets many individuals' reasoning compose into a shared conclusion without a central authority deciding what is true.
+
+Publishing is also the point where the anonymous default user stops being enough. Reading, reasoning, recording a position, laying out have-and-missing links and running the AI check all work with nobody signed in and nothing sent anywhere. Putting an artifact into a shared record is influence over other people, and an unattributable publication is the one thing review cannot repair afterwards, so that single checkbox asks for an account. A pseudonym is enough. A citizen who never publishes a legal name can still climb to the top of the trust ladder.
+
+## The goal it serves
+
+Arguing online does not change minds, and the reason is structural rather than a failure of manners. The unit people exchange in a feed is a conclusion with the reasoning stripped off. Two verdicts collide, neither can be inspected, and the exchange has nowhere to go except louder. [Why arguing online fails](/docs/the_problem/why_arguing_online_fails) sets that out in full.
+
+Publishing the chain instead of the verdict gives disagreement somewhere to land. If your third link rests on a committee record and your fourth on a newspaper write-up, a reader can attack the fourth specifically, and that is an argument that can actually be settled. [Evidence](/docs/evidence/overview) covers how a chain is built to be audited that way.
+
+The named gaps carry the most weight. The standard move against a citizen who has noticed something is to withhold a slice of the record and then disqualify anyone who reasons without it. A gap that travels inside the post, tagged with the reason it is missing, turns that silence into a recorded fact somebody else can go after. [Naming the gaps](/docs/evidence/naming_the_gaps) is that discipline written down.
+
+A chain other people can parse is also what makes many private conclusions add up to anything. One citizen reasoning alone is a person with a file. A thousand citizens publishing reasoning that composes is the beginning of a position a community can stand behind, which is where [Communities](/docs/communities/overview) picks the story up.
+
+## What keeps it honest
+
+* **The publish control is specified and not built yet.** The record format, the account requirement and the snapshot rule are all decided and written down; the checkbox itself is still on the list of things to build, and the flag it sets is a stub today. This page describes a designed step, and says so rather than letting you assume it is live.
+* **It is optional and never automatic.** Individual Mode is complete without publishing anything. There is no background sync, no default-on sharing, and nothing leaves your machine unless you send it.
+* **A post is not the movement's record.** Publishing never edits what the movement asserts about a law, a vote, or a person. That record changes only through the proposals route, where a file committed to the public repository is the approval. An argument and a record are two different things and the product keeps them apart.
+* **Trust weighting is believability, not agreement.** A trust score answers one question — is this a real, believable citizen — and never what that citizen believes. It changes how much weight a reader gives a post. It never makes the post correct.
+
+## Works with
+
+* **[Run It On Your Own Computer](./run_on_your_own_computer.mdx)** — the local, accountless mode where all the reasoning happens before any of it is published.
+* **[The Public Data Repository](./public_data_repository.mdx)** — the movement's shared evidence base, which a published post argues from and never edits.
+* **[The Citizen Mining Network](./citizen_mining_network.mdx)** — the same pattern applied to gathering evidence: citizens' own machines doing work that composes into a shared record.
+
+## Where to go next
+
+* **[Decisions](/docs/decisions/overview)** — how a question becomes the structured record that gets published.
+* **[Community consensus](/docs/decisions/community_consensus)** — what happens when many citizens' positions are pooled.
+* **[Communities](/docs/communities/overview)** — the workspaces where the pooled version of this work lives.
+* **[One App, Four Doors](/docs/four_doors/overview)** — where to go for the version of this argument written for your own party.
+* **[Take Action](/docs/take_action/overview)** — what a citizen can do this week, including the work worth publishing when it is done.

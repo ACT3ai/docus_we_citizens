@@ -3,15 +3,15 @@ id: citizen_mining_network
 title: The Citizen Mining Network
 sidebar_label: Citizen Mining Network
 sidebar_position: 44
-description: "The movement publishes the videos it has no transcript for, and volunteers transcribe them on their own computers into public repositories."
+description: "The movement publishes the videos it has no transcript for, and volunteers transcribe them on their own computers into public repositories they own."
 ---
 
 
 # The Citizen Mining Network
 
-There are thousands of hours of political video where a person explains, in their own words, what they actually intend to do. Turning that into text somebody can quote is slow, expensive work, and the movement's own server is forbidden from doing it. So the missing work is published as a public list, and citizens who want to help take items off that list on their own machines. The word mining describes the shape of the work and nothing else: there is no coin, no wallet, and nobody is paid.
+Thousands of hours of video exist in which a politician explains, in their own words, what they intend to do, and turning that into text somebody can quote is slow work the movement's own server is forbidden from doing. So the missing work is published as a public list, and citizens who want to help take rows off it on their own machines. The word mining describes the shape of the work and nothing else: no coin, no wallet, nobody paid.
 
-<Figure caption="A run publishes the videos that still have no transcript as a public queue, volunteers pull rows from it and do the work on their own computers into public repositories they own, and the copies that come back are compared against each other before any of them is quoted.">
+<Figure caption="Videos with no transcript are published as a public queue, volunteers pull rows from it and do the work on their own computers, and the copies that come back are compared against each other before any of them is quoted.">
   <svg viewBox="0 0 720 300" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* the public work queue */}
     <rect x="20" y="56" width="176" height="126" fill="var(--wc-fig-wash)" stroke="currentColor" />
@@ -83,47 +83,44 @@ There are thousands of hours of political video where a person explains, in thei
 
 ## What it does
 
-A scheduled run subtracts the transcripts the movement holds from the videos it knows about and writes the difference into the open data repository as a **public work queue**. That file is not a wish list. It states its **eligible universe** — every video attached to a person on an in-scope roster that has a media address anyone can reach — and gives a typed cause for anything left out: no media address, previously attempted and permanently failed, host not supported, duplicate of another record, person out of scope. If the eligible universe comes back as zero while the video library is not empty, the run fails loudly rather than publishing an empty list.
+A scheduled run subtracts the transcripts the movement holds from the videos it knows about and publishes the difference as a **public work queue** in the open data repository. It states its **eligible universe** — every video attached to a person on an in-scope roster with a media address anyone can reach — and gives a typed cause for everything left out: no media address, an earlier permanent failure, an unsupported host, a duplicate, a person out of scope. If that universe comes back as zero while the video library is not empty, the run fails loudly instead of publishing an empty list.
 
-Each row carries a **priority**, and the arithmetic is published with it. A row gains weight when almost nothing is known about the person, when the video is long-form over forty minutes, and when the person has no transcripts at all; it loses weight for every copy already received. Long-form is favoured on purpose. A two-hour interview is where somebody's reasoning becomes checkable. A ninety-second clip cannot move the record either way.
+Each row carries a **priority**, and the arithmetic behind it is published rather than described. A row gains weight when almost nothing is known about the person, when the video runs longer than forty minutes, and when that person has no transcripts at all; it loses weight for every copy already received. Long-form is favoured on purpose: a two-hour interview is where somebody's reasoning becomes checkable, and a ninety-second clip is not.
 
-A citizen turns on a **mining node** from Settings. It is off by default, and most installs will never switch it on. You point it at a public repository you own, choose a name — a pseudonym is fine — and set your own limits: minutes of audio per day, rows per run, whether to skip rows that already have enough copies. You pick a cadence, and the app hands you the scheduler command as copyable text. It does not install anything on your machine. One button runs a dry harvest and tells you exactly what the movement can see: manifest read or not, transcripts found, sidecars valid, checksums matching.
+A citizen turns on a **mining node** from settings. It is off by default. You point it at a public repository you own, choose a node name — a pseudonym is fine, and never caps anything — and set your own limits: minutes of audio per day, rows per run, whether to skip rows that already have enough copies. The scheduler command is shown as copyable text; nothing is installed on your machine for you. One button runs a dry harvest and reports what the movement can see in your repository.
 
-The node then runs the loop on its own hardware. It pulls the queue, which is read-only to it. It picks rows. It runs the same transcription ladder the movement runs — existing captions first, local speech recognition otherwise. It commits the words plus a **provenance sidecar** into its own repository: which tool, which model, which rung of the ladder, and the checksum of the transcript's exact bytes. It never commits audio or video, never edits what the person said, and never pushes to the movement's repository.
+The node does the work on its own hardware. It pulls the queue, which is read-only to it, picks rows by priority, and runs the same transcription ladder the movement runs: existing captions first, local speech recognition otherwise. It commits the words plus a **provenance sidecar** — which tool, which model, which rung of the ladder, and the checksum of the transcript's exact bytes — into its own repository, never into the movement's. It commits text only: no audio, no video, nothing behind a paywall or a login. This is structural rather than thrift. A hosted install is forbidden from fetching media at all, so the central server cannot do this work.
 
-This is structural, not a cost saving. A hosted install is forbidden from fetching media at all, by a rule the build itself enforces, so the central server cannot do this work even if it wanted to.
+Copies are then **corroborated**. Three are requested by default, because two copies can disagree with no way to break the tie and three can. Copies are normalized for case, spacing and punctuation, then compared pairwise on how closely they align and how much of the longest copy each covers. The copies that agree form a set, the largest set elects the canonical copy, and a set that is a majority of all copies means the transcript is trusted and quotable. A lone copy is usable, and every award derived from it is marked as resting on an uncorroborated transcript. No majority means nothing is trusted, the row stays open, and the sentence the product prints is that several citizens transcribed this video and do not agree, so we are not quoting it until they do.
 
-Copies then get **corroborated**. Three independent copies are requested by default, because two can disagree with no way to break the tie and three can. The copies are normalized — case, spacing, punctuation — and compared pairwise on how closely they align and how much of the longest copy each one accounts for. Copies that agree form a set, and the largest set elects the canonical copy. Two or more agreeing in a majority means the transcript is trusted and quotable. A lone copy is usable, and every award derived from it is marked as resting on an uncorroborated transcript. No majority means nothing is trusted, the row stays open, and the sentence the product prints in public is that several citizens transcribed this video and do not agree, so we are not quoting it until they do.
-
-Nodes build a **standing** from agreement over time. It buys preference — a node's copy is preferred as the canonical one inside a set — and it never buys authority. No level of standing lets a copy skip corroboration, and a fully pseudonymous node can reach the top.
+Nodes build a **standing** from agreement over time. It buys preference — a node's copy is favoured as canonical inside a set — and never authority. No standing level lets a copy skip corroboration, and a fully pseudonymous node can reach the top.
 
 ## The goal it serves
 
-Hundreds of missing transcripts is an impossible bill for one server and a pleasant afternoon for thirty citizens. That is the plain arithmetic of it. A movement that has to buy its own evidence supply will eventually be limited by who is willing to fund it, and the whole point of [Open Data](/docs/open_data/overview) is that nobody has to take our word for where a record came from.
+Hundreds of missing transcripts is an impossible bill for one server and a pleasant afternoon for thirty citizens. A movement that has to buy its own evidence supply is limited to whatever a funder keeps paying for, and when the money stops the record stops growing. Volunteers with laptops do not have that failure mode.
 
-The second reason matters more. A single central transcript is an unchecked claim, however good the tooling. Several independent parties transcribing the same public video, and then comparing the results, is what turns that claim into evidence somebody else can stand on. It is the same discipline the movement applies everywhere else: [publish the derivation](/docs/evidence/chain_of_evidence), and where the record does not support a conclusion, say so instead of rounding up.
+The integrity argument matters more. A single central transcript is an unchecked claim, however good the tooling that produced it. Several unconnected people transcribing the same public video, then comparing the results word against word, is what turns that claim into evidence somebody on the other side of the argument can stand on. It is the discipline the rest of this site runs on: publish the derivation, and where the record does not support a conclusion, say so rather than rounding up. That is why disagreement between copies is [named rather than skipped](/docs/evidence/naming_the_gaps).
 
-It also keeps the supply out of any one company's hands. The queue is a public file, the repositories belong to the citizens who filled them, and the movement holds a pointer and a checksum rather than a monopoly on the words. If we disappeared tomorrow, the transcripts would still be there, in repositories nobody here controls.
+It also keeps the evidence supply out of any single company's hands, including ours. The queue is a public file, the repositories belong to the citizens who filled them, and the movement holds a pointer and a checksum rather than a monopoly on the words — the same posture the whole [open record](/docs/open_data/overview) takes, and the reason the [code and the repositories](/docs/repos/overview) are public too. If this organization disappeared tomorrow the transcripts would still be there.
 
 ## What keeps it honest
 
-* **A node never pushes to the movement's repository.** The public record is read-only to every miner. Work arrives by being published somewhere else and harvested.
-* **The text is never edited.** A transcript is a record. Corrections and doubts go in the sidecar notes, never into the words, because an edited copy poisons every comparison it enters.
-* **No media is ever committed**, and nothing behind a paywall or a login is transcribed. The source address plus a checksum is a better citation than a copy.
-* **Disagreement is published, not resolved quietly.** A divergent row becomes a named gap on the public queue rather than a quiet decision about which citizen to believe.
-* **The checksum is re-checked over time.** A sweep re-fetches canonical copies and compares hashes. A transcript that vanished, and a transcript that changed under us, are both stated on the pages that cite it.
-* **The wall holds.** Nothing produced here reaches the Monkey Award or the Llama Award, whose only input is the voting record. Transcripts feed the Flamingo Award and nothing else — see [the wall](/docs/politicians/the_wall).
+* **A node never pushes to the movement's repository.** The public record is read-only to every miner. Work arrives by being published elsewhere and harvested.
+* **The text is never edited to improve what the person said.** A transcript is a record. Corrections and doubts go in the sidecar notes, never into the words, because an edited copy poisons every comparison it enters.
+* **The checksum is the anchor, and it is re-checked.** A sweep re-fetches canonical copies and compares hashes. A source transcript that vanished, or that changed under us, is stated on the pages citing it rather than quietly replaced.
+* **Comparison is about words, not meaning.** Corroboration never votes on what a person meant. It compares one text against another, so the reading happens later, on one agreed text two people can both check.
+* **The wall holds.** Nothing produced here reaches the Monkey Award or the Llama Award, whose only input is the voting record. Transcripts feed the Flamingo Award and nothing else.
 
 ## Works with
 
-* **[Run It On Your Own Computer](./run_on_your_own_computer.mdx)** — a mining node is that same local install with one switch turned on, doing work on hardware the citizen owns.
-* **[The Public Data Repository](./public_data_repository.mdx)** — the work queue and the register of nodes live there, and it is the read-only backbone every miner pulls from.
-* **[Nothing Fails Quietly](./nothing_fails_quietly.mdx)** — the empty universe, the divergent verdict and the changed checksum are all loud by design rather than skipped.
+* **[Run It On Your Own Computer](./run_on_your_own_computer.mdx)** — a mining node is that same local install with one switch turned on, doing the work on hardware the citizen owns.
+* **[The Public Data Repository](./public_data_repository.mdx)** — where the work queue is published, and the record a node reads from but is never allowed to write to.
+* **[Nothing Fails Quietly](./nothing_fails_quietly.mdx)** — an empty eligible universe, a disagreement between copies, and a checksum that stopped matching are all loud by design.
 
 ## Where to go next
 
 * **[Open Data](/docs/open_data/overview)** — how the movement's public record works, and why it is a repository you can clone rather than a database you are asked to trust.
-* **[Clone the record](/docs/open_data/clone_the_record)** — get the whole thing onto your own machine, including the queue this network drains.
+* **[Clone the record](/docs/open_data/clone_the_record)** — pull the whole thing onto your own machine, including the queue this network drains.
 * **[Naming the gaps](/docs/evidence/naming_the_gaps)** — why an admitted hole in the evidence is worth more than a confident guess.
-* **[Trust Scores](/docs/trust_scores/overview)** — how a pseudonymous citizen becomes believable through checkable work rather than through an identity document.
-* **[Take Action](/docs/take_action/overview)** — everything a citizen can do this week, including running a node and closing rows on the queue.
+* **[Trust Scores](/docs/trust_scores/overview)** — how a pseudonymous citizen becomes believable through checkable work instead of an identity document.
+* **[Take Action](/docs/take_action/overview)** — what a citizen can do this week, including running a node and closing rows on the queue.

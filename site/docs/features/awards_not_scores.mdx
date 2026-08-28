@@ -9,10 +9,10 @@ description: "Every figure published about a politician is a percentage of an aw
 
 # Awards, Not Scores
 
-Every figure this movement publishes about a politician is a percentage of an award. "A 72% Llama Award" describes something we conferred, and how much of it — not a place on a hundred-point scale the person carries around. That distinction changes what is being claimed and what a blank means, and it is enforced by a test that refuses to build the software when the wrong word reaches a page.
+Every figure this movement publishes about a politician is a percentage of an award. "A 72% Llama Award" describes something we conferred, and how much of it — not a place on a scale the person carries around. That distinction changes what is being claimed and what a blank means, and it is enforced by a test that refuses to build the software when the wrong word reaches a page.
 
 <Figure caption="A computed number leaves the arithmetic and passes through one fixed grammar before it reaches a reader: either a percentage joined to the award it is a percentage of, or a plain sentence saying no award was given. Citizen-side figures bypass that grammar entirely and keep the word score.">
-  <svg viewBox="0 0 720 336" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 720 338" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* politician lane */}
     <text x="24" y="30" fontSize="10.5" fill="currentColor" opacity="0.72">About a politician</text>
 
@@ -38,8 +38,8 @@ Every figure this movement publishes about a politician is a percentage of an aw
     <text x="468" y="66" fontSize="10.5" fill="currentColor" opacity="0.72">a percentage of the award</text>
 
     <rect x="452" y="78" width="244" height="44" rx="6" stroke="currentColor" fill="none" />
-    <text x="468" y="99" fontSize="12" fill="currentColor">No award has been given yet.</text>
-    <text x="468" y="115" fontSize="10.5" fill="currentColor" opacity="0.72">never a zero, never a blank</text>
+    <text x="468" y="99" fontSize="12" fill="currentColor">No award has been given.</text>
+    <text x="468" y="115" fontSize="10.5" fill="currentColor" opacity="0.72">never rendered as 0%</text>
 
     {/* the lint */}
     <line x1="312" y1="150" x2="312" y2="124" stroke="var(--wc-fig-accent)" />
@@ -77,7 +77,7 @@ The display rules are fixed too, rather than left to whoever builds the next scr
 * **The "N% known" figure travels with every percentage,** so a confident number on thin evidence argues with itself on sight.
 * **All three marks render at one shared height,** and no mark ever appears on a record the movement never assessed.
 
-Enforcement is a test, not a habit. A permitted lexicon and a forbidden list — `score`, `rated`, `points`, `grade`, `vetted`, `penalty`, `demerit` and their relatives — are checked by a grep across every file that publishes an award about a politician, and a hit fails the build with a message naming what to write instead. Its scope is whole directories rather than a hand-kept list, so a page added next month is covered the day it exists.
+Enforcement is a test, not a habit. A permitted lexicon and a forbidden list are checked by a grep across every file that publishes an award about a politician. The forbidden side covers the report-card vocabulary, the words that place a person somewhere on a scale, and words like `penalty` and `demerit` that smuggle a verdict back in. A hit fails the build with a message naming what to write instead. Its scope is whole directories rather than a hand-kept list, so a page added next month is covered the day it exists.
 
 Citizen-side figures deliberately keep the word **score**. Karma, your own trust score and the leaderboard are a citizen earning recognition for their own logged work, not a published claim about somebody else, and the check leaves them alone.
 
@@ -89,7 +89,7 @@ The movement publishes unflattering arithmetic about named, living, powerful peo
 
 The second reason is what a blank has to mean. On a scale, no number reads as the bottom of the scale. With an award, not receiving one is an ordinary fact about most people most of the time — which is what lets the movement say "we assessed and gave nothing" and "we have not looked yet" as two different sentences, neither of them an accusation. [The wall](/docs/politicians/the_wall) keeps those findings in separate lanes; this rule keeps them in honest words.
 
-The third reason matters most. The point is not to insult incumbents; it is to elect people who will work for citizens and refuse to be bought. A shelf of awards a challenger is partway to filling is an invitation to keep going; a report card is a reason to stay out of public life. The case for publishing any of it is in [The Problem](/docs/the_problem/overview).
+The third reason matters most. The aim is not to insult incumbents; it is to elect people who will work for citizens and refuse to be bought. A shelf of awards a challenger is partway to filling is an invitation to keep going; a report card is a reason to stay out of public life. The case for publishing any of it is in [The Problem](/docs/the_problem/overview).
 
 ## What keeps it honest
 
@@ -104,6 +104,8 @@ What the rule leaves alone: database columns, code symbols and already-published
 * **[The Monkey Award](./monkey_award.mdx)** — the damage finding from the voting record, published as a percentage of an award rather than a verdict on a person.
 * **[The Llama Award](./llama_award.mdx)** — the repair finding, where a partly earned award is an invitation to earn more of it.
 * **[The Flamingo Award](./flamingo_award.mdx)** — three states that only stay readable because "not given" is an ordinary fact.
+* **[The Wall](./the_wall.mdx)** — keeps the two kinds of evidence in separate awards, which is what makes a percentage of one award mean anything.
+* **[Show The Arithmetic](./show_the_arithmetic.mdx)** — publishes the derivation behind every percentage, so the award can be checked rather than believed.
 
 ## Where to go next
 

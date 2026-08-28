@@ -1,0 +1,272 @@
+---
+id: overview
+title: Product Features
+sidebar_label: Features
+sidebar_position: 1
+description: "Every capability of We The Citizens, one page each — what it does, and the political goal it exists to serve."
+---
+
+
+# Product Features
+
+<CTA note="Every page below describes something the software actually does. Reading costs nothing and needs no account; an account is what lets you record where you stand and log what you did." />
+
+The rest of this site makes an argument: that Congress too often works for
+someone other than the citizens who elected it, and that the way to establish
+that is to measure it from the official record rather than argue about it. This
+area is the other half — the machinery that carries the argument out.
+
+There is one page for each capability of the product. Each says what the thing
+does in plain mechanism, names the political goal it exists to serve, and states
+the limit it will not cross. If a page here cannot be traced back to something a
+citizen can check, it does not belong.
+
+<Figure caption="How the product's capabilities fit together: the public record on the left, the three awards it produces, the citizen's own reasoning in the middle, and the action that comes out the far side.">
+  <svg viewBox="0 0 720 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* stage 1 — the record */}
+    <rect x="16" y="52" width="140" height="120" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="86" y="40" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">The official record</text>
+    <text x="86" y="82" fontSize="12" fill="currentColor" textAnchor="middle">Roll calls</text>
+    <text x="86" y="102" fontSize="12" fill="currentColor" textAnchor="middle">Authorship</text>
+    <text x="86" y="122" fontSize="12" fill="currentColor" textAnchor="middle">Obstruction</text>
+    <text x="86" y="146" fontSize="12" fill="currentColor" textAnchor="middle">Their own words</text>
+
+    <line x1="156" y1="112" x2="196" y2="112" stroke="currentColor" />
+    <path d="M 204,112 l -8,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* stage 2 — the awards */}
+    <rect x="204" y="52" width="150" height="120" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="279" y="40" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">Three awards</text>
+    <text x="279" y="86" fontSize="12" fill="currentColor" textAnchor="middle">Monkey</text>
+    <text x="279" y="110" fontSize="12" fill="currentColor" textAnchor="middle">Llama</text>
+    <text x="279" y="134" fontSize="12" fill="currentColor" textAnchor="middle">Flamingo</text>
+    <line x1="279" y1="96" x2="279" y2="96" stroke="currentColor" />
+
+    <line x1="354" y1="112" x2="394" y2="112" stroke="currentColor" />
+    <path d="M 402,112 l -8,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* stage 3 — the citizen */}
+    <rect x="402" y="52" width="150" height="120" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="477" y="40" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">You decide</text>
+    <text x="477" y="86" fontSize="12" fill="currentColor" textAnchor="middle">Your values</text>
+    <text x="477" y="110" fontSize="12" fill="currentColor" textAnchor="middle">Your evidence</text>
+    <text x="477" y="134" fontSize="12" fill="currentColor" textAnchor="middle">Your decision</text>
+
+    <line x1="552" y1="112" x2="592" y2="112" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <path d="M 600,112 l -8,-3.5 l 0,7 z" fill="var(--wc-fig-accent)" />
+
+    {/* stage 4 — action */}
+    <rect x="600" y="72" width="104" height="80" fill="none" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="652" y="106" fontSize="12" fill="currentColor" textAnchor="middle">You act</text>
+    <text x="652" y="126" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">and log it</text>
+
+    {/* the checkable line running underneath */}
+    <line x1="16" y1="200" x2="704" y2="200" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+    <text x="360" y="222" fontSize="11" fill="currentColor" textAnchor="middle" opacity="0.72">Every step above is published, sourced, and reproducible by a stranger</text>
+  </svg>
+</Figure>
+
+## What The Movement Publishes About Politicians
+
+The three awards a citizen sees beside any officeholder or challenger, and the two product-wide rules that govern what those marks are allowed to say.
+
+<FeatureGrid>
+  <FeatureCard title="The Monkey Award" to="/docs/features/monkey_award" goal="Make the accusation arithmetic a stranger can re-derive.">
+    A published award, 0-100 and higher is worse, measuring how much one named person did to put a short, hand-curated list of democracy-damaging laws in place.
+  </FeatureCard>
+  <FeatureCard title="The Llama Award" to="/docs/features/llama_award" goal="Find the allies, not just the opponents.">
+    The counterpart award that counts repair rather than damage — 0-100, higher is better — for work that takes bad laws off the books or fixes the machinery of self-government.
+  </FeatureCard>
+  <FeatureCard title="The Flamingo Award" to="/docs/features/flamingo_award" goal="Judge a challenger on evidence, and never publish silence as an accusation.">
+    The award for everyone outside the voting record — read from a person's own recorded words and sourced background — and the only award with three states instead of a bare number.
+  </FeatureCard>
+  <FeatureCard title="The Wall" to="/docs/features/the_wall" goal="Keep the heaviest claim answerable from government records alone.">
+    A hard separation between two kinds of evidence: what a politician did with the power they held feeds two awards, and everything else feeds a third — and nothing crosses.
+  </FeatureCard>
+  <FeatureCard title="Awards, Not Scores" to="/docs/features/awards_not_scores" goal="Say something unflattering about a named living person, honestly.">
+    The product-wide rule that everything published about a politician is an award, a percentage of one, or the stated absence of one — enforced by a lint that fails the build.
+  </FeatureCard>
+</FeatureGrid>
+
+## Showing The Arithmetic
+
+Every published number comes with the page that derives it, an honest account of how much evidence there was, and a dated re-runnable edition behind it.
+
+<FeatureGrid>
+  <FeatureCard title="Show The Arithmetic" to="/docs/features/show_the_arithmetic" goal="Move the argument to the weights, which sit in a public file.">
+    Two different derivation pages — the voting-record invoice and the Flamingo math page — each built to be argued with, each reachable by anyone with no sign-in.
+  </FeatureCard>
+  <FeatureCard title="Say What We Could See" to="/docs/features/coverage_and_named_gaps" goal="Apply the movement's own honesty standard to itself.">
+    Every calculation publishes its denominator and a typed cause for every blank — plus 'N% known' beside every award, and a public ledger of the data the movement is still missing.
+  </FeatureCard>
+  <FeatureCard title="Your State House, Same Instrument" to="/docs/features/state_legislature_coverage" goal="Watch the level of government that touches daily life most.">
+    The same three awards and the same arithmetic reach state legislators, driven by a separate policy file — because the laws that touch a citizen most are often not federal.
+  </FeatureCard>
+  <FeatureCard title="Work You Can Watch" to="/docs/features/work_you_can_watch" goal="A number nobody can watch being made has to be taken on faith.">
+    The recomputation is not a black box on a server somewhere — the job queue is visible, a run can be started and followed, and it keeps going if you close the tab.
+  </FeatureCard>
+</FeatureGrid>
+
+## The Public Record It Rests On
+
+Where the evidence comes from: every stage of every vote, the votes that were prevented from happening, the law pages, and the rule that a source is the official record or nothing.
+
+<FeatureGrid>
+  <FeatureCard title="The Whole Voting Record" to="/docs/features/the_voting_record" goal="Final passage is the last and least informative thing that happens to a bill.">
+    Every recorded act a member took at every stage of a bill — committee, procedural, amendment, passage, conference, override — plus what they authored and what they signed on to, each row linked to the official record.
+  </FeatureCard>
+  <FeatureCard title="The Vote That Was Never Allowed" to="/docs/features/the_blocked_fix_record" goal="Killing a fix quietly is more effective than voting against it.">
+    The record of repairs somebody filed and of the people who used a position of power to make sure no vote ever happened — the single most effective way a law dies without anyone being recorded opposing it.
+  </FeatureCard>
+  <FeatureCard title="The Law Page" to="/docs/features/the_law_page" goal="Every claim one click from the primary source.">
+    One page per law: what it does, the rung-by-rung record of every stage where a question was put, and one click to the official source — plus the honest page for a law we hold no record of.
+  </FeatureCard>
+  <FeatureCard title="The Official Record Or Nothing" to="/docs/features/official_record_sourcing" goal="Arithmetic over the public record is not defamation.">
+    Every claim about a named living person carries a link to the government's own record, and an unsourced row is dropped and the drop reported rather than quietly kept.
+  </FeatureCard>
+</FeatureGrid>
+
+## Problems, Laws And Fixes
+
+The movement's second pillar: naming precisely what is broken, and writing the legislative language that would fix it.
+
+<FeatureGrid>
+  <FeatureCard title="The Problem Record" to="/docs/features/problem_record" goal="Grievance that stays vague cannot be fixed or checked.">
+    A numbered, public list of exactly what is wrong with the country, each entry written precisely enough that a law could be drafted to fix it.
+  </FeatureCard>
+  <FeatureCard title="Fix Bills" to="/docs/features/fix_bills" goal="Close the gap between complaining and legislating.">
+    Real legislative language the movement wrote for each problem — sections a legislator could file tomorrow — including a draft generated from the problem itself and from what citizens voted for.
+  </FeatureCard>
+</FeatureGrid>
+
+## The People
+
+Who holds power near you, who could replace them, and the evidence base the movement builds about people who have never cast a vote.
+
+<FeatureGrid>
+  <FeatureCard title="The Politician Record Page" to="/docs/features/politician_record_pages" goal="What your senator actually did, in the first screen.">
+    The one page every link about a person lands on — in three shapes, depending on whether they hold power, are seeking it, or have never held office at all.
+  </FeatureCard>
+  <FeatureCard title="The Rosters" to="/docs/features/the_rosters" goal="Open for any citizen to propose into, impossible to quietly write.">
+    Four lists of people who hold or seek power — one frozen key each — that any citizen can propose into and only an admin can publish into.
+  </FeatureCard>
+  <FeatureCard title="Your Seats And The Seat Map" to="/docs/features/your_seats" goal="You cannot judge a vote until you know whose vote it was.">
+    You say as much or as little as you like about where you vote — country, state, ZIP, street — and the app tells you live exactly which of your elected seats it can now show you.
+  </FeatureCard>
+  <FeatureCard title="The Qualification Areas" to="/docs/features/qualification_catalog" goal="Publish the standard before the verdict.">
+    The public, versioned list of named areas a politician is measured against — with the movement's declared weight for each one, and a slider so you can use your own.
+  </FeatureCard>
+  <FeatureCard title="Videos, Transcripts And Provenance" to="/docs/features/videos_and_transcripts" goal="A challenger has no votes, so their own words are the evidence.">
+    The record of a person speaking in their own words — transcripts the app never downloaded itself, each carrying a visible grade for how trustworthy the transcription is.
+  </FeatureCard>
+  <FeatureCard title="Reading Their Own Words" to="/docs/features/reading_their_own_words" goal="Read hundreds of hours with no staff, and show the quote every time.">
+    One dedicated AI assessor per qualification area reads a transcript, scores it against a written rubric with a verbatim quote behind every judgement, and every number drills down to the sentence.
+  </FeatureCard>
+  <FeatureCard title="Who Should Run, And Where" to="/docs/features/contender_slate" goal="Answer the hard question — who should run, and where.">
+    The run that turns a list of recommended people into a plan — one named challenger per seat, published with the arithmetic that put them there, and a reason beside every name that did not get one.
+  </FeatureCard>
+  <FeatureCard title="Worrisome Challengers" to="/docs/features/worrisome_challengers" goal="Hold our own side to the same standard as everyone else.">
+    The roster where a citizen can file a sourced worry about somebody running for office — video-first, never anonymously, and published only after a human approves it.
+  </FeatureCard>
+</FeatureGrid>
+
+## How A Citizen Takes Part
+
+The working surfaces: reasoning through a question, casting votes, proposing records, doing real-world work, and finding your way around without an account.
+
+<FeatureGrid>
+  <FeatureCard title="Decisions, Areas And Communities" to="/docs/features/decisions_and_communities" goal="Reach a defensible conclusion when proof is withheld on purpose.">
+    The workspace where a citizen works out one question for themselves — their position, their evidence, and what is missing and why — inside shared areas a group can own.
+  </FeatureCard>
+  <FeatureCard title="The First-Principles AI Check" to="/docs/features/first_principles_ai_check" goal="Check the logic, never supply a new unaccountable authority.">
+    Ask the app to re-check a decision's reasoning using only the background material you gave it, and get back a step-by-step chain you can audit line by line.
+  </FeatureCard>
+  <FeatureCard title="Value Systems And Policy Packets" to="/docs/features/value_systems_and_policy_packets" goal="The answer to being told what to think.">
+    Write down your own this-versus-that rules as structured ethics the software can apply, then publish them for others to import — or import somebody else's.
+  </FeatureCard>
+  <FeatureCard title="Citizen Votes" to="/docs/features/citizen_votes" goal="Answerable by the people the movement claims to speak for.">
+    Stars, yes-or-no ballots and plan answers — one voting system pointed at problems, laws, people and the movement itself, sealed daily into a number anyone can recompute.
+  </FeatureCard>
+  <FeatureCard title="The Movement Plan" to="/docs/features/the_movement_plan" goal="Tell a citizen who just decided to help what happens next.">
+    The movement's written statement of what it is going to do, published as a numbered document a citizen reads end to end — with a vote button inside every item.
+  </FeatureCard>
+  <FeatureCard title="Proposals And Review" to="/docs/features/proposals_and_review" goal="A movement that drops citizen contributions stops receiving them.">
+    The one place a citizen who is not an admin can change what the movement says — and the review side, which on your own laptop is you.
+  </FeatureCard>
+  <FeatureCard title="Actions You Can Actually Take" to="/docs/features/activism_catalog" goal="Say what to do on Saturday morning, not just what is wrong.">
+    A wall of action cards, each opening a step-by-step walkthrough that ends in an 'I did it' button and a form for logging what you did, with evidence a stranger can check.
+  </FeatureCard>
+  <FeatureCard title="Karma And The History Book" to="/docs/features/karma_and_leaderboard" goal="Make the movement's scarce resource countable.">
+    Recognition a citizen earns for real-world work that other citizens verified, shown on public boards titled the History Book of Citizens Fixing Democracy — and itemised line by line.
+  </FeatureCard>
+  <FeatureCard title="Search The Record" to="/docs/features/search_the_record" goal="Evidence nobody can find is worthless.">
+    One search box in the header of every page finds a politician or a law by name and takes you straight to its page — ungated, and logging nothing.
+  </FeatureCard>
+  <FeatureCard title="The AI Assistant" to="/docs/features/ai_assistant" goal="Answer the question without ever supplying the opinion.">
+    A chat box beside every record that answers questions about what is on the screen, cites what it read, and refuses to hold a political opinion of its own.
+  </FeatureCard>
+  <FeatureCard title="Open To Read, Gated To Act" to="/docs/features/open_to_read_gated_to_act" goal="A sign-in wall makes the argument invisible to everyone outside it.">
+    A stranger reads the entire movement with no account, every control they cannot use yet is still on screen, and clicking one keeps their draft and hands it back afterwards.
+  </FeatureCard>
+  <FeatureCard title="Your Settings, Your Data" to="/docs/features/your_settings_and_data" goal="Leaving costs nothing, so this never becomes something you are inside.">
+    The controls a citizen actually holds: what the AI is allowed to do, what gets published, a full export of everything at any time, and closing the account.
+  </FeatureCard>
+</FeatureGrid>
+
+## Trust Between Citizens
+
+How the movement weighs whose input counts without letting anyone buy standing, and without ever requiring a real name.
+
+<FeatureGrid>
+  <FeatureCard title="The Trust Ladder" to="/docs/features/trust_ladder" goal="Survive astroturf without putting a login wall at the door.">
+    The rungs a citizen climbs by doing verifiable work, which decide what their input can do — climbable under a pseudonym, and impossible to buy.
+  </FeatureCard>
+  <FeatureCard title="Where You Stand" to="/docs/features/trust_wizard" goal="Where you actually stand, not how you describe yourself.">
+    A skippable, resumable walk that shows you real people two at a time and one at a time, and works out where you actually stand from your answers rather than from a label.
+  </FeatureCard>
+  <FeatureCard title="Groups And Values Blocks" to="/docs/features/groups_and_values_blocks" goal="Tell a real public from manufactured accounts.">
+    Named communities built around written positions, where your claim to belong is checked against your own answers and — if you volunteer it — your own public record.
+  </FeatureCard>
+  <FeatureCard title="Your Profile, Your Anonymity" to="/docs/features/citizen_profiles_and_anonymity" goal="Pseudonymity as a safety feature, not a convenience toggle.">
+    Take part under a pseudonym, your real name, or both — with a one-click switch that removes you from public view without costing you your standing or your work.
+  </FeatureCard>
+  <FeatureCard title="Verification Layers" to="/docs/features/verification_layers" goal="Prove control of something without proving who you are.">
+    A dashboard of independent layers a citizen may choose to prove — each one proving control of something and nothing more, and none of them a gate on reading or taking part.
+  </FeatureCard>
+</FeatureGrid>
+
+## Yours To Run, Yours To Check
+
+The software is a tool a citizen holds, the evidence is a public repository anyone can clone, and the rules the movement promises to follow are enforced by things that fail loudly.
+
+<FeatureGrid>
+  <FeatureCard title="Run It On Your Own Computer" to="/docs/features/run_on_your_own_computer" goal="A tool you own cannot be switched off or quietly changed.">
+    The whole product is a program you run on your own machine with no account, no database and no network — and the hosted copy is the same code with one driver swapped.
+  </FeatureCard>
+  <FeatureCard title="The Public Data Repository" to="/docs/features/public_data_repository" goal="Do not ask for the deference the movement exists to refuse.">
+    Everything the movement asserts about laws, votes and politicians lives in a separate public git repository anyone can clone and diff — and a file being in it is the approval record.
+  </FeatureCard>
+  <FeatureCard title="The Citizen Mining Network" to="/docs/features/citizen_mining_network" goal="An impossible bill for one server, an afternoon for thirty citizens.">
+    The movement publishes the list of videos it has no transcript for, and volunteers run the work on their own computers into public repositories they own — with independent copies cross-checked before anything is quoted.
+  </FeatureCard>
+  <FeatureCard title="Nothing Fails Quietly" to="/docs/features/nothing_fails_quietly" goal="A named gap beats a quiet one — turned inward on the software.">
+    Loading, empty and broken are never confused for one another on any page — and the rules the movement promises to follow are enforced by build-failing checks rather than by anyone remembering.
+  </FeatureCard>
+  <FeatureCard title="Paid Supporter" to="/docs/features/paid_supporter" goal="Pay for it without advertising, paywalls, or selling citizens out.">
+    A voluntary monthly membership at an amount you choose, buying exactly one thing — a room showing where the money went — and never a louder vote.
+  </FeatureCard>
+  <FeatureCard title="The Four Party Front Doors" to="/docs/features/four_party_front_doors" goal="In-party persuasion is fast; cross-party persuasion is not.">
+    Four additional websites — for Republicans, Democrats, Libertarians and Democratic Socialists — running the same software and publishing the same numbers as this one.
+  </FeatureCard>
+  <FeatureCard title="Publishing To The Social Network" to="/docs/features/publishing_to_the_social_network" goal="Exchange the reasoning, not the conclusion.">
+    A finished piece of reasoning can be cast outward as a structured post that other citizens can evaluate and build on, rather than an opinion shouted into a feed.
+  </FeatureCard>
+</FeatureGrid>
+
+## Where to go next
+
+- **[Start Here](/docs/start_here/overview)** — what the movement is, in sixty seconds, with no vocabulary you have not met.
+- **[How It Works](/docs/how_it_works/overview)** — the core loop these features serve, end to end.
+- **[The Problem](/docs/the_problem/overview)** — why a product like this exists at all.
+- **[Get Started](/docs/get_started/overview)** — run it on your own computer, or use the hosted copy.
+- **[Open the app](https://app.WeTheCitizens.io/)** — do it for real, on your own seats.

@@ -1,0 +1,112 @@
+---
+id: citizen_votes
+title: Citizen Votes
+sidebar_label: Citizen Votes
+sidebar_position: 28
+description: "Stars and yes-or-no ballots, one row per citizen per question, sealed once a day into a number anyone can recompute."
+---
+
+
+# Citizen Votes
+
+Some questions only need one click: how bad is this problem, would this person suit this office, is this line of the movement's own plan worth fixing. Citizen Votes is the one machine behind all of them — two shapes of vote, one row per person per question, and a daily run that seals the raw clicks into a number anyone can recompute.
+
+<Figure caption="Both shapes of vote land in the same store, one row per citizen per subject, which a daily run reads and never writes to; the seal produces the number that may be quoted and a report of where citizens and the movement disagree, while the movement's own stated position runs alongside untouched.">
+  <svg viewBox="0 0 720 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the three inputs */}
+    <rect x="20" y="40" width="180" height="52" fill="var(--wc-fig-wash)" stroke="currentColor" strokeWidth="1.25" />
+    <text x="34" y="64" fontSize="12" fill="currentColor">Stars, 1 to 5</text>
+    <text x="34" y="82" fontSize="10.5" fill="currentColor" opacity="0.72">cast from one row</text>
+
+    <rect x="20" y="108" width="180" height="52" fill="var(--wc-fig-wash)" stroke="currentColor" strokeWidth="1.25" />
+    <text x="34" y="132" fontSize="12" fill="currentColor">Yes / No ballot</text>
+    <text x="34" y="150" fontSize="10.5" fill="currentColor" opacity="0.72">a page of its own</text>
+
+    <rect x="20" y="176" width="180" height="52" fill="var(--wc-fig-wash)" stroke="currentColor" strokeWidth="1.25" />
+    <text x="34" y="200" fontSize="12" fill="currentColor">Plan item ballot</text>
+    <text x="34" y="218" fontSize="10.5" fill="currentColor" opacity="0.72">worth fixing?</text>
+
+    <path d="M 200,66 L 239,66" fill="none" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M 246,66 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <path d="M 200,134 L 239,134" fill="none" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M 246,134 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <path d="M 200,202 L 239,202" fill="none" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M 246,202 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the store */}
+    <rect x="248" y="40" width="190" height="188" fill="var(--wc-fig-wash-2)" stroke="currentColor" strokeWidth="1.25" />
+    <text x="262" y="72" fontSize="15" fill="currentColor">Raw votes on disk</text>
+    <circle cx="264" cy="112" r="2.5" fill="currentColor" />
+    <text x="276" y="116" fontSize="12" fill="currentColor">One row per citizen</text>
+    <circle cx="264" cy="150" r="2.5" fill="currentColor" />
+    <text x="276" y="154" fontSize="12" fill="currentColor">Changing it replaces it</text>
+    <circle cx="264" cy="188" r="2.5" fill="currentColor" />
+    <text x="276" y="192" fontSize="12" fill="currentColor">Never edited by the run</text>
+
+    <path d="M 438,134 L 454,134 L 454,74 L 462,74" fill="none" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M 470,74 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the daily seal, and what it writes */}
+    <rect x="470" y="40" width="226" height="68" fill="none" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <text x="484" y="68" fontSize="15" fill="currentColor">The daily seal</text>
+    <text x="484" y="90" fontSize="10.5" fill="currentColor" opacity="0.72">plain mean, one vote each</text>
+
+    <path d="M 483,108 L 483,236" fill="none" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M 483,178 L 512,178" fill="none" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M 520,178 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <path d="M 483,236 L 512,236" fill="none" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M 520,236 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="520" y="156" width="176" height="44" fill="var(--wc-fig-wash)" stroke="currentColor" strokeWidth="1.25" />
+    <text x="532" y="183" fontSize="12" fill="currentColor">Sealed number + count</text>
+    <rect x="520" y="214" width="176" height="44" fill="var(--wc-fig-wash)" stroke="currentColor" strokeWidth="1.25" />
+    <text x="532" y="241" fontSize="12" fill="currentColor">Divergence report</text>
+
+    {/* the parallel track */}
+    <rect x="20" y="280" width="676" height="44" fill="none" stroke="var(--wc-fig-muted)" strokeWidth="1.25" strokeDasharray="5 4" />
+    <text x="358" y="307" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">The movement's own stated position runs alongside. No vote moves it.</text>
+  </svg>
+</Figure>
+
+## What it does
+
+**Stars** are the one-click shape: five whole rungs, named rather than numbered — catastrophic, severe, serious, moderate, minor. They are cast straight from a table row without opening anything, and they carry three questions: how severe a problem is, how strong a person is in one named qualification area, and whether they would suit a particular office.
+
+A row nobody has answered shows an **empty track** — never a zero, because "nobody has looked at this yet" and "citizens said this is worthless" are different facts.
+
+**Ballots** are the considered shape: a question with two answers, on a page of its own, reached only after the record has been opened. The ballot shows nothing about the running tally before you answer, and the two answer cards are equal in width, weight and order, never re-sorted by which one is winning — showing somebody the crowd's answer before they form their own manufactures the agreement instead of measuring it. A returning voter arrives with their own answer selected, and a banner saying that choosing again replaces it. Every numbered item on the movement's own plan carries the same machinery, asking one generated question: **is this an issue worth fixing.**
+
+There is **one row per citizen per subject**, which is the whole of the anti-stuffing rule: a second answer replaces the first in place, the replaced one is archived rather than erased, and no code path can produce two rows for one person on one question.
+
+What the movement says and what citizens said are stored separately and shown side by side; a citizen's stars never move a problem's stated severity or any other factual field. Once a day a run reads the raw votes — writing nothing back to them — and seals the day into a dated, immutable snapshot: a **plain mean, always published beside its count, one citizen one vote, no weighting of any kind.** The live number moves the instant you click; the sealed number is the only figure anybody may quote outside the app.
+
+## The goal it serves
+
+A movement that publishes its own ordered list of what is wrong is making a claim on behalf of people who were never asked. That is the exact complaint citizens have against Washington: decisions made for them, announced afterwards, with no way in that costs less than a career. So the way in takes a second and sits on the row you were already reading — the [Problems](/docs/problems/overview) catalog is what the stars are cast against, and [Decisions](/docs/decisions/overview) is the same pillar at length.
+
+The movement still keeps a position of its own. One whose published severity silently became whatever the crowd last clicked would have nothing left to defend; one that collected votes and then ignored them would be asking a question it did not mean. Both are stored, both are shown, and which is being read is always stated — the design of [Pillar 1](/docs/the_movement/four_pillars), not a compromise.
+
+The daily run then publishes a **divergence report** naming every subject where the citizens and the movement disagree, sorted by the size of the gap — and resolves none of it. No path in the product can move the movement's own number. Publishing your own disagreement instead of quietly settling it in your favour is the standard this movement asks of Congress, applied to itself first.
+
+## What keeps it honest
+
+* **The run never edits a vote.** It reads the raw files and writes beside them, so every number it produces can be rebuilt from what citizens actually cast.
+* **Screening never looks at what you answered.** The checks are mechanical and about who cast and how — the level a subject requires, a burst of clicks down a whole list in seconds, a suspension after casting, a record that no longer exists. A rule that excluded answers disagreeing with the movement would manufacture the consensus it claims to measure.
+* **A flagged vote is excluded from the tally, left untouched on disk, and the reason published.** A run that quietly discarded four votes and published a clean mean would be doing, at small scale, what this site exists to expose. The run reports; a human decides.
+* **No weighting, ever.** Validation decides who may cast, never how much a cast counts; weighting by trust is future work and not in the run.
+* **A tally is what citizens said, never evidence that the claim is true** — and that sentence renders under the numbers every time.
+* **An account is required — the one thing here the anonymous local user cannot do.** A vote is aggregated with other people's, so it must be attributable; pseudonymous is fine, nobody at all is not. Reading and reasoning stay open with no account, and no vote is ever exported into the public data repository.
+
+## Works with
+
+* **[Decisions, Areas And Communities](./decisions_and_communities.mdx)** — the long form of the same pillar, for questions one click cannot carry.
+* **[Value Systems And Policy Packets](./value_systems_and_policy_packets.mdx)** — the written rules a citizen applies at scale, where a one-click answer is the fast version.
+* **[The First-Principles AI Check](./first_principles_ai_check.mdx)** — tests whether reasoning holds on its own merits, the counterweight to counting heads.
+
+## Where to go next
+
+* **[Problems](/docs/problems/overview)** — the catalog the severity stars are cast against.
+* **[Decisions](/docs/decisions/overview)** — recording where you stand, with the reasoning published beside it.
+* **[Four pillars](/docs/the_movement/four_pillars)** — where voting and policy decisions sit among the four.
+* **[The qualification areas](/docs/qualifications/the_qualification_areas)** — the named areas citizens cast stars in, with rubrics published in advance.
+* **[Take Action](/docs/take_action/overview)** — what you can do this week, starting with the one-second version.

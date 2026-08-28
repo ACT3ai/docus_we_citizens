@@ -53,7 +53,7 @@ Every place in the app that names a law links to the same page. It says what the
     <text x="34" y="224" fontSize="15" fill="currentColor">On the official record</text>
 
     <text x="38" y="248" fontSize="11" fill="currentColor" opacity="0.72">1</text>
-    <text x="58" y="248" fontSize="11" fill="currentColor">The record's own source URL</text>
+    <text x="58" y="248" fontSize="11" fill="currentColor">The record's source URL</text>
     <text x="38" y="266" fontSize="11" fill="currentColor" opacity="0.72">2</text>
     <text x="58" y="266" fontSize="11" fill="currentColor">A deep link we can build</text>
     <text x="38" y="284" fontSize="11" fill="currentColor" opacity="0.72">3</text>
@@ -67,7 +67,7 @@ Every place in the app that names a law links to the same page. It says what the
 
 The address takes either a **key** the movement already holds or a plain **citation** written as `jurisdiction:type:identifier` — `us:bill:118-hr-8070`, `wa:rcw:9.41.010`. It resolves across the three law stores in a fixed order: problem laws, good laws, then the fix bills the movement wrote itself. One address, whichever store answers.
 
-An **On the official record** panel sits immediately under the page header, above our own analysis. That order is deliberate: somebody who arrives sceptical of us should reach the government's text before a word of our reading of it. Its links are chosen in a strict order of preference:
+An **On the official record** panel sits immediately under the page header, above our own analysis. That order is deliberate: somebody who arrives skeptical of us should reach the government's text before a word of our reading of it. Its links are chosen in a strict order of preference:
 
 * The **committed source URL** on the record — the document the row is evidence of. Nothing overrides it.
 * A **derived deep link** built from the citation, into congress.gov, govinfo, the US Code, the House Clerk, the Senate, or a state's legislature site.
@@ -90,7 +90,7 @@ The rungs matter for a second reason. The vote at final passage is the last thin
 
 ## What keeps it honest
 
-* **No analysis we did not get from a record.** The page never summarises a law it holds nothing on, and never infers what one does from its title.
+* **No analysis we did not get from a record.** The page never summarizes a law it holds nothing on, and never infers what one does from its title.
 * **No fabricated links.** A missing official URL is written out as a named gap. A plausible URL that 404s is worse than nothing: it looks like proof.
 * **It never lists the people.** Not sponsors, not cosponsors, not one roll call's members. Named living people belong on the rung's own page, where each name carries its citation.
 * **The rungs table stays a summary.** It never grows into the full ladder or the authorship table; those live on the store page it links to.

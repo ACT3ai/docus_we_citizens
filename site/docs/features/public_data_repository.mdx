@@ -1,0 +1,105 @@
+---
+id: public_data_repository
+title: The Public Data Repository
+sidebar_label: Public Data Repository
+sidebar_position: 43
+description: "Everything the movement asserts about laws, votes and politicians lives in a separate public repository anyone can clone, and the commit is the approval."
+---
+
+
+# The Public Data Repository
+
+Everything this movement says about a law, a vote or a politician is kept in a separate public repository, not in a database behind a login. You can copy the whole thing to your own computer, read every file, and see who approved each one and when. A political project that names living officeholders and keeps its evidence where only its own staff can read it is asking for exactly the deference it exists to argue against.
+
+<Figure caption="An approved claim travels left to right into the public repository, passing checks that refuse it if it has no source link, no image ledger entry, a credential, or a real email or street address; the record of which citizen recommended or voted on anything never makes that trip.">
+  <svg viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the approval that starts it */}
+    <rect x="24" y="88" width="168" height="96" rx="4" stroke="currentColor" fill="none" />
+    <text x="108" y="124" fontSize="12" textAnchor="middle" fill="currentColor">Admin approves</text>
+    <text x="108" y="142" fontSize="12" textAnchor="middle" fill="currentColor">one claim</text>
+    <text x="108" y="164" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">signed with a reason</text>
+
+    <line x1="192" y1="136" x2="232" y2="136" stroke="var(--wc-fig-accent)" strokeWidth="1" />
+    <path d="M 240,136 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the checks */}
+    <rect x="240" y="56" width="196" height="160" rx="4" stroke="var(--wc-fig-accent)" fill="var(--wc-fig-wash)" />
+    <text x="338" y="82" fontSize="15" textAnchor="middle" fill="currentColor">Checks every push</text>
+    <text x="256" y="112" fontSize="12" fill="currentColor">Source link or refused</text>
+    <text x="256" y="136" fontSize="12" fill="currentColor">Image in the ledger</text>
+    <text x="256" y="160" fontSize="12" fill="currentColor">No secrets</text>
+    <text x="256" y="184" fontSize="12" fill="currentColor">No email or address</text>
+
+    <line x1="436" y1="136" x2="468" y2="136" stroke="var(--wc-fig-accent)" strokeWidth="1" />
+    <path d="M 476,136 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* what is published */}
+    <rect x="476" y="56" width="220" height="160" rx="4" stroke="currentColor" fill="var(--wc-fig-wash-2)" />
+    <text x="586" y="82" fontSize="15" textAnchor="middle" fill="currentColor">The public repo</text>
+    <text x="492" y="112" fontSize="12" fill="currentColor">Problems and laws</text>
+    <text x="492" y="136" fontSize="12" fill="currentColor">Roll-call votes</text>
+    <text x="492" y="160" fontSize="12" fill="currentColor">Rosters, qualifications</text>
+    <text x="492" y="184" fontSize="12" fill="currentColor">Image and gap ledgers</text>
+    <text x="586" y="238" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">Anyone can clone and diff</text>
+    <text x="586" y="254" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">History is the approval</text>
+
+    {/* what never crosses */}
+    <rect x="24" y="252" width="412" height="52" rx="4" stroke="var(--wc-fig-muted)" fill="none" />
+    <text x="40" y="274" fontSize="12" fill="currentColor">Who recommended, voted</text>
+    <text x="40" y="292" fontSize="12" fill="currentColor">or flagged it stays local</text>
+
+    <line x1="390" y1="252" x2="390" y2="222" stroke="var(--wc-fig-muted)" strokeWidth="1" strokeDasharray="4 4" />
+    <line x1="383" y1="230" x2="397" y2="244" stroke="var(--wc-fig-muted)" strokeWidth="1" />
+    <line x1="397" y1="230" x2="383" y2="244" stroke="var(--wc-fig-muted)" strokeWidth="1" />
+    <text x="406" y="241" fontSize="10.5" fill="currentColor" opacity="0.72">never crosses</text>
+  </svg>
+</Figure>
+
+## What it does
+
+The **public data repository** holds the movement's evidence base as ordinary files. The problem list. The enacted laws blamed for each problem. The roll-call votes, as plain spreadsheets. The laws that would repair democracy, and who kept them from a vote. The two rosters of people, those who have held office and those who have not. The catalog of qualifications a challenger is assessed against. The plan, and the seat records. It sits beside the app rather than inside it, and while the app runs it is read-only: the software reads the files and never writes to them behind your back.
+
+**The commit is the approval.** There is no separate approvals database standing behind the published files. When an admin approves something, that approval exists as a change to a file, carrying the reason and the approving admin's name in the message. Nothing was approved that is not visible there, and nothing visible there was approved by someone who is not named. When a call turns out to be wrong, it is undone by a further change that is published exactly as publicly as the error was — the wrong file stays readable and marked, because a movement that quietly deletes its mistakes is asking for the same deference it exists to argue against.
+
+**The code and the data are kept in separate repositories on purpose**, because a commit means a different thing in each. A bad commit in the code is a bug. A bad commit in the data is a false public statement about a named living person. They need different reviewers and different care, so a change touching a person's file requires a second admin before it is published, while everything else takes one.
+
+Continuous checks run on every push, and four of them are hard blocks that stop the change entirely:
+
+* Any claim about a named living person with **no source link to the official record**.
+* An added image with **no entry in the content-address ledger**.
+* Anything matching a **credential pattern** — a key, a token, a private key file.
+* A **real email address or street address**, anywhere outside the clearly fictional sample files.
+
+The rule runs just as strictly in the other direction. The repository publishes what the movement asserts and never who inside the movement asserted it. Which citizen recommended a person, proposed a fix, cast a vote or flagged something never enters it, and neither does anyone's own reasoning, positions or values. The one identity that is published is the approving admin's, because accountability runs toward the people with power, not the people asking them to use it.
+
+Every published image is also pinned by content address, with its hash written into the same commit. A photograph attached to a claim can be checked against that hash by anyone, and stays reachable if our hosting disappears, because a content address is not a hostname.
+
+## The goal it serves
+
+The whole argument of this site is that citizens should stop being asked to take Washington's word for anything, and check the record themselves. That argument does not survive a movement that then asks you to take its own word. If the evidence behind a published finding lived only where our admins could read it, every claim on the site would rest on trusting us, and we would have rebuilt the thing we are objecting to at smaller scale.
+
+Publishing the whole evidence base removes permission from the equation. A journalist, a political opponent, a hostile researcher, or a representative's own staff can clone it, follow a claim to its source on the official record, and come back with a correction — without asking, without an account, and without us being able to quietly change what was there yesterday. That is what makes [Open Data](/docs/open_data/overview) and [Evidence](/docs/evidence/overview) more than slogans, and it is what lets [Politicians](/docs/politicians/overview) publish arithmetic over the public record instead of opinions about people.
+
+The other half of the goal is the restraint. A public history showing which citizen recommended which politician would turn a transparency device into a surveillance device, and every citizen who might contribute would read it that way before contributing once. Transparency here is aimed at power, not at the people trying to hold it to account.
+
+## What keeps it honest
+
+The repository publishes what it does not have. A generated gap ledger sits at its root listing every hole the movement knows about in its own record — which chambers and which years are missing, and what each gap blocks on screen. It is committed and public for the same reason everything else is: a named gap beats a quiet one.
+
+The pinning is a stated gap right now, not a finished system. Images carry a content address, but the ledger records honestly which services actually hold a copy, and today that is a small number of machines rather than an always-up service. That entry says so rather than implying more reach than exists.
+
+And the repository does not claim to be proof. A file in it is what the movement asserts, backed by a link to the official record that produced it — the House Clerk, the Senate, a state's own site. A link that does not go to the official record does not get in. If you follow one and the file is wrong, the correction path is open to you, and the fix appears in the same public history as the mistake.
+
+## Works with
+
+* **[Run It On Your Own Computer](./run_on_your_own_computer.mdx)** — the repository is cloned beside the app on your own machine, so the evidence is local to you rather than fetched from a server you have to trust.
+* **[The Citizen Mining Network](./citizen_mining_network.mdx)** — content-addressed media is what volunteers can replicate, so the evidence survives independently of our hosting.
+* **[Nothing Fails Quietly](./nothing_fails_quietly.mdx)** — the same discipline in the software: a malformed file is logged and reported rather than turning into a silently wrong answer.
+
+## Where to go next
+
+* **[Open Data](/docs/open_data/overview)** — the full account of the public record, what is in it, and how to check a claim end to end.
+* **[The sourcing rule](/docs/open_data/the_sourcing_rule)** — why the official record or nothing, and what gets refused.
+* **[Naming the gaps](/docs/evidence/naming_the_gaps)** — how a missing piece of evidence is published rather than papered over.
+* **[Run your own instance](/docs/repos/run_your_own_instance)** — stand the whole thing up yourself, code and data, and check it without our help.
+* **[Propose a correction](/docs/open_data/propose_a_correction)** — found something wrong in the record? This is how you send it back.

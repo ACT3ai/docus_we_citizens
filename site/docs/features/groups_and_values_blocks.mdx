@@ -1,0 +1,108 @@
+---
+id: groups_and_values_blocks
+title: Groups And Values Blocks
+sidebar_label: Groups And Values Blocks
+sidebar_position: 39
+description: "Both sides of a subject written out, groups that declare where they stand, and a claim to belong that is checked against your answers and your own record."
+---
+
+
+# Groups And Values Blocks
+
+A **values block** is one subject with both of its sides written out in full. A **group** is a named body of citizens that declares where it stands on those blocks. When you ask to be counted inside a group, that request is checked rather than taken — against the answers you gave, and, only if you volunteer it, against your own public record. Saying which side you are on is the cheapest thing in this product to lie about, and lying about it is exactly what a manufactured campaign is built to do.
+
+<Figure caption="A values block writes out both sides of one subject and a group declares its stances and thresholds; a citizen's claim to belong is then checked two independent ways, and the two results are shown side by side rather than blended.">
+  <svg viewBox="0 0 720 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the two written things the movement owns */}
+    <rect x="30" y="26" width="300" height="64" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="46" y="44" fontSize="10.5" fill="currentColor" opacity="0.72">A VALUES BLOCK</text>
+    <text x="46" y="64" fontSize="12" fill="currentColor">Pro side, written out</text>
+    <text x="46" y="82" fontSize="12" fill="currentColor">Con side, written out</text>
+
+    <rect x="390" y="26" width="300" height="64" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="406" y="44" fontSize="10.5" fill="currentColor" opacity="0.72">A GROUP</text>
+    <text x="406" y="64" fontSize="12" fill="currentColor">Stances on those blocks</text>
+    <text x="406" y="82" fontSize="12" fill="currentColor">Its own thresholds</text>
+
+    <line x1="180" y1="90" x2="180" y2="104" stroke="currentColor" />
+    <path d="M 180,112 l -3.5,-10 l 7,0 z" fill="currentColor" />
+    <line x1="540" y1="90" x2="540" y2="104" stroke="currentColor" />
+    <path d="M 540,112 l -3.5,-10 l 7,0 z" fill="currentColor" />
+
+    {/* the claim */}
+    <rect x="140" y="112" width="440" height="40" fill="none" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="360" y="130" fontSize="12" fill="currentColor" textAnchor="middle">A citizen claims the group</text>
+    <text x="360" y="146" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">The claim is a request, not a fact</text>
+
+    <line x1="180" y1="152" x2="180" y2="168" stroke="currentColor" />
+    <path d="M 180,176 l -3.5,-10 l 7,0 z" fill="currentColor" />
+    <line x1="540" y1="152" x2="540" y2="168" stroke="currentColor" />
+    <path d="M 540,176 l -3.5,-10 l 7,0 z" fill="currentColor" />
+
+    {/* the two routes */}
+    <rect x="30" y="176" width="300" height="68" fill="none" stroke="currentColor" />
+    <text x="46" y="194" fontSize="10.5" fill="currentColor" opacity="0.72">THE ANSWER ROUTE</text>
+    <text x="46" y="214" fontSize="12" fill="currentColor">Questions you answered</text>
+    <text x="46" y="232" fontSize="12" fill="currentColor">Weights a human wrote</text>
+
+    <rect x="390" y="176" width="300" height="68" fill="none" stroke="var(--wc-fig-accent)" />
+    <text x="406" y="194" fontSize="10.5" fill="currentColor" opacity="0.72">THE RECORD ROUTE</text>
+    <text x="406" y="214" fontSize="12" fill="currentColor">Posts you consented to</text>
+    <text x="406" y="232" fontSize="12" fill="currentColor">Findings, with the quote</text>
+
+    <line x1="180" y1="244" x2="180" y2="260" stroke="currentColor" />
+    <path d="M 180,268 l -3.5,-10 l 7,0 z" fill="currentColor" />
+    <line x1="540" y1="244" x2="540" y2="260" stroke="currentColor" />
+    <path d="M 540,268 l -3.5,-10 l 7,0 z" fill="currentColor" />
+
+    {/* what the citizen is shown */}
+    <rect x="140" y="268" width="440" height="34" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="360" y="290" fontSize="12" fill="currentColor" textAnchor="middle">Both shown, never blended</text>
+
+    <line x1="140" y1="310" x2="580" y2="310" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+    <text x="360" y="328" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Matched, not matched, or insufficient evidence</text>
+  </svg>
+</Figure>
+
+## What it does
+
+A **values block** is a movement-owned bundle of positions on one subject, and it states both poles. The pro side is written out in full, and so is the con side, in the words the people who hold it would use. A block whose opposing side is drafted as a caricature is rejected at review: a side we cannot state in language its own holders would recognize is a side we cannot measure. Citizens propose blocks; the movement writes and owns them.
+
+A **group** is a named body of citizens that declares a stance on each block it cares about: it holds the pro side, holds the con side, or holds that support for that block is disqualifying in its own view. Each stance carries a weight, and the group publishes its own membership thresholds — how high a match must reach to be counted in, the lower level at which somebody is dropped, and how much of a record has to be readable before the software will say anything at all. When you claim a group, that claim enters as a request, and it is evaluated two independent ways.
+
+* **The answer route** reads the calibration questions you answered. Every option carries signed, bounded weights toward groups and blocks, written into the question file by hand — no engine infers what your answer implied. Weights can push away from a group as well as toward it, and *"I'm not sure"* maps to nothing rather than to a hidden middle. This route is why somebody who will never hand over a post history still gets matched.
+* **The record route** reads a consented corpus of your own public posts, from an account you proved you control. You can pay the movement's API cost or upload the free archive the platform gives every account holder, and that free road sits beside the paid one at equal weight on every screen that mentions cost. Named patterns read the text, roll findings up per block, and quote the span they read. Posts about none of the group's blocks are out of universe, not evidence against you.
+
+The two results are always shown side by side with the combined figure, never blended with the halves hidden. A route with no data drops out of the fraction rather than counting as zero, so declining to import posts costs you nothing. When both routes have data and disagree past a threshold, that is a **divergence**, shown to you with its innocent readings: the corpus is older than a change of mind, most timelines are not manifestos, or the patterns are misreading you — and there is a one-click way to say so. A divergence is never resolved automatically and never held against you. Outcomes are matched, not matched, or **insufficient evidence**, and the third never renders as the second.
+
+Running alongside is an **authenticity read**: how long an account has posted, how consistently, how much of its phrasing is near-duplicate of its own other posts, whether its posting clock matches the country it claims. Manufactured networks are caught by relationships between accounts — creation clustering, quiet windows that line up too well, one phrasing across accounts that never interact — not by any single account looking odd.
+
+## The goal it serves
+
+Astroturf is plastic grass. From the stands it looks like a lawn and it has no roots. Networks of manufactured accounts are built to look like a public and built to move a narrative, and the services running them, foreign and domestic, are running them now. If a citizen movement counts claims, a capture operation makes claims by the thousand and the count becomes theirs. [Paid influence operations](/docs/foreign_intelligence/paid_influence_operations) is the record on who buys it.
+
+This movement cannot subpoena anybody and does not pretend it can, so it measures what is expensive to fake. Answers are cheap. Nine years of irregular posting, through stretches when the account clearly cared about other things, is not. That is the argument for weighting a record above a claim, and it is the argument the movement makes about politicians: take what was said and what was done, and publish the arithmetic.
+
+The detector flags for a human rather than punishing, and that is the reason the movement exists. *You look like the profile, therefore you are guilty* is the logic of the [social credit systems](/docs/no_social_credit/overview) this movement was built to oppose, and a detector that acts on its own is that logic with better branding. The same restraint is what makes a group worth joining: it grants belonging and a shared filter, never authority over anyone, which is how [communities](/docs/communities/overview) here stay places to work rather than machinery for pushing people around.
+
+## What keeps it honest
+
+* **The authenticity number is never published.** Not on a profile, not in an aggregate, never visible to another citizen. You can always see your own, with every signal and its plain-language basis, and contest it into a human review. A number about whether you look like a real person that you are forbidden to see would be indefensible.
+* **Detectors flag; humans decide.** A detector may set a flag, open a review, attach evidence, and at the hard threshold pause new group matches pending it. It may not suspend an account, delete anything, publish anything, or tell another citizen. Every enforcement is a human act with a written reason and an appeal.
+* **A missing signal is missing, not bad.** Claiming no country is not evidence of anything, and every signal points the same direction, so half the numbers cannot quietly mean the opposite of the other half.
+* **A network finding never acts on an account by itself.** The false positive is a real family or a real local chapter signing up on the same evening — precisely the grassroots this exists to serve.
+* **What you believe never touches whether you are believable.** It may never reach a trust level, karma, or any award. A divergence is a position, not a behavior, and nothing here deducts for one.
+
+## Works with
+
+* **[The Trust Ladder](./trust_ladder.mdx)** — the other half of the word trust: whether an account is a real person, kept one-way apart from what that person believes.
+* **[Where You Stand](./trust_wizard.mdx)** — the calibration walk that produces the answers the answer route reads, skippable at every step.
+* **[Your Profile, Your Anonymity](./citizen_profiles_and_anonymity.mdx)** — how a pseudonymous citizen proves control of an account without surrendering a name.
+
+## Where to go next
+
+* **[Trust Scores](/docs/trust_scores/overview)** — the one question a trust score answers, and the many it deliberately does not.
+* **[The mesh, and what it defends against](/docs/trust_scores/the_mesh_and_what_it_defends_against)** — what verified citizens, stitched together, can hold off.
+* **[Values](/docs/values/overview)** — your own value system, a different thing from a movement-owned values block, and how you publish it for others to import.
+* **[What the AI never decides](/docs/ai/what_the_ai_never_decides)** — the limits on the patterns that read a record, and what stays a human call.
+* **[Join or start a community](/docs/communities/join_or_start_one)** — the practical version: find a workspace, or open one and write down what it stands for.

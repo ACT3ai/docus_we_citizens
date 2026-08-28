@@ -9,7 +9,7 @@ description: "The controls a citizen actually holds: what the AI may do, what ge
 
 # Your Settings, Your Data
 
-Everything this app knows about you sits on your own computer as plain text files you can open in any editor. Settings is where that arrangement becomes switches you can see: what the AI is allowed to touch, what gets published and what stays put, how to take a complete copy of your work, and how to shut the whole thing down. It exists because a promise about your data is worth very little, and an architecture where the data never left your machine is worth something.
+Everything this app knows about you sits on your own computer as plain text files you can open in any editor. Settings is where that arrangement becomes switches you can see: what the AI may touch, what gets published, how to take a complete copy of your work, and how to shut the whole thing down. A promise about your data is worth very little. A layout on disk where the data never left your machine is worth something.
 
 <Figure caption="Everything the app records sits as plain files on the citizen's own machine, three defaults decide what may leave it, and a complete copy can be taken at any time without asking.">
   <svg viewBox="0 0 720 300" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +23,7 @@ Everything this app knows about you sits on your own computer as plain text file
     <text x="149" y="166" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">settings.yaml</text>
     <text x="149" y="196" fontSize="10.5" fill="currentColor" textAnchor="middle">plain files you can read</text>
 
-    {/* the three gates */}
+    {/* the three defaults that gate what may leave */}
     <rect x="310" y="44" width="170" height="46" fill="none" stroke="currentColor" />
     <text x="395" y="64" fontSize="12" fill="currentColor" textAnchor="middle">AI provider</text>
     <text x="395" y="80" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">default: local only</text>
@@ -48,7 +48,7 @@ Everything this app knows about you sits on your own computer as plain text file
     <path d="M 516,123 l -7,-3.5 l 0,7 z" fill="currentColor" />
     <rect x="516" y="100" width="180" height="46" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
     <text x="606" y="88" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">only when you press it</text>
-    <text x="606" y="120" fontSize="12" fill="currentColor" textAnchor="middle">Off your machine</text>
+    <text x="606" y="120" fontSize="12" fill="currentColor" textAnchor="middle">Leaves your machine</text>
     <text x="606" y="136" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">what you published</text>
 
     {/* the export door */}
@@ -68,45 +68,43 @@ Everything this app knows about you sits on your own computer as plain text file
 
 ## What it does
 
-**Your data is files, not rows in somebody's database.** Run the app on your own computer and everything it records goes under one folder — the **state root**, `~/T/_wethecitizens` — outside the code, outside any cloud folder the app manages. Your positions, your value system, your evidence chains and your law drafts are YAML files, one record per file, human-readable and hand-editable. Open them in a text editor and you can read exactly what the app wrote. A bad hand-edit is logged and defaulted key by key rather than crashing the app, so a typo costs you one value and not your work.
+**Your data is files, not rows in somebody's database.** Run the app on your own computer and everything it records lands under one folder, outside the code and outside any cloud folder. Your positions, your value system, your evidence chains and your law drafts are **YAML** files — one record per file, human-readable, hand-editable. A bad hand-edit is logged and defaulted key by key, so a typo costs you one value and not your work.
 
-**Settings works without an account.** A citizen who never signs in is a real, first-class user with their own folder, and their theme, language, AI preferences and publishing defaults are remembered. Three groups need a signed-in identity — Account, the public profile, and the paid-supporter pages — because those publish, identify, or take money. Everything else describes your own machine and is never gated.
+**Settings works without an account.** A citizen who never signs in is a first-class user with their own folder, and their theme, language, AI preferences and publishing defaults are remembered. Only the pages that publish, identify, or take money need a signed-in identity.
 
-**The AI page states what leaves, in plain words, live.** The provider default is **local only**: a model on your machine, and the page's permanent status box reads "Nothing leaves this machine." The other two choices are the install's configured provider or your own key, stored on your disk and never logged. Two switches sit under it and both default to off: **send my private records**, which means unpublished work is never handed to a model unless you say so, and **send my identity**, which keeps your real name and email out of every prompt. Showing the reasoning chain and running the first-principles verification pass are on by default; the conclusion on its own is not an acceptable output here.
+**The AI page states what leaves, in plain words, live.** The provider default is **local only**: a model on your machine, and the permanent status box then reads "Nothing leaves this machine." Two switches sit under it and both default to off — **send my private records**, so unpublished work is never handed to a model unless you say so, and **send my identity**, which keeps your real name and email out of every prompt. Showing the reasoning chain is on by default; a conclusion on its own is not an acceptable output here.
 
-**Publishing defaults start at private.** Nothing is shared unless you choose it. The default scope is private, the confirmation dialog names the exact attribution and destination before anything leaves, and publishing your evidence gaps along with your chain is on — the missing links are part of the argument. Changing a default never reaches back and changes something you already published.
+**Publishing defaults start at private.** Nothing is shared unless you choose it. The confirmation dialog names the exact attribution and destination before anything leaves, and publishing your evidence gaps alongside your chain is on, because the missing links are part of the argument. Changing a default never alters what you already published.
 
-**The data page shows you the door.** It names the resolved folder your data lives in, breaks down what is using space, and offers a complete export: your settings, your profile, every pillar record and your account history, in the original YAML with a manifest. Import restores an export with a dry-run diff first. Backups are a scheduled copy to a local directory you pick — local filesystem only, no cloud target. Clearing caches never touches records.
+**The data page shows you the door.** It names the folder your data lives in, breaks down what is using space, and offers a complete export: settings, profile, every pillar record and your account history, in the original YAML with a manifest. Import restores one after a dry-run diff. Backups copy to a local directory you pick, filesystem only.
 
-**Closing out is three separate choices, not one button.** Deactivate hides you and is reversible by signing back in. Going private is offered beside it, because most people who want to disappear from public view do not want to destroy their reasoning. Delete is present, plainly labelled, and requires typing your handle exactly plus a re-authentication. At confirmation you decide what happens to work you already published: keep it under a citizen number, keep it under your handle, or retract it from this install.
+**Closing out is three separate choices, not one button.** Deactivate hides you and is reversible. Going private is offered beside it, because most people who want out of public view do not want to destroy their reasoning. Delete requires typing your handle exactly, and at confirmation you decide what happens to work you already published: keep it under a citizen number, keep it under your handle, or retract it from this install.
 
-Some of this is specification ahead of code. The export and import flows, the thirty-day deletion grace window and the one-click cancel are written down and not yet built; deletion today is immediate once the typed handle is confirmed. The full settings document is likewise still being implemented, with a smaller per-user config file holding the appearance keys in the meantime.
+Some of this is written down ahead of the code: the export and import flows, and the thirty-day deletion grace window, are specified and not yet built. Deletion today is immediate once the typed handle is confirmed.
 
 ## The goal it serves
 
-Every platform that has ever collected citizens' political opinions eventually monetised them, lost them in a breach, or handed them over. That is not a character flaw in the companies. It is what happens when the opinions live in their building and you hold nothing but a terms-of-service page. A movement that asks people to write down where they actually stand, and why, is asking for the most sensitive file they will ever produce, and it has no business asking for it on those terms.
+Every platform that ever collected citizens' political opinions eventually monetised them, lost them in a breach, or handed them over. That is not a character flaw in the companies. It is what happens when the opinions live in their building and you hold nothing but a terms-of-service page. A movement asking people to write down where they actually stand is asking for the most sensitive file they will ever produce, and has no business asking on those terms.
 
-So the answer here is not a privacy promise. It is a layout on disk. The reasoning is yours because it is on your hardware; you can copy it, back it up, move it to another machine, or delete the folder without telling anyone. Leaving costs you nothing, which means the movement never becomes something you are locked inside — and that is the only version of this that a skeptic should agree to join. The same design is why the whole thing works with the network unplugged, and it is stated as a commitment in [the movement's charter](/docs/the_movement/charter) rather than left as an implementation detail.
-
-It also keeps the movement's own claims checkable. The public record it publishes is [open data](/docs/open_data/overview) anyone can clone and audit, and the private half — what you are still working out — stays with you until you decide otherwise. Both halves have to hold for the argument to be worth anything.
+So the answer is architecture rather than a privacy pledge. The reasoning is yours because it is on your hardware: copy it, back it up, move it, or delete the folder without telling anyone. Leaving costs nothing, which is the only version of this a skeptic should agree to join, and it is a commitment in [the movement's charter](/docs/the_movement/charter) rather than an implementation detail. It cuts both ways: the record the movement publishes is [open data](/docs/open_data/overview) anyone can audit, and the half you are still working out stays yours.
 
 ## What keeps it honest
 
-* **Off means off.** The conservative defaults are the load-bearing part: private records are not sent to a model, identity is not sent, publishing scope is private, nothing is pre-checked. A default that is "usually off" would be worthless.
-* **No dark patterns, as a written rule.** Closing an account is as easy to find as opening one. The danger section is visible rather than buried under Advanced. Export is not gated behind deletion — you can take your data any time, for any reason, without saying why.
-* **It admits what it cannot undo.** Anything already published to the social network or cloned out of the public record cannot be recalled by us, and the page says that instead of implying otherwise. After a deletion executes, no administrator can restore it.
-* **One thing survives deletion on purpose.** The audit trail stays, redacted to a handle, and the handle itself is retired so nobody can re-use it to impersonate you. An accountability record that its subject — or an administrator — could erase would not be an accountability record.
+* **Off means off.** Private records are not sent to a model, identity is not sent, scope is private, nothing is pre-checked. A default that is "usually off" would be worthless.
+* **No dark patterns, as a written rule.** Closing an account is as easy to find as opening one, and export is not gated behind deletion: take your data any time, for any reason, without saying why.
+* **It admits what it cannot undo.** Anything already published or cloned out of the public record cannot be recalled by us, and the page says so instead of implying otherwise. After a deletion executes, no administrator can restore it.
+* **One thing survives deletion on purpose.** The audit trail stays, redacted to a handle, and the handle is retired so nobody can re-use it to impersonate you. An accountability record its own subject could erase would not be one.
 
 ## Works with
 
 * **[Decisions, Areas And Communities](./decisions_and_communities.mdx)** — the positions you record are the files these settings govern, and the publishing scope decides whether one stays on your disk or joins a community.
-* **[Value Systems And Policy Packets](./value_systems_and_policy_packets.mdx)** — your value system is a portable file; the export and the license default are what let you carry it out or let somebody else import it.
-* **[The First-Principles AI Check](./first_principles_ai_check.mdx)** — the AI page is where you decide which model runs that check, what it may see, and whether it must show its chain.
+* **[Value Systems And Policy Packets](./value_systems_and_policy_packets.mdx)** — your value system is a portable file; the export and the license default are what let you carry it out, or let another citizen import it.
+* **[The First-Principles AI Check](./first_principles_ai_check.mdx)** — the AI page is where you decide which model runs that check, what it may see, and whether it has to show its chain.
 
 ## Where to go next
 
-* **[The Movement](/docs/the_movement/overview)** — what you are joining, what it costs, and why it is built as a tool rather than a service.
-* **[Open Data](/docs/open_data/overview)** — the public half of the same principle: clone the record and check any claim against its source.
-* **[What the AI never decides](/docs/ai/what_the_ai_never_decides)** — the hard limits on the model, beyond the switches you control yourself.
-* **[Get Started](/docs/get_started/overview)** — the two ways to run it, hosted or on your own machine.
-* **[Run it on your computer](/docs/get_started/run_it_on_your_computer)** — the local-first version, where every file on this page is one you own.
+* **[The Movement](/docs/the_movement/overview)** — what you are joining, and why it is built as a tool rather than a service.
+* **[Open Data](/docs/open_data/overview)** — the public half of the same principle: clone the record, check any claim at its source.
+* **[What the AI never decides](/docs/ai/what_the_ai_never_decides)** — the hard limits on the model, beyond the switches you hold.
+* **[Get Started](/docs/get_started/overview)** — the two ways to run it: hosted, or on your own machine.
+* **[Run it on your computer](/docs/get_started/run_it_on_your_computer)** — the local-first version, where every file named here is one you own.

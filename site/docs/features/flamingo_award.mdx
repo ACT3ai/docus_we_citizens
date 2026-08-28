@@ -23,7 +23,7 @@ Most of the people worth electing have never held office. There is no roll call 
     {/* left — the input that is refused */}
     <rect x="16" y="196" width="184" height="64" fill="none" stroke="var(--wc-fig-muted)" strokeDasharray="5 4" />
     <text x="32" y="222" fontSize="12" fill="currentColor" opacity="0.72">Voting record</text>
-    <text x="32" y="240" fontSize="10.5" fill="currentColor" opacity="0.72">Monkey and Llama only</text>
+    <text x="32" y="240" fontSize="10.5" fill="currentColor" opacity="0.72">Never reaches this award</text>
     <line x1="200" y1="228" x2="212" y2="228" stroke="var(--wc-fig-muted)" strokeWidth="1.5" />
     <line x1="216" y1="222" x2="228" y2="234" stroke="var(--wc-fig-muted)" strokeWidth="1.5" />
     <line x1="228" y1="222" x2="216" y2="234" stroke="var(--wc-fig-muted)" strokeWidth="1.5" />
@@ -44,7 +44,7 @@ Most of the people worth electing have never held office. There is no roll call 
     <rect x="248" y="176" width="224" height="76" fill="none" stroke="var(--wc-fig-accent)" />
     <text x="264" y="200" fontSize="12" fill="currentColor">One resolver, in order:</text>
     <text x="264" y="220" fontSize="10.5" fill="currentColor" opacity="0.72">unknown checked first</text>
-    <text x="264" y="236" fontSize="10.5" fill="currentColor" opacity="0.72">then earned, then not earned</text>
+    <text x="264" y="236" fontSize="10.5" fill="currentColor" opacity="0.72">then earned or not earned</text>
 
     {/* the fan-out to three states */}
     <line x1="472" y1="214" x2="484" y2="214" stroke="var(--wc-fig-accent)" />
@@ -86,26 +86,26 @@ The evidence is sorted into eighteen **qualification areas** — the named thing
 One resolver then decides which of three states the person is in, and it checks the empty case first. No number at all is **unknown**. At or above the published threshold is **earned**, at the percentage computed. Too little known to make an adverse finding is **unknown** again. Only what is left is **not earned**.
 
 * **Earned** renders the full-colour flamingo beside the percentage of the award given. A 36% Flamingo Award is an award, given in the percentage earned.
-* **Not earned** renders a solid dark red fill with no bird: we had enough, we did the arithmetic, and no part of the award was earned. It is reserved for a finding of harm, not for a middling result.
+* **Not earned** renders a solid dark red fill with no bird: we had enough, we did the arithmetic, and no part of the award was earned.
 * **Unknown** renders a solid gray-brown fill with no bird: we do not know enough to say yet. That is a statement about us, not a claim about the person.
 
-The two blank states are different facts and are never collapsed into one another. Neither ever renders as 0%, because a zero would put a state back onto a scale. A blank carries an em dash, a typed cause in plain words — no videos yet, no transcript yet, not assessed yet, they did not discuss this — and the action that would close it. In all three states the page prints how much of the person is known, as "N% known".
+The two blank states are different facts and are never collapsed into one another. Neither ever renders as 0%, because a zero would put a state back onto a scale. A blank carries an em dash, a typed cause in plain words — no videos yet, not assessed yet, they did not discuss this — and the action that would close it. In all three states the page prints how much of the person is known, as "N% known".
 
 ## The goal it serves
 
 The movement's strategy is elections: get a party's own base behind the strongest challenger before the primary rather than splitting three ways after it. A challenger has no voting record, so the ordinary way a voter sizes one up is party label, name recognition, and whoever bought the most advertising — exactly the levers money in politics already controls. The Flamingo exists so there is something else to look at: the person's own words, against rubrics anyone can read first, published with the quotes that moved the result. See [Good New Leaders](/docs/new_politicians/overview) for who is on that roster and [Qualifications](/docs/qualifications/overview) for what they are read against.
 
-The unknown state exists for the second reason. The cheapest way to damage a newcomer nobody has heard of is to publish silence about them and let the reader fill it in. If our own gap in evidence rendered the same as a finding, this would be a smear machine with arithmetic attached. So the gap is typed, named, coloured differently, and pointed at a queue of work.
+The unknown state is the second reason. The cheapest way to damage a newcomer nobody has heard of is to publish silence about them and let the reader fill it in. If our own gap in evidence rendered the same as a finding, this would be a smear machine with arithmetic attached. So the gap is typed, named, coloured differently, and pointed at a queue of work.
 
 Third, the unit of judgement stays a person, not a party. Nothing in the eighteen areas asks who somebody caucuses with. A reader who wants the partisan version goes to their own party's door; the assessment underneath is the same either way. See [Replacing Captured Incumbents](/docs/replace_incumbents/overview) for how it gets used.
 
 ## What keeps it honest
 
 * **The wall is enforced in code, not in style.** A build test fails if a voting-record term ever reaches a Flamingo result, and the reverse is equally a defect.
-* **Red is only for big problems.** The threshold is published, and everything from it upward is conferred at the percentage computed. A middling reading gets an award at that percentage; it does not get the red fill.
-* **No adverse finding off almost nothing.** A floor on how much is known guards the not-earned branch only, and never withholds an award that was computed — the honest answer to a thin record is to publish the number with "N% known" beside it.
+* **The red state is not the low end of a scale.** The threshold is published in advance, and everything from it upward is conferred at the percentage computed. A middling reading gets an award at that percentage; it does not get the red fill.
+* **No adverse finding off almost nothing.** A floor on how much is known guards the not-earned branch only. It never withholds an award that was computed: the honest answer to a thin record is the percentage with "N% known" beside it.
 * **The coverage gap is published as a finding about us.** Every run reports how many people landed on each cause of a blank, and an area nobody has been assessed in is named as a hole in our own rubric authoring.
-* **An award decides nothing on its own.** It does not endorse anyone and never triggers a transition automatically. It is an input to a citizen vote, never a substitute for one.
+* **An award decides nothing on its own.** It does not endorse anyone. It is an input to a citizen vote, never a substitute for one.
 
 ## Works with
 

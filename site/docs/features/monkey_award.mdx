@@ -9,9 +9,9 @@ description: "One published award, 0 to 100 and higher is worse, for how much a 
 
 # The Monkey Award
 
-The Monkey Award answers one question about one person: how much did they do to put a short, named list of democracy-damaging laws in place. It runs from 0 to 100, and higher is worse. Only acts of official power taken in a seat the person was elected to feed it, and the derivation is published line by line, so a stranger with a calculator can reproduce it from the government's own record.
+The Monkey Award answers one question about one person: how much did they do to put a short, named list of democracy-damaging laws in place. It runs from 0 to 100, and higher is worse. Only acts of official power taken in a seat the person was elected to feed it, and the derivation is published line by line, so anyone with a calculator can reproduce it from the government's own record.
 
-<Figure caption="Two inputs feed the award: the curated Monkey List and one person's in-office record. Every act is sorted into one of twelve categories, each carrying a published value and weight, and the weighted average of those is the award. Everything on the far side of the wall feeds the Flamingo Award instead.">
+<Figure caption="The curated Monkey List and one person's in-office record feed a classifier that sorts every act into one of twelve weighted categories, and the weighted average of those categories is the award.">
   <svg viewBox="0 0 720 316" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* input A — the list */}
     <rect x="24" y="36" width="190" height="76" fill="var(--wc-fig-wash)" stroke="currentColor" />
@@ -65,36 +65,36 @@ The Monkey Award answers one question about one person: how much did they do to 
 
 ## What it does
 
-Two things go in. The first is the **Monkey List**: a small, hand-curated set of enacted instruments, or specific sections of them, each approved in a public commit. Twelve entries is a working list, and small is the design. Two hundred would be an average, and an average of the statute book says nothing about the laws that took representative democracy apart.
+Two things go in. The first is the **Monkey List**: a small, hand-curated set of enacted instruments, or sections of them, each approved in a public commit. Twelve entries is a working list, and small is the design: two hundred would average the statute book, which says nothing about the laws that took representative democracy apart.
 
-An instrument reaches that list only by passing at least one named **admission test**, and the entry says which: consent, representation, accountability, speech, franchise, due process, purse, or conscription. Each entry names an instrument and a section rather than a topic, cites the official record, and says which part of the social contract it breaks. The Monkey List is not "laws we disagree with" — an instrument that checks no box stays off it however bad the policy is, and that sentence is printed at the top of the list page.
+An instrument reaches that list only by passing at least one named **admission test**, and the entry says which: consent, representation, accountability, speech, franchise, due process, purse, or conscription. Each entry names an instrument and a section rather than a topic, and cites the official record. The Monkey List is not "laws we disagree with" — an instrument that checks no box stays off it however bad the policy is, and that sentence is printed at the top of the list.
 
-The second input is one person's in-office record on those instruments: how they **voted** at every stage, what they **authored or sponsored**, and what they **blocked** from advancing. Nothing else. Every eligible act is sorted into exactly one of **twelve categories** — block, author, or vote; on a damaging instrument or on a repair; advancing it or resisting it; on the floor or in the small room. Each category carries a published value from 0 to 100 and a published weight, and the award is a plain weighted average: multiply, add the two columns, divide once, round once.
+The second input is one person's in-office record on those instruments: how they **voted** at every stage, what they **authored or sponsored**, and what they **blocked** from advancing. Nothing else. Every eligible act is sorted into exactly one of **twelve categories** — block, author, or vote; on a damaging instrument or on a repair; advancing it or resisting it; on the floor or in committee. Each category carries a published value from 0 to 100 and a published weight, and the award is a plain weighted average: multiply, add the two columns, divide once, round once.
 
-The weights carry the argument. Blocking a repair from ever reaching a vote is the heaviest act here, value 100 at weight 30, thirty times a floor vote: a member who votes against a repair can be answered for it at an election, while a member who makes sure the vote never happens erases the record itself. Authorship sits at weight 20, and a committee vote outweighs a floor vote three to one, because there is no vehicle to hide behind in a markup. A floor vote for a damaging law is priced at 85, not 100 — that is where the bundled must-pass bill gets its discount, once, in a table you can see.
+The weights carry the argument. Blocking a repair from ever reaching a vote is the heaviest act here, value 100 at weight 30, thirty times a floor vote: a member who votes against a repair can be answered for it at an election; a member who keeps the vote from happening erases the record itself. Authorship sits at weight 20, and a committee vote outweighs a floor vote three to one, because there is no vehicle to hide behind in a markup. A floor vote for a damaging law is priced at 85, not 100: that is where the bundled must-pass bill gets its discount, once, in a published table.
 
-Acts pointing the other way count at 0 and stay in the denominator, so an honest act pulls the average down by being counted. The calculation page carries the whole derivation, with no sign-in in front of it: one row per act with its date, category, value, weight and source link, then the two column sums, then the division. Add it up yourself; if a step disagrees, the page is wrong.
+Acts pointing the other way count at 0 and stay in the denominator, so an honest act pulls the average down. The calculation page carries the whole derivation with no sign-in: one row per act with its date, category, value, weight and source, then the column sums and the division. Add it up yourself; if a step disagrees, the page is wrong.
 
 ## The goal it serves
 
-The movement's claim is specific, not a mood: particular people used particular powers to put particular laws in place over a public nobody asked. [The Problem](/docs/the_problem/overview) states it without jargon. This award turns it into arithmetic, so the argument stops being about whether we invented a number and becomes an argument about a named instrument, its cited section, and the admission test its entry claims.
+The movement's claim is specific, not a mood: particular people used particular powers to put particular laws in place over a public nobody asked. [The Problem](/docs/the_problem/overview) states it without jargon. This award turns it into arithmetic, so the argument moves from whether we invented a number to a named instrument, its cited section, and the admission test its entry claims.
 
-It also has to reach the harm an ordinary tally cannot see. A chair who buries every disclosure bill filed in a decade never votes for anything harmful and comes out clean. Who kept a repair from a vote is public record too: see [Who blocked it](/docs/good_laws/who_blocked_it) and the [Problem Laws](/docs/problem_laws/overview) this list draws from.
+It also has to reach harm an ordinary tally cannot see: a chair who buries every disclosure bill filed in a decade never votes for anything harmful and comes out clean. Who kept a repair from a vote is public record too: see [Who blocked it](/docs/good_laws/who_blocked_it) and the [Problem Laws](/docs/problem_laws/overview) this list draws from.
 
-The point of measuring is replacement, not commentary. Elections are the whole strategy for [replacing captured incumbents](/docs/replace_incumbents/overview), and a challenge needs more than a slogan: a dated act, a section number, a source link. None of it is taken on faith, because the record is a repository you can [clone and check](/docs/open_data/overview).
+The purpose of measuring is replacement, not commentary. Elections are the whole strategy for [replacing captured incumbents](/docs/replace_incumbents/overview), and a challenge needs more than a slogan: a dated act, a section number, a source link. None of it is taken on faith — the record is a repository you can [clone and check](/docs/open_data/overview).
 
 ## What keeps it honest
 
 * **A 0 is a finding, not a compliment.** It means we assessed this person against this list and found nothing advancing it.
 * **No eligible acts produces a state, never a number.** "No legislative record", "No award yet" and "never in office while a list item was live" are different facts, and none is printed as a 0.
-* **A thin record is flagged.** Below three counted acts the award carries a low-confidence marker everywhere it appears.
+* **A thin record is flagged.** Below three counted acts the award carries a low-confidence marker.
 * **Gaps are published, not smoothed.** An act with no link to the official record contributes zero and is listed as a gap, as are voice votes with no member-level record — a provision passed so that nobody could be held to it is a finding in itself.
 * **It never claims illegality, corruption, motive, or intent.** It states what a person did, with a source, never what they are, and nothing happens automatically because a number crossed a threshold.
 * **Part of the eligibility test is not built yet, and the spec says so.** A record is assessed once it matches an official voting identifier, but the check placing a person in office while each list item was live is unbuilt, so a former member who left before an item existed can still show a 0.
 
 ## Works with
 
-* **[The Llama Award](./llama_award.mdx)** — the repair side of the same record: same categories, same equation, run over the laws that would fix democracy, where higher is better.
+* **[The Llama Award](./llama_award.mdx)** — the repair side of the same record: same categories, same equation, over the laws that would fix democracy, where higher is better.
 * **[The Wall](./the_wall.mdx)** — the rule keeping the voting record as this award's only input, enforced by a build test rather than good intentions.
 * **[The Flamingo Award](./flamingo_award.mdx)** — everything the wall keeps out, assessed on its own evidence, and the only award a challenger with no legislative record can hold.
 
@@ -104,4 +104,4 @@ The point of measuring is replacement, not commentary. Elections are the whole s
 * **[The Monkey List](/docs/monkey/the_monkey_list)** — the instruments, each with its admission test and citation.
 * **[Problem Laws](/docs/problem_laws/overview)** — the wider catalog of law the public never agreed to.
 * **[Where the data comes from](/docs/voting_records/where_the_data_comes_from)** — the House Clerk, the Senate, govinfo, state sites.
-* **[Find who represents you](/docs/legacy_politicians/find_who_represents_you)** — look your own representatives up and read the record yourself.
+* **[Find who represents you](/docs/legacy_politicians/find_who_represents_you)** — look your own representatives up and read the record.

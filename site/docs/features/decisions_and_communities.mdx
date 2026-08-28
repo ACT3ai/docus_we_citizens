@@ -45,9 +45,9 @@ Most civic software asks for your opinion and hands you a number back. This hand
     <text x="290" y="66" fontSize="12" fill="currentColor">Chain of evidence</text>
 
     <rect x="290" y="80" width="9" height="9" fill="currentColor" />
-    <text x="308" y="89" fontSize="12" fill="currentColor">Have — source, strength 0.8</text>
+    <text x="308" y="89" fontSize="12" fill="currentColor">Have — strength 0.8</text>
     <rect x="290" y="102" width="9" height="9" fill="currentColor" />
-    <text x="308" y="111" fontSize="12" fill="currentColor">Have — source, strength 0.6</text>
+    <text x="308" y="111" fontSize="12" fill="currentColor">Have — strength 0.6</text>
     <rect x="290" y="124" width="9" height="9" rx="1" stroke="var(--wc-fig-muted)" strokeDasharray="2 2" fill="none" />
     <text x="308" y="133" fontSize="12" fill="currentColor" opacity="0.72">Missing — classified</text>
     <rect x="290" y="146" width="9" height="9" rx="1" stroke="var(--wc-fig-muted)" strokeDasharray="2 2" fill="none" />
@@ -76,11 +76,11 @@ Most civic software asks for your opinion and hands you a number back. This hand
 
 ## What it does
 
-The hierarchy is three tiers and it is the whole shape of the app. A **community** is a named workspace stored as a directory on disk. An **area** is a named topic inside it. A **decision** is one resolved question inside that topic. The app remembers exactly where in that tree you were standing when you left.
+The hierarchy is three tiers. A **community** is a named workspace stored as a directory on disk. An **area** is a named topic inside it. A **decision** is one resolved question inside that topic.
 
-A community carries an explicit access list: owners, writers, readers. Owners change the list and can delete the workspace, writers create and edit content, readers look. New communities are private, and world-readability — letting anyone read it, including a visitor who never signed in — is a flag an owner turns on deliberately rather than a default they have to remember to switch off. At least one owner must always remain, and all of it is enforced on the server. An **area** has no access list of its own; it inherits its community's.
+A community carries an explicit access list: owners, writers, readers. Owners change the list and can delete the workspace, writers create and edit content, readers look. New communities are private. World-readability — anyone can read it, including a visitor who never signed in — is a flag an owner turns on deliberately. At least one owner must always remain, and all of it is enforced on the server. An **area** has no access list of its own; it inherits its community's.
 
-The decision is the atom. Each one is stored twice: a structured record the software reads, and a human-readable companion regenerated from it on every save, so the readable version can never quietly disagree with what the software computed from. Decision numbers are never reused, even after a delete, so a link to decision 4 in an area means the same thing forever.
+The decision is the atom. Each one is stored twice: a structured record the software reads, and a human-readable companion regenerated from it on every save, so the readable version can never quietly disagree with the record the software computed from. Decision numbers are never reused, even after a delete, so a link to decision 4 in an area means the same thing forever.
 
 A decision carries four things:
 
@@ -91,15 +91,15 @@ A decision carries four things:
 
 The software weighs what you hold against the gaps you explained and returns one of two answers. Either the conclusion is reached at the threshold you declared, published with the still-open gaps beside it, or it comes back "unsupported on the current record." There is no third branch where a missing link is quietly rounded away into a certainty nobody has.
 
-None of this needs an account. On your own machine, signed in to nothing, you create areas, build chains, run the reasoning and keep editing. The one act that asks who you are is publishing into a shared record.
+None of this needs an account. On your own machine, signed in to nothing, you create areas, build chains and run the reasoning. The one act that asks who you are is publishing into a shared record.
 
 ## The goal it serves
 
-There is a trap that works every time it is tried. Powerful actors act. A slice of the record is classified. Anyone trying to recover that slice is blocked. The citizen holding almost the whole chain is then called a conspiracy theorist for not holding the last piece, and told no conclusion may be drawn without all of it. The act of hiding the evidence becomes the thing that disqualifies the person who noticed.
+There is a trap that works every time it is tried. A slice of the record is classified, and anyone trying to recover that slice is blocked. The citizen holding almost the whole chain is then told no conclusion may be drawn without the last piece. The act of hiding the evidence becomes the thing that disqualifies the person who noticed.
 
-This feature is the way out, and it is deliberately unglamorous: name the shape of the hole. A gap that is written down — what is missing, why, and under whose authority it is being withheld — stops being a silence you can be shamed with and becomes a fact sitting on the record beside everything else. That is the argument [Evidence](/docs/evidence/overview) makes in full, and [naming the gaps](/docs/evidence/naming_the_gaps) is the discipline that makes it hold up. A decision written this way is portable: someone who disagrees can point at the link they think is weak, or at your threshold, instead of at your character. [Decisions](/docs/decisions/overview) walks through recording one.
+This feature is the way out, and it is deliberately unglamorous: name the shape of the hole. A gap that is written down — what is missing, why, and under whose authority it is being withheld — stops being a silence you can be shamed with and becomes a fact sitting on the record beside everything else. [Evidence](/docs/evidence/overview) makes that argument in full, and [naming the gaps](/docs/evidence/naming_the_gaps) is the discipline behind it. A decision written this way is portable: someone who disagrees can point at the link they think is weak, or at your threshold, instead of at your character. [Decisions](/docs/decisions/overview) walks through recording one.
 
-Communities are the second half. Working alone is the default and complete on its own, but a question that matters usually has more than one person on it. A named owner, an explicit writer list and a private-by-default setting let a group build a body of work together without it becoming a channel anyone can flood. [Communities](/docs/communities/overview) covers joining or starting one.
+Communities are the second half. Working alone is the default and complete on its own, but a question that matters usually has more than one person on it. A named owner, an explicit writer list and a private-by-default setting let a group build together without becoming a channel anyone can flood. [Communities](/docs/communities/overview) covers joining or starting one.
 
 ## What keeps it honest
 
@@ -113,9 +113,10 @@ What it deliberately does not do: decide the question for you, compare citizens 
 
 ## Works with
 
-* **[The First-Principles AI Check](./first_principles_ai_check.mdx)** — re-tests whether your conclusion follows from the links you have, given the gaps you named, rather than whether an authority agrees.
+* **[The AI Assistant](./ai_assistant.mdx)** — re-tests whether a conclusion follows from the links you hold, rather than from whether an authority agrees.
 * **[Value Systems And Policy Packets](./value_systems_and_policy_packets.mdx)** — supplies the written rules a decision is judged against, so the same standard applies to every question.
-* **[Citizen Votes](./citizen_votes.mdx)** — the step after a position is recorded, where individual answers pool into something a group can point at.
+* **[Say What We Could See](./coverage_and_named_gaps.mdx)** — the same refusal to let a blank pass unexplained, applied to every published calculation.
+* **[Groups And Values Blocks](./groups_and_values_blocks.mdx)** — where individual positions become a stance a named body of citizens declares.
 
 ## Where to go next
 
