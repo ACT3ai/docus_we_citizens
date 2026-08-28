@@ -1,0 +1,114 @@
+---
+id: the_law_page
+title: The Law Page
+sidebar_label: The Law Page
+sidebar_position: 13
+description: "One page per law: what the movement knows, every rung where a vote was put, and one click to the government's own text."
+---
+
+
+# The Law Page
+
+Every place in the app that names a law links to the same page. It says what the movement knows about that law, and it hands you the link out to the government's own website where the law's real text lives. We are not the record — congress.gov, govinfo.gov and the states' own legislature sites are the record, and you should always be one click from checking us against it.
+
+<Figure caption="A citation arrives, the app resolves it against the movement's three law stores, and both outcomes — a law we hold a record of and one we do not — land on the same panel of links out to the government's own site, chosen in a fixed order of preference.">
+  <svg viewBox="0 0 720 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the citation coming in */}
+    <rect x="16" y="22" width="180" height="54" rx="6" stroke="currentColor" fill="none" />
+    <text x="106" y="46" fontSize="12" fill="currentColor" textAnchor="middle">A law citation</text>
+    <text x="106" y="63" fontSize="10.5" fill="currentColor" opacity="0.72" textAnchor="middle">us:bill:118-hr-8070</text>
+
+    <line x1="196" y1="49" x2="246" y2="49" stroke="currentColor" />
+    <path d="M 252,49 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the resolver */}
+    <rect x="254" y="22" width="210" height="54" rx="6" stroke="currentColor" fill="none" />
+    <text x="359" y="46" fontSize="12" fill="currentColor" textAnchor="middle">Resolve across our</text>
+    <text x="359" y="63" fontSize="10.5" fill="currentColor" opacity="0.72" textAnchor="middle">three law stores</text>
+
+    {/* the split */}
+    <line x1="359" y1="76" x2="359" y2="96" stroke="currentColor" />
+    <line x1="150" y1="96" x2="568" y2="96" stroke="currentColor" />
+    <line x1="150" y1="96" x2="150" y2="112" stroke="currentColor" />
+    <path d="M 150,120 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <line x1="568" y1="96" x2="568" y2="112" stroke="currentColor" />
+    <path d="M 568,120 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    {/* the two outcomes */}
+    <rect x="30" y="122" width="240" height="52" rx="6" stroke="currentColor" fill="var(--wc-fig-wash)" />
+    <text x="150" y="145" fontSize="12" fill="currentColor" textAnchor="middle">A record we hold</text>
+    <text x="150" y="162" fontSize="10.5" fill="currentColor" opacity="0.72" textAnchor="middle">rungs, effect, position</text>
+
+    <rect x="448" y="122" width="240" height="52" rx="6" stroke="currentColor" fill="var(--wc-fig-wash-2)" />
+    <text x="568" y="145" fontSize="12" fill="currentColor" textAnchor="middle">No record held</text>
+    <text x="568" y="162" fontSize="10.5" fill="currentColor" opacity="0.72" textAnchor="middle">said plainly, not a 404</text>
+
+    <line x1="150" y1="174" x2="150" y2="192" stroke="var(--wc-fig-accent)" />
+    <path d="M 150,200 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <line x1="568" y1="174" x2="568" y2="192" stroke="var(--wc-fig-accent)" />
+    <path d="M 568,200 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    {/* the panel both outcomes land on */}
+    <rect x="16" y="200" width="688" height="114" rx="6" stroke="var(--wc-fig-accent)" fill="none" />
+    <text x="34" y="224" fontSize="15" fill="currentColor">On the official record</text>
+
+    <text x="38" y="248" fontSize="11" fill="currentColor" opacity="0.72">1</text>
+    <text x="58" y="248" fontSize="11" fill="currentColor">The committed source URL on the record</text>
+    <text x="38" y="266" fontSize="11" fill="currentColor" opacity="0.72">2</text>
+    <text x="58" y="266" fontSize="11" fill="currentColor">A deep link built from the citation</text>
+    <text x="38" y="284" fontSize="11" fill="currentColor" opacity="0.72">3</text>
+    <text x="58" y="284" fontSize="11" fill="currentColor">A scoped search on the official site</text>
+    <text x="38" y="302" fontSize="11" fill="currentColor" opacity="0.72">4</text>
+    <text x="58" y="302" fontSize="11" fill="currentColor">A plain sentence saying there is none yet</text>
+  </svg>
+</Figure>
+
+## What it does
+
+The address takes either a **key** the movement already holds or a plain **citation** written as `jurisdiction:type:identifier` — `us:bill:118-hr-8070`, `wa:rcw:9.41.010`, `ca:code:PEN-25400`. It resolves across the three law stores in a fixed order: problem laws, good laws, and the fix bills the movement wrote itself. One address, whichever store answers.
+
+An **On the official record** panel sits immediately under the page header, above our own analysis. That order is deliberate. Somebody who arrives sceptical of us should reach the government's text before they read a word of our reading of it. The links in it are chosen in a strict order of preference:
+
+* The **committed source URL** on the record itself. That is the document the row is evidence of, and nothing overrides it.
+* A **derived deep link** built from the citation — into congress.gov, govinfo, the US Code, the House Clerk, the Senate, or a state's own legislature site.
+* A **scoped search** on that official site, when the citation lacks a field the deep link needs. It lands you on the government's site with the last step left visible instead of faked.
+* A **plain sentence saying there is no official link for this citation yet**, with the citation beside it. Never a fabricated deep link, never a blank cell.
+
+An aggregator, a wiki or a news article never stands in as the citation. Those are fine ways to *find* a law; the government's own site is the only acceptable place to *cite* one. Every outbound link shows the host it goes to.
+
+A short table near the top lists every **rung** — every stage where a question was actually put to a vote. One row each: the room, the date, the question put verbatim from the record, and how it split. Where a *yes* on that question killed the measure, the row says so. Rungs where the vote was **prevented** are in the table too, marked as what they are, because a summary showing only the votes that were allowed would report the record as cleaner than it is. Rungs that are acts rather than questions — a referral, a signature, an introduction — sit on the full ladder one click away. A bill with nothing on the record gets no table at all, just the sentence saying so, because an empty table reads as *nobody voted on this*.
+
+Most laws you might want to read are in none of our stores: the movement holds a few hundred instruments and there are millions of laws. A citation with no record behind it is the normal case, and it gets a real page saying exactly that, with the links out and a control to propose the law for the record, rather than a dead end.
+
+The same machinery carries the **one person, one law** join: a single named person against a single named law, every time they touched it. Where the record shows a question was never put to that person, the page says so in place of a vote, rather than leaving a blank that reads as absence.
+
+## The goal it serves
+
+A claim about a law that you cannot go and verify against the primary source is exactly the unfalsifiable assertion this movement exists to refuse. Everything else here is arithmetic over the public record, and arithmetic is worth nothing if the record it ran over is out of reach. Being one click from the government's own text is what makes it possible for a citizen to catch us being wrong, and that is the only honest reason to believe us when we are right. The [Evidence](/docs/evidence/overview) area sets out that standard; [the sourcing rule](/docs/open_data/the_sourcing_rule) makes it something the work has to pass.
+
+It also settles what kind of thing this is. A site that asks you to take its word for a law is one more voice telling you what to think; a page that puts the government's text above its own analysis is a tool you use to check. That is the difference between this and [arguing online](/docs/the_problem/why_arguing_online_fails).
+
+The rungs matter for a second reason. The vote at final passage is the last thing that happens to a bill and the least informative thing about it — by then the text is fixed and everyone has a defence. What decided the outcome happened earlier, in smaller rooms, and often the most consequential rung is the one where a question was stopped from being put at all. Publishing those rungs beside the votes is how [who blocked it](/docs/good_laws/who_blocked_it) becomes a checkable fact about [an elected official's record](/docs/legacy_politicians/overview) rather than a complaint.
+
+## What keeps it honest
+
+* **No analysis we did not get from a record.** The page never summarises a law it holds nothing on, and never infers what a law does from its title.
+* **No fabricated links.** A missing official URL is written out as a named gap. A plausible URL that 404s is worse than nothing, because it looks like proof.
+* **It never lists the people.** Not sponsors, not cosponsors, not one roll call's members. Named living people belong on the rung's own page, where each name carries its own citation.
+* **The rungs table stays a summary.** It does not grow the full ladder, the exclusions or the authorship table; those live on the store page it links to.
+* **Only three jurisdictions are mapped** — the federal record, California and Washington. Any other state renders its citation, names the state, and says we have not mapped that state's official site yet. No link is invented to fill the hole.
+* **It is never gated.** Somebody who followed a citation from a post or another citizen's files lands on the law itself.
+
+## Works with
+
+* **[The Whole Voting Record](./the_voting_record.mdx)** — the rungs table here is the short form of the ladder that record is built from.
+* **[The Vote That Was Never Allowed](./the_blocked_fix_record.mdx)** — the prevented rungs shown here are that finding, on the law's own page.
+* **[The Official Record Or Nothing](./official_record_sourcing.mdx)** — the sourcing rule this page obeys, and why an aggregator never appears in the panel.
+
+## Where to go next
+
+* **[Laws](/docs/laws/overview)** — the map that keeps four different things called law apart.
+* **[Problem Laws](/docs/problem_laws/overview)** — the enacted instruments we hold records on, each sourced at the door.
+* **[Blocked from a vote](/docs/voting_records/blocked_from_a_vote)** — what the record looks like when a question was stopped from being put.
+* **[Clone the record](/docs/open_data/clone_the_record)** — pull the record down and follow any citation to its source yourself.
+* **[Open the app](https://app.WeTheCitizens.io/)** — look up a law and click through to the government's text.

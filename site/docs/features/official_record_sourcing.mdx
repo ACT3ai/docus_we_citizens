@@ -1,0 +1,116 @@
+---
+id: official_record_sourcing
+title: The Official Record Or Nothing
+sidebar_label: Official Record Or Nothing
+sidebar_position: 14
+description: "Every claim about a named living person cites the government's own file, and a row without one is dropped and the drop reported."
+---
+
+
+# The Official Record Or Nothing
+
+When this site says a member of Congress voted a particular way on a particular day, there is a link under that sentence, and it goes to the government's own file. Not a news write-up of the vote, not a roll-call aggregator, not an encyclopedia entry. The rule is the official record or nothing, and it is enforced by the machinery that builds the record rather than left to whoever is typing.
+
+<Figure caption="The fetch run copies bytes from the government's own file into an archive with a checksum, distils a row that carries its source link, drops any row that has none, and leaves the judgement to a separate run.">
+  <svg viewBox="0 0 720 272" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the citable sources */}
+    <rect x="16" y="24" width="160" height="96" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="96" y="48" fontSize="15" textAnchor="middle" fill="currentColor">Official record</text>
+    <text x="96" y="70" fontSize="12" textAnchor="middle" fill="currentColor">House Clerk, Senate</text>
+    <text x="96" y="88" fontSize="12" textAnchor="middle" fill="currentColor">govinfo, congress.gov</text>
+    <text x="96" y="106" fontSize="12" textAnchor="middle" fill="currentColor">the FEC, state sites</text>
+
+    {/* fetch */}
+    <line x1="178" y1="72" x2="242" y2="72" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M 250,72 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <text x="210" y="62" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">fetch</text>
+
+    {/* raw archive */}
+    <rect x="250" y="24" width="180" height="96" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="340" y="48" fontSize="15" textAnchor="middle" fill="currentColor">Raw archive</text>
+    <text x="340" y="70" fontSize="12" textAnchor="middle" fill="currentColor">every byte, unmodified</text>
+    <text x="340" y="88" fontSize="12" textAnchor="middle" fill="currentColor">sha256, source URL,</text>
+    <text x="340" y="106" fontSize="12" textAnchor="middle" fill="currentColor">licence, publisher</text>
+
+    {/* distil */}
+    <line x1="432" y1="72" x2="494" y2="72" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M 500,72 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <text x="463" y="62" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">distil</text>
+
+    {/* the published row */}
+    <rect x="500" y="24" width="204" height="96" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="602" y="48" fontSize="15" textAnchor="middle" fill="currentColor">A published row</text>
+    <text x="602" y="70" fontSize="12" textAnchor="middle" fill="currentColor">what the person did,</text>
+    <text x="602" y="88" fontSize="12" textAnchor="middle" fill="currentColor">with its source link,</text>
+    <text x="602" y="106" fontSize="12" textAnchor="middle" fill="currentColor">traceable to the file</text>
+
+    {/* excluded sources */}
+    <line x1="101" y1="168" x2="101" y2="150" stroke="var(--wc-fig-muted)" strokeWidth="1.5" strokeDasharray="4 4" />
+    <line x1="95" y1="132" x2="107" y2="144" stroke="var(--wc-fig-muted)" strokeWidth="1.5" />
+    <line x1="107" y1="132" x2="95" y2="144" stroke="var(--wc-fig-muted)" strokeWidth="1.5" />
+    <text x="118" y="142" fontSize="10.5" fill="currentColor" opacity="0.72">may help find a vote</text>
+    <rect x="16" y="168" width="170" height="80" fill="none" stroke="var(--wc-fig-muted)" strokeDasharray="5 4" />
+    <text x="101" y="192" fontSize="15" textAnchor="middle" fill="currentColor">Never a citation</text>
+    <text x="101" y="214" fontSize="12" textAnchor="middle" fill="currentColor">aggregators, news,</text>
+    <text x="101" y="232" fontSize="12" textAnchor="middle" fill="currentColor">wikis, API layers</text>
+
+    {/* the drop */}
+    <line x1="340" y1="120" x2="340" y2="162" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M 340,168 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <text x="350" y="146" fontSize="10.5" fill="currentColor" opacity="0.72">no source link</text>
+    <rect x="250" y="168" width="180" height="80" fill="none" stroke="var(--wc-fig-accent)" />
+    <text x="340" y="192" fontSize="15" textAnchor="middle" fill="currentColor">Dropped</text>
+    <text x="340" y="214" fontSize="12" textAnchor="middle" fill="currentColor">and the drop reported</text>
+
+    {/* the separate judging run */}
+    <line x1="602" y1="120" x2="602" y2="162" stroke="currentColor" strokeWidth="1.5" />
+    <path d="M 602,168 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <text x="612" y="146" fontSize="10.5" fill="currentColor" opacity="0.72">later, separately</text>
+    <rect x="500" y="168" width="204" height="80" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="602" y="192" fontSize="15" textAnchor="middle" fill="currentColor">A separate run</text>
+    <text x="602" y="214" fontSize="12" textAnchor="middle" fill="currentColor">adds the movement's</text>
+    <text x="602" y="232" fontSize="12" textAnchor="middle" fill="currentColor">reading, marked as ours</text>
+  </svg>
+</Figure>
+
+## What it does
+
+**The citation of record is always the official source** — the House Clerk, the Senate, govinfo, congress.gov, the FEC, or the state's own site, meaning the body that recorded the act, in the form it recorded it. API convenience layers, roll-call aggregators, encyclopedias and news articles are explicitly excluded as citations. They may help *find* a vote. They are never what gets *cited*, because a republication is convenient and the record is what survives a challenge.
+
+**Fetching and judging are kept in separate runs.** One run answers "where is the record, and can we get all of it" and makes no judgement at all — it transcribes. A later run answers "what does it mean". The reason for the split is asymmetric: a bad download produces a missing row, while a bad judgement produces a false accusation against a living person. Keeping the fetch free of interpretation means every claim traces back to a file, and the one interpretive call lives in a single reviewable place.
+
+**Every byte fetched lands unmodified in an archive before anything is distilled from it.** No reformatting, no filtering, no partial fetch. Beside it runs an append-only, committed **manifest** — one entry per file carrying the path, the source URL, the retrieval time, the byte count, a sha256 checksum, the licence and the publisher. That checksum is what makes "this row came from that file" checkable rather than asserted. A distillation that threw away its original cannot be re-checked when somebody disputes a row about themselves, and cannot prove the row was not invented.
+
+**The parsers check their own arithmetic against the source document.** After reading the member rows out of a chamber's file, the parser recounts them and compares its own tally to the totals the chamber itself published. On any mismatch it refuses to write. That is the mechanism that makes a silent partial read impossible — a file that parses cleanly but quietly dropped a third of the members is the kind of error nobody would notice downstream.
+
+Beside the sourcing bar runs a published editorial restraint: **state what a person did, never what they are.** "Voted yea on final passage" is a fact the movement publishes. A character judgement is not something this product says about anybody, and it never states as fact that a living person committed a crime absent a conviction.
+
+## The goal it serves
+
+Arithmetic over the public record is not defamation. That single sentence is the reason this feature exists, and it is what makes the rest of the site possible. An accusation that traces back to a byte-checkable government file is a measurement. One that does not is an opinion about a named living person — and an opinion is the thing a movement gets sued over, buried under, and eventually shut up by.
+
+The people whose records get published here can afford lawyers. Citizens cannot. So the sourcing rule is the load-bearing wall, not a nicety bolted on at review time — it is what lets a small, self-funded effort publish hard findings about powerful officeholders and keep publishing them. Every argument this site makes about [what Congress is actually working for](/docs/congress_for_citizens/overview) rests on files anyone can pull up alone, which is why the answer to "you are just calling people names with extra steps" is a [link to the roll call](/docs/politicians/award_not_a_score) rather than a rebuttal.
+
+It cuts the other way too. The movement cannot quietly improve a finding it likes by reaching for a friendlier source. If the government's own file does not support the row, the row does not get published, however much anyone wanted it — a constraint that binds us before it binds anybody else, and one the [open data record](/docs/open_data/overview) exists to expose.
+
+## What keeps it honest
+
+* **An unsourced row is dropped, and the drop is reported.** Never warned about and kept. An empty file is a correct result; a guessed vote is not.
+* **A missing record is published as a gap, not smoothed over.** Where a chamber acted with no member-level record at all — a voice vote, unanimous consent, a committee action taken without objection — no rows are written and one explicit gap is recorded instead. The gap is itself the finding: direct evidence that no member is on record on that provision.
+* **A negative finding carries the same bar as a positive one.** Before the movement publishes "no such vote was ever held", the index it searched has to be verified complete for every year in scope. "We looked and did not find it" does not meet the bar on its own.
+* **A fetch run may never add a person to a roster.** It surfaces candidates; a human decides.
+* **What the source link does not prove.** It establishes where a row came from and that it was not invented. It does not make the movement's reading of that row correct — the reading is a separate, later act, always labelled as ours rather than as the record's.
+
+## Works with
+
+* **[The Whole Voting Record](./the_voting_record.mdx)** — every row it publishes is produced under this sourcing rule, including the procedural stages a summary would leave out.
+* **[The Vote That Was Never Allowed](./the_blocked_fix_record.mdx)** — the hardest thing to source is an absence, and this is the rule that decides when an absence has been proven rather than assumed.
+* **[The Law Page](./the_law_page.mdx)** — the sources sit at the door of the law's own page, so a reader checks the citation before reading the argument built on it.
+
+## Where to go next
+
+* **[Voting Records](/docs/voting_records/overview)** — how a public record of how somebody voted becomes something you can check yourself.
+* **[Where the data comes from](/docs/voting_records/where_the_data_comes_from)** — the specific official sources, chamber by chamber.
+* **[The sourcing rule](/docs/open_data/the_sourcing_rule)** — the same rule stated as it applies to the movement's whole open record.
+* **[Politicians](/docs/politicians/overview)** — what the movement is and is not willing to say about a named living person.
+* **[Propose a correction](/docs/open_data/propose_a_correction)** — follow any claim down to its source, and send the fix back if it is wrong.

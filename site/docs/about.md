@@ -53,7 +53,7 @@ So We The Citizens is not a tribute. It is a correction.
 ## What guides us
 
 Everything we do is measured against the [seven charter principles](/docs/intro) —
-good ethics first, politicians who work for citizens, exposing the deep state,
+good ethics first, politicians who work for citizens, [exposing the deep state](/docs/deep_state/overview/),
 Christian values, online political thought leadership, winning with less money, and
 ending voter fraud permanently.
 
@@ -61,7 +61,7 @@ Read them the way they were written: as articles of a founding document.
 
 ## How we act
 
-Two core programs carry the charter into the world:
+Two core programs carry [the charter](/docs/the_movement/charter/) into the world:
 
 * **The We The Citizens Conference** — a once-a-year national gathering of thought
   leaders from across the political spectrum, with speakers selected by the board.

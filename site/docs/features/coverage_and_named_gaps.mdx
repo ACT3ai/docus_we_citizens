@@ -1,0 +1,119 @@
+---
+id: coverage_and_named_gaps
+title: Say What We Could See
+sidebar_label: Say What We Could See
+sidebar_position: 8
+description: "Every calculation publishes what it could see, every blank result names its cause, and the movement commits a public list of the data it is still missing."
+---
+
+
+# Say What We Could See
+
+A blank page about a politician has two completely different meanings, and they look identical. Either the movement read the record and found nothing there, or the movement never held the record to read. This feature makes every calculation say which one it is, out loud, in the same place the blank would have been.
+
+<Figure caption="For one person, each calculation records four counts in order, the first count that reaches zero is the diagnosis, and the typed cause it produces is both the sentence the reader sees and a row in the movement's public list of missing data.">
+  <svg viewBox="0 0 720 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* stage labels */}
+    <text x="94" y="34" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">corpus</text>
+    <text x="266" y="34" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">eligible</text>
+    <text x="438" y="34" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">usable</text>
+    <text x="610" y="34" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">result</text>
+
+    {/* the four counts */}
+    <rect x="24" y="42" width="140" height="64" rx="4" stroke="currentColor" fill="none" />
+    <text x="94" y="66" fontSize="12" textAnchor="middle" fill="currentColor">Votes we hold</text>
+    <text x="94" y="92" fontSize="15" textAnchor="middle" fill="currentColor">30</text>
+
+    <rect x="196" y="42" width="140" height="64" rx="4" stroke="currentColor" fill="none" />
+    <text x="266" y="66" fontSize="12" textAnchor="middle" fill="currentColor">In their chamber</text>
+    <text x="266" y="92" fontSize="15" textAnchor="middle" fill="currentColor">1</text>
+
+    <rect x="368" y="42" width="140" height="64" rx="4" stroke="var(--wc-fig-accent)" fill="var(--wc-fig-wash)" />
+    <text x="438" y="66" fontSize="12" textAnchor="middle" fill="currentColor">On the provision</text>
+    <text x="438" y="92" fontSize="15" textAnchor="middle" fill="currentColor">0</text>
+
+    <rect x="540" y="42" width="140" height="64" rx="4" stroke="var(--wc-fig-muted)" fill="none" />
+    <text x="610" y="66" fontSize="12" textAnchor="middle" fill="currentColor">Read as a stance</text>
+    <text x="610" y="92" fontSize="15" textAnchor="middle" fill="currentColor">0</text>
+
+    {/* flow arrows */}
+    <line x1="166" y1="74" x2="188" y2="74" stroke="currentColor" strokeWidth="1" />
+    <path d="M 194,74 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <line x1="338" y1="74" x2="360" y2="74" stroke="currentColor" strokeWidth="1" />
+    <path d="M 366,74 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <line x1="510" y1="74" x2="532" y2="74" stroke="var(--wc-fig-muted)" strokeWidth="1" />
+    <path d="M 538,74 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the first zero */}
+    <line x1="438" y1="106" x2="438" y2="138" stroke="var(--wc-fig-accent)" strokeWidth="1" />
+    <path d="M 438,144 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <text x="438" y="162" fontSize="10.5" textAnchor="middle" fill="currentColor">the first zero is the diagnosis</text>
+
+    {/* generated sentence */}
+    <rect x="24" y="176" width="380" height="100" rx="4" stroke="var(--wc-fig-accent)" fill="var(--wc-fig-wash)" />
+    <text x="42" y="202" fontSize="15" fill="currentColor">cause: nothing_usable</text>
+    <text x="42" y="226" fontSize="12" fill="currentColor">“1 of 30 votes we hold fell</text>
+    <text x="42" y="243" fontSize="12" fill="currentColor">in their chamber, and it was</text>
+    <text x="42" y="260" fontSize="12" fill="currentColor">on the package. Our gap.”</text>
+
+    {/* the public ledger */}
+    <rect x="428" y="176" width="252" height="100" rx="4" stroke="currentColor" fill="var(--wc-fig-wash-2)" />
+    <text x="446" y="202" fontSize="15" fill="currentColor">data_needed.yaml</text>
+    <text x="446" y="226" fontSize="10.5" fill="currentColor" opacity="0.72">what is missing</text>
+    <text x="446" y="243" fontSize="10.5" fill="currentColor" opacity="0.72">where to look for it</text>
+    <text x="446" y="260" fontSize="10.5" fill="currentColor" opacity="0.72">what we already tried</text>
+
+    <line x1="406" y1="226" x2="420" y2="226" stroke="var(--wc-fig-accent)" strokeWidth="1" />
+    <path d="M 426,226 l -7,-3.5 l 0,7 z" fill="currentColor" />
+  </svg>
+</Figure>
+
+## What it does
+
+Every calculation on this site takes a body of evidence and narrows it down. For each person it reports on, it records four counts, in this order:
+
+* **Corpus** — how much evidence the movement holds at all.
+* **Eligible** — how much of that could legitimately bear on this person, after the filters that are about identity: their chamber, their dates in office, the identifier that joins them to a record. Those filters describe the person; they are not judgements about the person.
+* **Usable** — how much of the eligible set can actually carry a reading, after the filters that are about the evidence itself.
+* **Result** — what came out.
+
+The nesting is the whole mechanism, because **the first count that reaches zero is the diagnosis**. Thirty votes held, one falling inside a member's chamber during their service, and that one cast on the whole package rather than on the provision, produces a blank for a reason that has nothing to do with the member.
+
+Every blank carries a **typed cause** rather than a sentence: no join key, no tenure, empty corpus, nothing eligible, nothing usable, or no legible signal. Prose cannot be counted, grouped, or tested. A cause can. The five that stop before a reading is possible are gaps in the movement's own sourcing. Only the last one is the beginning of a finding about a person, and it says exactly what it means: they were eligible and present, and every recorded position was neutral, present, or not voting.
+
+The words a reader sees are generated from the cause and the counts together, so the sentence can never drift away from the arithmetic that produced it. The remedy is generated the same way. Offering "recompute" to a reader looking at a person with nothing eligible would be a lie: no amount of recomputing moves a number whose arithmetic was never wrong. That gap closes by sourcing a record.
+
+Absences render as **rows, not as nothing**. Every instrument the movement tracks appears on every record page, including the ones a person never had a chance to act on, marked with no vote recorded and no reading attached. An empty table reads as "nothing happened here", which is usually the opposite of the finding — on a repair list, a member who was absent for every round would otherwise look spotless.
+
+Each award runs its own funnel and reports its own denominator. The Flamingo Award's **unknown** state is a coverage state by design: we do not know enough yet, which is not a claim about the person at all. That is a different fact from **not earned**, where the assessment ran and nothing was earned, and neither one is ever rendered as a zero. Beside every award rides the knowledge figure, always written **"N% known"**. It says how much the movement actually knows about somebody, and it exists to stop the other numbers being over-read. The two axes are independent: a person can be thoroughly known and hold no award, or barely known at all.
+
+Above all of it sits **`data_needed.yaml`**, a committed public file listing every hole the movement knows about in its own store — which roll calls, which identity records, filed by level, chamber and year, with what the gap blocks on screen, when it opened, where to look, and what previous attempts came back with. A page whose blank a need explains renders the need instead.
+
+## The goal it serves
+
+The deadlock this movement exists to break is a manufactured evidence gap: withhold the record, then insist that nobody may act without complete proof. A page that says "not yet assessed" and stops is that same deadlock, built by us and pointed at our own readers. It takes a hole in our sourcing and hands it to a citizen as a shrug about a named living person.
+
+A movement that demands disclosure from officials while hiding its own holes has no standing to make the argument, so the honesty standard runs inward first. You can read what we are missing before you decide how much weight to put on what we have.
+
+Publishing the list is also how somebody else closes it. A contributor who has never opened this app can read the ledger, see which chamber and which year are dark, learn that two pulls already came back with nothing and where they looked, and go get the record. That is not possible against a private to-do list. It is the difference between a movement that asks to be trusted and one that can be checked and helped.
+
+## What keeps it honest
+
+* **The build refuses the failure.** A guard fails the build if a cause is unreachable by construction, or if every subject lands on the same cause. Both are the signature of a filter that ate everything. The first five times this defect shipped, it was caught by a human opening one page and noticing it was blank.
+* **A run that declined to recompute never reports a zero it did not compute.** It reports the previous run's real numbers, labelled as a skip. "We did not look today" and "we looked and found nothing" may not render the same way.
+* **The engine that finds the holes fetches nothing and accuses nobody.** It reads only files already on disk, and a need describes a hole in our store rather than conduct by a person: "no roll call has been sourced for this member on this measure", never a claim about why none exists.
+* **A named gap is not an accusation and not a verdict.** Reporting that we could see nothing says nothing about the person we could not see. That distinction is the entire point of typing the cause.
+
+## Works with
+
+* **[Show The Arithmetic](./show_the_arithmetic.mdx)** — the derivation and the denominator ship together, so a reader can check both the sum and how much it was summed over.
+* **[Your State House, Same Instrument](./state_legislature_coverage.mdx)** — a second body of evidence means a second denominator, and neither one is ever described in the other's terms.
+* **[Work You Can Watch](./work_you_can_watch.mdx)** — a published gap is a piece of work somebody can pick up, close, and be seen closing.
+
+## Where to go next
+
+* **[Evidence](/docs/evidence/overview)** — the pillar this feature is built out of: how to reach a defensible conclusion when some links are missing on purpose.
+* **[Naming the gaps](/docs/evidence/naming_the_gaps)** — why a named gap beats a quiet one, stated as a rule rather than as a habit.
+* **[Not assessed is not a verdict](/docs/flamingo/not_assessed_is_not_a_verdict)** — the award whose blank state is the clearest case of everything on this page.
+* **[Open Data](/docs/open_data/overview)** — clone the record, follow any claim to its source, and read the gap list for yourself.
+* **[Take Action](/docs/take_action/overview)** — pick an open gap and close it this week.

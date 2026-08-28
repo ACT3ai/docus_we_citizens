@@ -63,7 +63,7 @@ section below also opens with its own one-line summary, on the same footing (§1
 We hold free expression as a core commitment and we write it into this contract rather than
 only into our marketing. Precisely *because* we permit a wide range of speech, we also
 reserve the discretion to remove content and to suspend accounts — including accounts
-running coordinated narrative control on behalf of a government, an intelligence service,
+running coordinated [narrative control](/docs/foreign_intelligence/removing_democracy_from_outside/) on behalf of a government, an intelligence service,
 or political money. We tell you how that discretion is constrained: strikes expire, notices
 name the specific rule and the specific content, and you get a real appeal window with a
 deadline that runs against **us** as well as you. (§8, §9, §13)
@@ -509,7 +509,7 @@ non-exclusive, non-transferable, non-sublicensable license to access and use the
 Service for its intended purpose: participating in the movement as a Citizen.
 
 **6.2 Restrictions.** You may not: reverse engineer, decompile, or disassemble any part of the
-**Hosted Service** that is not open source; circumvent rate limits, access controls, paywalls,
+**Hosted Service** that is not [open source](/docs/repos/overview/); circumvent rate limits, access controls, paywalls,
 or technical protection measures; resell or sublicense access; scrape or harvest data except
 as §12.13 permits; or interfere with the operation or security of the Service.
 
@@ -1568,8 +1568,8 @@ make to us is a political contribution (§17.5).
 > your speech once you publish it, we take no liability for it, and there is a real address
 > for telling us it got something wrong.
 
-**18.1 What the AI does.** The Service uses automated models to check chains of reasoning against
-first principles, identify gaps in Evidence, compare Positions to a reference social contract, and
+**18.1 [What the AI does](/docs/ai/what_the_ai_does/).** The Service uses automated models to check chains of reasoning against
+first principles, identify gaps in Evidence, compare Positions to a reference [social contract](/docs/social_contract/overview/), and
 draft Proposed Laws and summaries.
 
 **18.2 AI Output is software output, not fact and not advice.** **AI Output is not a statement of
@@ -2542,7 +2542,7 @@ discontinue the Hosted Service entirely, we will give reasonable advance notice,
 window, and **refund the unused portion of any prepaid Subscription** (§27.8). This is a refund we
 commit to, and §15.24 does not switch it off. It does not extend to Donations (§17.11).
 
-**27.7 Survival.** The following survive termination: §5 (local-first split), §7 (content licence,
+**27.7 Survival.** The following survive termination: §5 ([local-first](/docs/get_started/run_it_on_your_computer/) split), §7 (content licence,
 as limited by §7.4 and §7.10), §10 (accuracy, including §10.6), §11 (defamation), §12 (intellectual
 property), §14 (legal role), §15 (amounts already owed), §20 (privacy cross-reference), §21
 (disclaimers), §22 (liability), §23 (release and covenant, including §23.6 and §23.7), §24

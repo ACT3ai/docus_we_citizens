@@ -1,0 +1,114 @@
+---
+id: the_wall
+title: The Wall
+sidebar_label: The Wall
+sidebar_position: 5
+description: "The voting record feeds the Monkey and Llama Awards. Everything else feeds the Flamingo. Two engines, two input sets, and nothing crosses."
+---
+
+
+# The Wall
+
+There are two very different kinds of evidence about a politician, and this product refuses to mix them. What a person did with the power they held — how they voted, what they authored, what they blocked — is one kind. What they have said, studied, promised, and been researched on is the other. The Wall is the rule that keeps each kind out of the other's award.
+
+<Figure caption="Two evidence streams run down two separate engines to two separate results, with a wall between them that no input, number, or adjustment crosses.">
+  <svg viewBox="0 0 720 310" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* wall label and the wall itself */}
+    <text x="360" y="20" fontSize="12" fill="currentColor" textAnchor="middle">THE WALL — nothing crosses</text>
+    <line x1="360" y1="34" x2="360" y2="296" stroke="var(--wc-fig-accent)" strokeWidth="3" />
+
+    {/* left: the voting record */}
+    <rect x="24" y="34" width="300" height="96" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="174" y="56" fontSize="15" fill="currentColor" textAnchor="middle">What they did in office</text>
+    <text x="174" y="78" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">Votes at every stage</text>
+    <text x="174" y="96" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">Bills they authored</text>
+    <text x="174" y="114" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">Votes they blocked</text>
+
+    {/* right: everything else */}
+    <rect x="396" y="34" width="300" height="96" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="546" y="56" fontSize="15" fill="currentColor" textAnchor="middle">Everything else we know</text>
+    <text x="546" y="78" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">Transcripts, interviews</text>
+    <text x="546" y="96" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">Resume, education</text>
+    <text x="546" y="114" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">Public commitments</text>
+
+    {/* down into the engines */}
+    <line x1="174" y1="130" x2="174" y2="152" stroke="currentColor" />
+    <path d="M 174,160 l -3.5,-8 l 7,0 z" fill="currentColor" />
+    <line x1="546" y1="130" x2="546" y2="152" stroke="currentColor" />
+    <path d="M 546,160 l -3.5,-8 l 7,0 z" fill="currentColor" />
+
+    <rect x="64" y="160" width="220" height="40" fill="none" stroke="currentColor" />
+    <text x="174" y="185" fontSize="12" fill="currentColor" textAnchor="middle">Voting-record engine</text>
+    <rect x="436" y="160" width="220" height="40" fill="none" stroke="currentColor" />
+    <text x="546" y="185" fontSize="12" fill="currentColor" textAnchor="middle">Flamingo engine</text>
+
+    {/* the crossing that is not allowed */}
+    <line x1="292" y1="180" x2="428" y2="180" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+    <line x1="352" y1="172" x2="368" y2="188" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <line x1="368" y1="172" x2="352" y2="188" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+
+    {/* down into the awards */}
+    <line x1="174" y1="200" x2="174" y2="228" stroke="currentColor" />
+    <path d="M 174,236 l -3.5,-8 l 7,0 z" fill="currentColor" />
+    <line x1="546" y1="200" x2="546" y2="228" stroke="currentColor" />
+    <path d="M 546,236 l -3.5,-8 l 7,0 z" fill="currentColor" />
+
+    <rect x="44" y="236" width="126" height="48" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="107" y="257" fontSize="12" fill="currentColor" textAnchor="middle">Monkey Award</text>
+    <text x="107" y="273" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">higher is worse</text>
+    <rect x="178" y="236" width="126" height="48" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="241" y="257" fontSize="12" fill="currentColor" textAnchor="middle">Llama Award</text>
+    <text x="241" y="273" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">higher is better</text>
+
+    <rect x="436" y="236" width="220" height="48" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="546" y="257" fontSize="12" fill="currentColor" textAnchor="middle">Flamingo Award</text>
+    <text x="546" y="273" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">earned / not earned / unknown</text>
+  </svg>
+</Figure>
+
+## What it does
+
+Exactly three classes of act reach the **Monkey Award** and the **Llama Award**: how a person voted at any stage, from subcommittee through the floor; what they authored or sponsored, including cosponsorship, amendments, and discharge-petition signatures; and what they blocked from advancing, using a position of power to keep a vote from happening at all. Every one is a dated act of official power taken in a seat the person was elected to, cited to the official record.
+
+Everything else the movement holds about a person reaches only the **Flamingo Award**. That includes transcripts of interviews and podcasts, background research, a resume, an education record, public statements and commitments, qualification assessments, and what citizens themselves have said about them.
+
+**This is a prohibition on a data path, not a display convention.** The two sides are produced by two separate engines. The voting-record engine has no reader for a transcript. The Flamingo engine has no reader for a roll call, an authorship row, or an obstruction record. Not switched off — absent. Adding one would be a change to the software itself.
+
+* The voting-record engine may open the vote stores, the obstruction records, the two curated law lists, and the roster. Nothing else.
+* The Flamingo engine may open the per-video assessment files, the qualification catalog, the roster, and the citizen assessment store. Nothing else.
+* Neither award is ever a term in the other's arithmetic. No netting, no damping, no tie-break, no confidence adjustment.
+
+A person who holds both kinds of record gets both results side by side, at the same size. A challenger who previously held office carries a voting-record award **and** a Flamingo, and neither shrinks, annotates, or suppresses the other because it is unflattering.
+
+Enforcement is a test that fails the build. One names the file and the line if any statement in the backend carries a qualification reading into a Monkey or Llama value. A second fails if a Monkey or Llama term reaches a Flamingo result, including inside a text string, because a filename written between quotes is still a way in.
+
+## The goal it serves
+
+The heaviest thing this movement publishes about a living person is a statement about how they used official power. That claim has to be answerable purely from government records, so that nobody — including us — can say an interpretation of what somebody meant in an interview moved a figure about their voting record. Two provenances, two awards, each argued on its own terms.
+
+The two kinds of evidence do not have the same standing, and pretending otherwise is how a checkable claim quietly becomes an opinion. A roll call is a public fact with an official URL. A reading of what a person meant in a podcast is this movement's interpretation of their words. Blend them and the result has a provenance nobody can state, and a figure nobody can trace is exactly the thing this product exists to replace.
+
+The Wall is also the only way a challenger and a sitting official can be compared honestly. Most people worth electing have never held office, so their voting side is legitimately empty. If interview evidence could lift a Llama Award, somebody who never cast a vote could out-earn the member who actually filed the repeal, and the Llama's whole claim — that it counts what a person **did** about those laws — would be false. Keeping the record award empty where the record is empty is what makes it mean what it says.
+
+## What keeps it honest
+
+The Wall costs something, and the cost is the proof it is real. A challenger with no roll calls used to get a voting-record reading derived from their qualification assessments, so their page would not sit empty. That derivation was deleted rather than fenced off, because a boundary that has to be defended forever against a standing incentive erodes, and a deletion does not. The assessment it produced measured something real, and it is still published at full strength — as a Flamingo Award, with its own percentage.
+
+* **A blank is never a verdict.** A Flamingo that reads unknown means we have not read enough about that person yet. It is our gap, not a finding about them, and it never renders as 0%.
+* **An empty voting record means no record**, not a clean one, and not a bad one.
+* **How much we know is published too.** A Flamingo Award carries a plain "N% known" beside it, so a percentage cannot be over-read as a complete picture of a person.
+* **The Wall does not claim the two sides are equally strong.** It claims they must never be added together.
+
+## Works with
+
+* **[The Monkey Award](./monkey_award.mdx)** — the damage side of the voting record, and one of the two awards the Wall protects from interpretation.
+* **[The Llama Award](./llama_award.mdx)** — the repair side, computed by the same engine over the same acts, and empty when the record is empty.
+* **[The Flamingo Award](./flamingo_award.mdx)** — everything on the far side of the Wall, with three states of its own and its own separate engine.
+
+## Where to go next
+
+* **[Politicians](/docs/politicians/overview)** — the full doctrine: an award is earned or not earned, never a judgment issued on a human being.
+* **[Where the data comes from](/docs/voting_records/where_the_data_comes_from)** — the official sources every act on the voting-record side is cited to.
+* **[The three states](/docs/flamingo/the_three_states)** — why not earned and unknown are a difference in fact, not in styling.
+* **[How It Works](/docs/how_it_works/overview)** — where the awards sit inside the loop a citizen actually runs.
+* **[Get Started](/docs/get_started/overview)** — run it on your own machine and check the arithmetic against the record yourself.

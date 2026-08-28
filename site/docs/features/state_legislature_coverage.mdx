@@ -1,0 +1,118 @@
+---
+id: state_legislature_coverage
+title: Your State House, Same Instrument
+sidebar_label: Your State House
+sidebar_position: 9
+description: "The same awards and the same arithmetic reach your state legislature, from a separate policy file, one state at a time."
+---
+
+
+# Your State House, Same Instrument
+
+Your state legislature passes the laws you meet first: what a landlord may do, what a ballot has to prove, what a small business has to file, what your county sheriff is funded to do. It is also the level of American government almost nobody watches. This is the same instrument the movement uses on Congress, aimed at state chambers instead — the same act categories, the same equation, its own policy file, and its own refusal to guess who cast a vote.
+
+<Figure caption="Three acquisition roles feed one citation, the state wall decides which acts may be charged to which member, and a row whose member cannot be resolved from the journal is counted and charged to nobody.">
+  <svg viewBox="0 0 720 326" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the three acquisition roles */}
+    <rect x="16" y="36" width="170" height="56" rx="4" stroke="currentColor" fill="none" />
+    <text x="101" y="60" fontSize="12" textAnchor="middle" fill="currentColor">Finder</text>
+    <text x="101" y="78" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">does a vote exist?</text>
+
+    <line x1="186" y1="64" x2="207" y2="64" stroke="currentColor" />
+    <path d="M 214,64 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="216" y="36" width="170" height="56" rx="4" stroke="currentColor" fill="none" />
+    <text x="301" y="60" fontSize="12" textAnchor="middle" fill="currentColor">Locator</text>
+    <text x="301" y="78" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">where the state posted it</text>
+
+    <line x1="386" y1="64" x2="407" y2="64" stroke="currentColor" />
+    <path d="M 414,64 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="416" y="36" width="170" height="56" rx="4" stroke="var(--wc-fig-accent)" fill="var(--wc-fig-wash)" />
+    <text x="501" y="60" fontSize="12" textAnchor="middle" fill="currentColor">Citation</text>
+    <text x="501" y="78" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">the state&apos;s own bytes</text>
+    <text x="598" y="64" fontSize="10.5" fill="currentColor" opacity="0.72">the only citation</text>
+
+    <line x1="501" y1="92" x2="501" y2="113" stroke="var(--wc-fig-accent)" />
+    <path d="M 501,120 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    {/* the containment rule */}
+    <rect x="140" y="120" width="440" height="92" rx="4" stroke="currentColor" fill="var(--wc-fig-wash-2)" />
+    <text x="360" y="144" fontSize="15" textAnchor="middle" fill="currentColor">THE STATE WALL</text>
+    <text x="360" y="166" fontSize="12" textAnchor="middle" fill="currentColor">same state as the member</text>
+    <text x="360" y="184" fontSize="12" textAnchor="middle" fill="currentColor">a chamber they sat in</text>
+    <text x="360" y="202" fontSize="12" textAnchor="middle" fill="currentColor">a session they served in</text>
+
+    {/* the two awards */}
+    <line x1="360" y1="212" x2="360" y2="228" stroke="currentColor" />
+    <line x1="188" y1="228" x2="412" y2="228" stroke="currentColor" />
+    <line x1="188" y1="228" x2="188" y2="245" stroke="currentColor" />
+    <path d="M 188,252 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <line x1="412" y1="228" x2="412" y2="245" stroke="currentColor" />
+    <path d="M 412,252 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    <rect x="88" y="252" width="200" height="58" rx="4" stroke="var(--wc-fig-accent)" fill="none" />
+    <text x="188" y="276" fontSize="12" textAnchor="middle" fill="currentColor">Monkey Award</text>
+    <text x="188" y="294" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">damage · higher is worse</text>
+
+    <rect x="312" y="252" width="200" height="58" rx="4" stroke="var(--wc-fig-accent)" fill="none" />
+    <text x="412" y="276" fontSize="12" textAnchor="middle" fill="currentColor">Llama Award</text>
+    <text x="412" y="294" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">repair · higher is better</text>
+
+    {/* the row that names nobody */}
+    <line x1="580" y1="176" x2="620" y2="176" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+    <line x1="620" y1="176" x2="620" y2="245" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+    <path d="M 620,252 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <rect x="536" y="252" width="168" height="58" rx="4" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" fill="none" />
+    <text x="620" y="276" fontSize="12" textAnchor="middle" fill="currentColor">Unresolved rows</text>
+    <text x="620" y="294" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">charged to nobody</text>
+  </svg>
+</Figure>
+
+## What it does
+
+This is a question of **scope, not a fourth award**. The same classifier reads a state act as reads a federal one, into the same twelve categories, through the same weighted average with the same floors. What changes is which corpus is open and which table prices the acts. State acts are priced from a **separate state policy file**, and all forty-eight of its values ship as exact copies of the federal ones — a build check compares the two tables on every build and prints the difference, so a deliberate departure is loud and an accidental one is visible.
+
+Getting the record is three jobs, and only one of them may ever be cited. A **finder** answers whether a roll call on this instrument exists. A **locator** says where the state itself published it. A **citation** is the state's own bytes, fetched by us, and it is the only thing a committed row may point at. An aggregator that mislabels a motion costs one wasted fetch; a row citing a page nobody opened is a public claim about a named living person resting on somebody else's transcription. All fifty states have a reachable vote-bearing host. The transport is solved nearly everywhere. Identity is not, and that is the actual work.
+
+**The state wall** is the containment rule this level needed and the federal one never did. A member is charged only for instruments of their own state, only for roll calls of a chamber they sat in, and only for a session they served in. Fifty separate corpora share one directory tree and one roster, and a leak between them does not look like a bug — it looks like a Minnesota representative with a California record, which is a false statement about a real person. So it is enforced by a build guard that fails the build, not by a filter somebody can forget.
+
+Then the surname problem. State chamber journals print surnames, not identifiers, and no state legislator has a federal identity number — there is no such thing and there never will be. Where the printed form matches two sitting members, the row **resolves to nobody**. It is written to a separate file, counted into the totals and into the coverage denominator, and charged to no one, and the law page says so out loud: *2 of 134 recorded positions could not be resolved to a named member from the journal alone.*
+
+Two more pieces make it yours rather than abstract:
+
+* **The seat.** A ZIP-to-state-house-district crosswalk built from the Census Bureau's relationship file for current lower-chamber districts. A ZIP split across two districts resolves nothing and asks you which one you vote in.
+* **Multi-member districts.** Washington elects two representatives per district to numbered ballot positions. Which position a member holds comes from the Secretary of State's certified results or from nowhere: a member whose position cannot be sourced fills no position-keyed seat, and the seat shows its no-record state. Assigning one by alphabet or seniority would be a confident wrong answer with no error attached.
+
+What comes out is a Monkey Award and a Llama Award over that person's state acts, with the act count beside them. Someone who served at both levels also gets a career pair: one weighted average over the union of their acts, each act priced by the table of the level it happened at, published as three rows — state, federal, career — and never as the mean of two published awards. Transcripts, interviews, résumés and public commitments never touch any of this; they feed the Flamingo Award only.
+
+## The goal it serves
+
+Accountability that stops at Congress stops above the laws most people actually live under. The movement already held identity records for more than seven thousand sitting state legislators, and every one of them carried a line saying there was no mechanism to read their votes. That sentence was true, and it was a hole rather than a boundary: those people cast recorded votes, on instruments already filed as problems, and the product built to measure what politicians did was measuring none of it.
+
+It is also where replacement is cheapest. A captured incumbent is removed at an election, and state races are the ones a citizen can reach — closer, smaller, and decided by fewer votes than any federal seat. The evidence that makes that argument is the same evidence the federal side runs on: a dated act of official power, cited to the chamber's own journal. See [Voting Records](/docs/voting_records/overview) for how that record is read, [Elected Politicians](/docs/legacy_politicians/overview) for what a record looks like once it exists, and [Replacing Captured Incumbents](/docs/replace_incumbents/overview) for what the movement does with it.
+
+The refusal is as much of the point as the coverage. Extending measurement below Congress multiplies the opportunities to say something perfectly true about the wrong person, because a state journal hands you a surname where Congress hands you an identifier. The [Monkey Award](/docs/monkey/overview) and the [Llama Award](/docs/llama/overview) are only worth anything if the arithmetic under them is checkable and the person under them is the right one, which is why [the wall](/docs/politicians/the_wall) and the sourcing rule are carried down to the state level unchanged rather than relaxed to get more states online faster.
+
+## What keeps it honest
+
+* **Turning a state on is an approval, not a side effect.** A coverage file records who decided it, on what date, and why in a written sentence. Today one state is on. Two more have complete rosters and no instrument corpus behind them, and their rows say exactly that.
+* **Forty-nine states report "not covered," not "not yet assessed."** Roughly seven thousand records in uncovered states carry a typed cause and a sourcing sentence. None of them renders as a zero, because a zero would mean we looked.
+* **A thin record is published with its denominator.** Fewer than three acts marks an award low-confidence, the act count leads the page rather than hiding in a tooltip, and the number is still published — withholding a computed number out of caution is treated as a defect, not as care.
+* **A denominator we cannot compute is printed as unknown.** Where a member's terms of service are not sourced, the page says *unknown (tenure not sourced)* instead of quietly substituting the count of acts we happened to find.
+* **No model output reaches a state award.** Not about a person and not about an instrument. Every number traces to a roll call in a public file, cited to the chamber's own journal, and to decisions a named administrator made in the open.
+* **Undecided is stated, not skipped.** In the one covered state, eight roll calls are declared and two have been decided as counting. The other six are recorded as undecided and named — a work item, not a silence.
+
+## Works with
+
+* **[Show The Arithmetic](./show_the_arithmetic.mdx)** — the state awards use the same published equation, so any number here can be added up by hand from the same acts.
+* **[Say What We Could See](./coverage_and_named_gaps.mdx)** — unresolved surnames, uncovered states and unsourced terms are all published as named gaps rather than smoothed over.
+* **[Work You Can Watch](./work_you_can_watch.mdx)** — sourcing a chamber, resolving a surname or filing a term of service is checkable work a citizen can pick up.
+
+## Where to go next
+
+* **[Voting Records](/docs/voting_records/overview)** — how a recorded vote becomes an award percentage, and what counts as a vote at all.
+* **[Where the data comes from](/docs/voting_records/where_the_data_comes_from)** — the official record or nothing, at both levels.
+* **[Find who represents you](/docs/legacy_politicians/find_who_represents_you)** — your seats, federal and state, from where you live.
+* **[The sourcing rule](/docs/open_data/the_sourcing_rule)** — why a citation is the state's own bytes and never a convenient summary.
+* **[Take Action](/docs/take_action/overview)** — the work that turns an uncovered chamber into a covered one.

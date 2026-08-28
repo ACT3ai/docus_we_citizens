@@ -1,0 +1,121 @@
+---
+id: work_you_can_watch
+title: Work You Can Watch
+sidebar_label: Work You Can Watch
+sidebar_position: 10
+description: "The machinery behind every published number is on screen: start a run, follow it line by line, and it keeps going if you close the tab."
+---
+
+
+# Work You Can Watch
+
+Every number this movement publishes is produced by a program run over files that are already on disk. Nobody types a result in by hand. This page is about being able to watch that happen: the work is listed while it is in flight, a run can be started and followed line by line, and it finishes whether or not you stay on the page.
+
+<Figure caption="A run starts either because somebody pressed Run or because the nightly clock fired; it goes onto one queue, writes a timestamped journal while it works, and ends in a dated publication that carries the inputs it was computed from. The browser only watches.">
+  <svg viewBox="0 0 720 310" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* sources */}
+    <rect x="24" y="52" width="150" height="54" rx="6" fill="none" stroke="currentColor" strokeWidth="1.2" />
+    <text x="99" y="78" fontSize="12" fill="currentColor" textAnchor="middle">You press Run</text>
+    <text x="99" y="94" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">on your own work</text>
+
+    <rect x="24" y="134" width="150" height="54" rx="6" fill="none" stroke="currentColor" strokeWidth="1.2" />
+    <text x="99" y="160" fontSize="12" fill="currentColor" textAnchor="middle">The nightly clock</text>
+    <text x="99" y="176" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">no one has to press</text>
+
+    <line x1="174" y1="79" x2="215" y2="79" stroke="currentColor" strokeWidth="1.2" />
+    <path d="M 222,79 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <line x1="174" y1="161" x2="215" y2="161" stroke="currentColor" strokeWidth="1.2" />
+    <path d="M 222,161 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the queue */}
+    <rect x="222" y="40" width="210" height="200" rx="8" fill="var(--wc-fig-wash)" stroke="currentColor" strokeWidth="1.2" />
+    <text x="327" y="66" fontSize="15" fill="currentColor" textAnchor="middle">One queue</text>
+
+    <rect x="238" y="82" width="178" height="30" rx="4" fill="none" stroke="var(--wc-fig-muted)" strokeWidth="1" />
+    <circle cx="250" cy="97" r="4" fill="currentColor" />
+    <text x="262" y="101" fontSize="12" fill="currentColor">running · 3 of 6</text>
+
+    <rect x="238" y="120" width="178" height="30" rx="4" fill="none" stroke="var(--wc-fig-muted)" strokeWidth="1" />
+    <circle cx="250" cy="135" r="4" fill="none" stroke="currentColor" strokeWidth="1.2" />
+    <text x="262" y="139" fontSize="12" fill="currentColor">queued · not started</text>
+
+    <rect x="238" y="158" width="178" height="30" rx="4" fill="none" stroke="var(--wc-fig-muted)" strokeWidth="1" />
+    <rect x="246" y="169" width="8" height="8" fill="currentColor" />
+    <text x="262" y="177" fontSize="12" fill="currentColor">done · 0.5s</text>
+
+    <text x="238" y="210" fontSize="10.5" fill="currentColor" opacity="0.72">lanes cap what runs at once</text>
+    <text x="238" y="226" fontSize="10.5" fill="currentColor" opacity="0.72">a run can be cancelled</text>
+
+    <line x1="432" y1="84" x2="473" y2="84" stroke="var(--wc-fig-accent)" strokeWidth="1.4" />
+    <path d="M 480,84 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* journal and publication */}
+    <rect x="480" y="40" width="216" height="88" rx="8" fill="var(--wc-fig-wash-2)" stroke="currentColor" strokeWidth="1.2" />
+    <text x="588" y="68" fontSize="12" fill="currentColor" textAnchor="middle">Every run writes a journal</text>
+    <text x="588" y="88" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">timestamped lines on disk</text>
+    <text x="588" y="104" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">watchable while it runs</text>
+
+    <line x1="588" y1="128" x2="588" y2="147" stroke="var(--wc-fig-accent)" strokeWidth="1.4" />
+    <path d="M 588,154 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    <rect x="480" y="154" width="216" height="88" rx="8" fill="var(--wc-fig-wash)" stroke="var(--wc-fig-accent)" strokeWidth="1.4" />
+    <text x="588" y="182" fontSize="12" fill="currentColor" textAnchor="middle">A dated publication</text>
+    <text x="588" y="202" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">inputs frozen with it</text>
+    <text x="588" y="218" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">so an old number still checks</text>
+
+    {/* the browser is only a viewer */}
+    <path d="M 588,242 L 588,272 L 181,272" stroke="var(--wc-fig-muted)" strokeWidth="1.2" strokeDasharray="4 5" />
+    <path d="M 174,272 l 7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="24" y="250" width="150" height="44" rx="6" fill="none" stroke="var(--wc-fig-muted)" strokeWidth="1.2" />
+    <text x="99" y="270" fontSize="12" fill="currentColor" textAnchor="middle">Your browser</text>
+    <text x="99" y="286" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">a viewer only</text>
+    <text x="196" y="290" fontSize="10.5" fill="currentColor" opacity="0.72">Closing the tab does not stop the work.</text>
+  </svg>
+</Figure>
+
+## What it does
+
+A **calc engine** is the pattern behind every published figure: files already on disk go in, the work runs in named stages, and out comes an artifact that is regenerable and never hand-authored. There are eighteen of them registered today and the count only goes up, because the authority on how many there are is a machine-readable registry rather than a sentence in a document. Each entry states the question it answers, how often it runs, which specification defines it, and which directory of code does the work.
+
+They all run on **one queue**. There is one place that knows what this install is doing right now, and one console that lists every engine at once — its question, what it needs before it can do useful work, whether it is running, how long the current run has been going, and how the last run ended. "Never run" is one of the outcomes it will tell you, because an engine nobody runs is an engine nobody notices is broken. A count of failed runs is a button, and it opens the failing run's own log rather than a summary of it.
+
+While a run is in flight it writes a **journal** — timestamped plain-text lines on disk, one per stage, streamed to the browser as they are written. The first thing a page receives is a snapshot of everything already in flight, not an empty stream, so a tab opened during three runs shows three runs. If the stream cannot be held open the app falls back to polling, and it says which of the two it is doing, because the data is right either way but its freshness is not.
+
+A job's state is a small, deliberately un-collapsed vocabulary:
+
+* **queued** is not **running**. Work that has not started says so, instead of showing a progress bar frozen at zero, which reads as a hang.
+* **interrupted** is not **error**. If the process hosting a run goes away, the run ends as interrupted, keeps the stage it reached, and carries no failure line. Reporting a restart as an engine fault teaches you to ignore the one status that means look at this.
+* **cancelled** means a human asked it to stop. A running job is asked, never killed, because killing work mid-write is how a half-written file is produced.
+
+Because the work runs in the backend and not in your browser, closing the tab, navigating away, or shutting the laptop changes nothing about whether it finishes. Come back and the state is still there.
+
+Runs also happen without anybody pressing anything. Most engines fire nightly on an in-app clock, a few weekly or quarterly, and at every start-up the app checks whether an engine's last run has gone stale or its source data has moved since — and re-fires it if so. A run that **failed** is named rather than quietly fired again. What each pass publishes is frozen and dated: the published result carries the list it was computed against, the policy tables in force, and the exact commit of the public data it read. That is what lets a number published months ago still be re-derived today rather than argued about.
+
+## The goal it serves
+
+A number nobody can watch being made has to be taken on faith, and faith is the currency Washington already trades in. Officials publish conclusions and ask to be believed; so do the institutions that sit in judgement on them. One more source of unverifiable numbers would be worse than useless, because a movement that cannot be checked is one that can be captured quietly and never found out — including by its own operators.
+
+So the machinery is the argument. Everything this project says about a named person is an [award earned or not earned](/docs/politicians/award_not_a_score), and that rests entirely on the derivation being open: the sources are [the official record or nothing](/docs/open_data/the_sourcing_rule), the arithmetic is published so [anyone can do it themselves](/docs/monkey/do_the_math_yourself), and the run that produced today's figure is one you can start again and watch. That is the difference between a published derivation and a claim.
+
+It settles a practical question too. Numbers go stale, source records move, and somebody has to notice. Putting the runs, their clocks and their failures on one page is how volunteers keep a record current without a newsroom, and it is why [the whole thing can be stood up on your own machine](/docs/repos/run_your_own_instance) and audited by a stranger.
+
+## What keeps it honest
+
+* **Progress is derived, never invented.** A percentage exists only when the work reports stage *n* of *N*. Otherwise there is an indeterminate bar and no number. A fabricated percentage is exactly the confident-and-wrong this product exists to argue against.
+* **Every engine has to state its coverage.** It computes who it was eligible to reach and carries a stated cause for every blank result. If a run narrows and stops reaching somebody who had an award, the last dated publication stands, labelled as superseded, rather than the award silently vanishing — and where there is nothing to show, "no award has been given yet" is the honest answer, which is a statement about our knowledge and not a verdict on the person.
+* **Run journals are install bookkeeping, not evidence.** They stay on the local machine and are never committed into the public data record. What is published about a person is the result and the derivation behind it, not the machine's diary of an afternoon.
+* **The fleet console is not a public page.** It is an administrator's surface on a given install; a citizen sees their own runs and nobody else's, because a queue that showed one citizen another citizen's activity would be a leak dressed up as a feature. The thing offered to the public for checking is the record and its arithmetic, not the operators' control room. Run the software yourself and the control room is yours.
+
+## Works with
+
+* **[Show The Arithmetic](./show_the_arithmetic.mdx)** — the run produces the number; that page is the published working that lets you reproduce it by hand.
+* **[Say What We Could See](./coverage_and_named_gaps.mdx)** — every run has to declare what it could and could not reach, which is what stops a quiet failure from reading as a finding.
+* **[Your State House, Same Instrument](./state_legislature_coverage.mdx)** — state coverage runs on the same queue and the same clock, so a legislature is not a special case anybody has to trust separately.
+
+## Where to go next
+
+* **[Open Data](/docs/open_data/overview)** — the public record these runs read from and write back to, in a repository you can clone.
+* **[What the AI does](/docs/ai/what_the_ai_does)** — one of these engines calls a model; this is the fence around what it is allowed to do.
+* **[The core loop](/docs/how_it_works/the_core_loop)** — where a run fits into the work a citizen actually does.
+* **[Run your own instance](/docs/repos/run_your_own_instance)** — stand the whole thing up and watch it from the inside.
+* **[Get Started](/docs/get_started/overview)** — hosted or on your own computer, in about ten minutes.

@@ -21,7 +21,7 @@ General contact: **ContactUs@ACT3ai.com**. Privacy and data-rights contact: **Co
 the detail below wins. Nothing in this summary is true in a way the body contradicts — if you find
 a place where it is, that is a defect and we want to hear about it.*
 
-**Your political positions stay on your own computer.** We the Citizens is a local-first
+**Your political positions stay on your own computer.** We the Citizens is a [local-first](/docs/get_started/run_it_on_your_computer/)
 application. Your positions, values, evidence, and reasoning are flat files on your machine. We do
 not receive them, we cannot read them, we cannot restore them, and **we cannot produce them to a
 government, because we never had them.**
@@ -133,7 +133,7 @@ Where a section describes something not yet built, **it says so in its first lin
 one that does not, that is a mistake in this document and we want to hear about it at
 ContactUs@ACT3ai.com (subject line: "privacy request").
 
-**2.4 What this policy does NOT cover — other people's instances.** We the Citizens is open source.
+**2.4 What this policy does NOT cover — other people's instances.** We the Citizens is [open source](/docs/repos/overview/).
 **Anyone can run their own copy, and many people do.** If you are using an instance someone else
 runs, **they are the controller of your data, not us, and this policy does not apply to you.** Their
 practices are theirs. If you are not certain whose instance you are on, assume it is not ours and
@@ -1235,7 +1235,7 @@ they are at §6.1.
 
 ## 21. Community Mode and Publishing
 
-**21.1 What becomes visible, and when.** In individual mode, **nothing is visible to anyone** — that is the
+**21.1 What becomes visible, and when.** In [individual mode](/docs/how_it_works/individual_vs_community_mode/), **nothing is visible to anyone** — that is the
 default and it needs no action from you. In community mode, what you contribute to a community is visible to
 that community, and you are told what will be shared before you share it.
 

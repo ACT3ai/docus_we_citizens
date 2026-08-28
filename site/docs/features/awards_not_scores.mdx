@@ -1,0 +1,115 @@
+---
+id: awards_not_scores
+title: Awards, Not Scores
+sidebar_label: Awards, Not Scores
+sidebar_position: 6
+description: "Every figure published about a politician is a percentage of an award, never a position on a scale, and a test in the software enforces it."
+---
+
+
+# Awards, Not Scores
+
+Every figure this movement publishes about a politician is a percentage of an award. "A 72% Llama Award" describes something we conferred, and how much of it — not a place on a hundred-point scale the person carries around. That distinction changes what is being claimed and what a blank means, and it is enforced by a test that refuses to build the software when the wrong word reaches a page.
+
+<Figure caption="A computed number leaves the arithmetic and passes through one fixed grammar before it reaches a reader: either a percentage joined to the award it is a percentage of, or a plain sentence saying no award was given. Citizen-side figures bypass that grammar entirely and keep the word score.">
+  <svg viewBox="0 0 720 336" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* politician lane */}
+    <text x="24" y="30" fontSize="10.5" fill="currentColor" opacity="0.72">About a politician</text>
+
+    <rect x="24" y="44" width="152" height="60" rx="6" stroke="currentColor" fill="var(--wc-fig-wash-2)" />
+    <text x="100" y="70" fontSize="12" textAnchor="middle" fill="currentColor">Computed number</text>
+    <text x="100" y="88" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">from the public record</text>
+
+    <line x1="176" y1="74" x2="215" y2="74" stroke="currentColor" />
+    <path d="M 222,74 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="224" y="32" width="176" height="84" rx="6" stroke="var(--wc-fig-accent)" strokeWidth="1.5" fill="var(--wc-fig-wash)" />
+    <text x="312" y="58" fontSize="15" textAnchor="middle" fill="currentColor">Award grammar</text>
+    <text x="312" y="80" fontSize="11" textAnchor="middle" fill="currentColor">mark, number and word</text>
+    <text x="312" y="98" fontSize="11" textAnchor="middle" fill="currentColor" opacity="0.72">travel together</text>
+
+    <path d="M 400,74 L 424,74 L 424,50 L 445,50" stroke="var(--wc-fig-accent)" fill="none" />
+    <path d="M 452,50 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <path d="M 400,74 L 424,74 L 424,98 L 445,98" stroke="currentColor" fill="none" />
+    <path d="M 452,98 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="452" y="28" width="244" height="44" rx="6" stroke="var(--wc-fig-accent)" fill="var(--wc-fig-wash)" />
+    <text x="468" y="50" fontSize="15" fill="currentColor">72% Llama Award</text>
+    <text x="468" y="66" fontSize="10.5" fill="currentColor" opacity="0.72">a percentage of the award</text>
+
+    <rect x="452" y="78" width="244" height="44" rx="6" stroke="currentColor" fill="none" />
+    <text x="468" y="99" fontSize="12" fill="currentColor">No award has been given yet.</text>
+    <text x="468" y="115" fontSize="10.5" fill="currentColor" opacity="0.72">never a zero, never a blank</text>
+
+    {/* the lint */}
+    <line x1="312" y1="150" x2="312" y2="124" stroke="var(--wc-fig-accent)" />
+    <path d="M 312,116 l -3.5,7 l 7,0 z" fill="currentColor" />
+    <rect x="224" y="150" width="176" height="64" rx="6" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" fill="none" />
+    <text x="312" y="174" fontSize="12" textAnchor="middle" fill="currentColor">Vocabulary check</text>
+    <text x="312" y="192" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">a forbidden word in copy</text>
+    <text x="312" y="208" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">fails the build</text>
+
+    {/* citizen lane */}
+    <line x1="24" y1="240" x2="696" y2="240" stroke="var(--wc-fig-muted)" strokeDasharray="5 5" />
+    <text x="24" y="264" fontSize="10.5" fill="currentColor" opacity="0.72">About a citizen</text>
+
+    <rect x="24" y="274" width="152" height="48" rx="6" stroke="currentColor" fill="none" />
+    <text x="100" y="303" fontSize="11" textAnchor="middle" fill="currentColor">Your own logged work</text>
+
+    <line x1="176" y1="298" x2="445" y2="298" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+    <path d="M 452,298 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="452" y="274" width="244" height="48" rx="6" stroke="currentColor" fill="var(--wc-fig-wash-2)" />
+    <text x="468" y="294" fontSize="12" fill="currentColor">Karma and trust scores</text>
+    <text x="468" y="310" fontSize="10.5" fill="currentColor" opacity="0.72">the word score stays here</text>
+  </svg>
+</Figure>
+
+## What it does
+
+Everything published about a politician is an **award**, a percentage of one, or the stated absence of one. The arithmetic is unchanged; what is fixed is the grammar the result may arrive in. Every published figure is joined to the award it is a percentage of. "72% Llama Award" is compliant. A bare 72 next to an animal is not. One shared function in the code joins the number to the award name, so no page assembles that phrase for itself and the wording cannot drift.
+
+The display rules are fixed too, rather than left to whoever builds the next screen:
+
+* **The mark, the number and the word travel together.** A mark alone is an epithet. A number alone reads as a place on a scale. Neither ships.
+* **The percentage is big, the award name small, above or beside it.** The reader learns what is being conferred before reading how much.
+* **A blank renders as a sentence, never as 0%.** "No award has been given yet" says what the movement has done, not what the person is. A zero nobody computed is a false claim with a numeral on it.
+* **The "N% known" figure travels with every percentage,** so a confident number sitting on thin evidence argues with itself on sight.
+* **All three marks render at one shared height.** Shrinking one award beside another is editorializing through layout.
+* **No mark appears on a record the movement never assessed.**
+
+Enforcement is a test, not a habit. A permitted lexicon and a forbidden list — `score`, `rated`, `points`, `grade`, `vetted`, `penalty`, `demerit` and their relatives — are checked by a grep across every file that publishes an award about a politician, and a hit fails the build with a message naming what to write instead. The check covers whole directories rather than a hand-kept file list, so a page added next month is in scope the day it exists.
+
+Citizen-side figures deliberately keep the word **score**. Karma, your own trust score and the leaderboard are a citizen earning recognition for their own logged work rather than a published claim about somebody else, and the check is scoped to leave them alone.
+
+None of this is ever a reason to hold a number back. A 4% award publishes as 4%. A 91% award publishes as 91%, under the person's name, with its acts listed.
+
+## The goal it serves
+
+The movement publishes unflattering arithmetic about named, living, powerful people who can afford lawyers. That work only survives if the form it arrives in is honest. An award is a plain act with a stated basis: it was given or it was not, it may have been given in part, and the derivation is published in full with its sources. Nothing is left over for anyone to defend — no implied claim about the human being. A bare number out of a hundred reads as a verdict on a person instead, and invites exactly the argument the record was supposed to end. The doctrine is laid out in [Award, not a score](/docs/politicians/award_not_a_score).
+
+The second reason is what a blank has to mean. Citizens have learned to read a missing number as guilt or as cover, because on a scale no number reads as the bottom of the scale. With an award, not receiving one is an ordinary fact about most people most of the time. That is what lets the movement say "we assessed and gave nothing" and "we have not looked yet" as two different sentences, neither of them an accusation. [The wall](/docs/politicians/the_wall) keeps those findings in separate lanes; this rule keeps them in honest words.
+
+The third reason is recruitment, and it matters most. The point is not to insult incumbents. It is to elect people who will work for citizens and refuse to be bought. A shelf of awards a challenger is partway to filling is an invitation to keep going; a report card is a reason to stay out of public life. Same arithmetic, opposite effect on the people the country needs — and the case for publishing any of it is in [The Problem](/docs/the_problem/overview).
+
+## What keeps it honest
+
+The limit written into the rule runs against the movement's own comfort. The vocabulary check may never gate a number: a failure means the copy is wrong, and the fix is the copy, never the removal of a published percentage. Adding an exclusion to a politician surface to make a build pass is a violation, not a workaround.
+
+Two failures are held equally serious, in opposite directions. Withholding a number because it is uncomfortable is a defect. So is a surface that says "no award" where the truth is "we never ran the calculation" — that is a false exoneration, and it is the same severity of bug. A blank always carries a stated cause in words.
+
+What the rule deliberately leaves alone: database columns, code symbols and already-published web addresses may keep older names. A link to a politician's award page that a citizen quoted in an argument must keep resolving to the same content, permanently. Breaking it would pull the arithmetic out from under a published claim, which is the failure this product exists to prevent.
+
+## Works with
+
+* **[The Monkey Award](./monkey_award.mdx)** — the damage finding from the voting record, published as a percentage of an award rather than as a verdict on a person.
+* **[The Llama Award](./llama_award.mdx)** — the repair finding from the same record, where a partly-earned award is an invitation to earn more of it.
+* **[The Flamingo Award](./flamingo_award.mdx)** — the award whose three states only stay readable because "not given" is an ordinary fact rather than the bottom of a scale.
+
+## Where to go next
+
+* **[Politicians](/docs/politicians/overview)** — everything the movement publishes about a person who holds or seeks office, and the rules it publishes under.
+* **[The wall](/docs/politicians/the_wall)** — why the voting record and everything else are kept in separate awards that never mix.
+* **[Not assessed is not a verdict](/docs/flamingo/not_assessed_is_not_a_verdict)** — the difference between "we looked and found nothing" and "we have not looked", and why it is never collapsed.
+* **[How It Works](/docs/how_it_works/overview)** — the whole loop a citizen walks, from recording a position to publishing a finding.
+* **[Take Action](/docs/take_action/overview)** — what to do this week now that you can read what the numbers actually claim.

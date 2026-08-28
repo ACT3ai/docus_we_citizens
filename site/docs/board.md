@@ -52,7 +52,7 @@ Every person on this list stood with Charlie Kirk — not people who stood to pr
 
 ## Board Commitments
 
-Once accepted, every board member is bound by the charter:
+Once accepted, every board member is bound by [the charter](/docs/the_movement/charter/):
 
 * **Term-limited positions** with member recall authority
 * **No conflicts of interest** with corporate sponsors or foreign entities

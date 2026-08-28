@@ -1,0 +1,199 @@
+---
+id: show_the_arithmetic
+title: Show The Arithmetic
+sidebar_label: Show The Arithmetic
+sidebar_position: 7
+description: "Every award published about a named politician carries a page that shows the whole derivation, so a stranger with a calculator can reproduce it."
+---
+
+
+# Show The Arithmetic
+
+A number nobody can check is an opinion with a decimal point in it. So every award this movement
+publishes about a named politician carries a page that shows how it was reached — each act, what it
+counted for, and the division that produced the total. There are two such pages, because there are
+two separate bodies of evidence, and they are never mixed.
+
+<Figure caption="Two derivation pages, each fed by its own evidence and never by the other's: the award invoice sums a contribution column and divides it by a weight column, the Flamingo math page sums a per-area contribution column, and both are published as a dated frozen edition that stores the list, the policy table and the gaps.">
+  <svg viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    {/* the wall between the two evidence streams */}
+    <text x="360" y="26" textAnchor="middle" fontSize="10.5" fill="currentColor" opacity="0.72">the wall</text>
+    <line x1="360" y1="34" x2="360" y2="248" stroke="var(--wc-fig-muted)" strokeWidth="1.5" strokeDasharray="4 5" />
+
+    {/* inputs */}
+    <rect x="20" y="38" width="300" height="26" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="170" y="55" textAnchor="middle" fontSize="12" fill="currentColor">Voting record only</text>
+    <rect x="400" y="38" width="300" height="26" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="550" y="55" textAnchor="middle" fontSize="12" fill="currentColor">Their own words only</text>
+
+    <line x1="170" y1="64" x2="170" y2="82" stroke="currentColor" />
+    <path d="M 170,84 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <line x1="550" y1="64" x2="550" y2="82" stroke="currentColor" />
+    <path d="M 550,84 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    {/* left panel — the award invoice */}
+    <rect x="20" y="88" width="300" height="132" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="32" y="108" fontSize="15" fill="currentColor">The award invoice</text>
+    <text x="32" y="126" fontSize="10.5" fill="currentColor" opacity="0.72">one row per instrument</text>
+    <text x="32" y="146" fontSize="10.5" fill="currentColor">act · why it counts</text>
+    <text x="308" y="146" textAnchor="end" fontSize="10.5" fill="currentColor">+263.0 / 5.0</text>
+    <text x="32" y="164" fontSize="10.5" fill="currentColor">act · why it counts</text>
+    <text x="308" y="164" textAnchor="end" fontSize="10.5" fill="currentColor">+85.0 / 1.0</text>
+    <text x="32" y="182" fontSize="10.5" fill="currentColor">act · why it counts</text>
+    <text x="308" y="182" textAnchor="end" fontSize="10.5" fill="currentColor">+0.0 / 3.0</text>
+    <line x1="32" y1="192" x2="308" y2="192" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <text x="32" y="210" fontSize="12" fill="currentColor">sum ÷ sum = the published %</text>
+
+    {/* right panel — the Flamingo math page */}
+    <rect x="400" y="88" width="300" height="132" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="412" y="108" fontSize="15" fill="currentColor">The Flamingo math page</text>
+    <text x="412" y="126" fontSize="10.5" fill="currentColor" opacity="0.72">one row per area read</text>
+    <text x="412" y="146" fontSize="10.5" fill="currentColor">area · what we read</text>
+    <text x="688" y="146" textAnchor="end" fontSize="10.5" fill="currentColor">37.8% → 30.2</text>
+    <text x="412" y="164" fontSize="10.5" fill="currentColor">area · what we read</text>
+    <text x="688" y="164" textAnchor="end" fontSize="10.5" fill="currentColor">24.4% → 19.6</text>
+    <text x="412" y="182" fontSize="10.5" fill="currentColor">area · what we read</text>
+    <text x="688" y="182" textAnchor="end" fontSize="10.5" fill="currentColor">8.9% → 5.3</text>
+    <line x1="412" y1="192" x2="688" y2="192" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <text x="412" y="210" fontSize="12" fill="currentColor">the column sums to the %</text>
+
+    {/* both published as one frozen edition */}
+    <line x1="170" y1="220" x2="170" y2="246" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M 170,250 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <line x1="550" y1="220" x2="550" y2="246" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M 550,250 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    <rect x="20" y="252" width="680" height="50" fill="var(--wc-fig-wash-2)" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <text x="360" y="274" textAnchor="middle" fontSize="15" fill="currentColor">Dated, frozen edition</text>
+    <text x="360" y="292" textAnchor="middle" fontSize="10.5" fill="currentColor" opacity="0.72">list snapshot · policy table · the run's gaps</text>
+  </svg>
+</Figure>
+
+## What it does
+
+**The award invoice** is the derivation behind every award computed from a voting record. The word is
+deliberate. It is an itemized bill: here is each line, here is what it cost, here is how the total
+was reached.
+
+It opens with a header band of three panels at the same size — the dominant award, the other award,
+and who this person is. Neither award is shrunk relative to the other, because a page that quietly
+makes one mark smaller has editorialized through layout. Then come the evidence tables, and the
+harmful-law table is always first regardless of which award dominates, so a reader scanning down
+always finds harm in the same place.
+
+Each row is one instrument, and it carries:
+
+* the bill and why it is on the movement's list, shown in full and never truncated;
+* one generated sentence of what this person did to it, ordered worst act first, with repeated acts
+  collapsed into counts and every act linking to the official record;
+* that row's share of the two sums, written as a pair — `+263.0 / 5.0`;
+* a short note saying where those two figures land in the equation.
+
+Add the left half of every pair, divide by the right half, and you get the published percentage
+exactly. That is the whole audit, and the table footer performs the division in front of the reader.
+
+Under both tables sits the derivation. It writes the division out with the real numbers substituted
+rather than in symbols — `2085.0 ÷ 23.0 = 90.65 → 91`. It lists every priced category this record did
+**not** trigger, greyed and counted zero, with what each one would have cost — so the page reads as a
+record rather than a charge sheet. It lists the rows that were excluded and why: out of office on the
+date, wrong chamber, present, not voting, or dropped for having no source. A derivation that shows
+only what counted against somebody is not auditable. It names the gaps that could not be closed. And a
+**Disagree with this?** link opens a proposal against one specific row, carrying that row's identifier
+with it.
+
+**The Flamingo math page** is the other one, for a person assessed from their own recorded words.
+Three tiles run across the top: the award with its mark, the "N% known" knowledge percentage at the
+same size beside it, and the seat this person is put forward for. The award percentage is never shown
+without that second tile, because 74 across three areas read and 74 across eleven are different
+claims, and only the pair says which one is being made.
+
+Two proportion strips follow — which qualification areas carried the number, and which of the three
+authorities did: the AI reading, trusted citizens, and every other citizen. Then a per-area table
+printing each area's own result, the share the movement committed to it in advance, the share it
+actually carried, and what it put into the total. That last column visibly sums to the headline. Every
+equation on the page lives in one band at the foot, rendered twice: once in symbols, and once with
+this person's numbers put into the same steps.
+
+Neither page sits behind a sign-in. Both carried a soft account prompt until it was removed. Published
+arithmetic about a named living person may not have a login in front of it.
+
+Both are re-derivable later. Every run is published as a dated, frozen **edition** storing the list as
+it stood, the full policy object with both tables, and the run's gaps. Editions are append-only: a
+correction opens a new one and publishes a changelog naming what moved and why — an act was added, an
+act was re-read, an item joined or left the list, or the movement retuned its own tables and said so.
+
+## The goal it serves
+
+The claim this movement makes about a named living person is arithmetic over the public record, and
+the entire defence of that claim is that a stranger can run it again. These pages are what make that
+sentence true rather than a slogan. A citizen with a calculator, no account, and no reason to like us
+can reproduce a published percentage from what is printed on the page.
+
+That moves the argument to ground where it can actually be settled. Without the derivation, the only
+available fight is whether the movement invented the number, and that fight is won by whoever is
+louder. With the derivation, the fight is over a weight sitting in a public file — why blocking a
+repair in committee is priced at thirty times a floor vote, for instance. That is an argument about
+how power really works in a legislature, and it is the argument worth having. The reasoning behind
+every weight is published beside it, which is why the answer to "your number is unfair" is
+[do the math yourself](/docs/monkey/do_the_math_yourself) rather than a press release.
+
+The reader is not assumed to be friendly, and should not be. Citizens have spent decades receiving
+official figures with the working left off, from institutions that had every reason to round in their
+own favour. A movement that asks for trust on the same terms has learned nothing. So the source is the
+official record or nothing at all, and [the sourcing rule](/docs/open_data/the_sourcing_rule) is
+published as a constraint we can be held to. What gets conferred is an
+[award, not a verdict](/docs/politicians/award_not_a_score) — a claim about the movement's own
+assessment, made with its working attached.
+
+The frozen edition is the part that matters years out. A number published this month will be quoted
+in a primary two elections from now, after the list has changed and the tables have been retuned. The
+edition keeps that older number answerable on its own terms instead of leaving it as a screenshot
+nobody can re-derive. Any citizen can pull the whole record and check it against ours, which is what
+[Open Data](/docs/open_data/overview) exists for.
+
+## What keeps it honest
+
+* **The page performs no arithmetic of its own.** Every figure is read from the stored run. If the
+  browser could compute a different total than the run did, the audit trail would be worthless. The
+  one exception is labelled where it appears: the "what would this have been under a different rule"
+  comparisons are worked out in your browser, and the copy beside them says so and says the movement
+  did not confer that figure.
+* **A derivation the data cannot support is never printed.** Awards published before the terms were
+  recorded once rendered `0.0 ÷ 0.0` under a headline of 25, beneath an invitation to add the column
+  up. Nothing divides to 25 from zeros. Those records now say they were published by an edition that
+  did not record its terms, and drop the promise that the column adds up. The award itself still
+  publishes: what is missing is the working, not the number.
+* **Nobody is assessed on a vote they had no opportunity to cast.** Rows that fail the tenure test
+  come out of both sides of the average — never a zero and never a penalty — and are listed with the
+  service dates that failed.
+* **An empty table still renders, and names which kind of empty it is.** "We looked and found
+  nothing", "we have nothing to look against", and "we have not looked" are three different claims
+  about a named living person. Collapsing them is the most damaging error available here.
+* **What these pages never claim.** Not character, motive, or legality. Not a prediction. Not a
+  verdict: a high figure is an input to an ordinary movement vote, never a substitute for one, and no
+  figure triggers anything automatically. On the Flamingo page, "not earned" and "unknown" print the
+  cause in words and never `0%`.
+
+## Works with
+
+* **[Say What We Could See](./coverage_and_named_gaps.mdx)** — the gaps printed at the foot of a
+  derivation come from there; a named hole is part of the working, not something hidden under it.
+* **[Your State House, Same Instrument](./state_legislature_coverage.mdx)** — the same kind of
+  derivation over a state chamber's roll calls, so a reader who learned to check one can check the
+  other.
+* **[Work You Can Watch](./work_you_can_watch.mdx)** — a derivation names the run that produced it,
+  and the runs are jobs whose progress and coverage are public.
+
+## Where to go next
+
+* **[The Monkey Award](/docs/monkey/overview)** — what the harm side is actually measuring, and the
+  twelve categories every act is priced from.
+* **[Do the math yourself](/docs/monkey/do_the_math_yourself)** — the equation, the table, and a
+  worked example you can reproduce on paper.
+* **[The three states](/docs/flamingo/the_three_states)** — earned, not earned, and unknown, and why
+  the last two are a difference in fact rather than in styling.
+* **[Open Data](/docs/open_data/overview)** — clone the record, follow any row to its source, and send
+  a correction back.
+* **[Open the app](https://app.WeTheCitizens.io/)** — pull up a representative and read a derivation
+  line by line.

@@ -1,0 +1,104 @@
+---
+id: problem_record
+title: The Problem Record
+sidebar_label: The Problem Record
+sidebar_position: 15
+description: "A numbered public list of exactly what is wrong, each entry written precisely enough that a bill could be drafted to fix it."
+---
+
+
+# The Problem Record
+
+"Everything is broken" cannot be worked on. The Problem Record is the movement's written list of specific wrongs — one record per wrong, stated precisely enough that somebody could draft legislation against it. Each entry names what is wrong, who it hurts, what causes it, which part of the deal it breaks, and what "fixed" would look like in numbers you could check later.
+
+<Figure caption="A single problem record holds the parts a fix has to be built on, and join tables carry its one frozen key out to the enacted law that caused the wrong, the members who voted for it, and the bill written to undo it.">
+  <svg viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the record card */}
+    <rect x="24" y="42" width="286" height="226" fill="var(--wc-fig-wash)" stroke="currentColor" strokeWidth="1.25" />
+    <text x="40" y="68" fontSize="15" fill="currentColor">One problem record</text>
+
+    <circle cx="42" cy="92" r="2.5" fill="currentColor" />
+    <text x="54" y="96" fontSize="12" fill="currentColor">Name and statement</text>
+    <circle cx="42" cy="118" r="2.5" fill="currentColor" />
+    <text x="54" y="122" fontSize="12" fill="currentColor">Who is harmed, and how</text>
+    <circle cx="42" cy="144" r="2.5" fill="currentColor" />
+    <text x="54" y="148" fontSize="12" fill="currentColor">Root causes + confidence</text>
+    <circle cx="42" cy="170" r="2.5" fill="currentColor" />
+    <text x="54" y="174" fontSize="12" fill="currentColor">Contract clause broken</text>
+    <circle cx="42" cy="196" r="2.5" fill="currentColor" />
+    <text x="54" y="200" fontSize="12" fill="currentColor">What fixed looks like</text>
+    <circle cx="42" cy="222" r="2.5" fill="currentColor" />
+    <text x="54" y="226" fontSize="12" fill="currentColor">Named evidence gaps</text>
+
+    {/* trunk out to the joins */}
+    <text x="356" y="34" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">join tables</text>
+    <path d="M 310,151 L 356,151" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M 356,75 L 356,227" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M 356,75 L 406,75" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M 356,151 L 406,151" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M 356,227 L 406,227" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M 414,75 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <path d="M 414,151 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <path d="M 414,227 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the three joined records */}
+    <rect x="414" y="48" width="282" height="54" fill="var(--wc-fig-wash-2)" stroke="currentColor" strokeWidth="1.25" />
+    <text x="430" y="80" fontSize="12" fill="currentColor">The enacted law that caused it</text>
+    <rect x="414" y="124" width="282" height="54" fill="var(--wc-fig-wash-2)" stroke="currentColor" strokeWidth="1.25" />
+    <text x="430" y="156" fontSize="12" fill="currentColor">Who voted for it, on the record</text>
+    <rect x="414" y="200" width="282" height="54" fill="var(--wc-fig-wash-2)" stroke="currentColor" strokeWidth="1.25" />
+    <text x="430" y="232" fontSize="12" fill="currentColor">The bill written to undo it</text>
+
+    {/* the loop back */}
+    <path d="M 555,254 L 555,286 L 167,286 L 167,276" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M 167,268 l -3.5,7 l 7,0 z" fill="currentColor" />
+    <text x="361" y="306" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">one frozen key ties them together</text>
+  </svg>
+</Figure>
+
+## What it does
+
+A **problem record** is one named thing that is wrong with the country, kept as its own record rather than as a paragraph buried inside a draft bill. The problem is the thing that persists; a bill is one of several attempts to fix it, and attempts fail.
+
+Each record carries a short name, a one-line description, the full statement, **who is harmed** and how, an ordered **root-cause chain** with a confidence number on each link, the clauses of the social contract it violates together with the argument for why, and a **desired outcome** saying what "fixed" looks like and how you would measure it.
+
+* **The desired outcome is the entry test.** A problem with no statable fixed state is a complaint and does not go on the list. A record cannot leave draft and reach citizens without one.
+* **A category, a priority from 1 to 100, and a severity citizens vote on** put the list in an order you can argue with.
+* **A lifecycle** runs draft, open, accepted, in law, mitigated, resolved. The `in law` state is derived from the joined bill and can never be set by hand — the record cannot claim progress the legislation does not support.
+* **An explicit gaps list** names what evidence is absent, why, whether it never existed or was withheld, classified, permanently unavailable, or simply not searched yet, and the work that established that.
+
+Linkage is stored in join tables rather than copied text. The same frozen key walks the whole loop: the problem, the enacted law that caused it, the recorded votes that put that law in place, and the bill written to undo it. Change one record and every view of it changes, because there is only one of it.
+
+Every citizen can read every published record, including someone who has never signed in, and export the raw file to reason on it locally. Signed-in citizens can propose a new problem or give feedback on an existing one.
+
+## The goal it serves
+
+Grievance that stays vague cannot be fixed, and cannot be checked either. "The system is rigged" is true and useless in the same breath: nobody can draft against it, nobody can tell whether it got better, and anyone who wants the argument to go away only has to wait it out. Naming each wrong precisely turns an atmosphere into a finite list a citizen can work through. See [The Problem](/docs/the_problem/overview) for the diagnosis this list breaks into pieces.
+
+Requiring a measurable fixed state does something to the movement, not only to the reader: it forces us to say in advance what we would accept as success. That is the sentence a captured institution never writes down, because a stated success condition is also a stated failure condition. Tying each record to the clause of the deal it breaks applies the same discipline to the standard — the yardstick is [the social contract](/docs/social_contract/overview), fixed and published, so a complaint is measured against something other than a mood.
+
+The list is also the front of a chain. A problem names the enacted instrument that carries the wrong; that instrument carries the recorded votes that produced it; those lead to the bill drafted to close it — [from problem to bill](/docs/fix_laws/from_problem_to_bill). That is what turns complaints into a work queue, and why the record has a permanent key instead of being a paragraph somebody can quietly reword.
+
+## What keeps it honest
+
+The gaps list is the guard. The trap it answers is old: hide a slice of the record, then rule that no conclusion may be drawn without all of it. A record here says which links it has, which it does not, why, and what was done to establish the hole — because "we could not find it" and "we searched every roll call for twelve years and it does not exist" are different claims a reader should weigh differently. [Naming the gaps](/docs/evidence/naming_the_gaps) covers the method.
+
+A few more limits:
+
+* **A record must be able to state the other side.** Where a strong case exists for an instrument the record calls a problem, that case is written into the record in its own terms. A page that cannot state the counterargument is advocacy, not reasoning.
+* **Evidence that undercuts a problem is linkable on purpose.** A joined decision can be marked as contradicting the problem, and it renders on the page rather than being dropped.
+* **Citizen votes never move the record.** Where a problem asks citizens a yes or no question, the tally is published as what citizens said — not as a finding, and not as evidence the claim is correct. If everyone answers yes, the record is unchanged.
+* **Nothing here is a claim about a named person.** A problem describes an instrument and its recorded effects. Who voted for it is a separate joined record, sourced to the official vote.
+
+
+## Works with
+
+* **[Fix Bills](./fix_bills.mdx)** — the drafted legislative language on the other end of the join, written from a problem's statement, root causes and desired outcome; the join records how much of the problem it actually closes.
+
+## Where to go next
+
+* **[Problems](/docs/problems/overview)** — the catalog itself, and how records enter and move through it.
+* **[What is a problem record](/docs/problems/what_is_a_problem_record)** — a single entry, field by field.
+* **[Problem Laws](/docs/problem_laws/overview)** — the enacted instruments that carry these wrongs.
+* **[The Social Contract](/docs/social_contract/overview)** — the fixed standard every problem is measured against.
+* **[Take Action](/docs/take_action/overview)** — work through the list instead of reading about it.

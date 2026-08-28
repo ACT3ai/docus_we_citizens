@@ -1,0 +1,111 @@
+---
+id: monkey_award
+title: The Monkey Award
+sidebar_label: The Monkey Award
+sidebar_position: 2
+description: "One published award, 0 to 100 and higher is worse, for how much a named politician did to put a short list of democracy-damaging laws in place."
+---
+
+
+# The Monkey Award
+
+The Monkey Award answers one question about one person: how much did they do to put a short, named list of democracy-damaging laws in place. It runs from 0 to 100 and higher is worse. Everything that feeds it is a dated act of official power taken in a seat the person was elected to, and the whole derivation is published line by line, so a stranger with a calculator can reproduce the number from the government's own record.
+
+<Figure caption="Two inputs feed the award: the curated Monkey List and one person's in-office record. Every act is sorted into one of twelve categories, each carrying a published value and weight, and the weighted average is the award. Everything on the other side of the wall goes to the Flamingo Award instead.">
+  <svg viewBox="0 0 720 316" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* input A — the list */}
+    <rect x="24" y="36" width="190" height="76" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="36" y="62" fontSize="15" fill="currentColor">The Monkey List</text>
+    <text x="36" y="83" fontSize="11" fill="currentColor" opacity="0.72">enacted laws that pass</text>
+    <text x="36" y="99" fontSize="11" fill="currentColor" opacity="0.72">a named admission test</text>
+
+    {/* input B — the record */}
+    <rect x="24" y="150" width="190" height="76" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="36" y="176" fontSize="15" fill="currentColor">The voting record</text>
+    <text x="36" y="197" fontSize="11" fill="currentColor" opacity="0.72">votes, authorship,</text>
+    <text x="36" y="213" fontSize="11" fill="currentColor" opacity="0.72">sourced blocking</text>
+
+    <line x1="214" y1="74" x2="246" y2="74" stroke="currentColor" />
+    <path d="M 250,74 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <line x1="214" y1="188" x2="246" y2="188" stroke="currentColor" />
+    <path d="M 250,188 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the classifier */}
+    <rect x="250" y="60" width="200" height="140" fill="none" stroke="currentColor" />
+    <text x="266" y="88" fontSize="15" fill="currentColor">Classify each act</text>
+    <text x="266" y="112" fontSize="12" fill="currentColor">into one of twelve</text>
+    <text x="266" y="128" fontSize="12" fill="currentColor">categories</text>
+    <line x1="266" y1="146" x2="434" y2="146" stroke="var(--wc-fig-muted)" />
+    <text x="266" y="168" fontSize="11" fill="currentColor" opacity="0.72">each carries a published</text>
+    <text x="266" y="184" fontSize="11" fill="currentColor" opacity="0.72">value and weight</text>
+
+    <line x1="450" y1="130" x2="474" y2="130" stroke="var(--wc-fig-accent)" />
+    <path d="M 478,130 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the average */}
+    <rect x="478" y="76" width="218" height="108" fill="var(--wc-fig-wash)" stroke="var(--wc-fig-accent)" />
+    <text x="494" y="104" fontSize="15" fill="currentColor">Weighted average</text>
+    <text x="494" y="128" fontSize="12" fill="currentColor">Σ(value × weight)</text>
+    <text x="494" y="146" fontSize="12" fill="currentColor">÷ Σ(weight)</text>
+    <text x="494" y="170" fontSize="12" fill="currentColor">= one award, 0 to 100</text>
+
+    {/* the wall */}
+    <line x1="24" y1="228" x2="696" y2="228" stroke="var(--wc-fig-muted)" strokeDasharray="6 5" />
+    <text x="696" y="221" fontSize="10.5" fill="currentColor" textAnchor="end" opacity="0.72">the wall</text>
+
+    <rect x="24" y="244" width="250" height="54" fill="none" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+    <text x="38" y="266" fontSize="11" fill="currentColor" opacity="0.72">Transcripts, interviews,</text>
+    <text x="38" y="282" fontSize="11" fill="currentColor" opacity="0.72">resume, statements</text>
+    <line x1="274" y1="271" x2="316" y2="271" stroke="var(--wc-fig-muted)" />
+    <path d="M 320,271 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <text x="330" y="266" fontSize="11" fill="currentColor" opacity="0.72">never reach this award;</text>
+    <text x="330" y="282" fontSize="11" fill="currentColor" opacity="0.72">they feed the Flamingo</text>
+  </svg>
+</Figure>
+
+## What it does
+
+Two things go in. The first is the **Monkey List**: a small, hand-curated set of enacted instruments, or specific sections of them, each one approved in a public commit. Twelve entries is a working list. Two hundred would be an average, and an average over the whole statute book says nothing about the handful of laws that took the machinery of representative democracy apart.
+
+An instrument reaches that list only by passing at least one named **admission test**, and the entry has to say which: consent, representation, accountability, speech, franchise, due process, purse, or conscription. Each entry names an instrument and a section rather than a topic, cites the official record, and says in plain English which part of the social contract it breaks. The Monkey List is not "laws we disagree with." An instrument that cannot check one of those boxes stays off the list however bad the policy is, and that sentence sits at the top of the public list page.
+
+The second input is one person's in-office record on those instruments, and only three kinds of thing count: how they **voted** at every stage, what they **authored or sponsored**, and what they **blocked** from advancing.
+
+Every eligible act is sorted into exactly one of **twelve categories** — block, author, or vote; on a damaging instrument or on a repair; advancing it or resisting it; on the floor or in the small room. Each category carries a published value from 0 to 100 and a published weight. The award is then a plain weighted average: multiply, add the two columns, divide once, round once.
+
+The weights carry the argument, and they are published rather than buried. Blocking a repair from ever reaching a vote is the heaviest act here — value 100 at weight 30, thirty times a floor vote. A member who votes against a repair has taken a position in public and can be answered at an election. A member who makes sure the vote never happens has erased the record itself, and every other member's chance to be counted with it. The same gate used properly, blocking a damaging bill, counts at 0 and weight 5. Authorship sits at weight 20. A vote in committee outweighs a floor vote three to one, because there is no vehicle to hide behind in a markup. A floor vote for a damaging law is priced at 85 rather than 100, which is where "it was buried in the defense bill" gets counted — once, in a table you can see, instead of as a hidden multiplier.
+
+Acts pointing the other way count at 0 and stay in the denominator, so an honest act pulls the average down by being counted. Volume moves nothing: ten identical acts land where one lands, because the mix is the finding and a count would reward long tenure and a busy calendar as much as it rewards doing harm.
+
+What a citizen sees is the whole derivation, with no sign-in in front of it: which list items were in scope for this person and which were not, one row per act with its date, its category, its value, its weight and a link to the official record, then the two column sums, then the division. Add it up yourself. If a step disagrees, the page is wrong and the movement wants to hear about it.
+
+## The goal it serves
+
+The movement's central claim is not a mood about Washington. It is specific: particular people used particular powers to put particular laws in place over a public that was never asked, and [The Problem](/docs/the_problem/overview) states that without jargon. This award is what turns the claim into arithmetic. Once the derivation is on the page, the argument is no longer about whether we invented a number — it is about a named instrument, the section cited, and the admission test its entry claims. That is an argument a citizen can win or lose on the record, which is the only kind worth having.
+
+The weighting exists because the most consequential act in a legislature is the one nobody reports. A chair who buries every disclosure bill filed in a decade never votes for anything harmful, and under an ordinary tally comes out clean. Weighing the gate at thirty makes that act visible, and the record of who kept a repair from a vote is a public fact — see [Who blocked it](/docs/good_laws/who_blocked_it) and the catalog of [Problem Laws](/docs/problem_laws/overview) the list is drawn from.
+
+The point of measuring is replacement, not commentary. Elections are the movement's whole strategy for [replacing captured incumbents](/docs/replace_incumbents/overview), and a primary challenge needs something harder than a slogan: a dated act, a section number, and a link to the House Clerk. Because the method and the data are both public, you do not have to take this on faith — the record is a repository you can [clone and check](/docs/open_data/overview), and a correction that holds up changes the number.
+
+## What keeps it honest
+
+* **A 0 is a finding, not a compliment.** It means we assessed this person against this list and found nothing advancing. Whether they were good is a different award's job, over a different list.
+* **No eligible acts produces a state, never a number.** "No legislative record", "No award yet", and "not in office while any list item was live" are three different facts and are never collapsed into a 0 — and a 0 is never printed where the truth is that nobody has read the record yet.
+* **A thin record is flagged wherever it appears.** Below three counted acts, every surface carries a low-confidence marker and the calculation page leads with the act count rather than the number.
+* **Gaps are published, not smoothed.** An act with no link to the official record contributes zero and is listed as a gap. So are voice votes with no member-level record, and amendments never made in order. Gaps raise nothing and lower nothing; a provision passed by voice vote so nobody could be held to it is itself one of the strongest things this can show.
+* **It never claims illegality, corruption, motive, or intent.** It states what a person did, with a source, and never what they are. Nothing happens automatically because a number crossed a threshold.
+* **Part of the eligibility test is not built yet, and the spec says so.** Today a record is assessed when it can be matched to an official voting identifier. The check that places a person in office during the window each list item was live has not been implemented, so a former member who left office before an item existed can still show a 0 instead of the state that says they were never in a position to act. That is recorded as an open gap rather than written up as a finished feature.
+
+## Works with
+
+* **[The Llama Award](./llama_award.mdx)** — the repair side of the same record: the same twelve categories and the same equation run over a list of laws that would fix democracy, where higher is better.
+* **[The Wall](./the_wall.mdx)** — the rule that keeps the voting record as this award's only input, enforced by a build test rather than by good intentions.
+* **[The Flamingo Award](./flamingo_award.mdx)** — everything the wall keeps out, assessed on its own evidence, and the only place a challenger with no legislative record is assessed at all.
+
+## Where to go next
+
+* **[The Monkey Award](/docs/monkey/overview)** — the full area: what the award claims, what it refuses to claim, and how to read one.
+* **[The Monkey List](/docs/monkey/the_monkey_list)** — the instruments themselves, each with its admission test and its citation.
+* **[Problem Laws](/docs/problem_laws/overview)** — the wider catalog of enacted law the public never agreed to, and how badness is voted on.
+* **[Where the data comes from](/docs/voting_records/where_the_data_comes_from)** — the House Clerk, the Senate, govinfo and state sites, and why a news article is never a source here.
+* **[Find who represents you](/docs/legacy_politicians/find_who_represents_you)** — look up your own representatives and read their record for yourself.

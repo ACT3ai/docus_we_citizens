@@ -1,0 +1,122 @@
+---
+id: flamingo_award
+title: The Flamingo Award
+sidebar_label: The Flamingo Award
+sidebar_position: 4
+description: "The award for everything outside the voting record, and the only one that can say we have not looked yet instead of publishing a blank as a verdict."
+---
+
+
+# The Flamingo Award
+
+Most of the people worth electing have never held office. There is no roll call to read on them, so the only checkable evidence is what they have said in public and what can be sourced about their background. The Flamingo Award is what the movement gives for that evidence, and it is the only award with a state that means *we have not looked yet* rather than a number.
+
+<Figure caption="What a person has said and what can be sourced about them is read area by area, combined at published weights, and resolved into one of three states; the voting record is never allowed into this side of the calculation.">
+  <svg viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* left — the inputs that are allowed in */}
+    <rect x="16" y="40" width="184" height="96" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="32" y="64" fontSize="15" fill="currentColor">What they said</text>
+    <text x="32" y="88" fontSize="10.5" fill="currentColor" opacity="0.72">Their own transcripts</text>
+    <text x="32" y="104" fontSize="10.5" fill="currentColor" opacity="0.72">Citizen star layers</text>
+    <text x="32" y="120" fontSize="10.5" fill="currentColor" opacity="0.72">Sourced background</text>
+
+    {/* left — the input that is refused */}
+    <rect x="16" y="196" width="184" height="64" fill="none" stroke="var(--wc-fig-muted)" strokeDasharray="5 4" />
+    <text x="32" y="222" fontSize="12" fill="currentColor" opacity="0.72">Voting record</text>
+    <text x="32" y="240" fontSize="10.5" fill="currentColor" opacity="0.72">Monkey and Llama only</text>
+    <line x1="200" y1="228" x2="212" y2="228" stroke="var(--wc-fig-muted)" strokeWidth="1.5" />
+    <line x1="216" y1="222" x2="228" y2="234" stroke="var(--wc-fig-muted)" strokeWidth="1.5" />
+    <line x1="228" y1="222" x2="216" y2="234" stroke="var(--wc-fig-muted)" strokeWidth="1.5" />
+    <line x1="222" y1="176" x2="222" y2="288" stroke="var(--wc-fig-muted)" strokeDasharray="4 5" />
+    <text x="222" y="302" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">The wall</text>
+
+    {/* middle — the areas, then the resolver */}
+    <line x1="200" y1="88" x2="241" y2="88" stroke="currentColor" />
+    <path d="M 248,88 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="248" y="40" width="224" height="96" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="264" y="64" fontSize="15" fill="currentColor">18 qualification areas</text>
+    <text x="264" y="88" fontSize="10.5" fill="currentColor" opacity="0.72">Each area read on its own</text>
+    <text x="264" y="104" fontSize="10.5" fill="currentColor" opacity="0.72">Then combined at the</text>
+    <text x="264" y="120" fontSize="10.5" fill="currentColor" opacity="0.72">published weights</text>
+
+    <line x1="360" y1="136" x2="360" y2="169" stroke="currentColor" />
+    <path d="M 360,176 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <rect x="248" y="176" width="224" height="76" fill="none" stroke="var(--wc-fig-accent)" />
+    <text x="264" y="200" fontSize="12" fill="currentColor">One resolver, in order:</text>
+    <text x="264" y="220" fontSize="10.5" fill="currentColor" opacity="0.72">unknown checked first</text>
+    <text x="264" y="236" fontSize="10.5" fill="currentColor" opacity="0.72">then earned, then not earned</text>
+
+    {/* the fan-out to three states */}
+    <line x1="472" y1="214" x2="484" y2="214" stroke="var(--wc-fig-accent)" />
+    <line x1="484" y1="68" x2="484" y2="244" stroke="var(--wc-fig-accent)" />
+    <line x1="484" y1="68" x2="489" y2="68" stroke="var(--wc-fig-accent)" />
+    <line x1="484" y1="156" x2="489" y2="156" stroke="var(--wc-fig-accent)" />
+    <line x1="484" y1="244" x2="489" y2="244" stroke="var(--wc-fig-accent)" />
+    <path d="M 496,68 l -7,-3.5 l 0,7 z" fill="var(--wc-fig-accent)" />
+    <path d="M 496,156 l -7,-3.5 l 0,7 z" fill="var(--wc-fig-accent)" />
+    <path d="M 496,244 l -7,-3.5 l 0,7 z" fill="var(--wc-fig-accent)" />
+
+    {/* right — the three states */}
+    <rect x="496" y="32" width="208" height="72" fill="none" stroke="currentColor" />
+    <rect x="508" y="48" width="40" height="40" fill="none" stroke="var(--wc-fig-accent)" />
+    <text x="560" y="62" fontSize="12" fill="currentColor">Earned</text>
+    <text x="560" y="79" fontSize="10.5" fill="currentColor" opacity="0.72">Full-colour flamingo</text>
+    <text x="560" y="95" fontSize="10.5" fill="currentColor" opacity="0.72">72% of the award</text>
+
+    <rect x="496" y="120" width="208" height="72" fill="none" stroke="currentColor" />
+    <rect x="508" y="136" width="40" height="40" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="560" y="150" fontSize="12" fill="currentColor">Not earned</text>
+    <text x="560" y="167" fontSize="10.5" fill="currentColor" opacity="0.72">Solid dark red, no bird</text>
+    <text x="560" y="183" fontSize="10.5" fill="currentColor" opacity="0.72">We looked, none earned</text>
+
+    <rect x="496" y="208" width="208" height="72" fill="none" stroke="currentColor" />
+    <rect x="508" y="224" width="40" height="40" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="560" y="238" fontSize="12" fill="currentColor">Unknown</text>
+    <text x="560" y="255" fontSize="10.5" fill="currentColor" opacity="0.72">Gray-brown, no bird</text>
+    <text x="560" y="271" fontSize="10.5" fill="currentColor" opacity="0.72">We have not looked yet</text>
+  </svg>
+</Figure>
+
+## What it does
+
+The Flamingo reads a person from their own recorded words and from what can be sourced about them: transcriptions of interviews and appearances where the person is speaking, background research, resume, education, and public commitments, plus two layers of citizen stars — one from trusted citizens, one from citizens generally. It has no reader for a roll call, an authorship, or a committee act. That code is not switched off; it is not there.
+
+The evidence is sorted into eighteen **qualification areas** — the named things the movement thinks make somebody worth electing. Each area is read on its own, from individual claims up to the person, then the eighteen are combined at weights published in advance that sum to one hundred. Adding a nineteenth would mean re-pricing the other eighteen, in public.
+
+One resolver then decides which of three states the person is in, and it checks the empty case first. No number at all is **unknown**. At or above the published threshold is **earned**, at the percentage computed. Too little known to make an adverse finding is **unknown** again. Only what is left is **not earned**.
+
+* **Earned** renders the full-colour flamingo beside the percentage of the award given. A 36% Flamingo Award is an award, given in the percentage earned.
+* **Not earned** renders a solid dark red fill with no bird: we had enough, we did the arithmetic, and no part of the award was earned. It is reserved for a finding of harm, not for a middling result.
+* **Unknown** renders a solid gray-brown fill with no bird: we do not know enough to say yet. That is a statement about us, not a claim about the person.
+
+The two blank states are different facts and are never collapsed into one another. Neither ever renders as 0%, because a zero would put a state back onto a scale. A blank carries an em dash, a typed cause in plain words — no videos yet, no transcript yet, not assessed yet, or they did not discuss this — and where one exists, the action that would close the gap. In all three states the page also prints how much of the person is known, as "N% known".
+
+## The goal it serves
+
+The movement's strategy is elections: get a party's own base behind the strongest challenger before the primary rather than splitting three ways after it. A challenger has no voting record, so the ordinary way a voter sizes one up is party label, name recognition, and whoever bought the most advertising — exactly the levers money in politics already controls. The Flamingo exists so there is something else to look at: the person's own words, against rubrics anyone can read first, published with the quotes that moved the result. See [Good New Leaders](/docs/new_politicians/overview) for who is on that roster and [Qualifications](/docs/qualifications/overview) for what they are read against.
+
+The unknown state exists for the second reason. The cheapest way to damage a newcomer nobody has heard of is to publish silence about them and let the reader fill it in. If our own gap in evidence rendered the same as a finding, this would be a smear machine with arithmetic attached. So the gap is typed, named, coloured differently, and pointed at a queue of work, and it stays visibly distinct from a finding forever.
+
+Third, the unit of judgement stays a person, not a party. Nothing in the eighteen areas asks who somebody caucuses with. A reader who wants the partisan version of the argument goes to their own party's door; the assessment underneath is the same either way. See [Replacing Captured Incumbents](/docs/replace_incumbents/overview) for how it gets used once it exists.
+
+## What keeps it honest
+
+* **The wall is enforced in code, not in style.** A build test fails if a voting-record term ever reaches a Flamingo result, and the reverse is equally a defect.
+* **Red is only for big problems.** The threshold is published, and everything from it upward is conferred at the percentage computed. A middling reading gets an award at that percentage; it does not get the red fill.
+* **No adverse finding off almost nothing.** A floor on how much is known guards the not-earned branch only. It never withholds an award that was actually computed — the honest answer to a thin record is to publish the number with "N% known" beside it.
+* **The coverage gap is published as a finding about us.** Every run reports how many people landed on each cause of a blank, and an area nobody has ever been assessed in is named out loud as a hole in our own rubric authoring.
+* **An award decides nothing on its own.** It does not endorse anyone and never triggers a transition automatically. It is an input to an ordinary citizen vote, never a substitute for one.
+
+## Works with
+
+* **[The Monkey Award](./monkey_award.mdx)** — the damage side of the voting record, computed by a separate engine that cannot see any of this evidence.
+* **[The Llama Award](./llama_award.mdx)** — the repair side; someone who has held office can hold a Llama and a Flamingo at once, shown side by side at the same size.
+* **[The Wall](./the_wall.mdx)** — the rule deciding which evidence reaches which award, and why mixing them would make both unreadable.
+
+## Where to go next
+
+* **[The Flamingo Award](/docs/flamingo/overview)** — the full area: what feeds it, and why not assessed is not a verdict.
+* **[The three states](/docs/flamingo/the_three_states)** — the exact difference between the red and the gray-brown.
+* **[Qualifications](/docs/qualifications/overview)** — the eighteen areas and the rubrics, published before anyone is read against them.
+* **[How someone gets on the roster](/docs/new_politicians/how_someone_gets_on_the_roster)** — how a challenger comes to be assessed, and who can put one forward.
+* **[Take Action](/docs/take_action/overview)** — adding a video of somebody speaking is what turns an unknown into a known, and you can do it this week.
