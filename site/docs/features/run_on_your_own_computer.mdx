@@ -1,0 +1,113 @@
+---
+id: run_on_your_own_computer
+title: Run It On Your Own Computer
+sidebar_label: Run On Your Own Computer
+sidebar_position: 42
+description: "The whole product runs on your own machine as readable files, with no account, no database and no network required."
+---
+
+
+# Run It On Your Own Computer
+
+We The Citizens is a program you run, not a service you sign up for. The default install puts the entire product on your own computer: you open `http://localhost:4444/` in a browser, and everything you record is written as ordinary files in a folder you own. No account, no database, and nothing leaves the machine unless you decide to send it.
+
+<Figure caption="Everything the app knows stays as readable files on the citizen's own machine, each thing they cast is appended to a local hash chain, and the only thing that crosses onto the network is what they choose to publish.">
+  <svg viewBox="0 0 720 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the boundary of the machine, with a gap where publishing crosses */}
+    <text x="430" y="32" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">your machine ends here</text>
+    <line x1="430" y1="40" x2="430" y2="122" stroke="var(--wc-fig-muted)" strokeWidth="2" strokeDasharray="5 6" />
+    <line x1="430" y1="178" x2="430" y2="280" stroke="var(--wc-fig-muted)" strokeWidth="2" strokeDasharray="5 6" />
+
+    {/* the local machine */}
+    <rect x="20" y="40" width="372" height="240" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="206" y="64" fontSize="15" fill="currentColor" textAnchor="middle">Your computer</text>
+
+    <rect x="40" y="78" width="332" height="46" fill="none" stroke="currentColor" />
+    <text x="206" y="98" fontSize="12" fill="currentColor" textAnchor="middle">The app at localhost:4444</text>
+    <text x="206" y="115" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">No account. No server.</text>
+
+    <line x1="206" y1="124" x2="206" y2="138" stroke="currentColor" />
+    <path d="M 206,146 l -3.5,-8 l 7,0 z" fill="currentColor" />
+
+    <rect x="40" y="146" width="332" height="64" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="206" y="166" fontSize="12" fill="currentColor" textAnchor="middle">Readable files you own</text>
+    <text x="206" y="184" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">decisions.yaml   values.yaml</text>
+    <text x="206" y="200" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">evidence/   laws/   log.log</text>
+
+    <line x1="206" y1="210" x2="206" y2="218" stroke="currentColor" />
+    <path d="M 206,226 l -3.5,-8 l 7,0 z" fill="currentColor" />
+
+    {/* the append-only hash chain */}
+    <rect x="40" y="226" width="84" height="30" fill="none" stroke="var(--wc-fig-accent)" />
+    <text x="82" y="245" fontSize="10.5" fill="currentColor" textAnchor="middle">block 1</text>
+    <line x1="124" y1="241" x2="156" y2="241" stroke="var(--wc-fig-accent)" />
+    <path d="M 164,241 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="164" y="226" width="84" height="30" fill="none" stroke="var(--wc-fig-accent)" />
+    <text x="206" y="245" fontSize="10.5" fill="currentColor" textAnchor="middle">block 2</text>
+    <line x1="248" y1="241" x2="280" y2="241" stroke="var(--wc-fig-accent)" />
+    <path d="M 288,241 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="288" y="226" width="84" height="30" fill="none" stroke="var(--wc-fig-accent)" />
+    <text x="330" y="245" fontSize="10.5" fill="currentColor" textAnchor="middle">block 3</text>
+    <text x="206" y="272" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Append-only hash chain</text>
+
+    {/* the one crossing */}
+    <text x="431" y="138" fontSize="10.5" fill="currentColor" textAnchor="middle">only if you publish</text>
+    <line x1="392" y1="150" x2="478" y2="150" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <path d="M 488,150 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the hosted copy */}
+    <rect x="496" y="104" width="200" height="92" fill="none" stroke="currentColor" />
+    <text x="596" y="130" fontSize="15" fill="currentColor" textAnchor="middle">Hosted copy</text>
+    <text x="596" y="152" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">app.WeTheCitizens.io</text>
+    <text x="596" y="170" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Same code, one storage</text>
+    <text x="596" y="185" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">driver swapped</text>
+  </svg>
+</Figure>
+
+## What it does
+
+There are two modes, and they are the architecture rather than a feature list. **Individual Mode** is the default and is fully local. Everything the app knows is stored as readable files under one directory on your machine, outside any cloud-synced folder, and the person at the keyboard is a built-in **default user**, so the app is completely usable with nobody signed in. **Community Mode** is optional aggregation layered on the same software: it pools many citizens' decisions and shows each person the difference between their own view and the group's.
+
+The data is kept in formats a person can open. Structured YAML holds the settings and all four pillars — your positions, your drafted law, your value system, your evidence chains. The reasoning layers are plain text and the logs are append-only text. Every write is atomic and every file is validated on read, so a bad hand-edit is logged and falls back to a typed default rather than crashing a page. That exists for one reason: a citizen is allowed to open their own data in a text editor.
+
+Pull the machine off the internet and every pillar still works. The backend is a local process talking to the local filesystem; the browser talks to it over loopback. Nothing is transmitted unless you choose to publish.
+
+The whole product degrades rather than fails, and each degradation is named out loud:
+
+* **No database** means flat files. That path is a complete, supported implementation, not a demo mode, and it is never removed.
+* **No AI credentials** means a deterministic offline reasoner instead of an error screen.
+* **No movement data on the machine** means one screen stating exactly what is missing and handing over the command that fixes it — not twelve pages each quietly saying "nothing here".
+
+Everything you cast is also appended to a local **hash chain**: small blocks under your own directory, each committing to the one before it, with no network, no wallet and no currency. Recomputing the chain reveals any altered block. That is what lets you prove what you decided and when, and lets a person who receives something you published confirm it has not changed since you cast it.
+
+The hosted install at [app.WeTheCitizens.io](https://app.WeTheCitizens.io/) runs the identical code with one persistence driver pivoted. A local result and a hosted result are the same arithmetic.
+
+## The goal it serves
+
+A tool you own outright cannot be switched off, cannot be quietly changed underneath you, and holds no central record of what you read or concluded. That is not a privacy nicety. A movement telling citizens they should not have to take institutions on faith cannot turn around and require them to trust a server it controls.
+
+[The problem this site describes](/docs/the_problem/overview) is that the decisions being made are not answerable to the people they land on, and that the evidence for it sits in [the official record](/docs/open_data/the_sourcing_rule) where anyone can look. If the software doing that lookup lives only on somebody else's machine, your ability to check depends on their permission, their uptime, and their continued interest in letting you. Local-first removes that dependency.
+
+What is *not* collected matters just as much. A central system logging which laws you read, which officials you looked up, and what you concluded would assemble exactly the kind of behavioural file [this movement objects to elsewhere](/docs/no_social_credit/overview). [Your positions and your reasoning](/docs/decisions/overview) stay on your disk and are never proposed to anyone, so they cannot be leaked, subpoenaed or sold — [the charter](/docs/the_movement/charter) written into the file layout rather than promised in a policy page.
+
+## What keeps it honest
+
+* **The local path is a tested configuration, not a courtesy.** Running with no database and no network is a supported way to run the product, and it does not get dropped when the hosted install gets more convenient.
+* **It does not claim to protect you from your own machine.** The state directory is created private to your user account, but the files are plain files. Anyone who can log in as you can read them.
+* **The hash chain is not an external blockchain and does not pretend to be.** No consensus, no mining, no currency. It proves a record has not changed since it was written; it does not prove the record was correct. Publishing the latest chain hash publicly, so the timestamps are independently witnessed, is opt-in and off by default.
+* **Publishing is always an explicit act.** There is no background sync. Until you send something, the files are inert local data.
+* **The hosted copy differs on one thing.** A shared install has no default user and requires signing in, because a shared machine is not your machine.
+
+## Works with
+
+* **[The Public Data Repository](./public_data_repository.mdx)** — the movement's evidence arrives on your machine as a repository you clone, so the local app has something to read without asking a server for it.
+* **[The Citizen Mining Network](./citizen_mining_network.mdx)** — the work that fills the record is done on citizens' own machines, which is only possible because the whole product runs on one.
+* **[Nothing Fails Quietly](./nothing_fails_quietly.mdx)** — the same discipline applied to failures: a missing repository, a missing credential and a bad file each produce a named cause rather than a blank page.
+
+## Where to go next
+
+* **[Get Started](/docs/get_started/overview)** — the two ways to run it, hosted or local, and what differs between them.
+* **[Individual vs community mode](/docs/how_it_works/individual_vs_community_mode)** — when to stay local, and what joining a community actually changes.
+* **[Open Data](/docs/open_data/overview)** — the public record you are cloning, and how to follow any claim in it back to its source.
+* **[Run your own instance](/docs/repos/run_your_own_instance)** — every repository the movement runs, and how to stand the whole thing up yourself.
+* **[Run it on your computer](/docs/get_started/run_it_on_your_computer)** — the actual commands, start to first run.

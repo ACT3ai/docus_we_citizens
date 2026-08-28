@@ -1,0 +1,126 @@
+---
+id: decisions_and_communities
+title: Decisions, Areas And Communities
+sidebar_label: Decisions And Communities
+sidebar_position: 25
+description: "The Community, Area and Decision hierarchy: where a citizen works one question out in full, names what is missing and why, and reaches a conclusion anyway."
+---
+
+
+# Decisions, Areas And Communities
+
+Most civic software asks for your opinion and hands you a number back. This hands you a workspace. You take one question at a time, write down where you stand and why, list the evidence you hold and name the pieces you do not, and the software tells you whether that adds up to a conclusion. Communities and areas are the shelves those questions sit on.
+
+<Figure caption="A community holds areas, an area holds decisions, and inside one decision the links you have are weighed against the gaps you have explained, producing either a conclusion at the threshold you set or an honest refusal to conclude.">
+  <svg viewBox="0 0 720 292" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* left column — the hierarchy */}
+    <text x="128" y="34" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">the hierarchy</text>
+
+    <rect x="24" y="44" width="208" height="62" rx="4" stroke="currentColor" fill="var(--wc-fig-wash-2)" />
+    <text x="128" y="70" fontSize="15" textAnchor="middle" fill="currentColor">Community</text>
+    <text x="128" y="90" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">owners · writers · readers</text>
+
+    <line x1="128" y1="106" x2="128" y2="124" stroke="currentColor" strokeWidth="1" />
+    <path d="M 128,130 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    <rect x="44" y="134" width="168" height="50" rx="4" stroke="currentColor" fill="none" />
+    <text x="128" y="158" fontSize="15" textAnchor="middle" fill="currentColor">Area</text>
+    <text x="128" y="175" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">one topic</text>
+
+    <line x1="128" y1="184" x2="128" y2="202" stroke="currentColor" strokeWidth="1" />
+    <path d="M 128,208 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    <rect x="64" y="212" width="128" height="56" rx="4" stroke="var(--wc-fig-accent)" fill="var(--wc-fig-wash)" />
+    <text x="128" y="236" fontSize="15" textAnchor="middle" fill="currentColor">Decision</text>
+    <text x="128" y="254" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">one question</text>
+
+    {/* connector into the detail panel */}
+    <path d="M 192,240 L 256,240 L 256,110 L 264,110" stroke="var(--wc-fig-accent)" strokeWidth="1" fill="none" />
+    <path d="M 270,110 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* right column — inside one decision */}
+    <text x="484" y="34" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">inside one decision</text>
+
+    <rect x="272" y="44" width="424" height="132" rx="4" stroke="currentColor" fill="var(--wc-fig-wash)" />
+    <text x="290" y="66" fontSize="12" fill="currentColor">Chain of evidence</text>
+
+    <rect x="290" y="80" width="9" height="9" fill="currentColor" />
+    <text x="308" y="89" fontSize="12" fill="currentColor">Have — source, strength 0.8</text>
+    <rect x="290" y="102" width="9" height="9" fill="currentColor" />
+    <text x="308" y="111" fontSize="12" fill="currentColor">Have — source, strength 0.6</text>
+    <rect x="290" y="124" width="9" height="9" rx="1" stroke="var(--wc-fig-muted)" strokeDasharray="2 2" fill="none" />
+    <text x="308" y="133" fontSize="12" fill="currentColor" opacity="0.72">Missing — classified</text>
+    <rect x="290" y="146" width="9" height="9" rx="1" stroke="var(--wc-fig-muted)" strokeDasharray="2 2" fill="none" />
+    <text x="308" y="155" fontSize="12" fill="currentColor" opacity="0.72">Missing — blocked</text>
+
+    <text x="676" y="100" fontSize="10.5" textAnchor="end" fill="currentColor" opacity="0.72">act-anyway threshold</text>
+    <text x="676" y="124" fontSize="15" textAnchor="end" fill="currentColor">85%</text>
+
+    {/* the split */}
+    <line x1="484" y1="176" x2="484" y2="194" stroke="currentColor" strokeWidth="1" />
+    <line x1="374" y1="194" x2="594" y2="194" stroke="currentColor" strokeWidth="1" />
+    <line x1="374" y1="194" x2="374" y2="204" stroke="currentColor" strokeWidth="1" />
+    <path d="M 374,210 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <line x1="594" y1="194" x2="594" y2="204" stroke="var(--wc-fig-muted)" strokeWidth="1" />
+    <path d="M 594,210 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    <rect x="272" y="212" width="204" height="56" rx="4" stroke="var(--wc-fig-accent)" fill="var(--wc-fig-wash)" />
+    <text x="374" y="236" fontSize="12" textAnchor="middle" fill="currentColor">Conclusion at 88%</text>
+    <text x="374" y="254" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">gaps named beside it</text>
+
+    <rect x="492" y="212" width="204" height="56" rx="4" stroke="var(--wc-fig-muted)" fill="none" />
+    <text x="594" y="236" fontSize="12" textAnchor="middle" fill="currentColor">Unsupported on the</text>
+    <text x="594" y="254" fontSize="12" textAnchor="middle" fill="currentColor">current record</text>
+  </svg>
+</Figure>
+
+## What it does
+
+The hierarchy is three tiers and it is the whole shape of the app. A **community** is a named workspace stored as a directory on disk. An **area** is a named topic inside it. A **decision** is one resolved question inside that topic. The app remembers exactly where in that tree you were standing when you left.
+
+A community carries an explicit access list: owners, writers, readers. Owners change the list and can delete the workspace, writers create and edit content, readers look. New communities are private, and world-readability — letting anyone read it, including a visitor who never signed in — is a flag an owner turns on deliberately rather than a default they have to remember to switch off. At least one owner must always remain, and all of it is enforced on the server. An **area** has no access list of its own; it inherits its community's.
+
+The decision is the atom. Each one is stored twice: a structured record the software reads, and a human-readable companion regenerated from it on every save, so the readable version can never quietly disagree with what the software computed from. Decision numbers are never reused, even after a delete, so a link to decision 4 in an area means the same thing forever.
+
+A decision carries four things:
+
+* **The question**, and what kind of answer it takes — true or false, support or oppose.
+* **Your position** — where you stand, how sure you are, and a rationale in your own words.
+* **The chain of evidence.** Every link is either something you *have*, with a source and a strength from 0 to 1, or something you are *missing*. A missing link is not allowed to be vague: it must carry a reason from a closed list of four — classified, suppressed, blocked, or unknown.
+* **Your act-anyway threshold** — the confidence you personally require before you would act on this question. It is set per decision, because some questions deserve more certainty than others.
+
+The software weighs what you hold against the gaps you explained and returns one of two answers. Either the conclusion is reached at the threshold you declared, published with the still-open gaps beside it, or it comes back "unsupported on the current record." There is no third branch where a missing link is quietly rounded away into a certainty nobody has.
+
+None of this needs an account. On your own machine, signed in to nothing, you create areas, build chains, run the reasoning and keep editing. The one act that asks who you are is publishing into a shared record.
+
+## The goal it serves
+
+There is a trap that works every time it is tried. Powerful actors act. A slice of the record is classified. Anyone trying to recover that slice is blocked. The citizen holding almost the whole chain is then called a conspiracy theorist for not holding the last piece, and told no conclusion may be drawn without all of it. The act of hiding the evidence becomes the thing that disqualifies the person who noticed.
+
+This feature is the way out, and it is deliberately unglamorous: name the shape of the hole. A gap that is written down — what is missing, why, and under whose authority it is being withheld — stops being a silence you can be shamed with and becomes a fact sitting on the record beside everything else. That is the argument [Evidence](/docs/evidence/overview) makes in full, and [naming the gaps](/docs/evidence/naming_the_gaps) is the discipline that makes it hold up. A decision written this way is portable: someone who disagrees can point at the link they think is weak, or at your threshold, instead of at your character. [Decisions](/docs/decisions/overview) walks through recording one.
+
+Communities are the second half. Working alone is the default and complete on its own, but a question that matters usually has more than one person on it. A named owner, an explicit writer list and a private-by-default setting let a group build a body of work together without it becoming a channel anyone can flood. [Communities](/docs/communities/overview) covers joining or starting one.
+
+## What keeps it honest
+
+* **The gap vocabulary is closed.** A missing link takes one of four reasons and nothing else. You cannot record a gap as a shrug.
+* **The software is allowed to say no.** "Unsupported on the current record" is a real and frequent outcome.
+* **Your threshold travels with your conclusion.** Anyone who thinks 85% is too low a bar can argue with the bar rather than with you.
+* **The readable file is generated, never authored.** Hand-edited prose is overwritten by the next structured save. There is one source of truth.
+* **Access is re-checked on the server on every write**, so the interface and the system cannot drift apart.
+
+What it deliberately does not do: decide the question for you, compare citizens against each other, or publish a claim about any person. A decision is your own record on your own disk until you decide otherwise.
+
+## Works with
+
+* **[The First-Principles AI Check](./first_principles_ai_check.mdx)** — re-tests whether your conclusion follows from the links you have, given the gaps you named, rather than whether an authority agrees.
+* **[Value Systems And Policy Packets](./value_systems_and_policy_packets.mdx)** — supplies the written rules a decision is judged against, so the same standard applies to every question.
+* **[Citizen Votes](./citizen_votes.mdx)** — the step after a position is recorded, where individual answers pool into something a group can point at.
+
+## Where to go next
+
+* **[Decisions](/docs/decisions/overview)** — recording a position and running the comparison.
+* **[Naming the gaps](/docs/evidence/naming_the_gaps)** — why a withheld link is recorded as a finding instead of a reason to stay quiet.
+* **[Communities](/docs/communities/overview)** — what a community is, and how to join or start one.
+* **[The core loop](/docs/how_it_works/the_core_loop)** — where this workspace sits in the sequence.
+* **[Run it on your computer](/docs/get_started/run_it_on_your_computer)** — install it and open a decision of your own, no account required.

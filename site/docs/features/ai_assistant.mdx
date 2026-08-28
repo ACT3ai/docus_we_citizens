@@ -1,0 +1,130 @@
+---
+id: ai_assistant
+title: The AI Assistant
+sidebar_label: The AI Assistant
+sidebar_position: 34
+description: "A chat box beside the record that answers from what it read, cites it, and refuses to hold a political opinion of its own."
+---
+
+
+# The AI Assistant
+
+A chat box sits at the top of the right-hand column on the record pages. You ask a question about what is on the screen, and it answers from that record and from the movement's published data, naming what it read. Ask it what it thinks about a contested policy question and it tells you it does not make political decisions, then hands you the place where yours gets written down.
+
+<Figure caption="A question runs through two separate lanes: the model answers from the record and picks a key that the product turns into a link, while the next-step suggestion beside it is computed in ordinary code with no model call.">
+  <svg viewBox="0 0 720 306" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the model lane */}
+    <text x="24" y="18" fontSize="10.5" fill="currentColor" opacity="0.72">THE MODEL LANE</text>
+
+    <rect x="24" y="28" width="196" height="104" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="122" y="50" fontSize="12" fill="currentColor" textAnchor="middle">What it may read</text>
+    <text x="122" y="72" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">The record on screen</text>
+    <text x="122" y="90" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">The committed public data</text>
+    <text x="122" y="108" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">How a number was computed</text>
+    <text x="122" y="126" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Nothing else</text>
+
+    <line x1="220" y1="80" x2="252" y2="80" stroke="currentColor" />
+    <path d="M 260,80 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="260" y="52" width="150" height="56" fill="none" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="335" y="78" fontSize="15" fill="currentColor" textAnchor="middle">The assistant</text>
+    <text x="335" y="96" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">reads, answers, cites</text>
+
+    <line x1="410" y1="80" x2="430" y2="80" stroke="currentColor" />
+    <line x1="430" y1="50" x2="430" y2="110" stroke="currentColor" />
+    <line x1="430" y1="50" x2="442" y2="50" stroke="currentColor" />
+    <path d="M 450,50 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <line x1="430" y1="110" x2="442" y2="110" stroke="currentColor" />
+    <path d="M 450,110 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="450" y="28" width="246" height="44" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="573" y="48" fontSize="12" fill="currentColor" textAnchor="middle">The answer, with its source</text>
+    <text x="573" y="64" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">cited, or it says it cannot</text>
+
+    <rect x="450" y="88" width="246" height="44" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="573" y="108" fontSize="12" fill="currentColor" textAnchor="middle">A key from a fixed catalog</text>
+    <text x="573" y="124" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">the product builds the link</text>
+
+    <text x="24" y="152" fontSize="10.5" fill="currentColor" opacity="0.72">It browses nothing and writes nothing.</text>
+
+    <line x1="24" y1="168" x2="696" y2="168" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+
+    {/* the plain-code lane */}
+    <text x="24" y="190" fontSize="10.5" fill="currentColor" opacity="0.72">THE PLAIN-CODE LANE — no model call</text>
+
+    <rect x="24" y="200" width="196" height="88" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="122" y="222" fontSize="12" fill="currentColor" textAnchor="middle">Your own journey file</text>
+    <text x="122" y="244" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">What you have done</text>
+    <text x="122" y="262" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Pages you have read</text>
+    <text x="122" y="280" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Yours to read or clear</text>
+
+    <line x1="220" y1="244" x2="252" y2="244" stroke="currentColor" />
+    <path d="M 260,244 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="260" y="222" width="150" height="44" fill="none" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="335" y="242" fontSize="12" fill="currentColor" textAnchor="middle">One published ladder</text>
+    <text x="335" y="258" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">rungs, in a fixed order</text>
+
+    <line x1="410" y1="244" x2="442" y2="244" stroke="currentColor" />
+    <path d="M 450,244 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="450" y="214" width="246" height="60" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="573" y="236" fontSize="12" fill="currentColor" textAnchor="middle">One suggestion, or none</text>
+    <text x="573" y="254" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">with the rule that fired</text>
+    <text x="573" y="270" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">and every step ruled out</text>
+  </svg>
+</Figure>
+
+## What it does
+
+The assistant reads three things and nothing else: **the record on the screen**, the committed public data behind that record, and the published explanation of how a number on the page was computed. It does not browse the web, call outside services, download media, or answer general questions that have nothing to do with the page. It writes nothing at all — no votes, no proposals, no edits to the record. Every write in this product runs through the reviewed surface that owns it, and the chat does not get a private one.
+
+It obeys the same rules as every other surface. **The Wall** binds it: anything it takes from a transcript belongs to the Flamingo Award only and may never be used to explain a voting-record award, and a roll call may never be used to explain a Flamingo. Its wording follows the same lexicon the pages do — a politician *earned 72% of a Llama Award*, and the percentage belongs to the award rather than to the person.
+
+Being neutral about opinions is not the same as being neutral about the record, and the line is drawn hard:
+
+* It will tell you how someone voted on final passage, with the date and the House Clerk roll call behind it. It will not tell you they were right to.
+* It will tell you that a vote is one of the acts feeding a Monkey Award, and show you the arithmetic. It will not tell you the person is corrupt.
+* It will tell you that a bill is on the movement's Good Law List and why it qualified. It will not tell you to support it.
+* It will tell you what the movement has published on a subject. It will not tell you what to believe about it.
+
+Every factual claim about a named living person carries the same citation the record carries — the source link already on the row it read. Where the record does not answer the question, it names the link that is missing and why, instead of filling the gap from training data.
+
+**It never authors a link.** The model picks a key out of a catalog the product hands it, and the product resolves that key into an address. A build test checks every destination in that catalog against a real page. That test earned its place: an early draft of the map pointed at seven pages that did not exist, and the test caught all seven before a reader could.
+
+Beside the answer sits a **next-step suggestion computed in ordinary code, with no model call anywhere in it.** It walks one published ladder, the same for everybody: tell us where you vote, record a position, verify your identity, vote on a decision, give your own feedback on the people holding your seats, log a real-world action, put a challenger forward. Your place on that ladder is the first rung you have not completed. Rungs get ruled out — you did that one four hours ago, we suggested it yesterday, you already said no — and each exclusion carries its reason and the time it expires. If everything is ruled out, it suggests nothing at all; silence beats the ninth-best idea. Nothing in it is random, so the same person in the same state gets the same suggestion twice.
+
+Everything the app knows about your journey is one small file you can read straight through: visits, pages seen, what you have actually done, and the current suggestion with the rule that produced it. You can read it verbatim, clear it, stop it being written, or export it.
+
+## The goal it serves
+
+A movement whose entire claim is that institutions stopped representing citizens cannot then answer a citizen's policy question with its own opinion. The moment it does, it is one more institution telling people what to think, and [the problem this movement was built around](/docs/the_problem/overview) has simply acquired a friendlier interface. The refusal is the product, not a legal hedge bolted onto it.
+
+What the assistant is for instead is making your own reasoning checkable. You are the one who decides what you value and where you stand; the software's job is to apply those consistently across more material than a person can read, and to show its work. That is what [writing your values down](/docs/values/overview) and [recording a position](/docs/decisions/overview) are for, and the chat exists to walk beside a citizen doing it — not to hand them the conclusion and skip the part where they think.
+
+The other half of the job is vocabulary. This site asks a newcomer to hold a lot at once: [why everything published about a politician is an award rather than a verdict on the person](/docs/politicians/award_not_a_score), which evidence is allowed to feed which award, and [how to redo the arithmetic yourself](/docs/monkey/do_the_math_yourself). A reader who cannot get an answer to "what does this number mean" gives up on the record, and a record nobody checks is worth nothing. A chat box that answers from the page and cites what it read is the cheapest way to keep the record legible.
+
+The suggestion beside it answers the question that follows understanding, which is *what do I actually do now*. The ladder is a published statement of what the movement asks of a citizen and in what order, and it is the same ladder for everybody — the [catalog of real actions](/docs/take_action/the_action_catalog) is the same whichever of the [four front doors](/docs/four_doors/overview) you arrived through. Your party changes the voice on the door. It never changes the answer.
+
+## What keeps it honest
+
+* **It ships switched off.** The chat is behind an install-wide switch that is set to off on every install, including a citizen's own laptop, until the movement decides otherwise. Off means the box is not rendered and no model call is possible — the gate is checked in the service, not just hidden in the interface.
+* **Declining to state a published number is a bug, not caution.** An assistant that will not tell you a politician's award because the subject feels political is in breach of the rule this whole product runs on, and it gets fixed and reported rather than tolerated.
+* **It refuses to invent a destination.** The model cannot write an address; it selects a key, and an unknown key is dropped and logged by name.
+* **The suggestion is explainable by construction.** "Why are you telling me this?" is answered by the rule that fired, by name, along with every candidate that was ruled out and until when — not by a model narrating its own reasoning after the fact.
+* **What it knows about you never becomes public.** The journey file holds no email and no address finer than a state, it is only ever yours, and it never reaches the public data repository, which carries no citizen identity of any kind.
+* **It does not model your beliefs.** The file records what you read and what you did. It never records what the software thinks you believe — that is the thing the movement asks you, and never the thing it guesses.
+
+## Works with
+
+* **[The First-Principles AI Check](./first_principles_ai_check.mdx)** — the reasoning pass that tests whether a chain of argument holds; the assistant explains that work in plain language, it does not perform it.
+* **[Decisions, Areas And Communities](./decisions_and_communities.mdx)** — the surface the assistant hands you when you ask it for an opinion, because that is where your own position gets recorded.
+* **[Value Systems And Policy Packets](./value_systems_and_policy_packets.mdx)** — your written rules are what the software applies on your behalf; the assistant answers questions about them without ever supplying them.
+
+## Where to go next
+
+* **[AI](/docs/ai/overview)** — the full account of what the AI is allowed to do here and what the build itself enforces.
+* **[What the AI never decides](/docs/ai/what_the_ai_never_decides)** — the specific list of judgments that stay with citizens.
+* **[The core loop](/docs/how_it_works/the_core_loop)** — the end-to-end sequence the assistant is walking beside you through.
+* **[Take Action](/docs/take_action/overview)** — the catalog of things the ladder is pointing you at.
+* **[Get Started](/docs/get_started/overview)** — run it hosted, or on your own machine where nothing leaves the box.

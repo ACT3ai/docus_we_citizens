@@ -1,0 +1,105 @@
+---
+id: nothing_fails_quietly
+title: Nothing Fails Quietly
+sidebar_label: Nothing Fails Quietly
+sidebar_position: 45
+description: "Loading, empty and broken are never confused for one another, and the rules the movement promises to follow are enforced by build-failing checks."
+---
+
+
+# Nothing Fails Quietly
+
+Software has three different ways of telling you nothing, and they look almost the same: a screen that never finishes drawing, a list that comes back with no rows, and a message saying something went wrong. Only one of those means what a reader will assume it means. This is the set of rules that keeps them apart on every page, plus a class of automated check that fails the build when a promise the movement made in writing stops being true in the code.
+
+<Figure caption="The same discipline runs in two places: on the page, four states are kept apart and a region that fails reports inside its own footprint and writes one line to a single fault trail on the citizen's machine; and in the build, a check fails the whole release rather than letting a stated rule quietly stop holding.">
+  <svg viewBox="0 0 720 322" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* two halves */}
+    <text x="184" y="30" fontSize="12" textAnchor="middle" fill="currentColor">On the page, while you read</text>
+    <text x="536" y="30" fontSize="12" textAnchor="middle" fill="currentColor">In the build, before you get it</text>
+
+    <rect x="24" y="40" width="320" height="176" rx="4" stroke="var(--wc-fig-muted)" fill="none" />
+    <rect x="376" y="40" width="320" height="176" rx="4" stroke="var(--wc-fig-muted)" fill="none" />
+
+    {/* the four states, kept apart */}
+    <rect x="40" y="56" width="288" height="28" rx="3" stroke="currentColor" fill="var(--wc-fig-wash-2)" />
+    <text x="54" y="75" fontSize="12" fill="currentColor">Data — this region resolved</text>
+
+    <rect x="40" y="92" width="288" height="28" rx="3" stroke="var(--wc-fig-muted)" fill="none" />
+    <text x="54" y="111" fontSize="12" fill="currentColor">Loading — the shape is held</text>
+
+    <rect x="40" y="128" width="288" height="28" rx="3" stroke="var(--wc-fig-accent)" fill="var(--wc-fig-wash)" />
+    <text x="54" y="147" fontSize="12" fill="currentColor">Failed — with a working retry</text>
+
+    <rect x="40" y="164" width="288" height="28" rx="3" stroke="currentColor" fill="none" />
+    <text x="54" y="183" fontSize="12" fill="currentColor">Empty — after a ready check</text>
+
+    {/* what the build refuses to ship */}
+    <rect x="392" y="56" width="288" height="28" rx="3" stroke="currentColor" fill="none" />
+    <text x="406" y="75" fontSize="12" fill="currentColor">no media downloader in source</text>
+
+    <rect x="392" y="92" width="288" height="28" rx="3" stroke="currentColor" fill="none" />
+    <text x="406" y="111" fontSize="12" fill="currentColor">no roll call dropped unexplained</text>
+
+    <rect x="392" y="128" width="288" height="28" rx="3" stroke="currentColor" fill="none" />
+    <text x="406" y="147" fontSize="12" fill="currentColor">no banned word about a person</text>
+
+    <rect x="392" y="164" width="288" height="28" rx="3" stroke="currentColor" fill="none" />
+    <text x="406" y="183" fontSize="12" fill="currentColor">no vote term in a Flamingo</text>
+
+    {/* where each half lands */}
+    <line x1="184" y1="216" x2="184" y2="244" stroke="var(--wc-fig-accent)" strokeWidth="1" />
+    <path d="M 184,250 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <line x1="536" y1="216" x2="536" y2="244" stroke="var(--wc-fig-accent)" strokeWidth="1" />
+    <path d="M 536,250 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    <rect x="24" y="254" width="320" height="52" rx="4" stroke="currentColor" fill="var(--wc-fig-wash-2)" />
+    <text x="40" y="276" fontSize="12" fill="currentColor">error.err — one fault trail</text>
+    <text x="40" y="294" fontSize="10.5" fill="currentColor" opacity="0.72">“reading the record” (+15 identical)</text>
+
+    <rect x="376" y="254" width="320" height="52" rx="4" stroke="var(--wc-fig-accent)" fill="var(--wc-fig-wash)" />
+    <text x="392" y="276" fontSize="12" fill="currentColor">The build fails, by name</text>
+    <text x="392" y="294" fontSize="10.5" fill="currentColor" opacity="0.72">citing the rule it holds</text>
+  </svg>
+</Figure>
+
+## What it does
+
+Every page draws itself in the first frame. The title, the way back, the actions available and the sections the page is made of come from the route alone, before a single byte arrives, and each region that needs the server fills into a hole already the right shape. A page with four queries has four regions on four separate clocks, so one slow read never holds the other three hostage and never blanks the page. This matters because the app reads flat files from a citizen's own disk, and a read that normally takes forty milliseconds can take twenty seconds with nothing at all wrong.
+
+**Four states are kept strictly apart**: loading, error, empty, and data, in that precedence. Once a region has data it shows data, even while it quietly refreshes behind you. A region that could not load reports inside its own footprint, in plain language, with a working retry that refetches only that region.
+
+The rule underneath all of it: **"this failed to load" may never share a branch with "there is nothing here."** On a page about a living public figure, or about a chain of evidence, reporting a network failure as "no record" is a false statement about the world rather than a cosmetic bug. There is a second version of the same trap. The backend opens its port before it finishes reading in the movement's data, so for a few seconds a roster endpoint honestly answers with an empty list. A region that comes back empty asks whether the server is still starting before it says nobody is on a roster, and it asks about the raw data rather than the filtered rows, because a search that matches nothing is a genuinely empty result and must keep saying so.
+
+Every caught fault is written to **one readable file on the citizen's own machine**. The message names what the app was trying to do rather than only what broke, because that is what makes the trail legible months later to someone who does not have the code open. There is no silent catch anywhere: a failure that is genuinely fine to continue past is logged as deliberately non-fatal. No secret, token, or request body is ever written. Repeated identical failures fold into one line carrying a count, including when the storm simply stops, because a trail that rotates is a trail where volume is a correctness problem: a hundred copies of one fault delete the history somebody came to read.
+
+Alongside that run the **canaries**. A canary is a named class of automated check reserved for rules bigger than any one module, where three things are true at once: the violation is silent, nothing crashes and the app quietly says something false; the damage is large; and nothing else can see it, because the check has to read the whole source tree, walk the committed public record, or hold two subsystems against each other. They fail the build if the app ever gains a way to download media it promised not to fetch, if a roll call is excluded with no stated reason, if an enacted instrument on the list charges nobody, if a word this movement refuses to use about a politician reaches rendered copy, if a voting-record term reaches a Flamingo result, or if one award mark is drawn smaller than the one beside it. Each one has to cite the written rule it holds and name the real failure it was born from.
+
+## The goal it serves
+
+The movement's own standard is that a named gap beats a quiet one. This is that standard turned inward on the software. If we ask citizens to trust arithmetic over the public record rather than trusting us, then the program doing the arithmetic has to be held to the same test it applies to everyone else, and the first place it can fail is by looking confident while knowing nothing. A screen that appears stuck reads as broken, and the citizen closes it. That is not a design complaint; it is the argument being lost before it is made.
+
+The harder failure is the one that looks like success. An app that reports a fetch failure as "nobody found" is publishing a claim about a person or a record that it has no basis for, in the one place a reader will take it at face value. That is the same class of harm the [Evidence](/docs/evidence/overview) pillar exists to prevent when a document has been withheld, and the same reason the [Flamingo Award](/docs/flamingo/overview) keeps "not earned" and "we have not looked yet" as two different facts rather than two shades of grey. A blank has to say which blank it is, in code as much as in copy.
+
+The canaries exist because doctrine that depends on everyone remembering it will quietly stop being true. A promise not to scrape video, a promise that the voting record and everything else never mix, a promise about the words used about a named living person: none of those is expressed by any type system, and none of them announces itself when it breaks. Writing them down as checks that stop a release is how a movement stops having to be taken at its word, which is the same reason the [record itself is public](/docs/open_data/overview) and the same reason the whole thing [can be run on your own machine](/docs/get_started/overview).
+
+## What keeps it honest
+
+* **The guard has been audited and the audit was published, not fixed in silence.** The checks were once chained so that the first failure hid every later one; on the day it was measured, thirteen of them had not run at all and nothing said so. That finding lives in the specification, with the date.
+* **One check is deliberately left failing.** It disagrees with a written rule about a fortnight window, and which of the two is wrong is a product question rather than a test question. A check silenced to make a suite green is worth less than no check at all.
+* **A canary only holds a rule somebody wrote down.** It cannot find a promise nobody stated, and a rule that is never expressed as a check is a rule that can rot. This is a ratchet, not a proof of correctness.
+* **The fault trail is capped and rotates**, so it is a recent history rather than a permanent one, and it records route steps rather than keystrokes. It never carries what a citizen wrote, only where they were and what the app was attempting.
+* **None of this makes the data right.** It makes a failure visible and a silent false statement harder to ship. Whether a record is accurate is answered by sourcing it to the official record and letting anyone check it.
+
+## Works with
+
+* **[Run It On Your Own Computer](./run_on_your_own_computer.mdx)** — the fault trail is one file on your own disk, which is only a meaningful guarantee because the app is running there in the first place.
+* **[The Public Data Repository](./public_data_repository.mdx)** — several checks read the committed public record itself and fail the build on a roll call excluded with no reason or an instrument that charges nobody.
+* **[The Citizen Mining Network](./citizen_mining_network.mdx)** — long background work reports its progress and its failures into the same trail instead of finishing quietly with less than it claimed.
+
+## Where to go next
+
+* **[Naming the gaps](/docs/evidence/naming_the_gaps)** — the same rule stated as doctrine: say what is missing and why, rather than letting a hole pass as an answer.
+* **[Not assessed is not a verdict](/docs/flamingo/not_assessed_is_not_a_verdict)** — why "we have not looked yet" and "we looked and found none" must never render as the same thing.
+* **[Open Data](/docs/open_data/overview)** — the public record you can clone, follow to its source, and correct, which is what all of this is protecting.
+* **[Run your own instance](/docs/repos/run_your_own_instance)** — the code is open, including every check described here, so none of this has to be taken on faith.
+* **[Run it on your computer](/docs/get_started/run_it_on_your_computer)** — get the app going locally and read the trail yourself.

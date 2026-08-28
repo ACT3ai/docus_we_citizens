@@ -1,0 +1,183 @@
+---
+id: karma_and_leaderboard
+title: Karma And The History Book
+sidebar_label: Karma And History Book
+sidebar_position: 32
+description: "Recognition a citizen earns for verified real-world work, normalized monthly, published on public boards, and itemised line by line."
+---
+
+
+# Karma And The History Book
+
+You do something real — knock doors, file a sourced record, get a challenger to agree to run — and
+the movement records it, has another citizen confirm it, and keeps it. **Karma** is the name for the
+recognition that work earns. It is the citizen's own score for their own logged work, which is a
+different thing from an award the movement publishes about a public official, and it is deliberately
+kept in different words.
+
+<Figure caption="An action is recorded first and scored later: once another citizen verifies it, its raw points enter that month, where a single pass damps repetition, normalizes against the month's active cohort, weights the tracks, applies an integrity factor and a decisive-act floor, and produces one monthly karma score that feeds the public boards, the lifetime total, and an itemised statement — while work that did not count is still shown with its reason.">
+  <svg viewBox="0 0 720 336" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    {/* top row — the lifecycle of one action */}
+    <rect x="20" y="20" width="190" height="40" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="115" y="40" textAnchor="middle" fontSize="12" fill="currentColor">Action recorded</text>
+    <text x="115" y="54" textAnchor="middle" fontSize="10.5" fill="currentColor" opacity="0.72">you see this at once</text>
+
+    <line x1="210" y1="40" x2="240" y2="40" stroke="currentColor" />
+    <path d="M 242,40 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="246" y="20" width="190" height="40" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="341" y="40" textAnchor="middle" fontSize="12" fill="currentColor">Verified by a peer</text>
+    <text x="341" y="54" textAnchor="middle" fontSize="10.5" fill="currentColor" opacity="0.72">a steward, or an admin</text>
+
+    <line x1="436" y1="40" x2="466" y2="40" stroke="currentColor" />
+    <path d="M 468,40 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="472" y="20" width="228" height="40" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="586" y="40" textAnchor="middle" fontSize="12" fill="currentColor">Raw points, then frozen</text>
+    <text x="586" y="54" textAnchor="middle" fontSize="10.5" fill="currentColor" opacity="0.72">capped per action type</text>
+
+    {/* the branch for work that did not count */}
+    <line x1="341" y1="60" x2="341" y2="72" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+    <line x1="341" y1="72" x2="152" y2="72" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+    <path d="M 150,72 l 7,-3.5 l 0,7 z" fill="currentColor" />
+    <text x="144" y="88" textAnchor="end" fontSize="10.5" fill="currentColor" opacity="0.72">recorded, not counted</text>
+    <text x="144" y="101" textAnchor="end" fontSize="10.5" fill="currentColor" opacity="0.72">the reason is shown</text>
+
+    {/* into the month */}
+    <line x1="586" y1="60" x2="586" y2="100" stroke="currentColor" />
+    <path d="M 586,102 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    <rect x="110" y="106" width="500" height="118" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="126" y="128" fontSize="15" fill="currentColor">At month close, one pass</text>
+    <text x="594" y="128" textAnchor="end" fontSize="10.5" fill="currentColor" opacity="0.72">sealed, then immutable</text>
+    <text x="132" y="150" fontSize="10.5" fill="currentColor">damp repeated actions</text>
+    <text x="132" y="165" fontSize="10.5" fill="currentColor">normalize to the cohort</text>
+    <text x="132" y="180" fontSize="10.5" fill="currentColor">weight each track</text>
+    <text x="132" y="195" fontSize="10.5" fill="currentColor">apply the integrity factor</text>
+    <text x="132" y="210" fontSize="10.5" fill="currentColor">floor for a decisive act</text>
+
+    <line x1="360" y1="224" x2="360" y2="240" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M 360,242 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    <rect x="250" y="244" width="220" height="32" fill="var(--wc-fig-wash)" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <text x="360" y="264" textAnchor="middle" fontSize="12" fill="currentColor">One monthly karma score</text>
+
+    {/* fan out to the three surfaces */}
+    <line x1="360" y1="276" x2="360" y2="288" stroke="currentColor" />
+    <line x1="90" y1="288" x2="630" y2="288" stroke="currentColor" />
+    <line x1="90" y1="288" x2="90" y2="298" stroke="currentColor" />
+    <line x1="360" y1="288" x2="360" y2="298" stroke="currentColor" />
+    <line x1="630" y1="288" x2="630" y2="298" stroke="currentColor" />
+    <path d="M 90,300 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <path d="M 360,300 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <path d="M 630,300 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <text x="90" y="318" textAnchor="middle" fontSize="12" fill="currentColor">the boards</text>
+    <text x="360" y="318" textAnchor="middle" fontSize="12" fill="currentColor">lifetime total</text>
+    <text x="630" y="318" textAnchor="middle" fontSize="12" fill="currentColor">itemised statement</text>
+
+  </svg>
+</Figure>
+
+## What it does
+
+An action is **recorded** the moment a citizen logs it, and **scored** later, once somebody else has
+confirmed it. The citizen sees "recorded" immediately and "worth N karma" after verification. The gap
+between the two is the verification lifecycle, and it is left visible rather than hidden.
+
+Every kind of action lives in a published catalog. Each entry carries raw points, a **track** — the
+lane of work it belongs to, such as Challengers, Communications, Organizing or Lawmaking — a
+**verification tier** running from automatic through a peer to a community steward to an admin, a
+monthly cap, and a flag marking the few outcomes that actually changed something. A challenger filing
+to run is not the same size as a post, and the catalog says so in advance rather than after the fact.
+
+Raw points are treated as noise on purpose. They are spiky, and they reward whoever happens to have
+the most peers nearby to report on them. So at month close a single pass sums raw points per citizen
+per track, damps repetition of the same action, normalizes each track against that month's active
+cohort, weights the tracks so the loudest lane is not the only lane worth being in, applies an
+integrity factor, and floors any month that contains a decisive act. What comes out is one **monthly
+karma score**, and monthly scores accumulate into a **lifetime total**.
+
+The public boards are headed *History Book of Citizens Fixing Democracy*. Several time windows run
+side by side, because recent work and lifetime work are different stories: today that is the last
+three months, the last two weeks, and lifetime, with a 24-hour board designed but not yet built
+because the server does not compute that window. A rail follows whatever row the reader points at and
+says who that person is. A citizen outside the visible rows is told their true rank over the whole
+window instead of being faked into a position.
+
+Every month is itemised in a statement the citizen can check:
+
+* every verified act, with its base points and what it was awarded
+* a plain-words line under every cap and every multiplier, so no adjustment is a silent difference
+  between two totals
+* a separate section for the acts that did **not** count — pending, rejected, or disputed — each with
+  its reason
+* the arithmetic track by track, ending at the single monthly number
+* the policy exactly as it ran that month, not today's policy
+* a *Dispute this item* action on a single line
+
+## The goal it serves
+
+Positions are cheap and easy to collect. A doorknock, a sourced record filed against the official
+record, an hour of recorded testimony, a challenger who agreed to run — those are scarce, and nothing
+asked ordinary citizens for them or kept a receipt when they were given. This exists to make the
+movement's scarce resource countable.
+
+Credit here is something other people give you. A citizen cannot verify their own completion, and the
+actions worth the most cannot be self-logged at all — they arrive as a report filed by somebody else.
+Every line traces back to a URL and a description a stranger can open. That is what separates a record
+of work from a follower count.
+
+It is also the lever. Replacing a captured incumbent is not won by argument; it is won by volume of
+unglamorous, checkable work done before a primary, by people who mostly do not know each other. A
+movement that cannot see who is doing that work cannot ask the right person for the right thing. The
+[action catalog](/docs/take_action/the_action_catalog) is the menu, the
+[strategy for replacing captured incumbents](/docs/replace_incumbents/overview) is what the menu is
+for, and karma is the ledger connecting the two.
+
+Underneath the daily boards sits the **Leader History Book**: a permanent, hash-chained record of the
+contributions that changed something, and the citizens who made them happen. An entry is about a
+contribution, not a personality. Nobody arrives there automatically — a steward nominates and an admin
+confirms — and once an entry is anchored it cannot be quietly rewritten.
+
+## What keeps it honest
+
+* **No negative karma, no downvotes, no public shaming.** Citizens report each other's work
+  positively. The only downward force is the rejection of a claim nobody can support, and a rejection
+  records its reason instead of deleting the record.
+* **The anti-gaming rules are stated, not implied.** You cannot verify your own work. One URL can back
+  one record. Work above a monthly cap is still kept in the history but is worth zero and is marked as
+  capped. Two citizens verifying each other repeatedly in one month are flagged for review, and the
+  flag is informational rather than an automatic penalty.
+* **A sealed month is final.** After the seal, a correction is appended beside the original as an
+  amendment with its own anchored block. The original is never overwritten.
+* **The board publishes nothing a citizen did not publish.** The privacy contract is enforced on the
+  server, not in the browser: the display name is the one the citizen chose, and no photograph is
+  delivered unless they turned one on. A fully pseudonymous citizen can hold the top of every board,
+  and nothing on the page nudges them to identify themselves in order to be there.
+* **It says what it is not.** Karma measures logged work for this movement and nothing else. It is not
+  a measure of a person's worth, it is never a finding about a politician, and a citizen with no karma
+  is a citizen who has not logged anything here.
+
+## Works with
+
+* **[Decisions, Areas And Communities](./decisions_and_communities.mdx)** — a community is where an
+  action is attributed and where the stewards who verify the higher tiers actually sit.
+* **[The First-Principles AI Check](./first_principles_ai_check.mdx)** — the AI summarizes a month,
+  flags integrity problems and drafts history-book nominations, and is never allowed to award karma
+  or publish an entry.
+* **[Value Systems And Policy Packets](./value_systems_and_policy_packets.mdx)** — your written-down
+  values decide which work is worth doing; karma is the record that you went and did it.
+
+## Where to go next
+
+* **[Karma](/docs/karma/overview)** — the full citizen-side ledger, and why this is the one place the
+  word score is used on purpose.
+* **[Points to monthly karma](/docs/karma/points_to_monthly_karma)** — the normalization pipeline in
+  detail, stage by stage.
+* **[The Leader History Book](/docs/karma/the_leader_history_book)** — how a contribution earns its
+  way into the permanent record.
+* **[Trust Scores](/docs/trust_scores/overview)** — the separate question of whether a participant is
+  a real, believable citizen at all.
+* **[Take Action](/docs/take_action/overview)** — the things you can do this week, each one worth
+  karma and each one logged with a link somebody else can check.

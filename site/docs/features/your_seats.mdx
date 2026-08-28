@@ -1,0 +1,107 @@
+---
+id: your_seats
+title: Your Seats And The Seat Map
+sidebar_label: Your Seats And The Seat Map
+sidebar_position: 19
+description: "Say as much or as little as you like about where you vote. The app shows live which of your elected seats it can resolve, and which it cannot."
+---
+
+
+# Your Seats And The Seat Map
+
+Every award, every roll call and every fix bill on this site is about somebody. Until you know which somebody is yours, none of it is about you. This is the part of the app that turns where you vote into your own seats, and gives each seat a page.
+
+<Figure caption="The more a citizen tells the app about where they vote, the more of their seats it can resolve, and the checklist beside the form says live which ones it still cannot.">
+  <svg viewBox="0 0 720 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* headings */}
+    <text x="162" y="34" fontSize="15" fill="currentColor" textAnchor="middle">What you tell us</text>
+    <text x="558" y="34" fontSize="15" fill="currentColor" textAnchor="middle">Which seats resolve</text>
+
+    {/* the four things a citizen can give */}
+    <rect x="44" y="62" width="236" height="38" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="162" y="86" fontSize="12" fill="currentColor" textAnchor="middle">Country</text>
+
+    <rect x="44" y="106" width="236" height="38" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="162" y="130" fontSize="12" fill="currentColor" textAnchor="middle">State</text>
+
+    <rect x="44" y="150" width="236" height="38" fill="var(--wc-fig-wash)" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="162" y="174" fontSize="12" fill="currentColor" textAnchor="middle">ZIP code</text>
+
+    <rect x="44" y="194" width="236" height="38" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="162" y="211" fontSize="12" fill="currentColor" textAnchor="middle">Street address</text>
+    <text x="162" y="226" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">optional, like all of it</text>
+
+    {/* what each one buys */}
+    <text x="348" y="81" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">no seats on its own</text>
+
+    <line x1="286" y1="125" x2="412" y2="125" stroke="currentColor" />
+    <path d="M 420,125 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <text x="348" y="118" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">statewide</text>
+
+    <line x1="286" y1="169" x2="412" y2="169" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <path d="M 420,169 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <text x="348" y="162" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">split ZIP: you pick</text>
+
+    <line x1="286" y1="213" x2="412" y2="213" stroke="currentColor" />
+    <path d="M 420,213 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <text x="348" y="206" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">address-only states</text>
+
+    {/* the seats */}
+    <rect x="420" y="106" width="276" height="38" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="558" y="130" fontSize="12" fill="currentColor" textAnchor="middle">Senators and Governor</text>
+
+    <rect x="420" y="150" width="276" height="38" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="558" y="174" fontSize="12" fill="currentColor" textAnchor="middle">US House seat</text>
+
+    <rect x="420" y="194" width="276" height="38" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="558" y="213" fontSize="12" fill="currentColor" textAnchor="middle">State assembly seat</text>
+    <text x="558" y="228" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">covered states only</text>
+
+    {/* the two standing promises */}
+    <line x1="24" y1="248" x2="696" y2="248" stroke="var(--wc-fig-muted)" strokeDasharray="4 4" />
+    <text x="360" y="266" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Nothing is required, and every value we guessed is shown and editable.</text>
+    <text x="360" y="282" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">A seat this install cannot resolve at all says so, instead of blaming you.</text>
+  </svg>
+</Figure>
+
+## What it does
+
+The app asks one question — where do you vote — on one form with two answers: show me my politicians, or do not. Under the first sit four fields: country, state, ZIP, and an optional street address. **None is required.** You can give a state and stop.
+
+Beside it, a live panel answers the only question that matters about what you typed: **do we now know enough to show your politicians.** It lists your seat rows — Senators, House of Representatives, State Representative — and flips each as you type. A state resolves your senators and governor; a ZIP usually resolves your US House seat; where district lines make a ZIP useless, a street address resolves the state assembly seat. Every row's rule comes from a published per-state coverage table.
+
+A ZIP is not automatically enough, and the app will not pretend it is. **5,862 of the country's 33,642 ZIP codes straddle more than one congressional district.** ZIP 98052 sits in both WA-01 and WA-08. When that happens the checklist does not claim the seat is resolved. Pick buttons appear instead, ordered by how much of the ZIP's land area falls in each district — share **orders** the candidates and never chooses between them — and a **district picker map** renders beside them, drawn with MapLibre over free OpenFreeMap vector tiles with Census district polygons on top. Hovering a button lights that district; clicking the district picks it. Every locator stays editable, including one guessed from your connection, and the guess says so: *guess from your IP address.*
+
+Every resolved seat then has a page of its own. **A seat is the jurisdiction, not the person in it:** a district is a polygon, a Senate seat is the state, the presidency is the country. The public record holds 592 seat records: every governor, every Senate seat, all 435 voting House districts and the 6 delegate seats. Each page carries plain geography, a **seat map** of the state carved into its districts with this one emphasized, and the full history of everyone who has held it — current officeholder first, month and year in, month and year out, official record linked on every row. No source, no row.
+
+That seat map is different machinery from the picker: geometry we serve ourselves, with **no tile server and no request to anybody but us.** A tile request would tell a stranger which district a specific address is looking at, while that person decides how to vote.
+
+## The goal it serves
+
+You cannot judge whether a vote was cast for you or against you until you know whose vote it was. The Monkey Award arithmetic, the Good Law List, the roll call where a repair died in committee — all of it stays abstract until the seats on the screen are yours and the names in them answer to your ballot. This is the hinge between reading about a captured Congress and looking at your share of it.
+
+It is also a refusal of the pattern citizens most resent in government software. It never guesses silently, never demands an address to let you in the door, and never reports a seat as unavailable in a tone implying you failed to fill something in. When this install cannot resolve a seat in your state by any route, the row says exactly that — *not available in your state yet* — our gap, not your missing input.
+
+And the seat, not the person, is the durable object. Officeholders leave; the ground stays. A page built around the seat lets you ask the better question: has this seat been sending capable people, or the same kind of person for thirty years?
+
+## What keeps it honest
+
+* **Withholding anything blocks nothing.** Declining is itself a recorded answer: it clears whatever was saved, and the question does not come back.
+* **The privacy promise is printed on the form.** The app never asks your browser for location permission and never stores your IP address beside anything you tell it. The server drops whatever the detail level you chose does not entitle it to keep.
+* **Redistricting is stated, not smoothed.** Map shapes are keyed to the Congress that drew them, and anyone whose service predates those lines is flagged as serving under earlier boundaries.
+* **The seat map carries no verdict colour and no award mark.** Cells show the party of record of whoever holds them now. Where red already means Republican, red must never also mean bad; vacant and unknown get a neutral fill, never a guessed party.
+* **State legislative seats were labelled uncovered rather than faked.** They come online one state at a time, and only when the district lookup and the records of the people in those seats both exist — a lookup with an empty roster behind it is technically true and substantively a lie.
+
+## Works with
+
+* **[The Politician Record Page](./politician_record_pages.mdx)** — one click from any seat, and where the awards, sources and arithmetic live.
+* **[The Rosters](./the_rosters.mdx)** — the people behind every resolved seat: those who have held office, and those challenging them.
+* **[The Qualification Areas](./qualification_catalog.mdx)** — what a challenger for your seat is assessed against, published in advance.
+
+## Where to go next
+
+* **[Elected Politicians](/docs/legacy_politicians/overview)** — the 1,400-plus people with a roll-call record behind them, including the ones in your own seats.
+* **[Find who represents you](/docs/legacy_politicians/find_who_represents_you)** — the short version of this page.
+* **[The seat view](/docs/replace_incumbents/the_seat_view)** — the incumbent, the strongest challenger from your side, and the strongest from any other.
+* **[Politicians](/docs/politicians/overview)** — the doctrine governing every word published about the people in those seats.
+* **[Get Started](/docs/get_started/overview)** — run it hosted or on your own computer, and load your seats.

@@ -1,0 +1,109 @@
+---
+id: the_rosters
+title: The Rosters
+sidebar_label: The Rosters
+sidebar_position: 18
+description: "Four lists of the people who hold or seek power, open for any citizen to propose into and closed to anyone who wants to quietly edit them."
+---
+
+
+# The Rosters
+
+The rosters are the movement's lists of named people who hold power or are trying to get it. There are four of them, and they are built the same way: any citizen can propose a person onto one, and only an admin can put a person on one. That split is deliberate. A list of living people is worth reading only if every name on it got there through a decision somebody signed.
+
+<Figure caption="Any citizen can propose a person; an admin decides either way, and the decision is recorded whichever way it goes. Approved records land on one of four rosters, and the person's key never changes after that.">
+  <svg viewBox="0 0 720 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the open half */}
+    <rect x="16" y="52" width="170" height="64" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="101" y="78" fontSize="12" fill="currentColor" textAnchor="middle">Any citizen</text>
+    <text x="101" y="94" fontSize="12" fill="currentColor" textAnchor="middle">proposes a person</text>
+
+    <line x1="186" y1="84" x2="232" y2="84" stroke="currentColor" />
+    <path d="M 234,84 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the closed half */}
+    <rect x="234" y="44" width="150" height="80" fill="var(--wc-fig-wash-2)" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="309" y="78" fontSize="12" fill="currentColor" textAnchor="middle">Admin decides</text>
+    <text x="309" y="94" fontSize="12" fill="currentColor" textAnchor="middle">either way</text>
+
+    <line x1="309" y1="124" x2="309" y2="172" stroke="var(--wc-fig-muted)" strokeDasharray="5 4" />
+    <path d="M 309,176 l -3.5,-7 l 7,0 z" fill="currentColor" />
+    <rect x="214" y="176" width="190" height="52" fill="none" stroke="var(--wc-fig-muted)" strokeDasharray="5 4" />
+    <text x="309" y="200" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">Turned down, and kept</text>
+    <text x="309" y="216" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">with its reason</text>
+
+    {/* the fan-out to four rosters */}
+    <line x1="384" y1="84" x2="412" y2="84" stroke="var(--wc-fig-accent)" />
+    <line x1="412" y1="57" x2="412" y2="183" stroke="var(--wc-fig-accent)" />
+
+    <line x1="412" y1="57" x2="426" y2="57" stroke="var(--wc-fig-accent)" />
+    <path d="M 430,57 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="430" y="40" width="274" height="34" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="444" y="62" fontSize="12" fill="currentColor">Elected, now or before</text>
+
+    <line x1="412" y1="99" x2="426" y2="99" stroke="var(--wc-fig-accent)" />
+    <path d="M 430,99 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="430" y="82" width="274" height="34" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="444" y="104" fontSize="12" fill="currentColor">Good new leaders</text>
+
+    <line x1="412" y1="141" x2="426" y2="141" stroke="var(--wc-fig-accent)" />
+    <path d="M 430,141 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="430" y="124" width="274" height="34" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="444" y="146" fontSize="12" fill="currentColor">Worrisome challengers</text>
+
+    <line x1="412" y1="183" x2="426" y2="183" stroke="var(--wc-fig-accent)" />
+    <path d="M 430,183 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="430" y="166" width="274" height="34" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="444" y="188" fontSize="12" fill="currentColor">Fix bill authors</text>
+
+    {/* the frozen key */}
+    <rect x="430" y="212" width="274" height="66" fill="var(--wc-fig-wash-2)" stroke="var(--wc-fig-accent)" strokeDasharray="5 4" />
+    <text x="444" y="234" fontSize="12" fill="currentColor">One frozen key per person</text>
+    <text x="444" y="250" fontSize="12" fill="currentColor" opacity="0.72">The roster is a field on it,</text>
+    <text x="444" y="266" fontSize="12" fill="currentColor" opacity="0.72">not a new record</text>
+
+    <text x="16" y="252" fontSize="10.5" fill="currentColor" opacity="0.72">Identity is shared across a link.</text>
+    <text x="16" y="268" fontSize="10.5" fill="currentColor" opacity="0.72">Judgement never is.</text>
+  </svg>
+</Figure>
+
+## What it does
+
+There are **four rosters** and one kind of record behind all of them. **Elected politicians** are the people who hold or have held office, so there is a roll-call record to read. **Good new leaders** are people worth electing who have not held office. **Worrisome challengers** are people seeking office about whom a citizen has filed a sourced worry — the only roster with an evidence floor, since a record there cannot be created without at least one video. **Fix bill authors** are the citizens who wrote one of the movement's model bills; they need a page and a key, and the thing worth browsing is the bill.
+
+Which roster a person is on is a **single field** on their record, not a separate kind of thing. That matters because people move. An admin can move somebody between rosters, and the move keeps the same record: the **frozen key**, the history, and every link anyone has ever shared.
+
+Each roster is a table that leads with the **award column**, then the name with its one-letter party tag, then a short derived line — "Recommended for the Washington 7th US House seat", or "Utah: Senator" — and then the movement's own one-paragraph position on the person. The new-leaders roster carries one extra column, **N% known**, which says how much the movement knows about somebody rather than how good they are.
+
+**My Politicians** answers the question most people arrive with: who represents me. It resolves your President, both US Senators, your US House seat, your Governor and your state legislative seats. When a seat cannot be resolved, that seat is **named above the table with the reason**, instead of quietly handing you a shorter list you would read as complete.
+
+One human can legitimately hold more than one record — a challenger who is also a sitting state senator, a former officeholder seeking a different seat. Those records stay separate and linked. **Identity crosses the link and judgement does not**: the photograph with its credit, the party, the state, the videos and appearances carry across, while the awards, the approval state and the qualification assessments stay with the record that earned them.
+
+## The goal it serves
+
+A citizen who has concluded that their representative is not working for them needs somewhere to put that conclusion, and somewhere to look up who else is running. Comment sections and endorsement lists have the same defect: you cannot tell who put a name on the list, or why, or what happened to the names left off.
+
+So the roster is open on one side and closed on the other. Anyone signed in can propose a person, at no cost and with no standing in the movement required. Nobody — including a citizen with the highest trust score in the system — can publish a name. An admin resolves every proposal one way or the other, the decision names the admin and the reason, and the sequence is anchored, so a roster that had been quietly rewritten would be visible as a rewrite. That is what lets [the doctrine on how the movement talks about politicians](/docs/politicians/overview) hold: an entry is a recorded decision about a public act, not an opinion somebody typed.
+
+The rosters are also where the strategy becomes concrete. [Replacing a captured incumbent](/docs/replace_incumbents/overview) is an election problem, and an election needs two lists at once: who is in the seat now, and the [people worth running instead](/docs/new_politicians/overview). Keeping both on one record type, with one key space and one instrument, is what makes those lists comparable rather than two arguments.
+
+## What keeps it honest
+
+* **A link between two records is never inferred from a name match.** Two people share a name, and attaching one person's voting record to another person's face is the worst error available here. An admin makes the link, with a source, and every link and unlink writes an audit row naming both records and the reason.
+* **The key is frozen and duplicates fail the build.** Twice, the same person was committed under two keys and half their data was silently dropped — both times for someone the movement wanted to publish well. An automated check now fails the build on a duplicated key, naming both files.
+* **Turning somebody down is recorded, and so is removing them.** Rejected proposals are kept with their reason, so "why is this person not on the list?" has an answer. A published record that admins later remove is retained and marked, never made to disappear.
+* **A roster entry is not an accusation of a crime.** The position on an elected politician rests on the official voting record, cited row by row, and the pages say what is not known rather than filling the gap.
+
+## Works with
+
+* **[The Politician Record Page](./politician_record_pages.mdx)** — every roster row opens one, and there are two of them because a roll-call record and a public-speaking record are different bodies of evidence.
+* **[Your Seats And The Seat Map](./your_seats.mdx)** — supplies the seat resolution that My Politicians filters against, including the seats it could not resolve.
+* **[The Qualification Areas](./qualification_catalog.mdx)** — the published rubrics used to assess people on the two challenger rosters, the same way for both.
+
+## Where to go next
+
+* **[Politicians](/docs/politicians/overview)** — why everything published about a politician is an award earned or not earned, and the wall that keeps the evidence streams apart.
+* **[Find who represents you](/docs/legacy_politicians/find_who_represents_you)** — the elected roster, pointed at your own seats.
+* **[How someone gets on the roster](/docs/new_politicians/how_someone_gets_on_the_roster)** — the proposal-to-approval path for a challenger, step by step.
+* **[Replacing Captured Incumbents](/docs/replace_incumbents/overview)** — what the two lists are for, and why the primary is where it is decided.
+* **[Take Action](/docs/take_action/overview)** — propose somebody, vet a challenger, or correct a record this week.

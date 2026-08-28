@@ -1,0 +1,107 @@
+---
+id: trust_ladder
+title: The Trust Ladder
+sidebar_label: The Trust Ladder
+sidebar_position: 37
+description: "Five rungs a citizen climbs by doing checkable work. Each rung unlocks what their input can do for other people. Money buys none of it."
+---
+
+
+# The Trust Ladder
+
+Anyone can open We The Citizens, read everything it publishes, record their own positions, build their own evidence chains, and run the whole calculation on their own machine. None of that needs permission from anybody. What has to be earned is influence over *other people* — publishing into a shared space, being counted in a community's consensus, vouching for somebody else. The trust ladder is the five-rung path to that, and every rung is climbed by doing things anyone can check.
+
+<Figure caption="Five rungs from a brand-new account up to a steward, each one unlocking what a citizen's input can do for other people, with the entire individual product sitting on the bottom rung.">
+  <svg viewBox="0 0 720 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* column headings */}
+    <text x="40" y="30" fontSize="10.5" fill="currentColor" opacity="0.72">THE RUNG YOU HAVE EARNED</text>
+    <text x="322" y="30" fontSize="10.5" fill="currentColor" opacity="0.72">WHAT IT LETS YOU DO</text>
+
+    {/* the direction of travel */}
+    <line x1="22" y1="272" x2="22" y2="54" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <path d="M 22,44 l -3.5,10 l 7,0 z" fill="currentColor" />
+
+    {/* rung 5 */}
+    <rect x="40" y="44" width="250" height="40" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="56" y="69" fontSize="12" fill="currentColor">Level 5 — Steward</text>
+    <rect x="306" y="44" width="374" height="40" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="322" y="69" fontSize="12" fill="currentColor" opacity="0.72">Help steward other citizens</text>
+
+    {/* rung 4 */}
+    <rect x="40" y="92" width="250" height="40" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="56" y="117" fontSize="12" fill="currentColor">Level 4 — Established</text>
+    <rect x="306" y="92" width="374" height="40" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="322" y="117" fontSize="12" fill="currentColor" opacity="0.72">Vouch for another citizen</text>
+
+    {/* rung 3 */}
+    <rect x="40" y="140" width="250" height="40" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="56" y="165" fontSize="12" fill="currentColor">Level 3 — Contributing</text>
+    <rect x="306" y="140" width="374" height="40" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="322" y="165" fontSize="12" fill="currentColor" opacity="0.72">Start a community, share packets</text>
+
+    {/* rung 2 */}
+    <rect x="40" y="188" width="250" height="40" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="56" y="213" fontSize="12" fill="currentColor">Level 2 — Identified</text>
+    <rect x="306" y="188" width="374" height="40" fill="none" stroke="var(--wc-fig-muted)" />
+    <text x="322" y="213" fontSize="12" fill="currentColor" opacity="0.72">Publish into shared space</text>
+
+    {/* rung 1 */}
+    <rect x="40" y="236" width="250" height="40" fill="var(--wc-fig-wash-2)" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="56" y="261" fontSize="12" fill="currentColor">Level 1 — New</text>
+    <rect x="306" y="236" width="374" height="40" fill="none" stroke="var(--wc-fig-accent)" />
+    <text x="322" y="261" fontSize="12" fill="currentColor">Everything for your own work</text>
+
+    {/* what does not move it */}
+    <text x="360" y="302" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Money buys no rung.</text>
+    <text x="360" y="318" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">A pseudonym reaches the top.</text>
+  </svg>
+</Figure>
+
+## What it does
+
+The **capability ladder** has five rungs: New, Identified, Contributing, Established, Steward. Five and no more, because you have to be able to read your own standing in ten seconds. You always see the checklist: which items you have met, and what the next rung needs.
+
+**Level 1 is the whole individual product.** Recording your positions, writing a value system, building an evidence chain, generating a proposed law, running the calculation over your own work — none of it is locked. Every gate sits on acting on other people, never on your own reasoning.
+
+Rungs are earned by information you hand over, not by money, invitation, or an admin's favor:
+
+* **An anchor** — a verified email, or a proven account elsewhere. Proving you control a pseudonymous account somewhere else satisfies this on its own, so the anchor never costs you your anonymity.
+* **Work the install can actually read** — published records that pass their schema, a public repository of your own reasoning, an evidence chain with its gaps named, a value system that parses. Structural validity only: nobody can block a rung by calling your work low quality, because that power does not exist.
+* **Time and steadiness** — account age, and activity spread across months rather than one burst.
+* **Vouches** from citizens already at Established or above. A vouch is scarce — ten outstanding at most — withdrawable with no explanation, and non-transitive: being vouched for does not let you vouch. A batch of fresh accounts cannot lift each other up, because standing comes from your position among people already verified as real.
+
+Consensus weighting is flat at the top on purpose. Level 1 counts zero, Level 2 counts half, and Levels 3, 4 and 5 all count the same. The ladder keeps sockpuppets out of a count; it does not make some citizens matter more than others.
+
+Behind the ladder, and separate from it, sits a continuous 0–100 **trust score**. That subsystem is admin-facing. It is not published to citizens, never shown to one citizen about another, and it gates nothing — gates read the rung. Opening any part of it is a specified multi-stage path with written prerequisites, and that path has not been taken.
+
+## The goal it serves
+
+A platform where citizens document the capture of their own government will be attacked. Spam, astroturf accounts, impersonation and deliberate poisoning of a community's consensus are the expected cost of doing this in public. The obvious defense is a login wall, and the charter refuses it: reading the record must never require an account, because a movement that demands identity at the door has already lost the people most at risk from giving it.
+
+The ladder is the alternative. Trust buys attention and weight; it never buys authority, and nothing is auto-approved because a trusted account submitted it. That rule is what stops a well-funded operation buying standing here the way influence is bought in Washington — see [money in politics](/docs/congress_for_citizens/money_in_politics) for the problem we refuse to reproduce.
+
+It has to stay honest in the other direction too. Influence earned in public is capped on purpose, because unbounded merit becomes a clique within a few election cycles — [the rules that keep it honest](/docs/meritocracy/the_rules_that_keep_it_honest) covers those caps, and [the mesh of verified citizens](/docs/trust_scores/the_mesh_and_what_it_defends_against) covers what it is defending.
+
+A pseudonymous citizen is never capped. Every criterion is satisfiable without publishing a real name, all the way to the top rung. The claim being proven is *one real person*, never *we know who you are*.
+
+## What keeps it honest
+
+* **The measurement is about our evidence, not about you.** A brand-new, honest citizen sits low on the ladder, and the product is required to say so in those words — we have little evidence about this account yet — never "low-trust user." That is the difference between a measurement and an accusation.
+* **Karma never feeds believability.** Doing a great deal of admired work is not evidence that an account is a real, distinct human, and counting it would let a busy sockpuppet farm buy its way in on volume.
+* **Money buys nothing, and that is tested.** Supporter status is asserted in code not to be an input. Nothing about a rung is purchasable, ever.
+* **Verification proves control, not personhood.** Two people can share one account; a staffer can run a channel. The product states that limit rather than claiming one account per human.
+* **Staying at Level 1 forever is legitimate.** It is a complete way to use this product, and the interface is forbidden from nagging a quiet citizen into climbing.
+
+## Works with
+
+* **[Where You Stand](./trust_wizard.mdx)** — the guided walk that records where you actually stand, and hands off to identity verification as a separate, skippable step.
+* **[Groups And Values Blocks](./groups_and_values_blocks.mdx)** — what you believe, kept strictly one-way apart from whether you are believable; alignment never reaches the ladder.
+* **[Your Profile, Your Anonymity](./citizen_profiles_and_anonymity.mdx)** — going private never lowers a rung, and an anonymized citizen counts exactly like a listed one.
+
+## Where to go next
+
+* **[Trust Scores](/docs/trust_scores/overview)** — the one question a trust score answers, and the many it deliberately does not.
+* **[The trust ladder](/docs/meritocracy/the_trust_ladder)** — how influence is earned here, and why the ceiling on it is set on purpose.
+* **[Communities](/docs/communities/overview)** — the shared space the higher rungs unlock, and how a community pools individual positions.
+* **[Karma](/docs/karma/overview)** — the citizen side of the ledger, where recognition for your own logged work is tracked separately.
+* **[Get Started](/docs/get_started/overview)** — run it on your own machine or use the hosted copy, and start on the bottom rung with the full product already in your hands.

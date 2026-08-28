@@ -1,0 +1,117 @@
+---
+id: qualification_catalog
+title: The Qualification Areas
+sidebar_label: Qualification Areas
+sidebar_position: 20
+description: "Eighteen named areas a would-be politician is assessed against, published before anyone is assessed, with weights you can replace with your own."
+---
+
+
+# The Qualification Areas
+
+Before anybody is assessed, the movement publishes what it is assessing for. Eighteen named areas — anti-corruption, loyalty to the USA, economics, constitutional competence, not being controlled or influenced — each one a public file stating the question that area asks and what a strong, middling and weak answer looks like. A second public file states how much each area counts, as percentages adding to 100, and a settings page lets you replace them with your own.
+
+<Figure caption="One file per qualification area feeds a single weight file that must total 100 percent; the movement's weights drive every published number, while a citizen's own sliders re-order the same material as a personal view.">
+  <svg viewBox="0 0 720 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* left: the per-area files */}
+    <text x="120" y="38" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">public data repo</text>
+    <rect x="20" y="52" width="200" height="160" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="120" y="80" fontSize="15" fill="currentColor" textAnchor="middle">One file per area</text>
+    <text x="120" y="104" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">The question it asks</text>
+    <text x="120" y="122" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">Why it matters</text>
+    <text x="120" y="140" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">Good / medium / bad</text>
+    <text x="120" y="158" fontSize="12" fill="currentColor" textAnchor="middle" opacity="0.72">A frozen key</text>
+    <text x="120" y="190" fontSize="10.5" fill="currentColor" textAnchor="middle">18 areas, never a person</text>
+
+    {/* into the weight file */}
+    <line x1="220" y1="132" x2="252" y2="132" stroke="currentColor" />
+    <path d="M 260,132 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* middle: the weight vector */}
+    <text x="360" y="38" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">the weight file</text>
+    <rect x="260" y="52" width="200" height="160" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="360" y="80" fontSize="15" fill="currentColor" textAnchor="middle">Which areas count</text>
+    <text x="276" y="112" fontSize="12" fill="currentColor" opacity="0.72">Not controlled</text>
+    <text x="444" y="112" fontSize="12" fill="currentColor" textAnchor="end" opacity="0.72">15%</text>
+    <text x="276" y="134" fontSize="12" fill="currentColor" opacity="0.72">Loyal to the USA</text>
+    <text x="444" y="134" fontSize="12" fill="currentColor" textAnchor="end" opacity="0.72">14%</text>
+    <text x="276" y="156" fontSize="12" fill="currentColor" opacity="0.72">and 16 more</text>
+    <text x="444" y="156" fontSize="12" fill="currentColor" textAnchor="end" opacity="0.72">57%</text>
+    <line x1="276" y1="170" x2="444" y2="170" stroke="currentColor" />
+    <text x="276" y="192" fontSize="12" fill="currentColor">Total</text>
+    <text x="444" y="192" fontSize="12" fill="currentColor" textAnchor="end">100%</text>
+
+    {/* fan out to the two readings */}
+    <line x1="460" y1="132" x2="478" y2="132" stroke="currentColor" />
+    <line x1="478" y1="84" x2="478" y2="182" stroke="currentColor" />
+    <line x1="478" y1="84" x2="492" y2="84" stroke="currentColor" />
+    <path d="M 500,84 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <line x1="478" y1="182" x2="492" y2="182" stroke="currentColor" />
+    <path d="M 500,182 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="500" y="56" width="196" height="56" fill="none" stroke="currentColor" />
+    <text x="598" y="80" fontSize="12" fill="currentColor" textAnchor="middle">Published numbers</text>
+    <text x="598" y="98" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">movement weights only</text>
+    <text x="598" y="132" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">the same for every reader</text>
+
+    <rect x="500" y="154" width="196" height="56" fill="var(--wc-fig-wash)" stroke="var(--wc-fig-accent)" />
+    <text x="598" y="178" fontSize="12" fill="currentColor" textAnchor="middle">Your own view</text>
+    <text x="598" y="196" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">applied when you read</text>
+
+    {/* the slider that feeds only your own view */}
+    <path d="M 598,214 l -3.5,8 l 7,0 z" fill="currentColor" />
+    <line x1="598" y1="222" x2="598" y2="244" stroke="var(--wc-fig-accent)" />
+    <line x1="520" y1="258" x2="676" y2="258" stroke="var(--wc-fig-muted)" strokeWidth="3" strokeLinecap="round" />
+    <circle cx="628" cy="258" r="6" fill="currentColor" />
+    <text x="598" y="284" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">your settings page</text>
+  </svg>
+</Figure>
+
+## What it does
+
+A **qualification** is one named area in which the movement assesses whether somebody would be a good politician. Each area is one file in the public data repository, carrying a frozen key, the single question the area asks about a person, why that area matters, and written guidance splitting a shared 0-to-10 scale into three bands: what a good, middling and bad answer looks like.
+
+A qualification file describes an area and never a person. No politician's name appears in any of them, so the directory cannot carry a claim about a named living human. And an area is a committed file anybody can read and argue with, not a software release with its reasoning hidden inside.
+
+One further public file does two jobs. It is the **roll-call** — an area not listed there takes no part in the case. And it is the **weight vector**: each entry states, as a percentage, how much that area counts when one candidate is compared against another for the same seat. The percentages must total 100, so a new area is paid for by every existing one. That has already happened: an eighteenth area came in at a declared 17%, took the total to 117, and every weight was rescaled back to 100 under two rules set in advance — whole numbers only, and nothing may fall to zero, because a zero reads as "this does not matter" rather than "this is small".
+
+Then you get to disagree with all of it. A settings page lists every area and lets you set your own percentages:
+
+* A wide slider per area, accurate to a hundredth of a percent, with a typed box beside it holding the same number.
+* The movement's default beside your number, a reset on any row you moved, and a reset-all.
+* A live total underneath. If it is not 100, the page says plainly that anything computed from your weights was rescaled by that total.
+* No account needed. Only the values you changed are stored.
+
+Your weights are a lens applied when you read. They re-order the field on your screen. They do not alter one published number.
+
+## The goal it serves
+
+The standard is published before the verdict. The usual sequence in politics runs the other way: the conclusion is reached, and the criteria are described afterwards in whatever shape justifies it. Here the yardstick sits in a public repository with a git history, so you can argue with what is being measured before any number about any person is put in front of you. If you think "not controlled or influenced" should not be 15%, you have something concrete to object to.
+
+It also replaces the cheapest way to judge a candidate. Party tells you almost nothing about whether a person can read a budget, hold up under pressure, or refuse a donor. Eighteen named areas with written guidance are slower and far more informative, and they work on a first-time candidate with no voting record at all — exactly where party is the only signal most voters are offered. The [Qualifications](/docs/qualifications/overview) area covers the standard itself; [Good New Leaders](/docs/new_politicians/overview) covers the people it gets applied to.
+
+The slider exists because one fixed national list of what matters would just be another authority telling citizens what to care about. [Meritocracy](/docs/meritocracy/overview) here means influence earned in public and capped on purpose. This is the reader-facing half: you keep your own priorities, and the field re-orders to match. Writing down what you weigh is the same discipline as [writing down your values](/docs/values/write_down_your_values), applied to people instead of policy.
+
+## What keeps it honest
+
+* **No person in the standard.** A qualification file names an area, its question and its guidance, never a human being. The catalog cannot become an accusation.
+* **Nothing is ever weighted to zero.** A percentage that cannot be read carries no weight and is reported as a fault, never quietly treated as a zero — which would look identical to deciding the area does not count.
+* **A total that is not 100 gets said out loud.** When the weights are mid-edit, anything computed from them is rescaled by the real total, and the page prints that in words where the number appears.
+* **A gap is published, not filled in.** An area with a file but no roll-call entry still loads and still renders; it carries no weight, takes no part in the comparison, and its absence is reported as a named gap.
+* **The combination is arithmetic, not judgement.** The AI reads material and assesses one area at a time; combining those assessments with the weights is ordinary code, so the same inputs always produce the same output.
+
+A heavy weight is a statement about what the movement thinks matters. It is not proof about any person.
+
+## Works with
+
+* **[The Politician Record Page](./politician_record_pages.mdx)** — where a person's assessment in each area appears, beside the awards from their voting record.
+* **[The Rosters](./the_rosters.mdx)** — the catalog is how somebody with no voting record gets assessed at all.
+* **[Your Seats And The Seat Map](./your_seats.mdx)** — the weighted comparison orders the candidates competing for one seat.
+
+## Where to go next
+
+* **[Qualifications](/docs/qualifications/overview)** — the standard itself, written down before anyone is assessed.
+* **[The qualification areas](/docs/qualifications/the_qualification_areas)** — all eighteen areas and what each one asks.
+* **[Meritocracy](/docs/meritocracy/overview)** — why influence here is earned in public and deliberately capped.
+* **[Clone the record](/docs/open_data/clone_the_record)** — read the qualification files and the weight file yourself.
+* **[Open the app](https://app.WeTheCitizens.io/)** — set your own weights on the settings page.

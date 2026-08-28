@@ -1,0 +1,107 @@
+---
+id: videos_and_transcripts
+title: Videos, Transcripts And Provenance
+sidebar_label: Videos And Transcripts
+sidebar_position: 21
+description: "How hours of a person speaking become a citable transcript, who actually makes it, and why every quote carries a visible note about how the words were obtained."
+---
+
+
+# Videos, Transcripts And Provenance
+
+A person asking for your vote for the first time has no roll call behind them. What they do have is hours of themselves talking: interviews, town halls, podcasts, speeches. Those hours are the richest checkable evidence about them that exists, and they are worth nothing while they are still a link. This is the machinery that turns a link into words a citizen can read, quote, and check against the tape.
+
+<Figure caption="The app itself never fetches a video. Volunteers on their own computers fetch and transcribe, and what reaches the app is the words, a note on how those words were made, and a pointer back to the original recording.">
+  <svg viewBox="0 0 720 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the route that is refused */}
+    <rect x="24" y="40" width="176" height="64" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="112" y="68" fontSize="15" fill="currentColor" textAnchor="middle">The video host</text>
+    <text x="112" y="88" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">we hold only the link</text>
+
+    <rect x="520" y="40" width="176" height="64" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="608" y="68" fontSize="15" fill="currentColor" textAnchor="middle">The app</text>
+    <text x="608" y="88" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">reads what arrived</text>
+
+    <text x="360" y="54" fontSize="12" fill="currentColor" textAnchor="middle">The app never fetches media</text>
+    <line x1="204" y1="74" x2="516" y2="74" stroke="var(--wc-fig-muted)" strokeDasharray="5 5" />
+    <line x1="350" y1="66" x2="370" y2="86" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <line x1="370" y1="66" x2="350" y2="86" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="360" y="102" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">a build check enforces it</text>
+
+    {/* the route that works */}
+    <path d="M 112,104 L 112,182 L 262,182" stroke="currentColor" fill="none" />
+    <path d="M 272,182 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    <rect x="272" y="150" width="176" height="64" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="360" y="178" fontSize="15" fill="currentColor" textAnchor="middle">Citizen machines</text>
+    <text x="360" y="198" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">fetch and transcribe</text>
+
+    <path d="M 448,182 L 608,182 L 608,114" stroke="var(--wc-fig-accent)" strokeWidth="2" fill="none" />
+    <path d="M 608,104 l -3.5,8 l 7,0 z" fill="currentColor" />
+
+    {/* what actually arrives */}
+    <rect x="24" y="236" width="200" height="54" fill="none" stroke="currentColor" />
+    <text x="124" y="260" fontSize="12" fill="currentColor" textAnchor="middle">The words</text>
+    <text x="124" y="278" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">unedited, timed</text>
+
+    <rect x="260" y="236" width="200" height="54" fill="none" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="360" y="260" fontSize="12" fill="currentColor" textAnchor="middle">How they were made</text>
+    <text x="360" y="278" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">human, or a machine</text>
+
+    <rect x="496" y="236" width="200" height="54" fill="none" stroke="currentColor" />
+    <text x="596" y="260" fontSize="12" fill="currentColor" textAnchor="middle">A pointer back</text>
+    <text x="596" y="278" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">to the original video</text>
+
+    <path d="M 124,290 L 124,306 L 596,306 L 596,290" stroke="currentColor" fill="none" />
+    <line x1="360" y1="306" x2="360" y2="318" stroke="currentColor" />
+    <path d="M 360,328 l -3.5,-8 l 7,0 z" fill="currentColor" />
+
+    <rect x="164" y="328" width="392" height="0.01" fill="none" stroke="none" />
+    <text x="360" y="338" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">the caveat travels with the quote</text>
+  </svg>
+</Figure>
+
+## What it does
+
+**The app never downloads media.** It does not fetch audio, it does not import a back catalogue, and it does not call a video host for a file — not under a flag, not with a checkbox ticked, not in any environment. That refusal is checked by an automated build guard that reads the source tree, string literals included, because a tool name passed as a string is still a call. Any executable reference to a fetcher fails the build.
+
+That refusal is the entire reason the **citizen mining network** exists. A work queue of videos with no transcript is published as a plain file in a public repository, so it needs no account and no permission to work from — anybody may transcribe a public video. Volunteers opt in on their own computers, run the movement's published prompt on their own schedule, and publish the words plus a record of how they made them into a repository they own. Five hundred missing transcripts is an impossible bill for one server and a pleasant afternoon for thirty citizens.
+
+Distribution is also what makes the result believable. A single central transcript is an unchecked claim, so independent copies of the same video are compared to each other: where a clear majority agree, the canonical copy is trusted; where only one copy exists, it is usable and flagged as uncorroborated; where the copies do not agree, nothing is trusted and the page says so in plain words — three citizens transcribed this video and they do not agree, so we are not quoting it until they do.
+
+What the app holds is the result. The transcript text, unedited, because a transcript is a record and an edited one is poison to the whole comparison. The channel and video records that point back at the original. And **provenance** — a mark on the transcript file, never on the person, saying how the words were obtained. A caption track a human wrote is one thing. A platform's automatic captions, which mishear and separate no speakers, are another. A machine transcription carrying word timings and speaker turns is a third. When a quote rests on a weak one, the caveat renders beside it in its own space and never in a tooltip: *these words come from automatic captions, and speakers are not separated.*
+
+One control renders those words everywhere they appear: a timecode gutter, a who-is-speaking key with the person the page is about in solid black, minute markers, and gaps drawn in position rather than silently skipped. Click any sentence and a wide button appears under the player reading **Move play head to 12:58**. It seeks without playing, so a citizen can line up the moment before watching it.
+
+Each video also has its own page listing **every** qualification area, whether that video spoke to it or not. The empty rows are the point, and each blank carries a stated cause. *He did not talk about economics in this interview* and *nobody has read this video yet* are different facts about different things, and a reader who cannot tell them apart will read the second as the first.
+
+## The goal it serves
+
+The incumbent's structural advantage is that only the incumbent has a record. A citizen sizing up a challenger otherwise has campaign advertising, endorsements, and a party organization's say-so — which is exactly the terrain that money and organized influence already own. A two-hour interview is the one place where a person's reasoning becomes something you can weigh instead of something you have an impression about, and most of it is sitting in public, unread by anyone deciding how to vote.
+
+This is what makes that material usable. It is the reason [Good New Leaders](/docs/new_politicians/overview) can be assessed on anything at all, and it is the evidence base under every Flamingo Award figure the movement publishes about somebody who has never held office. Without it, [replacing a captured incumbent](/docs/replace_incumbents/overview) means asking a party's base to get behind a stranger on faith, and faith is what the current arrangement already runs on.
+
+The insistence on provenance is not fussiness. A machine mishears, and publishing a claim about a named living person out of a machine transcription without saying so is how a movement earns a lawsuit and deserves one. Stating how the words were obtained, every single time, lets a citizen price the uncertainty for themselves rather than being asked to trust us. It is the same discipline the [official record sourcing](/docs/open_data/the_sourcing_rule) rule applies to votes, carried over to speech.
+
+## What keeps it honest
+
+* **The refusal to fetch is enforced, not promised.** A build guard fails the build on any executable reference to a downloader, so it is a rule the software cannot quietly stop obeying between releases.
+* **Weak provenance lowers stated confidence and renders a caveat. It never withholds a finding.** A rule that would have vetoed any finding resting on a weak transcript was proposed and rejected outright. The Flamingo Award's absence has two meanings, so quietly declining to assess somebody does not produce nothing — it publishes *unknown* about them, in public, beside people who were assessed. That is a different claim than the evidence supports.
+* **Speaker separation is not trusted further than it was measured.** On noisy long-form recordings the machine over-splits badly: one man talking alone for over three hours came back as seventy-two separate voices. So the key collapses unresolved voices into one honest line rather than inventing a wall of names.
+* **A guess is allowed; an undeclared guess is not.** Where the pipeline works out whose words it is reading, it publishes that it guessed, by what method, and how sure it is. Uncertainty about whether we heard *them* moves how much we claim to know about the person, and never the assessment itself.
+* **Only the subject's own words count.** An interviewer's question, a co-host's monologue, or an inserted clip are not evidence about the subject. A person merely mentioned in somebody else's video is linked as mentioned and excluded from their own assessment.
+* **The transcript is how you find the moment, not a replacement for it.** The citable source is the recording.
+
+## Works with
+
+* **[The Politician Record Page](./politician_record_pages.mdx)** — where per-video findings roll up into one person's award case, with every video that produced them reachable from it.
+* **[The Rosters](./the_rosters.mdx)** — the rosters decide whose channels are worth following at all, and a person with no channel on record is a stated gap rather than a silent blank.
+* **[Your Seats And The Seat Map](./your_seats.mdx)** — the seat view is where evidence about a challenger turns into a decision you can act on before a primary.
+
+## Where to go next
+
+* **[Good New Leaders](/docs/new_politicians/overview)** — the people with no voting record, and what gets used to assess them instead.
+* **[What feeds the Flamingo](/docs/flamingo/what_feeds_it)** — everything on this side of the wall, and what is deliberately kept off it.
+* **[Qualifications](/docs/qualifications/overview)** — the eighteen published areas a transcript is read against, written down before anybody is assessed.
+* **[Naming the gaps](/docs/evidence/naming_the_gaps)** — why a missing transcript is published as a gap instead of rounded away.
+* **[The action catalog](/docs/take_action/the_action_catalog)** — including adding a video to a politician's record, which is something you can do this week.

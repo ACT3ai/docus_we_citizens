@@ -1,0 +1,111 @@
+---
+id: fix_bills
+title: Fix Bills
+sidebar_label: Fix Bills
+sidebar_position: 16
+description: "Real legislative language written against a named problem — numbered sections, tagged to root causes, with a matrix that marks what it leaves open."
+---
+
+
+# Fix Bills
+
+A fix bill is finished legislative language — a preamble and numbered sections, the kind of text a legislator could file tomorrow — written against a problem already on the public record. Nobody has filed any of it, and every screen that shows one says so in those words. It exists because a candidate can do something with a draft bill and nothing at all with a complaint.
+
+<Figure caption="A fix bill is drafted from a named problem, the votes citizens recorded on it, and the existing law for that jurisdiction; the sections it produces are tagged with the root causes they close, and the coverage matrix publishes the ones no section reached.">
+  <svg viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the three inputs */}
+    <rect x="16" y="28" width="180" height="46" fill="var(--wc-fig-wash)" stroke="currentColor" strokeWidth="1.25" />
+    <text x="30" y="50" fontSize="12" fill="currentColor">Problem record</text>
+    <text x="30" y="66" fontSize="10.5" fill="currentColor" opacity="0.72">statement + root causes</text>
+
+    <rect x="16" y="88" width="180" height="46" fill="var(--wc-fig-wash)" stroke="currentColor" strokeWidth="1.25" />
+    <text x="30" y="110" fontSize="12" fill="currentColor">Citizen decisions</text>
+    <text x="30" y="126" fontSize="10.5" fill="currentColor" opacity="0.72">stance + confidence</text>
+
+    <rect x="16" y="148" width="180" height="46" fill="var(--wc-fig-wash)" stroke="currentColor" strokeWidth="1.25" />
+    <text x="30" y="170" fontSize="12" fill="currentColor">Existing law context</text>
+    <text x="30" y="186" fontSize="10.5" fill="currentColor" opacity="0.72">assembled, checksummed</text>
+
+    {/* inputs into the run */}
+    <path d="M196,51 L238,105" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M196,111 L238,111" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M196,171 L238,117" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M246,111 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the drafting run */}
+    <rect x="246" y="58" width="170" height="106" fill="none" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <text x="331" y="90" fontSize="15" fill="currentColor" textAnchor="middle">Draft run</text>
+    <text x="331" y="112" fontSize="10.5" fill="currentColor" textAnchor="middle">supplied context only</text>
+    <text x="331" y="128" fontSize="10.5" fill="currentColor" textAnchor="middle">no outside facts</text>
+    <text x="331" y="148" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">provenance recorded</text>
+
+    <path d="M416,111 L448,111" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+    <path d="M456,111 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the bill */}
+    <rect x="456" y="28" width="248" height="166" fill="var(--wc-fig-wash-2)" stroke="currentColor" strokeWidth="1.25" />
+    <text x="472" y="52" fontSize="15" fill="currentColor">The fix bill</text>
+    <text x="472" y="78" fontSize="12" fill="currentColor">Sec. 2 — closes rc1</text>
+    <text x="472" y="100" fontSize="12" fill="currentColor">Sec. 3 — closes rc1</text>
+    <text x="472" y="122" fontSize="12" fill="currentColor">Sec. 5 — closes rc2</text>
+    <text x="472" y="144" fontSize="12" fill="currentColor">Sec. 9 — closes rc4</text>
+    <text x="472" y="168" fontSize="10.5" fill="currentColor" opacity="0.72">Nobody has filed this bill.</text>
+
+    <path d="M580,194 L580,206" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M580,214 l -3.5,-7 l 7,0 z" fill="currentColor" />
+
+    {/* the coverage matrix */}
+    <rect x="16" y="214" width="688" height="90" fill="none" stroke="currentColor" strokeWidth="1.25" />
+    <text x="32" y="240" fontSize="15" fill="currentColor">Does it fix the problem?</text>
+    <text x="32" y="266" fontSize="12" fill="currentColor">rc1 — closed by Sec. 2, 3</text>
+    <text x="32" y="288" fontSize="12" fill="currentColor">rc2 — closed by Sec. 5</text>
+    <text x="380" y="266" fontSize="12" fill="currentColor">rc4 — closed by Sec. 9</text>
+    <text x="380" y="288" fontSize="12" fill="var(--wc-fig-accent)">rc3 — NOT ADDRESSED</text>
+    <path d="M380,294 L536,294" stroke="var(--wc-fig-accent)" strokeWidth="1.5" />
+  </svg>
+</Figure>
+
+## What it does
+
+A **fix bill** is a keyed record with a preamble and numbered sections. Each section carries four things: a one-sentence plain-language summary, the operative bullets — the deadline, the penalty, the remedy — the statutory text behind a disclosure you open to check the summary against the words, and the **root-cause ids** on the joined problem that this section closes. Real bills run to thirty and forty sections, and forty paragraphs of "shall" in a row publishes a bill without communicating it, so the summary leads and the legal text stays one click away, never summarized out of existence.
+
+Around the text sit the blocks that make a long bill readable and checkable:
+
+* The **legal notice**, rendered verbatim above every claim the bill makes and never in a footer. It states what the bill does and does not assert about any person or agency.
+* The **package**, when a fix is several bills that only work together. A reader who lands on one of four and cannot see the other three has been shown a quarter of the argument.
+* **Precedents**, marked *model* or *cautionary*, with what happened to each and what this bill does differently. A statute that passed and still produced almost nothing tells a reader more than a promise.
+* **Enforcement**, itemized, each mechanism naming the section that creates it — a teeth card that cannot point at its own section is marketing copy.
+* A **timeline** written against triggers rather than dates, because a bill nobody has filed has no dates.
+
+The block that matters most is headed **does it actually fix the problem?** It renders every root cause on the joined problem against the sections addressing it. A cause with sections shows which ones. A cause with none is marked **NOT ADDRESSED**, in the open, on the movement's own page.
+
+A draft can also be generated. The run takes the problem statement, its ordered root causes, the desired outcome, the citizen decisions joined to that problem with their stances and confidences, and the assembled existing law for that jurisdiction. The model is instructed to reason from the supplied context only, invent no facts, and tag each section with the root causes it closes. Every draft records its **provenance** — the model, the source problem and decisions, the law context and its checksum, the run id — and a banner appears with a link to regenerate when that context changes. With no AI credentials the flow still runs from a template, badged as a template rather than passed off as reasoning.
+
+## The goal it serves
+
+Complaining is free and legislating is hard, and the gap between the two is where movements die. A citizen can be completely right about what is wrong and still have nothing to hand anyone. Ordinary people do not have legislative counsel. The interests already writing the bills that reach the floor do. Closing that gap means putting drafted language on the citizens' side of the table.
+
+That is why a fix bill starts from a named problem rather than from an idea. The [Problems](/docs/problems/overview) catalog is where a wrong gets stated precisely enough to legislate against, and [Fixing the Law](/docs/fix_laws/overview) is the path from that record to filed language. A draft built from a problem and from what citizens voted is checkable in a way a manifesto is not: read the problem, read the sections, decide for yourself whether the second closes the first.
+
+It also gives citizens something specific to hold a candidate to. "Support transparency" survives any vote. "File this bill, these sections, this deadline" does not. That is the lever behind [Replacing Captured Incumbents](/docs/replace_incumbents/overview).
+
+## What keeps it honest
+
+The hardest rule here is about what a fix bill is not. It is not a law, it is not a filed bill, and no page will let it be read as one. The wording is fixed: somebody **wrote** it, **co-wrote** it, or **contributed** to it — never "introduced", never "co-sponsored", because there was no introduction to sign on at. Every surface closes with the same sentence: nobody has filed this bill, so there is no roll call.
+
+The coverage matrix is the second guard, and it is pointed at us. A bill that claims to fix a problem while leaving root causes untouched is what that block exists to expose, and it is never collapsed or hidden. Benefits, who bears the cost, and what could go wrong are rendered at the same weight, because a risk list in small grey type beside a full-size benefits panel is a disclosure made and hidden in one gesture. A number nobody computed renders as a dash and never as zero, which would claim we counted and found none.
+
+## Works with
+
+* **[The Problem Record](./problem_record.mdx)** — a fix bill is drafted against one of these and inherits its root causes as the thing the sections have to close.
+* **[Say What We Could See](./coverage_and_named_gaps.mdx)** — the same discipline the coverage matrix applies here: publish the gap rather than let a reader assume there is none.
+* **[The Law Page](./the_law_page.mdx)** — how an enacted instrument is documented, the opposite record from this one and never to be confused with it.
+* **[The Vote That Was Never Allowed](./the_blocked_fix_record.mdx)** — what happens to a repair somebody did file, and why drafted language alone is not enough.
+
+## Where to go next
+
+* **[Fix Bills](/docs/good_bills/overview)** — the drafted bills themselves, and how to read one.
+* **[The four libraries](/docs/laws/the_four_libraries)** — the map that keeps problem laws, good laws, fix bills and existing-law context apart.
+* **[The coverage matrix](/docs/fix_laws/the_coverage_matrix)** — how the "does it fix the problem?" block is built.
+* **[What the AI never decides](/docs/ai/what_the_ai_never_decides)** — the limits on the drafting run, and what a human still signs off.
+* **[Sponsor or critique one](/docs/good_bills/sponsor_or_critique_one)** — take a draft to a candidate, or tell us which section does not hold.

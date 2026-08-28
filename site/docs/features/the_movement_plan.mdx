@@ -1,0 +1,106 @@
+---
+id: the_movement_plan
+title: The Movement Plan
+sidebar_label: The Movement Plan
+sidebar_position: 29
+description: "What the movement says it is going to do, published as a numbered document you read end to end, with a vote button inside every item."
+---
+
+
+# The Movement Plan
+
+A movement that asks you to judge officials against a written record owes you one of its own. The Plan is that record: what We The Citizens says it is going to do, published as a numbered document you read from the top instead of a dashboard you skim. Every item carries a button that asks you one question about it — whether it belongs on the plan at all.
+
+<Figure caption="The plan is one committed file with a frozen key written beside every heading. The page renders that file as a document, computes the item numbers fresh on each load, and turns the vote directive into a real button where the author put it. Years are lenses onto the same file: some still track it, one is frozen.">
+  <svg viewBox="0 0 720 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the committed file */}
+    <rect x="24" y="44" width="204" height="188" rx="8" stroke="currentColor" fill="var(--wc-fig-wash)" />
+    <text x="126" y="70" fontSize="15" textAnchor="middle" fill="currentColor">One committed file</text>
+    <text x="38" y="98" fontSize="10.5" fill="currentColor">{'## Elections {#elections}'}</text>
+    <text x="38" y="122" fontSize="10.5" fill="currentColor">{'# Open-source voting'}</text>
+    <text x="38" y="138" fontSize="10.5" fill="currentColor">{'{#open_source_voting}'}</text>
+    <text x="38" y="162" fontSize="10.5" fill="currentColor" opacity="0.72">the item's own paragraphs</text>
+    <text x="38" y="186" fontSize="10.5" fill="currentColor">{'### How we know it is done'}</text>
+    <text x="38" y="210" fontSize="10.5" fill="currentColor">{'{{ vote }}'}</text>
+
+    {/* file to renderer */}
+    <line x1="228" y1="138" x2="283" y2="138" stroke="currentColor" />
+    <path d="M 290,138 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the renderer */}
+    <rect x="292" y="96" width="136" height="88" rx="6" stroke="var(--wc-fig-accent)" strokeWidth="1.5" fill="var(--wc-fig-wash)" />
+    <text x="360" y="124" fontSize="15" textAnchor="middle" fill="currentColor">Rendered</text>
+    <text x="360" y="146" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">numbers computed now</text>
+    <text x="360" y="164" fontSize="10.5" textAnchor="middle" fill="currentColor" opacity="0.72">directive becomes a button</text>
+
+    {/* renderer to page */}
+    <line x1="428" y1="138" x2="479" y2="138" stroke="var(--wc-fig-accent)" />
+    <path d="M 486,138 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* what a citizen reads */}
+    <rect x="488" y="44" width="208" height="188" rx="8" stroke="currentColor" fill="none" />
+    <text x="592" y="70" fontSize="15" textAnchor="middle" fill="currentColor">What a citizen reads</text>
+    <text x="502" y="98" fontSize="10.5" fill="currentColor" opacity="0.72">ELECTIONS</text>
+    <line x1="502" y1="106" x2="682" y2="106" stroke="var(--wc-fig-muted)" />
+    <text x="502" y="134" fontSize="15" fill="currentColor">1. Open-source voting</text>
+    <text x="502" y="156" fontSize="10.5" fill="currentColor" opacity="0.72">the item's own paragraphs</text>
+    <text x="502" y="174" fontSize="10.5" fill="currentColor" opacity="0.72">HOW WE KNOW IT IS DONE</text>
+    <rect x="502" y="188" width="120" height="28" rx="4" stroke="var(--wc-fig-accent)" fill="var(--wc-fig-wash)" />
+    <text x="562" y="206" fontSize="12" textAnchor="middle" fill="currentColor">Vote on this</text>
+
+    {/* the year lenses */}
+    <line x1="24" y1="252" x2="696" y2="252" stroke="var(--wc-fig-muted)" strokeDasharray="5 5" />
+    <text x="24" y="272" fontSize="10.5" fill="currentColor" opacity="0.72">Years are lenses onto that one file</text>
+    <rect x="24" y="282" width="200" height="34" rx="6" stroke="currentColor" fill="none" />
+    <text x="124" y="303" fontSize="12" textAnchor="middle" fill="currentColor">Tracking: it is the file</text>
+    <rect x="252" y="282" width="200" height="34" rx="6" stroke="currentColor" fill="none" />
+    <text x="352" y="303" fontSize="12" textAnchor="middle" fill="currentColor">Derived: it adds changes</text>
+    <rect x="480" y="282" width="216" height="34" rx="6" stroke="var(--wc-fig-muted)" fill="none" />
+    <text x="588" y="303" fontSize="12" textAnchor="middle" fill="currentColor">Locked: frozen snapshot</text>
+  </svg>
+</Figure>
+
+## What it does
+
+The plan lives as one committed document in the movement's public data repository. It is a written file, not a table of records the page reports on: groups first, then the numbered items a citizen refers to out loud, then sub-sections inside an item such as *How we know it's done*. The page renders that document essentially as it was typed, at a comfortable reading width, with the item headings the largest text on the page and the group headings deliberately quiet above them.
+
+Every group heading and every item heading carries a **frozen key**, written visibly in the source next to the title, in the form `{#open_source_voting}`. A heading with no key is reported as a broken file — the software does not fall back to deriving one from the title. That refusal is the point. If the key came from the title, a copy-edit would quietly re-file every answer already cast onto a different item, and nobody would see it happen. Titles can be rewritten freely; a key never is.
+
+The **numbers are computed on render**, counted straight through the whole document, and never written into the file. Insert an item in the middle and everything below it renumbers on the next load. No answer moves, because no answer was ever filed under a number — it is filed under the frozen key.
+
+A **directive** puts a working control inside the document. Where the author writes the vote directive, the renderer replaces it with a real **Vote on this** button for that item, so the ask lands where the author placed it rather than being pushed to a margin. An item whose author forgot the directive gets the button appended anyway. The ballot behind it restates the item in full and asks one generated question — is this worth fixing — with a Yes and a No, and it says what each answer means before you pick one.
+
+Deliberately absent: status chips, owner chips, priority numbers, and progress rollups. Those were the storage format leaking onto the page, and each one sat between the reader and the sentence it was decorating.
+
+Behind the document sits a versioning layer that a citizen never has to look at. A year either **tracks** the living plan, **derives** from it with its changes recorded, or is **locked in** as a frozen snapshot. Once a year is locked, later edits to the living plan reach future years and not that one — so a past year can be put side by side with what the movement now says it intends. Reading is never gated. Only admins edit it.
+
+## The goal it serves
+
+A citizen who has just decided to help needs to know what the movement is actually going to do, in enough detail to disagree with. That is a different need from being reassured. A plan you can only skim as a chip-covered table is a dashboard; a plan you read end to end, and answer item by item, is a commitment somebody can be held to later.
+
+The whole argument this site makes is that officials should be measurable against their own record rather than their own promises. A movement that made that argument and then published nothing checkable about itself would be asking for a trust it had not earned. The Plan is that standard turned around and pointed inward: written down, committed in public, and dated. Freezing a year is the part that costs something — it means the movement can be shown what it said in 2026 and asked what happened to it. That is the same test the [Charter](/docs/the_movement/charter) sets for everything else the movement does.
+
+The vote button is there because a plan nobody can answer is a newsletter. It is the shortest path from reading to doing: the first thing you can do about the movement's direction, before you have vetted anybody or logged anything, is say whether an item belongs on the list. See [The Movement](/docs/the_movement/overview) for what joining involves, [How It Works](/docs/how_it_works/overview) for where this sits in the wider loop, and [Decisions](/docs/decisions/overview) for the larger machinery this ballot is the simplest case of.
+
+## What keeps it honest
+
+* **A broken file is reported, not hidden.** If a heading is missing its key or the file will not parse, the page names the exact file and the heading that failed, above everything it could still render. A plan that half-renders with its problem named is honest. A blank page is not.
+* **A directive that is not recognised renders visibly**, in place, saying what it said. It is never silently dropped, because a call to action that quietly vanished from a published document is exactly the kind of gap nobody would notice.
+* **No progress bar where there is no progress to count.** A document plan carries no per-item status, so the rollup is hidden rather than showing "0 done" — an absent bar is the truth, and a zeroed one is a claim.
+* **The vote is not a finding.** It records what citizens said about whether an item belongs on the plan. It is not a vote on how to fix the thing, not a vote on the wording, and it decides nothing on its own.
+* **Answers outlive the items.** Remove an item from the plan and the answers cast against it are kept and reported as orphaned, rather than deleted along with the inconvenient question.
+* **The asymmetry is stated.** Only admins write the plan. Every citizen reads it, including a visitor who is not signed in and a person running the software on their own machine.
+
+## Works with
+
+* **[Decisions, Areas And Communities](./decisions_and_communities.mdx)** — the plan ballot is the simplest instance of the same recorded-position machinery, one question about one line instead of a full decision.
+* **[The First-Principles AI Check](./first_principles_ai_check.mdx)** — an item on the plan is a claim that something is worth doing, and that reasoning is meant to hold on its own rather than because the movement said it.
+* **[Value Systems And Policy Packets](./value_systems_and_policy_packets.mdx)** — your own written rules are what you are really answering an item with when you say it does or does not belong on the plan.
+
+## Where to go next
+
+* **[The Movement](/docs/the_movement/overview)** — who this is, what joining means, and an honest account of what it costs.
+* **[Charter](/docs/the_movement/charter)** — the founding commitments the plan is supposed to deliver on.
+* **[How It Works](/docs/how_it_works/overview)** — the core loop a citizen walks, and where reading the plan sits inside it.
+* **[Decisions](/docs/decisions/overview)** — recording where you stand on a question in a form that counts for something.
+* **[Take Action](/docs/take_action/overview)** — the catalog of things you can do this week, once you know what the movement is trying to get done.

@@ -1,0 +1,108 @@
+---
+id: search_the_record
+title: Search The Record
+sidebar_label: Search The Record
+sidebar_position: 33
+description: "One search box in the header of every page finds a politician or a law by name, opens the record, and keeps no log of what anyone looked up."
+---
+
+
+# Search The Record
+
+One search box sits in the header of every page, and it does one job: you type a name and it takes you to that record. It reaches the politician rosters and all three law libraries, and it keeps no record of what you typed — not for a signed-in citizen, not for a visitor who never signed in.
+
+<Figure caption="Typing two characters queries an index that lives inside the app itself, built by reading the same four stores the list pages read, so every hit is a page that already exists and is already public, and nothing about the query is written down.">
+  <svg viewBox="0 0 720 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the box */}
+    <rect x="16" y="60" width="150" height="56" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="91" y="94" fontSize="12" fill="currentColor" textAnchor="middle">Type two characters</text>
+
+    <line x1="166" y1="88" x2="192" y2="88" stroke="currentColor" />
+    <path d="M 194,88 l -7,-3.5 l 0,7 z" fill="currentColor" />
+
+    {/* the index */}
+    <rect x="196" y="44" width="170" height="88" fill="var(--wc-fig-wash-2)" stroke="var(--wc-fig-accent)" strokeWidth="2" />
+    <text x="281" y="72" fontSize="12" fill="currentColor" textAnchor="middle">Index inside the app</text>
+    <text x="281" y="92" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Rebuilt once a minute</text>
+    <text x="281" y="108" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">No outside search server</text>
+
+    {/* the fan-out to four stores */}
+    <line x1="366" y1="88" x2="400" y2="88" stroke="var(--wc-fig-accent)" />
+    <line x1="400" y1="62" x2="400" y2="188" stroke="var(--wc-fig-accent)" />
+
+    <line x1="400" y1="62" x2="426" y2="62" stroke="var(--wc-fig-accent)" />
+    <path d="M 430,62 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="430" y="45" width="274" height="34" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="444" y="67" fontSize="12" fill="currentColor">Politicians, both rosters</text>
+
+    <line x1="400" y1="104" x2="426" y2="104" stroke="var(--wc-fig-accent)" />
+    <path d="M 430,104 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="430" y="87" width="274" height="34" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="444" y="109" fontSize="12" fill="currentColor">Problem law groups</text>
+
+    <line x1="400" y1="146" x2="426" y2="146" stroke="var(--wc-fig-accent)" />
+    <path d="M 430,146 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="430" y="129" width="274" height="34" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="444" y="151" fontSize="12" fill="currentColor">Good law campaigns</text>
+
+    <line x1="400" y1="188" x2="426" y2="188" stroke="var(--wc-fig-accent)" />
+    <path d="M 430,188 l -7,-3.5 l 0,7 z" fill="currentColor" />
+    <rect x="430" y="171" width="274" height="34" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="444" y="193" fontSize="12" fill="currentColor">Fix bills, not yet filed</text>
+
+    {/* what the reader gets */}
+    <text x="16" y="146" fontSize="10.5" fill="currentColor" opacity="0.72">Every hit is a page that</text>
+    <text x="16" y="162" fontSize="10.5" fill="currentColor" opacity="0.72">already exists, and is public.</text>
+    <text x="16" y="190" fontSize="10.5" fill="currentColor" opacity="0.72">Enter opens the top hit.</text>
+
+    {/* nothing written back */}
+    <rect x="16" y="228" width="688" height="56" fill="none" stroke="var(--wc-fig-muted)" strokeDasharray="5 4" />
+    <text x="34" y="252" fontSize="12" fill="currentColor">Nothing is written back.</text>
+    <text x="34" y="270" fontSize="10.5" fill="currentColor" opacity="0.72">No query log, no per-citizen history, no saved searches, no gate.</text>
+  </svg>
+</Figure>
+
+## What it does
+
+The box searches four stores at once. Both **politician rosters** are in it — the people who have held office and left a roll-call record, and the people worth electing who never have. So are all three law libraries: the **problem law** groups, the **good law** campaigns, and the movement's own **fix bills** that nobody in Congress has filed.
+
+The index is built by reading through the same services the list pages render from. That is the whole reason it can be trusted: it cannot know something a page does not know, and it cannot miss something a page shows. **A hit is by construction a page that already exists and is already public.** It builds on the first search and rebuilds at most once a minute.
+
+It runs **inside the app's own backend**, in memory. An external search cluster was considered and rejected: this product has to run on a citizen's own computer with no outside services, and the corpus is a few thousand records. A cluster would have been the heaviest component in the product, guarding the smallest data set in it.
+
+Matching is built for someone typing a half-remembered name. It matches on **prefixes**, so results refresh from the second character, and carries **light fuzziness**, so a misspelled surname still lands. The title field weighs more than the detail text: someone typing a person's name wants the person, not a law whose summary mentions them.
+
+* A result is one row: a kind label — Politician, Good law, Problem law, Fix bill — the title, and one muted line of detail. Choosing it opens the record; Enter opens the top hit.
+* Hits are capped at twenty. This is navigation, not analysis; the exhaustive list is what the list pages are for.
+* When nothing matches, the empty state says what was searched — "nothing matched across N politicians and laws" — so an honest zero never reads as a broken box.
+* When the header is crowded, the box collapses to a magnifier button that opens the same search in a popover. It yields header space to the page's own title and actions, never the reverse.
+
+## The goal it serves
+
+The whole argument of this site is that you do not have to take anyone's word for anything: the record on a named politician or a named law is public, sourced, and checkable by you. That collapses at the last inch if someone who arrives to check one person cannot find them in ten seconds. Evidence nobody can reach is not evidence. Search is the difference between [a library of the record](/docs/laws/the_four_libraries) and a library with the lights off.
+
+It has to work for someone who has committed to nothing, so search is never gated. A visitor who has not signed in, a signed-in citizen, and someone running the app on their own laptop get the same hits. The first thing a skeptical person does is look up their own representative and check our account against what they already know. A sign-in wall there asks for trust before offering any.
+
+The rest is a movement commitment rather than a feature. We ask people to look up who represents them. **A movement that kept a log of who looked up whom would be building the instrument it exists to argue against** — quiet records of ordinary behavior, held by someone else, available later. So the box writes nothing: no query log, no per-citizen history, no saved-search list stored against anybody. It is the same commitment that puts the whole product on [your own machine by default](/docs/get_started/run_it_on_your_computer), and the reason this project can [name the American version of a social credit system](/docs/no_social_credit/overview) without collecting the same exhaust.
+
+## What keeps it honest
+
+* **Results are never filtered by who is asking.** There is no personalization here and no place to put one, so nobody is quietly shown a different version of the record.
+* **It cannot surface what a list page could not.** A pending proposal, an unapproved record, or a private profile field is not in the index, because it is not on a page.
+* **If search ever grows a write, that write is a different surface.** Saved searches or a recent-searches list would be a contribution and would take the movement's full gating rules. The box stays open regardless.
+* **A store that fails to read is named, not hidden.** If one of the four cannot be read this minute, that is logged and the store is absent from the index for the minute. Search answers from the other three rather than pretending the missing one came back empty.
+* **It does not judge anything.** Search computes no award and decides nothing about a person. It gets you to the page; the page carries the arithmetic.
+
+## Works with
+
+* **[Decisions, Areas And Communities](./decisions_and_communities.mdx)** — every decision is about a specific law or person, and the header box is how you reach that record from wherever you are.
+* **[The First-Principles AI Check](./first_principles_ai_check.mdx)** — the check runs against one record's reasoning; finding that record by name is the step immediately before it.
+* **[Value Systems And Policy Packets](./value_systems_and_policy_packets.mdx)** — a policy packet applies your written rules across the same law stores the index covers, for the times you would rather read one law yourself.
+
+## Where to go next
+
+* **[Politicians](/docs/politicians/overview)** — what is published about a named person, and the wall that keeps the two bodies of evidence apart.
+* **[Laws](/docs/laws/overview)** — the map of the four things called law here, which is also what the box searches.
+* **[Find who represents you](/docs/legacy_politicians/find_who_represents_you)** — the first search most people run, pointed at your own seats.
+* **[Problem Laws](/docs/problem_laws/overview)** — the enacted laws citizens were never asked about, each sourced at the door.
+* **[Open the app](https://app.WeTheCitizens.io/)** — type a name into the header and read the record.

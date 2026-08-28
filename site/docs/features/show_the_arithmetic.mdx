@@ -10,11 +10,11 @@ description: "Every award published about a named politician carries a page that
 # Show The Arithmetic
 
 A number nobody can check is an opinion with a decimal point in it. So every award this movement
-publishes about a named politician carries a page that shows how it was reached — each act, what it
-counted for, and the division that produced the total. There are two such pages, because there are
-two separate bodies of evidence, and they are never mixed.
+publishes about a named politician carries a page showing how it was reached: each act, what it
+counted for, and the division that produced the total. There are two such pages, because there are two
+bodies of evidence and they never mix.
 
-<Figure caption="Two derivation pages, each fed by its own evidence and never by the other's: the award invoice sums a contribution column and divides it by a weight column, the Flamingo math page sums a per-area contribution column, and both are published as a dated frozen edition that stores the list, the policy table and the gaps.">
+<Figure caption="Two derivation pages, each fed by its own evidence and never by the other's: the award invoice sums a contribution column and divides it by a weight column, the Flamingo math page sums a per-area contribution column, and both are published as a dated frozen edition holding the list, the policy table and the gaps.">
   <svg viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
 
     {/* the wall between the two evidence streams */}
@@ -72,128 +72,93 @@ two separate bodies of evidence, and they are never mixed.
 
 ## What it does
 
-**The award invoice** is the derivation behind every award computed from a voting record. The word is
-deliberate. It is an itemized bill: here is each line, here is what it cost, here is how the total
-was reached.
+**The award invoice** is the derivation behind every award computed from a voting record, and the
+word is deliberate: it is an itemized bill — each line, what it cost, how the total was reached.
 
-It opens with a header band of three panels at the same size — the dominant award, the other award,
-and who this person is. Neither award is shrunk relative to the other, because a page that quietly
-makes one mark smaller has editorialized through layout. Then come the evidence tables, and the
-harmful-law table is always first regardless of which award dominates, so a reader scanning down
-always finds harm in the same place.
+It opens with three panels at the same size — the dominant award, the other award, and who this
+person is — then the evidence tables, harmful laws always first. Each row is one instrument,
+carrying:
 
-Each row is one instrument, and it carries:
-
-* the bill and why it is on the movement's list, shown in full and never truncated;
-* one generated sentence of what this person did to it, ordered worst act first, with repeated acts
-  collapsed into counts and every act linking to the official record;
-* that row's share of the two sums, written as a pair — `+263.0 / 5.0`;
-* a short note saying where those two figures land in the equation.
+* the bill and why it is on the movement's list, shown in full;
+* one generated sentence of what this person did to it, worst act first, every act linking to the
+  official record;
+* that row's share of the two sums, written as a pair — `+263.0 / 5.0`.
 
 Add the left half of every pair, divide by the right half, and you get the published percentage
-exactly. That is the whole audit, and the table footer performs the division in front of the reader.
+exactly. That is the whole audit, and the footer performs the division in front of the reader.
 
-Under both tables sits the derivation. It writes the division out with the real numbers substituted
-rather than in symbols — `2085.0 ÷ 23.0 = 90.65 → 91`. It lists every priced category this record did
-**not** trigger, greyed and counted zero, with what each one would have cost — so the page reads as a
-record rather than a charge sheet. It lists the rows that were excluded and why: out of office on the
-date, wrong chamber, present, not voting, or dropped for having no source. A derivation that shows
-only what counted against somebody is not auditable. It names the gaps that could not be closed. And a
-**Disagree with this?** link opens a proposal against one specific row, carrying that row's identifier
-with it.
+Under both tables sits the derivation: the division written out with the real numbers substituted
+rather than in symbols — `2085.0 ÷ 23.0 = 90.65 → 91`; every priced category this record did **not**
+trigger, greyed and counted zero, with what it would have cost; the rows excluded and why; and the
+gaps that could not be closed. A **Disagree with this?** link opens a proposal against one row.
 
 **The Flamingo math page** is the other one, for a person assessed from their own recorded words.
-Three tiles run across the top: the award with its mark, the "N% known" knowledge percentage at the
-same size beside it, and the seat this person is put forward for. The award percentage is never shown
-without that second tile, because 74 across three areas read and 74 across eleven are different
-claims, and only the pair says which one is being made.
+Three tiles: the award with its mark, the "N% known" knowledge percentage at the same size beside it,
+and the seat they are put forward for. The percentage is never shown without that second tile, because
+74 across three areas read and 74 across eleven are different claims.
 
-Two proportion strips follow — which qualification areas carried the number, and which of the three
-authorities did: the AI reading, trusted citizens, and every other citizen. Then a per-area table
-printing each area's own result, the share the movement committed to it in advance, the share it
-actually carried, and what it put into the total. That last column visibly sums to the headline. Every
-equation on the page lives in one band at the foot, rendered twice: once in symbols, and once with
-this person's numbers put into the same steps.
+Proportion strips then show which qualification areas carried the number and which of the three
+authorities did — the AI reading, trusted citizens, every other citizen. A per-area table prints each
+area's result, the share the movement committed to it in advance, the share it carried, and what it
+put into the total; that last column sums to the headline. Every equation sits in one band at the
+foot, written twice: in symbols, then with this person's numbers.
 
-Neither page sits behind a sign-in. Both carried a soft account prompt until it was removed. Published
-arithmetic about a named living person may not have a login in front of it.
-
-Both are re-derivable later. Every run is published as a dated, frozen **edition** storing the list as
-it stood, the full policy object with both tables, and the run's gaps. Editions are append-only: a
-correction opens a new one and publishes a changelog naming what moved and why — an act was added, an
-act was re-read, an item joined or left the list, or the movement retuned its own tables and said so.
+Neither page sits behind a sign-in: published arithmetic about a named living person may not have a
+login in front of it. Both stay re-derivable, because every run is published as a dated, frozen
+**edition** holding the list as it stood, the full policy object and the run's gaps — append-only, so
+a correction opens a new edition with a changelog naming what moved.
 
 ## The goal it serves
 
 The claim this movement makes about a named living person is arithmetic over the public record, and
-the entire defence of that claim is that a stranger can run it again. These pages are what make that
-sentence true rather than a slogan. A citizen with a calculator, no account, and no reason to like us
-can reproduce a published percentage from what is printed on the page.
+the whole defence of it is that a stranger can run it again — with a calculator, no account and no
+reason to like us.
 
-That moves the argument to ground where it can actually be settled. Without the derivation, the only
-available fight is whether the movement invented the number, and that fight is won by whoever is
-louder. With the derivation, the fight is over a weight sitting in a public file — why blocking a
-repair in committee is priced at thirty times a floor vote, for instance. That is an argument about
-how power really works in a legislature, and it is the argument worth having. The reasoning behind
-every weight is published beside it, which is why the answer to "your number is unfair" is
-[do the math yourself](/docs/monkey/do_the_math_yourself) rather than a press release.
+That moves the argument onto ground where it can be settled. Without the derivation, the only fight
+available is whether we invented the number, and that one is won by whoever is louder. With it, the
+fight is over a weight sitting in a public file — why blocking a repair in committee is priced at
+thirty times a floor vote. That is an argument about how power actually works in a legislature, which
+is why the answer to "your number is unfair" is [do the math yourself](/docs/monkey/do_the_math_yourself).
 
 The reader is not assumed to be friendly, and should not be. Citizens have spent decades receiving
-official figures with the working left off, from institutions that had every reason to round in their
-own favour. A movement that asks for trust on the same terms has learned nothing. So the source is the
-official record or nothing at all, and [the sourcing rule](/docs/open_data/the_sourcing_rule) is
-published as a constraint we can be held to. What gets conferred is an
-[award, not a verdict](/docs/politicians/award_not_a_score) — a claim about the movement's own
-assessment, made with its working attached.
-
-The frozen edition is the part that matters years out. A number published this month will be quoted
-in a primary two elections from now, after the list has changed and the tables have been retuned. The
-edition keeps that older number answerable on its own terms instead of leaving it as a screenshot
-nobody can re-derive. Any citizen can pull the whole record and check it against ours, which is what
-[Open Data](/docs/open_data/overview) exists for.
+official figures with the working left off, from institutions with every reason to round in their own
+favour. So the source is [the official record or nothing](/docs/open_data/the_sourcing_rule), and what
+gets conferred is an [award, not a verdict](/docs/politicians/award_not_a_score). A figure published
+this month will be quoted in a primary two elections from now, and the frozen edition keeps it
+answerable then.
 
 ## What keeps it honest
 
-* **The page performs no arithmetic of its own.** Every figure is read from the stored run. If the
-  browser could compute a different total than the run did, the audit trail would be worthless. The
-  one exception is labelled where it appears: the "what would this have been under a different rule"
-  comparisons are worked out in your browser, and the copy beside them says so and says the movement
-  did not confer that figure.
-* **A derivation the data cannot support is never printed.** Awards published before the terms were
-  recorded once rendered `0.0 ÷ 0.0` under a headline of 25, beneath an invitation to add the column
-  up. Nothing divides to 25 from zeros. Those records now say they were published by an edition that
-  did not record its terms, and drop the promise that the column adds up. The award itself still
-  publishes: what is missing is the working, not the number.
-* **Nobody is assessed on a vote they had no opportunity to cast.** Rows that fail the tenure test
-  come out of both sides of the average — never a zero and never a penalty — and are listed with the
-  service dates that failed.
-* **An empty table still renders, and names which kind of empty it is.** "We looked and found
-  nothing", "we have nothing to look against", and "we have not looked" are three different claims
-  about a named living person. Collapsing them is the most damaging error available here.
-* **What these pages never claim.** Not character, motive, or legality. Not a prediction. Not a
-  verdict: a high figure is an input to an ordinary movement vote, never a substitute for one, and no
-  figure triggers anything automatically. On the Flamingo page, "not earned" and "unknown" print the
-  cause in words and never `0%`.
+* **The page performs no arithmetic of its own.** Every figure is read from the stored run: if the
+  browser could compute a different total than the run did, the audit trail would be worthless.
+* **A derivation the data cannot support is never printed.** Records written before the terms were
+  stored once rendered `0.0 ÷ 0.0` beneath an invitation to add the column up. They now say so
+  instead. The award still publishes: what is missing is the working, not the number.
+* **Nobody is assessed on a vote they had no opportunity to cast.** Rows failing the tenure test come
+  out of both sides of the average — never a zero, never a penalty.
+* **An empty table still renders and names which kind of empty it is.** "We looked and found nothing",
+  "we have nothing to look against" and "we have not looked" are three different claims about a named
+  living person. On the Flamingo page, "not earned" and "unknown" print their cause in words, never
+  `0%`.
+* **What these pages never claim**: character, motive, legality, or prediction. No figure triggers
+  anything on its own.
 
 ## Works with
 
-* **[Say What We Could See](./coverage_and_named_gaps.mdx)** — the gaps printed at the foot of a
-  derivation come from there; a named hole is part of the working, not something hidden under it.
-* **[Your State House, Same Instrument](./state_legislature_coverage.mdx)** — the same kind of
-  derivation over a state chamber's roll calls, so a reader who learned to check one can check the
-  other.
+* **[Say What We Could See](./coverage_and_named_gaps.mdx)** — the gaps at the foot of a derivation
+  come from there; a named hole is part of the working, not something hidden under it.
+* **[Your State House, Same Instrument](./state_legislature_coverage.mdx)** — the same derivation
+  over a state chamber's roll calls, so a reader who can check one can check the other.
 * **[Work You Can Watch](./work_you_can_watch.mdx)** — a derivation names the run that produced it,
-  and the runs are jobs whose progress and coverage are public.
+  and those runs are public.
 
 ## Where to go next
 
-* **[The Monkey Award](/docs/monkey/overview)** — what the harm side is actually measuring, and the
-  twelve categories every act is priced from.
+* **[The Monkey Award](/docs/monkey/overview)** — what the harm side measures, and the twelve
+  categories every act is priced from.
 * **[Do the math yourself](/docs/monkey/do_the_math_yourself)** — the equation, the table, and a
   worked example you can reproduce on paper.
-* **[The three states](/docs/flamingo/the_three_states)** — earned, not earned, and unknown, and why
-  the last two are a difference in fact rather than in styling.
-* **[Open Data](/docs/open_data/overview)** — clone the record, follow any row to its source, and send
-  a correction back.
+* **[The three states](/docs/flamingo/the_three_states)** — why not earned and unknown differ in fact.
+* **[Open Data](/docs/open_data/overview)** — clone the record and follow any row to its source.
 * **[Open the app](https://app.WeTheCitizens.io/)** — pull up a representative and read a derivation
   line by line.

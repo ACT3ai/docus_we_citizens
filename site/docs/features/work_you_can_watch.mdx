@@ -9,7 +9,7 @@ description: "The machinery behind every published number is on screen: start a 
 
 # Work You Can Watch
 
-Every number this movement publishes is produced by a program run over files that are already on disk. Nobody types a result in by hand. This page is about being able to watch that happen: the work is listed while it is in flight, a run can be started and followed line by line, and it finishes whether or not you stay on the page.
+Every number this movement publishes is produced by a program run over files already on disk. Nobody types a result in by hand. This page is about watching that happen: the work is listed while it is in flight, a run can be started and followed line by line, and it finishes whether or not you stay on the page.
 
 <Figure caption="A run starts either because somebody pressed Run or because the nightly clock fired; it goes onto one queue, writes a timestamped journal while it works, and ends in a dated publication that carries the inputs it was computed from. The browser only watches.">
   <svg viewBox="0 0 720 310" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,47 +75,47 @@ Every number this movement publishes is produced by a program run over files tha
 
 ## What it does
 
-A **calc engine** is the pattern behind every published figure: files already on disk go in, the work runs in named stages, and out comes an artifact that is regenerable and never hand-authored. Eighteen are registered today and the count only goes up, because the authority on how many there are is a machine-readable registry rather than a sentence in a document. Each entry states the question it answers, how often it runs, which specification defines it, and which directory of code does the work.
+A **calc engine** is the pattern behind every published figure: files already on disk go in, the work runs in named stages, and out comes an artifact that is regenerable and never hand-authored. Eighteen are registered today and the count only goes up — the authority on how many is a machine-readable registry, not a sentence in a document. Each entry names the question it answers, how often it runs, and where its specification and its code live.
 
-They all run on **one queue**, so one place knows what this install is doing right now. One console lists every engine at once — its question, what it needs before it can do useful work, whether it is running, how long for, and how the last run ended. "Never run" is one of the outcomes it reports, because an engine nobody runs is an engine nobody notices is broken. The count of failed runs is a button, and it opens the failing run's own log rather than a summary of it.
+They all run on **one queue**, so one place knows what this install is doing. One console lists every engine at once: its question, what it needs before it can do useful work, whether it is running, how long for, and how the last run ended. "Never run" is one of the outcomes, because an engine nobody runs is an engine nobody notices is broken. The failed count is a button that opens the failing run's own log.
 
-While a run is in flight it writes a **journal**: timestamped plain-text lines on disk, streamed to the browser as they are written. The first thing a page receives is a snapshot of everything already going, so a tab opened during three runs shows three runs. If the stream cannot be held open the app falls back to polling and says which of the two it is doing, because the data is right either way but its freshness is not.
+While a run is in flight it writes a **journal**: timestamped plain-text lines on disk, streamed to the browser as they are written. A tab opened during three runs is handed a snapshot of all three. If the connection cannot be held the app falls back to polling and says so, because the data is right either way but its freshness is not.
 
-A job's state is a small, deliberately un-collapsed vocabulary:
+A job's state is a small vocabulary, deliberately un-collapsed:
 
-* **queued** is not **running**. Work that has not started says so, instead of showing a progress bar frozen at zero, which reads as a hang.
-* **interrupted** is not **error**. If the process hosting a run goes away, the run ends as interrupted, keeps the stage it reached, and carries no failure line. Reporting a restart as an engine fault teaches you to ignore the one status that means look at this.
-* **cancelled** means a human asked it to stop. A running job is asked, never killed, because killing work mid-write is how a half-written file is produced.
+* **queued** is not **running**. Work that has not started says so, instead of a progress bar frozen at zero, which reads as a hang.
+* **interrupted** is not **error**. If the process hosting a run goes away, the run ends as interrupted and keeps the stage it reached. Reporting a restart as a fault teaches you to ignore the one status that means look at this.
+* **cancelled** means a human asked it to stop. A running job is asked, never killed — killing work mid-write is how a half-written file is produced.
 
-Because the work runs in the backend and not in your browser, closing the tab, navigating away, or shutting the laptop changes nothing about whether it finishes. Come back and the state is still there.
+The work runs in the backend, not in your browser: closing the tab or shutting the laptop changes nothing, and the state is still there when you come back.
 
-Runs also happen without anybody pressing anything. Most engines fire nightly on a clock inside the app, a few weekly or quarterly, and at every start-up the app checks whether an engine's last run has gone stale or its source data has moved since, and re-fires it if so. A run that **failed** is named rather than quietly fired again. What each pass publishes is then frozen and dated — it carries the curated list it was computed against, the tables in force at the time, and the exact commit of the public data it read. That is what lets a figure published months ago still be re-derived today rather than argued about.
+Runs also happen without anybody pressing anything. Most engines fire nightly on a clock inside the app, a few weekly or quarterly, and at start-up the app re-fires any engine whose last run has gone stale or whose source data has moved. A **failed** run is named rather than quietly fired again. Each pass publishes a frozen, dated result carrying the curated list, the tables in force and the exact commit of public data it read, so a figure published months ago can still be re-derived.
 
 ## The goal it serves
 
-A number nobody can watch being made has to be taken on faith, and faith is the currency Washington already trades in. Officials publish conclusions and ask to be believed; so do the institutions that sit in judgement on them. One more source of unverifiable numbers would be worse than useless, because a movement that cannot be checked is one that can be captured quietly and never found out — including by its own operators.
+A number nobody can watch being made has to be taken on faith, and faith is the currency Washington already trades in. One more source of unverifiable numbers would be worse than useless: a movement that cannot be checked is one that can be captured quietly and never found out, including by its own operators.
 
-So the machinery is the argument. Everything this project says about a named person is an [award earned or not earned](/docs/politicians/award_not_a_score), and that rests entirely on the derivation being open: the sources are [the official record or nothing](/docs/open_data/the_sourcing_rule), the arithmetic is published so [anyone can do it themselves](/docs/monkey/do_the_math_yourself), and the run that produced today's figure is one you can start again and watch. That is the difference between a published derivation and a claim.
+So the machinery is the argument. Everything this project says about a named person is an [award earned or not earned](/docs/politicians/award_not_a_score), and that rests on the derivation being open: [the official record or nothing](/docs/open_data/the_sourcing_rule) for sources, arithmetic published so [anyone can do it themselves](/docs/monkey/do_the_math_yourself), and a run you can start again and watch. That is the difference between a published derivation and a claim.
 
-It settles a practical question too. Numbers go stale, source records move, and somebody has to notice. Putting the runs, their clocks and their failures on one page is how volunteers keep a record current without a newsroom, and it is why [the whole thing can be stood up on your own machine](/docs/repos/run_your_own_instance) and audited by a stranger.
+It settles a practical question too: numbers go stale and source records move, and somebody has to notice. Putting the runs, their clocks and their failures on one page is how volunteers keep a record current without a newsroom, and why [the whole thing can be stood up on your own machine](/docs/repos/run_your_own_instance) and audited by a stranger.
 
 ## What keeps it honest
 
-* **Progress is derived, never invented.** A percentage exists only when the work reports stage *n* of *N*. Otherwise there is an indeterminate bar and no number. A fabricated percentage is exactly the confident-and-wrong this product exists to argue against.
-* **Every engine has to state its coverage.** It computes who it was eligible to reach and carries a stated cause for every blank result. If a run narrows and stops reaching somebody who had an award, the last dated publication stands, marked as superseded, rather than the award silently vanishing — and where there is nothing to show, "no award has been given yet" is the honest answer. That is a statement about our knowledge, not a verdict on the person.
-* **Run journals are install bookkeeping, not evidence.** They stay on the local machine and never go into the public data record. What is published about a person is the result and the derivation behind it, not the machine's diary of an afternoon.
-* **The console is not a public page.** It is an administrator's surface on a given install, and a citizen sees their own runs and nobody else's — a queue showing one citizen another citizen's activity would be a leak dressed up as a feature. What is offered to the public for checking is the record and its arithmetic. Run the software yourself and the control room is yours too.
+* **Progress is derived, never invented.** A percentage exists only when the work reports stage *n* of *N*. Otherwise there is an indeterminate bar and no number: a made-up percentage is the confident-and-wrong this product argues against.
+* **Every engine has to state its coverage.** It computes who it was eligible to reach and states a cause for every blank. If a run narrows and stops reaching somebody who had an award, the last dated publication stands, marked superseded, rather than the award vanishing in silence. Where there is nothing to show, "no award has been given yet" is the answer — a statement about our knowledge, not a verdict.
+* **Run journals are install bookkeeping, not evidence.** They stay on the local machine and never enter the public data record. What is published about a person is the result and its derivation, not the machine's diary of an afternoon.
+* **The console is not a public page.** It is an administrator's surface on one install, and a citizen sees their own runs and nobody else's — a queue showing one citizen another's activity would be a leak dressed up as a feature. What the public is handed for checking is the record and its arithmetic. Run the software yourself and the control room is yours.
 
 ## Works with
 
-* **[Show The Arithmetic](./show_the_arithmetic.mdx)** — the run produces the number; that page is the published working that lets you reproduce it by hand.
-* **[Say What We Could See](./coverage_and_named_gaps.mdx)** — every run has to declare what it could and could not reach, which is what stops a quiet failure from reading as a finding.
-* **[Your State House, Same Instrument](./state_legislature_coverage.mdx)** — state coverage runs on the same queue and the same clock, so a legislature is not a special case anybody has to trust separately.
+* **[Show The Arithmetic](./show_the_arithmetic.mdx)** — the run produces the figure; that page is the published working you can redo by hand.
+* **[Say What We Could See](./coverage_and_named_gaps.mdx)** — every run declares what it could not reach, which stops a quiet failure reading as a finding.
+* **[Your State House, Same Instrument](./state_legislature_coverage.mdx)** — state coverage rides the same queue and clock, so a legislature is not a separate thing to trust.
 
 ## Where to go next
 
-* **[Open Data](/docs/open_data/overview)** — the public record these runs read from and write back to, in a repository you can clone.
-* **[What the AI does](/docs/ai/what_the_ai_does)** — one of these engines calls a model; this is the fence around what it is allowed to do.
-* **[The core loop](/docs/how_it_works/the_core_loop)** — where a run fits into the work a citizen actually does.
-* **[Run your own instance](/docs/repos/run_your_own_instance)** — stand the whole thing up and watch it from the inside.
-* **[Get Started](/docs/get_started/overview)** — hosted or on your own computer, in about ten minutes.
+* **[Open Data](/docs/open_data/overview)** — the public record these runs read, in a repository you can clone.
+* **[What the AI does](/docs/ai/what_the_ai_does)** — one engine calls a model; this is the fence around it.
+* **[The core loop](/docs/how_it_works/the_core_loop)** — where a run fits into the work a citizen does.
+* **[Run your own instance](/docs/repos/run_your_own_instance)** — stand it up and watch from the inside.
+* **[Get Started](/docs/get_started/overview)** — hosted, or on your own computer.

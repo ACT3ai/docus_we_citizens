@@ -9,7 +9,7 @@ description: "Every recorded act a member took at every stage of a bill, plus wh
 
 # The Whole Voting Record
 
-A bill is not one vote. It is a committee vote, a rule, a procedural motion, an amendment somebody filed to strip the bad part out, a passage vote, a conference, and sometimes an override — and a member can be on the record at every one of them. This feature collects all of it, one row per person per act, with a link to the official record beside every row.
+A bill is not one vote. It is a committee vote, a rule, a procedural motion, an amendment somebody filed to strip the bad part out, a passage vote, a conference, and sometimes an override — and a member can be on the record at every one of them. This feature collects all of it, one row per person per act, each row linked to the official record.
 
 <Figure caption="A provision moves through six stages and the same member is on the record at four of them, so quoting only the final-passage row hides the other three; three separate files hold the roll calls, the authorship acts, and the executive acts.">
   <svg viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,17 +78,17 @@ A bill is not one vote. It is a committee vote, a rule, a procedural motion, an 
 
 ## What it does
 
-Each law the movement has identified as carrying a problem gets its own directory. Inside it sits the record of the instrument itself — the citation down to the specific sections, the vehicle it rode inside, and what the text actually does — and beside that, a **roll-call file** with one row per member per roll call.
+Each law the movement has identified as carrying a problem gets its own directory. Inside sits the record of the instrument — the citation down to the specific sections, the vehicle it rode inside, what the text does — and beside it a **roll-call file** with one row per member per roll call.
 
 A row carries the roll call id, the chamber, the date, the **stage**, the question put to the chamber verbatim, the member's name and party, their position, and a source URL. The verbatim question is not decoration: "procedural" plus "nay" is unreadable, while *On Motion to Table the Amendment* plus "nay" is a fact a citizen can act on.
 
 Two columns are kept apart and never merged. The **position** — yea, nay, present, not voting — is a public fact with an official citation, and it is stated plainly. The movement's reading of what that position did to the problem sits in its own labelled column, always presented as our reading rather than as a finding about the person.
 
-The stage is the point of the whole thing. There are six: committee, procedural, amendment, passage, conference, veto override. A member who votes to table the amendment that would have stripped the provision, and then votes no at final passage, appears twice. Only both rows together are honest. Reporting the final-passage row alone is how a voting record gets laundered, and collecting every stage is the specific defense against it.
+The stage is the point. There are six: committee, procedural, amendment, passage, conference, veto override. A member who votes to table the amendment that would have stripped the provision, then votes no at final passage, appears twice, and only both rows together are honest. Quoting the final-passage row alone is how a voting record gets laundered; collecting every stage is the defense against it.
 
 Authorship is a second file, not a column. **Contribution rows** name one person and one act: sponsor, cosponsor at introduction, cosponsor later, cosponsor withdrawn, committee chair, floor manager, conferee, amendment filer, discharge-petition signer. Signing on the day a bill drops is a different act from signing on after two hundred names are already there, so the two are separate kinds with their own dates. Authorship weighs heavier in the award arithmetic than any single floor vote, because who wrote a law is more informative than who was present when the roll was called.
 
-**Executive acts** are a third file with its own ladder — signature, veto, pocket veto, executive order, revocation, becoming law unsigned. A President casts no vote, and a system that read only roll calls would leave the most powerful seat in the country out of the record entirely while charging every member who voted. Those rows are never rendered as votes.
+**Executive acts** are a third file with its own ladder — signature, veto, pocket veto, executive order, revocation, becoming law unsigned. A President casts no vote, so a store that read only roll calls would leave the most powerful seat in the country out of the record entirely. Those rows are never rendered as votes.
 
 ## The goal it serves
 
@@ -104,11 +104,11 @@ It also decides who can be held to account at all. Without the authorship file, 
 * **Absence is never read as opposition or support.** Present and not voting are neutral on every roll call, always.
 * **A row with no source URL is dropped, not warned about** — and the drops are counted in the open. An empty file is a correct result. A guessed vote is not.
 * **A layer with no member-level record writes no rows at all.** A voice vote, a unanimous-consent action, a committee decision taken without objection: each produces one named gap instead of an invented position. The gap is the finding — direct evidence that nobody is on record on that provision.
-* **This record feeds two awards and stops there.** What a person voted, authored, or blocked goes to Monkey and Llama and nowhere else. What they said in an interview, what is on their resume, what they publicly committed to — none of it comes near these rows.
+* **This record feeds two awards and stops there.** What a person voted, authored, or blocked goes to Monkey and Llama and nowhere else. Interviews, resumes and public commitments never come near these rows.
 
 ## Works with
 
-* **[The Vote That Was Never Allowed](./the_blocked_fix_record.mdx)** — the companion record for the stage where the vote is prevented rather than cast, which is often the most informative fact about a provision.
+* **[The Vote That Was Never Allowed](./the_blocked_fix_record.mdx)** — the companion record for the stage where a vote is prevented rather than cast.
 * **[The Law Page](./the_law_page.mdx)** — where these rows are actually read: one instrument, its ladder, and every person on the record at each rung.
 * **[The Official Record Or Nothing](./official_record_sourcing.mdx)** — the sourcing rule that decides which of these rows is allowed to exist in the first place.
 
@@ -117,5 +117,5 @@ It also decides who can be held to account at all. Without the authorship file, 
 * **[Voting Records](/docs/voting_records/overview)** — how the public record is fetched, read, and turned into an award percentage.
 * **[What counts as a vote](/docs/voting_records/what_counts_as_a_vote)** — which roll calls belong to a provision and which ones only look like they do.
 * **[Do the math yourself](/docs/monkey/do_the_math_yourself)** — take these rows and reproduce the award arithmetic without trusting us.
-* **[Elected Politicians](/docs/legacy_politicians/overview)** — the roster this evidence supports, how to find your own seat, and how a person disputes what is filed under their name.
+* **[Elected Politicians](/docs/legacy_politicians/overview)** — the roster this evidence supports, how to find your own seat, and how a record is disputed.
 * **[Take Action](/docs/take_action/overview)** — what to do once you have read it.

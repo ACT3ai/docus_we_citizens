@@ -1,0 +1,108 @@
+---
+id: politician_record_pages
+title: The Politician Record Page
+sidebar_label: The Record Page
+sidebar_position: 17
+description: "Every link about a person lands on one page, and it renders in one of three shapes depending on whether they hold power, are seeking it, or never held office."
+---
+
+
+# The Politician Record Page
+
+Every path through this software ends at one human being. You open the seats you vote in and click a face, or read a roll call and click the name that voted. Both arrive here, at that person's record — one address, one page, and a first screen that is what they actually did rather than a paragraph telling you what to think about them.
+
+<Figure caption="One address per person is read from the record itself, then rendered as one of three page shapes, all three drawing the same shared person panel.">
+  <svg viewBox="0 0 720 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* the one address */}
+    <rect x="246" y="14" width="228" height="34" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="360" y="36" fontSize="12" fill="currentColor" textAnchor="middle">One address per person</text>
+
+    <line x1="360" y1="48" x2="360" y2="72" stroke="currentColor" />
+    <path d="M 360,80 l -3.5,-8 l 7,0 z" fill="currentColor" />
+
+    {/* the dispatch */}
+    <rect x="180" y="80" width="360" height="46" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="360" y="102" fontSize="12" fill="currentColor" textAnchor="middle">Read the record: which roster,</text>
+    <text x="360" y="118" fontSize="12" fill="currentColor" textAnchor="middle">and have they ever held office</text>
+
+    {/* fan out to three shapes */}
+    <line x1="360" y1="126" x2="360" y2="142" stroke="currentColor" />
+    <line x1="128" y1="142" x2="592" y2="142" stroke="currentColor" />
+    <line x1="128" y1="142" x2="128" y2="160" stroke="currentColor" />
+    <line x1="360" y1="142" x2="360" y2="160" stroke="currentColor" />
+    <line x1="592" y1="142" x2="592" y2="160" stroke="currentColor" />
+    <path d="M 128,168 l -3.5,-8 l 7,0 z" fill="currentColor" />
+    <path d="M 360,168 l -3.5,-8 l 7,0 z" fill="currentColor" />
+    <path d="M 592,168 l -3.5,-8 l 7,0 z" fill="currentColor" />
+
+    {/* shape 1 — holds or held office */}
+    <rect x="24" y="168" width="208" height="118" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="128" y="190" fontSize="12" fill="currentColor" textAnchor="middle">Holds or held office</text>
+    <text x="128" y="212" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Laws they voted to pass</text>
+    <text x="128" y="230" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">What they tried to fix</text>
+    <text x="128" y="248" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">What they stopped</text>
+    <text x="128" y="266" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">The race for the seat</text>
+
+    {/* shape 2 — seeking office */}
+    <rect x="256" y="168" width="208" height="118" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
+    <text x="360" y="190" fontSize="12" fill="currentColor" textAnchor="middle">Seeking office</text>
+    <text x="360" y="212" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">About them</text>
+    <text x="360" y="230" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Seat we recommend</text>
+    <text x="360" y="248" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Award case, by area</text>
+    <text x="360" y="266" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Where they have spoken</text>
+
+    {/* shape 3 — never held office */}
+    <rect x="488" y="168" width="208" height="118" fill="var(--wc-fig-wash)" stroke="currentColor" />
+    <text x="592" y="190" fontSize="12" fill="currentColor" textAnchor="middle">Never held office</text>
+    <text x="592" y="212" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">About them</text>
+    <text x="592" y="230" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Award case, by area</text>
+    <text x="592" y="248" fontSize="10.5" fill="currentColor" textAnchor="middle" opacity="0.72">Where they have spoken</text>
+    <text x="592" y="266" fontSize="10.5" fill="var(--wc-fig-accent)" textAnchor="middle">No roll-call band at all</text>
+
+    {/* the shared panel under all three */}
+    <line x1="128" y1="286" x2="128" y2="300" stroke="var(--wc-fig-muted)" />
+    <line x1="360" y1="286" x2="360" y2="300" stroke="var(--wc-fig-muted)" />
+    <line x1="592" y1="286" x2="592" y2="300" stroke="var(--wc-fig-muted)" />
+    <rect x="24" y="300" width="672" height="26" fill="none" stroke="var(--wc-fig-accent)" />
+    <text x="360" y="317" fontSize="12" fill="currentColor" textAnchor="middle">One shared person panel on all three</text>
+  </svg>
+</Figure>
+
+## What it does
+
+Opening a person fetches their **record** and then chooses which page shape to draw. The choice is made from the record — which roster they are filed on, and whether they have ever held office — and never from the address. That has a real consequence: an editor can move somebody between rosters without breaking a link anybody has already shared.
+
+An **elected record** is for somebody who has held power, so it opens with what they did with it. The bands run in a fixed order: the laws they voted to pass, then what they tried to fix, then what they stopped, then the race for their seat. The repair band comes before the obstruction band and renders even when it is empty, because a page that opens with the harm and leaves the repair off has published the harm with the defence removed. Every row is cited to the official record and opens onto every stage that person voted at on that one instrument.
+
+A record for somebody **seeking office** answers a different question, so it is a different page rather than the same page with blanks in it. It opens with a short About paragraph, the seat the movement recommends them for, and the **award case**: one row per qualification area, with the percentage of the award earned rendered large, the `N% known` line small underneath it, and the flamingo mark in one of its three states. An area nobody has assessed yet still gets a row, and that row prints why in words.
+
+A person who has **never held office** gets a third shape, defined by what it does not draw. It renders no legislative surface in any state — not the tables, not their empty versions, not a card saying the join is missing. An empty roll-call band beside somebody who was never in a position to cast a vote reads as a finding about them rather than a fact about their history.
+
+Across all three, one shared component draws the person: portrait, name and party, seat line, short bio, the award marks, how much is known, and a permanently ungated link to how the award was calculated. Nobody looks different on two pages of the same app, and portraits are cropped to one framing, never stretched, with the crop never allowed to cut into the face.
+
+## The goal it serves
+
+A citizen who clicks their own senator's face should get, in the first screen, what that person actually did — sourced, with citations they can follow to the House Clerk or the Senate's own site. Not a verdict. The evidence, in an order committed to in advance, with our reading of it further down the page, where an argument belongs.
+
+The second half of the goal is standing. Three people compared side by side must read as three people of equal standing: the same panel, the same framing, the same instrument, whether the movement likes them or not. That is why the obstruction band renders on people the movement backs as readily as on anybody else. A record where obstruction can only be recorded against one side is not a record — it is a campaign, and a citizen would be right to discount it. The doctrine behind that is set out in [the award rule](/docs/politicians/award_not_a_score), and the loop this page sits inside is in [How It Works](/docs/how_it_works/overview).
+
+## What keeps it honest
+
+* **A number never appears without a route to its working.** The link to how the award was calculated is never gated behind a sign-in, and stands even when there is no award to explain — because "not assessed" is itself a finding, and the page it opens says which kind it was and what would change it.
+* **Blanks print their cause, never a zero.** A flamingo that was assessed and earned nothing is a different mark, and a different fact, from one nobody has read yet. Neither renders as 0%, and neither is filled in from the other side of [the wall](./the_wall.mdx).
+* **A missing join is reported as a defect, not as silence.** Where a sitting member's record is not joined to the vote record, the page says exactly that. Reporting it as an empty result would be indistinguishable from reporting that they did nothing.
+* **The panel refuses to warp a face.** If a shape cannot hold the face without cutting into it, the software falls back to a plain silhouette rather than shave or stretch a photograph of a living person.
+
+## Works with
+
+* **[The Rosters](./the_rosters.mdx)** — the lists this page is the destination of; the roster a person sits on is one of the two inputs that picks the page shape.
+* **[Your Seats And The Seat Map](./your_seats.mdx)** — the seat view is where most citizens click a face, and the race band on an elected record links straight back to it.
+* **[The Qualification Areas](./qualification_catalog.mdx)** — the catalogue that supplies one row per area in the award case, in a fixed order published before anyone is assessed.
+
+## Where to go next
+
+* **[Politicians](/docs/politicians/overview)** — what the movement will and will not publish about a named living person.
+* **[Inside a legacy record](/docs/legacy_politicians/inside_a_legacy_record)** — a walk through an elected person's page, band by band.
+* **[Good New Leaders](/docs/new_politicians/overview)** — how somebody with no voting record is assessed, and who may put a name forward.
+* **[Where the data comes from](/docs/voting_records/where_the_data_comes_from)** — the official sources every row on an elected record cites.
+* **[Open the app](https://app.WeTheCitizens.io/)** — find the people who hold your seats and read their records yourself.
