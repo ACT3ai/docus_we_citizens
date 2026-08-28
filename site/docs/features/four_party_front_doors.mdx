@@ -71,9 +71,9 @@ Besides this site, We The Citizens runs four more: WeCitizensR.com for Republica
 
 ## What it does
 
-One web app serves all five addresses. When a request arrives, the program reads the domain name it came in on and resolves an **edition**: R, D, L, S, or the neutral main site. Nothing else in the program is allowed to read a raw hostname — every page asks which edition it is serving and gets an answer. An address the program does not recognize resolves to the neutral main site, never to some other audience's party page.
+One web app serves all five addresses. When a request arrives, the program reads the domain name it came in on and resolves an **edition**: R, D, L, S, or the neutral main site. Nothing else in the program reads a raw hostname; every page asks which edition it is serving and gets an answer. An address the program does not recognize resolves to the neutral main site, never to some other audience's party page.
 
-Each door then renders in its own voice. A door has its own opening page, its own accent colour, its own wording, and its own set of content areas, written from its own messaging file. **The four doors are independent, not mirrors of one another.** One may carry areas another does not, and one may be improved on its own without owing any matching change to the other three. Today the Republican and Libertarian doors carry twenty content areas and the Democrat and Democratic Socialist doors carry sixteen, because that is how those audiences' messaging is written.
+Each door then renders in its own voice, with its own opening page, accent colour, wording and set of content areas, written from its own messaging. **The four doors are independent, not mirrors of one another.** One may carry areas another does not, and one may be improved on its own without owing a matching change to the other three. Today the Republican and Libertarian doors carry twenty content areas and the Democrat and Democratic Socialist doors carry sixteen, because that is how those audiences' messaging is written.
 
 What a door may change is chrome and wording. What it may never change is anything that could move a number:
 
@@ -82,19 +82,19 @@ What a door may change is chrome and wording. What it may never change is anythi
 * The evidence, the sources, and the roll-call rows behind them.
 * The meaning of a red or green bar.
 
-That is enforced by structure rather than by a promise. An edition's committed configuration file has a fixed shape with nowhere to put a threshold, and a build check compares every door against a reference door and fails on any committed difference outside a short permitted list: the edition letter, the domain and its aliases, the display name, the party frame and party label, the accent colour, the analytics tag, and the path to that door's section of this site. An incumbent at 71% of the Monkey Award therefore renders exactly the same way on their own party's door as on anyone else's.
+That is enforced by structure, not by a promise. An edition's committed configuration file has a fixed shape with nowhere to put a threshold, and a build check compares every door against a reference door and fails on any committed difference outside a short permitted list: the edition letter, the domain, the display name, the party label, the accent colour, the analytics tag, and the path to that door's section of this site. An incumbent at 71% of the Monkey Award renders exactly the same way on their own party's door as on anyone else's.
 
-The party colour is confined to chrome. It tints a chip, a link and one button. **It never tints an award bar**, where red means adverse and green means good on every door regardless of which party that door serves. Party is shown as a letter after a person's name, never by colouring their name, their photograph, or a bar.
+The party colour is confined to chrome. It tints a chip, a link and one button. **It never tints an award bar**, where red means adverse and green means good on every door regardless of which party that door serves. Party is shown as a letter after a person's name, never by colouring the name, the photograph, or a bar.
 
-Every door names the other three, in the same fixed order, in its menu and its footer, with the door you are standing on marked rather than removed from the list.
+Every door names the other three, in the same fixed order, in its menu and its footer, with the door you are standing on marked rather than dropped from the list.
 
 ## The goal it serves
 
-A committed partisan who lands on a neutral site reads it, within seconds, as *this is for the other team*. That is not a defect in the reader. It is what happens when you ask somebody who arrived from a social-media argument thirty seconds ago to reason about the social contract from first principles before they are shown anything concrete.
+A committed partisan who lands on a neutral site reads it, within seconds, as *this is for the other team*. That is not a defect in the reader. It is what happens when somebody who arrived from a social-media argument thirty seconds ago is asked to reason about the social contract from first principles before being shown anything concrete.
 
-Cross-party persuasion is expensive and slow. In-party accountability is cheap and fast, because the visitor already agrees with the party label and only has to be shown that *this particular incumbent* is not delivering on it. The doors lower the first ask to one sentence: here are your elected officials, here is what they voted for, and here is who could replace them. Rallying a party's own base behind one strong challenger before a primary — rather than splitting three ways after it — is the highest-leverage act available to an ordinary voter, and it is the strategy the movement is built around. [Replacing Captured Incumbents](/docs/replace_incumbents/overview) is that argument in full.
+Cross-party persuasion is expensive and slow. In-party accountability is cheap and fast, because the visitor already agrees with the party label and only has to be shown that *this particular incumbent* is not delivering on it. The doors lower the first ask to one sentence: here are your elected officials, here is what they voted for, here is who could replace them. Getting a party's own base behind one strong challenger before a primary, rather than splitting three ways after it, is the highest-leverage act available to an ordinary voter, and it is the strategy the movement is built around. [Replacing Captured Incumbents](/docs/replace_incumbents/overview) is that argument in full.
 
-The seat panel is where the doors either earn trust or lose it. Every seat shows three columns: the person currently in office, the strongest challenger from the visitor's own side, and the strongest challenger who is *not* from that side, whoever that turns out to be and whatever party they belong to. Same photograph size, same arithmetic, same bars. Showing the good person on the other side at equal size is exactly what keeps a partisan front door from becoming a campaign tool.
+The seat panel is where a door either earns trust or loses it. Every seat shows three columns: the person currently in office, the strongest challenger from the visitor's own side, and the strongest challenger who is *not* from that side, whoever that turns out to be and whatever party they belong to. Same photograph size, same arithmetic, same bars. Showing the good person on the other side at equal size is what keeps a partisan front door from becoming a campaign tool.
 
 ## What keeps it honest
 
@@ -118,6 +118,6 @@ The doors are also deliberately narrow. They are built for reading: your seats, 
 
 * **[One App, Four Doors](/docs/four_doors/overview)** — the full account of how the five sites relate, and exactly what is shared between them.
 * **[Why A Non-Partisan Site](/docs/non_partisan_site/overview)** — why this site takes no side, and what only makes sense behind a party label.
-* **[Award, not a score](/docs/politicians/award_not_a_score)** — why everything published about a politician is an award earned or not earned.
+* **[Why it is an award](/docs/politicians/award_not_a_score)** — why everything published about a politician is an award earned or not earned.
 * **[The seat view](/docs/replace_incumbents/the_seat_view)** — the seat panel read column by column.
 * **[Find your door](/docs/four_doors/find_your_door)** — pick the door written for how you vote, and start with your own officeholders.

@@ -11,7 +11,7 @@ description: "Say as much or as little as you like about where you vote. The app
 
 Every award, every roll call and every fix bill on this site is about somebody. Until you know which somebody is yours, none of it is about you. This is the part of the app that turns where you vote into your own seats, and gives each seat a page.
 
-<Figure caption="The more a citizen tells the app about where they vote, the more of their seats it can resolve, and the checklist beside the form says live which ones it still cannot.">
+<Figure caption="The more a citizen tells the app about where they vote, the more of their seats it can resolve; the panel on the right says live which seats each detail unlocks and which ones it still cannot reach.">
   <svg viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* headings */}
     <text x="162" y="34" fontSize="15" fill="currentColor" textAnchor="middle">What you tell us</text>
@@ -71,7 +71,7 @@ The app asks one question — where do you vote — on one form with two answers
 
 Beside it, a live panel answers the only question that matters about what you typed: **do we now know enough to show your politicians.** It lists your seat rows — Senators, House of Representatives, State Representative — and flips each as you type. A state resolves your senators and governor; a ZIP usually resolves your US House seat; where district lines make a ZIP useless, a street address resolves the state assembly seat. Every row's rule comes from a published per-state coverage table.
 
-A ZIP is not automatically enough, and the app will not pretend it is. **5,862 of the country's 33,642 ZIP codes straddle more than one congressional district.** ZIP 98052 sits in both WA-01 and WA-08. When that happens the checklist does not claim the seat is resolved. Pick buttons appear instead, ordered by how much of the ZIP's land area falls in each district — share **orders** the candidates and never chooses between them — and a **district picker map** renders beside them, drawn with MapLibre over free OpenFreeMap vector tiles with Census district polygons on top. Hovering a button lights that district; clicking the district picks it. Every locator stays editable, including one guessed from your connection, and the guess says so: *guess from your IP address.*
+A ZIP is not automatically enough, and the app will not pretend it is. **5,862 of the country's 33,642 ZIP codes straddle more than one congressional district.** ZIP 98052 sits in both WA-01 and WA-08. When that happens the checklist does not claim the seat is resolved. Pick buttons appear instead, ordered by how much of the ZIP's land area falls in each district — the share orders the choices and never makes the choice for you — and a **district picker map** renders beside them, drawn with MapLibre over free OpenFreeMap vector tiles with Census district polygons on top. Hovering a button lights that district; clicking the district picks it. Every locator stays editable, including one guessed from your connection, and the guess says so: *guess from your IP address.*
 
 Every resolved seat then has a page of its own. **A seat is the jurisdiction, not the person in it:** a district is a polygon, a Senate seat is the state, the presidency is the country. The public record holds 592 seat records: every governor, every Senate seat, all 435 voting House districts and the 6 delegate seats. Each page carries plain geography, a **seat map** of the state carved into its districts with this one emphasized, and the full history of everyone who has held it — current officeholder first, month and year in, month and year out, official record linked on every row. No source, no row.
 
@@ -98,6 +98,7 @@ And the seat, not the person, is the durable object. Officeholders leave; the gr
 * **[The Politician Record Page](./politician_record_pages.mdx)** — one click from any seat, and where the awards, sources and arithmetic live.
 * **[The Rosters](./the_rosters.mdx)** — the people behind every resolved seat: those who have held office, and those challenging them.
 * **[The Qualification Areas](./qualification_catalog.mdx)** — what a challenger for your seat is assessed against, published in advance.
+* **[State Legislature Coverage](./state_legislature_coverage.mdx)** — which states the assembly-seat lookup reaches yet, and why the rest say so instead of guessing.
 
 ## Where to go next
 

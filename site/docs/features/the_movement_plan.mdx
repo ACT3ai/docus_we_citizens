@@ -11,7 +11,7 @@ description: "What the movement says it is going to do, published as a numbered 
 
 A movement that asks you to judge officials against a written record owes you one of its own. The Plan is that record: what We The Citizens says it is going to do, published as a numbered document you read from the top rather than a dashboard you skim. Every item carries a button asking whether it belongs on the plan at all.
 
-<Figure caption="The plan is one committed file with a frozen key written beside every heading. The page renders that file as a document, computes the item numbers fresh on each load, and turns the vote directive into a real button where the author put it. Years are lenses onto the same file: some still track it, one is frozen.">
+<Figure caption="One committed file, with a frozen key beside every heading, is rendered into the document a citizen reads: item numbers computed fresh on each load, the vote directive turned into a real button, and each year a lens onto the same file that either tracks it, derives from it, or is locked.">
   <svg viewBox="0 0 720 332" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* the committed file */}
     <rect x="24" y="44" width="204" height="188" rx="8" stroke="currentColor" fill="var(--wc-fig-wash)" />
@@ -62,9 +62,9 @@ A movement that asks you to judge officials against a written record owes you on
 
 ## What it does
 
-The plan lives as one committed document in the movement's public data repository — a written file, not a table of records the page reports on. Groups come first, then the numbered items a citizen refers to out loud, then sub-sections inside an item such as *How we know it's done*. The page renders that document essentially as typed, at a comfortable reading width, with item headings the largest text on the page and group headings deliberately quiet above them.
+The plan lives as one committed document in the movement's public data repository — a written file, not a table of records the page reports on. Groups come first, then the numbered items a citizen refers to out loud, then sub-sections inside an item such as *How we know it's done*. The page renders that document essentially as typed, with item headings the largest text on the page and group headings quiet above them.
 
-Every group and item heading carries a **frozen key**, written visibly in the source beside the title, in the form `{#open_source_voting}`. A heading with no key is reported as a broken file. The software will not derive one from the title instead, and that refusal is the whole point: a key taken from a title means a copy-edit quietly re-files every answer already cast onto a different item, and nobody sees it happen. A title can be rewritten freely. A key never is.
+Every group and item heading carries a **frozen key**, written visibly in the source beside the title, in the form `{#open_source_voting}`. A heading with no key is reported as a broken file. The software will not derive one from the title, and that refusal is the point: a key taken from a title means a copy-edit quietly re-files every answer already cast onto a different item. A title can be rewritten freely. A key never is.
 
 The **item numbers are computed on render**, counted straight through the document, and never written into the file. Insert an item in the middle and everything below it renumbers. No answer moves, because no answer was ever filed under a number.
 

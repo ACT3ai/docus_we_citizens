@@ -9,7 +9,7 @@ description: "Send a finished piece of reasoning to WeCitizens Social as a struc
 
 # Publishing To The Social Network
 
-When you have worked a question all the way through, what you are holding is more than an opinion. It is a position, the evidence you leaned on, the pieces you could not get and why, and the conclusion that follows from all of it. Publishing sends that whole object to WeCitizens Social, the movement's paired social network at WeCitizens.social, instead of only the last line of it. It is a step you take on purpose, at the end, and never one the app takes for you.
+When you have worked a question all the way through, what you are holding is more than an opinion. It is a position, the evidence you leaned on, the pieces you could not get and why, and the conclusion that follows. Publishing sends that whole object to WeCitizens Social, the movement's paired social network at WeCitizens.social, instead of only the last line of it. You take that step on purpose, at the end. The app never takes it for you.
 
 <Figure caption="A decision worked out on your own machine can optionally be published as a structured post carrying the position, each evidence link, each named gap and the threshold you set, so another citizen can disagree at one specific link rather than with the conclusion as a whole.">
   <svg viewBox="0 0 720 312" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,40 +61,40 @@ When you have worked a question all the way through, what you are holding is mor
 
 ## What it does
 
-The record starts on your own machine. In Individual Mode the app keeps everything as readable files under one directory, and a **decision** is stored as two files side by side: structured YAML that software can parse, and a Markdown companion regenerated from it so the two can never disagree. That record carries the question, your position and your confidence in it, the chain of evidence, the AI's re-check of whether the conclusion follows from first principles, and the fix you cast at the end.
+The record starts on your own machine. In Individual Mode a **decision** is two readable files side by side: structured YAML that software can parse, and a Markdown companion regenerated from it so the two can never disagree. It carries the question, your position and your confidence in it, the chain of evidence, the AI's re-check of whether the conclusion follows from first principles, and the fix you cast at the end.
 
-Casting a fix and publishing it are two separate acts inside one control. Casting writes to your own disk. Publishing is the only part that leaves the machine, and what travels is the structured object you authored rather than a summary of it:
+Casting a fix and publishing it are two acts inside one control. Casting writes to your own disk. Publishing is the part that leaves the machine, and what travels is the object you authored, not a summary of it:
 
 * **The position** — where you actually landed on the question, and how sure you are.
 * **The chain of evidence** — every link you hold, each one carrying its own source.
-* **The named gaps** — every link you do not hold, tagged with why it is missing: classified, suppressed, blocked, or unknown.
+* **The named gaps** — every link you do not hold, tagged with why: classified, suppressed, blocked, or unknown.
 * **Your threshold** — the confidence level you said in advance you would act at.
 * **The conclusion**, and the AI's first-principles re-check of it.
 
-The post format is YAML, so another citizen's software can parse and evaluate the reasoning rather than only react to it. A **value system** publishes the same way, as a policy packet somebody else can import and apply to their own questions.
+The post format is YAML, so another citizen's software can parse and evaluate the reasoning rather than only react to it. A **value system** publishes the same way, as a policy packet somebody else can import.
 
-If any part of your reasoning pointed at a file on your own computer, that path means nothing to anyone else, so the app never sends it. On publish the file's contents are **snapshotted** into the published artifact instead, stamped with where it came from, when it was last modified, and a hash. Until that happens the app marks the link local-only, so you are never surprised that a reader cannot see the file on your laptop.
+If your reasoning pointed at a file on your own computer, that path means nothing to anyone else, so the app never sends it. The contents are **snapshotted** into the published artifact instead, stamped with where they came from, when they last changed, and a hash. Until then the link is marked local-only, so a reader is never quietly missing half your case.
 
-On the receiving side, a citizen weights incoming posts by how much they trust the author. That trust graph is what lets many individuals' reasoning compose into a shared conclusion without a central authority deciding what is true.
+On the receiving side, a citizen weights incoming posts by how much they trust the author. That trust graph lets many individuals' reasoning compose into a shared conclusion with no central authority deciding what is true.
 
-Publishing is also the point where the anonymous default user stops being enough. Reading, reasoning, recording a position, laying out have-and-missing links and running the AI check all work with nobody signed in and nothing sent anywhere. Putting an artifact into a shared record is influence over other people, and an unattributable publication is the one thing review cannot repair afterwards, so that single checkbox asks for an account. A pseudonym is enough. A citizen who never publishes a legal name can still climb to the top of the trust ladder.
+Publishing is also where the anonymous default user stops being enough. Reading, reasoning, recording a position and running the AI check all work with nobody signed in and nothing sent anywhere. An unattributable publication is the one thing review cannot repair afterwards, so that single checkbox asks for an account. A pseudonym is enough: a citizen who never publishes a legal name can still climb to the top of the trust ladder.
 
 ## The goal it serves
 
-Arguing online does not change minds, and the reason is structural rather than a failure of manners. The unit people exchange in a feed is a conclusion with the reasoning stripped off. Two verdicts collide, neither can be inspected, and the exchange has nowhere to go except louder. [Why arguing online fails](/docs/the_problem/why_arguing_online_fails) sets that out in full.
+Arguing online does not change minds, and the reason is structural rather than a failure of manners. The unit people exchange in a feed is a conclusion with the reasoning stripped off. Two verdicts collide, neither can be inspected, and the exchange has nowhere to go except louder. [Why arguing online fails](/docs/the_problem/why_arguing_online_fails) sets out that pattern.
 
-Publishing the chain instead of the verdict gives disagreement somewhere to land. If your third link rests on a committee record and your fourth on a newspaper write-up, a reader can attack the fourth specifically, and that is an argument that can actually be settled. [Evidence](/docs/evidence/overview) covers how a chain is built to be audited that way.
+Publishing the chain instead of the verdict gives disagreement somewhere to land. If your third link rests on a committee record and your fourth on a newspaper write-up, a reader can attack the fourth specifically, and that argument can actually be settled. [Evidence](/docs/evidence/overview) covers how a chain is built to be audited that way.
 
-The named gaps carry the most weight. The standard move against a citizen who has noticed something is to withhold a slice of the record and then disqualify anyone who reasons without it. A gap that travels inside the post, tagged with the reason it is missing, turns that silence into a recorded fact somebody else can go after. [Naming the gaps](/docs/evidence/naming_the_gaps) is that discipline written down.
+The named gaps carry the most weight. The standard move against a citizen who has noticed something is to withhold part of the record, then disqualify anyone who reasons without it. A gap that travels inside the post, tagged with why it is missing, turns that silence into a recorded fact somebody else can go after. [Naming the gaps](/docs/evidence/naming_the_gaps) is that discipline written down.
 
-A chain other people can parse is also what makes many private conclusions add up to anything. One citizen reasoning alone is a person with a file. A thousand citizens publishing reasoning that composes is the beginning of a position a community can stand behind, which is where [Communities](/docs/communities/overview) picks the story up.
+A chain other people can parse is also what makes private conclusions add up to anything. One citizen reasoning alone is a person with a file. A thousand publishing reasoning that composes is the start of a position a community can stand behind, which is where [Communities](/docs/communities/overview) picks the story up.
 
 ## What keeps it honest
 
-* **The publish control is specified and not built yet.** The record format, the account requirement and the snapshot rule are all decided and written down; the checkbox itself is still on the list of things to build, and the flag it sets is a stub today. This page describes a designed step, and says so rather than letting you assume it is live.
-* **It is optional and never automatic.** Individual Mode is complete without publishing anything. There is no background sync, no default-on sharing, and nothing leaves your machine unless you send it.
-* **A post is not the movement's record.** Publishing never edits what the movement asserts about a law, a vote, or a person. That record changes only through the proposals route, where a file committed to the public repository is the approval. An argument and a record are two different things and the product keeps them apart.
-* **Trust weighting is believability, not agreement.** A trust score answers one question — is this a real, believable citizen — and never what that citizen believes. It changes how much weight a reader gives a post. It never makes the post correct.
+* **The publish control is specified and not built yet.** The record format, the account requirement and the snapshot rule are decided and written down; the checkbox itself is still on the build list, and the flag it sets is a stub today. This page says so rather than letting you assume it is live.
+* **It is optional and never automatic.** Individual Mode is complete without publishing anything. No background sync, no default-on sharing, nothing leaving your machine unless you send it.
+* **A post is not the movement's record.** Publishing never edits what the movement asserts about a law, a vote, or a person. That changes only through the proposals route, where a file committed to the public repository is the approval. An argument and a record are different things and the product keeps them apart.
+* **Trust weighting is believability, not agreement.** A trust score answers one question — is this a real, believable citizen — never what that citizen believes. It changes how much weight a reader gives a post, and never makes the post correct.
 
 ## Works with
 

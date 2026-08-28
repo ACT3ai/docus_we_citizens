@@ -65,7 +65,7 @@ When this site says a member of Congress voted a particular way on a particular 
     {/* the separate judging run */}
     <line x1="602" y1="120" x2="602" y2="162" stroke="currentColor" strokeWidth="1.5" />
     <path d="M 602,168 l -3.5,-7 l 7,0 z" fill="currentColor" />
-    <text x="612" y="146" fontSize="10.5" fill="currentColor" opacity="0.72">later, separately</text>
+    <text x="612" y="146" fontSize="10.5" fill="currentColor" opacity="0.72">later, separate</text>
     <rect x="500" y="168" width="204" height="80" fill="var(--wc-fig-wash-2)" stroke="currentColor" />
     <text x="602" y="192" fontSize="15" textAnchor="middle" fill="currentColor">A separate run</text>
     <text x="602" y="214" fontSize="12" textAnchor="middle" fill="currentColor">adds the movement's</text>
@@ -75,23 +75,23 @@ When this site says a member of Congress voted a particular way on a particular 
 
 ## What it does
 
-**The citation of record is always the official source** — the House Clerk, the Senate, govinfo, congress.gov, the FEC, or the state's own site, meaning the body that recorded the act, in the form it recorded it. API convenience layers, roll-call aggregators, encyclopedias and news articles are explicitly excluded as citations. They may help *find* a vote; they are never what gets *cited*, because a republication is convenient and the record is what survives a challenge.
+**The citation of record is always the official source** — the House Clerk, the Senate, govinfo, congress.gov, the FEC, or the state's own site, meaning the body that recorded the act, in the form it recorded it. API convenience layers, roll-call aggregators, encyclopedias and news articles are excluded as citations. They may help *find* a vote; they are never what gets *cited*, because a republication is convenient and the record is what survives a challenge.
 
-**Fetching and judging are kept in separate runs.** One run answers "where is the record, and can we get all of it" and makes no judgement at all — it transcribes. A later run answers "what does it mean". The reason for the split is asymmetric: a bad download produces a missing row, while a bad judgement produces a false accusation against a living person. Keeping the fetch free of interpretation means every claim traces back to a file, and the one interpretive call lives in a single reviewable place.
+**Fetching and judging are kept in separate runs.** One run answers "where is the record, and can we get all of it" and makes no judgement at all — it transcribes. A later run answers "what does it mean". The reason for the split is asymmetric: a bad download produces a missing row, while a bad judgement produces a false accusation against a living person. Keeping the fetch free of interpretation puts the one interpretive call in a single reviewable place.
 
-**Every byte fetched lands unmodified in an archive before anything is distilled from it.** No reformatting, no filtering, no partial fetch. Beside it runs an append-only, committed **manifest** — one entry per file carrying the path, the source URL, the retrieval time, the byte count, a sha256 checksum, the licence and the publisher. That checksum is what makes "this row came from that file" checkable rather than asserted. A distillation that threw away its original cannot be re-checked when somebody disputes a row about themselves, and cannot prove it was not invented.
+**Every byte fetched lands unmodified in an archive before anything is distilled from it.** No reformatting, no filtering, no partial fetch. Beside it runs an append-only, committed **manifest** — one entry per file carrying the path, the source URL, the retrieval time, the byte count, a sha256 checksum, the licence and the publisher. That checksum is what makes "this row came from that file" checkable rather than asserted. A distillation that threw away its original cannot be re-checked when somebody disputes a row about themselves.
 
 **The parsers check their own arithmetic against the source document.** After reading the member rows out of a chamber's file, the parser recounts them and compares its tally to the totals the chamber itself published. On any mismatch it refuses to write. That is what makes a silent partial read impossible — a file that parses cleanly while quietly dropping a third of the members is the error nobody notices downstream.
 
-Beside the sourcing bar runs a published editorial restraint: **state what a person did, never what they are.** "Voted yea on final passage" is a fact the movement publishes. A character judgement is not something this product says about anybody, and it never states as fact that a living person committed a crime absent a conviction.
+Beside the sourcing bar runs a published editorial restraint: **state what a person did, never what they are.** "Voted yea on final passage" is a fact the movement publishes. A character judgement is not something this product publishes, and it never states as fact that a living person committed a crime absent a conviction.
 
 ## The goal it serves
 
-Arithmetic over the public record is not defamation. That single sentence is the reason this feature exists, and it is what makes the rest of the site possible. An accusation that traces back to a byte-checkable government file is a measurement. One that does not is an opinion about a named living person — and an opinion is what a movement gets sued over and eventually shut up by.
+Arithmetic over the public record is not defamation. That sentence is why this feature exists, and it is what makes the rest of the site possible. An accusation that traces back to a byte-checkable government file is a measurement. One that does not is an opinion about a named living person — and an opinion is what a movement gets sued over and eventually shut up by.
 
-The people whose records get published here can afford lawyers. Citizens cannot. So the sourcing rule is the load-bearing wall — it is what lets a small, self-funded effort publish hard findings about powerful officeholders and keep publishing them. Every argument this site makes about [what Congress is actually working for](/docs/congress_for_citizens/overview) rests on files anyone can pull up alone, which is why the answer to "you are just calling people names with extra steps" is the roll call itself, published under [a rule that reports an award and never a verdict on the person](/docs/politicians/award_not_a_score).
+The people whose records get published here can afford lawyers. Citizens cannot. So the sourcing rule is load-bearing: it is what lets a small, self-funded effort publish hard findings about powerful officeholders and keep publishing them. Every argument this site makes about [what Congress is actually working for](/docs/congress_for_citizens/overview) rests on files anyone can pull up alone, which is why the answer to "you are just calling people names with extra steps" is the roll call itself, published under [a rule that reports an award and never a verdict on the person](/docs/politicians/award_not_a_score).
 
-It cuts the other way too. The movement cannot quietly improve a finding it likes by reaching for a friendlier source. If the government's own file does not support the row, the row does not get published, however much anyone wanted it — a constraint that binds us before it binds anybody else, and one the [open data record](/docs/open_data/overview) exists to expose.
+It cuts the other way too. The movement cannot quietly improve a finding it likes by reaching for a friendlier source. If the government's own file does not support the row, the row does not get published, however much anyone wanted it. That constraint binds us before anybody else, and the [open data record](/docs/open_data/overview) is where it shows.
 
 ## What keeps it honest
 
