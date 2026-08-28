@@ -1,0 +1,9 @@
+{
+  "label": "Features",
+  "position": 43,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  },
+  "description": "The catalogue of what the software actually does — one page per capability, each naming the political goal it serves."
+}

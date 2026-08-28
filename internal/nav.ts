@@ -197,6 +197,7 @@ const SUB_LABELS: Record<string, string> = {
   open_data: "Clone it and check every claim",
   ai: "What the AI never decides",
   repos: "Inspect it, fork it, run it",
+  features: "Everything the software does",
   four_doors: "One app, one record, five doors",
 };
 
@@ -414,6 +415,7 @@ export const MENU_GROUPS: { title: string; keys: string[] }[] = [
   { title: "The four pillars", keys: ["decisions", "values", "evidence"] },
   { title: "Citizens", keys: ["communities", "take_action", "karma", "meritocracy", "trust_scores"] },
   { title: "In the open", keys: ["open_data", "ai", "repos"] },
+  { title: "The software", keys: ["features"] },
 ];
 
 /**

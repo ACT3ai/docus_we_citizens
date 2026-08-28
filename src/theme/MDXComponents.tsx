@@ -7,12 +7,22 @@
  * lets a Level 2 overview open with a bare `<CTA />` instead of repeating an
  * import in ninety files — and it means the call-to-action row is edited in one
  * place, not ninety.
+ *
+ * CTA           the join / start-here action row under a Level 2 H1
+ * FeatureGrid   the two-column catalogue grid on site/docs/features/overview.mdx
+ * FeatureCard   one cell of that grid
+ * Figure        the frame around a feature's inline-SVG diagram
  */
 import MDXComponents from '@theme-original/MDXComponents';
 
 import CTA from '@site/src/components/CTA';
+import Figure from '@site/src/components/Figure';
+import FeatureGrid, {FeatureCard} from '@site/src/components/FeatureGrid';
 
 export default {
   ...MDXComponents,
   CTA,
+  Figure,
+  FeatureGrid,
+  FeatureCard,
 };

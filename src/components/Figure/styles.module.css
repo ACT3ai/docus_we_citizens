@@ -1,0 +1,54 @@
+/* The diagram frame. Every colour here is derived from an Infima token or from
+   a pair defined for both themes below — never from the --ua-* tokens, which
+   exist only on :root and would go unreadable in dark mode. */
+.figure {
+  margin: 1.6rem 0 1.9rem;
+  padding: 0;
+}
+
+.canvas {
+  padding: 1.05rem 1.1rem;
+  border: 1px solid var(--wc-fig-rule);
+  border-radius: 6px;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-heading-color);
+  overflow-x: auto;
+}
+
+/* The SVGs are authored with a viewBox and no width/height, so they scale to
+   the content column and never force the page to scroll sideways. */
+.canvas svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.canvas text {
+  font-family: var(--ifm-font-family-base);
+  fill: currentColor;
+}
+
+.caption {
+  margin: 0.6rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--ifm-font-color-base);
+  opacity: 0.78;
+}
+
+:global(:root) {
+  --wc-fig-rule: rgba(26, 23, 18, 0.16);
+  --wc-fig-accent: #8a2433;
+  --wc-fig-wash: rgba(138, 36, 51, 0.08);
+  --wc-fig-wash-2: rgba(24, 39, 66, 0.08);
+  --wc-fig-muted: rgba(26, 23, 18, 0.42);
+}
+
+:global([data-theme='dark']) {
+  --wc-fig-rule: rgba(243, 237, 223, 0.18);
+  --wc-fig-accent: #e7b7be;
+  --wc-fig-wash: rgba(231, 183, 190, 0.12);
+  --wc-fig-wash-2: rgba(160, 190, 235, 0.12);
+  --wc-fig-muted: rgba(243, 237, 223, 0.45);
+}
