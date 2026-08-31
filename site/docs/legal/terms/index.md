@@ -220,8 +220,7 @@ your own machine.
 "**Hosted Service**" means the optional server-side service we operate for accounts,
 publishing, community aggregation, payments, and AI features.
 "**Federated Network**" means relays, media servers, instances, and other systems operated by
-third parties to which content may be published, including WeCitizens.social and any
-protocol-compatible network.
+third parties to which content may be published, including any protocol-compatible network.
 
 **2.2 People and places.**
 "**User**" and "**Citizen**" mean an individual using the Service.
@@ -290,8 +289,16 @@ have a statutory board of directors, we will call it that and say so plainly.
 
 **3.1 What these Terms cover.** These Terms govern **all** of the following, which are one
 product operated by one company: **WeTheCitizens.io** (the movement application);
-**WeCitizens.social** (the social network); **WeTheCitizens.tv** (streaming and pay-per-view);
-the **Local App**; and any related application, API, or mobile app we publish.
+**WeTheCitizens.tv** (streaming and pay-per-view); the **Local App**; and any related
+application, API, or mobile app we publish.
+
+**3.1a Our sibling social network is *not* covered by these Terms.** It is operated by the same
+company (§1.1), but under **its own Terms of Service and its own Privacy Policy** — and those
+documents, not these, govern your use of it. One company, two products, two contracts: **the
+contract that applies is the one published on the property you are actually using.** We say it
+here because two overlapping contracts over one service would be a gap dressed up as
+thoroughness, and because our Privacy Policy already says the same thing about your data
+(Privacy Policy §2.1a).
 
 **3.2 The four front doors.** We operate four audience-specific front doors:
 
@@ -328,7 +335,7 @@ Network** who interact with content on our Service, whose content is visible to 
 who see content our Users published onward (§19.2).
 
 We say this for three reasons. It is true: we have no contract with those people and never
-did. It matters to you: much of what you read on WeCitizens.social, and much of the audience
+did. It matters to you: much of what you read on the Federated Network, and much of the audience
 for what you publish there, is people we have no relationship with and no authority over
 (§5.7, §19.3). And it matters to them: a movement built on consent should not claim power
 over people who never agreed to anything. **Nothing in these Terms gives a person who is not
@@ -343,7 +350,7 @@ person's conduct.
 > * **Payments and Subscriptions (§15) are not live.** No payment processor is integrated and we
 >   hold no billing data.
 > * **WeTheCitizens.tv (§16) does not exist.** There is no video service and no viewing data.
-> * **Publishing to a federated network (§19), including WeCitizens.social, is not live.**
+> * **Publishing to a federated network (§19) is not live.**
 > * **The four front doors in §3.2 do not yet operate as separate hostnames.**
 > * **Self-service export (§20.4) is not built.** The right is real and stated; the button is not
 >   there yet. Our Privacy Policy §18.8 says the same thing.
@@ -455,8 +462,8 @@ that is on by default or requires your opt-in (§20.1). §5.1 describes your Pos
 Evidence, and notes. **It is not a claim that the Local App never communicates with us at
 all**, and you should read the Privacy Policy rather than infer one.
 
-**5.4 Publishing to a federated network is not reversible.** When you publish to
-WeCitizens.social or any Federated Network, copies propagate to relays, media servers, and
+**5.4 Publishing to a federated network is not reversible.** When you publish to any
+Federated Network, copies propagate to relays, media servers, and
 instances **operated by other people**. **Deleting your copy, or ours, does not delete theirs.**
 We will delete our copy and, where a protocol supports it, transmit a deletion request
 downstream — but **a downstream request is not a deletion**, and we cannot promise any third
@@ -653,8 +660,8 @@ Terms would otherwise permit. If these Terms and the Privacy Policy ever appear 
 this point, **the Privacy Policy controls** (§20.1).
 
 **7.3 Onward publication at your direction.** The license in §7.2 includes distributing your
-published User Content to the destinations **you select**: the Hosted Service,
-WeCitizens.social, and the Federated Network.
+published User Content to the destinations **you select**: the Hosted Service and the
+Federated Network.
 
 **7.4 Duration.** The license **in §7.2** ends when you delete the User Content or your Account,
 **except** as §7.10 provides for backups, and **except** that: (a) it survives for copies already
@@ -1053,7 +1060,12 @@ that you have a good-faith belief the use is not authorized by the owner, its ag
 law; and (f) a statement, under penalty of perjury, that the information is accurate and that
 you are authorized to act.
 
-**12.8 Designated agent.** \{DMCA_AGENT\}
+**12.8 Designated agent.** Send copyright notices to **ContactUs@ACT3ai.com (subject line:
+"DMCA")**, or by post to **ACT 3 AI, Inc., Attn: Copyright Agent, 16430 NE 50th Street, Redmond,
+WA 98052, United States of America**. **This agent is not yet registered with the United States
+Copyright Office** (§3.7), and until that registration is complete we do not assert the §512 safe
+harbor (§14.4). **We will act on valid notices regardless** — the registration governs what we may
+claim, not what we will do.
 
 **12.9 Counter-notification.** If your content was removed and you believe it was removed in
 error or by misidentification, you may send a counter-notification containing the elements
@@ -1063,9 +1075,11 @@ may be found). If we receive a valid counter-notification, we may restore the ma
 **10–14 business days** unless the original complainant notifies us that it has filed an action
 seeking to restrain the activity.
 
-**12.10 Repeat infringers.** We maintain and enforce a policy of **terminating the Accounts of
-repeat infringers** in appropriate circumstances. This is a condition of our safe harbor, not a
-courtesy.
+**12.10 Repeat infringers.** We will terminate the Accounts of **repeat infringers** in
+appropriate circumstances. **This process is not yet in operation** (§3.7, §14.4), and we will not
+describe it as running before it is. It is a condition of the §512 safe harbor rather than a
+courtesy, which is why we state its status plainly instead of asserting a protection we have not
+established (§14.4).
 
 **12.11 Misrepresentation.** Under 17 U.S.C. § 512(f), a person who knowingly materially
 misrepresents that material is infringing, or that it was removed by mistake, may be liable for
@@ -1787,8 +1801,8 @@ the protocol supports it, transmit a deletion request and notify other services 
 **but a deletion request is not a deletion** (§5.4, §5.7). **To have content removed from another
 service, contact that service directly.**
 
-**19.4 Publishing onward.** Publishing to WeCitizens.social, or to any other federated
-destination you select, is a choice you make, and it is effectively irreversible. Consider it
+**19.4 Publishing onward.** Publishing to any federated destination you select is a choice
+you make, and it is effectively irreversible. Consider it
 permanent before you press publish.
 
 **19.5 APIs.** Use of our APIs is subject to our published API terms and to rate limits, and we may
@@ -2715,7 +2729,7 @@ risk, so we state the carve-out rather than rely on it being implied (§22.6, §
 | **Report a mistake — corrections in content or AI Output (§13.12, §18.12, §21.9)** | ContactUs@ACT3ai.com (subject line: "Correction") |
 | **Abuse, harassment, and safety reports (§13.3)** | ContactUs@ACT3ai.com (subject line: "Abuse") |
 | **Reports of false statements about you (§11.6) — no Account required** | ContactUs@ACT3ai.com (subject line: "Abuse") |
-| **DMCA designated agent (§12.7–§12.9)** | \{DMCA_AGENT\} |
+| **DMCA designated agent (§12.7–§12.9)** | ContactUs@ACT3ai.com (subject line: "DMCA") — or by post to ACT 3 AI, Inc., Attn: Copyright Agent, 16430 NE 50th Street, Redmond, WA 98052, United States of America. **Not yet registered with the U.S. Copyright Office (§3.7, §14.4).** |
 | **Trademark complaints (§12.12) — NOT the DMCA agent; the DMCA does not cover trademark** | ContactUs@ACT3ai.com (subject line: "Legal notice") |
 | **Law-enforcement requests (§13.6)** | ContactUs@ACT3ai.com (subject line: "Law enforcement") |
 | **Government entities and officials (§29.14)** | ContactUs@ACT3ai.com (subject line: "Legal notice") |

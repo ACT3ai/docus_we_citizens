@@ -110,7 +110,9 @@ person holds your data, and because a reader who worked it out later would be ri
 did not say it here.
 
 **2.2 What this policy covers.** WeTheCitizens.io, the local application you run on your own
-computer, and — **when they exist** — WeCitizens.social and WeTheCitizens.tv.
+computer, and — **when it exists** — WeTheCitizens.tv. **It does not cover our sibling social
+network**, which runs under its own privacy policy (§2.1a) and its own Terms of Service
+(Terms §3.1a).
 
 **2.3 WHAT EXISTS TODAY, STATED PLAINLY.** This policy describes a product that is still being
 built, and we would rather say so than describe surfaces we do not operate. As of the last-modified date of
