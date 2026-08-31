@@ -300,7 +300,7 @@ export default function WeTheCitizensSOverview(): ReactNode {
               <div className={styles.artBody}>
                 <h3><Link to="/docs/s/rigged_economy">The Democratic Socialist rigged-economy package</Link></h3>
                 <p>
-                  Built by this community through voting and collaboration, not handed down. An economy ideal for workers is the headline here, not a footnote.
+                  Built by this community through voting and collaboration, not handed down. The healthy economy stays; the rigged layer on top of it comes off. An economy ideal for workers is the headline here, not a footnote.
                 </p>
               </div>
             </article>

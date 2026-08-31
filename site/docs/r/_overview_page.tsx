@@ -300,7 +300,7 @@ export default function WeTheCitizensROverview(): ReactNode {
               <div className={styles.artBody}>
                 <h3><Link to="/docs/r/rigged_economy">The Republican rigged-economy package</Link></h3>
                 <p>
-                  Built by this community through voting and collaboration, not handed down. The destination is an economy that is ethical, clean and ideal for workers.
+                  Built by this community through voting and collaboration, not handed down. The healthy economy stays; the rigged layer on top of it comes off. The destination is an economy that is ethical, clean and ideal for workers.
                 </p>
               </div>
             </article>

@@ -70,16 +70,8 @@ function HeroSection() {
           <aside className={styles.heroLedger} aria-label="At a glance">
             <div className={styles.ledHead}>The agenda, at a glance</div>
             <div className={styles.ledRow}>
-              <span className={styles.ledNum}>20</span>
-              <span className={styles.ledLab}>Numbered commitments, published in full</span>
-            </div>
-            <div className={styles.ledRow}>
-              <span className={styles.ledNum}>4</span>
-              <span className={styles.ledLab}>Party doors, one shared public record</span>
-            </div>
-            <div className={styles.ledRow}>
               <span className={styles.ledNum}>100<em>%</em></span>
-              <span className={styles.ledLab}>Open source, open data, open arithmetic</span>
+              <span className={styles.ledLab}>Open source, open data, transparent AI</span>
             </div>
           </aside>
         </div>
@@ -160,13 +152,14 @@ const AGENDA: AgendaItem[] = [
   },
   {
     n: '05',
-    title: 'Removing the Rigged Economy',
+    title: 'Keep Ethical Economy. Remove Rigged Layer',
     q: 'Rigged how, and rigged by whom?',
     body:
-      'Citizens behind every party door already agree the economy is rigged. The work here is turning that agreement into receipts — documenting it from the record instead of feeling it at the register — and then into a fix both bases will actually sign.',
+      'There is the healthy economy. Democrats and Republicans might each describe a different layer sitting on top of it that they consider the rigged layer. When Congress is captured, the fixes on either side never get made. We fix that by replacing captured incumbents with challengers — and then each side\'s own leaders document, from the grassroots, what citizens on that side consider the rigged layer and their plan to remove it. Captured Congress is the problem; challengers strong enough not to be captured later are the fix.',
     points: [
-      'Identify the rigging, with sources',
-      'A fix supported by both sides',
+      'Keep the healthy economy; remove the rigged layer on top',
+      'Each side documents its own layer, from its own grassroots',
+      'Replace captured incumbents with challengers who stay uncaptured',
     ],
     links: [{label: 'Rigged Economy', to: '/docs/rigged_economy/overview'}],
   },
