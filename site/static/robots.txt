@@ -1,31 +1,56 @@
-# robots.txt for wethecitizens.io
-# https://www.robotstxt.org/
+# robots.txt for wethecitizens.io — the We The Citizens movement website
+# Spec: ~/BGit/act3/we_citizens/pm/seo.mdx §6 (its §6.5 is where this file's history lives)
+# https://www.robotstxt.org/  ·  RFC 9309
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# EVERY AI CRAWLER IS ALLOWED, DELIBERATELY. Changed 2026-09-07.
+#
+# This file used to carry `Disallow: /` for GPTBot, ClaudeBot and CCBot. That was
+# backwards for this movement, and it was backwards on the one site that carries the
+# charter, the methodology and the argument — precisely the pages we most want an
+# answer engine to quote when somebody asks it about a politician's record.
+#
+# It was also self-defeating in a way that is easy to miss: the app at
+# app.wethecitizens.io can be made as citable as we like, and the EXPLANATION of what
+# a Monkey award is would still have been unreachable. A movement whose product is its
+# argument wants to be in the retrieval indexes AND in the model weights.
+#
+# Anthropic's own documentation states that disabling Claude-User "may reduce your
+# site's visibility". Blocking GPTBot removes us from training corpora.
+#
+# Note the asymmetry, because it is routinely got wrong:
+#   * blocking `Google-Extended` does NOT affect Google Search
+#   * blocking `GPTBot` does NOT block `OAI-SearchBot`
+# Training opt-out and search/citation crawling are separate controls.
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# ⚠️ THE RFC 9309 GROUP TRAP — read this before adding any `User-agent:` block below.
+#
+# Groups for different user-agent tokens are NEVER MERGED. The single most specific
+# matching group wins and REPLACES the `*` group entirely. So a named group containing
+# only `Allow: /` silently discards every `Disallow:` in the `*` group above it.
+#
+# That is why this file is now ONE `*` group, with the welcomed agents named in a
+# comment instead. The previous version's `User-agent: Googlebot / Allow: /` blocks
+# were harmless only because they happened to be identical to `*` — the moment a
+# `Disallow` was added to `*`, Googlebot would silently not have received it.
+#
+# Agents this file deliberately welcomes (documentation, NOT directives — do not turn
+# these back into groups):
+#   GPTBot · OAI-SearchBot · ChatGPT-User · ClaudeBot · Claude-User · Claude-SearchBot
+#   PerplexityBot · Perplexity-User · Googlebot · Googlebot-Image · Google-Extended
+#   GoogleOther · Bingbot · Applebot · Applebot-Extended · Amazonbot
+#   meta-externalagent · CCBot · cohere-ai
+#
+# `Crawl-delay` was removed: Google does not honour it at all, and `0` said nothing to
+# anything that does.
+#
+# NOTE FOR WHOEVER EDITS THIS NEXT: GitHub Pages cannot serve custom HTTP headers, so
+# `X-Robots-Tag` is unavailable on this host. Every indexing directive for this site
+# must be an HTML `<meta name="robots">` tag or a line in this file — which is why the
+# contents of this file matter more here than they would on the app.
 
-# Allow all well-behaved crawlers full access to the site.
 User-agent: *
 Allow: /
-Crawl-delay: 0
 
-# Explicit allow for Google and Bing — some validators flag missing UA-specific
-# blocks. Listing them confirms there is no per-bot restriction.
-User-agent: Googlebot
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-# Block common AI training crawlers (optional — comment out to allow).
-User-agent: GPTBot
-Disallow: /
-
-User-agent: ClaudeBot
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-# Sitemap location — Google Search Console reads this.
 Sitemap: https://wethecitizens.io/sitemap.xml
