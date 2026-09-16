@@ -276,14 +276,16 @@ const config: Config = {
       {name: 'description', content: SITE_DESCRIPTION},
       {name: 'keywords', content: SITE_KEYWORDS},
       {name: 'twitter:card', content: 'summary_large_image'},
-      {name: 'twitter:title', content: SITE_NAME},
-      {name: 'twitter:description', content: SITE_DESCRIPTION},
+      // No site-wide twitter:title / twitter:description / og:url here.
+      // Docusaurus emits per-page values for those from each page's title,
+      // description and canonical URL. A site-wide default is NOT overridden
+      // by the per-page tag: both end up in <head>, and X/Slack/LinkedIn read
+      // the first one, so every interior page previewed as the home page.
       {name: 'twitter:image', content: SOCIAL_CARD_ABS},
       {name: 'twitter:image:alt', content: `${SITE_NAME} — ${SITE_TAGLINE}`},
       {property: 'og:title', content: SITE_NAME},
       {property: 'og:description', content: SITE_DESCRIPTION},
       {property: 'og:type', content: 'website'},
-      {property: 'og:url', content: SITE_URL + '/'},
       {property: 'og:site_name', content: SITE_NAME},
       {property: 'og:image', content: SOCIAL_CARD_ABS},
       {property: 'og:image:alt', content: `${SITE_NAME} — ${SITE_TAGLINE}`},
