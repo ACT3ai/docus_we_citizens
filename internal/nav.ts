@@ -33,7 +33,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 /** Base route of the docs plugin. Keep in sync with `presets.classic.docs`. */
-export const DOCS_BASE = "/docs";
+export const DOCS_BASE = "";
 
 /**
  * Locate level_2.csv without relying on `import.meta.url` or `__dirname`, either
@@ -554,12 +554,12 @@ function menuHeading(text: string, className = "wcMenuHeading") {
 const FOLDED_SITE_LINKS = [
   menuHeading("This site", "wcMenuHeading wcMoreFolded"),
   {
-    to: "/docs/intro",
+    to: "/intro",
     label: "Charter",
     className: "wcMenuLink wcMoreFolded",
   },
   {
-    to: "/docs/about",
+    to: "/about",
     label: "About Us",
     className: "wcMenuLink wcMoreFolded",
   },
@@ -573,20 +573,20 @@ const MOVEMENT_PAGE_LINKS = [
   menuHeading("This movement"),
   { to: "/#agenda", label: "The Agenda", className: "wcMenuLink" },
   { to: "/#doors", label: "The Four Doors", className: "wcMenuLink" },
-  { to: "/docs/board", label: "Founding Board", className: "wcMenuLink" },
+  { to: "/board", label: "Founding Board", className: "wcMenuLink" },
   menuHeading("1,000 Bonhoeffers"),
   {
-    to: "/docs/dietrich-bonhoeffers",
+    to: "/dietrich-bonhoeffers",
     label: "Dietrich Bonhoeffer",
     className: "wcMenuLink",
   },
   {
-    to: "/docs/bonhoeffer-criteria",
+    to: "/bonhoeffer-criteria",
     label: "Bonhoeffer Criteria",
     className: "wcMenuLink",
   },
   {
-    to: "/docs/politician-challengers",
+    to: "/politician-challengers",
     label: "Politician Challengers",
     className: "wcMenuLink",
   },
@@ -723,8 +723,8 @@ export function footerColumns() {
         // from the website has no in-app page to be returned to yet).
         { label: "Create account", href: `${WEBAPP_URL}/signup` },
         { label: "Sign in", href: `${WEBAPP_URL}/signin` },
-        { label: "Terms of Service", to: "/docs/legal/terms" },
-        { label: "Privacy Policy", to: "/docs/legal/privacy" },
+        { label: "Terms of Service", to: "/legal/terms" },
+        { label: "Privacy Policy", to: "/legal/privacy" },
       ],
     },
   ];

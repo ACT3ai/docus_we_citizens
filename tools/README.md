@@ -21,7 +21,7 @@ per UI page:
 | `edition` | `main` · `r` · `d` · `l` · `s` |
 | `level_2_area` | the Level 2 directory the page belongs to |
 | `file_path` | path relative to `site/docs/`, e.g. `congress_for_citizens/money_in_politics.mdx` |
-| `url_path` | the served URL, e.g. `/docs/congress_for_citizens/money_in_politics/` |
+| `url_path` | the served URL, e.g. `/congress_for_citizens/money_in_politics/` |
 | `description` | what the page is, in 50 words or less (from frontmatter `description:`) |
 | `link_phrases` | the phrases that, seen on any other page, should link **here** |
 

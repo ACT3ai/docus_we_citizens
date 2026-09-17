@@ -209,7 +209,7 @@ export default function WeTheCitizensROverview(): ReactNode {
               challenger yet for this seat" and a way to recommend somebody — never a quietly
               collapsed grid.
             </p>
-            <Link className={clsx(styles.btn, styles.btnPrimary)} to="/docs/voting_records/overview">
+            <Link className={clsx(styles.btn, styles.btnPrimary)} to="/voting_records/overview">
               Voting records <span className="arw">&rarr;</span>
             </Link>
           </div>
@@ -238,7 +238,7 @@ export default function WeTheCitizensROverview(): ReactNode {
                 <span className={styles.artKicker}>Plank</span>
               </div>
               <div className={styles.artBody}>
-                <h3><Link to="/docs/r/replace_incumbents">Replacing captured incumbents</Link></h3>
+                <h3><Link to="/r/replace_incumbents">Replacing captured incumbents</Link></h3>
                 <p>
                   Elections are the mechanism. Challengers first, incumbent protection never. Party label is not the qualification — independence from global elites is.
                 </p>
@@ -250,7 +250,7 @@ export default function WeTheCitizensROverview(): ReactNode {
                 <span className={styles.artKicker}>Plank</span>
               </div>
               <div className={styles.artBody}>
-                <h3><Link to="/docs/r/christian_ethics">Great ethics, like Christian ethics</Link></h3>
+                <h3><Link to="/r/christian_ethics">Great ethics, like Christian ethics</Link></h3>
                 <p>
                   This door names Christian ethics, deliberately and exclusively. No other door carries a religion, and neither does the .io.
                 </p>
@@ -262,7 +262,7 @@ export default function WeTheCitizensROverview(): ReactNode {
                 <span className={styles.artKicker}>Plank</span>
               </div>
               <div className={styles.artBody}>
-                <h3><Link to="/docs/r/expose_deep_state">Fully exposing the captured layer</Link></h3>
+                <h3><Link to="/r/expose_deep_state">Fully exposing the captured layer</Link></h3>
                 <p>
                   Citizens cannot fix what they are not allowed to see. The Deep State, the global elite class and the Epstein networks are a first-class target, documented with sources.
                 </p>
@@ -274,7 +274,7 @@ export default function WeTheCitizensROverview(): ReactNode {
                 <span className={styles.artKicker}>Plank</span>
               </div>
               <div className={styles.artBody}>
-                <h3><Link to="/docs/r/voter_fraud">Elections you can actually believe</Link></h3>
+                <h3><Link to="/r/voter_fraud">Elections you can actually believe</Link></h3>
                 <p>
                   Voter fraud made structurally impossible, on open auditable technology, checkable by an ordinary citizen rather than an authorized official.
                 </p>
@@ -286,7 +286,7 @@ export default function WeTheCitizensROverview(): ReactNode {
                 <span className={styles.artKicker}>Plank</span>
               </div>
               <div className={styles.artBody}>
-                <h3><Link to="/docs/r/no_forever_wars">No forever wars, no draft, no social credit</Link></h3>
+                <h3><Link to="/r/no_forever_wars">No forever wars, no draft, no social credit</Link></h3>
                 <p>
                   Wars that serve global elites and not citizens. A score that decides what a citizen may do. Neither belongs in America.
                 </p>
@@ -298,7 +298,7 @@ export default function WeTheCitizensROverview(): ReactNode {
                 <span className={styles.artKicker}>Plank</span>
               </div>
               <div className={styles.artBody}>
-                <h3><Link to="/docs/r/rigged_economy">The Republican rigged-economy package</Link></h3>
+                <h3><Link to="/r/rigged_economy">The Republican rigged-economy package</Link></h3>
                 <p>
                   Built by this community through voting and collaboration, not handed down. The healthy economy stays; the rigged layer on top of it comes off. The destination is an economy that is ethical, clean and ideal for workers.
                 </p>
@@ -313,7 +313,7 @@ export default function WeTheCitizensROverview(): ReactNode {
               a vote. And it never re-weights an award: the Monkey, Llama and Flamingo numbers
               are computed once, party-blind, and no edition re-rounds or re-thresholds them.
             </p>
-            <Link className={clsx(styles.btn, styles.btnPrimary)} to="/docs/r/words_we_use">
+            <Link className={clsx(styles.btn, styles.btnPrimary)} to="/r/words_we_use">
               Words we use and words we avoid <span className="arw">&rarr;</span>
             </Link>
           </div>
@@ -384,23 +384,23 @@ export default function WeTheCitizensROverview(): ReactNode {
             <div className={styles.govItem}>
               <span className={styles.gRom}>I</span>
               <h3>
-                <Link to="/docs/r/words_we_use">Words we use and words we avoid</Link>
+                <Link to="/r/words_we_use">Words we use and words we avoid</Link>
               </h3>
               <p>The language of this door, written down: what belongs here, and what was deliberately left to another audience.</p>
             </div>
             <div className={styles.govItem}>
               <span className={styles.gRom}>II</span>
-              <h3><Link to="/docs/legacy_politicians/overview">Elected Politicians</Link></h3>
+              <h3><Link to="/legacy_politicians/overview">Elected Politicians</Link></h3>
               <p>The people with a voting record, and what that record actually says.</p>
             </div>
             <div className={styles.govItem}>
               <span className={styles.gRom}>III</span>
-              <h3><Link to="/docs/new_politicians/overview">Good New Leaders</Link></h3>
+              <h3><Link to="/new_politicians/overview">Good New Leaders</Link></h3>
               <p>The people worth electing who have never held office.</p>
             </div>
             <div className={styles.govItem}>
               <span className={styles.gRom}>IV</span>
-              <h3><Link to="/docs/start_here/overview">Start Here</Link></h3>
+              <h3><Link to="/start_here/overview">Start Here</Link></h3>
               <p>What the whole movement is, in sixty seconds.</p>
             </div>
           </div>

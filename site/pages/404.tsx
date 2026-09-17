@@ -35,21 +35,21 @@ export default function NotFound(): ReactNode {
                 <Link to="/">Home — We The Citizens</Link>
               </li>
               <li>
-                <Link to="/docs/intro">Charter</Link>
+                <Link to="/intro">Charter</Link>
               </li>
               <li>
-                <Link to="/docs/board">Founding Board</Link>
+                <Link to="/board">Founding Board</Link>
               </li>
               <li>
-                <Link to="/docs/dietrich-bonhoeffers">
+                <Link to="/dietrich-bonhoeffers">
                   Dietrich Bonhoeffers
                 </Link>
               </li>
               <li>
-                <Link to="/docs/bonhoeffer-criteria">Bonhoeffer Criteria</Link>
+                <Link to="/bonhoeffer-criteria">Bonhoeffer Criteria</Link>
               </li>
               <li>
-                <Link to="/docs/politician-challengers">
+                <Link to="/politician-challengers">
                   Politician Challengers
                 </Link>
               </li>

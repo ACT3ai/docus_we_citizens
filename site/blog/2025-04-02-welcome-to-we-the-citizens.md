@@ -81,4 +81,4 @@ We The Citizens will never be captured. When the members own the organization, w
 
 That is what Charlie Kirk fought for. That is what we will protect.
 
-Read the full [We The Citizens Charter](/docs/intro).
+Read the full [We The Citizens Charter](/intro).

@@ -38,7 +38,7 @@ Often, politically, things are betraying ethics for other agendas. We want this 
 
 ### 2. Politicians Work for Citizens
 
-US politicians should work for US citizens. Not sellouts for [money in politics](/docs/congress_for_citizens/money_in_politics/), or [the deep state](/docs/deep_state/overview/), or the powerful — domestic or foreign — pursuing agendas against the interests and wants of the American citizen base.
+US politicians should work for US citizens. Not sellouts for [money in politics](/congress_for_citizens/money_in_politics/), or [the deep state](/deep_state/overview/), or the powerful — domestic or foreign — pursuing agendas against the interests and wants of the American citizen base.
 
 ### 3. Expose the Deep State
 
@@ -58,7 +58,7 @@ Enable political candidates to win even when they have less money. Create infras
 
 ### 7. End Voter Fraud Permanently
 
-When voting systems are proprietary and not thoroughly policed by technology and transparency, voter fraud will always happen. [Open source](/docs/repos/overview/) software and hyper-policed transparency to guarantee one citizen, one vote, no fraud — ever.
+When voting systems are proprietary and not thoroughly policed by technology and transparency, voter fraud will always happen. [Open source](/repos/overview/) software and hyper-policed transparency to guarantee one citizen, one vote, no fraud — ever.
 
 ## Programs
 
@@ -95,7 +95,7 @@ The board is composed of individuals Charlie Kirk trusted, who stood with him, a
 * Term-limited positions with member recall authority
 * No conflicts of interest with corporate sponsors or foreign entities
 * Required to disclose all financial interests publicly
-* Bound by [the charter](/docs/the_movement/charter/) to serve member interests above all else
+* Bound by [the charter](/the_movement/charter/) to serve member interests above all else
 
 ## Governance
 

@@ -96,6 +96,20 @@ SITE_DIR dir is {ROOT_DIR}/site
 * Production public site deployed to wethecitizens.io
 * Internal-only team content lives in docs/priv/ (plain markdown, never built)
 
+## URLs Have No /docs Prefix (since 2026-09-17)
+
+The docs plugin sets `routeBasePath: '/'` in docusaurus.config.ts. Content still
+lives in site/docs/, but it is published at the site root:
+site/docs/influencers/overview.mdx -> https://wethecitizens.io/influencers/overview/
+
+* Write internal links WITHOUT /docs: `/trust_scores/overview`, not `/docs/trust_scores/overview`.
+* Every old /docs/... address still works. @docusaurus/plugin-client-redirects
+  writes a redirect page at /docs/<path> for every doc page. GitHub Pages cannot
+  send HTTP 301s, so these are meta-refresh pages with a canonical link.
+* The web app's docsOverviewPath (/docs/r/overview etc.) reaches the right page
+  through those redirects. It can be updated to the short form at any time.
+* internal/nav.ts DOCS_BASE is "" and must stay in sync with routeBasePath.
+
 ## Dev Server
 
 * `cd {ROOT_DIR} && npm start` → http://localhost:3849/
@@ -144,7 +158,7 @@ When the user says "add people" (or "add this person", "add them to the list", o
 Both files have a `## The List` section with a numbered list. Append new entries to the end of that numbered list, preserving numbering order. Entry format:
 
 ```
-N. [Full Name](/docs/bonhoeffers/<slug>) — [@handle](https://x.com/handle)
+N. [Full Name](/bonhoeffers/<slug>) — [@handle](https://x.com/handle)
 ```
 
 * The name is a link to the person's individual page (see step 2)
@@ -380,7 +394,7 @@ way the parent site does:
   site/docs/r/{area}/                 ONE Level 2 area OF THE R EDITION
   site/docs/r/{area}/_category_.json  label, position, link -> doc id "overview"
   site/docs/r/{area}/overview.mdx     id "overview" — THE Level 2 page for that
-                                      area, served at /docs/r/{area}/ (see
+                                      area, served at /r/{area}/ (see
                                       THE DIRECTORY IS THE URL below)
   site/docs/r/{area}/{level_3}.mdx    a Level 3 page — a few words, underscores,
                                       always lowercase, never named "overview"
@@ -389,23 +403,23 @@ THE DIRECTORY IS THE URL. Inside a front door the file is still overview.mdx,
 but the word "overview" never appears in the address. Every one of these pages
 carries an explicit frontmatter slug:
 
-  overview.mdx        slug: /r/{area}            -> /docs/r/{area}/
-  {level_3}.mdx       slug: /r/{area}/{level_3}  -> /docs/r/{area}/{level_3}/
+  overview.mdx        slug: /r/{area}            -> /r/{area}/
+  {level_3}.mdx       slug: /r/{area}/{level_3}  -> /r/{area}/{level_3}/
 
 That is the whole mechanism — Docusaurus resolves a doc's `link` target, its
 sidebar row and every ./file.mdx cross-link through the slug, so setting it is
 enough and nothing else has to know. Two reasons it is not optional:
 
-  * The reader gets the clean address. /docs/r/meritocracy/ loads the area's own
+  * The reader gets the clean address. /r/meritocracy/ loads the area's own
     page; a directory path that 404s is the thing this avoids.
   * A Level 3 file whose basename equals its folder name (words_we_use/
     words_we_use.mdx, abortion_rights/abortion_rights.mdx) is treated by
-    Docusaurus as the FOLDER INDEX and silently claims /docs/r/words_we_use/ —
+    Docusaurus as the FOLDER INDEX and silently claims /r/words_we_use/ —
     the same route overview.mdx wants. The build reports "Duplicate routes
     found!" and routing goes non-deterministic. The explicit slug on every
     Level 3 page is what keeps that from happening again.
 
-The PARENT site's thirty Level 2 areas still use the older /docs/{area}/overview
+The PARENT site's thirty Level 2 areas still use the older /{area}/overview
 form, and internal/nav.ts overviewPath() plus the web app's docsOverviewPath
 depend on it. Do not slug those without changing both.
 

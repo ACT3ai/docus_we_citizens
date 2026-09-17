@@ -193,9 +193,9 @@ for dirpath, dirs, files in os.walk(DOCS):
 
         slug = d.get('slug')
         if slug:
-            url = '/docs' + (slug if slug.startswith('/') else '/' + slug)
+            url = (slug if slug.startswith('/') else '/' + slug)
         else:
-            url = '/docs/' + ((reldir + '/') if reldir else '') + did
+            url = '/' + ((reldir + '/') if reldir else '') + did
         url = url.rstrip('/') + '/'
 
         parts = rel.rsplit('.', 1)[0].split('/')

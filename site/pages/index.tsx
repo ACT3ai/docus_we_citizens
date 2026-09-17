@@ -108,7 +108,7 @@ const AGENDA: AgendaItem[] = [
       'Expose the hijack',
       'Remove the hijack',
     ],
-    links: [{label: 'Congress For Citizens', to: '/docs/congress_for_citizens/overview'}],
+    links: [{label: 'Congress For Citizens', to: '/congress_for_citizens/overview'}],
   },
   {
     n: '02',
@@ -120,7 +120,7 @@ const AGENDA: AgendaItem[] = [
       'What crosses both parties',
       'A forum between the two bases',
     ],
-    links: [{label: 'Non-Partisan Site', to: '/docs/non_partisan_site/overview'}],
+    links: [{label: 'Non-Partisan Site', to: '/non_partisan_site/overview'}],
   },
   {
     n: '03',
@@ -132,7 +132,7 @@ const AGENDA: AgendaItem[] = [
       'Challengers first',
       'Rally behind one challenger, per party, per seat',
     ],
-    links: [{label: 'Replace Incumbents', to: '/docs/replace_incumbents/overview'}],
+    links: [{label: 'Replace Incumbents', to: '/replace_incumbents/overview'}],
   },
   {
     n: '04',
@@ -146,8 +146,8 @@ const AGENDA: AgendaItem[] = [
       'Matched to where you sit on the spectrum',
     ],
     links: [
-      {label: 'Qualifications', to: '/docs/qualifications/overview'},
-      {label: 'Meritocracy', to: '/docs/meritocracy/overview'},
+      {label: 'Qualifications', to: '/qualifications/overview'},
+      {label: 'Meritocracy', to: '/meritocracy/overview'},
     ],
   },
   {
@@ -161,7 +161,7 @@ const AGENDA: AgendaItem[] = [
       'Each side documents its own layer, from its own grassroots',
       'Replace captured incumbents with challengers who stay uncaptured',
     ],
-    links: [{label: 'Rigged Economy', to: '/docs/rigged_economy/overview'}],
+    links: [{label: 'Rigged Economy', to: '/rigged_economy/overview'}],
   },
   {
     n: '06',
@@ -174,8 +174,8 @@ const AGENDA: AgendaItem[] = [
       'The fix bills that matter most',
     ],
     links: [
-      {label: 'Fix Bills', to: '/docs/good_bills/overview'},
-      {label: 'Fixing the Law', to: '/docs/fix_laws/overview'},
+      {label: 'Fix Bills', to: '/good_bills/overview'},
+      {label: 'Fixing the Law', to: '/fix_laws/overview'},
     ],
   },
   {
@@ -189,7 +189,7 @@ const AGENDA: AgendaItem[] = [
       'The documented crimes',
       'The withheld files',
     ],
-    links: [{label: 'Deep State', to: '/docs/deep_state/overview'}],
+    links: [{label: 'Deep State', to: '/deep_state/overview'}],
   },
   {
     n: '08',
@@ -202,7 +202,7 @@ const AGENDA: AgendaItem[] = [
       'No puppet master over US politics',
       'Whistleblower protection',
     ],
-    links: [{label: 'US Intelligence', to: '/docs/us_intelligence/overview'}],
+    links: [{label: 'US Intelligence', to: '/us_intelligence/overview'}],
   },
   {
     n: '09',
@@ -215,7 +215,7 @@ const AGENDA: AgendaItem[] = [
       'Puppet master over US politics',
       'Paid influence operations',
     ],
-    links: [{label: 'Foreign Intelligence', to: '/docs/foreign_intelligence/overview'}],
+    links: [{label: 'Foreign Intelligence', to: '/foreign_intelligence/overview'}],
   },
   {
     n: '10',
@@ -228,7 +228,7 @@ const AGENDA: AgendaItem[] = [
       'Reproduce the result yourself',
       'Audits and open gaps',
     ],
-    links: [{label: 'Election Integrity', to: '/docs/election_integrity/overview'}],
+    links: [{label: 'Election Integrity', to: '/election_integrity/overview'}],
   },
   {
     n: '11',
@@ -241,7 +241,7 @@ const AGENDA: AgendaItem[] = [
       'Remove the draft',
       'Who pays, and who profits',
     ],
-    links: [{label: 'No Forever Wars', to: '/docs/no_forever_wars/overview'}],
+    links: [{label: 'No Forever Wars', to: '/no_forever_wars/overview'}],
   },
   {
     n: '12',
@@ -254,7 +254,7 @@ const AGENDA: AgendaItem[] = [
       'Why it is not called that',
       'How we remove it',
     ],
-    links: [{label: 'No Social Credit', to: '/docs/no_social_credit/overview'}],
+    links: [{label: 'No Social Credit', to: '/no_social_credit/overview'}],
   },
   {
     n: '13',
@@ -267,7 +267,7 @@ const AGENDA: AgendaItem[] = [
       'The read-only roll-up here',
       'The mesh that defends the vote',
     ],
-    links: [{label: 'Trust Scores', to: '/docs/trust_scores/overview'}],
+    links: [{label: 'Trust Scores', to: '/trust_scores/overview'}],
   },
   {
     n: '14',
@@ -281,9 +281,9 @@ const AGENDA: AgendaItem[] = [
       'Open AI — and its hard limits',
     ],
     links: [
-      {label: 'Open Data', to: '/docs/open_data/overview'},
-      {label: 'Repos', to: '/docs/repos/overview'},
-      {label: 'AI', to: '/docs/ai/overview'},
+      {label: 'Open Data', to: '/open_data/overview'},
+      {label: 'Repos', to: '/repos/overview'},
+      {label: 'AI', to: '/ai/overview'},
     ],
   },
   {
@@ -296,7 +296,7 @@ const AGENDA: AgendaItem[] = [
       'One app, four doors',
       'Finding the door that is yours',
     ],
-    links: [{label: 'The Four Doors', to: '/docs/four_doors/overview'}],
+    links: [{label: 'The Four Doors', to: '/four_doors/overview'}],
   },
   {
     n: '16',
@@ -309,7 +309,7 @@ const AGENDA: AgendaItem[] = [
       'Call your representative',
       'Log what you did',
     ],
-    links: [{label: 'Take Action', to: '/docs/take_action/overview'}],
+    links: [{label: 'Take Action', to: '/take_action/overview'}],
   },
   {
     n: '17',
@@ -322,7 +322,7 @@ const AGENDA: AgendaItem[] = [
       'Verification and disputes',
       'The leader history book',
     ],
-    links: [{label: 'Karma', to: '/docs/karma/overview'}],
+    links: [{label: 'Karma', to: '/karma/overview'}],
   },
   {
     n: '18',
@@ -335,7 +335,7 @@ const AGENDA: AgendaItem[] = [
       'How badness is rated',
       'Report a problem law',
     ],
-    links: [{label: 'Problem Laws', to: '/docs/problem_laws/overview'}],
+    links: [{label: 'Problem Laws', to: '/problem_laws/overview'}],
   },
   {
     n: '19',
@@ -348,8 +348,8 @@ const AGENDA: AgendaItem[] = [
       'Vote on where you sit on the spectrum',
     ],
     links: [
-      {label: 'Communities', to: '/docs/communities/overview'},
-      {label: 'Decisions', to: '/docs/decisions/overview'},
+      {label: 'Communities', to: '/communities/overview'},
+      {label: 'Decisions', to: '/decisions/overview'},
     ],
   },
   {
@@ -363,7 +363,7 @@ const AGENDA: AgendaItem[] = [
       'How a hijacked Congress damages it',
       'Restoring it',
     ],
-    links: [{label: 'American Ethics', to: '/docs/american_ethics/overview'}],
+    links: [{label: 'American Ethics', to: '/american_ethics/overview'}],
   },
 ];
 
@@ -421,14 +421,14 @@ function AgendaSection() {
 
 /* ──────────────────────── THE FOUR DOORS ──────────────────────── */
 const doors = [
-  {letter: 'R', name: 'Republicans', domain: 'WeCitizensR.com', to: '/docs/r/overview'},
-  {letter: 'D', name: 'Democrats', domain: 'WeCitizensD.com', to: '/docs/d/overview'},
-  {letter: 'L', name: 'Libertarians', domain: 'WeCitizensL.com', to: '/docs/l/overview'},
+  {letter: 'R', name: 'Republicans', domain: 'WeCitizensR.com', to: '/r/overview'},
+  {letter: 'D', name: 'Democrats', domain: 'WeCitizensD.com', to: '/d/overview'},
+  {letter: 'L', name: 'Libertarians', domain: 'WeCitizensL.com', to: '/l/overview'},
   {
     letter: 'S',
     name: 'Democratic Socialists',
     domain: 'WeCitizensSocialism.com',
-    to: '/docs/s/overview',
+    to: '/s/overview',
   },
 ];
 
@@ -559,7 +559,7 @@ function AboutSection() {
             arithmetic, and publish the derivation so anyone can check it or prove us
             wrong. Sourced to the official record, or it does not get said.
           </p>
-          <Link className={clsx(styles.btn, styles.btnPrimary)} to="/docs/about">
+          <Link className={clsx(styles.btn, styles.btnPrimary)} to="/about">
             About Us <span className="arw">&rarr;</span>
           </Link>
         </div>

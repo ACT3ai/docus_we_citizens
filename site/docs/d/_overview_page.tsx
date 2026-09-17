@@ -209,7 +209,7 @@ export default function WeTheCitizensDOverview(): ReactNode {
               challenger yet for this seat" and a way to recommend somebody — never a quietly
               collapsed grid.
             </p>
-            <Link className={clsx(styles.btn, styles.btnPrimary)} to="/docs/voting_records/overview">
+            <Link className={clsx(styles.btn, styles.btnPrimary)} to="/voting_records/overview">
               Voting records <span className="arw">&rarr;</span>
             </Link>
           </div>
@@ -238,7 +238,7 @@ export default function WeTheCitizensDOverview(): ReactNode {
                 <span className={styles.artKicker}>Plank</span>
               </div>
               <div className={styles.artBody}>
-                <h3><Link to="/docs/d/replace_incumbents">Money out of politics</Link></h3>
+                <h3><Link to="/d/replace_incumbents">Money out of politics</Link></h3>
                 <p>
                   Citizens United is the fight this community has wanted won for a generation, and the incumbents who benefit will not win it. Challengers who cannot be bought are how the money stops working.
                 </p>
@@ -250,7 +250,7 @@ export default function WeTheCitizensDOverview(): ReactNode {
                 <span className={styles.artKicker}>Plank</span>
               </div>
               <div className={styles.artBody}>
-                <h3><Link to="/docs/d/economics_for_workers">Economics that work for workers</Link></h3>
+                <h3><Link to="/d/economics_for_workers">Economics that work for workers</Link></h3>
                 <p>
                   Wages, hours, healthcare, housing, childcare, debt — the ordinary economics of a working life. Every plank gets the same test: does it work for the worker.
                 </p>
@@ -262,7 +262,7 @@ export default function WeTheCitizensDOverview(): ReactNode {
                 <span className={styles.artKicker}>Plank</span>
               </div>
               <div className={styles.artBody}>
-                <h3><Link to="/docs/d/ai_era_economy">An economy ideal for workers in the era of AI</Link></h3>
+                <h3><Link to="/d/ai_era_economy">An economy ideal for workers in the era of AI</Link></h3>
                 <p>
                   Who captures the gains from automation — the citizen base, or the same concentrated money that rigged the last economy? This community wants the answer before the disruption lands.
                 </p>
@@ -274,7 +274,7 @@ export default function WeTheCitizensDOverview(): ReactNode {
                 <span className={styles.artKicker}>Plank</span>
               </div>
               <div className={styles.artBody}>
-                <h3><Link to="/docs/d/new_colonialism">Ending the new colonialism</Link></h3>
+                <h3><Link to="/d/new_colonialism">Ending the new colonialism</Link></h3>
                 <p>
                   A new layer gets added every year when foreign money buys influence over US politicians and citizens pay for it. Foreign leverage on an officeholder is disqualifying.
                 </p>
@@ -286,7 +286,7 @@ export default function WeTheCitizensDOverview(): ReactNode {
                 <span className={styles.artKicker}>Plank</span>
               </div>
               <div className={styles.artBody}>
-                <h3><Link to="/docs/d/abortion_rights">Abortion rights, codified</Link></h3>
+                <h3><Link to="/d/abortion_rights">Abortion rights, codified</Link></h3>
                 <p>
                   The majority arrives and the codification never happens, because incumbents need the issue unresolved more than they need it fixed. Candidates get measured on whether they will pass it.
                 </p>
@@ -298,7 +298,7 @@ export default function WeTheCitizensDOverview(): ReactNode {
                 <span className={styles.artKicker}>Plank</span>
               </div>
               <div className={styles.artBody}>
-                <h3><Link to="/docs/d/rigged_economy">The Democrat rigged-economy package</Link></h3>
+                <h3><Link to="/d/rigged_economy">The Democrat rigged-economy package</Link></h3>
                 <p>
                   Built by this community through voting and collaboration, not handed down. The healthy economy stays; the rigged layer on top of it comes off. An economy ideal for workers is the headline here, not a footnote.
                 </p>
@@ -313,7 +313,7 @@ export default function WeTheCitizensDOverview(): ReactNode {
               a vote. And it never re-weights an award: the Monkey, Llama and Flamingo numbers
               are computed once, party-blind, and no edition re-rounds or re-thresholds them.
             </p>
-            <Link className={clsx(styles.btn, styles.btnPrimary)} to="/docs/d/words_we_use">
+            <Link className={clsx(styles.btn, styles.btnPrimary)} to="/d/words_we_use">
               Words we use and words we avoid <span className="arw">&rarr;</span>
             </Link>
           </div>
@@ -384,23 +384,23 @@ export default function WeTheCitizensDOverview(): ReactNode {
             <div className={styles.govItem}>
               <span className={styles.gRom}>I</span>
               <h3>
-                <Link to="/docs/d/words_we_use">Words we use and words we avoid</Link>
+                <Link to="/d/words_we_use">Words we use and words we avoid</Link>
               </h3>
               <p>The language of this door, written down: what belongs here, and what was deliberately left to another audience.</p>
             </div>
             <div className={styles.govItem}>
               <span className={styles.gRom}>II</span>
-              <h3><Link to="/docs/legacy_politicians/overview">Elected Politicians</Link></h3>
+              <h3><Link to="/legacy_politicians/overview">Elected Politicians</Link></h3>
               <p>The people with a voting record, and what that record actually says.</p>
             </div>
             <div className={styles.govItem}>
               <span className={styles.gRom}>III</span>
-              <h3><Link to="/docs/new_politicians/overview">Good New Leaders</Link></h3>
+              <h3><Link to="/new_politicians/overview">Good New Leaders</Link></h3>
               <p>The people worth electing who have never held office.</p>
             </div>
             <div className={styles.govItem}>
               <span className={styles.gRom}>IV</span>
-              <h3><Link to="/docs/start_here/overview">Start Here</Link></h3>
+              <h3><Link to="/start_here/overview">Start Here</Link></h3>
               <p>What the whole movement is, in sixty seconds.</p>
             </div>
           </div>

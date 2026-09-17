@@ -21,7 +21,7 @@ image: /img/we-the-citizens-social-card.jpg
 
 # Board of Directors
 
-The following individuals are **proposed founding board members** of We The Citizens. None of them have formally accepted a board position yet. Each person was selected because Charlie Kirk trusted them, stood with them, and they share the values outlined in the [We The Citizens Charter](/docs/intro).
+The following individuals are **proposed founding board members** of We The Citizens. None of them have formally accepted a board position yet. Each person was selected because Charlie Kirk trusted them, stood with them, and they share the values outlined in the [We The Citizens Charter](/intro).
 
 When each proposed member accepts, their status on this page will be updated.
 
@@ -68,7 +68,7 @@ proposals arrived after the founding list above and sit on a door rather than on
 
 ## Board Commitments
 
-Once accepted, every board member is bound by [the charter](/docs/the_movement/charter/):
+Once accepted, every board member is bound by [the charter](/the_movement/charter/):
 
 * **Term-limited positions** with member recall authority
 * **No conflicts of interest** with corporate sponsors or foreign entities
@@ -82,7 +82,7 @@ The board makes policy decisions and carries out the charter. The board does not
 
 All board votes are public. All board decisions are documented and published on this website. This is not optional — it is a requirement of the charter.
 
-For full governance details, see the [Charter](/docs/intro#governance).
+For full governance details, see the [Charter](/intro#governance).
 
 ## Photo credits
 

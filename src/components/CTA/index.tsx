@@ -36,9 +36,9 @@ type Action = {
 
 const ACTIONS: Action[] = [
   {label: 'Join — create your account', to: WEBAPP_URL, primary: true, external: true},
-  {label: 'Start here', to: '/docs/start_here/overview'},
+  {label: 'Start here', to: '/start_here/overview'},
   {label: 'The plan', to: WEBAPP_PLAN_URL, external: true},
-  {label: 'About us', to: '/docs/about'},
+  {label: 'About us', to: '/about'},
 ];
 
 export default function CTA({note}: {note?: ReactNode}): ReactNode {
