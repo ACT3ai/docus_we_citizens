@@ -1,0 +1,63 @@
+/* Stacked next-step buttons at the end of a page. No outer box: each button
+   carries its own surface colour, so the three read as separate actions. */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 2rem 0 1rem;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn {
+  flex: 0 0 11rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0.8rem 0.6rem 1rem;
+  border: 1px solid var(--ua-rule, rgba(26, 23, 18, 0.16));
+  border-radius: 4px;
+  background: var(--ifm-background-surface-color);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ifm-heading-color);
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover {
+  border-color: var(--ua-red, #8a2433);
+  color: var(--ua-red, #8a2433);
+  text-decoration: none;
+}
+
+.chev {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+}
+
+.text {
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: var(--ifm-font-color-base);
+  opacity: 0.85;
+}
+
+@media (max-width: 560px) {
+  .step {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.3rem;
+  }
+
+  .btn {
+    flex: none;
+  }
+}

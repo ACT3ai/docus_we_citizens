@@ -12,17 +12,20 @@
  * FeatureGrid   the two-column catalogue grid on site/docs/features/overview.mdx
  * FeatureCard   one cell of that grid
  * Figure        the frame around a feature's inline-SVG diagram
+ * NextSteps     stacked next-step buttons at the end of a page (no outer box)
  */
 import MDXComponents from '@theme-original/MDXComponents';
 
 import CTA from '@site/src/components/CTA';
 import Figure from '@site/src/components/Figure';
+import NextSteps from '@site/src/components/NextSteps';
 import FeatureGrid, {FeatureCard} from '@site/src/components/FeatureGrid';
 
 export default {
   ...MDXComponents,
   CTA,
   Figure,
+  NextSteps,
   FeatureGrid,
   FeatureCard,
 };
