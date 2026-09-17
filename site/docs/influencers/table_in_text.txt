@@ -1,0 +1,14 @@
+                         Rev Share        Rev Share
+# of Users Signed up     per month         per year
+------------------------------------------------------
+                 500   $       5,198    $       62,376
+               1,000   $      10,396    $      124,752
+              10,000   $     103,960    $    1,247,520
+             100,000   $   1,039,600    $   12,475,200
+
+
+based on users on Premium plans:        70% @ $19.99/mo and
+                                        30% @ $39.99/mo
+
+User plan per month    $       25.99
+                   with 40% rev share = $        10.40  /mo
