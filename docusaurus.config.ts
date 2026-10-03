@@ -20,6 +20,9 @@ import {
 const SITE_URL = 'https://wethecitizens.io';
 // The paired We The Citizens web app — every Join / Create account CTA lands here.
 const WEBAPP_URL = 'https://app.WeTheCitizens.io/';
+// The We The Citizens app's source on GitHub — the footer's "View on GitHub"
+// button (src/theme/Footer/Copyright) points here, on every page.
+const GITHUB_URL = 'https://github.com/ACT3ai/we_the_citizens';
 const SITE_NAME = 'We The Citizens';
 const SITE_TAGLINE = 'Ethics First. Citizens First. Truth First.';
 const SITE_DESCRIPTION =
@@ -99,6 +102,7 @@ const config: Config = {
   // Read with useDocusaurusContext().siteConfig.customFields.
   customFields: {
     ...clientNavData(),
+    githubUrl: GITHUB_URL,
   },
 
   markdown: {

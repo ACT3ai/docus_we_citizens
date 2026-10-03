@@ -384,6 +384,124 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================================
+   "View on GitHub" — footer band, every page
+   (src/theme/Footer/Copyright). Modelled on deepseek.com/en/harness:
+   pill shape, GitHub mark before the label, 500 weight, and a circle
+   that fills outward from the centre on hover. Ours is parchment on the
+   ink footer, and the hover fill is the brand oxblood.
+   ============================================================ */
+.wcGithubBand {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding: 1.75rem clamp(1.25rem, 5vw, 4rem);
+  border-top: 1px solid rgba(243,237,223,.14);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.wcGithubBand__text {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  flex: 1 1 18rem;
+  min-width: 0;
+}
+
+.wcGithubBand__title {
+  font-family: var(--ua-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #F3EDDF;
+}
+
+.wcGithubBand__sub {
+  font-family: var(--ua-sans);
+  font-size: .9rem;
+  color: rgba(243,237,223,.62);
+}
+
+.wcGithubButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--ua-paper);
+  background: var(--ua-paper);
+  color: var(--ua-ink);
+  font-family: var(--ua-sans);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+/* The fill: a circle that grows from the centre on hover. */
+.wcGithubButton::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--ua-red);
+  opacity: 0;
+  z-index: -1;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform .36s ease-out, opacity .1s ease;
+}
+
+.wcGithubButton:hover,
+.wcGithubButton:focus-visible {
+  color: #F3EDDF;
+  border-color: var(--ua-red);
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(138,36,51,.35);
+}
+
+.wcGithubButton:hover::after,
+.wcGithubButton:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.wcGithubButton:focus-visible {
+  outline: 2px solid var(--ua-gold);
+  outline-offset: 3px;
+}
+
+.wcGithubButton__content {
+  display: inline-flex;
+  align-items: center;
+  gap: inherit;
+}
+
+.wcGithubButton__content > svg {
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 600px) {
+  .wcGithubButton { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wcGithubButton, .wcGithubButton::after { transition: none; }
+}
+
+/* ============================================================
    Generic page typography (docs pages)
    ============================================================ */
 .markdown h1 {
