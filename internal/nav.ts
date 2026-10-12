@@ -194,6 +194,7 @@ const SUB_LABELS: Record<string, string> = {
   evidence: "Deciding when proof is withheld",
   communities: "Doing the work together",
   take_action: "What you can do this week",
+  conferences: "Citizens vote on the speakers",
   karma: "The citizen side of the ledger",
   open_data: "Clone it and check every claim",
   ai: "What the AI never decides",
@@ -415,7 +416,10 @@ export const MENU_GROUPS: { title: string; keys: string[] }[] = [
   },
   { title: "The awards", keys: ["monkey", "llama", "flamingo"] },
   { title: "The four pillars", keys: ["decisions", "values", "evidence"] },
-  { title: "Citizens", keys: ["communities", "take_action", "karma", "meritocracy", "trust_scores"] },
+  {
+    title: "Citizens",
+    keys: ["communities", "take_action", "conferences", "karma", "meritocracy", "trust_scores"],
+  },
   { title: "In the open", keys: ["open_data", "ai", "repos"] },
   { title: "The software", keys: ["features"] },
 ];
@@ -467,7 +471,7 @@ const FOOTER_GROUPS: { title: string; keys: string[] }[] = [
   },
   {
     title: "Citizens",
-    keys: ["decisions", "communities", "take_action", "karma", "trust_scores"],
+    keys: ["decisions", "communities", "take_action", "conferences", "karma", "trust_scores"],
   },
   { title: "In The Open", keys: ["open_data", "ai", "repos"] },
 ];

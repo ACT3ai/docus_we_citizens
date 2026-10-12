@@ -98,6 +98,10 @@ const config: Config = {
 
   staticDirectories: ['site/static'],
 
+  // IPFS video embeds: move a <video> to its next gateway <source> when the
+  // current one stalls instead of erroring (a hung gateway never fires error).
+  clientModules: ['./src/clientModules/ipfsVideoFallback.js'],
+
   // Node-side nav data the browser needs (the footer's clickable column titles).
   // Read with useDocusaurusContext().siteConfig.customFields.
   customFields: {

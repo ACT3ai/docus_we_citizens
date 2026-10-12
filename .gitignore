@@ -21,3 +21,9 @@ yarn-error.log*
 
 # Office lock files (open Excel/Word documents)
 ~$*
+
+# videos/ — the media never lands in the repo. Each file is pinned on IPFS from
+# this Mac and embedded by CID through public gateways; only the manifest that
+# says which file is which CID travels with the repo.
+videos/*
+!videos/videos.md

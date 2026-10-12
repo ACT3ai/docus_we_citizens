@@ -80,10 +80,12 @@ function HeroSection() {
   );
 }
 
-/* ──────────────────────── THE AGENDA — THE TWENTY ────────────────────────
+/* ──────────────────────── THE AGENDA — THE TWENTY-ONE ────────────────────────
    One row per top-level numbered item in the messaging table of contents.
    Each row's sub-points are that item's dot-numbered subsections, and each
-   row links to the Level 2 area on this site that carries the long version. */
+   row links to the Level 2 area on this site that carries the long version.
+   Item 21 (Conferences) was added on the owner's request of 2026-10-12 and is
+   not yet a numbered section of non_partisan_io_messaging.md. */
 type AgendaLink = {label: string; to: string};
 type AgendaItem = {
   n: string;
@@ -357,13 +359,26 @@ const AGENDA: AgendaItem[] = [
     title: 'Great American Ethics',
     q: 'Why does this cost the country more than money?',
     body:
-      'When a hijacked Congress exempts itself from the rules it writes for everyone else, or pays settlements and hides them, the damage is not only to the law. Each act teaches a whole country that the rules are for other people. Restoring that standard — not just changing who occupies the seats — is the point of all twenty of these.',
+      'When a hijacked Congress exempts itself from the rules it writes for everyone else, or pays settlements and hides them, the damage is not only to the law. Each act teaches a whole country that the rules are for other people. Restoring that standard — not just changing who occupies the seats — is the point of every item on this list.',
     points: [
       'The standard',
       'How a hijacked Congress damages it',
       'Restoring it',
     ],
     links: [{label: 'American Ethics', to: '/american_ethics/overview'}],
+  },
+  {
+    n: '21',
+    title: 'Conferences Where Citizens Pick the Speakers',
+    q: 'Who decides who gets the stage?',
+    body:
+      'Every party gets its own yearly political strategy conference, on its own site, and the citizens vote on who should speak at it: 1 to 5 thumbs up or down, one vote per citizen per person, every tally public. That includes the new political leaders the movement is helping into office. Online first, in person later, and no money moves through it.',
+    points: [
+      'One conference per party, on its own site',
+      'Citizens vote on every speaker',
+      'Invited is never shown as confirmed',
+    ],
+    links: [{label: 'Conferences', to: '/conferences/overview'}],
   },
 ];
 
@@ -375,7 +390,7 @@ function AgendaSection() {
           <div>
             <span className={styles.eyebrow}>The agenda</span>
             <h2 className={styles.sectionTitle} style={{marginTop: '1.1rem'}}>
-              Twenty things we are doing. Numbered, public, checkable.
+              Twenty-one things we are doing. Numbered, public, checkable.
             </h2>
           </div>
           <p className={styles.sectionLead}>
@@ -599,7 +614,7 @@ function FinalCtaSection() {
         <span className={clsx(styles.eyebrow, styles.eyebrowCenter, styles.eyebrowNoLine)}>
           The promise
         </span>
-        <h2>Twenty items. Nothing hidden behind any of them.</h2>
+        <h2>Twenty-one items. Nothing hidden behind any of them.</h2>
         <p>
           Every number on this site is computed from the public record and shown with the
           work. Every claim names its source. The code is open, the data is open, and any
@@ -620,7 +635,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Ethics First. Citizens First. Truth First."
-      description="We The Citizens is a non-partisan, citizen-powered platform: twenty numbered commitments, computed from the public record, with the arithmetic published beside every claim.">
+      description="We The Citizens is a non-partisan, citizen-powered platform: twenty-one numbered commitments, computed from the public record, with the arithmetic published beside every claim.">
       <div className={styles.page}>
         <main>
           <HeroSection />

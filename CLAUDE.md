@@ -864,7 +864,8 @@ FRAMING and WHAT GETS SAID. The KNOWLEDGE file decides the FACTS. When messaging
 asks for a claim the product does not support, the claim is wrong and gets
 raised with Bryan — messaging does not get to invent a feature. When messaging
 and this CLAUDE.md disagree about wording, scope, or which audience hears what,
-messaging wins and this file gets updated.
+messaging wins. Tell Bryan which line here is stale (with proposed wording); do not
+edit this file unless he asks.
 
 Each file maps to exactly one domain — one non-partisan .io, four partisan
 .coms — per the table in MARKETING MESSAGING -> CSV -> DOCS DIRECTORY above.

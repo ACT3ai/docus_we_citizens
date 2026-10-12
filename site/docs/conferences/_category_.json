@@ -1,0 +1,9 @@
+{
+  "label": "Conferences",
+  "position": 40,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  },
+  "description": "One yearly political strategy conference per party, on that party's own site, where citizens vote on who should speak."
+}
