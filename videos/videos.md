@@ -9,4 +9,9 @@ To re-announce one that no gateway can find: `ipfs pin ls <CID>` then `ipfs rout
 
 | File | CID | Source | Embedded on |
 |---|---|---|---|
-| we_the_citizens_conferences.mp4 | QmWCmhHpXjX3H2FyzoeUB5BoNfctCizuYS4ncBoXqDiTv8 | ~/_Mirror/video_creation/WeTheCitizens/compressed.mp4 (2026-10-12, 6:36, H.264 + AAC, 137 MB) | site/docs/conferences/overview.mdx; site/docs/r/yearly_conference/overview.mdx |
+| we_the_citizens_conferences.mp4 | bafybeidu3c7xuo5rtonut4eckqepu27ddxqwgyyjybwqi7els2bkhhtple | ~/_Mirror/video_creation/WeTheCitizens/compressed.mp4 (2026-10-12, 6:36, H.264 + AAC, 137 MB) | site/docs/conferences/overview.mdx; site/docs/r/yearly_conference/overview.mdx |
+
+Embed the CIDv1 (bafy...) form, as charlie-kirk does. It is the same content and the same pin as the
+CIDv0 (Qm...) form (`ipfs cid base32 <Qm>` converts), but on 2026-10-17 ipfs.filebase.io had cached a
+504 for the Qm address while serving the bafy address in full. After embedding a new CID, warm it by
+fetching the whole file once through every gateway, so a viewer who seeks mid-video does not hit a cold block.

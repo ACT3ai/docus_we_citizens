@@ -84,7 +84,7 @@ the four party doors, where each community builds its own package in its own lan
 
 Two core programs carry [the charter](/the_movement/charter/) into the world:
 
-* **The We The Citizens Conference** — a once-a-year national gathering of thought
+* **[The We The Citizens Conference](/conferences/overview/)** — a once-a-year national gathering of thought
   leaders from across the political spectrum, with speakers selected by the board.
 * **Campus Debates** — great political thought leaders visiting universities, taking
   questions, and debating in the open, with the content repurposed to extend its reach.

@@ -64,7 +64,7 @@ When voting systems are proprietary and not thoroughly policed by technology and
 
 ### We The Citizens Conference
 
-A once-a-year national conference bringing together thought leaders across the political spectrum that Charlie Kirk would have wanted. The board of directors selects speakers. Education, coalition-building, and advancing the seven charter principles through public discourse.
+A once-a-year [national conference](/conferences/overview/) bringing together thought leaders across the political spectrum that Charlie Kirk would have wanted. The board of directors selects speakers. Education, coalition-building, and advancing the seven charter principles through public discourse.
 
 ### Campus Debates
 

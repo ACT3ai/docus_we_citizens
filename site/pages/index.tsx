@@ -372,13 +372,16 @@ const AGENDA: AgendaItem[] = [
     title: 'Conferences Where Citizens Pick the Speakers',
     q: 'Who decides who gets the stage?',
     body:
-      'Every party gets its own yearly political strategy conference, on its own site, and the citizens vote on who should speak at it: 1 to 5 thumbs up or down, one vote per citizen per person, every tally public. That includes the new political leaders the movement is helping into office. Online first, in person later, and no money moves through it.',
+      'Every party gets its own yearly political strategy conference, on its own site, and the citizens vote on who should speak at it: 1 to 5 thumbs up or down, one vote per citizen per person, every tally public. That includes the new political leaders the movement is helping into office. In person once a year is the goal; it starts as one big online event a year, with smaller sessions along the way. No money moves through it.',
     points: [
       'One conference per party, on its own site',
       'Citizens vote on every speaker',
       'Invited is never shown as confirmed',
     ],
-    links: [{label: 'Conferences', to: '/conferences/overview'}],
+    links: [
+      {label: 'Conferences', to: '/conferences/overview'},
+      {label: 'How Often We Meet', to: '/conferences/how_often_we_meet'},
+    ],
   },
 ];
 
