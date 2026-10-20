@@ -209,8 +209,8 @@ description from being read as a promise of a result (§13.12).
 
 ## 2. Definitions
 
-> **In short:** The words we use, defined. The one that surprises people is "board of
-> directors" — for us it means an advisory group with no authority (§2.8).
+> **In short:** The words we use, defined. The one to note is "board of
+> advisors" — an advisory group with no authority (§2.8).
 
 **2.1 The product.**
 "**Service**" means everything we offer under these Terms, taken together.
@@ -272,8 +272,8 @@ Proposed Laws.
 "**AI Provider**" means a third party whose model or service we use to produce AI Output
 (§18.7).
 
-**2.8 "Board of Directors" means an advisory group.** Where the Service, our website, or any
-of our materials refers to a "**board of directors**", a "board", or a "board member", that
+**2.8 "Board of Advisors" means an advisory group.** Where the Service, our website, or any
+of our materials refers to a "**board of advisors**", a "board", or a "board member", that
 phrase means an **advisory group** — a group of guides and advisors who give us their view.
 **It does not mean a corporate board of directors.** Its members hold no corporate office at
 ACT 3 AI, Inc., are not directors of it in any legal sense, owe you no fiduciary duty, and
@@ -2626,7 +2626,7 @@ any consumer contract, and because we would rather not have one.
 ## 29. General Provisions
 
 > **In short:** The usual machinery — severability, assignment, notices — plus two unusual ones:
-> our "board of directors" binds nobody (§29.12), and government users get their own rules
+> our "board of advisors" binds nobody (§29.12), and government users get their own rules
 > (§29.14).
 
 **29.1 Entire agreement.** These Terms, together with the documents in §1.5, are the entire
@@ -2673,7 +2673,7 @@ and DFARS 227.7202, licensed to US Government end users only with the rights gra
 users. **See §29.14, which is broader and governs official government use of the Service.**
 
 **29.12 The advisory group binds nobody.** Members of the advisory group defined in §2.8 — however
-the Service labels them, including as a "board of directors" — **hold no corporate office at
+the Service labels them, including as a "board of advisors" — **hold no corporate office at
 ACT 3 AI, Inc., owe you no fiduciary duty or duty of care, and have no actual, apparent, or
 ostensible authority to bind, represent, contract for, or speak on behalf of ACT 3 AI, Inc.**
 Their views are their own. **Nothing an advisory group member says or writes is a representation,

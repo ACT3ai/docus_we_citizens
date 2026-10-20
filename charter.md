@@ -5,7 +5,7 @@
 
 Say that the way this will work is a very, very lightweight organization. It will operate the way Charlie Kirk wanted TP USA to ideally work.
 
-It will have We The Citizens conference. That will be a once-a-year conference and have the thought leaders across the political spectrum that Charlie Kirk would have wanted. They will give talks. The board of directors will decide on who that is.
+It will have We The Citizens conference. That will be a once-a-year conference and have the thought leaders across the political spectrum that Charlie Kirk would have wanted. They will give talks. The board of advisors will decide on who that is.
 
 The second charter we will do is debates on college campuses. We'll encourage a list of people that can be great thought leaders politically. One person can give a visit to a university and can answer questions and debate. We want this to be able to progress great ideas and then also build future political leaders. We will repurpose this for content for social media so that way we can follow the good ethics.
 
@@ -38,14 +38,14 @@ We The Citizens is the movement Charlie would have wanted. A very lightweight or
 
 ### We The Citizens Conference
 
-A once-a-year national conference bringing together thought leaders across the political spectrum that Charlie Kirk would have wanted. The board of directors selects speakers. The conference is designed to advance the seven charter principles through public discourse, education, and coalition-building.
+A once-a-year national conference bringing together thought leaders across the political spectrum that Charlie Kirk would have wanted. The board of advisors selects speakers. The conference is designed to advance the seven charter principles through public discourse, education, and coalition-building.
 
 ### Campus Debates
 
 Debates on college campuses where great political thought leaders visit universities, answer questions, and engage students in debate. This program exists to progress great ideas and build future political leaders. All campus content is repurposed for social media to extend its reach in alignment with good ethics.
 
 
-## Board of Directors
+## Board of Advisors
 
 The We The Citizens board is composed of individuals Charlie Kirk trusted, who stood with him, and who share the values of this charter. The following people are designated to serve as the founding board:
 
@@ -79,7 +79,7 @@ Board members make policy decisions and carry out the charter. They are bound by
 
 ### Member Sovereignty
 
-The members own this organization. Every major decision — from leadership elections to policy positions — flows from the membership. The board of directors serves at the pleasure of the members.
+The members own this organization. Every major decision — from leadership elections to policy positions — flows from the membership. The board of advisors serves at the pleasure of the members.
 
 ### Radical Transparency
 
@@ -91,7 +91,7 @@ No single donor, corporation, or foreign interest may hold outsized influence ov
 
 ### Accountable Leadership
 
-The board of directors is elected by members on regular cycles. Board members have term limits. Financial audits are conducted annually by independent third parties and published in full. Any board member can be recalled by member vote.
+The board of advisors is elected by members on regular cycles. Board members have term limits. Financial audits are conducted annually by independent third parties and published in full. Any board member can be recalled by member vote.
 
 ### Digital-First Transparency
 

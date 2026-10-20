@@ -1301,7 +1301,7 @@ re-check it.
 rather be checked than believed. We also intend to publish the sub-processor list with a change history and the
 transparency counters at §9.9.
 
-**22.9 The advisory group.** The product refers to a "board of directors," which is **a guide and advisor
+**22.9 The advisory group.** The product refers to a "board of advisors," which is **a guide and advisor
 group, not a corporate board.** Its members are not staff and not a processor. **They do not have access to
 personal data**, and if that ever changes it will be stated here with the access controls that apply.
 

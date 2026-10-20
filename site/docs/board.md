@@ -7,7 +7,7 @@ slug: /board
 description: The proposed founding board of We The Citizens — 16 thought leaders, journalists, and elected officials Charlie Kirk trusted. Term-limited and charter-bound.
 keywords:
   - We The Citizens board
-  - founding board of directors
+  - founding board of advisors
   - Candace Owens
   - Tucker Carlson
   - Tulsi Gabbard
@@ -19,7 +19,7 @@ keywords:
 image: /img/we-the-citizens-social-card.jpg
 ---
 
-# Board of Directors
+# Board of Advisors
 
 The following individuals are **proposed founding board members** of We The Citizens. None of them have formally accepted a board position yet. Each person was selected because Charlie Kirk trusted them, stood with them, and they share the values outlined in the [We The Citizens Charter](/intro).
 

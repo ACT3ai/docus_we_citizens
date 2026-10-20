@@ -64,13 +64,13 @@ When voting systems are proprietary and not thoroughly policed by technology and
 
 ### We The Citizens Conference
 
-A once-a-year [national conference](/conferences/overview/) bringing together thought leaders across the political spectrum that Charlie Kirk would have wanted. The board of directors selects speakers. Education, coalition-building, and advancing the seven charter principles through public discourse.
+A once-a-year [national conference](/conferences/overview/) bringing together thought leaders across the political spectrum that Charlie Kirk would have wanted. The board of advisors selects speakers. Education, coalition-building, and advancing the seven charter principles through public discourse.
 
 ### Campus Debates
 
 Great political thought leaders visit universities, answer questions, and engage students in debate. Progressing great ideas and building future political leaders. All campus content is repurposed for social media to extend its reach — following good ethics.
 
-## Founding Board of Directors
+## Founding Board of Advisors
 
 The board is composed of individuals Charlie Kirk trusted, who stood with him, and who share the values of this charter:
 
