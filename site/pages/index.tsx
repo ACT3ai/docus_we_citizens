@@ -1,5 +1,6 @@
 import type {MouseEvent, ReactNode} from 'react';
 import Layout from '@theme/Layout';
+import Head from '@docusaurus/Head';
 import {useHistory} from '@docusaurus/router';
 
 // The home page is plain HTML: site/pages/home.html is the page, and this file
@@ -29,6 +30,15 @@ export default function Home(): ReactNode {
     <Layout
       title="Ethics First. Citizens First. Truth First."
       description="We The Citizens is a non-partisan, citizen-powered platform: twenty-one numbered commitments, computed from the public record, with the arithmetic published beside every claim.">
+      <Head>
+        {/* Fonts for the row 1 hero (w1v1- rules in home.css). */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800&family=Inter:wght@400;500;600&display=swap"
+        />
+      </Head>
       <div
         className="wch-page"
         onClick={onClick}

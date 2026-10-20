@@ -6,23 +6,32 @@
   original is kept at site/pages/home2/ (served at /home2/).
 -->
 <main>
-  <section class="wch-hero" id="top">
-    <div class="wch-heroInner">
-      <div class="wch-heroGrid">
-        <div class="wch-heroCopy">
-          <h1 class="wch-heroDisplay">We The<br>Citizens</h1>
-          <p class="wch-heroTagline">Our Voice. Our <strong>Future.</strong></p>
-          <div class="wch-heroActions"><a href="#plan" class="wch-btn wch-btnGhost">The plan</a><a href="#charter" class="wch-btn wch-btnGhost">About us</a><a href="#watch" class="wch-btn wch-btnGhost">Watch video</a><a href="https://app.WeTheCitizens.io/" target="_blank" rel="noopener noreferrer" class="wch-btn wch-btnPrimary">Enter App <span class="arw">→</span></a></div>
-        </div>
-        <div class="wch-heroPortrait">
-          <img src="/img/hero-citizen.jpg" alt="An American citizen seated, hands folded, wearing a flag pin" width="1000" height="1247" loading="eager" fetchpriority="high"></div>
-      </div>
-      <div class="wch-heroFirsts"><span><em>I.</em>&nbsp;&nbsp;Ethics First</span><span><em>II.</em>&nbsp;&nbsp;Citizens First</span><span><em>III.</em>&nbsp;&nbsp;Truth First</span></div>
-      <div class="wch-heroBelow">
-        <p class="wch-heroLede">Washington has stopped working for the people who pay for it. We do not argue that — we establish it from the public record, publish the arithmetic beside every claim, and then go replace the people who earned it. Here is the whole agenda, numbered, with nothing held back.</p><aside class="wch-heroLedger" aria-label="At a glance">
-        <div class="wch-ledHead">The agenda, at a glance</div>
-        <div class="wch-ledRow"><span class="wch-ledNum">100<em>%</em></span><span class="wch-ledLab">Open source, open data, transparent AI</span></div></aside></div>
+  <!-- Row 1, the hero: design variation 1 "Blue Hour on the Mall", from
+       ~/BGit/all/politics/citizens_we/design/marketing/rows/row_1_hero/v/1/
+       (its own top bar is left out; the site navbar is the top bar here).
+       Styles: the w1v1- rules at the top of home.css. -->
+  <section class="w1v1-row" id="top" aria-labelledby="w1v1-title">
+    <div class="w1v1-bg" aria-hidden="true">
+      <img class="w1v1-bg-img" src="/img/hero-blue-hour.jpg" alt="" width="2400" height="1018">
     </div>
+    <div class="w1v1-scrim" aria-hidden="true"></div>
+
+    <div class="w1v1-inner">
+      <p class="w1v1-kicker"><span class="w1v1-dot" aria-hidden="true"></span>Non-partisan &middot; Citizen-led &middot; WeTheCitizens.io</p>
+      <h1 class="w1v1-title" id="w1v1-title">Make sure Congress always works for <span class="w1v1-accent">US citizens.</span></h1>
+      <p class="w1v1-lede">Not for the donors. Not for a deep state. Not for any intelligence service, domestic or foreign. We find the incumbents who stopped working for the citizen base, then rally citizens behind the best challenger to replace them, at the ballot box.</p>
+      <div class="w1v1-ctas">
+        <a class="w1v1-btn" href="https://app.WeTheCitizens.io/" target="_blank" rel="noopener noreferrer">See who represents you</a>
+        <a class="w1v1-btn-ghost" href="#doors">Find your party's door</a>
+      </div>
+      <ul class="w1v1-proof">
+        <li>Every award sourced to the official record</li>
+        <li>Open source, open data</li>
+        <li>Free for every citizen</li>
+      </ul>
+    </div>
+
+    <a class="w1v1-next" href="#agenda">So who is Congress working for right now? <span aria-hidden="true">&darr;</span></a>
   </section>
   <section class="wch-section" id="agenda">
     <div class="wch-wrap">
