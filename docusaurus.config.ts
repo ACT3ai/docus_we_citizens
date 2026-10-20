@@ -222,8 +222,8 @@ const config: Config = {
   ],
 
   plugins: [
-    // The home page is plain HTML (site/pages/home.html). This rule lets
-    // site/pages/index.tsx import that file as a string and render it inside
+    // The /home3/ page is plain HTML (site/pages/home3/home.html). This rule lets
+    // site/pages/home3/index.tsx import that file as a string and render it inside
     // the site Layout.
     () => ({
       name: 'html-source',
