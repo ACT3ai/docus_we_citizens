@@ -222,6 +222,19 @@ const config: Config = {
   ],
 
   plugins: [
+    // The home page is plain HTML (site/pages/home.html). This rule lets
+    // site/pages/index.tsx import that file as a string and render it inside
+    // the site Layout.
+    () => ({
+      name: 'html-source',
+      configureWebpack() {
+        return {
+          module: {
+            rules: [{test: /site\/pages\/.*\.html$/, type: 'asset/source'}],
+          },
+        };
+      },
+    }),
     [
       '@docusaurus/plugin-client-redirects',
       {
