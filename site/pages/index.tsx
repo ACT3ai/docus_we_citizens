@@ -1,4 +1,4 @@
-import type {ReactNode} from 'react';
+import {useEffect, useRef, type ReactNode} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
@@ -587,9 +587,50 @@ function AboutSection() {
 }
 
 /* ──────────────────────── WELCOME VIDEO ──────────────────────── */
-function WelcomeVideoSection() {
+/* Each video keeps its own aspect ratio (from YouTube oEmbed: 4000x2250, 4000x3000). */
+const WELCOME_VIDEOS = [
+  { id: 'IVXsC8Ucy9M', si: 'Pekm4thKAzvFhESw', ratio: '16 / 9', title: 'Welcome to We The Citizens' },
+  { id: 'HVMNJQ9-aTA', si: '2CHU1wCaug3WyWxW', ratio: '4 / 3', title: 'The yearly political conference' },
+];
+
+function WelcomeVideo({video, className}: {video: (typeof WELCOME_VIDEOS)[number]; className: string}) {
   return (
-    <section className={clsx(styles.section, styles.bgPanel)} id="watch">
+    <figure className={clsx(styles.videoItem, className)}>
+      <div className={styles.videoFrame} style={{aspectRatio: video.ratio}}>
+        <iframe
+          src={`https://www.youtube.com/embed/${video.id}?si=${video.si}`}
+          title={video.title}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          loading="lazy"
+        />
+      </div>
+      <figcaption className={styles.videoCaption}>{video.title}</figcaption>
+    </figure>
+  );
+}
+
+function WelcomeVideoSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  /* The first video may not be taller than the window below the top bar,
+     and the top bar's height varies (two-line labels, wrapping), so measure it. */
+  useEffect(() => {
+    const navbar = document.querySelector<HTMLElement>('.navbar');
+    const section = sectionRef.current;
+    if (!navbar || !section) return undefined;
+    const update = () => section.style.setProperty('--wc-navbar-h', `${navbar.getBoundingClientRect().height}px`);
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(navbar);
+    return () => observer.disconnect();
+  }, []);
+
+  const [first, second] = WELCOME_VIDEOS;
+  return (
+    <section ref={sectionRef} className={clsx(styles.section, styles.bgPanel)} id="watch">
       <div className={styles.wrap}>
         <div className={styles.sectionHead}>
           <span className={styles.eyebrow}>Welcome video</span>
@@ -597,13 +638,12 @@ function WelcomeVideoSection() {
             Hear it in our own words.
           </h2>
         </div>
+      </div>
 
-        <div className={styles.videoFrame}>
-          <div className={styles.videoPlaceholder} role="img" aria-label="Welcome video coming soon">
-            <span className={styles.videoPlay} aria-hidden="true">{'▶'}</span>
-            <span className={styles.videoText}>Welcome Video Coming Soon</span>
-          </div>
-        </div>
+      <WelcomeVideo video={first} className={styles.videoWide} />
+
+      <div className={styles.wrap}>
+        <WelcomeVideo video={second} className={styles.videoContained} />
       </div>
     </section>
   );
