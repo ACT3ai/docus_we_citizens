@@ -1,4 +1,4 @@
-import {useEffect, useRef, type ReactNode} from 'react';
+import {useEffect, useRef, type ReactNode, type SyntheticEvent} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
@@ -593,12 +593,28 @@ const WELCOME_VIDEOS = [
   { id: 'HVMNJQ9-aTA', si: '2CHU1wCaug3WyWxW', ratio: '4 / 3', title: 'The yearly political conference' },
 ];
 
+/* Ask YouTube for 4K (hd2160) by default. YouTube treats this as a request, not
+   a guarantee: it can still drop quality for a small player or a slow connection.
+   Two signals are sent: the vq URL hint, and setPlaybackQuality through the
+   IFrame Player API (enablejsapi=1) once the player has loaded. */
+const PREFERRED_QUALITY = 'hd2160';
+
+function requestPreferredQuality(event: SyntheticEvent<HTMLIFrameElement>) {
+  const player = event.currentTarget.contentWindow;
+  if (!player) return;
+  const send = (func: string, args: unknown[]) =>
+    player.postMessage(JSON.stringify({event: 'command', func, args}), 'https://www.youtube.com');
+  send('setPlaybackQualityRange', [PREFERRED_QUALITY, PREFERRED_QUALITY]);
+  send('setPlaybackQuality', [PREFERRED_QUALITY]);
+}
+
 function WelcomeVideo({video, className}: {video: (typeof WELCOME_VIDEOS)[number]; className: string}) {
   return (
     <figure className={clsx(styles.videoItem, className)}>
       <div className={styles.videoFrame} style={{aspectRatio: video.ratio}}>
         <iframe
-          src={`https://www.youtube.com/embed/${video.id}?si=${video.si}`}
+          src={`https://www.youtube.com/embed/${video.id}?si=${video.si}&vq=${PREFERRED_QUALITY}&enablejsapi=1`}
+          onLoad={requestPreferredQuality}
           title={video.title}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
