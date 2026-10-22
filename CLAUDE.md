@@ -763,21 +763,21 @@ TWO THINGS TO KNOW BEFORE TRUSTING THESE FILES
 THE PRODUCT KNOWLEDGE FILE — READ IT BEFORE DOING ANYTHING
 ====================================================================
 
-KNOWLEDGE_FILE is file ~/BGit/act3/we_the_citizens/KNOWLEDGE_we_citizens.md
+KNOWLEDGE_FILE is file ~/BGit/act3/we_citizens/KNOWLEDGE_we_citizens.md
 
 Read KNOWLEDGE_FILE into the context window BEFORE doing anything in this
 repo — writing a page, editing a page, rewording a headline, adding a Level 2
 area, renaming a thing, answering a question about what the product does. It is
 the single-file orientation to the whole product: 52 sections, assembled from
-the 149 product specifications in ~/BGit/act3/we_the_citizens/pm/, the data
+the 149 product specifications in ~/BGit/act3/we_citizens/pm/, the data
 contracts, and the source code. It is the fact base. This Docusaurus site is
 the EXPLANATION of that fact base; it cannot be written correctly without it.
 
-Path note: the product repo is ~/BGit/act3/we_the_citizens/ — with "the" in the
-name. Earlier sections of this file write it as ~/BGit/act3/we_citizens/, which
-does not exist on disk. Where the two disagree, we_the_citizens is the real one.
-So: the web app is ~/BGit/act3/we_the_citizens/code/, the product management
-specs are ~/BGit/act3/we_the_citizens/pm/, and ai/, cli/, mcp/ sit beside them.
+Path note: the product repo is ~/BGit/act3/we_citizens/ (renamed from
+~/BGit/act3/we_the_citizens/ on 2026-10-21; the git remote is still
+github.com/ACT3ai/we_the_citizens.git). Any leftover we_the_citizens/ path is stale.
+So: the web app is ~/BGit/act3/we_citizens/code/, the product management
+specs are ~/BGit/act3/we_citizens/pm/, and ai/, cli/, mcp/ sit beside them.
 
 WHAT THIS DOCUSAURUS IS FOR
 
