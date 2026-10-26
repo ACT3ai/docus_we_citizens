@@ -61,14 +61,8 @@ const websiteJsonLd = {
     '@type': 'Organization',
     name: SITE_NAME,
   },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
-    },
-    'query-input': 'required name=search_term_string',
-  },
+  // No potentialAction / SearchAction: the site has no search page, and Google
+  // retired the sitelinks search box in 2024.
 };
 
 const config: Config = {
@@ -206,7 +200,7 @@ const config: Config = {
       },
       innerHTML: JSON.stringify(orgJsonLd),
     },
-    // JSON-LD WebSite schema — enables sitelinks searchbox.
+    // JSON-LD WebSite schema.
     {
       tagName: 'script',
       attributes: {
