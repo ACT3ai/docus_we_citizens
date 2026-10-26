@@ -288,8 +288,9 @@ const config: Config = {
           customCss: './internal/css/custom.css',
         },
         sitemap: {
-          changefreq: 'weekly',
-          priority: 0.7,
+          // Google ignores changefreq and priority; leave them out.
+          changefreq: null,
+          priority: null,
           // Emits <lastmod> per route from frontmatter / git / file mtime.
           // Strongly preferred by Google for crawl scheduling.
           lastmod: 'date',
