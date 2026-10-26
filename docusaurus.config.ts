@@ -111,14 +111,10 @@ const config: Config = {
 
   // Note: do NOT add a manual rel="canonical" here — Docusaurus auto-emits one
   // per page via React Helmet, and a duplicate confuses Google's canonical picker.
+  // No site-wide robots meta: "index, follow" is the default, and a global tag
+  // sat beside the per-page "noindex" on the 404 and unlisted pages, so those
+  // pages carried two contradicting robots tags.
   headTags: [
-    {
-      tagName: 'meta',
-      attributes: {
-        name: 'robots',
-        content: 'index, follow, max-image-preview:large, max-snippet:-1',
-      },
-    },
     // Helps Google understand author/publisher for non-blog pages too.
     {
       tagName: 'meta',
