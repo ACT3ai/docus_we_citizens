@@ -29,11 +29,6 @@ const SITE_DESCRIPTION =
   'We The Citizens is a citizen-first, ethics-first political movement. ' +
   'A lightweight organization promoting good ethics, radical transparency, ' +
   'and the power of citizens to take back their government.';
-const SITE_KEYWORDS =
-  'We The Citizens, Charlie Kirk, 1000 Bonhoeffers, Dietrich Bonhoeffer, ' +
-  'citizen movement, political ethics, radical transparency, conservative, ' +
-  'TPUSA alternative, grassroots advocacy, anti-corruption, free speech, ' +
-  'deep state, voter integrity, US politics, citizen first, Christian values';
 // Social preview card served to Google, X/Twitter, Facebook, Reddit, Slack, iMessage.
 // 1920x1072 JPEG generated from marketing/images/overview/best.png.
 const SOCIAL_CARD = 'img/social-card.jpg';
@@ -323,7 +318,6 @@ const config: Config = {
     // Site-wide default <meta> tags. Overridden per page by frontmatter.
     metadata: [
       {name: 'description', content: SITE_DESCRIPTION},
-      {name: 'keywords', content: SITE_KEYWORDS},
       {name: 'twitter:card', content: 'summary_large_image'},
       // No site-wide twitter:title / twitter:description / og:url here.
       // Docusaurus emits per-page values for those from each page's title,
