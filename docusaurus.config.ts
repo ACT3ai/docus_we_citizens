@@ -221,7 +221,10 @@ const config: Config = {
       },
     }),
     [
-      '@docusaurus/plugin-client-redirects',
+      // @docusaurus/plugin-client-redirects, wrapped: src/plugins/docs-redirects.js
+      // runs it with these options and then gives every /docs/ redirect page an
+      // absolute canonical, lang="en" and noindex, so none counts as a duplicate.
+      './src/plugins/docs-redirects.js',
       {
         // Docs moved from /docs/* to the site root on 2026-09-17. Links already
         // out in the world (X posts, search results, the web app) still point at
