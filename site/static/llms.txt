@@ -1,0 +1,72 @@
+# We The Citizens
+
+> We The Citizens is a non-partisan, citizen-powered platform: twenty-one commitments, computed from the public record, with the arithmetic beside every claim.
+
+We The Citizens is both a company and a political movement; the same name covers the organization, the movement and the software. WeTheCitizens.io is the movement's public, non-partisan website. The app runs hosted at https://app.WeTheCitizens.io/ or on a citizen's own computer. What the movement publishes about a politician is an award (the Monkey, Llama and Flamingo Awards), never a score, with the arithmetic and official-record sources published beside it.
+
+## Areas
+
+- [Start Here](https://wethecitizens.io/start_here/overview/): The plain-language front door: what We The Citizens is, in sixty seconds and then in five minutes.
+- [The Problem](https://wethecitizens.io/the_problem/overview/): What is actually broken in democracy today, stated without jargon and without asking you to already agree.
+- [Congress Working For Citizens](https://wethecitizens.io/congress_for_citizens/overview/): The one test every other area serves: is Congress working for US citizens, or has control over it been hijacked.
+- [Why A Non-Partisan Site](https://wethecitizens.io/non_partisan_site/overview/): What the .io door is for: capture so egregious it runs against both parties, and a forum both bases can decide in.
+- [The Movement](https://wethecitizens.io/the_movement/overview/): Who We The Citizens is: the charter, the four pillars, and what joining actually means.
+- [How It Works](https://wethecitizens.io/how_it_works/overview/): The core loop end to end: record a position, reason it out, decide, and optionally publish the fix.
+- [Get Started](https://wethecitizens.io/get_started/overview/): Running We The Citizens: hosted at app.WeTheCitizens.io, or local-first on your own computer.
+- [The Social Contract](https://wethecitizens.io/social_contract/overview/): The reference standard everything is measured against - the Constitution and representative democracy as promised.
+- [Great American Ethics](https://wethecitizens.io/american_ethics/overview/): When a hijacked Congress acts, the damage is not only to the law — it is to the ethics of the citizens living under it.
+- [Problems](https://wethecitizens.io/problems/overview/): The movement's ranked catalog of what is wrong, each one sourced and open for citizens to add to.
+- [Keep Ethical Economy. Remove Rigged Layer](https://wethecitizens.io/rigged_economy/overview/): There is a healthy economy underneath. Each side names the rigged layer sitting on top of it — and a captured Congress is why neither side's fix ever lands.
+- [Exposing the Deep State](https://wethecitizens.io/deep_state/overview/): Documented in public, sourced at the door, never asserted without a record.
+- [US Intelligence](https://wethecitizens.io/us_intelligence/overview/): Serving this country only — never a puppet master over US politics, never the route a foreign power uses to reach citizens.
+- [Foreign Intelligence](https://wethecitizens.io/foreign_intelligence/overview/): No foreign service gets to be puppet master over American politics — prevent it, and where it already happened, expose it.
+- [Influencers](https://wethecitizens.io/influencers/overview/): Influencers who tell the truth must be able to earn from social media. Here is the problem, and the strategy to fix it.
+- [Election Integrity](https://wethecitizens.io/election_integrity/overview/): An election either produces a result every side can check for itself, or it does not count.
+- [No Forever Wars, No Draft](https://wethecitizens.io/no_forever_wars/overview/): No needless wars, no forever wars, no draft — one of the few positions the citizen base holds identically behind every door.
+- [No Social Credit Score](https://wethecitizens.io/no_social_credit/overview/): China's social credit system already has an American version — it is just not called that, which is exactly why it needs naming.
+- [Laws](https://wethecitizens.io/laws/overview/): The four law libraries at a glance, and the distinction that makes them make sense.
+- [Problem Laws](https://wethecitizens.io/problem_laws/overview/): The enacted laws the American people did not want, were not asked about, and are governed by anyway.
+- [Fixing the Law](https://wethecitizens.io/fix_laws/overview/): Pillar 2 in practice: how a problem citizens named becomes real legislative language somebody could file tomorrow.
+- [Fix Bills](https://wethecitizens.io/good_bills/overview/): Language the movement wrote that nobody has filed — real bills, with real sections, waiting for a sponsor.
+- [Good Laws](https://wethecitizens.io/good_laws/overview/): Laws and bills that would repair democracy — the ones that passed, the ones voted down, and the ones never allowed a vote at all.
+- [Replacing Captured Incumbents](https://wethecitizens.io/replace_incumbents/overview/): Elections, and nothing else: find the strongest challenger and rally behind them before the primary, not after it.
+- [Politicians](https://wethecitizens.io/politicians/overview/): Everything we publish about a politician is an award earned or not earned - and the wall that keeps the record separate from the resume.
+- [Elected Politicians](https://wethecitizens.io/legacy_politicians/overview/): The 1,364 people who have held office and left a voting record — the hardest, most checkable evidence in the movement.
+- [Good New Leaders](https://wethecitizens.io/new_politicians/overview/): The people worth electing who have never been in office — assessed on what they have said and done, not on a voting record they do not have.
+- [The Monkey Award](https://wethecitizens.io/monkey/overview/): One number, 0 to 100, for how much a named politician did to put the democracy-destroying laws in place.
+- [The Llama Award](https://wethecitizens.io/llama/overview/): How much a named politician did to repeal harmful law and advance the law that repairs democracy.
+- [The Flamingo Award](https://wethecitizens.io/flamingo/overview/): Everything outside the voting record, and the only award with a state that means we have not looked yet.
+- [Voting Records](https://wethecitizens.io/voting_records/overview/): How we read the public record of how somebody voted - the source of the hardest numbers on the site.
+- [Qualifications](https://wethecitizens.io/qualifications/overview/): What makes somebody worth electing - rubrics published in the open, before anybody is assessed.
+- [Meritocracy](https://wethecitizens.io/meritocracy/overview/): Influence here is earned and visible: a ladder citizens climb by doing checkable work, with a hard ceiling.
+- [Trust Scores](https://wethecitizens.io/trust_scores/overview/): A trust score builds a mesh of real citizens who can vote — and that mesh is the defense against bots and paid influence.
+- [Decisions](https://wethecitizens.io/decisions/overview/): Pillar 1: you record where you stand, the platform runs the comparison, and communities can pool the result.
+- [Values](https://wethecitizens.io/values/overview/): Pillar 3: turn your ethics into something an AI can apply consistently, at scale, on your behalf.
+- [Evidence](https://wethecitizens.io/evidence/overview/): Pillar 4: deciding when a few links are missing on purpose. This is the intellectual core of the product.
+- [Communities](https://wethecitizens.io/communities/overview/): Where the work happens together: communities, the areas inside them, and the citizens doing the work.
+- [Take Action](https://wethecitizens.io/take_action/overview/): The catalog of things a citizen can actually do this week, each one worth points and each one checkable.
+- [Conferences](https://wethecitizens.io/conferences/overview/): One yearly political strategy conference per party, on that party's own site, where citizens vote on who should speak instead of organizers deciding for them.
+- [Karma](https://wethecitizens.io/karma/overview/): The citizen side of the ledger: raw points are noise, the monthly karma score is the record.
+- [Open Data](https://wethecitizens.io/open_data/overview/): The movement's public record is a git repository. Clone it, check every claim, send back a correction.
+- [AI](https://wethecitizens.io/ai/overview/): What the AI is allowed to do, what it may never decide, and the hard rules the build itself enforces.
+- [Repos](https://wethecitizens.io/repos/overview/): Every repository, what is in it, and how to run the whole movement on your own machine.
+- [Product Features](https://wethecitizens.io/features/overview/): Every capability of We The Citizens, one page each — what it does, and the political goal it exists to serve.
+- [One App, Four Doors](https://wethecitizens.io/four_doors/overview/): How this non-partisan site relates to the four party doors — one app, one record, five front doors.
+
+## Party front doors
+
+Four editions of the same app and data, each written for one audience. Every door names the other three.
+
+- [We The Citizens R](https://wethecitizens.io/r/overview/): for Republicans, at https://wecitizensr.com
+- [We The Citizens D](https://wethecitizens.io/d/overview/): for Democrats, at https://wecitizensd.com
+- [We The Citizens L](https://wethecitizens.io/l/overview/): for Libertarians, at https://wecitizensl.com
+- [We The Citizens S](https://wethecitizens.io/s/overview/): for Democratic Socialists, at https://wecitizenssocialism.com
+
+## About
+
+- [About Us](https://wethecitizens.io/about/)
+- [Charter](https://wethecitizens.io/intro/)
+- [Terms of Service](https://wethecitizens.io/legal/terms/)
+- [Privacy Policy](https://wethecitizens.io/legal/privacy/)
+
+Generated from level_2.csv on 2026-10-26.
