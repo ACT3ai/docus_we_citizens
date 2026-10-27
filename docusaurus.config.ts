@@ -20,9 +20,10 @@ import {
 const SITE_URL = 'https://wethecitizens.io';
 // The paired We The Citizens web app — every Join / Create account CTA lands here.
 const WEBAPP_URL = 'https://app.WeTheCitizens.io/';
-// The We The Citizens app's source on GitHub — the footer's "View on GitHub"
-// button (src/theme/Footer/Copyright) points here, on every page.
-const GITHUB_URL = 'https://github.com/ACT3ai/we_the_citizens';
+// The footer's "View on GitHub" button (src/theme/Footer/Copyright) points
+// here, on every page. The ACT3ai organization page: the app repo
+// (ACT3ai/we_the_citizens) is not public yet and answered 404 (Bryan, 2026-10-26).
+const GITHUB_URL = 'https://github.com/ACT3ai';
 const SITE_NAME = 'We The Citizens';
 const SITE_TAGLINE = 'Ethics First. Citizens First. Truth First.';
 const SITE_DESCRIPTION =
@@ -305,7 +306,9 @@ const config: Config = {
           // permutations that create thin/duplicate content.
           // /internal/** = the "Internal Research" pages: public and linked, but
           // noindex (src/theme/DocItem/Metadata), so they stay out of here too.
-          ignorePatterns: ['/404', '/404.html', '/tags/**', '/blog/tags/**', '/blog/archive/**', '/blog/authors/**', '/internal/**'],
+          // /home2/ and /home3/ are alternate home-page designs (noindex in their own
+          // <head>); listed here so they can never enter the sitemap.
+          ignorePatterns: ['/404', '/404.html', '/tags/**', '/blog/tags/**', '/blog/archive/**', '/blog/authors/**', '/internal/**', '/home2/**', '/home3/**'],
         },
       } satisfies Preset.Options,
     ],
