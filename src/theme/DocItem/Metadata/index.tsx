@@ -2,7 +2,7 @@
  * src/theme/DocItem/Metadata — the <head> metadata of every docs page.
  *
  * Wraps the stock component's job (title, description, keywords, image) with
- * three SEO rules. None of them changes a word on the page: the H1, the sidebar
+ * four SEO rules. None of them changes a word on the page: the H1, the sidebar
  * label and the frontmatter title stay exactly as written.
  *
  *   1. PARTY DOORS GET THEIR OWN TITLE AND DESCRIPTION. Pages under /r/ /d/ /l/
@@ -16,6 +16,8 @@
  *      results page); the H1 still reads `title`.
  *   3. SEARCH TITLES STAY WITHIN 60 CHARACTERS WHERE THEY CAN. When the brand
  *      suffix would push the full title past 60, it is shortened or dropped.
+ *   4. /internal/ (the Internal Research pages) is noindex. They stay public and
+ *      in the left bar; they are also out of the sitemap (docusaurus.config.ts).
  */
 
 import React, {type ReactNode} from 'react';
@@ -62,6 +64,8 @@ export default function DocItemMetadata(): ReactNode {
     description = `${description.trim()}${end} ${brand} for ${party}.`;
   }
 
+  const noindex = permalink.startsWith('/internal/');
+
   return (
     <>
       <PageMetadata
@@ -74,6 +78,7 @@ export default function DocItemMetadata(): ReactNode {
         <meta property="og:title" content={fullTitle} />
         <meta name="twitter:title" content={fullTitle} />
         {description && <meta name="twitter:description" content={description} />}
+        {noindex && <meta name="robots" content="noindex, follow" />}
       </Head>
     </>
   );

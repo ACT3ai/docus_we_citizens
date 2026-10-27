@@ -301,7 +301,9 @@ const config: Config = {
           // Include every UI-visible page in the sitemap; only skip the
           // 404 page (which must never be indexed) and tag/archive
           // permutations that create thin/duplicate content.
-          ignorePatterns: ['/404', '/404.html', '/tags/**', '/blog/tags/**', '/blog/archive/**', '/blog/authors/**'],
+          // /internal/** = the "Internal Research" pages: public and linked, but
+          // noindex (src/theme/DocItem/Metadata), so they stay out of here too.
+          ignorePatterns: ['/404', '/404.html', '/tags/**', '/blog/tags/**', '/blog/archive/**', '/blog/authors/**', '/internal/**'],
         },
       } satisfies Preset.Options,
     ],
