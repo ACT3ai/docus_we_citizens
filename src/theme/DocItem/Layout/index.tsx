@@ -9,9 +9,10 @@
  *      squeezes the article to 75%. Neither exists here, so the article gets
  *      the full width of the content area on every page.
  *   2. THE BREADCRUMB BAR. The stock layout opens the <article> with
- *      <DocBreadcrumbs />. It is not rendered here, and @theme/DocBreadcrumbs
- *      is also stubbed out to null so the breadcrumbs cannot come back through
- *      the category-generated-index pages either.
+ *      <DocBreadcrumbs />. It is still called here, but @theme/DocBreadcrumbs
+ *      is overridden to render NO visible markup: it only emits the invisible
+ *      BreadcrumbList JSON-LD into <head> (an SEO signal), here and on the
+ *      category-generated-index pages alike.
  *
  * The mobile TOC (<DocItemTOCMobile />) is gone with the desktop one — the
  * "right bar" is one feature, and a collapsed copy of it above the article on a
@@ -23,6 +24,7 @@
 
 import React, {type ReactNode} from 'react';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
+import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import DocItemPaginator from '@theme/DocItem/Paginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import DocVersionBadge from '@theme/DocVersionBadge';
@@ -43,6 +45,8 @@ export default function DocItemLayout({children}: Props): ReactNode {
         <DocVersionBanner />
         <div className={styles.docItemContainer}>
           <article>
+            {/* JSON-LD only — no visible bar (see @theme/DocBreadcrumbs). */}
+            <DocBreadcrumbs />
             <DocVersionBadge />
             <DocItemContent>{children}</DocItemContent>
             <DocItemFooter />
