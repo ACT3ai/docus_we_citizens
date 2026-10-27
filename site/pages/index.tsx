@@ -694,7 +694,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Ethics First. Citizens First. Truth First."
-      description="We The Citizens is a non-partisan, citizen-powered platform: twenty-one numbered commitments, computed from the public record, with the arithmetic published beside every claim.">
+      description="We The Citizens is a non-partisan, citizen-powered platform: twenty-one commitments, computed from the public record, with the arithmetic beside every claim.">
       <div className={styles.page}>
         <main>
           <HeroSection />

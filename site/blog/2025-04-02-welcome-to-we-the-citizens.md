@@ -1,7 +1,7 @@
 ---
 slug: welcome-to-we-the-citizens
 title: Welcome to We The Citizens
-description: Launching We The Citizens — the lightweight, ethics-first political movement Charlie Kirk would have wanted. Member sovereignty, transparency, seven charter principles.
+description: Launching We The Citizens — the ethics-first political movement Charlie Kirk would have wanted. Member sovereignty, transparency, seven charter principles.
 keywords:
   - We The Citizens launch
   - Charlie Kirk movement

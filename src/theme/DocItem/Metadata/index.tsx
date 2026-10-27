@@ -27,6 +27,7 @@ import {PageMetadata} from '@docusaurus/theme-common';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
 
 const MAX_TITLE = 60;
+const MAX_DESCRIPTION = 160;
 
 function partyFor(
   permalink: string,
@@ -61,7 +62,10 @@ export default function DocItemMetadata(): ReactNode {
   let description = metadata.description;
   if (party && description) {
     const end = /[.!?]$/.test(description.trim()) ? '' : '.';
-    description = `${description.trim()}${end} ${brand} for ${party}.`;
+    const lead = `${description.trim()}${end}`;
+    // The long form when it keeps the description within 160 characters.
+    const long = `${lead} ${brand} for ${party}.`;
+    description = long.length <= MAX_DESCRIPTION ? long : `${lead} For ${party}.`;
   }
 
   const noindex = permalink.startsWith('/internal/');
