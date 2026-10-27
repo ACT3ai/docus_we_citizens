@@ -9,7 +9,7 @@ keywords:
   - seven charter principles
   - founding announcement
   - citizen-first politics
-image: /img/we-the-citizens-social-card.jpg
+image: /img/social-card-1200x630.jpg
 authors: [we-the-citizens]
 tags: [charter, announcement]
 ---

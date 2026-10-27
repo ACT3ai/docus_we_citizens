@@ -17,7 +17,7 @@ keywords:
   - voter integrity
   - Christian values
   - founding board
-image: /img/we-the-citizens-social-card.jpg
+image: /img/social-card-1200x630.jpg
 ---
 
 # We The Citizens

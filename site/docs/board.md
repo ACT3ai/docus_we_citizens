@@ -16,7 +16,7 @@ keywords:
   - Charlie Kirk allies
   - term-limited board
   - member recall
-image: /img/we-the-citizens-social-card.jpg
+image: /img/social-card-1200x630.jpg
 ---
 
 # Board of Advisors

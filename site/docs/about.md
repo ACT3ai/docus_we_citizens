@@ -14,7 +14,7 @@ keywords:
   - political ethics
   - radical transparency
   - member sovereignty
-image: /img/we-the-citizens-social-card.jpg
+image: /img/social-card-1200x630.jpg
 ---
 
 # About We The Citizens

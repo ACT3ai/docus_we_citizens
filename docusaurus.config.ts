@@ -30,10 +30,12 @@ const SITE_DESCRIPTION =
   'A lightweight organization promoting good ethics, radical transparency, ' +
   'and the power of citizens to take back their government.';
 // Social preview card served to Google, X/Twitter, Facebook, Reddit, Slack, iMessage.
-// 1920x1072 JPEG generated from marketing/images/overview/best.png.
-const SOCIAL_CARD = 'img/social-card.jpg';
-const SOCIAL_CARD_WIDTH = '1920';
-const SOCIAL_CARD_HEIGHT = '1072';
+// 1200x630 (1.91:1, what X/Facebook/LinkedIn want), cropped from the 1920x1072
+// img/social-card.jpg generated from marketing/images/overview/best.png. The
+// original stays in static/ because shared links in the wild still use it.
+const SOCIAL_CARD = 'img/social-card-1200x630.jpg';
+const SOCIAL_CARD_WIDTH = '1200';
+const SOCIAL_CARD_HEIGHT = '630';
 const SOCIAL_CARD_ABS = `${SITE_URL}/${SOCIAL_CARD}`;
 
 // Structured data (schema.org) — helps Google Knowledge Graph and rich results.
