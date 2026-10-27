@@ -848,5 +848,11 @@ export async function docsSidebarItemsGenerator(arg: any): Promise<any[]> {
 export function clientNavData() {
   return {
     footerColumnLinks: footerColumnLinks(),
+    // "/d/" -> "Democrats", one per party front door. Read by
+    // src/theme/DocItem/Metadata to name the door in each door page's search
+    // title and description, so the four doors' pages never share one.
+    partyAudiences: Object.fromEntries(
+      PARTIES.map((p) => [`/${p.key}/`, p.subLabel]),
+    ),
   };
 }
